@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente zvm.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">zvm.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="zvm_8cpp.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// zvm.cpp</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">        Máquina virtual Zero</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">        La máquina virtual del sistema de programación Zero.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">        Interpreta los bytecodes.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="excep_8h.html">excep.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cargaobj_8h.html">cargaobj.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="runtime_8h.html">runtime.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uintf_8h.html">uintf.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="analizadorlexico_8h.html">analizadorlexico.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vmcap_8h.html">vmcap.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="metodos_8h.html">metodos.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// ================================ Constantes ==============================</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a108031ca756ba319057c02504cc55084">   24</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#a108031ca756ba319057c02504cc55084">NOMBRE</a>  = <span class="stringliteral">&quot;zvm - Máquina virtual Zero (Zero&#39;s Virtual Machine)&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a1e20c163c03189acfe600030f8ef8b95">   25</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#a1e20c163c03189acfe600030f8ef8b95">VERSION</a> = <span class="stringliteral">&quot;v2.5&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#afb910878940ac6106d9c634f1ed0fe75">   26</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#afb910878940ac6106d9c634f1ed0fe75">SERIAL</a>  = <span class="stringliteral">&quot;070601&quot;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Opciones de línea de comando</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a4a3e4bb59d1009a5043f792078d340e2">   29</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#a4a3e4bb59d1009a5043f792078d340e2">VERSION1</a> = <span class="stringliteral">&quot;V&quot;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#af48208d2805bf492f7416c0547231814">   30</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#af48208d2805bf492f7416c0547231814">VERSION2</a> = <span class="stringliteral">&quot;VERSION&quot;</span>; <span class="comment">// Vuelca el número de versión</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#abbdaf946996d88b842f06c6140219f5c">   31</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#abbdaf946996d88b842f06c6140219f5c">NOPS</a>     = <span class="stringliteral">&quot;NOPS&quot;</span>;        <span class="comment">// Inhabilita el uso del PS</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#ae8de111aecb3bb85ca8df480781cb72d">   32</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#ae8de111aecb3bb85ca8df480781cb72d">NOCON</a>    = <span class="stringliteral">&quot;NOCONSOLE&quot;</span>;   <span class="comment">// Inhabilita la consola</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#aa2f42ddd80b67ec9c1d8742945dee7de">   33</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="zvm_8cpp.html#aa2f42ddd80b67ec9c1d8742945dee7de">CHPSDIR</a>  = <span class="stringliteral">&quot;PSDIR&quot;</span>;       <span class="comment">// El directorio del PS</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// ================================ Excepciones propias =======================</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classESintaxisInvocacion.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classESintaxisInvocacion.html">ESintaxisInvocacion</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Excepcion.html">Zero::Excepcion</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classESintaxisInvocacion.html#aecdac5cac7e245299e62344f574c2450">   39</a></span>&#160;        <a class="code" href="classESintaxisInvocacion.html#aecdac5cac7e245299e62344f574c2450">ESintaxisInvocacion</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * x) : <a class="code" href="classZero_1_1Excepcion.html#ad158b7c967af19c0e7a801ccb88285d6">Excepcion</a>(x)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                { strcpy( <a class="code" href="classZero_1_1Excepcion.html#a4f70274a14025a7d82a07dcd1cab26c0">detalles</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                         <span class="stringliteral">&quot;Sintaxis:\nzvm -v      muestra los # vers. y serie\n&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                         <span class="stringliteral">&quot;zvm -nops   ejecuta sin almacenamiento persistente\n&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                         <span class="stringliteral">&quot;zvm -noconsole deshabilita la consola\n&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                         <span class="stringliteral">&quot;zvm -psdir=path nuevo path para el PS\n&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                         <span class="stringliteral">&quot;zvm &lt;nombreArchivo&gt;&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                         <span class="stringliteral">&quot; [&lt;nombreMetodo&gt;]&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                         <span class="stringliteral">&quot; [&lt;argumento1&gt; [&lt;argumento2&gt;] ...]\n\n&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                  );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classENadaQueHacer.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classENadaQueHacer.html">ENadaQueHacer</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1EEjecucion.html">Zero::EEjecucion</a> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classENadaQueHacer.html#a836038ed00bf7013b5b01e8c6bc20fb1">   54</a></span>&#160;        <a class="code" href="classENadaQueHacer.html#a836038ed00bf7013b5b01e8c6bc20fb1">ENadaQueHacer</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * x) : <a class="code" href="classZero_1_1EEjecucion.html#a8710a6c3b1be482445e1dfeaf0fd3ccb">EEjecucion</a>(x)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                { strcpy( <a class="code" href="classZero_1_1Excepcion.html#a4f70274a14025a7d82a07dcd1cab26c0">detalles</a>, <span class="stringliteral">&quot;No hay objetos a ejecutar&quot;</span> ); }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// --------------------------------------------------------- procesarOpciones()</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a25c650aa1f220e77a340366fd17fe81e">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="za_8cpp.html#acefdda37718048ba4aada42283af8e5d">procesarOpciones</a>(<span class="keywordtype">char</span> *argv[], <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;numArg, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxArg)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    Procesa las opciones</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numMenos;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string op = argv[1];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    numArg = 1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">while</span>( op[0] == <span class="charliteral">&#39;-&#39;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;       &amp;&amp;  numArg &lt; maxArg )</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// Quitarle los menos de delante</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        numMenos = 1;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> ( op[1] == <span class="charliteral">&#39;-&#39;</span> ) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            ++numMenos;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        op.erase( op.begin(), op.begin() + numMenos );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classZero_1_1AnalizadorLexico.html#af0e9afa7693dab883684921286a9c6ee">Zero::AnalizadorLexico::maysCnvt</a>( op );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// Comprobar qué opción es</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> ( op == <a class="code" href="zvm_8cpp.html#a4a3e4bb59d1009a5043f792078d340e2">VERSION1</a></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          || op == <a class="code" href="zvm_8cpp.html#af48208d2805bf492f7416c0547231814">VERSION2</a> )</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// Visualizar mensaje de info</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            std::printf( <span class="stringliteral">&quot;%s %s Serial %s\n\tOpcodes v %d.%d\n\t%s\n\n&quot;</span>,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <a class="code" href="zvm_8cpp.html#a108031ca756ba319057c02504cc55084">NOMBRE</a>.c_str(), <a class="code" href="zvm_8cpp.html#a1e20c163c03189acfe600030f8ef8b95">VERSION</a>.c_str(), <a class="code" href="zvm_8cpp.html#afb910878940ac6106d9c634f1ed0fe75">SERIAL</a>.c_str(),</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    (int) <a class="code" href="namespaceZero.html#a8857412fa56d5f4be5958c85f8e1b94e">Zero::hver</a>, (<span class="keywordtype">int</span>) <a class="code" href="namespaceZero.html#ab1e1f3cbc09ca6446997ca78629a8563">Zero::lver</a>,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <a class="code" href="classVMCap.html#a0eea3185b3e68ecaf9def41a9a574192">VMCap::getInfoCapabilities</a>().c_str()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> ( op == <a class="code" href="zvm_8cpp.html#abbdaf946996d88b842f06c6140219f5c">NOPS</a> ) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment">// Desactiva el almacenamiento persistente (PS)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="classVMCap.html#af74a17932fdccb45c987c974e4a049e1">VMCap::PS</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> ( op == <a class="code" href="zvm_8cpp.html#ae8de111aecb3bb85ca8df480781cb72d">NOCON</a> ) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// Desactiva la consola</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classVMCap.html#ab2a81144db4e25e4d5e23b2bc9230de0">VMCap::consola</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> ( op.substr( 0, <a class="code" href="zvm_8cpp.html#aa2f42ddd80b67ec9c1d8742945dee7de">CHPSDIR</a>.length() ) == <a class="code" href="zvm_8cpp.html#aa2f42ddd80b67ec9c1d8742945dee7de">CHPSDIR</a> ) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">// Proporciona otro PATH al PS</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> ( op[<a class="code" href="zvm_8cpp.html#aa2f42ddd80b67ec9c1d8742945dee7de">CHPSDIR</a>.length()] == <span class="charliteral">&#39;=&#39;</span> ) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                op = argv[ numArg ];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="classVMCap.html#a30d598d063aa15a6d2ecf8fb1ca134b5">VMCap::PSDir</a> = op.substr(</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        <a class="code" href="zvm_8cpp.html#aa2f42ddd80b67ec9c1d8742945dee7de">CHPSDIR</a>.length() + 2,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        op.length() )</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                ;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code" href="classESintaxisInvocacion.html">ESintaxisInvocacion</a>( <span class="stringliteral">&quot;psdir sin &#39;=&#39;&quot;</span> );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code" href="classESintaxisInvocacion.html">ESintaxisInvocacion</a>( std::string( <span class="stringliteral">&quot;Opción inválida: &quot;</span> + op ).c_str() );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        ++numArg;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> ( numArg &lt; maxArg ) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            op = argv[numArg];</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a8dde52fc2d8703ce2fa56ebedcacee05">  124</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zvm_8cpp.html#a8dde52fc2d8703ce2fa56ebedcacee05">terminar</a>()</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    printf( <span class="stringliteral">&quot;\n*** FATAL: error inesperado en Zero\n&quot;</span> );</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#af3326e174a7b48003f7e6d2e6e815472">  129</a></span>&#160;std::string <a class="code" href="zvm_8cpp.html#af3326e174a7b48003f7e6d2e6e815472">getNombreObjeto</a>(<span class="keyword">const</span> std::string &amp;nombreArchivo)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    std::string toret = nombreArchivo;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">size_t</span> posBarra = toret.rfind( <a class="code" href="classVMCap.html#a165956ed14bbeea9422ed8f991f0c724">VMCap::getDirMark</a>() );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span> ( posBarra != std::string::npos ) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        toret.erase( 0, posBarra + 1 );</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">// ================================= Main ===================================</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">  146</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="prucol_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    std::auto_ptr&lt;Zero::Runtime&gt; runtime;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="classZero_1_1Metodo.html">Zero::Metodo</a> * doIt = NULL;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::auto_ptr&lt;Zero::Runtime::MensajeArranque&gt; mensaje;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numArg;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> toret = EXIT_SUCCESS;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    std::set_unexpected( <a class="code" href="zvm_8cpp.html#a8dde52fc2d8703ce2fa56ebedcacee05">terminar</a> );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    std::set_terminate( <a class="code" href="zvm_8cpp.html#a8dde52fc2d8703ce2fa56ebedcacee05">terminar</a> );</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    std::string LIB = <a class="code" href="namespaceZero.html#a8ad467dc9ec0b0bd68ebe41723a438e2" title="Contenedor/Objeto exe.">Zero::OBJ_INTSTDLIB</a> + <a class="code" href="namespaceZero.html#a12630b9f40250415140c0dda54fe48d4">Zero::EXT_ARCHIVOS_ZERO</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> ( argc &lt; 2 )</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;              <span class="keywordflow">throw</span> <a class="code" href="classESintaxisInvocacion.html">ESintaxisInvocacion</a>( <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="comment">// Procesar opciones y comprobar que quedan suficientes</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="za_8cpp.html#acefdda37718048ba4aada42283af8e5d">procesarOpciones</a>( argv, numArg, argc );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> ( numArg &gt;= argc ) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classENadaQueHacer.html">ENadaQueHacer</a>( <span class="stringliteral">&quot;falta argumento: objeto a ejecutar&quot;</span> );</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="comment">// Cargar el fichero objeto</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="comment">// Preparar el nombre del fichero del sist. de ficheros</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            std::string ficheroEntrada = argv[ numArg ];</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            ficheroEntrada += <a class="code" href="namespaceZero.html#a12630b9f40250415140c0dda54fe48d4">Zero::EXT_ARCHIVOS_ZERO</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// Preparar el nombre del objeto principal</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            std::string nombreObjetoPpal = <a class="code" href="zvm_8cpp.html#af3326e174a7b48003f7e6d2e6e815472">getNombreObjeto</a>( argv[ numArg ] );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            ++numArg;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">// Crear el runtime</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            runtime.reset( <a class="code" href="classZero_1_1Runtime.html#a5773901010b5cd4c49d543d5d3766a09">Zero::Runtime::rt</a>() );</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">if</span> ( runtime.get() == NULL ) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1EInterno.html">Zero::EInterno</a>( <span class="stringliteral">&quot;imposible inicializar la MV Zero&quot;</span> );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="comment">// Cargar la librería estándar</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span> ( runtime-&gt;estaEnInicializacion() )</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <a class="code" href="classZero_1_1FicheroSoporte.html">Zero::FicheroSoporte</a> lib( LIB, <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7a9d73a2c9394e6188e3f5d7731845e4df">Zero::FicheroSoporte::Existente</a> );</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <a class="code" href="classZero_1_1CargadorObjetos.html">Zero::CargadorObjetos</a> cargador( &amp;lib );</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                runtime-&gt;prepara( cargador.<a class="code" href="classZero_1_1CargadorObjetos.html#a1dffba4392a2653b0e0f50fb10fbd6be">getObjetosCargados</a>(),</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                <a class="code" href="classZero_1_1Runtime.html#acc12f27d85533d4570bba7a101e80ccf">Zero::Runtime::ES_LIB</a></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                );</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment">// Preparar el mensaje de arranque</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            mensaje.reset( <span class="keyword">new</span> <a class="code" href="classZero_1_1Runtime.html#a2a9922a99ecc769160496c1a7879f275">Zero::Runtime::MensajeArranque</a> );</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            mensaje-&gt;push_back( nombreObjetoPpal );</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = numArg; i &lt; argc; ++i)  {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    mensaje-&gt;push_back( std::string( argv[i] ) );</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">// Load &amp; Run</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <a class="code" href="classZero_1_1FicheroSoporte.html">Zero::FicheroSoporte</a> obj( ficheroEntrada,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                            <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7a9d73a2c9394e6188e3f5d7731845e4df">Zero::FicheroSoporte::Existente</a></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                );</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <a class="code" href="classZero_1_1CargadorObjetos.html">Zero::CargadorObjetos</a> cargador( &amp;obj );</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                doIt = runtime-&gt;prepara(    cargador.<a class="code" href="classZero_1_1CargadorObjetos.html#a1dffba4392a2653b0e0f50fb10fbd6be">getObjetosCargados</a>(),</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                            <a class="code" href="classZero_1_1Runtime.html#a5d73eaa88dcb3c5ff7f1c75ded551543">Zero::Runtime::NO_ES_LIB</a>,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                            mensaje.get()</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                );</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            runtime-&gt;ejecutar( doIt );</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classZero_1_1Excepcion.html">Zero::Excepcion</a> &amp;e)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            std::printf( <span class="stringliteral">&quot;%s&quot;</span>, e.<a class="code" href="classZero_1_1Excepcion.html#a5878bfe8e8b1854c3773bc99cb916544">getMensaje</a>() );</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span> ( e.<a class="code" href="classZero_1_1Excepcion.html#aa49dfe9a35e2955fc38c0cd0cd8b125c">hayDetalles</a>() ) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                std::printf( <span class="stringliteral">&quot; (%s)\n&quot;</span>, e.<a class="code" href="classZero_1_1Excepcion.html#a80484e27ab2a3ea58afa688666027fb7">getDetalles</a>() );</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            toret = EXIT_FAILURE;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            std::printf( <span class="stringliteral">&quot;FATAL Error interno inesperado\n&quot;</span> );</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            toret = EXIT_FAILURE;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">// ==========================================================================</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// ------------------------------------------------------ Interfaz de usuario</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">// Funciones de captura y muestra de información</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">// --------------------------------------------------------- putLineaOutput()</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#a3836175171583cc86fa635d40e7413dd">  242</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uintf_8h.html#aebc915771608e5c178145ae1c354076e">putLineaOutput</a>(<span class="keyword">const</span> std::string &amp;x, <span class="keywordtype">bool</span> cr)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * fmtNoCr = <span class="stringliteral">&quot;%s&quot;</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * fmtCr = <span class="stringliteral">&quot;%s\n&quot;</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * fmt = fmtNoCr;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">if</span> ( cr ) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        fmt = fmtCr;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    std::printf( fmt, x.c_str() );</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">// --------------------------------------------------------- getLineaOutput()</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="code" href="zvm_8cpp.html#ac66b36706466fac45c7adf37a720f75d">  259</a></span>&#160;<span class="keyword">const</span> std::string &amp;<a class="code" href="uintf_8h.html#ac66b36706466fac45c7adf37a720f75d">getLineaInput</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">int</span> ch;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">static</span> std::string toret;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    toret.clear();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        ch = getc( stdin );</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">while</span> ( ch != EOF</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;             &amp;&amp; ch != <span class="charliteral">&#39;\n&#39;</span> )</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            toret.push_back( ch );</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            ch = getc( stdin );</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::exception &amp;e) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1EInputOutput.html">Zero::EInputOutput</a>( ( std::string( <span class="stringliteral">&quot;Error de lectura(&quot;</span> ) + e.what() + <span class="charliteral">&#39;)&#39;</span> ).c_str() );</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">catch</span>(...) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1EInputOutput.html">Zero::EInputOutput</a>( <span class="stringliteral">&quot;Error de lectura&quot;</span> );</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

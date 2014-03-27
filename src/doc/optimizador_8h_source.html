@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente optimizador.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">optimizador.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="optimizador_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// optimizador.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __OPTIMIZADOR_H_</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __OPTIMIZADOR_H_</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="partescompilador_8h.html">partescompilador.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="compilador_8h.html">compilador.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>Zero {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span>Optimizacion;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1Optimizador.html">Optimizador</a> : <span class="keyword">public</span> <a class="code" href="classPartesCompilador.html">PartesCompilador</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">   26</a></span>&#160;    <span class="keyword">typedef</span> std::list&lt;Mnemotecnico *&gt; <a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">ListaMnemos</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">   27</a></span>&#160;    <span class="keyword">typedef</span> ListaMnemos::iterator <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">MnemoIterator</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a91309354855763ba14846ce89c6f4fdf">   29</a></span>&#160;    <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">TipoOptimizacion</a> <a class="code" href="classZero_1_1Optimizador.html#a91309354855763ba14846ce89c6f4fdf">opt</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#ae14bee2f8fde6cf0d6ce2b79a2183a43">   30</a></span>&#160;    <a class="code" href="classZero_1_1Compilador.html">Compilador</a> *<a class="code" href="classZero_1_1Optimizador.html#ae14bee2f8fde6cf0d6ce2b79a2183a43">comp</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a2a052939fe46e88277f4658d88f897b4">   31</a></span>&#160;    <a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">ListaMnemos</a> * <a class="code" href="classZero_1_1Optimizador.html#a2a052939fe46e88277f4658d88f897b4">listaMnemos</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a16001a314e6a3ff7137f31855b774b11">   32</a></span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Compilador::ListaMnemos</a> * <a class="code" href="classZero_1_1Optimizador.html#a16001a314e6a3ff7137f31855b774b11">listaMnemosCmp</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a553179d69b2f72e99f2514974d4a51d5">   33</a></span>&#160;    <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *<a class="code" href="classZero_1_1Optimizador.html#a553179d69b2f72e99f2514974d4a51d5">argsFormales</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a2b6324582d61251f69e8105f1005dc19">   34</a></span>&#160;    <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *<a class="code" href="classZero_1_1Optimizador.html#a2b6324582d61251f69e8105f1005dc19">atrsObj</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizador.html#a4030f3ef91bf46c4109c67d1b2850cce">borrarTodosOpts</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classZero_1_1Optimizador.html#a1b0753f53195e9d253e2438b8e0c399a">Optimizador</a>(<a class="code" href="classZero_1_1Compilador.html">Compilador</a> * = NULL, <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">TipoOptimizacion</a> = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfad29068c2282a5c5f0a0a148fce4a5d0a">opt2</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classZero_1_1Optimizador.html#a1b0753f53195e9d253e2438b8e0c399a">Optimizador</a>(<a class="code" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Compilador::ListaMnemos</a> &amp;, <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">TipoOptimizacion</a> = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfad29068c2282a5c5f0a0a148fce4a5d0a">opt2</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classZero_1_1Optimizador.html#a808c969394efc5ff19abcbeaa45c00e1">~Optimizador</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// El n�cleo, va llamando en orden a las optimizaciones</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizador.html#a70486438d2037916114c19a1f0406343">optimizar</a>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Compilador::ListaMnemos</a> * = NULL,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Optimizador::TipoOptimizacion</a> = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfad29068c2282a5c5f0a0a148fce4a5d0a">opt2</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// El vector de optimizaciones</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizador.html#a6802db9207741a85afc001ab7a39ba96">   50</a></span>&#160;    <span class="keyword">static</span> std::vector&lt;Optimizacion *&gt; <a class="code" href="classZero_1_1Optimizador.html#a6802db9207741a85afc001ab7a39ba96">vOpts</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizador.html#a7a2cc65a02c524ed582c4a8146201e99">iniciaVectorOpts</a>(<a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">TipoOptimizacion</a> <a class="code" href="classZero_1_1Optimizador.html#a91309354855763ba14846ce89c6f4fdf">opt</a> = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfad29068c2282a5c5f0a0a148fce4a5d0a">opt2</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizador.html#ac5d5b35dc46b18f187dae78560ac075a">registraOpt</a>(<a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> *);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html">   62</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#a3210fc5c8427beef63ee012c325e2ed5">   64</a></span>&#160;                <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *<a class="code" href="classZero_1_1Optimizacion.html#a3210fc5c8427beef63ee012c325e2ed5">atrsObj</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#ab8704ea72ee914c6651f0f3c5273f9c9">   65</a></span>&#160;                <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *<a class="code" href="classZero_1_1Optimizacion.html#ab8704ea72ee914c6651f0f3c5273f9c9">argsFormales</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">   66</a></span>&#160;        <a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#a38f48a2042b829534c01f6236234babf">   68</a></span>&#160;        <a class="code" href="classZero_1_1Optimizacion.html#a38f48a2042b829534c01f6236234babf">Optimizacion</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>(l)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#a8be42ac85b3720e7cf7cb520896e7398">   73</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizacion.html#a8be42ac85b3720e7cf7cb520896e7398">ponListaMnemos</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a> = l;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#ad8d61ae16895cb1ae43a9d11984aeb37">   77</a></span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizacion.html#ad8d61ae16895cb1ae43a9d11984aeb37">ponIds</a>(<a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> *args, <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> * atrs) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <a class="code" href="classZero_1_1Optimizacion.html#a3210fc5c8427beef63ee012c325e2ed5">atrsObj</a> = atrs;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        <a class="code" href="classZero_1_1Optimizacion.html#ab8704ea72ee914c6651f0f3c5273f9c9">argsFormales</a> = args;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classZero_1_1Optimizacion.html#a21b18dac06b01e7373a708415a8eac75">   82</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classZero_1_1Optimizacion.html#a21b18dac06b01e7373a708415a8eac75">~Optimizacion</a>() {}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Optimizacion.html#acc3e6bee78489f813f332d9db513efb3">hazOpt</a>() = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="classZero_1_1OptChkMta.html">   92</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OptChkMta.html">OptChkMta</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="classZero_1_1OptChkMta.html#a7562ba1614c644dbb0fa92e2ad92b8dc">   94</a></span>&#160;    <a class="code" href="classZero_1_1OptChkMta.html#a7562ba1614c644dbb0fa92e2ad92b8dc">~OptChkMta</a>() { <a class="code" href="classZero_1_1OptChkMta.html#acab67d8bd714c54aad6c7e740f2c49f8">opt</a> = NULL; }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptChkMta.html#ac9a045aad363d2716e40271a27c1bfe2">hazOpt</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptChkMta.html#a9ba14be2feaebced434a4746903fd19c">chkId</a>(<span class="keyword">const</span> std::string &amp;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="classZero_1_1OptChkMta.html#afa888bd14ef60740647267a2cebe702e">   97</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptChkMta.html#afa888bd14ef60740647267a2cebe702e">getHayLiterales</a>() { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OptChkMta.html#a70fcbd7b151740a63193ce1140563c57">hayLiterales</a>; }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">static</span> <a class="code" href="classZero_1_1OptChkMta.html">OptChkMta</a> *<a class="code" href="classZero_1_1OptChkMta.html#a304d4be0233a356047f9ae14b2d9fa39">getOpt</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="classZero_1_1OptChkMta.html#a70fcbd7b151740a63193ce1140563c57">  101</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptChkMta.html#a70fcbd7b151740a63193ce1140563c57">hayLiterales</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="classZero_1_1OptChkMta.html#acab67d8bd714c54aad6c7e740f2c49f8">  102</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> * <a class="code" href="classZero_1_1OptChkMta.html#acab67d8bd714c54aad6c7e740f2c49f8">opt</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="classZero_1_1OptChkMta.html#a75fced6f5c18068ccdf04f1516e83c80">  104</a></span>&#160;    <a class="code" href="classZero_1_1OptChkMta.html#a75fced6f5c18068ccdf04f1516e83c80">OptChkMta</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        : <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="classZero_1_1OptDefPpio.html">  114</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OptDefPpio.html">OptDefPpio</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="classZero_1_1OptDefPpio.html#a2a3a21b121fc36c830f412e23282685f">  115</a></span>&#160;                <span class="keyword">static</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> * <a class="code" href="classZero_1_1OptDefPpio.html#a2a3a21b121fc36c830f412e23282685f">opt</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="classZero_1_1OptDefPpio.html#a4e92dc60d3ecc73de178b4c9f3b08357">  117</a></span>&#160;        <a class="code" href="classZero_1_1OptDefPpio.html#a4e92dc60d3ecc73de178b4c9f3b08357">OptDefPpio</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="classZero_1_1OptDefPpio.html#a0e0300b7c3e51cda69d30e3abef92756">  122</a></span>&#160;                <a class="code" href="classZero_1_1OptDefPpio.html#a0e0300b7c3e51cda69d30e3abef92756">~OptDefPpio</a>() { <a class="code" href="classZero_1_1OptDefPpio.html#a2a3a21b121fc36c830f412e23282685f">opt</a> = NULL; }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptDefPpio.html#a20ecc4cdda9e87fdeb8b7bd2b5fee123">hazOpt</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1OptDefPpio.html">OptDefPpio</a> *<a class="code" href="classZero_1_1OptDefPpio.html#a9db51c8c55aa540caa84e9d4e76bca2e">getOpt</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;};</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html">  132</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OptLitAg.html">OptLitAg</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> {</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">  133</a></span>&#160;                <span class="keyword">static</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> * <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#ac50ba5577a939cd7aff0486e7f33957a">  135</a></span>&#160;        <a class="code" href="classZero_1_1OptLitAg.html#ac50ba5577a939cd7aff0486e7f33957a">OptLitAg</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        {}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg_1_1OperadorMenor.html">  139</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classZero_1_1OptLitAg_1_1OperadorMenor.html">OperadorMenor</a> {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg_1_1OperadorMenor.html#a4951b1a4a4babbcc4be457aa73a309b0">  141</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptLitAg_1_1OperadorMenor.html#a4951b1a4a4babbcc4be457aa73a309b0">operator()</a>(<span class="keyword">const</span> std::string *a, <span class="keyword">const</span> std::string *b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordflow">return</span> *a &lt; *b;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        };</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#a8c60ecc5b7349fe6361d65af16766afd">  147</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> std::string *<a class="code" href="classZero_1_1OptLitAg.html#a8c60ecc5b7349fe6361d65af16766afd">nombreLit</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">  148</a></span>&#160;        <span class="keyword">typedef</span> std::map&lt;std::string * const, std::string, OperadorMenor&gt; <a class="code" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#a040847f635364ef908fbfd59c5c04317">  151</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classZero_1_1OptLitAg.html#a040847f635364ef908fbfd59c5c04317">numLits</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        std::string <a class="code" href="classZero_1_1OptLitAg.html#a5384429f85aad59d4f050d673f1c9fa1">getNuevoIdLit</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keyword">const</span> std::string *<a class="code" href="classZero_1_1OptLitAg.html#afcb1d1d4460fdc3ba1a7d1296531034f">buscaLiteral</a>(<a class="code" href="classZero_1_1Lit.html">Lit</a> *);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1OptLitAg.html#a96aba9a8dbf055a1dd5649e5835017f3">creaLiteral</a>(<a class="code" href="classZero_1_1Lit.html">Lit</a> *);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1OptLitAg.html#ab58bfc7a3ed967690f036643c387941c">registraLit</a>(<a class="code" href="classZero_1_1Lit.html">Lit</a> *);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptLitAg.html#a6836d54084c11e4c15fcd78326e91275">colocaConstEnd</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">  160</a></span>&#160;        <a class="code" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a> <a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">  161</a></span>&#160;        <a class="code" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a> <a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">  162</a></span>&#160;        <a class="code" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a> <a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="classZero_1_1OptLitAg.html#a93fd187b0f813b0ffcf7b767c3bdcb74">  164</a></span>&#160;                <a class="code" href="classZero_1_1OptLitAg.html#a93fd187b0f813b0ffcf7b767c3bdcb74">~OptLitAg</a>() { <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a> = NULL; }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptLitAg.html#a18dc02e5c44a93b932b216afee9e5dd6">hazOpt</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1OptLitAg.html">OptLitAg</a> *<a class="code" href="classZero_1_1OptLitAg.html#afdceb73ca51a9f9299dbd8365cf7ea61">getOpt</a>();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;};</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html">  175</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OptRedccOp.html">OptRedccOp</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">  177</a></span>&#160;        <span class="keyword">typedef</span> std::set&lt;std::string&gt; <a class="code" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">TablaRefsLocales</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264f">  179</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264f">TipoSentencia</a> {</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa46459a9464786970d4b8c6304b1f64ff">  180</a></span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa995c48da927a2329b904c0922a05f247">_sentencia_MSG</a>, <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa46459a9464786970d4b8c6304b1f64ff">_sentencia_TRW</a>, <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa608e0fdb217e100d9f58da6544aba45c">_sentencia_RET</a>, <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264faa09c44ff5b655c5246aca9d556cebac8">_sentencia_ERROR</a></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        };</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html">  183</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html">Objetivo</a> {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">  185</a></span>&#160;            std::set&lt;std::string&gt; <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">regsReducidos</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">  186</a></span>&#160;            <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">  187</a></span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264f">TipoSentencia</a> <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">tipoSentencia</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">  188</a></span>&#160;            <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">  189</a></span>&#160;            std::string <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">  191</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">fueReducido</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a>)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                { <span class="keywordflow">return</span> ( <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">regsReducidos</a>.find( reg ) != <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">regsReducidos</a>.end() ); }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a7e09c31d5dfe0d4f4a7084fe406df8f3">  194</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a7e09c31d5dfe0d4f4a7084fe406df8f3">preparaSigBusqueda</a>() {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">tipoSentencia</a> = <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264faa09c44ff5b655c5246aca9d556cebac8">_sentencia_ERROR</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                --<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a>.erase();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">regsReducidos</a>.clear();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a50c4c1a5ae42283c549d4af0b00acf54">  202</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a50c4c1a5ae42283c549d4af0b00acf54">init</a>() {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">tipoSentencia</a> = <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264faa09c44ff5b655c5246aca9d556cebac8">_sentencia_ERROR</a>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> = ( <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> )NULL;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a>.erase();</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">regsReducidos</a>.clear();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        };</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#abd4f20b325a60085d770179dccd8d616">  211</a></span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#abd4f20b325a60085d770179dccd8d616">~OptRedccOp</a>() { <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a> = NULL; }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#af481932f9404ba5aad500836121a0288">hazOpt</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1OptRedccOp.html">OptRedccOp</a> *<a class="code" href="classZero_1_1OptRedccOp.html#ab26bf8d6eacf42aa4a2385afc14beb32">getOpt</a>();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptRedccOp.html#a52beb6d39f95859e9094d78caf9ed76f">comprobarSiAcumuladorPosible</a>(<a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>, <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>);</div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">  217</a></span>&#160;            <span class="keyword">static</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> * <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#a7d335f5c2b27617fbec03c212a2ed899">  219</a></span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#a7d335f5c2b27617fbec03c212a2ed899">OptRedccOp</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">  223</a></span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">TablaRefsLocales</a> <a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">  224</a></span>&#160;        <a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html">Objetivo</a> <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#a2efd57ba9822eb1f9984e4697f7f7f06">reducir</a>();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> <a class="code" href="classZero_1_1OptRedccOp.html#a68e26f17a33c86d3d3f59c622be7b4ce">reduceSentenciaActual</a>();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> <a class="code" href="classZero_1_1OptRedccOp.html#ad942da9156ec3bd856f6b6e54210412b">buscaSigRegistro</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> <a class="code" href="classZero_1_1OptRedccOp.html#aff0e5469ca9f675c9cbc80b3e54c7d24">buscaSigRegistroMsg</a>(<a class="code" href="classZero_1_1NMMsg.html">NMMsg</a> *);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> <a class="code" href="classZero_1_1OptRedccOp.html#aa39ebce8a78593e34769148a97e09cb1">buscaSigRegistroTrw</a>(<a class="code" href="classZero_1_1NMTrw.html">NMTrw</a> *);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> <a class="code" href="classZero_1_1OptRedccOp.html#aca1d5b2df91958f3813f0750b412c32a">buscaSigRegistroRet</a>(<a class="code" href="classZero_1_1NMRet.html">NMRet</a> *);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptRedccOp.html#aafade46327bc2604121a12643c496a46">esMovimientoRegs</a>(<a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptRedccOp.html#a8ca593a25e2b3d4029967d560b5a89e1">esMovimientoRelevante</a>(</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> it,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> &amp;obj,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordtype">bool</span> &amp;eliminar,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordtype">bool</span> &amp;acumuladorModificado)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        ;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="code" href="classZero_1_1OptRedccOp.html#adaa9074829b9315260c1ab07186dd27f">  241</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OptRedccOp.html#adaa9074829b9315260c1ab07186dd27f">esRefLocal</a>(<span class="keyword">const</span> std::string &amp;ref)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            { <span class="keywordflow">return</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a>.find( ref ) != <a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a>.end() ); }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#a8d7bb25efc0e5da8843ac775605278c4">aplicarCambio</a>(<a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org,</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keyword">const</span> std::string &amp;dest)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        ;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#a2aef6221f7bafc30e9eeaa9efbac1bd4">aplicarCambioMsg</a>(<a class="code" href="classZero_1_1NMMsg.html">NMMsg</a> *,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keyword">const</span> std::string &amp;dest)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        ;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#a4930ae79db43a6f0117c38614b3df46b">aplicarCambioTrw</a>(<a class="code" href="classZero_1_1NMTrw.html">NMTrw</a> *,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">const</span> std::string &amp;dest)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        ;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#a216d4bb32f0da7334c247715508bf8c7">aplicarCambioRet</a>(<a class="code" href="classZero_1_1NMRet.html">NMRet</a> *,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keyword">const</span> std::string &amp;dest)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        ;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a>(<a class="code" href="classZero_1_1Nombre.html">Nombre</a> **,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keyword">const</span> std::string &amp;dest)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        ;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;};</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="code" href="classZero_1_1OptCnvtEtq.html">  276</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OptCnvtEtq.html">OptCnvtEtq</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="code" href="classZero_1_1OptCnvtEtq.html#a628d7318e88e5a8b35eb4f4731d13c67">  278</a></span>&#160;        <span class="keyword">typedef</span> std::map&lt;std::string, unsigned int&gt; <a class="code" href="classZero_1_1OptCnvtEtq.html#a628d7318e88e5a8b35eb4f4731d13c67">TablaEtiquetas</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="code" href="classZero_1_1OptCnvtEtq.html#a9ed259c6149ae2e47aeb0b2239746447">  280</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a> * <a class="code" href="classZero_1_1OptCnvtEtq.html#a9ed259c6149ae2e47aeb0b2239746447">opt</a>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="code" href="classZero_1_1OptCnvtEtq.html#a2f13be99b594ee3a48d40670988fb84f">  282</a></span>&#160;        <a class="code" href="classZero_1_1OptCnvtEtq.html#a628d7318e88e5a8b35eb4f4731d13c67">TablaEtiquetas</a> <a class="code" href="classZero_1_1OptCnvtEtq.html#a2f13be99b594ee3a48d40670988fb84f">etqs</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="code" href="classZero_1_1OptCnvtEtq.html#a7e8b24c0879129ede89364b356cc276f">  284</a></span>&#160;        <a class="code" href="classZero_1_1OptCnvtEtq.html#a7e8b24c0879129ede89364b356cc276f">OptCnvtEtq</a>(<a class="code" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> * l)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        {}</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="code" href="classZero_1_1OptCnvtEtq.html#a20c55a41af269632c91af2c9ab2e7bcf">  289</a></span>&#160;        <a class="code" href="classZero_1_1OptCnvtEtq.html#a20c55a41af269632c91af2c9ab2e7bcf">~OptCnvtEtq</a>() { <a class="code" href="classZero_1_1OptCnvtEtq.html#a9ed259c6149ae2e47aeb0b2239746447">opt</a> = NULL; }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OptCnvtEtq.html#a62b508fc375d8c848ccf7287eda1a58e">hazOpt</a>();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1OptCnvtEtq.html">OptCnvtEtq</a> *<a class="code" href="classZero_1_1OptCnvtEtq.html#a7e2796c54878ae5ddeb461d8bdf05cbb">getOpt</a>();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;};</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

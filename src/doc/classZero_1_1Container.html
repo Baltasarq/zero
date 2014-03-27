@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia de la Clase Zero::Container</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceZero.html">Zero</a></li><li class="navelem"><a class="el" href="classZero_1_1Container.html">Container</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-static-methods">Métodos privados estáticos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classZero_1_1Container-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Zero::Container</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="container_8h_source.html">container.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Zero::Container</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classZero_1_1Container.png" usemap="#Zero::Container_map" alt=""/>
+  <map id="Zero::Container_map" name="Zero::Container_map">
+<area href="classZero_1_1AlmacenObjetos.html" alt="Zero::AlmacenObjetos" shape="rect" coords="74,112,212,136"/>
+<area href="classZero_1_1Objeto.html" alt="Zero::Objeto" shape="rect" coords="74,56,212,80"/>
+<area href="classZero_1_1Observador.html" alt="Zero::Observador" shape="rect" coords="0,0,138,24"/>
+<area href="classZero_1_1Observable.html" alt="Zero::Observable" shape="rect" coords="148,0,286,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a09ba5ff35c147cf79c24368215fd8c0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a09ba5ff35c147cf79c24368215fd8c0f">Container</a> (<a class="el" href="classZero_1_1Container.html">Container</a> *pc, const std::string &amp;n, const std::string &amp;p)</td></tr>
+<tr class="separator:a09ba5ff35c147cf79c24368215fd8c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a3ae030f6ebfe0962d90dcdbc78175"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#aa5a3ae030f6ebfe0962d90dcdbc78175">Container</a> (<a class="el" href="classZero_1_1Container.html">Container</a> *pc, const std::string &amp;n, <a class="el" href="classZero_1_1Objeto.html">Objeto</a> *p)</td></tr>
+<tr class="separator:aa5a3ae030f6ebfe0962d90dcdbc78175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59a0fc038b881b3644b2ed94602df15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#ab59a0fc038b881b3644b2ed94602df15">~Container</a> ()</td></tr>
+<tr class="memdesc:ab59a0fc038b881b3644b2ed94602df15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Al eliminar el contenedor de memoria, guardarlo en disco.  <a href="#ab59a0fc038b881b3644b2ed94602df15">Más...</a><br/></td></tr>
+<tr class="separator:ab59a0fc038b881b3644b2ed94602df15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad274f483318210da92d605706e6a50ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">ListaMnemosObjeto</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#ad274f483318210da92d605706e6a50ee">salvar</a> (<a class="el" href="classZero_1_1Objeto.html#a80e61f19473d201b4244f78f205b4d3b">ListaRefExternas</a> &amp;)</td></tr>
+<tr class="separator:ad274f483318210da92d605706e6a50ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30218041dcf073be19d5abda534a5177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a30218041dcf073be19d5abda534a5177">guardaContenedor</a> ()</td></tr>
+<tr class="separator:a30218041dcf073be19d5abda534a5177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ebb0a8e0c4a02ccc9c33afd3860558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a27ebb0a8e0c4a02ccc9c33afd3860558">ponNoModificadoDesdeCarga</a> ()</td></tr>
+<tr class="separator:a27ebb0a8e0c4a02ccc9c33afd3860558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af255ad52ab3a306710aa20fc4869c093"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#af255ad52ab3a306710aa20fc4869c093">ponModificadoDesdeCarga</a> ()</td></tr>
+<tr class="memdesc:af255ad52ab3a306710aa20fc4869c093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica que ha sido modificado.  <a href="#af255ad52ab3a306710aa20fc4869c093">Más...</a><br/></td></tr>
+<tr class="separator:af255ad52ab3a306710aa20fc4869c093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1AlmacenObjetos"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1AlmacenObjetos')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1AlmacenObjetos.html">Zero::AlmacenObjetos</a></td></tr>
+<tr class="memitem:a7023021c856770f4e2fef97099694c03 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">AlmacenObjetos</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, const std::string &amp;n, const std::string &amp;p)</td></tr>
+<tr class="separator:a7023021c856770f4e2fef97099694c03 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260346541abd21a0ca5f762b87611376 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a260346541abd21a0ca5f762b87611376">AlmacenObjetos</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, const std::string &amp;n, <a class="el" href="classZero_1_1Objeto.html">Objeto</a> *p)</td></tr>
+<tr class="separator:a260346541abd21a0ca5f762b87611376 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8b1aeaeac97249e684c82731ba8e40 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a8e8b1aeaeac97249e684c82731ba8e40">~AlmacenObjetos</a> ()</td></tr>
+<tr class="separator:a8e8b1aeaeac97249e684c82731ba8e40 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7981950a431de96726a8bd06bb3429d inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#ac7981950a431de96726a8bd06bb3429d">crea</a> (std::string n=NULL, <a class="el" href="classZero_1_1Objeto.html">Objeto</a> *p=NULL)</td></tr>
+<tr class="separator:ac7981950a431de96726a8bd06bb3429d inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49de7cf766194a971e91d176281329b0 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a49de7cf766194a971e91d176281329b0">inserta</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *)</td></tr>
+<tr class="separator:a49de7cf766194a971e91d176281329b0 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7491edea9da0076cbbaacd04850350fc inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a7491edea9da0076cbbaacd04850350fc">elimina</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *)</td></tr>
+<tr class="separator:a7491edea9da0076cbbaacd04850350fc inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6352717669925bcd8edc7c31a9432f3f inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a6352717669925bcd8edc7c31a9432f3f">eliminaTodos</a> ()</td></tr>
+<tr class="separator:a6352717669925bcd8edc7c31a9432f3f inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e61b3df2ce72530ea0ab0aabc50e7e inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a74e61b3df2ce72530ea0ab0aabc50e7e">busca</a> (const std::string &amp;x)</td></tr>
+<tr class="separator:a74e61b3df2ce72530ea0ab0aabc50e7e inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c01aa253aad12007646c66b2edc3b5c inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a8c01aa253aad12007646c66b2edc3b5c">getRuta</a> () const </td></tr>
+<tr class="separator:a8c01aa253aad12007646c66b2edc3b5c inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab34027f15fa2a6252f7ac8e1d65ec4f inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#aab34027f15fa2a6252f7ac8e1d65ec4f">actualizar</a> (<a class="el" href="classZero_1_1Observable.html">Observable</a> *, <a class="el" href="classZero_1_1Observador.html#a3ba845503dd02bde5117f7c6b515439b">Observador::TipoCambio</a> t)</td></tr>
+<tr class="separator:aab34027f15fa2a6252f7ac8e1d65ec4f inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce71e6b25eb379defe1521144e6fd83 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a6ce71e6b25eb379defe1521144e6fd83">insertando</a> (<a class="el" href="classZero_1_1Atributo.html">Atributo</a> *)</td></tr>
+<tr class="memdesc:a6ce71e6b25eb379defe1521144e6fd83 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="mdescLeft">&#160;</td><td class="mdescRight">�Insertando un contenedor?  <a href="#a6ce71e6b25eb379defe1521144e6fd83">Más...</a><br/></td></tr>
+<tr class="separator:a6ce71e6b25eb379defe1521144e6fd83 inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0b6cf9bedbe97e1484ea942fd0ed2a inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#aaa0b6cf9bedbe97e1484ea942fd0ed2a">esAlcanzable</a> ()</td></tr>
+<tr class="separator:aaa0b6cf9bedbe97e1484ea942fd0ed2a inherit pub_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Objeto"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Objeto')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Objeto.html">Zero::Objeto</a></td></tr>
+<tr class="memitem:aed5d231ff9cd50306bb698d6dccce875 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#aed5d231ff9cd50306bb698d6dccce875">Objeto</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, const std::string &amp;n, const std::string &amp;p)</td></tr>
+<tr class="separator:aed5d231ff9cd50306bb698d6dccce875 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e8b8c4c3b7318ee0a9df2ddb0c68f0 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ac3e8b8c4c3b7318ee0a9df2ddb0c68f0">Objeto</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, const std::string &amp;n, <a class="el" href="classZero_1_1Objeto.html">Objeto</a> *p)</td></tr>
+<tr class="separator:ac3e8b8c4c3b7318ee0a9df2ddb0c68f0 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6778bf357eb51b4a2306c577718f8993 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a6778bf357eb51b4a2306c577718f8993">~Objeto</a> ()</td></tr>
+<tr class="separator:a6778bf357eb51b4a2306c577718f8993 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8ee6908b437ea9d803633e404061b9 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a8c8ee6908b437ea9d803633e404061b9">estaVivo</a> () const </td></tr>
+<tr class="separator:a8c8ee6908b437ea9d803633e404061b9 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2872c35f4f52d5a5f5f8f988354e0d inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a9a2872c35f4f52d5a5f5f8f988354e0d">getNombreCompleto</a> ()</td></tr>
+<tr class="separator:a9a2872c35f4f52d5a5f5f8f988354e0d inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc91dbf4f4c81320e4dc05219c72bf2 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Atributo.html">Atributo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a5dc91dbf4f4c81320e4dc05219c72bf2">getAtrObjetoPadre</a> () const </td></tr>
+<tr class="separator:a5dc91dbf4f4c81320e4dc05219c72bf2 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a63648d73341665596f3f13a0ab01a inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a23a63648d73341665596f3f13a0ab01a">getNombre</a> () const </td></tr>
+<tr class="separator:a23a63648d73341665596f3f13a0ab01a inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c50f92fc47317587789bccbfa7fbe9d inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a6c50f92fc47317587789bccbfa7fbe9d">getPerteneceA</a> () const </td></tr>
+<tr class="separator:a6c50f92fc47317587789bccbfa7fbe9d inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafcaedc2bacc3465e945ce64aaa0b689 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#aafcaedc2bacc3465e945ce64aaa0b689">asignarA</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *c)</td></tr>
+<tr class="separator:aafcaedc2bacc3465e945ce64aaa0b689 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6422d002e0b8a3b59a95ede110dea0b inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ab6422d002e0b8a3b59a95ede110dea0b">decrementaReferencias</a> (bool borrable=true)</td></tr>
+<tr class="separator:ab6422d002e0b8a3b59a95ede110dea0b inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c6a401e87efaf80f6c4aabc80f28bb inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ac4c6a401e87efaf80f6c4aabc80f28bb">incrementaReferencias</a> ()</td></tr>
+<tr class="separator:ac4c6a401e87efaf80f6c4aabc80f28bb inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23054ef095cf3b8ec690afe60b303697 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a23054ef095cf3b8ec690afe60b303697">getReferenceCount</a> () const </td></tr>
+<tr class="separator:a23054ef095cf3b8ec690afe60b303697 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871a1564b9a886400e83fd080610d9ed inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a871a1564b9a886400e83fd080610d9ed">getProps</a> ()</td></tr>
+<tr class="separator:a871a1564b9a886400e83fd080610d9ed inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04add6fe23fbaa4cadfbe28d87571d69 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a04add6fe23fbaa4cadfbe28d87571d69">masPropiedades</a> (<a class="el" href="classZero_1_1NMMta.html">NMMta</a> *meta)</td></tr>
+<tr class="separator:a04add6fe23fbaa4cadfbe28d87571d69 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d4b55be77487023152eac228b00cba inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ad6d4b55be77487023152eac228b00cba">tieneProps</a> ()</td></tr>
+<tr class="separator:ad6d4b55be77487023152eac228b00cba inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6f5f8f8f71e9decf02452a6f0cb6a8 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#aeb6f5f8f8f71e9decf02452a6f0cb6a8">getMetHerenciaDinamica</a> ()</td></tr>
+<tr class="separator:aeb6f5f8f8f71e9decf02452a6f0cb6a8 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e574f944c0adf7058e2d5aa2340562f inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a9e574f944c0adf7058e2d5aa2340562f">procHerenciaDinamica</a> ()</td></tr>
+<tr class="separator:a9e574f944c0adf7058e2d5aa2340562f inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75ab7bfff64981c09b9deacfa6edd7e inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ac75ab7bfff64981c09b9deacfa6edd7e">actualizar</a> (<a class="el" href="classZero_1_1Observable.html">Observable</a> *rmt, <a class="el" href="classZero_1_1Observador.html#a3ba845503dd02bde5117f7c6b515439b">TipoCambio</a> t)</td></tr>
+<tr class="separator:ac75ab7bfff64981c09b9deacfa6edd7e inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf80659f74a2a07bece38ec55fc2f7e inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#abdf80659f74a2a07bece38ec55fc2f7e">copia</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *, const std::string &amp;, bool <a class="el" href="classZero_1_1Objeto.html#a1fce9d4404ccf0dd4627ae0b0042b550">copiaSistema</a>=false)</td></tr>
+<tr class="separator:abdf80659f74a2a07bece38ec55fc2f7e inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fce9d4404ccf0dd4627ae0b0042b550 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a1fce9d4404ccf0dd4627ae0b0042b550">copiaSistema</a> (const std::string &amp;)</td></tr>
+<tr class="separator:a1fce9d4404ccf0dd4627ae0b0042b550 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac196fe7f9cc71148b8629dc8c7ffca42 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ac196fe7f9cc71148b8629dc8c7ffca42">preparaObjetoEspecial</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *org, <a class="el" href="classZero_1_1Objeto.html">Objeto</a> *dest)</td></tr>
+<tr class="memdesc:ac196fe7f9cc71148b8629dc8c7ffca42 inherit pub_methods_classZero_1_1Objeto"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si es objeto especial, lo prepara para tener valor nativo.  <a href="#ac196fe7f9cc71148b8629dc8c7ffca42">Más...</a><br/></td></tr>
+<tr class="separator:ac196fe7f9cc71148b8629dc8c7ffca42 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a132261c4e4fdc5d7aab8723f84895e70 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a132261c4e4fdc5d7aab8723f84895e70">esDescendienteDe</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *, const std::string &amp;)</td></tr>
+<tr class="separator:a132261c4e4fdc5d7aab8723f84895e70 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349132e85dacd52e977d5c4819b4fc43 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a349132e85dacd52e977d5c4819b4fc43">esDescendienteDe</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *)</td></tr>
+<tr class="separator:a349132e85dacd52e977d5c4819b4fc43 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abdf12af8714fc32efd0376082cdbf0 inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a3abdf12af8714fc32efd0376082cdbf0">fueModificadoDesdeCarga</a> () const </td></tr>
+<tr class="memdesc:a3abdf12af8714fc32efd0376082cdbf0 inherit pub_methods_classZero_1_1Objeto"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve si el objeto fue modificado desde su carga.  <a href="#a3abdf12af8714fc32efd0376082cdbf0">Más...</a><br/></td></tr>
+<tr class="separator:a3abdf12af8714fc32efd0376082cdbf0 inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14275edb30c373e0b33e9fa17d75f3e inherit pub_methods_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ac14275edb30c373e0b33e9fa17d75f3e">eliminarMnemosObjeto</a> ()</td></tr>
+<tr class="separator:ac14275edb30c373e0b33e9fa17d75f3e inherit pub_methods_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Observador"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Observador')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Observador.html">Zero::Observador</a></td></tr>
+<tr class="memitem:a0bcaa111de56362b2218592343208fed inherit pub_methods_classZero_1_1Observador"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observador.html#a0bcaa111de56362b2218592343208fed">Observador</a> ()</td></tr>
+<tr class="separator:a0bcaa111de56362b2218592343208fed inherit pub_methods_classZero_1_1Observador"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8400886bad7b36f9d0f9963b77eb5191 inherit pub_methods_classZero_1_1Observador"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observador.html#a8400886bad7b36f9d0f9963b77eb5191">~Observador</a> ()</td></tr>
+<tr class="separator:a8400886bad7b36f9d0f9963b77eb5191 inherit pub_methods_classZero_1_1Observador"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a706e14180dab5f08f758923e0d5115d8 inherit pub_methods_classZero_1_1Observador"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observador.html#a706e14180dab5f08f758923e0d5115d8">observar</a> (<a class="el" href="classZero_1_1Observable.html">Observable</a> *)</td></tr>
+<tr class="separator:a706e14180dab5f08f758923e0d5115d8 inherit pub_methods_classZero_1_1Observador"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d882dfd2f8e3ce0b855a88db1de8d69 inherit pub_methods_classZero_1_1Observador"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observador.html#a6d882dfd2f8e3ce0b855a88db1de8d69">dejarDeObservar</a> (<a class="el" href="classZero_1_1Observable.html">Observable</a> *)</td></tr>
+<tr class="separator:a6d882dfd2f8e3ce0b855a88db1de8d69 inherit pub_methods_classZero_1_1Observador"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86cb34e1e90747f66223fde11b9b3bc inherit pub_methods_classZero_1_1Observador"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observador.html#ae86cb34e1e90747f66223fde11b9b3bc">dejarDeObservarTodos</a> ()</td></tr>
+<tr class="separator:ae86cb34e1e90747f66223fde11b9b3bc inherit pub_methods_classZero_1_1Observador"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Observable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Observable')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Observable.html">Zero::Observable</a></td></tr>
+<tr class="memitem:ae043e0db09e11cb9565532bbf12fa0ed inherit pub_methods_classZero_1_1Observable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observable.html#ae043e0db09e11cb9565532bbf12fa0ed">~Observable</a> ()</td></tr>
+<tr class="separator:ae043e0db09e11cb9565532bbf12fa0ed inherit pub_methods_classZero_1_1Observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685f97bf836c87d721ee4c79508c0bef inherit pub_methods_classZero_1_1Observable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observable.html#a685f97bf836c87d721ee4c79508c0bef">notificar</a> (<a class="el" href="classZero_1_1Observador.html#a3ba845503dd02bde5117f7c6b515439b">Observador::TipoCambio</a>=<a class="el" href="classZero_1_1Observador.html#a3ba845503dd02bde5117f7c6b515439baa63aa0ca3755b707940bfeb8a6d36b8d">Observador::CambioEnElemento</a>)</td></tr>
+<tr class="separator:a685f97bf836c87d721ee4c79508c0bef inherit pub_methods_classZero_1_1Observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a0a58b98bb594a339b32df4d7fc7f8dd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a0a58b98bb594a339b32df4d7fc7f8dd8">fueProcesado</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *, const std::string &amp;)</td></tr>
+<tr class="separator:a0a58b98bb594a339b32df4d7fc7f8dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Métodos privados estáticos</h2></td></tr>
+<tr class="memitem:a3b05955a67004406e62fbc159bb94700"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a3b05955a67004406e62fbc159bb94700">cambiarNombreObjetoEnMnemos</a> (<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *, <a class="el" href="classZero_1_1Atributo.html">Atributo</a> *, <a class="el" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">Objeto::ListaMnemosObjeto</a> *)</td></tr>
+<tr class="separator:a3b05955a67004406e62fbc159bb94700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a5d108594bbf56239c2e24e6e088d0adc"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classZero_1_1Objeto.html">Objeto</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">objsProcsPtr</a></td></tr>
+<tr class="separator:a5d108594bbf56239c2e24e6e088d0adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14cbf53bc5518f1224f2f0e85a3a7ddc"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">objsProcsStr</a></td></tr>
+<tr class="separator:a14cbf53bc5518f1224f2f0e85a3a7ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_types_classZero_1_1Objeto"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classZero_1_1Objeto')"><img src="closed.png" alt="-"/>&#160;Tipos públicos heredados desde <a class="el" href="classZero_1_1Objeto.html">Zero::Objeto</a></td></tr>
+<tr class="memitem:a21fffc02dc20866e631df7d678eece99 inherit pub_types_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classZero_1_1AsocNombrePuntero.html">AsocNombrePuntero</a><br class="typebreak"/>
+&lt; <a class="el" href="classZero_1_1Atributo.html">Atributo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a21fffc02dc20866e631df7d678eece99">ListaAtributos</a></td></tr>
+<tr class="separator:a21fffc02dc20866e631df7d678eece99 inherit pub_types_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33a90843ac4bb2d674c4ece87c5b775 inherit pub_types_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classZero_1_1AsocNombrePuntero.html">AsocNombrePuntero</a>&lt; <a class="el" href="classZero_1_1Metodo.html">Metodo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ad33a90843ac4bb2d674c4ece87c5b775">ListaMetodos</a></td></tr>
+<tr class="separator:ad33a90843ac4bb2d674c4ece87c5b775 inherit pub_types_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94691c9c2fabc8cce8cdb7e0fec4af9a inherit pub_types_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Compilador::ListaMnemos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">ListaMnemosObjeto</a></td></tr>
+<tr class="separator:a94691c9c2fabc8cce8cdb7e0fec4af9a inherit pub_types_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e61f19473d201b4244f78f205b4d3b inherit pub_types_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="classZero_1_1Objeto.html">Objeto</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a80e61f19473d201b4244f78f205b4d3b">ListaRefExternas</a></td></tr>
+<tr class="separator:a80e61f19473d201b4244f78f205b4d3b inherit pub_types_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classZero_1_1AlmacenObjetos"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classZero_1_1AlmacenObjetos')"><img src="closed.png" alt="-"/>&#160;Métodos públicos estáticos heredados desde <a class="el" href="classZero_1_1AlmacenObjetos.html">Zero::AlmacenObjetos</a></td></tr>
+<tr class="memitem:a7ec6589e9635f9e5359b7f0544189205 inherit pub_static_methods_classZero_1_1AlmacenObjetos"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1AlmacenObjetos.html#a7ec6589e9635f9e5359b7f0544189205">nuevo</a> (<a class="el" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *, const std::string &amp;)</td></tr>
+<tr class="separator:a7ec6589e9635f9e5359b7f0544189205 inherit pub_static_methods_classZero_1_1AlmacenObjetos"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classZero_1_1Objeto"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classZero_1_1Objeto')"><img src="closed.png" alt="-"/>&#160;Atributos públicos heredados desde <a class="el" href="classZero_1_1Objeto.html">Zero::Objeto</a></td></tr>
+<tr class="memitem:a456b1901a49abdc2cf4fa55da6d181c6 inherit pub_attribs_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto_1_1AccesoListaAtributos.html">AccesoListaAtributos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a456b1901a49abdc2cf4fa55da6d181c6">lAtrs</a></td></tr>
+<tr class="separator:a456b1901a49abdc2cf4fa55da6d181c6 inherit pub_attribs_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9a4e3474dfe15214bce7a6d9bbb14a inherit pub_attribs_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto_1_1AccesoListaMetodos.html">AccesoListaMetodos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#afe9a4e3474dfe15214bce7a6d9bbb14a">lMets</a></td></tr>
+<tr class="separator:afe9a4e3474dfe15214bce7a6d9bbb14a inherit pub_attribs_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_classZero_1_1Objeto"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classZero_1_1Objeto')"><img src="closed.png" alt="-"/>&#160;Atributos públicos estáticos heredados desde <a class="el" href="classZero_1_1Objeto.html">Zero::Objeto</a></td></tr>
+<tr class="memitem:a7a7002c8f026f18f7d76f44de24b89cc inherit pub_static_attribs_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a7a7002c8f026f18f7d76f44de24b89cc">SYSTEM_COPY</a> = true</td></tr>
+<tr class="separator:a7a7002c8f026f18f7d76f44de24b89cc inherit pub_static_attribs_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae022c39aa44eec9ad69efe991b2e9a70 inherit pub_static_attribs_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#ae022c39aa44eec9ad69efe991b2e9a70">NOREF_NOBORRAR</a> = false</td></tr>
+<tr class="separator:ae022c39aa44eec9ad69efe991b2e9a70 inherit pub_static_attribs_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classZero_1_1Observable"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classZero_1_1Observable')"><img src="closed.png" alt="-"/>&#160;Métodos protegidos heredados desde <a class="el" href="classZero_1_1Observable.html">Zero::Observable</a></td></tr>
+<tr class="memitem:aa5b3d6cb77dbbf805454485987328b06 inherit pro_methods_classZero_1_1Observable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observable.html#aa5b3d6cb77dbbf805454485987328b06">Observable</a> ()</td></tr>
+<tr class="separator:aa5b3d6cb77dbbf805454485987328b06 inherit pro_methods_classZero_1_1Observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d180e91711cb3691bd048415b9e03a7 inherit pro_methods_classZero_1_1Observable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observable.html#a7d180e91711cb3691bd048415b9e03a7">masObservadores</a> (<a class="el" href="classZero_1_1Observador.html">Observador</a> *x)</td></tr>
+<tr class="separator:a7d180e91711cb3691bd048415b9e03a7 inherit pro_methods_classZero_1_1Observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f6e2e20d79316a2b8a6f8b5437e2e1 inherit pro_methods_classZero_1_1Observable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Observable.html#ab2f6e2e20d79316a2b8a6f8b5437e2e1">eliminarObservador</a> (<a class="el" href="classZero_1_1Observador.html">Observador</a> *)</td></tr>
+<tr class="separator:ab2f6e2e20d79316a2b8a6f8b5437e2e1 inherit pro_methods_classZero_1_1Observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classZero_1_1Objeto"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classZero_1_1Objeto')"><img src="closed.png" alt="-"/>&#160;Atributos protegidos heredados desde <a class="el" href="classZero_1_1Objeto.html">Zero::Objeto</a></td></tr>
+<tr class="memitem:a44935d8311d495e0db06209a6ffa7b73 inherit pro_attribs_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">ListaMnemosObjeto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a></td></tr>
+<tr class="separator:a44935d8311d495e0db06209a6ffa7b73 inherit pro_attribs_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bcc257b58e03bd4586444b7877b7aef inherit pro_attribs_classZero_1_1Objeto"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Objeto.html#a80e61f19473d201b4244f78f205b4d3b">ListaRefExternas</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Objeto.html#a7bcc257b58e03bd4586444b7877b7aef">refsExtObjeto</a></td></tr>
+<tr class="separator:a7bcc257b58e03bd4586444b7877b7aef inherit pro_attribs_classZero_1_1Objeto"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="container_8h_source.html#l00065">65</a> del archivo <a class="el" href="container_8h_source.html">container.h</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a09ba5ff35c147cf79c24368215fd8c0f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Container::Container </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Container.html">Container</a> *&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00274">274</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="runtime_8h_source.html#l00492">Zero::Runtime::conim</a> y <a class="el" href="conim_8cpp_source.html#l00147">Zero::Conim::insertaContainer()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    : <a class="code" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">AlmacenObjetos</a>(pc, n, p)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="classZero_1_1Runtime.html#a50718be7088253e66df141132bbf1000">Runtime::conim</a>-&gt;<a class="code" href="classZero_1_1Conim.html#ab65dd0bde4ed44e7cac4e1f26a88051b">insertaContainer</a>( <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa5a3ae030f6ebfe0962d90dcdbc78175"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Container::Container </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Container.html">Container</a> *&#160;</td>
+          <td class="paramname"><em>pc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00280">280</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="runtime_8h_source.html#l00492">Zero::Runtime::conim</a> y <a class="el" href="conim_8cpp_source.html#l00147">Zero::Conim::insertaContainer()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    : <a class="code" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">AlmacenObjetos</a>(pc, n, p)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="classZero_1_1Runtime.html#a50718be7088253e66df141132bbf1000">Runtime::conim</a>-&gt;<a class="code" href="classZero_1_1Conim.html#ab65dd0bde4ed44e7cac4e1f26a88051b">insertaContainer</a>( <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab59a0fc038b881b3644b2ed94602df15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Container::~Container </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Al eliminar el contenedor de memoria, guardarlo en disco. </p>
+
+<p>Definición en la línea <a class="el" href="container_8h_source.html#l00081">81</a> del archivo <a class="el" href="container_8h_source.html">container.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="container_8cpp_source.html#l00287">guardaContenedor()</a>, <a class="el" href="objeto_8h_source.html#l00157">Zero::Objeto::mnemosObjeto</a> y <a class="el" href="objeto_8h_source.html#l00158">Zero::Objeto::refsExtObjeto</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        { <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.clear(); <a class="code" href="classZero_1_1Objeto.html#a7bcc257b58e03bd4586444b7877b7aef">refsExtObjeto</a>.clear(); <a class="code" href="classZero_1_1Container.html#a30218041dcf073be19d5abda534a5177">guardaContenedor</a>(); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a3b05955a67004406e62fbc159bb94700"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Container::cambiarNombreObjetoEnMnemos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Atributo.html">Atributo</a> *&#160;</td>
+          <td class="paramname"><em>atr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">Objeto::ListaMnemosObjeto</a> *&#160;</td>
+          <td class="paramname"><em>lmo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00298">298</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="coleccion_8h_source.html#l00028">Zero::ParNombreObjeto&lt; T &gt;::getNombre()</a> y <a class="el" href="objeto_8h_source.html#l00163">Zero::Objeto::nombre</a>.</p>
+
+<p>Referenciado por <a class="el" href="container_8cpp_source.html#l00359">salvar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    std::string nomPadre;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> ( obj == NULL ) {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;guardando container: cambiando nombre sin objeto de&quot;</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        <span class="stringliteral">&quot; referencia&quot;</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        );</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> ( atr == NULL ) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;guardando container: cambiando nombre sin atributo&quot;</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        <span class="stringliteral">&quot; de referencia&quot;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        );</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> ( lmo == NULL ) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;guardando container: cambiando nombre sin lista &quot;</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        <span class="stringliteral">&quot;de mnemos de referencia&quot;</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        );</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span> ( obj-&gt;nombre != atr-&gt;getNombre() ) {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span> ( dynamic_cast&lt;NMObj *&gt;( (*lmo)[ 0 ] ) != NULL ) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="comment">// Obtener el nombre del padre</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            nomPadre = ( (NMObj *) (*lmo)[ 0 ] )-&gt;getNomPadre();</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keyword">delete</span> (*lmo)[ 0 ];</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="comment">// Crear el nuevo mnemo de Obj</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            (*lmo)[ 0 ] = <span class="keyword">new</span>(std::nothrow)</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    NMObj( atr-&gt;getNombre(), nomPadre )</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            ;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordflow">if</span> ( (*lmo)[ 0 ] == NULL ) {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;guardando container&quot;</span> );</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;guardando container, primer mnemo no es OBJ&quot;</span> );</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0a58b98bb594a339b32df4d7fc7f8dd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::Container::fueProcesado </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nombre</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00343">343</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="container_8h_source.html#l00067">objsProcsPtr</a> y <a class="el" href="container_8h_source.html#l00068">objsProcsStr</a>.</p>
+
+<p>Referenciado por <a class="el" href="container_8cpp_source.html#l00359">salvar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordtype">bool</span> toret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">objsProcsStr</a>.find( <a class="code" href="classZero_1_1Objeto.html#a1edb54dc4ed0ca0acdb9c7cd3444a8c4">nombre</a> ) != <a class="code" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">objsProcsStr</a>.end() )</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            toret = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">else</span>    <a class="code" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">objsProcsStr</a>.insert( <a class="code" href="classZero_1_1Objeto.html#a1edb54dc4ed0ca0acdb9c7cd3444a8c4">nombre</a> );</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">objsProcsPtr</a>.find( obj ) != <a class="code" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">objsProcsPtr</a>.end() )</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            toret = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">else</span>    <a class="code" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">objsProcsPtr</a>.insert( obj );</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a30218041dcf073be19d5abda534a5177"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Container::guardaContenedor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementa <a class="el" href="classZero_1_1AlmacenObjetos.html#a67a88bdcefe9732543d644b3bfbc9fc6">Zero::AlmacenObjetos</a>.</p>
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00287">287</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="persistentstore_8cpp_source.html#l00028">Zero::PersistentStore::guardaContenedor()</a> y <a class="el" href="persistentstore_8cpp_source.html#l00022">Zero::PersistentStore::ps()</a>.</p>
+
+<p>Referenciado por <a class="el" href="container_8h_source.html#l00081">~Container()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    PersistentStore *ps = <a class="code" href="classZero_1_1PersistentStore.html#a578cf0f54773c9395af6b0846423ee34">PersistentStore::ps</a>();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> ( ps != NULL )</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="comment">// Guarda contenedor (atn. excepcion)</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                ps-&gt;guardaContenedor( <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">else</span>    <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;Guardando contenedor sin PS&quot;</span> );</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af255ad52ab3a306710aa20fc4869c093"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Container::ponModificadoDesdeCarga </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indica que ha sido modificado. </p>
+
+<p>Reimplementado de <a class="el" href="classZero_1_1Objeto.html#a1b2d11fbb3eaec893811b2c06ab7f2c7">Zero::Objeto</a>.</p>
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00446">446</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="runtime_8h_source.html#l00492">Zero::Runtime::conim</a>, <a class="el" href="conim_8cpp_source.html#l00224">Zero::Conim::ponDesSincronizado()</a> y <a class="el" href="objeto_8h_source.html#l00267">Zero::Objeto::ponModificadoDesdeCarga()</a>.</p>
+
+<p>Referenciado por <a class="el" href="runtime_8cpp_source.html#l01645">Zero::Runtime::iniciarRuntimeConPS()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;{</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <a class="code" href="classZero_1_1Objeto.html#a1b2d11fbb3eaec893811b2c06ab7f2c7" title="Al crear container, indicar grabar.">Objeto::ponModificadoDesdeCarga</a>();</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <a class="code" href="classZero_1_1Runtime.html#a50718be7088253e66df141132bbf1000">Runtime::conim</a>-&gt;<a class="code" href="classZero_1_1Conim.html#a7988e1b7131a02a276a0d0f5c692ce00">ponDesSincronizado</a>( <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a27ebb0a8e0c4a02ccc9c33afd3860558"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Container::ponNoModificadoDesdeCarga </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Cambia el indicador de modificado. S�lo puede ser llamado desde el cargador de objetos (al terminar la carga), desde el propio objeto (despu�s de <a class="el" href="classZero_1_1Container.html#ad274f483318210da92d605706e6a50ee">salvar()</a> ) y desde el almacenamiento persistente (al terminar el guardado). Cualquier otra llamada es un error. </p>
+
+<p>Reimplementado de <a class="el" href="classZero_1_1Objeto.html#a6674d68118634715cdcd227add843fc6">Zero::Objeto</a>.</p>
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00439">439</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="runtime_8h_source.html#l00492">Zero::Runtime::conim</a>, <a class="el" href="objeto_8h_source.html#l00263">Zero::Objeto::ponNoModificadoDesdeCarga()</a> y <a class="el" href="conim_8cpp_source.html#l00218">Zero::Conim::ponSincronizado()</a>.</p>
+
+<p>Referenciado por <a class="el" href="persistentstore_8cpp_source.html#l00102">Zero::PersistentStoreEnDisco::cargaContenedor()</a> y <a class="el" href="persistentstore_8cpp_source.html#l00254">Zero::PersistentStoreEnDisco::guardaContenedor()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;{</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <a class="code" href="classZero_1_1Objeto.html#a6674d68118634715cdcd227add843fc6">Objeto::ponNoModificadoDesdeCarga</a>();</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <a class="code" href="classZero_1_1Runtime.html#a50718be7088253e66df141132bbf1000">Runtime::conim</a>-&gt;<a class="code" href="classZero_1_1Conim.html#aec1a3223a7b1b53082fef470d2f617e5">ponSincronizado</a>( <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad274f483318210da92d605706e6a50ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">Objeto::ListaMnemosObjeto</a> &amp; Zero::Container::salvar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Objeto.html#a80e61f19473d201b4244f78f205b4d3b">ListaRefExternas</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>genera los mnemot�cnicos necesarios para guardar una copia exacta del objeto en disco </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>rellenar con las referencias externas desde este objeto </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una lista de mnemot�cnicos equivalentes a todo el objeto </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classZero_1_1AlmacenObjetos.html#a63a0d5a11edf4d4a1cf6213540fbdcbb">Zero::AlmacenObjetos</a>.</p>
+
+<p>Definición en la línea <a class="el" href="container_8cpp_source.html#l00359">359</a> del archivo <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="container_8cpp_source.html#l00298">cambiarNombreObjetoEnMnemos()</a>, <a class="el" href="persistentstore_8h_source.html#l00033">Zero::PersistentStore::debeSerGuardado()</a>, <a class="el" href="container_8cpp_source.html#l00343">fueProcesado()</a>, <a class="el" href="objeto_8h_source.html#l00101">Zero::Objeto::AccesoListaAtributos::getElementoNumero()</a>, <a class="el" href="coleccion_8h_source.html#l00028">Zero::ParNombreObjeto&lt; T &gt;::getNombre()</a>, <a class="el" href="objeto_8h_source.html#l00097">Zero::Objeto::AccesoListaAtributos::getNumero()</a>, <a class="el" href="referencia_8cpp_source.html#l00462">Zero::Referencia::getObjeto()</a>, <a class="el" href="objeto_8h_source.html#l00202">Zero::Objeto::lAtrs</a>, <a class="el" href="objeto_8h_source.html#l00157">Zero::Objeto::mnemosObjeto</a>, <a class="el" href="container_8h_source.html#l00067">objsProcsPtr</a>, <a class="el" href="container_8h_source.html#l00068">objsProcsStr</a>, <a class="el" href="objeto_8h_source.html#l00158">Zero::Objeto::refsExtObjeto</a>, <a class="el" href="objeto_8cpp_source.html#l01134">Zero::Objeto::salvar()</a> y <a class="el" href="referencia_8h_source.html#l00100">Zero::Referencia::swizzled()</a>.</p>
+
+<p>Referenciado por <a class="el" href="persistentstore_8cpp_source.html#l00028">Zero::PersistentStore::guardaContenedor()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// Inicializar</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">objsProcsStr</a>.clear();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">objsProcsPtr</a>.clear();</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">Objeto::ListaMnemosObjeto</a> *lmo;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    Atributo *atr;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <a class="code" href="classZero_1_1Objeto.html#aed5d231ff9cd50306bb698d6dccce875">Objeto</a> *obj;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numObjsEnCont = <a class="code" href="classZero_1_1Objeto.html#a456b1901a49abdc2cf4fa55da6d181c6">lAtrs</a>.<a class="code" href="classZero_1_1Objeto_1_1AccesoListaAtributos.html#a8b46210ddc06d89355e588cc426ee3a2">getNumero</a>();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1PersistentStore.html#a1fada81ccbb730509e42a16fc37add6f">PersistentStore::debeSerGuardado</a>( <span class="keyword">this</span> ) ) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="comment">// Limpiar</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.clear();</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <a class="code" href="classZero_1_1Objeto.html#a7bcc257b58e03bd4586444b7877b7aef">refsExtObjeto</a>.clear();</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; numObjsEnCont; ++i)</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            atr = <a class="code" href="classZero_1_1Objeto.html#a456b1901a49abdc2cf4fa55da6d181c6">lAtrs</a>.<a class="code" href="classZero_1_1Objeto_1_1AccesoListaAtributos.html#a5c8640d40c96eb8ab4bdc69ebdbf2abe">getElementoNumero</a>( i );</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="comment">// �Es el atributo parent?, �Es un objeto del contenedor?</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="keywordflow">if</span> ( dynamic_cast&lt;AtributoParent *&gt;( atr ) != NULL</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;             || !( atr-&gt;swizzled() ) )</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            }</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="comment">// �Ha sido procesado ya?</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            obj = atr-&gt;<a class="code" href="classZero_1_1Referencia.html#a803308aeb195a897cfa4848902060fd4">getObjeto</a>();</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Container.html#a0a58b98bb594a339b32df4d7fc7f8dd8">fueProcesado</a>( obj, atr-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keywordflow">if</span> ( dynamic_cast&lt;ObjetoSistema *&gt;( obj ) == NULL</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;              &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">AlmacenObjetos</a> *<span class="keyword">&gt;</span>( obj ) == NULL )</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="comment">// Obtener los opcodes</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                lmo = &amp;( obj-&gt;salvar( refExt ) );</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                <span class="comment">// Darle el nombre adecuado</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                <a class="code" href="classZero_1_1Container.html#a3b05955a67004406e62fbc159bb94700">cambiarNombreObjetoEnMnemos</a>( obj, atr, lmo );</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="comment">// Insertar los opcodes en la lista de opcodes a guardar</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.insert(</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                        <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.end(),</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                        lmo-&gt;begin(),</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                        lmo-&gt;end()</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                );</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="comment">// Conseguir las referencias &quot;externas&quot; (i.e., en el Exe)</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        Objeto::ListaRefExternas::const_iterator it = refExt.begin();</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">for</span>(; it != refExt.end(); ++it )</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="comment">// �Ha sido procesado ya?</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Container.html#a0a58b98bb594a339b32df4d7fc7f8dd8">fueProcesado</a>( *it, (*it)-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            lmo = &amp;( (*it)-&gt;salvar( refExt ) );</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.insert(</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                    <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.end(),</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    lmo-&gt;begin(),</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                    lmo-&gt;end()</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            );</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        }</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a5d108594bbf56239c2e24e6e088d0adc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt;<a class="el" href="classZero_1_1Objeto.html">Objeto</a> *&gt; Zero::Container::objsProcsPtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="container_8h_source.html#l00067">67</a> del archivo <a class="el" href="container_8h_source.html">container.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="container_8cpp_source.html#l00343">fueProcesado()</a> y <a class="el" href="container_8cpp_source.html#l00359">salvar()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14cbf53bc5518f1224f2f0e85a3a7ddc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt;std::string&gt; Zero::Container::objsProcsStr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="container_8h_source.html#l00068">68</a> del archivo <a class="el" href="container_8h_source.html">container.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="container_8cpp_source.html#l00343">fueProcesado()</a> y <a class="el" href="container_8cpp_source.html#l00359">salvar()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="container_8h_source.html">container.h</a></li>
+<li><a class="el" href="container_8cpp_source.html">container.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

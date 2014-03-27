@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente container.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">container.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="container_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// container.h</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="preprocessor">#ifndef CONTAINER_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONTAINER_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coleccion_8h.html">coleccion.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objeto_8h.html">objeto.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>Zero {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// -------------------------------------------------------------- AlmacenObjetos</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classZero_1_1AlmacenObjetos.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Objeto.html">Objeto</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#ac8669f622bf67579ac8b7ce7f0969f74">init</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">   30</a></span>&#160;        <a class="code" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">AlmacenObjetos</a>(<a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, <span class="keyword">const</span> std::string &amp;n, <span class="keyword">const</span> std::string &amp;p)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            : <a class="code" href="classZero_1_1Objeto.html">Objeto</a>(pc, n, p)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        { <a class="code" href="classZero_1_1AlmacenObjetos.html#ac8669f622bf67579ac8b7ce7f0969f74">init</a>(); }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classZero_1_1AlmacenObjetos.html#a260346541abd21a0ca5f762b87611376">   34</a></span>&#160;        <a class="code" href="classZero_1_1AlmacenObjetos.html#a7023021c856770f4e2fef97099694c03">AlmacenObjetos</a>(<a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, <span class="keyword">const</span> std::string &amp;n, <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *p)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            : <a class="code" href="classZero_1_1Objeto.html">Objeto</a>(pc, n, p)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        { <a class="code" href="classZero_1_1AlmacenObjetos.html#ac8669f622bf67579ac8b7ce7f0969f74">init</a>(); }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#a8e8b1aeaeac97249e684c82731ba8e40">~AlmacenObjetos</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *<a class="code" href="classZero_1_1AlmacenObjetos.html#ac7981950a431de96726a8bd06bb3429d">crea</a>(std::string n = NULL, <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *p = NULL);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *<a class="code" href="classZero_1_1AlmacenObjetos.html#a49de7cf766194a971e91d176281329b0">inserta</a>(<a class="code" href="classZero_1_1Objeto.html">Objeto</a> *);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#a7491edea9da0076cbbaacd04850350fc">elimina</a>(<a class="code" href="classZero_1_1Objeto.html">Objeto</a> *);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#a6352717669925bcd8edc7c31a9432f3f">eliminaTodos</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classZero_1_1AlmacenObjetos.html#a74e61b3df2ce72530ea0ab0aabc50e7e">   44</a></span>&#160;    <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *<a class="code" href="classZero_1_1AlmacenObjetos.html#a74e61b3df2ce72530ea0ab0aabc50e7e">busca</a>(<span class="keyword">const</span> std::string &amp;x)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        { <a class="code" href="classZero_1_1Atributo.html">Atributo</a> *atr = <a class="code" href="classZero_1_1Objeto.html#a456b1901a49abdc2cf4fa55da6d181c6">lAtrs</a>.<a class="code" href="classZero_1_1Objeto_1_1AccesoListaAtributos.html#a7a3cd7ed5994f0f84c8b3064ebca5599">busca</a>( x );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          <span class="keywordflow">return</span> atr == NULL ? NULL : atr-&gt;<a class="code" href="classZero_1_1Referencia.html#a803308aeb195a897cfa4848902060fd4">getObjeto</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classZero_1_1AlmacenObjetos.html#a63a0d5a11edf4d4a1cf6213540fbdcbb">   49</a></span>&#160;    <a class="code" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">ListaMnemosObjeto</a> &amp;<a class="code" href="classZero_1_1AlmacenObjetos.html#a63a0d5a11edf4d4a1cf6213540fbdcbb">salvar</a>(<a class="code" href="classZero_1_1Objeto.html#a80e61f19473d201b4244f78f205b4d3b">ListaRefExternas</a> &amp;)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::string <a class="code" href="classZero_1_1AlmacenObjetos.html#a8c01aa253aad12007646c66b2edc3b5c">getRuta</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#aab34027f15fa2a6252f7ac8e1d65ec4f">actualizar</a>(<a class="code" href="classZero_1_1Observable.html">Observable</a> *, <a class="code" href="classZero_1_1Observador.html#a3ba845503dd02bde5117f7c6b515439b">Observador::TipoCambio</a> t);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#a6ce71e6b25eb379defe1521144e6fd83" title="�Insertando un contenedor?">insertando</a>(<a class="code" href="classZero_1_1Atributo.html">Atributo</a> *);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#aaa0b6cf9bedbe97e1484ea942fd0ed2a">esAlcanzable</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AlmacenObjetos.html#a67a88bdcefe9732543d644b3bfbc9fc6">guardaContenedor</a>() = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> * <a class="code" href="classZero_1_1AlmacenObjetos.html#a7ec6589e9635f9e5359b7f0544189205">nuevo</a>(<a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// ------------------------------------------------------------------- Container</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classZero_1_1Container.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1Container.html">Container</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">   67</a></span>&#160;    std::set&lt;Objeto *&gt; <a class="code" href="classZero_1_1Container.html#a5d108594bbf56239c2e24e6e088d0adc">objsProcsPtr</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">   68</a></span>&#160;    std::set&lt;std::string&gt; <a class="code" href="classZero_1_1Container.html#a14cbf53bc5518f1224f2f0e85a3a7ddc">objsProcsStr</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Container.html#a3b05955a67004406e62fbc159bb94700">cambiarNombreObjetoEnMnemos</a>(<a class="code" href="classZero_1_1Objeto.html">Objeto</a> *,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                            <a class="code" href="classZero_1_1Atributo.html">Atributo</a> *,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                            <a class="code" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">Objeto::ListaMnemosObjeto</a> *</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1Container.html#a0a58b98bb594a339b32df4d7fc7f8dd8">fueProcesado</a>(<a class="code" href="classZero_1_1Objeto.html">Objeto</a> *, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classZero_1_1Container.html#a09ba5ff35c147cf79c24368215fd8c0f">Container</a>(<a class="code" href="classZero_1_1Container.html">Container</a> *pc, <span class="keyword">const</span> std::string &amp;n, <span class="keyword">const</span> std::string &amp;p);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classZero_1_1Container.html#a09ba5ff35c147cf79c24368215fd8c0f">Container</a>(<a class="code" href="classZero_1_1Container.html">Container</a> *pc, <span class="keyword">const</span> std::string &amp;n, <a class="code" href="classZero_1_1Objeto.html">Objeto</a> * p);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classZero_1_1Container.html#ab59a0fc038b881b3644b2ed94602df15">   81</a></span>&#160;    <a class="code" href="classZero_1_1Container.html#ab59a0fc038b881b3644b2ed94602df15" title="Al eliminar el contenedor de memoria, guardarlo en disco.">~Container</a>()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        { <a class="code" href="classZero_1_1Objeto.html#a44935d8311d495e0db06209a6ffa7b73">mnemosObjeto</a>.clear(); <a class="code" href="classZero_1_1Objeto.html#a7bcc257b58e03bd4586444b7877b7aef">refsExtObjeto</a>.clear(); <a class="code" href="classZero_1_1Container.html#a30218041dcf073be19d5abda534a5177">guardaContenedor</a>(); }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classZero_1_1Objeto.html#a94691c9c2fabc8cce8cdb7e0fec4af9a">ListaMnemosObjeto</a> &amp;<a class="code" href="classZero_1_1Container.html#ad274f483318210da92d605706e6a50ee">salvar</a>(<a class="code" href="classZero_1_1Objeto.html#a80e61f19473d201b4244f78f205b4d3b">ListaRefExternas</a> &amp;);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Container.html#a30218041dcf073be19d5abda534a5177">guardaContenedor</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Container.html#a27ebb0a8e0c4a02ccc9c33afd3860558">ponNoModificadoDesdeCarga</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Container.html#af255ad52ab3a306710aa20fc4869c093" title="Indica que ha sido modificado.">ponModificadoDesdeCarga</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// ---------------------------------------------------------- TransientContainer</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="classZero_1_1TransientContainer.html">   93</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1TransientContainer.html">TransientContainer</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classZero_1_1TransientContainer.html#ae0f3d7e642f41462e59219ab3b1f5ae0">TransientContainer</a>(<a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, <span class="keyword">const</span> std::string &amp;n, <span class="keyword">const</span> std::string &amp;p);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="classZero_1_1TransientContainer.html#ae0f3d7e642f41462e59219ab3b1f5ae0">TransientContainer</a>(<a class="code" href="classZero_1_1AlmacenObjetos.html">AlmacenObjetos</a> *pc, <span class="keyword">const</span> std::string &amp;n, <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *p);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="classZero_1_1TransientContainer.html#a51a6ae2e93f1742fde7f0d7d3fbcfd21">  103</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1TransientContainer.html#a51a6ae2e93f1742fde7f0d7d3fbcfd21">guardaContenedor</a>()</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="classZero_1_1TransientContainer.html#a515af1bd330a77848ad9191649b4f753">  106</a></span>&#160;    <a class="code" href="classZero_1_1TransientContainer.html#a515af1bd330a77848ad9191649b4f753">~TransientContainer</a>()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

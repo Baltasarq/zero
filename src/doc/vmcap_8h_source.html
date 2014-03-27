@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente vmcap.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">vmcap.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="vmcap_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// vmcap</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">        Define las capacidades de la máquina virtual</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">    Comunicación entre la plataforma y la máquina virtual</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">        Pertenece a Zvm</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">        jbgarcia@uvigo.es</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef VMCAP_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define VMCAP_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classVMCap.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVMCap.html">VMCap</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classVMCap.html#a60edc43029b6da78bfb5de26a9bd58d4">   18</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a60edc43029b6da78bfb5de26a9bd58d4">MaxMACLength</a> = 1024;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classVMCap.html#abd370c47401c8289dfd8154ec290696f">   19</a></span>&#160;        <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classVMCap.html#abd370c47401c8289dfd8154ec290696f">MACId</a>[<a class="code" href="classVMCap.html#a60edc43029b6da78bfb5de26a9bd58d4">MaxMACLength</a>];</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classVMCap.html#a4401a99a8f37873a64f3f3f567cb30df">   20</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="classVMCap.html#a4401a99a8f37873a64f3f3f567cb30dfa0418f06ddd624fb2af2f6733bc0b8c8d">ARCHIVO</a>, <a class="code" href="classVMCap.html#a4401a99a8f37873a64f3f3f567cb30dfaeaf946a8abf944e0bf4a70cca57d3ad1">DIRECTORIO</a> } <a class="code" href="classVMCap.html#a4401a99a8f37873a64f3f3f567cb30df">TipoArchivo</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classVMCap.html#a0ff2f509ef14f0a3d081d3dccae6ae3b">   22</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="classVMCap.html#a0ff2f509ef14f0a3d081d3dccae6ae3b">BARRA_DIR_WINDOWS</a> = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classVMCap.html#ab7aa784278a05cee39193fb279964234">   23</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="classVMCap.html#ab7aa784278a05cee39193fb279964234">BARRA_DIR_UNIX</a>    = <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classVMCap.html#a34b90bd9d5576ab2940857d6be911f65">   25</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a34b90bd9d5576ab2940857d6be911f65">HW_INTEL</a>          = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classVMCap.html#ad92f6849c3a64fde9395ec3cf257afb9">   26</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#ad92f6849c3a64fde9395ec3cf257afb9">HW_SPARC</a>          = 1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classVMCap.html#ac666eba1a44d36e405fc76477a3ad388">   27</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#ac666eba1a44d36e405fc76477a3ad388">HW_NOESPECIFICADO</a> = 98;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classVMCap.html#ab9535a5606a30433bb62ef3734b31c8a">   28</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#ab9535a5606a30433bb62ef3734b31c8a">HW_OTRO</a>           = 99;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classVMCap.html#a629c28b18005b35cd0181c6ad6bcfec3">   30</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a629c28b18005b35cd0181c6ad6bcfec3">SO_LINUXUNIX</a>       = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classVMCap.html#adbea60ab2ee21d3ab3df38d9eb334184">   31</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#adbea60ab2ee21d3ab3df38d9eb334184">SO_WINDOWS</a>         = 1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classVMCap.html#a77693a3d8859c291ba26ce3411378681">   32</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a77693a3d8859c291ba26ce3411378681">SO_MACOS</a>           = 2;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classVMCap.html#a1964f503908854e7ce820dcf7fb917b2">   33</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a1964f503908854e7ce820dcf7fb917b2">SO_NOESPECIFICADO</a>  = 98;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classVMCap.html#a639dba407255209edc3a68335a1d6469">   34</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a639dba407255209edc3a68335a1d6469">SO_OTRO</a>            = 99;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classVMCap.html#af74a17932fdccb45c987c974e4a049e1">   36</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#af74a17932fdccb45c987c974e4a049e1">PS</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classVMCap.html#a30d598d063aa15a6d2ecf8fb1ca134b5">   37</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classVMCap.html#a30d598d063aa15a6d2ecf8fb1ca134b5">PSDir</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classVMCap.html#a7cd60dd20707bd42704e1b424d0ff59e">   38</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a7cd60dd20707bd42704e1b424d0ff59e">pantallaGrafica</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classVMCap.html#ab2a81144db4e25e4d5e23b2bc9230de0">   39</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#ab2a81144db4e25e4d5e23b2bc9230de0">consola</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classVMCap.html#a0eea3185b3e68ecaf9def41a9a574192">getInfoCapabilities</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a63570411f07717ba38a39bc9eadeae9c">getLoPlatformCode</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a4ef72c89774e00e33dfee3c9b8050f3b">getHiPlatformCode</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classVMCap.html#ae3e0ab1f2ce48d3c6a4d5d95b3ca6c55">getPlaformName</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// Archivos y directorios</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#aa458de54f809c2ddf6a911c42359c7b4">borrarArchivo</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a606611c99e04354ddd932cadeadd7c68">copiarArchivo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a7b5d8c11f78aee40c6c7790fe59a2e53">moverArchivo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#ae2a67911a7452216082d63617d353495">cheapStdCopiarArchivo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="classVMCap.html#a165956ed14bbeea9422ed8f991f0c724">getDirMark</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a7ad82604f9f666cca1c26f08b9b68d10">buscaEnDirectorio</a>(<span class="keyword">const</span> std::string &amp;d,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                              <span class="keyword">const</span> std::string &amp;nombreDir,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                  <a class="code" href="classVMCap.html#a4401a99a8f37873a64f3f3f567cb30df">TipoArchivo</a> ta = <a class="code" href="classVMCap.html#a4401a99a8f37873a64f3f3f567cb30dfa0418f06ddd624fb2af2f6733bc0b8c8d">ARCHIVO</a>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a45e8f37e9e3c2bf89182cc773998f67c">crearDirectorio</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a16a0c11a600f3d28226e26333cf1028c">borrarDirectorio</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classVMCap.html#ae04b494137edfcbf821848657e85ac9e">getNombreDirActual</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVMCap.html#a86781062c9cc8ce9774807b0ecf373ad">cambiarDirectorio</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Net</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classVMCap.html#abd370c47401c8289dfd8154ec290696f">MACId</a> &amp;<a class="code" href="classVMCap.html#a455c670cbc68ce734d83b85ce3d5d37b">getNetId</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classVMCap.html#a197a5f823161a84c8f033f1843ebc4b3">   65</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a197a5f823161a84c8f033f1843ebc4b3">getNetIdLength</a>()</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classVMCap.html#a30f4f8f8b2aed933d900ee80405917b3">macIdLength</a>; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classVMCap.html#abd370c47401c8289dfd8154ec290696f">MACId</a> &amp;<a class="code" href="classVMCap.html#af7ba10b52af85d718e71c02646ee3107">getMACaddress</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="classVMCap.html#a755d6677341c7a1f67559863971e7a87">   69</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classVMCap.html#abd370c47401c8289dfd8154ec290696f">MACId</a> <a class="code" href="classVMCap.html#a755d6677341c7a1f67559863971e7a87">macId</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classVMCap.html#a30f4f8f8b2aed933d900ee80405917b3">   70</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classVMCap.html#a30f4f8f8b2aed933d900ee80405917b3">macIdLength</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

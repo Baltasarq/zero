@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente opcodes.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">opcodes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="opcodes_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// opcodes.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">       Los opcodes y los mnemotécnicos son partes del mismo concepto, las</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">    instrucciones.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    De éstas, los primeros constituyen la funcinalidad, y los segundos</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    su representación.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">        Ésta es la implantación de los opcodes, que es lo que hace que los</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">        mnemotécnicos puedan realmente &quot;hacer&quot; cosas.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">        Necesita mnemos.h y mnemos.cpp como parte fundamental.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">        Pertenece a zvm</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">        jbgarcia@uvigo.es</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef OPCODES_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OPCODES_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mnemos_8h.html">mnemos.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="referencia_8h.html">referencia.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="excep_8h.html">excep.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>Zero {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span><a class="code" href="classMetodo.html">Metodo</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// ================================== Opcode ===================================</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html">   40</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">   42</a></span>&#160;        <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *<a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">   43</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689">   46</a></span>&#160;        <a class="code" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1Opcode.html#a83ecd085e31e3e0c6e98b81656bdf008">resuelveRegORefLoc</a>(<a class="code" href="classZero_1_1Nombre.html">Nombre</a> *locOreg);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> * <a class="code" href="classZero_1_1Opcode.html#a4ecc695a84a55ae02adaf1046dd088cc">resuelveRefORegEnRef</a>(<a class="code" href="classZero_1_1Nombre.html">Nombre</a> *reforeg);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> * <a class="code" href="classZero_1_1Opcode.html#a968f7d4e1cc502d248a7e4a3ce6c6ae1">resuelveRefORegEnLoc</a>(<a class="code" href="classZero_1_1Nombre.html">Nombre</a> *reforeg);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> * <a class="code" href="classZero_1_1Opcode.html#a5353c217eebb8c44573f9d95a91cd6b4">resuelveReg</a>(<a class="code" href="classZero_1_1NombreRegistro.html">NombreRegistro</a> *reforeg);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#aa5b3739133560031e09549e5bb8110ad">   53</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *<a class="code" href="classZero_1_1Opcode.html#aa5b3739133560031e09549e5bb8110ad">getMnemo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classZero_1_1Opcode.html#aa9ed7846ea67fdb5d845fcb77d2cd91e">Opcode</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classZero_1_1Opcode.html#a03c31c4be750c3c335237a80354996f7">~Opcode</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#ac52536f8ef4e9ac5bcfb628a856f7205">   59</a></span>&#160;        <a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#ac52536f8ef4e9ac5bcfb628a856f7205">getPerteneceA</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>; }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#a611fa0ba0a05bf139e51060ec221c0b1">   62</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Opcode.html#a611fa0ba0a05bf139e51060ec221c0b1">cambiaEstadoMetodo</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            { this-&gt;met = <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>; <a class="code" href="classZero_1_1Opcode.html#a974e11d11eaf12741a145ad682a57b89">deSincroniza</a>(); }</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#acf24ec74f0dfdb23e9f8b593e474195e">   64</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1Opcode.html#acf24ec74f0dfdb23e9f8b593e474195e">getFase</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a>; }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1Opcode.html#a227f626459f0b04222767075b76ba354">estaEnFase</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classZero_1_1Opcode.html#a974e11d11eaf12741a145ad682a57b89">   67</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Opcode.html#a974e11d11eaf12741a145ad682a57b89">deSincroniza</a>()</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            { <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Opcode.html#a227f626459f0b04222767075b76ba354">estaEnFase</a>() ) <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a> = !<a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a>; }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Opcode.html#a3bb6b2b4303065d7302cdd8f77ee3ebc">ejecuta</a>()                    = 0;       <span class="comment">// El que trabaja</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Opcode.html#af461d91da3e6d008f2402ac4b485fc3b">preparaReferencias</a>()         = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> *<a class="code" href="classZero_1_1Opcode.html#a052315879a63ae1eaa6f8e28e350d126">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> *)           = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> *<a class="code" href="classZero_1_1Opcode.html#a3a7230ae4fc93bac41b278183f15ab50">creaOpcodeParaMnemo</a>(<a class="code" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span>    <a class="code" href="classZero_1_1Opcode.html#a71fe8258957d9d259c0f86d1c0ed3102">asignarReferencia</a>(<a class="code" href="classZero_1_1Referencia.html">Referencia</a> *, <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// ================================== OcNOP ====================================</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classZero_1_1OcNOP.html">   80</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcNOP.html">OcNOP</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classZero_1_1OcNOP.html#a7a4de58c09974d45445fabb0079f6129">OcNOP</a>(<a class="code" href="classZero_1_1NMNop.html">NMNop</a> *mn, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *m);</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classZero_1_1OcNOP.html#ae972d981dab0796b3107974e75398f4d">   83</a></span>&#160;        <a class="code" href="classZero_1_1OcNOP.html#ae972d981dab0796b3107974e75398f4d">~OcNOP</a>() {}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="classZero_1_1OcNOP.html#a79bbab620d77255cd3cc7cc1eae1bcd8">   85</a></span>&#160;        <a class="code" href="classZero_1_1NMNop.html">NMNop</a> * <a class="code" href="classZero_1_1OcNOP.html#a79bbab620d77255cd3cc7cc1eae1bcd8">getMnemo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMNop.html">NMNop</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="classZero_1_1OcNOP.html#a26c1dae6e3a2bd80cd61c67af73e6d23">   87</a></span>&#160;    <a class="code" href="classZero_1_1OcNOP.html">OcNOP</a> * <a class="code" href="classZero_1_1OcNOP.html#a26c1dae6e3a2bd80cd61c67af73e6d23">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classZero_1_1OcNOP.html">OcNOP</a> * toret = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1OcNOP.html#a7a4de58c09974d45445fabb0079f6129">OcNOP</a>( <a class="code" href="classZero_1_1OcNOP.html#a79bbab620d77255cd3cc7cc1eae1bcd8">getMnemo</a>(), <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a> );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> ( toret != NULL ) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1ENoHayMemoria.html">ENoHayMemoria</a>( <span class="stringliteral">&quot;duplicando opcode&quot;</span> );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="classZero_1_1OcNOP.html#a7e8fc8b9d61e2bc6bf8005d068fa73d8">   97</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcNOP.html#a7e8fc8b9d61e2bc6bf8005d068fa73d8">ejecuta</a>() {}</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classZero_1_1OcNOP.html#ad3e0222a6c8bf04630d5f21f99af036e">   98</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcNOP.html#ad3e0222a6c8bf04630d5f21f99af036e">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// ================================== OcSTR ====================================</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="classZero_1_1OcSTR.html">  102</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcSTR.html">OcSTR</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="classZero_1_1OcSTR.html#aea1c16773998e0b7bd71c95e67c1b220">OcSTR</a>(<a class="code" href="classZero_1_1NMStr.html">NMStr</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="classZero_1_1OcSTR.html#a888499549d4d4b96a022ee1a2811a343">~OcSTR</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="classZero_1_1OcSTR.html#a8ca58dec54e69ebf10115b7babb7aaac">  107</a></span>&#160;    <a class="code" href="classZero_1_1NMStr.html">NMStr</a> * <a class="code" href="classZero_1_1OcSTR.html#a8ca58dec54e69ebf10115b7babb7aaac">getMnemo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMStr.html">NMStr</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="classZero_1_1OcSTR.html#a7282f09366034c6d918608cdaac59a3f">  109</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcSTR.html#a7282f09366034c6d918608cdaac59a3f">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcSTR.html#adb1cad484c94247e1386bd4868ad9f2b">ejecuta</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classZero_1_1OcSTR.html">OcSTR</a> * <a class="code" href="classZero_1_1OcSTR.html#ab7b90dd5a7f3a576f43c31e1f3f11c60">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// ================================== OcMSG ====================================</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html">  116</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcMSG.html">OcMSG</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a79042a29822e30094fb33230786bfe60">  117</a></span>&#160;    <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcMSG.html#a79042a29822e30094fb33230786bfe60">ref</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a5dacc239f71876a0a469019d64abc5f4">  118</a></span>&#160;    std::vector&lt;Referencia *&gt; <a class="code" href="classZero_1_1OcMSG.html#a5dacc239f71876a0a469019d64abc5f4">args</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a3de01a546a0c968debb6b9eaaddc9c7f">  119</a></span>&#160;    <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *<a class="code" href="classZero_1_1OcMSG.html#a3de01a546a0c968debb6b9eaaddc9c7f">metDest</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#aa7446b358a10331a47e56b7804dd9f47">  120</a></span>&#160;    <a class="code" href="classZero_1_1Objeto.html">Objeto</a> *<a class="code" href="classZero_1_1OcMSG.html#aa7446b358a10331a47e56b7804dd9f47">obj</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a8ac8e07489327d49354fe7631f190d1f">  121</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OcMSG.html#a8ac8e07489327d49354fe7631f190d1f">huboExcepcion</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a9c8ff7c8819e0e577442c35d1e5a6dc5">  122</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OcMSG.html#a9c8ff7c8819e0e577442c35d1e5a6dc5">super</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a77fb07f335b42be7943dfd644d6efde6">  123</a></span>&#160;    std::string <a class="code" href="classZero_1_1OcMSG.html#a77fb07f335b42be7943dfd644d6efde6">metodo</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcMSG.html#abda20f6078f246945b9ca1a372feaa92">preparaArgumentos</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classZero_1_1OcMSG.html#acdc60796562d23f3556f660d96c4f7d8">OcMSG</a>(<a class="code" href="classZero_1_1NMMsg.html">NMMsg</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="classZero_1_1OcMSG.html#a961053fff194edb13ad8c484e28410b4">~OcMSG</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcMSG.html#a1258e29d693446c086517f860fc820fa">deSincroniza</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#af58c40f654b6ae5dc4882e3d2235e0e0">  132</a></span>&#160;    <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1OcMSG.html#af58c40f654b6ae5dc4882e3d2235e0e0">getMetodo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">        </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OcMSG.html#a77fb07f335b42be7943dfd644d6efde6">metodo</a>; }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#acd84c46447d14c07061c7a89316a02f2">  135</a></span>&#160;    <a class="code" href="classZero_1_1MixinConArgumentos.html#a7d248be9058c2ba68ae0db23ccbf3080">MixinConArgumentos::Argumentos</a> *<a class="code" href="classZero_1_1OcMSG.html#acd84c46447d14c07061c7a89316a02f2">getArgumentos</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">        </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OcMSG.html#acac3231ba0eba7ae8197b7cd7d40b5f2">getMnemo</a>()-&gt;<a class="code" href="classZero_1_1MixinConArgumentos.html#a016a966ce08c0b98240392cf614ab7bf">getArgs</a>(); }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#acac3231ba0eba7ae8197b7cd7d40b5f2">  138</a></span>&#160;    <a class="code" href="classZero_1_1NMMsg.html">NMMsg</a> *<a class="code" href="classZero_1_1OcMSG.html#acac3231ba0eba7ae8197b7cd7d40b5f2">getMnemo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">        </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMMsg.html">NMMsg</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcMSG.html#a8e042d4d5c46e645d59126dc42e3460a">preparaReferencias</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcMSG.html#a9b6bdec18b2e519fba6380919ea36599">ejecuta</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="classZero_1_1OcMSG.html">OcMSG</a> * <a class="code" href="classZero_1_1OcMSG.html#ad86ad0b40dbc5d0195ba3e3b3acdd10a">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#a68ed1af5e87f3fb1ef51da28b8ab1c82">  145</a></span>&#160;    <a class="code" href="classZero_1_1Referencia.html">Referencia</a> * <a class="code" href="classZero_1_1OcMSG.html#a68ed1af5e87f3fb1ef51da28b8ab1c82">getReferencia</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">        </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OcMSG.html#a79042a29822e30094fb33230786bfe60">ref</a>; }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classZero_1_1OcMSG.html#ad3f051ad13186c7f498c202983768901">  148</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1OcMSG.html#ad3f051ad13186c7f498c202983768901">esLlamadaSuper</a>()</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OcMSG.html#a9c8ff7c8819e0e577442c35d1e5a6dc5">super</a>; }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">// ================================== OcRET ====================================</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="classZero_1_1OcRET.html">  153</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcRET.html">OcRET</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="classZero_1_1OcRET.html#adef3d88520d911393bc34ba3d540bf4f">OcRET</a>(<a class="code" href="classZero_1_1NMRet.html">NMRet</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="classZero_1_1OcRET.html#aaae63ee1129057bbf571452e38f11d97">~OcRET</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="classZero_1_1OcRET.html#a54b4ea7d522e2349d179145b939cf016">  158</a></span>&#160;        <a class="code" href="classZero_1_1NMRet.html">NMRet</a> *<a class="code" href="classZero_1_1OcRET.html#a54b4ea7d522e2349d179145b939cf016">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMRet.html">NMRet</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="code" href="classZero_1_1OcRET.html#a2e3f70c822c9a9f9c3f9b7952c09820f">  160</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcRET.html#a2e3f70c822c9a9f9c3f9b7952c09820f">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcRET.html#a6887a1c7fc84f437da5b8a50681bdbfe">ejecuta</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="classZero_1_1OcRET.html">OcRET</a> * <a class="code" href="classZero_1_1OcRET.html#a285524e05589b40e8bf17fdd7048a08c">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;};</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">// ================================== OcSET ====================================</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="classZero_1_1OcSET.html">  167</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcSET.html">OcSET</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="code" href="classZero_1_1OcSET.html#ad194db9c307074c529ed6651ac54fb0c">  168</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcSET.html#ad194db9c307074c529ed6651ac54fb0c">reg</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="classZero_1_1OcSET.html#a254c5d039f3facab1f30942d4110db2b">  169</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcSET.html#a254c5d039f3facab1f30942d4110db2b">ref</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="classZero_1_1OcSET.html#a840c405f6ce724b6e98233c28a5cf714">OcSET</a>(<a class="code" href="classZero_1_1NMSet.html">NMSet</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="classZero_1_1OcSET.html#a93698d6a7e0e370674ef00434ddfdc55">~OcSET</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="code" href="classZero_1_1OcSET.html#ac012e98a62e488e7d5dd582fd68192a2">  174</a></span>&#160;        <a class="code" href="classZero_1_1NMSet.html">NMSet</a> *<a class="code" href="classZero_1_1OcSET.html#ac012e98a62e488e7d5dd582fd68192a2">getMnemo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMSet.html">NMSet</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcSET.html#aa3c15a79604804c991a75a9678cda79f">ejecuta</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcSET.html#a82e864d571ab435d4f5f559e04492011">deSincroniza</a>();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="classZero_1_1OcSET.html">OcSET</a> * <a class="code" href="classZero_1_1OcSET.html#af48d2832033c6839a95f15fa96855f82">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcSET.html#a430dccdfb415283a670af90f846a9892">preparaReferencias</a>();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="code" href="classZero_1_1OcSET.html#ac934c8e26d24f70330691193ae9bed95">  184</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcSET.html#ac934c8e26d24f70330691193ae9bed95">getReferencia</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OcSET.html#a254c5d039f3facab1f30942d4110db2b">ref</a>; }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;};</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">// ================================== OcDEF ====================================</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="code" href="classZero_1_1OcDEF.html">  189</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcDEF.html">OcDEF</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="classZero_1_1OcDEF.html#ad097a56f18c7b49132fa249a8b11d858">OcDEF</a>(<a class="code" href="classZero_1_1NMDef.html">NMDef</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="classZero_1_1OcDEF.html#aa2b27ea40328f9914084e56afef6f328">~OcDEF</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="code" href="classZero_1_1OcDEF.html#aedb7d540b4cd75267f916e8dec6127cc">  194</a></span>&#160;        <a class="code" href="classZero_1_1NMDef.html">NMDef</a> *<a class="code" href="classZero_1_1OcDEF.html#aedb7d540b4cd75267f916e8dec6127cc">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMDef.html">NMDef</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="code" href="classZero_1_1OcDEF.html#ae6654820bafe9a5224987509a7f509f3">  196</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcDEF.html#ae6654820bafe9a5224987509a7f509f3">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcDEF.html#afbac29c094aaf2f3fb2f65cc2c6a6066">ejecuta</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="classZero_1_1OcDEF.html">OcDEF</a> * <a class="code" href="classZero_1_1OcDEF.html#a7a56d90ae360032c770aeecb120588f3">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;};</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">// ================================== OcASG ====================================</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="code" href="classZero_1_1OcASG.html">  203</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcASG.html">OcASG</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="code" href="classZero_1_1OcASG.html#a4c4487deede83618478a34fc473482b8">  205</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcASG.html#a4c4487deede83618478a34fc473482b8">ref</a>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="code" href="classZero_1_1OcASG.html#a9e63ad5bfbf2fabb3f631a5779cad365">  206</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcASG.html#a9e63ad5bfbf2fabb3f631a5779cad365">reg</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="classZero_1_1OcASG.html#a79ad60e9ee8f64abef993fd3d1816d4c">OcASG</a>(<a class="code" href="classZero_1_1NMAsg.html">NMAsg</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="classZero_1_1OcASG.html#a3c1c58b938d463a23776b4b1b38ba19c">~OcASG</a>();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="code" href="classZero_1_1OcASG.html#a7728830b42c995711f140fede1e5345a">  211</a></span>&#160;        <a class="code" href="classZero_1_1NMAsg.html">NMAsg</a> *<a class="code" href="classZero_1_1OcASG.html#a7728830b42c995711f140fede1e5345a">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMAsg.html">NMAsg</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcASG.html#a69de0bdbe3f061f4c4ed94eaa207c0d4">ejecuta</a>();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="classZero_1_1OcASG.html">OcASG</a> * <a class="code" href="classZero_1_1OcASG.html#aa21485ca3a4d5e87b8945c026989a722">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcASG.html#a5abc44775fa2038f5a4804ad736c3d92">preparaReferencias</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;};</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">// ================================== OcJMP ====================================</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="code" href="classZero_1_1OcFlw.html">  221</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcFlw.html">OcFlw</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcFlw.html#ad307719d7a1c3d391278caa42b4fc9ee">asignaIPMetodo</a>(<span class="keywordtype">void</span> *dir);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="code" href="classZero_1_1OcFlw.html#a4abc4d660472925dc75a17f3a116c9d3">  225</a></span>&#160;        <span class="keywordtype">void</span> * <a class="code" href="classZero_1_1OcFlw.html#a4abc4d660472925dc75a17f3a116c9d3">dirDirecta</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="classZero_1_1OcFlw.html#a920e49db97104669fc9215442e9c2ab3">OcFlw</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="classZero_1_1OcFlw.html#afd8a22af02240f9e58652de4dc833fd8">~OcFlw</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="code" href="classZero_1_1OcFlw.html#aca40c0d78aca327d182338570c11fd6f">  231</a></span>&#160;        <a class="code" href="classZero_1_1Flw.html">Flw</a> *<a class="code" href="classZero_1_1OcFlw.html#aca40c0d78aca327d182338570c11fd6f">getMnemo</a>()<span class="keyword"> const           </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1Flw.html">Flw</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcFlw.html#a4a998974567e768633b22c7f4a47782a">ejecuta</a>() = 0;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="code" href="classZero_1_1OcFlw.html#aeaa4b42ecd469df451ada26808e785e2">  235</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcFlw.html#aeaa4b42ecd469df451ada26808e785e2">ponDirDirecta</a>(<span class="keywordtype">void</span> *dir)   { <a class="code" href="classZero_1_1OcFlw.html#a4abc4d660472925dc75a17f3a116c9d3">dirDirecta</a> = dir; }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;};</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// ================================== OcJMP ====================================</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="code" href="classZero_1_1OcJMP.html">  239</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcJMP.html">OcJMP</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1OcFlw.html">OcFlw</a> {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="classZero_1_1OcJMP.html#a9b8847520a07eef8e8c05208a0a8f4b5">OcJMP</a>(<a class="code" href="classZero_1_1NMJmp.html">NMJmp</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="classZero_1_1OcJMP.html#a30fd260bc1276c24ad1fd0df63d22755">~OcJMP</a>();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="code" href="classZero_1_1OcJMP.html#a8591971f7d4adeed134a198148389714">  244</a></span>&#160;        <a class="code" href="classZero_1_1NMJmp.html">NMJmp</a> *<a class="code" href="classZero_1_1OcJMP.html#a8591971f7d4adeed134a198148389714">getMnemo</a>()<span class="keyword"> const     </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMJmp.html">NMJmp</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="code" href="classZero_1_1OcJMP.html#aa20a9104ab90d9ab7e3284f4ba0ec14f">  246</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcJMP.html#aa20a9104ab90d9ab7e3284f4ba0ec14f">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcJMP.html#a005b22bed8b0eaab9d8da733a52631f1">ejecuta</a>();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="classZero_1_1OcJMP.html">OcJMP</a> * <a class="code" href="classZero_1_1OcJMP.html#aa65d2159fdd0d39f6de22f341dfc00c1">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;};</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">// ================================== OcJOT ====================================</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="code" href="classZero_1_1OcJOT.html">  253</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcJOT.html">OcJOT</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1OcFlw.html">OcFlw</a> {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="classZero_1_1OcJOT.html#a5cf41651d6f6fac4096dca99cf1e0cbc">OcJOT</a>(<a class="code" href="classZero_1_1NMJot.html">NMJot</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <a class="code" href="classZero_1_1OcJOT.html#a1f61acd28642ac5b3020b51c2f486a0a">~OcJOT</a>();</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="code" href="classZero_1_1OcJOT.html#ab19b4c20f06dfb7e28f3bc7c6a0b21fe">  258</a></span>&#160;        <a class="code" href="classZero_1_1NMJot.html">NMJot</a> *<a class="code" href="classZero_1_1OcJOT.html#ab19b4c20f06dfb7e28f3bc7c6a0b21fe">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMJot.html">NMJot</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="code" href="classZero_1_1OcJOT.html#ae13315ec2961b3250b20ef1e2d41ed28">  260</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcJOT.html#ae13315ec2961b3250b20ef1e2d41ed28">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcJOT.html#ab86384bc4bb75f89065715131367b9ba">ejecuta</a>();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="classZero_1_1OcJOT.html">OcJOT</a> * <a class="code" href="classZero_1_1OcJOT.html#a19a87ae1622f53ed0721896c051d4f84">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;};</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">// ================================== OcJOF ====================================</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="code" href="classZero_1_1OcJOF.html">  267</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcJOF.html">OcJOF</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1OcFlw.html">OcFlw</a> {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="classZero_1_1OcJOF.html#aee73cdf25de4b2c97b78df38942599dc">OcJOF</a>(<a class="code" href="classZero_1_1NMJof.html">NMJof</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="classZero_1_1OcJOF.html#a0d373a0df5db76a90f46d18ef4476547">~OcJOF</a>();</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="code" href="classZero_1_1OcJOF.html#a2e8a917193b8886ede8ebcb2c7ee2aaf">  272</a></span>&#160;        <a class="code" href="classZero_1_1NMJof.html">NMJof</a> *<a class="code" href="classZero_1_1OcJOF.html#a2e8a917193b8886ede8ebcb2c7ee2aaf">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMJof.html">NMJof</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="code" href="classZero_1_1OcJOF.html#a978e2970c92204e7595efeb5d84b98a3">  274</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcJOF.html#a978e2970c92204e7595efeb5d84b98a3">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcJOF.html#a550dbf108e8e358511b4292e36da1f0d">ejecuta</a>();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="classZero_1_1OcJOF.html">OcJOF</a> * <a class="code" href="classZero_1_1OcJOF.html#a3304a266bbb546ae6a67fbfcfd1d9cce">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;};</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">// ================================== OcFLT ====================================</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno"><a class="code" href="classZero_1_1OcFLT.html">  281</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcFLT.html">OcFLT</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <a class="code" href="classZero_1_1OcFLT.html#af07cb38da3307ab3aeeb5b58bd83a12e">OcFLT</a>(<a class="code" href="classZero_1_1NMFlt.html">NMFlt</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="classZero_1_1OcFLT.html#a66f7135dd28ba734676787afbcbc04ee">~OcFLT</a>();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="code" href="classZero_1_1OcFLT.html#af3b8bded1e6610ec72bc954c8c78e360">  286</a></span>&#160;        <a class="code" href="classZero_1_1NMFlt.html">NMFlt</a> *<a class="code" href="classZero_1_1OcFLT.html#af3b8bded1e6610ec72bc954c8c78e360">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMFlt.html">NMFlt</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="code" href="classZero_1_1OcFLT.html#a80bfed1d7c4bee951da2646e6ba2247b">  288</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcFLT.html#a80bfed1d7c4bee951da2646e6ba2247b">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcFLT.html#a6154f4ca9300ebcce9df526a0a68654e">ejecuta</a>();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="classZero_1_1OcFLT.html">OcFLT</a> * <a class="code" href="classZero_1_1OcFLT.html#a7905f883807d24f9ff235861eeaebe42">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;};</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">// ================================== OcINT ====================================</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="code" href="classZero_1_1OcINT.html">  295</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcINT.html">OcINT</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <a class="code" href="classZero_1_1OcINT.html#a9623c6b86c146876d9ffe17096392ba4">OcINT</a>(<a class="code" href="classZero_1_1NMInt.html">NMInt</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <a class="code" href="classZero_1_1OcINT.html#ad649109e88f84577ff5d33028efef7dd">~OcINT</a>();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="code" href="classZero_1_1OcINT.html#aa16c4bfd04fb8e05c9fe77f9d57aeac3">  300</a></span>&#160;        <a class="code" href="classZero_1_1NMInt.html">NMInt</a> *<a class="code" href="classZero_1_1OcINT.html#aa16c4bfd04fb8e05c9fe77f9d57aeac3">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMInt.html">NMInt</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="code" href="classZero_1_1OcINT.html#a8f6a8ef4af7bb736215aa4fcbd74cbaa">  302</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcINT.html#a8f6a8ef4af7bb736215aa4fcbd74cbaa">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcINT.html#a5baf54807464c5045c4cb6b476693785">ejecuta</a>();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="classZero_1_1OcINT.html">OcINT</a> * <a class="code" href="classZero_1_1OcINT.html#aa5599dcece3ee2b27ee78d26f9206c50">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;};</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">// ================================== OcTRW ====================================</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="code" href="classZero_1_1OcTRW.html">  309</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcTRW.html">OcTRW</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <a class="code" href="classZero_1_1OcTRW.html#a16985ed4e1ce3d87582272355dcd7b66">OcTRW</a>(<a class="code" href="classZero_1_1NMTrw.html">NMTrw</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="classZero_1_1OcTRW.html#af30ed7c92b66a1610c0d5d0d65844cde">~OcTRW</a>();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="code" href="classZero_1_1OcTRW.html#ade161ff16b3101a8158c2ecc2ad218b2">  314</a></span>&#160;        <a class="code" href="classZero_1_1NMTrw.html">NMTrw</a> *<a class="code" href="classZero_1_1OcTRW.html#ade161ff16b3101a8158c2ecc2ad218b2">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMTrw.html">NMTrw</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="code" href="classZero_1_1OcTRW.html#a205db7d934d999358668339b07f93a70">  316</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcTRW.html#a205db7d934d999358668339b07f93a70">preparaReferencias</a>() {}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcTRW.html#a3d39e3b33ae3e48085cd225df3d6e867">ejecuta</a>();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <a class="code" href="classZero_1_1OcTRW.html">OcTRW</a> * <a class="code" href="classZero_1_1OcTRW.html#a241b45bcea17c242db392098ce725f1e">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;};</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">// ================================== OcIOF ====================================</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="code" href="classZero_1_1OcIOF.html">  323</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1OcIOF.html">OcIOF</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Opcode.html">Opcode</a> {</div>
+<div class="line"><a name="l00324"></a><span class="lineno"><a class="code" href="classZero_1_1OcIOF.html#a50cc0fa71201fec7dc69e92a9510cb51">  324</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcIOF.html#a50cc0fa71201fec7dc69e92a9510cb51">reg</a>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno"><a class="code" href="classZero_1_1OcIOF.html#a442d10c92a2e176718dc94f4dcff5b4f">  325</a></span>&#160;        <a class="code" href="classZero_1_1Referencia.html">Referencia</a> *<a class="code" href="classZero_1_1OcIOF.html#a442d10c92a2e176718dc94f4dcff5b4f">ref</a>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <a class="code" href="classZero_1_1OcIOF.html#acf4a052baf48ff544f54837074569eaa">OcIOF</a>(<a class="code" href="classZero_1_1NMIof.html">NMIof</a> *, <a class="code" href="classZero_1_1Metodo.html">Metodo</a> *);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <a class="code" href="classZero_1_1OcIOF.html#a6f478a1b9ad7ec5a84f862d07c0f47ad">~OcIOF</a>();</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="code" href="classZero_1_1OcIOF.html#ad6ef1b0f81e1f1fa36a7bc33e40cac91">  330</a></span>&#160;        <a class="code" href="classZero_1_1NMIof.html">NMIof</a> *<a class="code" href="classZero_1_1OcIOF.html#ad6ef1b0f81e1f1fa36a7bc33e40cac91">getMnemo</a>()<span class="keyword"> const       </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classZero_1_1NMIof.html">NMIof</a> *<span class="keyword">&gt;</span>( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> ); }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcIOF.html#a0676a558757f201071e7944111c79ed9">preparaReferencias</a>();</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1OcIOF.html#abcc87a90445da2091ac3bf57cf91c682">ejecuta</a>();</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="classZero_1_1OcIOF.html">OcIOF</a> * <a class="code" href="classZero_1_1OcIOF.html#a2b2642d906cb6eef80966260587c55a7">copia</a>(<a class="code" href="classZero_1_1Metodo.html">Metodo</a> * <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;};</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

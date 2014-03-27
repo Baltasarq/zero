@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente zma.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">zma.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="zma_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// zm.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">      Cabecera del objeto ensamblador Zero</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">      jbgarcia@uvigo.es</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ZA_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ZA_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cctype&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="analizadorlexico_8h.html">analizadorlexico.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="compilador_8h.html">compilador.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ident_8h.html">ident.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="zma_8h.html#af1cbf18271e759cf6c053d8fe19bd907">   23</a></span>&#160;<span class="preprocessor">#define TEXT_UI_MAIN      // Provee de una interfaz de texto, con fn. main()</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// ================================ Constantes ===============================</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span>   <a class="code" href="za_8cpp.html#a872cc0ff78aa1dfda1cba1bcfa1631cf">MARCACOMENTARIO</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// ================================ Log ========================================</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classLog.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLog.html">Log</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classLog.html#a09f8869ffe9c72c62306e786d9a6d3c3">   31</a></span>&#160;    std::string <a class="code" href="classLog.html#a09f8869ffe9c72c62306e786d9a6d3c3">nombre</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">   32</a></span>&#160;    std::FILE *<a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classLog.html#ab94e33a7f0fd94dd90c0bded68aa338d">   34</a></span>&#160;    <a class="code" href="classLog.html#ab94e33a7f0fd94dd90c0bded68aa338d">Log</a>(<span class="keyword">const</span> std::string &amp;n) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">//nombre = n.substr(0, n.find(&#39;.&#39;)) + &quot;.log&quot;;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classLog.html#a09f8869ffe9c72c62306e786d9a6d3c3">nombre</a> = n;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a> = fopen(<a class="code" href="classLog.html#a09f8869ffe9c72c62306e786d9a6d3c3">nombre</a>.c_str(), <span class="stringliteral">&quot;wt&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        (*this)(<span class="stringliteral">&quot;\n;# zm Log &quot;</span> + n + <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classLog.html#a0fbfda88fbee5027c89f6eb121059360">   43</a></span>&#160;    <a class="code" href="classLog.html#a0fbfda88fbee5027c89f6eb121059360">~Log</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a> != NULL) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            (*this)(<span class="stringliteral">&quot;\n\n;# zm log eof ok\n&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            fclose(<a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classLog.html#afcc0987e80623293427fd935106cc214">   50</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLog.html#afcc0987e80623293427fd935106cc214">operator()</a>(<span class="keyword">const</span> std::string &amp;texto){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a> != NULL) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            fputs(texto.c_str(), <a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            fflush(<a class="code" href="classLog.html#aaa2576f94444ea583d0912ee2b63127e">f</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// ================================ Metodo =====================================</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="classMetodo.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMetodo.html">Metodo</a> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">   62</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Zero::Compilador::ListaMnemos</a> <a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">CuerpoMetodo</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classMetodo.html#aa447e36e0c10d30c88a4acb0e679b776">   64</a></span>&#160;    <a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">CuerpoMetodo</a> <a class="code" href="classMetodo.html#aa447e36e0c10d30c88a4acb0e679b776">cuerpo</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classMetodo.html#a71cb89230467665fb5ce598c987bd3dd">   65</a></span>&#160;    std::string <a class="code" href="classMetodo.html#a71cb89230467665fb5ce598c987bd3dd">nombreObjeto</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classMetodo.html#aadcdf4a5def78dbedccd8ba585980058">   66</a></span>&#160;    std::string <a class="code" href="classMetodo.html#aadcdf4a5def78dbedccd8ba585980058">nombreMetodo</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classMetodo.html#afb35d7d2470008aa833212dc660b12c7">   67</a></span>&#160;    <a class="code" href="classZero_1_1IdsPorObjeto.html">Zero::IdsPorObjeto</a> * <a class="code" href="classMetodo.html#afb35d7d2470008aa833212dc660b12c7">idsObj</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classMetodo.html#ab0c3e2b142ab48cbdc71a4c5e811d4ec">Metodo</a>(<span class="keyword">const</span> std::string &amp;no, <span class="keyword">const</span> std::string &amp;nm, <a class="code" href="classZero_1_1IdsPorObjeto.html">Zero::IdsPorObjeto</a> *, <a class="code" href="classZero_1_1MedioSoporte.html">Zero::MedioSoporte</a> *);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classMetodo.html#ae687998f774f225e499f45216dca3d78">~Metodo</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMetodo.html#afb5bd453623ae9cd34615891cd1e3cc5">masMnemos</a>(<a class="code" href="classZero_1_1Mnemotecnico.html">Zero::Mnemotecnico</a> *);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMetodo.html#afb5bd453623ae9cd34615891cd1e3cc5">masMnemos</a>(<a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">CuerpoMetodo</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMetodo.html#aa205d3b581ed9f741a5380b8b5a76803">escribe</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classMetodo.html#a70fd479fe32ddd6964d6528a34d25d64">listar</a>(<a class="code" href="classLog.html">Log</a> &amp;, <a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">CuerpoMetodo</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// ================================ GestorNombresLoc ===========================</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classGestorNombresLoc.html">   80</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGestorNombresLoc.html">GestorNombresLoc</a> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classGestorNombresLoc.html#adcc799f52b712de22b49db37ef58236e">   82</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classGestorNombresLoc.html#adcc799f52b712de22b49db37ef58236e">nombreLiteral</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classGestorNombresLoc.html#a2310eddac6d1562cc877bc7c0cb522a2">   83</a></span>&#160;    std::queue&lt;std::string&gt; <a class="code" href="classGestorNombresLoc.html#a2310eddac6d1562cc877bc7c0cb522a2">nombres</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="classGestorNombresLoc.html#a7d41f34ddfa1ece8918423b4c5753635">   84</a></span>&#160;    std::stack&lt;std::string&gt; <a class="code" href="classGestorNombresLoc.html#a7d41f34ddfa1ece8918423b4c5753635">regGenericos</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classGestorNombresLoc.html#a77d85c625c620a7af6eac101ab76845d">GestorNombresLoc</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">const</span> std::string &amp;<a class="code" href="classGestorNombresLoc.html#a093271ad6e2a2ee3918b8b48d9de8b96">crearNuevo</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">const</span> std::string &amp;<a class="code" href="classGestorNombresLoc.html#aec07630898839fe4c048901bd68831b5">insertarNuevo</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="classGestorNombresLoc.html#a8dcac466227c61ac1a9d078e9c4827b4">   89</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classGestorNombresLoc.html#a8dcac466227c61ac1a9d078e9c4827b4">getNumero</a>()<span class="keyword">     const </span>{ <span class="keywordflow">return</span> <a class="code" href="classGestorNombresLoc.html#a2310eddac6d1562cc877bc7c0cb522a2">nombres</a>.size(); }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::string <a class="code" href="classGestorNombresLoc.html#acea496344225586c5931a714707baf3d">getSigNombre</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="classGestorNombresLoc.html#adad5e4c358c296993806a1a73f4f215d">   91</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGestorNombresLoc.html#adad5e4c358c296993806a1a73f4f215d">esVacio</a>()<span class="keyword">               const </span>{ <span class="keywordflow">return</span> <a class="code" href="classGestorNombresLoc.html#a2310eddac6d1562cc877bc7c0cb522a2">nombres</a>.empty(); }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// ================================ MacroEnsamZ ================================</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html">   95</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMacroEnsamZ.html">MacroEnsamZ</a> {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a3a5eef37094856b624915f02799ddd0e">   97</a></span>&#160;    <span class="keyword">typedef</span>  <span class="keyword">enum</span>{ <a class="code" href="classMacroEnsamZ.html#a3a5eef37094856b624915f02799ddd0ea5d7a8a4fdce79bfda6c01bf54120a964">Jmp</a>, <a class="code" href="classMacroEnsamZ.html#a3a5eef37094856b624915f02799ddd0ea57058dabedfd3c0b467735195f3597f3">Jot</a>, <a class="code" href="classMacroEnsamZ.html#a3a5eef37094856b624915f02799ddd0ea7bdecc9947a7b22bbd8f1f1a8fdf9ebb">Jof</a> } <a class="code" href="classMacroEnsamZ.html#a3a5eef37094856b624915f02799ddd0e">TipoSalto</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a76ad6ba3777f9c3e025a2f99eb37fd6d">   99</a></span>&#160;    <a class="code" href="classZero_1_1AnalizadorLexico.html">Zero::AnalizadorLexico</a> *<a class="code" href="classMacroEnsamZ.html#a76ad6ba3777f9c3e025a2f99eb37fd6d">lex</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#aa28efe2d21c7dcb5f232fa16d8f4a587">  100</a></span>&#160;    FILE *<a class="code" href="classMacroEnsamZ.html#aa28efe2d21c7dcb5f232fa16d8f4a587">ent</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#ac3b822928991fc90b3578726e14b742d">  101</a></span>&#160;    <a class="code" href="classZero_1_1MedioSoporte.html">Zero::MedioSoporte</a> *<a class="code" href="classMacroEnsamZ.html#ac3b822928991fc90b3578726e14b742d">sal</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#ac39572360fc81284a0cfddfc11028aec">  102</a></span>&#160;    std::string <a class="code" href="classMacroEnsamZ.html#ac39572360fc81284a0cfddfc11028aec">fichsalida</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a749a88947944bf18b510173ab6cb9d50">  104</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMacroEnsamZ.html#a749a88947944bf18b510173ab6cb9d50">lin</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a4200dfb1de64c9b8b7d8a45045448849">  105</a></span>&#160;    std::string <a class="code" href="classMacroEnsamZ.html#a4200dfb1de64c9b8b7d8a45045448849">buffer</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42aa4792641feef81b203912f1811035950">  107</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42aa4792641feef81b203912f1811035950">TOPLEVEL</a>, <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42a7fcf536e1b98c39571f4207dd9686e6c">ENOBJETO</a>, <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42a0271ed41f07dc713e148f77c1776ffdb">ENCUERPOMETODO</a>, <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42ae3e9d3c78f55a8ac0d837f8491adb273">ENEXCEPMETODO</a>,</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42a4452c111a2e8bd48b45a9d8d98089885">  108</a></span>&#160;                   <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42a4452c111a2e8bd48b45a9d8d98089885">ENFINMETODO</a> } <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42">ESTADO</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#adf5683eee1f87b526daf28e821031f7d">  110</a></span>&#160;    <a class="code" href="classMacroEnsamZ.html#aa2646d12de2e04f0b00f1acf9656cd42">ESTADO</a> <a class="code" href="classMacroEnsamZ.html#adf5683eee1f87b526daf28e821031f7d">estado</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#afe76ad6e4dfaf7f65ee88f41ea550e8a">  112</a></span>&#160;    <a class="code" href="classLog.html">Log</a> *<a class="code" href="classMacroEnsamZ.html#afe76ad6e4dfaf7f65ee88f41ea550e8a">log</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a3f1267f80d8e3a9445822f850b14ce40">procesaLinea</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a460b6af535f7f717d9a9470b64aa8b6a">compNMObj</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a9f91e9c75f90fc4bba1c84286016edb5">compNMMth</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#aa022f599adf10eb513567b17f507619d">compNMEnm</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a54b9c0da10f776ac08a3b6a257a4f9ca">compNMAtr</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#ad8a82d5bdd0701116572cbc7cd3f9b69">compNMEno</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a6db8d0d0fe2659a18099f8ed4343c91e">compNMRet</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#aae0364c482ea145c4ea5d3b6e19d82f7">compNMTrw</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a3103f82c1bbc1a0a72a7312a56f511db">compNMDef</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a988267c9f8db7b969134fc30200ef123">compNMJmp</a>(<a class="code" href="classMacroEnsamZ.html#a3a5eef37094856b624915f02799ddd0e">TipoSalto</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a3a3637c11c08fb458ed8ed80d1129b68">compNMIof</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a4ed6f8c6155208212510e9c0f4a2dc6f">compNMEtq</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#ac341f518f3e7e2bba984838ad7ea9030">compNMMta</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a78ed81ca91839cf99fd91c1b59274c54">compExpr</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#aff4f5d6353acb45f43274634b38bbcaa">  131</a></span>&#160;        <span class="keyword">typedef</span> std::vector&lt;std::string&gt; <a class="code" href="classMacroEnsamZ.html#aff4f5d6353acb45f43274634b38bbcaa">argumentos</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classMacroEnsamZ.html#ac653045c8ab8d41a9b0ea1f6b7db3861">compruebaParam</a>(<span class="keyword">const</span> std::string &amp;s) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classMacroEnsamZ.html#a6a4d6ac29039adb220302130028b18f6">compruebaFlotante</a>(<span class="keyword">const</span> std::string &amp;s) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        std::string <a class="code" href="classMacroEnsamZ.html#a7000f7e0187c086534d45e5e9ab28990">getAtributo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classMacroEnsamZ.html#aa2fdec0cc82fdb3eeda474f158b1da2b">buscaVbleAtributo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classMacroEnsamZ.html#aadce33045760a2daf980c98b7d71a5af">buscaVble</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classMacroEnsamZ.html#a778208cadc79c8c9f5d575f5a03854bb">buscaMetodo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#aaa7ab20ec5dcbc56d73c59691fd93fba">  141</a></span>&#160;        <a class="code" href="classMetodo.html">Metodo</a> * <a class="code" href="classMacroEnsamZ.html#aaa7ab20ec5dcbc56d73c59691fd93fba">mnemosMetActual</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a9da59ae849fefce6fc1087fff814d267">compilaExpresion</a>(<span class="keyword">const</span> std::string &amp;, <a class="code" href="classMetodo.html">Metodo</a> *&amp;, <a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">Metodo::CuerpoMetodo</a> &amp;, <span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#abd0e49fb9f5eedff66cb3d91637b0150">compilaExpresionOLiteral</a>(<a class="code" href="classMetodo.html#abd42173b1be0e4fd7e1a486ae2c21778">Metodo::CuerpoMetodo</a> &amp;);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="classZero_1_1Mnemotecnico.html">Zero::Mnemotecnico</a> * <a class="code" href="classMacroEnsamZ.html#aa40d35d2036eee0280c2ad3daad8b1e1">parseLiteral</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a1cc4a7ebe724f29c28d2d59dcb690afe">  147</a></span>&#160;        std::vector&lt;Zero::Literal&gt; <a class="code" href="classMacroEnsamZ.html#a1cc4a7ebe724f29c28d2d59dcb690afe">literalesPorObjeto</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a2049ee2d944e9fcc5d1f1288dbcb70eb">  148</a></span>&#160;        std::string <a class="code" href="classMacroEnsamZ.html#a2049ee2d944e9fcc5d1f1288dbcb70eb">objetoActual</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#aa654494877a7a5a686a7f2a9c8262cf0">  149</a></span>&#160;        std::string <a class="code" href="classMacroEnsamZ.html#aa654494877a7a5a686a7f2a9c8262cf0">metodoActual</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a64778f461dda17bb04840396f5878728">  150</a></span>&#160;        <a class="code" href="classZero_1_1IdsPorPrograma.html">Zero::IdsPorPrograma</a> <a class="code" href="classMacroEnsamZ.html#a64778f461dda17bb04840396f5878728">idsProg</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#aad9aefb641d57c16e390b8280ad1bcb3">leeLinea</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="classMacroEnsamZ.html#afa1f97580749e8afc4f8f9701e3e834c">MacroEnsamZ</a>(FILE *e, <span class="keyword">const</span> std::string &amp;f);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="classMacroEnsamZ.html#a26bbe2e19f1e9030e6a42cbc8c9de05d">~MacroEnsamZ</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a6edd361b061d8ef4a235dcb89076f903">  156</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classMacroEnsamZ.html#a6edd361b061d8ef4a235dcb89076f903">getNumeroLinea</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classMacroEnsamZ.html#a749a88947944bf18b510173ab6cb9d50">lin</a>; }</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a37ff34f59142b21ae529775b514b48cb">  157</a></span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classMacroEnsamZ.html#a37ff34f59142b21ae529775b514b48cb">getLineaActual</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classMacroEnsamZ.html#a4200dfb1de64c9b8b7d8a45045448849">buffer</a>; }</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a2ea5ac9f062e4015ad0d7131f0ed4ebd">  158</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#a2ea5ac9f062e4015ad0d7131f0ed4ebd">sigLinea</a>() { ++<a class="code" href="classMacroEnsamZ.html#a749a88947944bf18b510173ab6cb9d50">lin</a>; }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classMacroEnsamZ.html#ac3dca4034a1e1adaac0548d0b774775a">generaCodigo</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a2ff0afa889a41cc7e1f72d23df1e3f19">  161</a></span>&#160;    <span class="keyword">const</span> std::string &amp;<a class="code" href="classMacroEnsamZ.html#a2ff0afa889a41cc7e1f72d23df1e3f19">getTokenActual</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classMacroEnsamZ.html#a76ad6ba3777f9c3e025a2f99eb37fd6d">lex</a> != NULL )</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classMacroEnsamZ.html#a76ad6ba3777f9c3e025a2f99eb37fd6d">lex</a>-&gt;<a class="code" href="classZero_1_1AnalizadorLexico.html#a46b0cc4561efee8f27d28e4a0c36940f" title="Devuelve el token actual.">getTokenActual</a>();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">else</span>    <span class="keywordflow">return</span> <a class="code" href="classMacroEnsamZ.html#a4200dfb1de64c9b8b7d8a45045448849">buffer</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="classMacroEnsamZ.html#a54568c8023cf8329d146f7b2943b7817">  167</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classZero_1_1Optimizador.html">Zero::Optimizador</a> *<a class="code" href="classMacroEnsamZ.html#a54568c8023cf8329d146f7b2943b7817">opt</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;};</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">// Interface ===================================================================</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="za_8cpp.html#a69042966ff63cc80389e55e0de0ed057">warning</a>(<a class="code" href="classMacroEnsamZ.html">MacroEnsamZ</a> *, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="za_8cpp.html#a69042966ff63cc80389e55e0de0ed057">warning</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

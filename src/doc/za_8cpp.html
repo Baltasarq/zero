@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia del Archivo za.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo za.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;cstdio&gt;</code><br/>
+<code>#include &lt;cctype&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
+<code>#include &lt;memory&gt;</code><br/>
+<code>#include &quot;<a class="el" href="za_8h_source.html">za.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="excep_8h_source.html">excep.h</a>&quot;</code><br/>
+</div>
+<p><a href="za_8cpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a69042966ff63cc80389e55e0de0ed057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a69042966ff63cc80389e55e0de0ed057">warning</a> (const string &amp;x)</td></tr>
+<tr class="separator:a69042966ff63cc80389e55e0de0ed057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf7a1e6ec70cedb5a4853e621c075a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#aedf7a1e6ec70cedb5a4853e621c075a3">warning</a> (<a class="el" href="classEnsamZ.html">EnsamZ</a> *za, const std::string &amp;x)</td></tr>
+<tr class="separator:aedf7a1e6ec70cedb5a4853e621c075a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae695d3323fc5076c9607276e4da7c991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#ae695d3323fc5076c9607276e4da7c991">error</a> (<a class="el" href="classEnsamZ.html">EnsamZ</a> *za, const <a class="el" href="classZero_1_1Excepcion.html">Zero::Excepcion</a> &amp;e)</td></tr>
+<tr class="separator:ae695d3323fc5076c9607276e4da7c991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acefdda37718048ba4aada42283af8e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#acefdda37718048ba4aada42283af8e5d">procesarOpciones</a> (int argc, char *argv[], <a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a> &amp;opt, std::string &amp;fich)</td></tr>
+<tr class="separator:acefdda37718048ba4aada42283af8e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abe09017364aa1a9743c2b8b166e31a92"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#abe09017364aa1a9743c2b8b166e31a92">MAXLIN</a> = 4096</td></tr>
+<tr class="separator:abe09017364aa1a9743c2b8b166e31a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6727386ea60bc3ad05618c75044cf003"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a6727386ea60bc3ad05618c75044cf003">nombre</a> = &quot;Za - Ensamblador Zero (Zero Assembler)&quot;</td></tr>
+<tr class="separator:a6727386ea60bc3ad05618c75044cf003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3077da85c31208a8471d18521c99bd93"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a3077da85c31208a8471d18521c99bd93">version</a> = &quot;v2.6&quot;</td></tr>
+<tr class="separator:a3077da85c31208a8471d18521c99bd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad07e43dba619b3aec2e64deb5ec9d5ab"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#ad07e43dba619b3aec2e64deb5ec9d5ab">serial</a> = &quot;120509&quot;</td></tr>
+<tr class="separator:ad07e43dba619b3aec2e64deb5ec9d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4499e5e99227b5b7c6e1571b13edd428"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a4499e5e99227b5b7c6e1571b13edd428">opOpt0</a> = &quot;OPT0&quot;</td></tr>
+<tr class="separator:a4499e5e99227b5b7c6e1571b13edd428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9267c3b633bf01aef2b0577b6145c59a"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a9267c3b633bf01aef2b0577b6145c59a">opOpt1</a> = &quot;OPT1&quot;</td></tr>
+<tr class="separator:a9267c3b633bf01aef2b0577b6145c59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f19546072eccee019d03e6f4dfbd6c"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a18f19546072eccee019d03e6f4dfbd6c">opOpt2</a> = &quot;OPT2&quot;</td></tr>
+<tr class="separator:a18f19546072eccee019d03e6f4dfbd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac17f2b6f9ea61f66b110e49fec3fd3"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a3ac17f2b6f9ea61f66b110e49fec3fd3">defext</a> = &quot;.def&quot;</td></tr>
+<tr class="separator:a3ac17f2b6f9ea61f66b110e49fec3fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2237b646b39570ea8666a2f171ff7d57"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a2237b646b39570ea8666a2f171ff7d57">sintaxis</a></td></tr>
+<tr class="separator:a2237b646b39570ea8666a2f171ff7d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872cc0ff78aa1dfda1cba1bcfa1631cf"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#a872cc0ff78aa1dfda1cba1bcfa1631cf">MARCACOMENTARIO</a> = ';'</td></tr>
+<tr class="separator:a872cc0ff78aa1dfda1cba1bcfa1631cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf17b73084b453faece4c82e5aa74d34"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="za_8cpp.html#abf17b73084b453faece4c82e5aa74d34">VERSION_XML</a> = &quot;&lt;?xml <a class="el" href="zma_8cpp.html#af1d08f0ffe4249dcec4b475b2a0d8b9f">version</a>=\&quot;1.0\&quot; encoding=\&quot;ISO-8859-1\&quot;?&gt;&quot;</td></tr>
+<tr class="separator:abf17b73084b453faece4c82e5aa74d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="ae695d3323fc5076c9607276e4da7c991"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void error </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEnsamZ.html">EnsamZ</a> *&#160;</td>
+          <td class="paramname"><em>za</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classZero_1_1Excepcion.html">Zero::Excepcion</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00688">688</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="excep_8h_source.html#l00041">Zero::Excepcion::getDetalles()</a>, <a class="el" href="za_8cpp_source.html#l00553">EnsamZ::getLinActual()</a>, <a class="el" href="excep_8h_source.html#l00038">Zero::Excepcion::getMensaje()</a>, <a class="el" href="za_8cpp_source.html#l00546">EnsamZ::getNumeroLinea()</a>, <a class="el" href="za_8h_source.html#l00068">EnsamZ::getNumeroLineaMetodo()</a>, <a class="el" href="za_8h_source.html#l00061">EnsamZ::metodoActual</a> y <a class="el" href="za_8h_source.html#l00060">EnsamZ::objetoActual</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00767">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;{</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// Hubo un error</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    cerr &lt;&lt; e.<a class="code" href="classZero_1_1Excepcion.html#a5878bfe8e8b1854c3773bc99cb916544">getMensaje</a>()  &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;  &quot;</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;         &lt;&lt; <span class="charliteral">&#39;(&#39;</span> &lt;&lt; e.<a class="code" href="classZero_1_1Excepcion.html#a80484e27ab2a3ea58afa688666027fb7">getDetalles</a>() &lt;&lt; <span class="charliteral">&#39;)&#39;</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;         &lt;&lt; endl</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    ;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// Montar un mensaje de error significativo</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="keywordflow">if</span> (za != NULL)</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    {</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        <span class="keywordflow">if</span> ( !za-&gt;<a class="code" href="classEnsamZ.html#ab38ba9588cb5967f921e31fa44fc592f">objetoActual</a>.empty() ) {</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot; compilando instr. &quot;</span>;</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            <span class="keywordflow">if</span> ( dynamic_cast&lt;const Zero::ECompilacion *&gt;( &amp;e ) != NULL )</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            {</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                cerr &lt;&lt; <span class="charliteral">&#39;+&#39;</span> &lt;&lt; ((<a class="code" href="classZero_1_1ECompilacion.html">Zero::ECompilacion</a> *) &amp;e)-&gt;getLinMetodo();</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            }</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                cerr &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#ab942a89c7519d5357f756ba0b3e4c559">getNumeroLineaMetodo</a>();</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            }</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot; en \&quot;&quot;</span> + za-&gt;<a class="code" href="classEnsamZ.html#ab38ba9588cb5967f921e31fa44fc592f">objetoActual</a>;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            <span class="keywordflow">if</span> ( !za-&gt;<a class="code" href="classEnsamZ.html#a1dfc544d25f93e20cb0844f5191a2de2">metodoActual</a>.empty() ) {</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                cerr   &lt;&lt; <span class="charliteral">&#39;.&#39;</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                       &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#a1dfc544d25f93e20cb0844f5191a2de2">metodoActual</a> &lt;&lt; <span class="stringliteral">&quot;()&quot;</span>;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            }</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;            cerr &lt;&lt; <span class="charliteral">&#39;\&quot;&#39;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        }</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        cerr  &lt;&lt; <span class="stringliteral">&quot; en: &quot;</span> &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#a7955dbfefb6a67f9f4d21cc6ad27c1d1">getNumeroLinea</a>()</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;              &lt;&lt; <span class="charliteral">&#39;:&#39;</span>   &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#a97cc50ed6b2840f977e51f5ceeedf5ef">getLinActual</a>()</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        ;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        cerr  &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    }</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00767">767</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="za_8cpp_source.html#l00030">defext</a>, <a class="el" href="za_8cpp_source.html#l00688">error()</a>, <a class="el" href="reservadas_8cpp_source.html#l00139">Zero::EXT_ARCHIVOS_ZERO</a>, <a class="el" href="mnemos_8cpp_source.html#l00022">Zero::hver</a>, <a class="el" href="mnemos_8cpp_source.html#l00023">Zero::lver</a>, <a class="el" href="za_8cpp_source.html#l00024">nombre</a>, <a class="el" href="mediosoporte_8h_source.html#l00079">Zero::FicheroSoporte::Nuevo</a>, <a class="el" href="partescompilador_8h_source.html#l00006">PartesCompilador::opt1</a>, <a class="el" href="za_8cpp_source.html#l00727">procesarOpciones()</a>, <a class="el" href="za_8cpp_source.html#l00026">serial</a>, <a class="el" href="za_8cpp_source.html#l00032">sintaxis</a> y <a class="el" href="za_8cpp_source.html#l00025">version</a>.</p>
+<div class="fragment"><div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;{</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        std::auto_ptr&lt;EnsamZ&gt; za;</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        std::auto_ptr&lt;Zero::FicheroSoporte&gt; salida;</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;<span class="comment">//        Zero::Optimizador::TipoOptimizacion opt = Optimizador::opt2;</span></div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a> opt = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa3e5bd9f0d18f2521c86ef6b350a812a9">Zero::Optimizador::opt1</a>;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        cout &lt;&lt; <a class="code" href="za_8cpp.html#a6727386ea60bc3ad05618c75044cf003">nombre</a>       &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; <a class="code" href="za_8cpp.html#a3077da85c31208a8471d18521c99bd93">version</a></div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;             &lt;&lt; <span class="stringliteral">&quot; serial &quot;</span>   &lt;&lt; <a class="code" href="za_8cpp.html#ad07e43dba619b3aec2e64deb5ec9d5ab">serial</a></div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;             &lt;&lt; <span class="stringliteral">&quot; Opcodes v&quot;</span> &lt;&lt; (int) <a class="code" href="namespaceZero.html#a8857412fa56d5f4be5958c85f8e1b94e">Zero::hver</a> &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; (<span class="keywordtype">int</span>) Zero::<a class="code" href="namespaceZero.html#ab1e1f3cbc09ca6446997ca78629a8563">lver</a></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;             &lt;&lt; endl</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        ;</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        if ( argc != 2</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;          &amp;&amp; argc != 3 )</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        {</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            cout &lt;&lt; <a class="code" href="za_8cpp.html#a2237b646b39570ea8666a2f171ff7d57">sintaxis</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        }</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            <span class="keywordtype">string</span> fichSalida  = argv[ 1 ];</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            <span class="keywordtype">string</span> fichEntrada = argv[ 1 ];</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            <span class="keywordflow">if</span> ( argc == 3 ) {</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                <a class="code" href="za_8cpp.html#acefdda37718048ba4aada42283af8e5d">procesarOpciones</a>( argc, argv, opt, fichEntrada );</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                fichSalida = fichEntrada;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            }</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            <span class="comment">// ESTO ES TEMPORAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="keywordflow">if</span> ( opt &gt; <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa3e5bd9f0d18f2521c86ef6b350a812a9">Zero::Optimizador::opt1</a> ) {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Sorry, -opt2 still unstable&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                opt = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa3e5bd9f0d18f2521c86ef6b350a812a9">Zero::Optimizador::opt1</a>;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            }</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            fichSalida += <a class="code" href="namespaceZero.html#a12630b9f40250415140c0dda54fe48d4">Zero::EXT_ARCHIVOS_ZERO</a>;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                    salida.reset(</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                        <span class="keyword">new</span> <a class="code" href="classZero_1_1FicheroSoporte.html">Zero::FicheroSoporte</a>( fichSalida, <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7adc93d184f9f34163e69ee457b7ca9690">Zero::FicheroSoporte::Nuevo</a> )</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                    );</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                    FILE * entrada = fopen( fichEntrada.c_str(), <span class="stringliteral">&quot;rt&quot;</span> );</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    <span class="keywordflow">if</span> ( entrada == NULL )</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                    {</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                        <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1EMedioNoEncontrado.html">Zero::EMedioNoEncontrado</a>( fichEntrada.c_str() );</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                    }</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                        za.reset( <span class="keyword">new</span> <a class="code" href="classEnsamZ.html">EnsamZ</a>( entrada, salida.get(), fichSalida ) );</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                        za-&gt;generaCodigo( opt );</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                        fclose( entrada );</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                        <span class="comment">// Construir fichero XML de identificadores</span></div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                        FILE *ids = fopen( ( argv[1] + <a class="code" href="za_8cpp.html#a3ac17f2b6f9ea61f66b110e49fec3fd3">defext</a> ).c_str(), <span class="stringliteral">&quot;wt&quot;</span> );</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                        fprintf( ids, <span class="stringliteral">&quot;%s&quot;</span>, za-&gt;idsProg.toXML().c_str() );</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                        fclose( ids );</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                        cout &lt;&lt; <span class="stringliteral">&quot;\n\nopt lvl: &quot;</span> &lt;&lt; (int) opt</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                             &lt;&lt; <span class="stringliteral">&quot;\tobjs: &quot;</span> &lt;&lt; za-&gt;idsProg.getNumero();</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                        cout &lt;&lt; <span class="stringliteral">&quot;\n\nFinalizado: &quot;</span> &lt;&lt; fichSalida &lt;&lt; endl;</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                    }</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                }</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="classZero_1_1Excepcion.html">Zero::Excepcion</a> &amp;e)</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                {</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                        <a class="code" href="za_8cpp.html#ae695d3323fc5076c9607276e4da7c991">error</a>( za.get(), e );</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                        exit(-1);</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                }</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        }</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="acefdda37718048ba4aada42283af8e5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void procesarOpciones </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a> &amp;&#160;</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>fich</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00727">727</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="za_8cpp_source.html#l00027">opOpt0</a>, <a class="el" href="za_8cpp_source.html#l00028">opOpt1</a>, <a class="el" href="za_8cpp_source.html#l00029">opOpt2</a>, <a class="el" href="partescompilador_8h_source.html#l00006">PartesCompilador::opt0</a>, <a class="el" href="partescompilador_8h_source.html#l00006">PartesCompilador::opt1</a> y <a class="el" href="partescompilador_8h_source.html#l00006">PartesCompilador::opt2</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00767">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;{</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordtype">int</span> i = 1;</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <span class="keywordtype">string</span> arg;</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <span class="comment">// Procesar todos los argumentos</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keywordflow">for</span>(; i &lt; argc - 1; ++i ) {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        arg = argv[ i ];</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        <span class="comment">// Eliminar los guiones delante</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="keywordflow">while</span>( arg[ 0 ] == <span class="charliteral">&#39;-&#39;</span> ) {</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            arg.erase( 0, 1 );</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        }</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="comment">// Pasar a mays</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="keywordflow">for</span>(string::iterator it = arg.begin(); it != arg.end(); ++it) {</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            *it = toupper( *it );</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        }</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        <span class="comment">// Comprobar las opciones</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        <span class="keywordflow">if</span> ( arg == <a class="code" href="za_8cpp.html#a4499e5e99227b5b7c6e1571b13edd428">opOpt0</a> ) {</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            opt = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa6c7d4794ace67bb4a5b45afa2e0e663e">Zero::Optimizador::opt0</a>;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        }</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <span class="keywordflow">if</span> ( arg == <a class="code" href="za_8cpp.html#a9267c3b633bf01aef2b0577b6145c59a">opOpt1</a> ) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            opt = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa3e5bd9f0d18f2521c86ef6b350a812a9">Zero::Optimizador::opt1</a>;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        }</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        <span class="keywordflow">if</span> ( arg == <a class="code" href="za_8cpp.html#a18f19546072eccee019d03e6f4dfbd6c">opOpt2</a> ) {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            opt = <a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfad29068c2282a5c5f0a0a148fce4a5d0a">Zero::Optimizador::opt2</a>;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        }</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    }</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <span class="comment">// Indicar el fichero de salida</span></div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    fich = argv[ i ];</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a69042966ff63cc80389e55e0de0ed057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void warning </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00652">652</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00251">EnsamZ::chkNMMsg()</a> y <a class="el" href="za_8cpp_source.html#l00487">EnsamZ::compilaMetodo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;{</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    cerr &lt;&lt; <span class="stringliteral">&quot;AVISO &quot;</span> &lt;&lt; x &lt;&lt; endl;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aedf7a1e6ec70cedb5a4853e621c075a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void warning </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEnsamZ.html">EnsamZ</a> *&#160;</td>
+          <td class="paramname"><em>za</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00657">657</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="za_8cpp_source.html#l00553">EnsamZ::getLinActual()</a>, <a class="el" href="za_8cpp_source.html#l00546">EnsamZ::getNumeroLinea()</a>, <a class="el" href="za_8h_source.html#l00068">EnsamZ::getNumeroLineaMetodo()</a>, <a class="el" href="za_8h_source.html#l00061">EnsamZ::metodoActual</a> y <a class="el" href="za_8h_source.html#l00060">EnsamZ::objetoActual</a>.</p>
+<div class="fragment"><div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;{</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    cerr &lt;&lt; <span class="stringliteral">&quot;AVISO &quot;</span> &lt;&lt; x &lt;&lt; endl;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <span class="keywordflow">if</span> ( za != NULL )</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    {</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;          cerr  &lt;&lt; <span class="stringliteral">&quot; en: &quot;</span> &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#a7955dbfefb6a67f9f4d21cc6ad27c1d1">getNumeroLinea</a>()</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                &lt;&lt; <span class="charliteral">&#39;:&#39;</span>     &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#a97cc50ed6b2840f977e51f5ceeedf5ef">getLinActual</a>()</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;          ;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;          <span class="keywordflow">if</span> ( !za-&gt;<a class="code" href="classEnsamZ.html#ab38ba9588cb5967f921e31fa44fc592f">objetoActual</a>.empty() ) {</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot;Compilando instr. &quot;</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;             &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#ab942a89c7519d5357f756ba0b3e4c559">getNumeroLineaMetodo</a>()</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;             &lt;&lt; <span class="stringliteral">&quot; de &quot;</span>;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            cerr &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span> &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#ab38ba9588cb5967f921e31fa44fc592f">objetoActual</a>;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;            <span class="keywordflow">if</span> ( !za-&gt;<a class="code" href="classEnsamZ.html#a1dfc544d25f93e20cb0844f5191a2de2">metodoActual</a>.empty() ) {</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                    cerr   &lt;&lt; <span class="charliteral">&#39;.&#39;</span></div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                           &lt;&lt; za-&gt;<a class="code" href="classEnsamZ.html#a1dfc544d25f93e20cb0844f5191a2de2">metodoActual</a> &lt;&lt; <span class="stringliteral">&quot;()&quot;</span>;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;            }</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;            cerr &lt;&lt; <span class="charliteral">&#39;\&quot;&#39;</span> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;          }</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;          cerr &lt;&lt; endl;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    }</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a class="anchor" id="a3ac17f2b6f9ea61f66b110e49fec3fd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string defext = &quot;.def&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00030">30</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00767">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a872cc0ff78aa1dfda1cba1bcfa1631cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char MARCACOMENTARIO = ';'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00040">40</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00264">EnsamZ::procesaLinea()</a> y <a class="el" href="zma_8cpp_source.html#l00827">MacroEnsamZ::procesaLinea()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe09017364aa1a9743c2b8b166e31a92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int MAXLIN = 4096</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00022">22</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6727386ea60bc3ad05618c75044cf003"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string nombre = &quot;Za - Ensamblador Zero (Zero Assembler)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00024">24</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zma_8cpp_source.html#l00214">MacroEnsamZ::compNMAtr()</a>, <a class="el" href="zma_8cpp_source.html#l00133">MacroEnsamZ::compNMMth()</a>, <a class="el" href="zma_8cpp_source.html#l00073">MacroEnsamZ::compNMObj()</a>, <a class="el" href="runtime_8cpp_source.html#l03133">Zero::Runtime::copyObject()</a>, <a class="el" href="runtime_8cpp_source.html#l02982">Zero::Runtime::createChildOf()</a>, <a class="el" href="zd_8cpp_source.html#l00049">DesensamZ::generarListado()</a>, <a class="el" href="runtime_8cpp_source.html#l01308">Zero::Stack::StackInfoItem::getMetodo()</a>, <a class="el" href="runtime_8cpp_source.html#l04040">Zero::Runtime::getNameOfAttributeNumberYOfX()</a>, <a class="el" href="runtime_8cpp_source.html#l04072">Zero::Runtime::getNameOfMethodNumberYOfX()</a>, <a class="el" href="prucol_8cpp_source.html#l00019">Personita::getNombre()</a> y <a class="el" href="prucol_8cpp_source.html#l00023">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4499e5e99227b5b7c6e1571b13edd428"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string opOpt0 = &quot;OPT0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00027">27</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00727">procesarOpciones()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9267c3b633bf01aef2b0577b6145c59a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string opOpt1 = &quot;OPT1&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00028">28</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00727">procesarOpciones()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a18f19546072eccee019d03e6f4dfbd6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string opOpt2 = &quot;OPT2&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00029">29</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00727">procesarOpciones()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad07e43dba619b3aec2e64deb5ec9d5ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string serial = &quot;120509&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00026">26</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00767">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2237b646b39570ea8666a2f171ff7d57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string sintaxis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;za [-&quot;</span> + <a class="code" href="za_8cpp.html#a4499e5e99227b5b7c6e1571b13edd428">opOpt0</a> + <span class="stringliteral">&quot; | -&quot;</span> + <a class="code" href="za_8cpp.html#a9267c3b633bf01aef2b0577b6145c59a">opOpt1</a> + <span class="stringliteral">&quot; | &quot;</span></div>
+<div class="line">                               + <a class="code" href="za_8cpp.html#a18f19546072eccee019d03e6f4dfbd6c">opOpt2</a> + <span class="stringliteral">&quot;]&quot;</span></div>
+<div class="line">                               <span class="stringliteral">&quot; &lt;nombreFichero&gt;\n\n\t-&quot;</span></div>
+<div class="line">                               + <a class="code" href="za_8cpp.html#a4499e5e99227b5b7c6e1571b13edd428">opOpt0</a> + <span class="stringliteral">&quot;\tSin optimizaciones&quot;</span></div>
+<div class="line">                               <span class="stringliteral">&quot;\n\t-&quot;</span> + <a class="code" href="za_8cpp.html#a9267c3b633bf01aef2b0577b6145c59a">opOpt1</a> + <span class="stringliteral">&quot;\tOptimizaciones min.&quot;</span></div>
+<div class="line">                               <span class="stringliteral">&quot;\n\t-&quot;</span> + <a class="code" href="za_8cpp.html#a18f19546072eccee019d03e6f4dfbd6c">opOpt2</a> + <span class="stringliteral">&quot;\tOptimizaciones max.&quot;</span></div>
+<div class="line">                               <span class="stringliteral">&quot; (por defecto)\n\n&quot;</span></div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00032">32</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00767">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3077da85c31208a8471d18521c99bd93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string version = &quot;v2.6&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00025">25</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="cargaobj_8cpp_source.html#l00161">Zero::CargadorObjetos::compruebaOrigen()</a> y <a class="el" href="za_8cpp_source.html#l00767">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf17b73084b453faece4c82e5aa74d34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string VERSION_XML = &quot;&lt;?xml <a class="el" href="zma_8cpp.html#af1d08f0ffe4249dcec4b475b2a0d8b9f">version</a>=\&quot;1.0\&quot; encoding=\&quot;ISO-8859-1\&quot;?&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="za_8cpp_source.html#l00041">41</a> del archivo <a class="el" href="za_8cpp_source.html">za.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

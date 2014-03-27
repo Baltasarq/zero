@@ -1,0 +1,2625 @@
+; Zero's Internal Standard Library
+; v 2.7 090521
+; jbgarcia@uvigo.es
+
+; =============================================================================
+; Object
+;       The inheritance root of everything in Zero.
+; =============================================================================
+OBJ Object Nothing
+
+; createChild -----------------------------------------------------------------
+; returns: a new Object, with its parent pointing to "__this"
+; parameters: the name of the new object
+; -----------------------------------------------------------------------------
+        MTH + createChild objName
+                MSG __VM__ createChildOf __this objName
+        RET __acc
+        ENM
+
+; getName ---------------------------------------------------------------------
+; returns: a LiteralString with the name of __this object
+; parameters: None
+; -----------------------------------------------------------------------------
+        MTH + getName
+                MSG __VM__ getNameOf __this
+        RET __acc
+        ENM
+
+; getOwner  -------------------------------------------------------------------
+; returns: a reference to the container this object belongs to
+; parameters: the object
+; -----------------------------------------------------------------------------
+        MTH + getOwner
+                MSG __VM__ getOwner __this
+        RET __acc
+        ENM
+
+; getPersistentStore  ---------------------------------------------------------
+; returns: a reference to the PersistentStore
+; parameters: none
+; -----------------------------------------------------------------------------
+        MTH + getPersistentStore
+		SET .IntStdLib.PersistentStore
+        RET __acc
+        ENM
+
+; toString --------------------------------------------------------------------
+; returns: a LiteralString
+; parameters: none
+; -----------------------------------------------------------------------------
+        MTH + toString
+                MSG __this getName
+        RET __acc
+        ENM
+
+; isTheSameAs -----------------------------------------------------------------
+; returns: a Conditional
+; parameters: another reference (compares the parameter and __this)
+; -----------------------------------------------------------------------------
+        MTH + isTheSameAs x
+                MSG __VM__ compareReferences __this x
+        RET __acc
+        ENM
+
+; isEqualTo -------------------------------------------------------------------
+; returns: a Conditional
+; parameters: another object. This method is supposed to be overriden by
+;             object needing of a method for comparison.
+; -----------------------------------------------------------------------------
+        MTH + isEqualTo x
+                MSG __this isTheSameAs x
+        RET __acc
+        ENM
+
+; isLessThan ------------------------------------------------------------------
+; returns: a Conditional
+; parameters: another object. This method is supposed to be overriden by
+;             objects needing of a method for sorting.
+; -----------------------------------------------------------------------------
+        MTH + isLessThan x
+                SET __rr False
+        RET
+        ENM
+
+; copy ------------------------------------------------------------------------
+; returns: a copy of __this object
+; parameters: none
+; -----------------------------------------------------------------------------
+        MTH + copy objectName
+                MSG __VM__ copyObject __this objectName
+		ASG __rr
+		MSG __rr onCopy
+        RET
+        ENM
+
+; finalize --------------------------------------------------------------------
+; returns: nothing
+; parameters: none
+; -----------------------------------------------------------------------------
+        MTH + finalize
+        RET
+        ENM
+
+; onCopy ----------------------------------------------------------------------
+; returns: nothing
+; parameters: none
+; -----------------------------------------------------------------------------
+        MTH + onCopy
+        RET
+        ENM
+
+; callByName ------------------------------------------------------------------
+; returns: a reference returned by the method called.
+; parameters: the method's name, and a vector containing the arguments for the
+;             method to be invoked. Number of elements in method must match
+;             the number of formal parameters.
+; -----------------------------------------------------------------------------
+        MTH + callByName mthName vArgs
+                MSG __this getMethodNumberByName mthName
+                MSG __this callMethodNumber __acc vArgs
+        RET __acc
+        ENM
+
+; getAttributeByName ----------------------------------------------------------
+; returns: an object pointed by the attribute
+; parameters: the attribute's name
+; -----------------------------------------------------------------------------
+        MTH + getAttributeByName atrName
+                MSG __this getAttributeNumberByName atrName
+                MSG __this getAttributeNumber __acc
+        RET __acc
+        ENM
+
+; Primitive operations on attributes ------------------------------------------
+        MTH + getNumberOfAttributes
+                MSG __VM__ getNumberOfAttributesOf __this
+        RET __acc
+        ENM
+
+        MTH + getNumberOfParentAttribute
+                MSG __VM__ getNumberOfParentAttributeOf __this
+        RET __acc
+        ENM
+
+        MTH + getAttributeNumber x
+                MSG __VM__ getAttributeNumberYOfX __this x
+        RET __acc
+        ENM
+
+        MTH + addAttribute name obj
+                MSG __VM__ addAttributeYOfXValueZ __this name obj
+        RET __acc
+        ENM
+
+        MTH + deleteAttributeNumber x
+                MSG __VM__ deleteAttributeNumberYOfX __this x
+        RET __acc
+        ENM
+
+        MTH + getInfoOnAttributeNumber x
+                MSG __VM__ getInfoOnAttributeNumberYOfX __this x
+        RET __acc
+        ENM
+
+        MTH + getAttributeNumberByName name
+                MSG __VM__ getAttributeNumberByNameYOfX __this name
+        RET __acc
+        ENM
+
+        MTH + getNameOfAttributeNumber x
+                MSG __VM__ getNameOfAttributeNumberYOfX __this x
+        RET __acc
+        ENM
+
+; Primitive operations on methods ---------------------------------------------
+        MTH + addMethod name vArgs
+                MSG __VM__ addMethodYInX __this name vArgs
+        RET __acc
+        ENM
+
+	; Returns a string with warnings (if any)
+	MTH + compileToMethod num strOpcodes
+		MSG __VM__ compileToMethodYOfX __this num strOpcodes
+	RET __acc
+	ENM
+
+        MTH + getNumberOfMethods
+                MSG __VM__ getNumberOfMethodsOf __this
+        RET __acc
+        ENM
+
+        MTH + callMethodNumber x vArgs
+                MSG __VM__ callMethodNumber __this x vArgs
+        RET __acc
+        ENM
+
+        MTH + deleteMethodNumber x
+                MSG __VM__ deleteMethodNumberYOfX __this x
+        RET __acc
+        ENM
+
+        MTH + getInfoOnMethodNumber x
+                MSG __VM__ getInfoOnMethodNumberYOfX __this x
+        RET __acc
+        ENM
+
+        MTH + getMethodNumberByName name
+                MSG __VM__ getMethodNumberByNameYOfX __this name
+        RET __acc
+        ENM
+
+        MTH + getNameOfMethodNumber x
+                MSG __VM__ getNameOfMethodNumberYOfX __this x
+        RET __acc
+        ENM
+
+        MTH + getOpcodesOfMethodNumber x
+                MSG __VM__ getOpcodesOfMethodNumberYOfX __this x
+        RET __acc
+        ENM
+
+; get info list about attributes ----------------------------------------------
+
+        MTH + getListOfAttributes
+            INT 1
+            ASG __gp1
+
+            MSG __this getNumberOfAttributes
+            ASG __gp2
+
+            MSG Int zero
+            ASG __gp3
+
+	    MSG String zero
+	    ASG __gp4
+
+            MSG VectorInstance copy __gp4
+            ASG __rr
+
+            ETQ Loop
+                MSG __this getInfoOnAttributeNumber __gp3
+                MSG __rr add __acc
+
+                MSG __gp3 sum __gp1
+		ASG __gp3
+                MSG __gp3 isLessThan __gp2
+                JOF Fin
+            JMP Loop
+
+	ETQ Fin
+        RET
+        ENM
+
+; get Info list about methods -------------------------------------------------
+
+        MTH + getListOfMethods
+            INT 1
+            ASG __gp1
+
+            MSG __this getNumberOfMethods
+            ASG __gp2
+
+            MSG Int zero
+            ASG __gp3
+
+	    MSG String zero
+	    ASG __gp4
+
+            MSG VectorInstance copy __gp4
+            ASG __rr
+
+            ETQ Loop
+                MSG __this getInfoOnMethodNumber __gp3
+                MSG __rr add __acc
+
+                MSG __gp3 sum __gp1
+		ASG __gp3
+                MSG __gp3 isLessThan __gp2
+                JOF Fin
+            JMP Loop
+
+	ETQ Fin
+        RET
+        ENM
+
+        ; Properties ----------------------------------------------------------
+        MTH + getObjectProperties
+                MSG __VM__ getObjectPropertiesOf __this
+                RET __acc
+        ENM
+
+        MTH + getPropertiesOfMethodNumber x
+                MSG __VM__ getMethodPropertiesYOfX __this x
+                RET __acc
+        ENM
+ENO
+
+
+
+
+
+
+; =============================================================================
+; PersistentStore
+;
+; This object holds information about the persistent store.
+; =============================================================================
+
+OBJ PersistentStore
+
+	; getRoot -------------------------------------------------------------
+	; Returns: the container which is the root of the persistent store
+	; ---------------------------------------------------------------------
+
+	MTH + getRoot
+		MSG __VM__.PS getPersistentRoot
+	RET __acc
+	ENM
+
+	; isPresent -----------------------------------------------------------
+	; Returns: True or False, depending on the PS being present
+	; ---------------------------------------------------------------------
+
+	MTH + isPresent
+		MSG __VM__.PS isPSPresent
+	RET __acc
+	ENM
+ENO
+
+
+
+
+
+; =============================================================================
+; Nothing
+;       The object that designates C++'s "NULL" values, Pascal's "nil" values ..
+; =============================================================================
+
+OBJ Nothing
+ENO
+
+
+
+; =============================================================================
+; Properties
+; =============================================================================
+OBJ Property
+ATR + info Nothing
+
+MTH + toString
+	MSG __this getName
+	ASG __rr
+
+	STR ": "
+	MSG __rr concat __acc
+	ASG __rr
+
+	MSG __this getInfo
+	MSG __acc toString
+	MSG __rr concat __acc
+	ASG __rr
+
+	RET __rr
+ENM
+
+MTH + getInfo
+	SET __rr info
+	RET
+ENM
+
+ENO
+
+OBJ DocProperty Property
+ENO
+
+OBJ Doc DocProperty
+ENO
+
+OBJ DebugProperty Property
+ENO
+
+OBJ Debug DebugProperty
+ENO
+
+
+; =============================================================================
+; Object Processor
+;
+;       The parent object for all objects meant to be executed for all members
+;       of a collection. If doIt returns False, then the loop over the elements
+;       is stopped.
+; =============================================================================
+
+        OBJ Processor
+                MTH + doIt obj
+                        SET False
+                RET __acc
+                ENM
+        ENO
+
+        OBJ FindDescendantOf Processor
+        	ATR + ancestor Nothing
+
+        	MTH + doIt obj
+        		SET obj
+        		IOF ancestor
+
+        		JOF NotAncestor
+        		SET __rr False
+        		JMP End
+
+        		ETQ NotAncestor
+        		SET __rr True
+
+        		ETQ End
+        		RET
+        	ENM
+
+        	MTH + setAncestor x
+        		SET x
+        		ASG ancestor
+        	RET
+        	ENM
+
+	ENO
+
+	OBJ OutputProcessor Processor
+		ATR + out .IntStdLib.System.console
+
+                MTH + doIt obj
+                        MSG out write obj
+                        SET __rr True
+                RET
+			SET __rr False
+                ENM
+
+		MTH + setOutput obj
+			SET __gp1 obj
+			IOF Ouput __gp1
+			JOF Fin
+				ASG out __gp1
+		ETQ Fin
+		RET
+		ENM
+	ENO
+
+	OBJ DisplayByConsoleProcessor OutputProcessor
+                MTH + doIt obj
+                        MSG out write obj
+			MSG out lf
+                        SET  __rr True
+                RET
+			SET __rr False
+                ENM
+
+		MTH + setOutput obj
+		RET
+		ENM
+        ENO
+
+; =============================================================================
+; Object Info
+;
+;       The parent object for every object meant to store info about objects,
+;       obtained through reflection.
+; =============================================================================
+
+        OBJ Info
+        ENO
+
+        OBJ AttributeInfo Info
+                ATR + owner Nothing
+                ATR + access Nothing
+                ATR + name Nothing
+                ATR + references Nothing
+                ATR + ordinal Nothing
+
+		MTH + toString
+			; Tomar el nombre del atributo
+			SET __rr name
+
+			; Concatenarle un separador
+			STR " ("
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el acceso
+			; Concatenarle el acceso
+			SET access
+			JOF else
+				STR "+"
+				JMP endif
+			ETQ else
+				STR "-"
+			ETQ endif
+			MSG __rr concat __acc
+			ASG __rr
+			STR "): ["
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el nombre del objeto
+			MSG owner getName
+			MSG __rr concat __acc
+			ASG __rr
+			STR "], #"
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el # de orden
+			MSG ordinal toString
+			MSG __rr concat __acc
+			ASG __rr
+			STR ", = "
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el objeto al que referencia
+			MSG references toString
+			MSG __rr concat __acc
+			ASG __rr
+
+		RET
+		ENM
+        ENO
+
+        OBJ MethodInfo Info
+                ATR + owner Nothing
+                ATR + access Nothing
+                ATR + name Nothing
+		ATR + opcodeList Nothing
+                ATR + parameters Nothing  ; a vector of LiteralString's
+
+                ATR + ordinal Nothing
+
+                MTH + doIt
+			SET name
+                        MSG owner callByName __acc
+                RET __acc
+		ENM
+
+		MTH + toString
+			; Tomar el nombre del método
+			SET __rr name
+
+			; Concatenarle los parámetros
+			STR "("
+			MSG __rr concat __acc
+			ASG __rr
+			SET parameters
+			SET __gp1 Nothing
+
+			MSG __acc isTheSameAs __gp1
+			JOT endif
+				MSG parameters toString
+				MSG __rr concat __acc
+			ETQ endif
+
+			; Concatenarle un separador
+			STR ") ["
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el acceso
+			SET access
+			JOF else
+				STR "+"
+				JMP endif2
+			ETQ else
+				STR "-"
+			ETQ endif2
+
+			MSG __rr concat __acc
+			ASG __rr
+			STR "]: ["
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el nombre del objeto
+			MSG owner getName
+			MSG __rr concat __acc
+			ASG __rr
+			STR "], #"
+			MSG __rr concat __acc
+			ASG __rr
+
+			; Concatenarle el # de orden
+			MSG ordinal toString
+			MSG __rr concat __acc
+			ASG __rr
+
+		RET
+		ENM
+
+        ENO
+
+
+
+
+
+; =============================================================================
+; Object DataStructures
+;
+;       The parent object for all object meant to "store" other objects
+; =============================================================================
+
+OBJ DataStructure
+
+; size ------------------------------------------------------------------------
+; returns: a LiteralInt containing the number of elements
+; parameters: None
+; -----------------------------------------------------------------------------
+
+        MTH + size
+		INT 1
+		ASG __gp1
+                MSG __this getNumberOfAttributes
+		MSG __acc substract __gp1
+        RET __acc
+        ENM
+
+; process ---------------------------------------------------------------------
+; returns: the number (LiteralInt) of elements processed
+; parameters: an object, descendant of processor
+; -----------------------------------------------------------------------------
+
+        MTH + process obj
+                SET obj
+                IOF Processor
+                JOF End
+                    ; Init
+                    INT 1
+                    ASG __gp1
+
+                    MSG __this getNumberOfAttributes
+                    ASG __gp2
+
+                    MSG Int zero
+                    ASG __gp3
+
+		    MSG __this getNumberOfParentAttribute
+		    ASG __gp4
+
+                    ETQ Loop
+		    	; Are we processing the parent attribute ?
+		    	MSG __gp3 isEqualTo __gp4
+			JOT Inc
+
+			; Call doIt()
+                        MSG __this getAttributeNumber __gp3
+                        MSG obj doIt __acc
+			; If false returned, abort
+                        JOF End
+
+			; Increment and go on if not finished
+			ETQ Inc
+                        MSG __gp3 sum __gp1
+                        ASG __gp3
+                        MSG __gp3 isEqualTo __gp2
+                        JOT End
+                    JMP Loop
+	ETQ End
+        RET __gp3
+        ENM
+ENO
+
+
+; =============================================================================
+; Object Container
+;
+;       A container is a regular object. This means that all the following
+;       methods were created as syntactic sugar, only for convenience.
+;       Many of them are just "renames", i.e., they directly call the
+;       appropriate method, regarding to the attibrute.
+;
+;       This object is meant to hold other objects in separate "segments".
+; =============================================================================
+
+OBJ Container DataStructure
+
+        ; adds a new object to the container
+        MTH + add obj
+                MSG obj getName
+                MSG __this addRenamedObject __acc obj
+        RET
+        ENM
+
+        ; adds a new object to the container, with a new name
+        MTH + addRenamedObject name obj
+                MSG __this addAttribute name obj
+        RET
+        ENM
+
+        ; deletes an object by its name
+        MTH + deleteByName objName
+                MSG __this getAttributeNumberByName objName
+                MSG __this deleteAttributeNumber __acc
+        RET
+        ENM
+
+        ; deletes an object
+        MTH + delete obj
+                MSG obj getName
+                MSG __this deleteByName __acc
+        RET
+        ENM
+
+        ; returns True if the object exists, False if not.
+        MTH + exists objName
+                MSG __this getAttributeNumberByName objName
+                SET __rr True
+        RET
+                SET __rr False
+        RET
+        ENM
+
+        ; returns an object by looking up its name
+        MTH + getByName objName
+                MSG __this getAttributeByName objName
+        RET __acc
+        ENM
+ENO
+
+OBJ ContainerInstance Container
+ENO
+
+; =============================================================================
+; Object Vector
+;
+;       Implements support for a vector of objects
+; =============================================================================
+
+
+OBJ Vector DataStructure
+; ---------------- Basic interface
+	MTH + add obj
+		MSG __VM__.Vector add __this obj
+        RET
+        ENM
+
+        MTH + insert x obj
+		MSG __VM__.Vector insert __this x obj
+        RET
+        ENM
+
+	MTH + delete x
+		MSG __this erase x
+		RET __acc
+	ENM
+
+        MTH + erase x
+		MSG __VM__.Vector erase __this x
+        RET
+        ENM
+
+        MTH + clear
+		MSG __VM__.Vector clear __this
+        RET
+        ENM
+
+	MTH + size
+		MSG __VM__.Vector size __this
+		RET __acc
+	ENM
+
+	MTH + get x
+		MSG __VM__.Vector getPosition __this x
+		RET __acc
+	ENM
+
+	MTH + modify x obj
+		MSG __this put x obj
+		RET __acc
+	ENM
+
+	MTH + put x obj
+		MSG __VM__.Vector putPosition __this x obj
+		RET __acc
+	ENM
+
+	MTH + toString
+		MSG __VM__.Vector toString __this
+		RET __acc
+	ENM
+
+	MTH + isEqualTo v
+		MSG __VM__.Vector isEqualTo __this v
+		RET __acc
+	ENM
+
+	MTH + seqFind x posFrom
+		MSG __VM__.Vector seqFind __this x posFrom
+		RET __acc
+	ENM
+
+	MTH + seqFindLast x posFrom
+		MSG __VM__.Vector seqFindLast __this x posFrom
+		RET __acc
+	ENM
+
+	MTH + process obj
+		MSG __VM__.Vector process __this obj
+		RET __acc
+	ENM
+
+	MTH + hasDescendantOf obj
+		MSG __this size
+		ASG __gp1
+
+		MSG FindDescendantOf setAncestor obj
+		SET FindDescendantOf
+		MSG __this process __acc
+		MSG __acc isEqualTo __gp1
+		JOT NotFound
+
+		SET __rr True
+		JMP End
+
+		ETQ NotFound
+		SET __rr False
+
+		ETQ End
+		RET
+	ENM
+ENO
+
+OBJ VectorInstance Vector
+ENO
+
+; =============================================================================
+; Object Map
+;       Implements support for a mapping of ojects
+; =============================================================================
+
+OBJ Map DataStructure
+        MTH + add name obj
+                MSG __this addAttribute name obj
+        RET __acc
+        ENM
+
+        MTH + lookUp name
+                MSG __this getAttributeByName name
+        RET __acc
+        ENM
+
+        MTH + modify name obj
+                MSG __this getAttributeNumberByName name
+                MSG __this deleteAttributeNumber __acc
+                MSG __this add name obj
+        RET __acc
+        ENM
+
+        MTH + delete name
+                MSG __this getAttributeNumberByName name
+                MSG __this deleteAttributeNumber __acc
+        RET
+        ENM
+ENO
+
+OBJ MapInstance Map
+ENO
+
+
+; =============================================================================
+; IO
+;       The root object for access operations
+; =============================================================================
+
+OBJ IO
+ENO
+
+; =============================================================================
+; Input
+;       The object that provides the interface for reading operations
+; =============================================================================
+
+OBJ Input IO
+
+; read ------------------------------------------------------------------------
+; returns: a LiteralString
+; parameters: nothing
+; -----------------------------------------------------------------------------
+      MTH + read
+            STR "Input abstract object method (read()) invoked"
+            TRW EInputOutput __acc
+      RET __acc
+      ENM
+ENO
+
+; =============================================================================
+; Output
+;       The object that provides the interface for writing operations
+; =============================================================================
+
+OBJ Output IO
+; write -----------------------------------------------------------------------
+; returns: nothing
+; parameters: any object
+; -----------------------------------------------------------------------------
+      MTH + write obj
+            STR "Ouput abstract object method (write()) invoked"
+            TRW EInputOutput __acc
+      RET __acc
+      ENM
+ENO
+
+; =============================================================================
+; InputOutput
+;       The object that provides the interface for reading/writing operations
+; =============================================================================
+
+OBJ InputOutput IO
+
+; read ------------------------------------------------------------------------
+; returns: a LiteralString
+; parameters: nothing
+; -----------------------------------------------------------------------------
+      MTH + read
+            STR "InputOuput abstract object method (read()) invoked"
+            TRW EInputOutput __acc
+      RET __acc
+      ENM
+
+; write -----------------------------------------------------------------------
+; returns: nothing
+; parameters: any object
+; -----------------------------------------------------------------------------
+      MTH + write obj
+            STR "InputOuput abstract object method (write()) invoked"
+            TRW EInputOutput __acc
+      RET __acc
+      ENM
+ENO
+
+
+
+
+
+
+
+; =============================================================================
+; Console
+;       The object providing communication with the standard console
+; =============================================================================
+
+OBJ DefaultConsole InputOutput
+; open ------------------------------------------------------------------------
+; returns: Conditional
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + open
+                MSG __VM__.Console open
+        RET
+        ENM
+
+; close -----------------------------------------------------------------------
+; returns: nothing
+; parameters: nothing
+; -----------------------------------------------------------------------------
+
+        MTH + close
+                MSG __VM__.Console close
+        RET
+        ENM
+
+; write -----------------------------------------------------------------------
+; returns: nothing
+; parameters: any object
+; -----------------------------------------------------------------------------
+        MTH + write obj
+		SET obj
+		IOF String
+		JOT output_directo
+	                MSG obj toString
+			MSG __VM__.Console write __acc
+			JMP fin
+		ETQ output_directo
+			MSG __VM__.Console write obj
+	ETQ fin
+        RET
+		STR "output error: "
+		ASG __gp1
+		SET __exc.details
+		MSG __gp1 concat __acc
+		TRW EInputOutput __acc	
+        ENM
+	
+	MTH + writeLn obj
+		MSG __this write obj
+		MSG __this lf
+		RET
+	ENM
+
+; read ------------------------------------------------------------------------
+; returns: a LiteralString
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + read
+                MSG __VM__.Console read
+        RET __acc
+		STR "input error: "
+		ASG __gp1
+		SET __exc.details
+		MSG __gp1 concat __acc
+		TRW EInputOutput __acc
+        ENM
+
+; lf --------------------------------------------------------------------------
+; returns: nothing
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + lf
+                MSG __VM__.Console lf
+        RET
+		STR "output error: "
+		ASG __gp1
+		SET __exc.details
+		MSG __gp1 concat __acc
+		TRW EInputOutput __acc
+        ENM
+ENO
+
+
+
+
+
+
+; =============================================================================
+; Stack
+;       Provides access to the call stack
+; =============================================================================
+
+OBJ SystemStack
+        MTH + toString
+                MSG __VM__.Stack toString
+        RET __acc
+        ENM
+ENO
+
+
+
+
+
+
+; =============================================================================
+; System
+;       The object providing communication with the operating system or hardw.
+; =============================================================================
+
+OBJ System
+
+	ATR + persistentStore PersistentStore ; The persistent store
+
+        ATR + console DefaultConsole         ; Points to the Console object
+
+        ATR + stack SystemStack              ; Points to the system stack
+
+        ATR + internalException EInternal    ; Points to the object to be
+                                             ; thrown by the __VM__ on exceptions
+                                             ; in internal methods
+
+        ATR + internalTrue True              ; The object to be returned by
+                                             ; __VM__'s methods when something is
+                                             ; true or ok.
+
+        ATR + internalFalse False            ; The object to be returned by
+                                             ; __VM__'s methods when something is
+                                             ; false or wrong.
+
+	ATR + internalTime LiteralTime       ; The object to be employed for
+					     ; time = date + hour.
+
+        ATR + internalFloat LiteralFloat     ; The object to be connected with
+                                             ; __VM__'s float numbers.
+
+        ATR + internalInt LiteralInt         ; The object to be connected with
+                                             ; __VM__'s integer numbers.
+
+        ATR + internalString LiteralString   ; The object to be associated with
+                                             ; __VM__'s character strings.
+
+	ATR + internalVector VectorInstance  ; The object to be associated with
+					     ; __VM__'s vectors.
+
+    ATR + internalEObjNotFound EObjectNotFound ; Points to the object to be
+                                             ; thrown when an exception happens
+                                             ; because of an unexisting object
+
+    ATR + internalEMthNotFound EMethodNotFound ; Points to the object to be
+                                             ; thrown when an exception happens
+                                             ; because of an unexisting method
+
+    ATR + internalEPrivate EPrivate          ; Points to the object to be
+                                             ; thrown when an exception happens
+                                             ; because of a private attribute
+
+	ATR + internalEMismatch ETypeMismatch
+					     ; Points to the object to
+					     ; be thrown when a number was
+					     ; expected.
+
+
+	ATR + internalEMath EMath	     ; Points to the object to
+					     ; be thrown when a mathematical
+					     ; operation fails (i.e. /0).
+
+        ATR + internalInfoAtr AttributeInfo  ; Points to the object to be used
+        				     ; to hold the information about
+        				     ; attributes
+
+        ATR + internalInfoMth MethodInfo     ; Points to the object to be used
+        				     ; to hold the information about
+        				     ; methods
+
+	ATR + internalProperties Property  ; Points to the object meant to
+	                                     ; hold attribute information
+
+
+
+; getHiVersionNumber ----------------------------------------------------------
+; returns: a LiteralFloat
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + getHiVersionNumber
+                MSG __VM__ getHiVersionNumber
+        RET __acc
+        ENM
+
+
+; getLoVersionNumber ----------------------------------------------------------
+; returns: a LiteralInt
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + getLoVersionNumber
+                MSG __VM__ getLoVersionNumber
+        RET __acc
+        ENM
+
+; getPlatformName -------------------------------------------------------------
+; returns: a LiteralString: <hdw_identifier> / <os_identifier>
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + getPlatformName
+                MSG __VM__ getPlatformName
+        RET __acc
+        ENM
+
+; getHiPlatformCode-------------------------------------------------------------
+; returns: a LiteralInt identifying the hardware's platform
+;	0:  Intel
+;	1:  Sparc
+;       98: Not specified
+;	99: Other
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + getHiPlatformCode
+                MSG __VM__ getHiPlatformCode
+        RET __acc
+        ENM
+
+; getLoPlatformCode------------------------------------------------------------
+; returns: a LiteralInt identifying the operating system's platform
+;	0:  Linux / Unix
+;	2:  Windows
+;	98: Not specified
+;	99: Other
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + getLoPlatformCode
+                MSG __VM__ getLoPlatformCode
+        RET __acc
+        ENM
+
+; getCurrentTime---------------------------------------------------------------
+; returns: a LiteralTime containing the current timing
+; parameters: nothing
+; -----------------------------------------------------------------------------
+        MTH + getCurrentTime
+                MSG __VM__ getCurrentTime
+        RET __acc
+        ENM
+ENO
+
+; ==============================================================================
+; Applications
+;       The object which is the parent of all applications in Zero
+; ==============================================================================
+
+OBJ Application
+        MTH + doIt
+        RET
+        ENM
+ENO
+
+OBJ ConsoleApplication Application
+        MTH + doIt
+                MSG __this prepare
+        RET __acc
+        ENM
+
+        MTH + prepare
+                MSG System.console open
+        RET
+        ENM
+
+        MTH + finalize
+                MSG System.console close
+        RET
+        ENM
+ENO
+
+
+
+
+
+; ==============================================================================
+; DataType
+;       The object which is the parent of all "types" in Zero
+; ==============================================================================
+OBJ DataType
+
+; assign -----------------------------------------------------------------------
+; returns: nothing
+; parameters: an object
+; ------------------------------------------------------------------------------
+        MTH + assign obj
+            	STR "DataType interface invoked: assign()"
+                TRW ETypeMismatch __acc
+        RET __acc
+        ENM
+
+; isEqualTo --------------------------------------------------------------------
+; returns: Conditional (True or False)
+; parameters: an object of class DataType
+; ------------------------------------------------------------------------------
+        MTH + isEqualTo obj
+            	STR "DataType interface invoked: isEqualTo()"
+                TRW ETypeMismatch __acc
+        RET __acc
+        ENM
+
+; isLessThan -------------------------------------------------------------------
+; returns: Conditional (True or False)
+; parameters: an object of class DataType
+; ------------------------------------------------------------------------------
+        MTH + isLessThan obj
+            	STR "DataType interface invoked: isLessThan()"
+                TRW ETypeMismatch __acc
+        RET __acc
+        ENM
+
+; isGreaterThan ----------------------------------------------------------------
+; returns: Conditional (True or False)
+; parameters: an object of class DataType
+; ------------------------------------------------------------------------------
+        MTH + isGreaterThan obj
+		MSG __this isLessThan obj
+	        JOF else
+	        	SET False
+	        	JMP end
+		ETQ else
+		        MSG __this isEqualTo obj
+	        	JOF endif
+	        	SET False
+			JMP end
+	        ETQ endif
+
+	        SET True
+	ETQ end
+        RET __acc
+        ENM
+ENO
+
+
+
+
+
+; ==============================================================================
+; Date & Time
+;       Objects serving the funcionality for accessing date and time.
+;       Dates are only reliable starting by January, 1st., 1990
+; ==============================================================================
+OBJ Time DataType
+	ATR + year          Nothing
+	ATR + month         Nothing
+	ATR + day           Nothing
+	ATR + instantInDay  Nothing
+
+; assign -----------------------------------------------------------------------
+; returns: nothing
+; parameters: a Time object
+; ------------------------------------------------------------------------------
+        MTH + assign obj
+		SET obj
+		IOF Time
+		JOT Endif
+			STR "object does not store Time and Date information"
+			TRW ETypeMismatch __acc
+		ETQ Endif
+
+		SET obj.year
+		ASG year
+
+		SET obj.month
+		ASG month
+
+		SET obj.day
+		ASG day
+
+		SET obj.instantInDay
+		ASG instantInDay
+        RET
+        ENM
+
+; isEqualTo --------------------------------------------------------------------
+; returns: Conditional (True or False)
+; parameters: an object of class DataType
+; ------------------------------------------------------------------------------
+        MTH + isEqualTo obj
+		SET obj
+		IOF Time
+		JOT Endif
+			STR "object does not store Time and Date information"
+			TRW ETypeMismatch __acc
+		ETQ Endif
+
+		SET __rr False
+
+		; Check time
+		SET obj.instantInDay
+		MSG instantInDay isEqualTo __acc
+		JOF End
+
+		; Check year
+		SET obj.year
+		MSG year isEqualTo __acc
+		JOF End
+
+		; Check month
+		SET obj.month
+		MSG month isEqualTo __acc
+		JOF End
+
+		; Check day
+		SET obj.day
+		MSG day isEqualTo __acc
+		JOF End
+
+		; It's true, they're equal
+		SET __rr True
+	ETQ End
+        RET
+        ENM
+
+; isLessThan -------------------------------------------------------------------
+; returns: Conditional (True or False)
+; parameters: an object of class DataType
+; ------------------------------------------------------------------------------
+        MTH + isLessThan obj
+		SET obj
+		IOF Time
+		JOT Endif
+			STR "object does not store Time and Date information"
+			TRW ETypeMismatch __acc
+		ETQ Endif
+
+		SET __rr False
+
+		; Check year
+		SET __gp1 obj.year
+		MSG year isLessThan __gp1
+		JOT Endif2
+			MSG year isEqualTo __gp1
+			JOF  End
+		ETQ Endif2
+
+		; Check month
+		SET __gp2 obj.month
+		MSG month isLessThan __gp2
+		JOT Endif3
+			MSG month isEqualTo __gp2
+			JOF  End
+		ETQ Endif3
+
+		; Check day
+		SET __gp3 obj.day
+		MSG day isLessThan __gp3
+		JOT Endif4
+			MSG day isEqualTo __gp3
+			JOF  End
+		ETQ Endif4
+
+		; Check time
+		SET __gp4 obj.instantInDay
+		MSG instantInDay isLessThan __gp4
+		JOF End
+
+		; It's true this "isLessThan" the other one
+		SET __rr True
+
+	ETQ End
+        RET
+        ENM
+
+
+; isLeapYear -----------------------------------------------------------------
+; returns: Conditional (True or False) depending on whether the year of the
+;          date stored supposes a leap year.
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + isLeapYear
+		INT 4
+		ASG __gp1
+
+		INT 100
+		ASG __gp2
+
+		INT 400
+		ASG __gp3
+
+		SET __rr False
+
+		; a) a leap year must be a multiple of 4
+		; b) but not of 100
+		; c) unless it is also multiple of 400
+
+		MSG year mod __gp1
+		MSG __acc isZero
+		JOF End
+
+		MSG year mod __gp2
+		MSG __acc isZero
+		JOF isLeap
+			MSG year mod __gp3
+			MSG __acc isZero
+			JOF End
+
+		; It is a leap year
+		ETQ isLeap
+		SET __rr True
+
+	ETQ End
+	RET
+	ENM
+
+; getDaysOfMonth  ------------------------------------------------------------
+; returns: An Int with the days of month in this date (28, 29, 30 or 31).
+;          Nothing in case of the month being invalid. 1 <= month <= 12.
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + getDaysOfMonth
+		INT 0
+		MSG month isGreaterThan __acc
+		JOF Invalid
+
+		INT 13
+		MSG month isLessThan __acc
+		JOF Invalid
+		JMP InitCmp
+
+		ETQ Invalid
+			SET Nothing
+			JMP End
+
+		; Begin with the decision ... 30 or 31 ?
+		; Let's say is 31
+		ETQ InitCmp
+		INT 30
+		ASG __rr
+
+		INT 2
+		MSG month isEqualTo __acc
+		JOF endif1
+			MSG __this isLeapYear
+			JOF endif2
+				INT 29
+				ASG __rr
+				JMP End
+			ETQ endif2
+			INT 28
+			ASG __rr
+			JMP End
+		ETQ endif1
+
+		INT 4
+		MSG month isEqualTo __acc
+		JOT End
+
+		INT 6
+		MSG month isEqualTo __acc
+		JOT End
+
+		INT 9
+		MSG month isEqualTo __acc
+		JOT End
+
+		INT 11
+		MSG month isEqualTo __acc
+		JOT End
+
+		; It has 30 days
+		INT 31
+		ASG __rr
+
+	ETQ End
+	RET
+	ENM
+
+; getHour  -------------------------------------------------------------------
+; returns: An Int with the hour in the instant stored.
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + getHour
+		INT 3600
+		ASG __gp1
+
+		MSG instantInDay divideBy __gp1
+	RET __acc
+	ENM
+
+; getMinute  -----------------------------------------------------------------
+; returns: An Int with the minute in the instant stored.
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + getMinute
+		INT 3600
+		ASG __gp1
+
+		INT 60
+		ASG __gp2
+
+		MSG instantInDay mod __gp1
+		MSG __acc divideBy __gp2
+	RET __acc
+	ENM
+
+; getSecond  -----------------------------------------------------------------
+; returns: An Int with the second in the instant stored.
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + getSecond
+		INT 3600
+		ASG __gp1
+
+		INT 60
+		ASG __gp2
+
+		MSG instantInDay mod __gp1
+		MSG __acc mod __gp2
+	RET __acc
+	ENM
+
+; putInstantInDay  -----------------------------------------------------------
+; returns: Nothing
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + putInstantInDay x
+		SET x
+		ASG instantInDay
+	RET
+	ENM
+
+; putDate  -------------------------------------------------------------------
+; returns: Nothing
+; parameters: Takes tree parameters for year, month and date
+; ----------------------------------------------------------------------------
+	MTH + putDate y m d
+		SET y
+		ASG year
+
+		SET m
+		ASG month
+
+		SET d
+		ASG day
+	RET
+	ENM
+
+; putTime  -------------------------------------------------------------------
+; returns: this.instantInDay, once time is set
+; parameters: Takes tree parameters for second, minute and hour
+; ----------------------------------------------------------------------------
+	MTH + putTime s m h
+		SET s
+		ASG instantInDay
+
+		INT 60
+		MSG m multiplyBy __acc
+		MSG instantInDay sum __acc
+		ASG instantInDay
+
+		INT 3600
+		MSG h multiplyBy __acc
+		MSG instantInDay sum __acc
+		ASG instantInDay
+	RET instantInDay
+	ENM
+
+; isValidDate ---------------------------------------------------------------
+; returns: Conditional (True or False), depending on the stored Date
+;          being valid
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + isValidDate
+		; Number 1
+		INT 1
+		ASG __gp1
+
+		; Number 12
+		INT 12
+		ASG __gp2
+
+		; Default return value
+		SET __rr True
+
+		; Check day
+		MSG __this getDaysOfMonth
+		MSG day isGreaterThan __acc
+		JOT isInvalid
+
+		MSG day isLessThan __gp1
+		JOT isInvalid
+
+		; Check month
+		MSG month isGreaterThan __gp2
+		JOT isInvalid
+
+		MSG month isLessThan __gp1
+		JOT isInvalid
+
+		; Everything ok
+		JMP End
+
+		; Something was wrong
+		ETQ isInvalid
+		SET __rr False
+	ETQ End
+	RET
+	ENM
+
+; isValidInstant -------------------------------------------------------------
+; returns: Conditional (True or False), depending on the stored Time
+;          being valid
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + isValidInstant
+		; Default return value
+		SET __rr False
+
+		INT -1
+		MSG instantInDay isGreaterThan __acc
+		JOF End
+
+		INT 86401
+		MSG instantInDay isLessThan __acc
+		JOF End
+
+		; Everything okay
+		SET __rr True
+	ETQ End
+	RET
+	ENM
+
+; isValid --------------------------------------------------------------------
+; returns: Conditional (True or False), depending on the stored Date and Time
+;          being valid
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + isValid
+		MSG __this isValidDate
+		JOF End
+
+		MSG __this isValidInstant
+	ETQ End
+	RET __acc
+	ENM
+
+; toString -------------------------------------------------------------------
+; returns: String containig Time&Date in a line of text
+; parameters: nothing
+; ----------------------------------------------------------------------------
+	MTH + toString
+		STR "/"
+		ASG __gp1
+
+		STR ":"
+		ASG __gp2
+
+		MSG day toString
+		ASG __rr
+
+		MSG __rr concat __gp1
+		ASG __rr
+
+		MSG month toString
+		MSG __rr concat __acc
+		ASG __rr
+
+		MSG __rr concat __gp1
+		ASG __rr
+
+		MSG year toString
+		MSG __rr concat __acc
+		ASG __rr
+
+		; Separation
+		STR " "
+		MSG __rr concat __acc
+		ASG __rr
+
+		MSG __this getHour
+		MSG __acc toString
+		MSG __rr concat __acc
+		ASG __rr
+
+		MSG __rr concat __gp2
+		ASG __rr
+
+		MSG __this getMinute
+		MSG __acc toString
+		MSG __rr concat __acc
+		ASG __rr
+
+		MSG __rr concat __gp2
+		ASG __rr
+
+		MSG __this getSecond
+		MSG __acc toString
+        	MSG __rr concat __acc
+		ASG __rr
+	RET
+	ENM
+ENO
+
+; =============================================================================
+; LiteralTime
+;	The actual object employed for storing date and time
+; =============================================================================
+OBJ LiteralTime Time
+ENO
+
+
+
+
+
+
+
+
+; ==============================================================================
+; Float
+;       The object which is the parent of all numerical types in Zero
+; ==============================================================================
+OBJ Float DataType
+
+; zero -------------------------------------------------------------------------
+; returns: a LiteralFloat with value zero
+; parameters: nothing
+; ------------------------------------------------------------------------------
+        MTH + zero
+                MSG __VM__.Float zero
+        RET __acc
+        ENM
+
+; isZero -----------------------------------------------------------------------
+; returns: True or False, depending on wether '__this' holds the value 0
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + isZero
+                MSG __this zero
+                MSG __this isEqualTo __acc
+        RET __acc
+        ENM
+
+; isNegative -------------------------------------------------------------------
+; returns: True or False, depending on wether '__this' holds a negative value
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + isNegative
+                MSG __VM__.Float isNegative __this
+        RET __acc
+        ENM
+
+; multiplyBy -------------------------------------------------------------------
+; returns: a Float
+; parameters: a Float
+; ------------------------------------------------------------------------------
+        MTH + multiplyBy flt_number
+                MSG __VM__.Float multiplyBy __this flt_number
+        RET __acc
+        ENM
+
+; divideBy ---------------------------------------------------------------------
+; returns: a Float
+; parameters: a Float
+; ------------------------------------------------------------------------------
+        MTH + divideBy flt_number
+                MSG __VM__.Float divideBy __this flt_number
+        RET __acc
+        ENM
+
+; sum --------------------------------------------------------------------------
+; returns: a Float
+; parameters: a Float
+; ------------------------------------------------------------------------------
+        MTH + sum flt_number
+        	MSG __VM__.Float sum __this flt_number
+        RET __acc
+        ENM
+
+; substract --------------------------------------------------------------------
+; returns: a Float
+; parameters: a Float
+; ------------------------------------------------------------------------------
+        MTH + substract flt_number
+		MSG __VM__.Float sub __this flt_number
+        RET __acc
+        ENM
+
+; abs --------------------------------------------------------------------------
+; returns: a Float
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + abs
+                MSG __VM__.Float abs __this
+        RET __acc
+        ENM
+
+; parseString ------------------------------------------------------------------
+; returns: a Float
+; parameters: a LiteralString
+; ------------------------------------------------------------------------------
+        MTH + parseString flt_number_str
+                MSG __VM__.String toFloat flt_number_str
+        RET __acc
+        ENM
+
+; assign -----------------------------------------------------------------------
+; returns: __this
+; parameters: a LiteralFloat, from which it takes its new value
+; ------------------------------------------------------------------------------
+        MTH + assign flt_number
+                MSG __VM__.Float assign __this flt_number
+        RET __this
+        ENM
+
+; isEqualTo --------------------------------------------------------------------
+; returns: True or False, depending on whether the parameter has the same value
+; parameters: a LiteralFloat, which is going to be compared
+; ------------------------------------------------------------------------------
+        MTH + isEqualTo flt_number
+                MSG __VM__.Float isEqualTo __this flt_number
+        RET __acc
+        ENM
+
+; isLessThan -------------------------------------------------------------------
+; returns: True or False, depending on whether the parameter has a bigger value
+; parameters: a LiteralFloat, which is going to be compared
+; ------------------------------------------------------------------------------
+        MTH + isLessThan flt_number
+                 MSG __VM__.Float isLessThan __this flt_number
+        RET __acc
+        ENM
+
+; isGreaterThan -------------------------------------------------------------------
+; returns: True or False, depending on whether the parameter has a smaller value
+; parameters: a LiteralFloat, which is going to be compared
+; ------------------------------------------------------------------------------
+        MTH + isGreaterThan flt_number
+                MSG __VM__.Float isGreaterThan __this flt_number
+        RET __acc
+        ENM
+
+; toString ---------------------------------------------------------------------
+; returns: A LiteralString with the value of the number
+; parameters: a LiteralFloat, which is going to be converted
+; ------------------------------------------------------------------------------
+        MTH + toString
+                MSG __VM__.Float toString __this
+        RET __acc
+        ENM
+
+; toInt ---------------------------------------------------------------------
+; returns: A LiteralInt with the value of the number
+; parameters: a LiteralFloat, which is going to be converted
+; ------------------------------------------------------------------------------
+        MTH + toInt
+                MSG __VM__.Float toInt __this
+        RET __acc
+        ENM
+
+ENO
+
+
+
+
+
+; ==============================================================================
+; LiteralFloat
+;       The object that holds float values in Zero
+;               The values must be stored in an attribute called "value_stored_"
+; ==============================================================================
+OBJ LiteralFloat Float
+ENO
+
+
+
+
+
+
+
+
+
+
+; ==============================================================================
+; Int
+;       The object which is provides integral numbers in Zero
+; ==============================================================================
+OBJ Int DataType
+
+; zero -------------------------------------------------------------------------
+; returns: a LiteralInt with value zero
+; parameters: nothing
+; ------------------------------------------------------------------------------
+        MTH + zero
+                MSG __VM__.Int zero
+        RET __acc
+        ENM
+
+; isZero -----------------------------------------------------------------------
+; returns: True or False, depending on wether '__this' holds the value 0
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + isZero
+                MSG __this zero
+                MSG __this isEqualTo __acc
+        RET __acc
+        ENM
+
+; isNegative -------------------------------------------------------------------
+; returns: True or False, depending on wether '__this' holds a negative value
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + isNegative
+                MSG __VM__.Int isNegative __this
+        RET __acc
+        ENM
+
+; multiplyBy -------------------------------------------------------------------
+; returns: a LiteralInt
+; parameters: the LiteralInt to multiplyBy
+; ------------------------------------------------------------------------------
+        MTH + multiplyBy int_number
+                MSG __VM__.Int multiplyBy __this int_number
+        RET __acc
+        ENM
+
+; divideBy ---------------------------------------------------------------------
+; returns: a LiteralInt with the result
+; parameters: a LiteralInt to be divided by
+; ------------------------------------------------------------------------------
+        MTH + divideBy int_number
+                MSG __VM__.Int divideBy __this int_number
+        RET __acc
+        ENM
+
+; mod --------------------------------------------------------------------------
+; returns: a LiteralInt with the result
+; parameters: a LiteralInt to be divided by
+; ------------------------------------------------------------------------------
+        MTH + mod int_number
+                MSG __VM__.Int mod __this int_number
+        RET __acc
+        ENM
+
+; sum --------------------------------------------------------------------------
+; returns: a LiteralInt with the result
+; parameters: a LiteralInt to be added
+; ------------------------------------------------------------------------------
+        MTH + sum int_number
+                MSG __VM__.Int sum __this int_number
+        RET __acc
+        ENM
+
+; substract --------------------------------------------------------------------
+; returns: a LiteralInt with the result
+; parameters: a LiteralInt to be substracted
+; ------------------------------------------------------------------------------
+        MTH + substract int_number
+                MSG __VM__.Int sub __this int_number
+        RET __acc
+        ENM
+
+; abs --------------------------------------------------------------------------
+; returns: a LiteralInt with the result
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + abs
+                MSG __VM__.Int abs __this
+        RET __acc
+        ENM
+
+; parseString ------------------------------------------------------------------
+; returns: a LiteralInt with the result
+; parameters: a LiteralString
+; ------------------------------------------------------------------------------
+        MTH + parseString int_number_str
+                MSG __VM__.String toInt int_number_str
+        RET __acc
+        ENM
+
+; assign -----------------------------------------------------------------------
+; returns: __this
+; parameters: a LiteralInt, from which it takes its new value
+; ------------------------------------------------------------------------------
+        MTH + assign int_number
+                MSG __VM__.Int assign __this int_number
+        RET __this
+        ENM
+
+; isEqualTo --------------------------------------------------------------------
+; returns: True or False, depending on whether the parameter has the same value
+; parameters: a LiteralInt, which is going to be compared
+; ------------------------------------------------------------------------------
+        MTH + isEqualTo int_number
+                MSG __VM__.Int isEqualTo __this int_number
+        RET __acc
+        ENM
+
+; isLessThan -------------------------------------------------------------------
+; returns: True or False, depending on whether the parameter has a bigger value
+; parameters: a LiteralInt, which is going to be compared
+; ------------------------------------------------------------------------------
+        MTH + isLessThan int_number
+                MSG __VM__.Int isLessThan __this int_number
+        RET __acc
+        ENM
+
+; isGreaterThan -------------------------------------------------------------------
+; returns: True or False, depending on whether the parameter has a smaller value
+; parameters: a LiteralInt, which is going to be compared
+; ------------------------------------------------------------------------------
+        MTH + isGreaterThan int_number
+                MSG __VM__.Int isGreaterThan __this int_number
+        RET __acc
+        ENM
+
+; toString ---------------------------------------------------------------------
+; returns: A LiteralString with the value of the number
+; parameters: a LiteralInt, which is going to be converted
+; ------------------------------------------------------------------------------
+        MTH + toString
+                MSG __VM__.Int toString __this
+        RET __acc
+        ENM
+
+; toFloat ----------------------------------------------------------------------
+; returns: A LiteralFloat with the value of the integral number
+; parameters: a LiteralInt, which is going to be converted
+; ------------------------------------------------------------------------------
+        MTH + toFloat
+                MSG __VM__.Int toFloat __this
+        RET __acc
+        ENM
+
+ENO
+
+
+
+
+
+; ==============================================================================
+; LiteralInt
+;       The object that holds integer values in Zero
+; ==============================================================================
+OBJ LiteralInt Int
+ENO
+
+
+
+
+
+
+
+
+
+
+
+; ==============================================================================
+; String
+;       The object which allows Zero to deal with strings
+; ==============================================================================
+OBJ String DataType
+
+; zero -------------------------------------------------------------------------
+; returns: A LiteralString of length 0
+; paramenters: nothing
+;-------------------------------------------------------------------------------
+        MTH + zero
+                MSG __VM__.String zero
+        RET __acc
+        ENM
+
+; isEmpty ----------------------------------------------------------------------
+; returns: A Conditional, depending on whether the string is of length zero
+; paramenters: nothing
+;-------------------------------------------------------------------------------
+
+        MTH + isEmpty
+                MSG __this length
+                MSG __acc isZero
+        RET __acc
+        ENM
+
+; isZero -----------------------------------------------------------------------
+; returns: A Conditional, depending on whether the string is of length zero
+; paramenters: nothing
+;-------------------------------------------------------------------------------
+
+        MTH + isZero
+                MSG __this isEmpty
+        RET __acc
+        ENM
+
+; getPosition ------------------------------------------------------------------
+; returns: A LiteralString of length 1 with position n
+; paramenters: nothing
+;-------------------------------------------------------------------------------
+
+        MTH + getPosition n
+                MSG __VM__.String getPosition __this n
+        RET __acc
+        ENM
+
+; position ------------------------------------------------------------------
+; returns: A LiteralString of length 1 with position n
+; this is here just to be compatible with an error that made this method
+; to be called as "position", instead of "getPosition".
+; paramenters: nothing
+;-------------------------------------------------------------------------------
+
+        MTH + position n
+                MSG __VM__.String getPosition __this n
+        RET __acc
+        ENM
+
+
+; toString ---------------------------------------------------------------------
+; returns: LiteralString
+; parameters: nothing
+; ------------------------------------------------------------------------------
+        MTH + toString
+                SET __this
+        RET __acc
+        ENM
+
+
+; sub --------------------------------------------------------------------------
+; returns: LiteralString with the substring
+; parameters: beginning and ending
+; ------------------------------------------------------------------------------
+        MTH + sub begin end
+        	MSG __VM__.String substring __this begin end
+        RET __acc
+        ENM
+
+; length -----------------------------------------------------------------------
+; returns: A LiteralInt with the length of the string
+; parameters: nothing
+;-------------------------------------------------------------------------------
+
+        MTH + length
+                MSG __VM__.String length __this
+        RET __acc
+        ENM
+
+; concat -----------------------------------------------------------------------
+; returns: A LiteralString adding the parameter and the string "__this"
+; paramenters: nothing
+;-------------------------------------------------------------------------------
+
+        MTH + concat str
+                MSG __VM__.String concat __this str
+        RET __acc
+        ENM
+
+; left --------------------------------------------------------------------------
+; returns: LiteralString with the substring
+; parameters: ending
+; ------------------------------------------------------------------------------
+        MTH + left end
+                MSG Int zero
+                MSG __this sub __acc end
+        RET __acc
+        ENM
+
+; right --------------------------------------------------------------------------
+; returns: LiteralString with the substring
+; parameters: ending
+; ------------------------------------------------------------------------------
+        MTH + right end
+                MSG __this length
+                ASG __gp1
+                MSG __acc substract end
+                MSG __this sub __acc __gp1
+        RET __acc
+        ENM
+
+; assign -----------------------------------------------------------------------
+; returns: __this
+; parameters: LiteralString with the string to be assigned to "__this"
+; ------------------------------------------------------------------------------
+        MTH + assign str
+        	MSG __VM__.String assign __this str
+        RET __acc
+        ENM
+
+; isEqualTo --------------------------------------------------------------------
+; returns: LiteralString with the string to be assigned to "__this"
+; parameters: another string
+; ------------------------------------------------------------------------------
+        MTH + isEqualTo str
+        	MSG __VM__.String isEqualTo __this str
+        RET __acc
+        ENM
+
+; isLessThan -------------------------------------------------------------------
+; returns: Conditional depending on comparing __this with str
+; parameters: another string
+; ------------------------------------------------------------------------------
+        MTH + isLessThan str
+        	MSG __VM__.String isLessThan __this str
+        RET __acc
+        ENM
+
+; isGreaterThan -------------------------------------------------------------------
+; returns: Conditional depending on comparing __this with str
+; parameters: another string
+; ------------------------------------------------------------------------------
+        MTH + isGreaterThan str
+        	MSG __VM__.String isGreaterThan __this str
+        RET __acc
+        ENM
+
+; toFloat ----------------------------------------------------------------------
+; returns: LiteralFloat with the numerical representation
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + toFloat
+                MSG __VM__.String toFloat __this
+        RET __acc
+        ENM
+
+; toInt ------------------------------------------------------------------------
+; returns: LiteralInt with the numerical representation
+; parameters: none
+; ------------------------------------------------------------------------------
+        MTH + toInt
+                MSG __VM__.String toInt __this
+        RET __acc
+        ENM
+
+; seqFind ----------------------------------------------------------------------
+; returns: LiteralInt with the position found, Nothing if not found
+; parameters: x - character to look for, posFrom - int position to begin from
+; ------------------------------------------------------------------------------
+        MTH + seqFind x posFrom
+            MSG __VM__.String seqFind __this x posFrom
+            RET __acc
+        ENM
+
+; seqFindLast ------------------------------------------------------------------
+; returns: LiteralInt with the position found, Nothing if not found
+; parameters: x - character to look for, posFrom - int position to begin from
+; ------------------------------------------------------------------------------
+        MTH + seqFindLast x posFrom
+            MSG __VM__.String seqFindLast __this x posFrom
+            RET __acc
+        ENM
+ENO
+
+
+; =============================================================================
+; LiteralString
+;     The object actually storing strings
+; =============================================================================
+OBJ LiteralString String
+ENO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; =============================================================================
+; Conditional
+;     The parent class of the True-False objects
+; =============================================================================
+
+OBJ Conditional DataType
+        MTH + isEqualTo obj
+		MSG __this isTheSameAs obj
+		RET __acc
+	ENM
+ENO
+
+
+
+
+
+
+; =============================================================================
+; True
+;     The object means a true condition.
+; =============================================================================
+
+OBJ True Conditional
+ENO
+
+
+
+
+
+
+; =============================================================================
+; False
+;     The object means a false condition.
+; =============================================================================
+
+OBJ False Conditional
+ENO
+
+
+
+
+
+; =============================================================================
+; Exception
+;     The object which is the parent of all exceptions in Zero
+; =============================================================================
+
+OBJ Exception
+
+    ATR + thrower Nothing
+    ATR + object Nothing
+    ATR + method Nothing
+    ATR + details Nothing
+
+;------------------------------------------------------------------------------
+; toString
+;------------------------------------------------------------------------------
+    MTH + toString
+    	MSG __this getErrorMessage
+	RET __acc
+    ENM
+
+;------------------------------------------------------------------------------
+; getErrorMessage
+;------------------------------------------------------------------------------
+    MTH + getErrorMessage
+	STR "<an_object>"
+	ASG __gp2
+        SET Nothing
+        ASG __gp1
+
+        MSG String zero
+        ASG __rr
+
+        ; The name of the object throwing the exception
+        MSG thrower isTheSameAs __gp1
+        JOT Else1
+            MSG thrower getName
+            MSG __rr concat __acc
+            ASG __rr
+	    JMP Endif1
+	ETQ Else1
+            MSG __rr concat __gp2
+            ASG __rr
+	ETQ Endif1
+
+        STR " threw "
+        MSG __rr concat __acc
+        ASG __rr
+
+        ; Name of the exception object
+        MSG parent isTheSameAs __gp1
+        JOT Else2
+              MSG parent getName
+              MSG __rr concat __acc
+              ASG __rr
+              JMP Endif2
+	ETQ Else2
+              MSG __this getName
+              MSG __rr concat __acc
+              ASG __rr
+	ETQ Endif2
+
+        ; Name of the object and method where the exception happened
+        STR ": in "
+        MSG __rr concat __acc
+        ASG __rr
+
+	; Object
+        MSG object isTheSameAs __gp1
+        JOT Else3
+            MSG object getName
+            MSG __rr concat __acc
+            ASG __rr
+	    JMP Endif3
+	ETQ Else3
+            MSG __rr concat __gp2
+            ASG __rr
+	ETQ Endif3
+
+	; Method
+        STR "."
+        MSG __rr concat __acc
+        ASG __rr	
+	MSG method isTheSameAs __gp1
+	JOT Else4
+		SET method
+                MSG __rr concat __acc
+		ASG __rr
+            	JMP Endif4
+        ETQ Else4
+            STR "<a_method>"
+            MSG __rr concat __acc
+            ASG __rr
+	ETQ Endif4
+
+        ; The details on the exception
+        STR "(): "
+        MSG __rr concat __acc
+        ASG __rr
+
+        MSG details isTheSameAs __gp1
+        JOF Else5
+                STR "No details."
+	        MSG __rr concat __acc
+        	ASG __rr
+		JMP Endif5
+	ETQ Else5
+		MSG details toString
+	        MSG __rr concat __acc
+        	ASG __rr
+	ETQ Endif5
+
+    RET
+        STR "Exception on exception: "
+        RET __acc
+    ENM
+ENO
+
+
+
+
+; =============================================================================
+; ESemantic
+;     The object which is the parent of all semantic exceptions in Zero
+; =============================================================================
+
+OBJ ESemantic Exception
+ENO
+
+; =============================================================================
+; EVisibility
+;     The object which is the parent of all exceptions related to accessibility
+; =============================================================================
+
+OBJ EVisibility ESemantic
+ENO
+
+; =============================================================================
+; EPrivate
+;     To be thrown when tryn to go through a private attribute
+; =============================================================================
+
+OBJ EPrivate EVisibility
+ENO
+
+; =============================================================================
+; EObjectNotFound
+;     This object is thrown when an object is not of the expected type
+; =============================================================================
+
+OBJ ETypeMismatch ESemantic
+ENO
+
+
+
+; =============================================================================
+; EObjectNotFound
+;     This object is thrown when an object is not found
+; =============================================================================
+
+OBJ EObjectNotFound ESemantic
+ENO
+
+
+
+
+
+
+; =============================================================================
+; EMethodNotFound
+;     This object is thrown when a method is not found
+; =============================================================================
+
+OBJ EMethodNotFound ESemantic
+ENO
+
+
+
+; =============================================================================
+; EAssert
+;     This object is thrown when a precondition or postcondition becomes false.
+; =============================================================================
+
+OBJ EAssert ESemantic
+ENO
+
+
+
+
+; =============================================================================
+; EConditional
+;     This object is thrown when a conditional expression behaves wrong
+; =============================================================================
+
+OBJ EConditional ESemantic
+ENO
+
+
+
+
+
+
+
+; =============================================================================
+; EInternal
+;     This object is thrown when something goes wrong inside the __VM__
+; =============================================================================
+
+OBJ EInternal ESemantic
+ENO
+
+
+
+
+; =============================================================================
+; EMath
+;     This object is thrown when a calculus results in an error (i.e. x/0)
+; =============================================================================
+
+OBJ EMath ESemantic
+ENO
+
+
+
+
+; =============================================================================
+; EMemory
+;     This object is the parent of all exceptions related to memory
+; =============================================================================
+
+OBJ EMemory Exception
+ENO
+
+
+
+
+
+; =============================================================================
+; ENotEnoughMemory
+;    This object is thrown when there isn't enough memory to build a new object
+; =============================================================================
+
+OBJ ENotEnoughMemory EMemory
+ENO
+
+
+
+
+
+; =============================================================================
+; EAccessViolation
+;    This object is thrown when it is not possible to access an object
+; =============================================================================
+
+OBJ EAccessViolation EMemory
+ENO
+
+
+
+; =============================================================================
+; EUser
+;     This object is the parent of all exceptions the user can think of.
+; =============================================================================
+
+OBJ EUser Exception
+ENO
+
+
+
+
+; =============================================================================
+; EInputOutput
+;    This object is thrown when the i/o fails.
+; =============================================================================
+
+OBJ EInputOutput EUser
+ENO
+

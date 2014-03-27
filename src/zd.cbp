@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="zd" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\zd" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\zd" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="zero\analizadorlexico.cpp" />
+		<Unit filename="zero\analizadorlexico.h" />
+		<Unit filename="zero\excep.h" />
+		<Unit filename="zero\ident.cpp" />
+		<Unit filename="zero\ident.h" />
+		<Unit filename="zero\mediosoporte.cpp" />
+		<Unit filename="zero\mediosoporte.h" />
+		<Unit filename="zero\mnemos.cpp" />
+		<Unit filename="zero\mnemos.h" />
+		<Unit filename="zero\reservadas.cpp" />
+		<Unit filename="zero\reservadas.h" />
+		<Unit filename="zero\zd.cpp" />
+		<Unit filename="zero\zd.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

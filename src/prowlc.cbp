@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="prowlc" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option show_notes="0">
+			<notes>
+				<![CDATA[Errores
+	- this debe ser traducido a __this
+	- el nombre del módulo debe ser tomado sin path
+]]>
+			</notes>
+		</Option>
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/prowlc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="tests/Ifs.pwl" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/prowlc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="zero" />
+			<Add directory="mylib" />
+		</Compiler>
+		<Unit filename="mylib/fileio.h" />
+		<Unit filename="mylib/lex.cpp" />
+		<Unit filename="mylib/lex.h" />
+		<Unit filename="mylib/stringman.cpp" />
+		<Unit filename="mylib/stringman.h" />
+		<Unit filename="zero/analizadorlexico.cpp" />
+		<Unit filename="zero/analizadorlexico.h" />
+		<Unit filename="zero/excep.h" />
+		<Unit filename="zero/mediosoporte.h" />
+		<Unit filename="zero/mnemos.cpp" />
+		<Unit filename="zero/mnemos.h" />
+		<Unit filename="zero/reservadas.cpp" />
+		<Unit filename="zero/reservadas.h" />
+		<Unit filename="prowlc/ast.cpp" />
+		<Unit filename="prowlc/ast.h" />
+		<Unit filename="prowlc/chk.cpp" />
+		<Unit filename="prowlc/chk.h" />
+		<Unit filename="prowlc/elemento.cpp" />
+		<Unit filename="prowlc/elemento.h" />
+		<Unit filename="prowlc/generadorcodigo.cpp" />
+		<Unit filename="prowlc/generadorcodigo.h" />
+		<Unit filename="prowlc/generadorcodigozero.cpp" />
+		<Unit filename="prowlc/generadorcodigozero.h" />
+		<Unit filename="prowlc/lexer.cpp" />
+		<Unit filename="prowlc/lexer.h" />
+		<Unit filename="prowlc/main.cpp" />
+		<Unit filename="prowlc/parser.cpp" />
+		<Unit filename="prowlc/parser.h" />
+		<Unit filename="prowlc/parserprowl.cpp" />
+		<Unit filename="prowlc/parserprowl.h" />
+		<Unit filename="prowlc/prowllexer.cpp" />
+		<Unit filename="prowlc/prowllexer.h" />
+		<Unit filename="prowlc/transform.cpp" />
+		<Unit filename="prowlc/transform.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

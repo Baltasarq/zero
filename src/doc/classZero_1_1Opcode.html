@@ -1,0 +1,891 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia de la Clase Zero::Opcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceZero.html">Zero</a></li><li class="navelem"><a class="el" href="classZero_1_1Opcode.html">Opcode</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a> &#124;
+<a href="#pro-attribs">Atributos protegidos</a> &#124;
+<a href="classZero_1_1Opcode-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Zero::Opcode<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="opcodes_8h_source.html">opcodes.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Zero::Opcode</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classZero_1_1Opcode.png" usemap="#Zero::Opcode_map" alt=""/>
+  <map id="Zero::Opcode_map" name="Zero::Opcode_map">
+<area href="classZero_1_1OcASG.html" alt="Zero::OcASG" shape="rect" coords="101,56,192,80"/>
+<area href="classZero_1_1OcDEF.html" alt="Zero::OcDEF" shape="rect" coords="101,112,192,136"/>
+<area href="classZero_1_1OcFLT.html" alt="Zero::OcFLT" shape="rect" coords="101,168,192,192"/>
+<area href="classZero_1_1OcFlw.html" alt="Zero::OcFlw" shape="rect" coords="101,224,192,248"/>
+<area href="classZero_1_1OcINT.html" alt="Zero::OcINT" shape="rect" coords="101,280,192,304"/>
+<area href="classZero_1_1OcIOF.html" alt="Zero::OcIOF" shape="rect" coords="101,336,192,360"/>
+<area href="classZero_1_1OcMSG.html" alt="Zero::OcMSG" shape="rect" coords="101,392,192,416"/>
+<area href="classZero_1_1OcNOP.html" alt="Zero::OcNOP" shape="rect" coords="101,448,192,472"/>
+<area href="classZero_1_1OcRET.html" alt="Zero::OcRET" shape="rect" coords="101,504,192,528"/>
+<area href="classZero_1_1OcSET.html" alt="Zero::OcSET" shape="rect" coords="101,560,192,584"/>
+<area href="classZero_1_1OcSTR.html" alt="Zero::OcSTR" shape="rect" coords="101,616,192,640"/>
+<area href="classZero_1_1OcTRW.html" alt="Zero::OcTRW" shape="rect" coords="101,672,192,696"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aa5b3739133560031e09549e5bb8110ad"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#aa5b3739133560031e09549e5bb8110ad">getMnemo</a> () const </td></tr>
+<tr class="separator:aa5b3739133560031e09549e5bb8110ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ed7846ea67fdb5d845fcb77d2cd91e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#aa9ed7846ea67fdb5d845fcb77d2cd91e">Opcode</a> (<a class="el" href="classZero_1_1Metodo.html">Metodo</a> *)</td></tr>
+<tr class="separator:aa9ed7846ea67fdb5d845fcb77d2cd91e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c31c4be750c3c335237a80354996f7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a03c31c4be750c3c335237a80354996f7">~Opcode</a> ()</td></tr>
+<tr class="separator:a03c31c4be750c3c335237a80354996f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52536f8ef4e9ac5bcfb628a856f7205"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#ac52536f8ef4e9ac5bcfb628a856f7205">getPerteneceA</a> () const </td></tr>
+<tr class="separator:ac52536f8ef4e9ac5bcfb628a856f7205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a611fa0ba0a05bf139e51060ec221c0b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a611fa0ba0a05bf139e51060ec221c0b1">cambiaEstadoMetodo</a> (<a class="el" href="classZero_1_1Metodo.html">Metodo</a> *<a class="el" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>)</td></tr>
+<tr class="separator:a611fa0ba0a05bf139e51060ec221c0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf24ec74f0dfdb23e9f8b593e474195e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#acf24ec74f0dfdb23e9f8b593e474195e">getFase</a> () const </td></tr>
+<tr class="separator:acf24ec74f0dfdb23e9f8b593e474195e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227f626459f0b04222767075b76ba354"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a227f626459f0b04222767075b76ba354">estaEnFase</a> () const </td></tr>
+<tr class="separator:a227f626459f0b04222767075b76ba354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974e11d11eaf12741a145ad682a57b89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a974e11d11eaf12741a145ad682a57b89">deSincroniza</a> ()</td></tr>
+<tr class="separator:a974e11d11eaf12741a145ad682a57b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb6b2b4303065d7302cdd8f77ee3ebc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a3bb6b2b4303065d7302cdd8f77ee3ebc">ejecuta</a> ()=0</td></tr>
+<tr class="separator:a3bb6b2b4303065d7302cdd8f77ee3ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af461d91da3e6d008f2402ac4b485fc3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#af461d91da3e6d008f2402ac4b485fc3b">preparaReferencias</a> ()=0</td></tr>
+<tr class="separator:af461d91da3e6d008f2402ac4b485fc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052315879a63ae1eaa6f8e28e350d126"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classZero_1_1Opcode.html">Opcode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a052315879a63ae1eaa6f8e28e350d126">copia</a> (<a class="el" href="classZero_1_1Metodo.html">Metodo</a> *)=0</td></tr>
+<tr class="separator:a052315879a63ae1eaa6f8e28e350d126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:a3a7230ae4fc93bac41b278183f15ab50"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1Opcode.html">Opcode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a3a7230ae4fc93bac41b278183f15ab50">creaOpcodeParaMnemo</a> (<a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *, <a class="el" href="classZero_1_1Metodo.html">Metodo</a> *)</td></tr>
+<tr class="separator:a3a7230ae4fc93bac41b278183f15ab50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71fe8258957d9d259c0f86d1c0ed3102"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a71fe8258957d9d259c0f86d1c0ed3102">asignarReferencia</a> (<a class="el" href="classZero_1_1Referencia.html">Referencia</a> *, <a class="el" href="classZero_1_1Referencia.html">Referencia</a> *)</td></tr>
+<tr class="separator:a71fe8258957d9d259c0f86d1c0ed3102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr class="memitem:a83ecd085e31e3e0c6e98b81656bdf008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a83ecd085e31e3e0c6e98b81656bdf008">resuelveRegORefLoc</a> (<a class="el" href="classZero_1_1Nombre.html">Nombre</a> *locOreg)</td></tr>
+<tr class="separator:a83ecd085e31e3e0c6e98b81656bdf008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecc695a84a55ae02adaf1046dd088cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a4ecc695a84a55ae02adaf1046dd088cc">resuelveRefORegEnRef</a> (<a class="el" href="classZero_1_1Nombre.html">Nombre</a> *reforeg)</td></tr>
+<tr class="separator:a4ecc695a84a55ae02adaf1046dd088cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968f7d4e1cc502d248a7e4a3ce6c6ae1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a968f7d4e1cc502d248a7e4a3ce6c6ae1">resuelveRefORegEnLoc</a> (<a class="el" href="classZero_1_1Nombre.html">Nombre</a> *reforeg)</td></tr>
+<tr class="separator:a968f7d4e1cc502d248a7e4a3ce6c6ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5353c217eebb8c44573f9d95a91cd6b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a5353c217eebb8c44573f9d95a91cd6b4">resuelveReg</a> (<a class="el" href="classZero_1_1NombreRegistro.html">NombreRegistro</a> *reforeg)</td></tr>
+<tr class="separator:a5353c217eebb8c44573f9d95a91cd6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr class="memitem:a9cc83b5707df37ca6b9a98befaa2b96b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a></td></tr>
+<tr class="separator:a9cc83b5707df37ca6b9a98befaa2b96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f48875ba5f96ef68dccd164ca2f7665"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a></td></tr>
+<tr class="separator:a4f48875ba5f96ef68dccd164ca2f7665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0eaa9e81b56a8aa9bc09ca28cdb2689"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689">mnemo</a></td></tr>
+<tr class="memdesc:ad0eaa9e81b56a8aa9bc09ca28cdb2689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solo derivados de <a class="el" href="classZero_1_1Instr.html">Instr</a> y de CtrMg.  <a href="#ad0eaa9e81b56a8aa9bc09ca28cdb2689">Más...</a><br/></td></tr>
+<tr class="separator:ad0eaa9e81b56a8aa9bc09ca28cdb2689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>La clase <a class="el" href="classZero_1_1Opcode.html">Opcode</a> es clase base de todas las clases que representan la funcionalidad de los opcodes reconocidos por la MV. La clase Mnemot�cnico es la clase que representa estos mismo Opcodes en memoria secundaria, es decir, cuando no est�n en memoria, sino en el almacenamiento persistente.</p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> </dd></dl>
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00040">40</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="aa9ed7846ea67fdb5d845fcb77d2cd91e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Opcode::Opcode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00028">28</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00067">deSincroniza()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        : <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>(m), <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a>(<span class="keyword">false</span>), <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>(NULL)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classZero_1_1Opcode.html#a974e11d11eaf12741a145ad682a57b89">deSincroniza</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a03c31c4be750c3c335237a80354996f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Opcode::~Opcode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00034">34</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00046">mnemo</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Borrar mnemot�cnico asociado al opcode</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a> = NULL;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a71fe8258957d9d259c0f86d1c0ed3102"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Opcode::asignarReferencia </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> *&#160;</td>
+          <td class="paramname"><em>org</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00120">120</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="referencia_8cpp_source.html#l00462">Zero::Referencia::getObjeto()</a> y <a class="el" href="referencia_8cpp_source.html#l00124">Zero::Referencia::ponReferencia()</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8cpp_source.html#l00553">Zero::OcSET::ejecuta()</a> y <a class="el" href="opcodes_8cpp_source.html#l00716">Zero::OcASG::ejecuta()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> ( dest != org ) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        dest-&gt;ponReferencia( org-&gt;getObjeto() );</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a611fa0ba0a05bf139e51060ec221c0b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Opcode::cambiaEstadoMetodo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td>
+          <td class="paramname"><em>met</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00062">62</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00067">deSincroniza()</a> y <a class="el" href="opcodes_8h_source.html#l00042">met</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            { this-&gt;met = <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>; <a class="code" href="classZero_1_1Opcode.html#a974e11d11eaf12741a145ad682a57b89">deSincroniza</a>(); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a052315879a63ae1eaa6f8e28e350d126"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classZero_1_1Opcode.html">Opcode</a>* Zero::Opcode::copia </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="classZero_1_1OcIOF.html#a2b2642d906cb6eef80966260587c55a7">Zero::OcIOF</a>, <a class="el" href="classZero_1_1OcTRW.html#a241b45bcea17c242db392098ce725f1e">Zero::OcTRW</a>, <a class="el" href="classZero_1_1OcINT.html#aa5599dcece3ee2b27ee78d26f9206c50">Zero::OcINT</a>, <a class="el" href="classZero_1_1OcFLT.html#a7905f883807d24f9ff235861eeaebe42">Zero::OcFLT</a>, <a class="el" href="classZero_1_1OcJOF.html#a3304a266bbb546ae6a67fbfcfd1d9cce">Zero::OcJOF</a>, <a class="el" href="classZero_1_1OcJOT.html#a19a87ae1622f53ed0721896c051d4f84">Zero::OcJOT</a>, <a class="el" href="classZero_1_1OcJMP.html#aa65d2159fdd0d39f6de22f341dfc00c1">Zero::OcJMP</a>, <a class="el" href="classZero_1_1OcASG.html#aa21485ca3a4d5e87b8945c026989a722">Zero::OcASG</a>, <a class="el" href="classZero_1_1OcDEF.html#a7a56d90ae360032c770aeecb120588f3">Zero::OcDEF</a>, <a class="el" href="classZero_1_1OcSET.html#af48d2832033c6839a95f15fa96855f82">Zero::OcSET</a>, <a class="el" href="classZero_1_1OcRET.html#a285524e05589b40e8bf17fdd7048a08c">Zero::OcRET</a>, <a class="el" href="classZero_1_1OcMSG.html#ad86ad0b40dbc5d0195ba3e3b3acdd10a">Zero::OcMSG</a>, <a class="el" href="classZero_1_1OcSTR.html#ab7b90dd5a7f3a576f43c31e1f3f11c60">Zero::OcSTR</a> y <a class="el" href="classZero_1_1OcNOP.html#a26c1dae6e3a2bd80cd61c67af73e6d23">Zero::OcNOP</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a7230ae4fc93bac41b278183f15ab50"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Opcode.html">Opcode</a> * Zero::Opcode::creaOpcodeParaMnemo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *&#160;</td>
+          <td class="paramname"><em>mnemo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Metodo.html">Metodo</a> *&#160;</td>
+          <td class="paramname"><em>met</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00049">49</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="classZero_1_1Mnemotecnico.html#a24604920a15c719a52b49e4fba8e8a30">Zero::Mnemotecnico::listar()</a>.</p>
+
+<p>Referenciado por <a class="el" href="metodos_8cpp_source.html#l00240">Zero::Metodo::masInstrucciones()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classZero_1_1Opcode.html#aa9ed7846ea67fdb5d845fcb77d2cd91e">Opcode</a> *toret;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMMsg *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    toret = <span class="keyword">new</span> OcMSG((NMMsg *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMStr *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    toret = <span class="keyword">new</span> OcSTR((NMStr *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMRet *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    toret = <span class="keyword">new</span> OcRET((NMRet *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMSet *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    toret = <span class="keyword">new</span> OcSET((NMSet *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMAsg *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    toret = <span class="keyword">new</span> OcASG((NMAsg *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMDef *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    toret = <span class="keyword">new</span> OcDEF((NMDef *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMJmp *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    toret = <span class="keyword">new</span> OcJMP((NMJmp *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMJot *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    toret = <span class="keyword">new</span> OcJOT((NMJot *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMJof *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    toret = <span class="keyword">new</span> OcJOF((NMJof *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMTrw *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    toret = <span class="keyword">new</span> OcTRW((NMTrw *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMFlt *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    toret = <span class="keyword">new</span> OcFLT((NMFlt *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMIof *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    toret = <span class="keyword">new</span> OcIOF((NMIof *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMInt *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    toret = <span class="keyword">new</span> OcINT((NMInt *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> (dynamic_cast&lt;NMNop *&gt;(<a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>) != NULL) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    toret = <span class="keyword">new</span> OcNOP((NMNop *) <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>, met);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">throw</span> EOpcodeIlegal( <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>-&gt;<a class="code" href="classZero_1_1Mnemotecnico.html#a24604920a15c719a52b49e4fba8e8a30">listar</a>( <span class="keyword">false</span> ).c_str() );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::bad_alloc &amp;) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;creando opcode de mnemo&quot;</span> );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a974e11d11eaf12741a145ad682a57b89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Zero::Opcode::deSincroniza </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplementado en <a class="el" href="classZero_1_1OcSET.html#a82e864d571ab435d4f5f559e04492011">Zero::OcSET</a> y <a class="el" href="classZero_1_1OcMSG.html#a1258e29d693446c086517f860fc820fa">Zero::OcMSG</a>.</p>
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00067">67</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00043">enFase</a> y <a class="el" href="opcodes_8cpp_source.html#l00043">estaEnFase()</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8h_source.html#l00062">cambiaEstadoMetodo()</a>, <a class="el" href="opcodes_8cpp_source.html#l00240">Zero::OcMSG::deSincroniza()</a>, <a class="el" href="opcodes_8cpp_source.html#l00512">Zero::OcSET::deSincroniza()</a> y <a class="el" href="opcodes_8cpp_source.html#l00028">Opcode()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            { <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Opcode.html#a227f626459f0b04222767075b76ba354">estaEnFase</a>() ) <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a> = !<a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3bb6b2b4303065d7302cdd8f77ee3ebc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Zero::Opcode::ejecuta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="classZero_1_1OcIOF.html#abcc87a90445da2091ac3bf57cf91c682">Zero::OcIOF</a>, <a class="el" href="classZero_1_1OcTRW.html#a3d39e3b33ae3e48085cd225df3d6e867">Zero::OcTRW</a>, <a class="el" href="classZero_1_1OcINT.html#a5baf54807464c5045c4cb6b476693785">Zero::OcINT</a>, <a class="el" href="classZero_1_1OcFLT.html#a6154f4ca9300ebcce9df526a0a68654e">Zero::OcFLT</a>, <a class="el" href="classZero_1_1OcJOF.html#a550dbf108e8e358511b4292e36da1f0d">Zero::OcJOF</a>, <a class="el" href="classZero_1_1OcJOT.html#ab86384bc4bb75f89065715131367b9ba">Zero::OcJOT</a>, <a class="el" href="classZero_1_1OcJMP.html#a005b22bed8b0eaab9d8da733a52631f1">Zero::OcJMP</a>, <a class="el" href="classZero_1_1OcFlw.html#a4a998974567e768633b22c7f4a47782a">Zero::OcFlw</a>, <a class="el" href="classZero_1_1OcASG.html#a69de0bdbe3f061f4c4ed94eaa207c0d4">Zero::OcASG</a>, <a class="el" href="classZero_1_1OcDEF.html#afbac29c094aaf2f3fb2f65cc2c6a6066">Zero::OcDEF</a>, <a class="el" href="classZero_1_1OcSET.html#aa3c15a79604804c991a75a9678cda79f">Zero::OcSET</a>, <a class="el" href="classZero_1_1OcRET.html#a6887a1c7fc84f437da5b8a50681bdbfe">Zero::OcRET</a>, <a class="el" href="classZero_1_1OcMSG.html#a9b6bdec18b2e519fba6380919ea36599">Zero::OcMSG</a>, <a class="el" href="classZero_1_1OcSTR.html#adb1cad484c94247e1386bd4868ad9f2b">Zero::OcSTR</a> y <a class="el" href="classZero_1_1OcNOP.html#a7e8fc8b9d61e2bc6bf8005d068fa73d8">Zero::OcNOP</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a227f626459f0b04222767075b76ba354"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::Opcode::estaEnFase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00043">43</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00043">enFase</a>, <a class="el" href="metodos_8h_source.html#l00123">Zero::Metodo::getFase()</a> y <a class="el" href="opcodes_8h_source.html#l00042">met</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8h_source.html#l00067">deSincroniza()</a>, <a class="el" href="opcodes_8cpp_source.html#l00240">Zero::OcMSG::deSincroniza()</a>, <a class="el" href="opcodes_8cpp_source.html#l00512">Zero::OcSET::deSincroniza()</a>, <a class="el" href="opcodes_8cpp_source.html#l00312">Zero::OcMSG::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00538">Zero::OcSET::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00675">Zero::OcASG::preparaReferencias()</a> y <a class="el" href="opcodes_8cpp_source.html#l01071">Zero::OcIOF::preparaReferencias()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> ( <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a> == <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>-&gt;<a class="code" href="classZero_1_1Metodo.html#a3b97315a1eab12cc4cb858640acdd2b7">getFase</a>() );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="acf24ec74f0dfdb23e9f8b593e474195e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::Opcode::getFase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00064">64</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00043">enFase</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a4f48875ba5f96ef68dccd164ca2f7665">enFase</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa5b3739133560031e09549e5bb8110ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a>* Zero::Opcode::getMnemo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplementado en <a class="el" href="classZero_1_1OcIOF.html#ad6ef1b0f81e1f1fa36a7bc33e40cac91">Zero::OcIOF</a>, <a class="el" href="classZero_1_1OcTRW.html#ade161ff16b3101a8158c2ecc2ad218b2">Zero::OcTRW</a>, <a class="el" href="classZero_1_1OcINT.html#aa16c4bfd04fb8e05c9fe77f9d57aeac3">Zero::OcINT</a>, <a class="el" href="classZero_1_1OcFLT.html#af3b8bded1e6610ec72bc954c8c78e360">Zero::OcFLT</a>, <a class="el" href="classZero_1_1OcJOF.html#a2e8a917193b8886ede8ebcb2c7ee2aaf">Zero::OcJOF</a>, <a class="el" href="classZero_1_1OcJOT.html#ab19b4c20f06dfb7e28f3bc7c6a0b21fe">Zero::OcJOT</a>, <a class="el" href="classZero_1_1OcJMP.html#a8591971f7d4adeed134a198148389714">Zero::OcJMP</a>, <a class="el" href="classZero_1_1OcFlw.html#aca40c0d78aca327d182338570c11fd6f">Zero::OcFlw</a>, <a class="el" href="classZero_1_1OcASG.html#a7728830b42c995711f140fede1e5345a">Zero::OcASG</a>, <a class="el" href="classZero_1_1OcDEF.html#aedb7d540b4cd75267f916e8dec6127cc">Zero::OcDEF</a>, <a class="el" href="classZero_1_1OcSET.html#ac012e98a62e488e7d5dd582fd68192a2">Zero::OcSET</a>, <a class="el" href="classZero_1_1OcRET.html#a54b4ea7d522e2349d179145b939cf016">Zero::OcRET</a>, <a class="el" href="classZero_1_1OcMSG.html#acac3231ba0eba7ae8197b7cd7d40b5f2">Zero::OcMSG</a>, <a class="el" href="classZero_1_1OcSTR.html#a8ca58dec54e69ebf10115b7babb7aaac">Zero::OcSTR</a> y <a class="el" href="classZero_1_1OcNOP.html#a79bbab620d77255cd3cc7cc1eae1bcd8">Zero::OcNOP</a>.</p>
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00053">53</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00046">mnemo</a>.</p>
+
+<p>Referenciado por <a class="el" href="metodos_8cpp_source.html#l00320">Zero::Metodo::chk()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#ad0eaa9e81b56a8aa9bc09ca28cdb2689" title="Solo derivados de Instr y de CtrMg.">mnemo</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac52536f8ef4e9ac5bcfb628a856f7205"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Metodo.html">Metodo</a>* Zero::Opcode::getPerteneceA </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00059">59</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="opcodes_8h_source.html#l00042">met</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af461d91da3e6d008f2402ac4b485fc3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Zero::Opcode::preparaReferencias </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementado en <a class="el" href="classZero_1_1OcIOF.html#a0676a558757f201071e7944111c79ed9">Zero::OcIOF</a>, <a class="el" href="classZero_1_1OcTRW.html#a205db7d934d999358668339b07f93a70">Zero::OcTRW</a>, <a class="el" href="classZero_1_1OcINT.html#a8f6a8ef4af7bb736215aa4fcbd74cbaa">Zero::OcINT</a>, <a class="el" href="classZero_1_1OcFLT.html#a80bfed1d7c4bee951da2646e6ba2247b">Zero::OcFLT</a>, <a class="el" href="classZero_1_1OcJOF.html#a978e2970c92204e7595efeb5d84b98a3">Zero::OcJOF</a>, <a class="el" href="classZero_1_1OcJOT.html#ae13315ec2961b3250b20ef1e2d41ed28">Zero::OcJOT</a>, <a class="el" href="classZero_1_1OcJMP.html#aa20a9104ab90d9ab7e3284f4ba0ec14f">Zero::OcJMP</a>, <a class="el" href="classZero_1_1OcASG.html#a5abc44775fa2038f5a4804ad736c3d92">Zero::OcASG</a>, <a class="el" href="classZero_1_1OcDEF.html#ae6654820bafe9a5224987509a7f509f3">Zero::OcDEF</a>, <a class="el" href="classZero_1_1OcSET.html#a430dccdfb415283a670af90f846a9892">Zero::OcSET</a>, <a class="el" href="classZero_1_1OcRET.html#a2e3f70c822c9a9f9c3f9b7952c09820f">Zero::OcRET</a>, <a class="el" href="classZero_1_1OcMSG.html#a8e042d4d5c46e645d59126dc42e3460a">Zero::OcMSG</a>, <a class="el" href="classZero_1_1OcSTR.html#a7282f09366034c6d918608cdaac59a3f">Zero::OcSTR</a> y <a class="el" href="classZero_1_1OcNOP.html#ad3e0222a6c8bf04630d5f21f99af036e">Zero::OcNOP</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a968f7d4e1cc502d248a7e4a3ce6c6ae1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> * Zero::Opcode::resuelveRefORegEnLoc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td>
+          <td class="paramname"><em>reforeg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00155">155</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="referencia_8cpp_source.html#l00174">Zero::Referencia::buscaVbleOAtributo()</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="metodos_8h_source.html#l00153">Zero::Metodo::getPerteneceA()</a>, <a class="el" href="opcodes_8h_source.html#l00042">met</a> y <a class="el" href="opcodes_8cpp_source.html#l00129">resuelveReg()</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8cpp_source.html#l00478">Zero::OcRET::ejecuta()</a> y <a class="el" href="opcodes_8cpp_source.html#l00675">Zero::OcASG::preparaReferencias()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    NombreRegistro *reg = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( reforeg );</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> ( reg != NULL)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a5353c217eebb8c44573f9d95a91cd6b4">resuelveReg</a>( (NombreRegistro *) reforeg );</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">else</span>    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Referencia.html#a1fc8b008c93ca1c8c5714d4e98865b33">Referencia::buscaVbleOAtributo</a>(</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                    <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>-&gt;<a class="code" href="classZero_1_1Metodo.html#a01107696cd99ff5e72697cd6d3741f95">getPerteneceA</a>(),</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                    <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                    reforeg-&gt;<a class="code" href="classZero_1_1Metodo.html#aa0621093ad375e245e8c99f72bcc2f18">getNombre</a>()</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            );</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4ecc695a84a55ae02adaf1046dd088cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> * Zero::Opcode::resuelveRefORegEnRef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td>
+          <td class="paramname"><em>reforeg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00140">140</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="referencia_8cpp_source.html#l00301">Zero::Referencia::buscaReferencia()</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="metodos_8h_source.html#l00153">Zero::Metodo::getPerteneceA()</a>, <a class="el" href="opcodes_8h_source.html#l00042">met</a> y <a class="el" href="opcodes_8cpp_source.html#l00129">resuelveReg()</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8cpp_source.html#l01008">Zero::OcTRW::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00312">Zero::OcMSG::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00538">Zero::OcSET::preparaReferencias()</a> y <a class="el" href="opcodes_8cpp_source.html#l01071">Zero::OcIOF::preparaReferencias()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    NombreRegistro *reg = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( reforeg );</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> ( reg != NULL)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a5353c217eebb8c44573f9d95a91cd6b4">resuelveReg</a>( (NombreRegistro *) reforeg );</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">else</span>    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Referencia.html#af4cc4a2f7c521799154ec0c3d3356470">Referencia::buscaReferencia</a>(</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                    reforeg-&gt;getNombre(),</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                    <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>-&gt;<a class="code" href="classZero_1_1Metodo.html#a01107696cd99ff5e72697cd6d3741f95">getPerteneceA</a>(),</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                    <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            );</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5353c217eebb8c44573f9d95a91cd6b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> * Zero::Opcode::resuelveReg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html">NombreRegistro</a> *&#160;</td>
+          <td class="paramname"><em>reforeg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00129">129</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="mnemos_8h_source.html#l00097">Zero::NombreRegistro::getCodigoRegistro()</a>, <a class="el" href="opcodes_8h_source.html#l00042">met</a> y <a class="el" href="metodos_8h_source.html#l00044">Zero::Metodo::reg</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8cpp_source.html#l00538">Zero::OcSET::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00675">Zero::OcASG::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l01071">Zero::OcIOF::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00155">resuelveRefORegEnLoc()</a>, <a class="el" href="opcodes_8cpp_source.html#l00140">resuelveRefORegEnRef()</a> y <a class="el" href="opcodes_8cpp_source.html#l00169">resuelveRegORefLoc()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numReg = reg-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> ( numReg &lt; <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a> )</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>-&gt;<a class="code" href="classZero_1_1Metodo.html#a892cbd5b48481d708bc54a096caf333e">reg</a>[ numReg ];</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">else</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a83ecd085e31e3e0c6e98b81656bdf008"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Referencia.html">Referencia</a> * Zero::Opcode::resuelveRegORefLoc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td>
+          <td class="paramname"><em>locOreg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8cpp_source.html#l00169">169</a> del archivo <a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="coleccion_8h_source.html#l00080">Zero::AsocNombrePuntero&lt; T &gt;::busca()</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="opcodes_8h_source.html#l00042">met</a>, <a class="el" href="opcodes_8cpp_source.html#l00129">resuelveReg()</a> y <a class="el" href="metodos_8h_source.html#l00084">Zero::Metodo::vblesLocales</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8cpp_source.html#l00266">Zero::OcMSG::preparaArgumentos()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    NombreRegistro *reg = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( locOreg );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> ( reg != NULL)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a5353c217eebb8c44573f9d95a91cd6b4">resuelveReg</a>( (NombreRegistro *) locOreg );</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">else</span>    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Opcode.html#a9cc83b5707df37ca6b9a98befaa2b96b">met</a>-&gt;<a class="code" href="classZero_1_1Metodo.html#af4334bd7ae927c167ad24c4793efb1e2">vblesLocales</a>.<a class="code" href="classZero_1_1AsocNombrePuntero.html#a3a892551f032e0068e5544a3f86fa53b">busca</a>( locOreg-&gt;getNombre() );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a4f48875ba5f96ef68dccd164ca2f7665"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::Opcode::enFase</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00043">43</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8h_source.html#l00067">deSincroniza()</a>, <a class="el" href="opcodes_8cpp_source.html#l00043">estaEnFase()</a>, <a class="el" href="opcodes_8h_source.html#l00064">getFase()</a>, <a class="el" href="opcodes_8cpp_source.html#l00312">Zero::OcMSG::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00538">Zero::OcSET::preparaReferencias()</a> y <a class="el" href="opcodes_8cpp_source.html#l00675">Zero::OcASG::preparaReferencias()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9cc83b5707df37ca6b9a98befaa2b96b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Metodo.html">Metodo</a>* Zero::Opcode::met</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00042">42</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8cpp_source.html#l00743">Zero::OcFlw::asignaIPMetodo()</a>, <a class="el" href="opcodes_8h_source.html#l00062">cambiaEstadoMetodo()</a>, <a class="el" href="opcodes_8h_source.html#l00087">Zero::OcNOP::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00195">Zero::OcSTR::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00255">Zero::OcMSG::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00466">Zero::OcRET::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00526">Zero::OcSET::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00584">Zero::OcDEF::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00769">Zero::OcJMP::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00816">Zero::OcJOT::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00864">Zero::OcJOF::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00912">Zero::OcFLT::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00996">Zero::OcTRW::copia()</a>, <a class="el" href="opcodes_8cpp_source.html#l00207">Zero::OcSTR::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00376">Zero::OcMSG::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00478">Zero::OcRET::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00596">Zero::OcDEF::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00834">Zero::OcJOT::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00882">Zero::OcJOF::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00924">Zero::OcFLT::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00966">Zero::OcINT::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l01083">Zero::OcIOF::ejecuta()</a>, <a class="el" href="opcodes_8cpp_source.html#l00043">estaEnFase()</a>, <a class="el" href="opcodes_8h_source.html#l00059">getPerteneceA()</a>, <a class="el" href="opcodes_8cpp_source.html#l00266">Zero::OcMSG::preparaArgumentos()</a>, <a class="el" href="opcodes_8cpp_source.html#l00312">Zero::OcMSG::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00538">Zero::OcSET::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00675">Zero::OcASG::preparaReferencias()</a>, <a class="el" href="opcodes_8cpp_source.html#l00155">resuelveRefORegEnLoc()</a>, <a class="el" href="opcodes_8cpp_source.html#l00140">resuelveRefORegEnRef()</a>, <a class="el" href="opcodes_8cpp_source.html#l00129">resuelveReg()</a> y <a class="el" href="opcodes_8cpp_source.html#l00169">resuelveRegORefLoc()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0eaa9e81b56a8aa9bc09ca28cdb2689"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a>* Zero::Opcode::mnemo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Solo derivados de <a class="el" href="classZero_1_1Instr.html">Instr</a> y de CtrMg. </p>
+
+<p>Definición en la línea <a class="el" href="opcodes_8h_source.html#l00046">46</a> del archivo <a class="el" href="opcodes_8h_source.html">opcodes.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="opcodes_8h_source.html#l00053">getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00085">Zero::OcNOP::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00107">Zero::OcSTR::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00138">Zero::OcMSG::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00158">Zero::OcRET::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00174">Zero::OcSET::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00194">Zero::OcDEF::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00211">Zero::OcASG::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00231">Zero::OcFlw::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00244">Zero::OcJMP::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00258">Zero::OcJOT::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00272">Zero::OcJOF::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00286">Zero::OcFLT::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00300">Zero::OcINT::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00314">Zero::OcTRW::getMnemo()</a>, <a class="el" href="opcodes_8h_source.html#l00330">Zero::OcIOF::getMnemo()</a>, <a class="el" href="opcodes_8cpp_source.html#l00649">Zero::OcASG::OcASG()</a>, <a class="el" href="opcodes_8cpp_source.html#l00570">Zero::OcDEF::OcDEF()</a>, <a class="el" href="opcodes_8cpp_source.html#l00898">Zero::OcFLT::OcFLT()</a>, <a class="el" href="opcodes_8cpp_source.html#l00940">Zero::OcINT::OcINT()</a>, <a class="el" href="opcodes_8cpp_source.html#l01045">Zero::OcIOF::OcIOF()</a>, <a class="el" href="opcodes_8cpp_source.html#l00755">Zero::OcJMP::OcJMP()</a>, <a class="el" href="opcodes_8cpp_source.html#l00850">Zero::OcJOF::OcJOF()</a>, <a class="el" href="opcodes_8cpp_source.html#l00802">Zero::OcJOT::OcJOT()</a>, <a class="el" href="opcodes_8cpp_source.html#l00219">Zero::OcMSG::OcMSG()</a>, <a class="el" href="opcodes_8cpp_source.html#l01118">Zero::OcNOP::OcNOP()</a>, <a class="el" href="opcodes_8cpp_source.html#l00451">Zero::OcRET::OcRET()</a>, <a class="el" href="opcodes_8cpp_source.html#l00502">Zero::OcSET::OcSET()</a>, <a class="el" href="opcodes_8cpp_source.html#l00180">Zero::OcSTR::OcSTR()</a>, <a class="el" href="opcodes_8cpp_source.html#l00982">Zero::OcTRW::OcTRW()</a> y <a class="el" href="opcodes_8cpp_source.html#l00034">~Opcode()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="opcodes_8h_source.html">opcodes.h</a></li>
+<li><a class="el" href="opcodes_8cpp_source.html">opcodes.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:31 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

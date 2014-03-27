@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['salvar',['salvar',['../classZero_1_1AlmacenObjetos.html#a63a0d5a11edf4d4a1cf6213540fbdcbb',1,'Zero::AlmacenObjetos::salvar()'],['../classZero_1_1Container.html#ad274f483318210da92d605706e6a50ee',1,'Zero::Container::salvar()'],['../classZero_1_1Objeto.html#af70d4e61e7c31e46d983f51be2f89224',1,'Zero::Objeto::salvar()']]],
+  ['salvarcontenedorenfichero',['salvarContenedorEnFichero',['../classZero_1_1PersistentStoreEnDisco.html#a3b5b0b27aacd2d6eb75faaba2982b464',1,'Zero::PersistentStoreEnDisco']]],
+  ['seqfindinstring',['seqFindInString',['../classZero_1_1Runtime.html#a91dd10d51a0962ad1139d820a780f4c9',1,'Zero::Runtime']]],
+  ['seqfindinvector',['seqFindInVector',['../classZero_1_1Runtime.html#ae4f09439c37ce652eee58da30c0455e2',1,'Zero::Runtime']]],
+  ['seqfindlastinstring',['seqFindLastInString',['../classZero_1_1Runtime.html#a268169e76404ee5b91dacd33dac03c8d',1,'Zero::Runtime']]],
+  ['seqfindlastinvector',['seqFindLastInVector',['../classZero_1_1Runtime.html#a7981820c2ad8e10e1215a43684a94657',1,'Zero::Runtime']]],
+  ['siglinea',['sigLinea',['../classEnsamZ.html#a2e1706e5a1bbf93888bde4fadf797389',1,'EnsamZ::sigLinea()'],['../classMacroEnsamZ.html#a2ea5ac9f062e4015ad0d7131f0ed4ebd',1,'MacroEnsamZ::sigLinea()']]],
+  ['sincronizar',['sincronizar',['../classZero_1_1Conim.html#a2de38ff5875cec5a246ac9e9a0ed117b',1,'Zero::Conim']]],
+  ['sizevector',['sizeVector',['../classZero_1_1Runtime.html#a4d5438b21c91b850f7c40fca58ff88b1',1,'Zero::Runtime']]],
+  ['stack',['Stack',['../classZero_1_1Stack.html#ad286cf9ff34e136973bc968a0d4b8ac8',1,'Zero::Stack']]],
+  ['stackinfoitem',['StackInfoItem',['../classZero_1_1Stack_1_1StackInfoItem.html#a7ddef4d1d50f0117127dd1994ea66fe7',1,'Zero::Stack::StackInfoItem']]],
+  ['strtopragma',['strToPragma',['../classZero_1_1NMMta.html#ab44a5e0b930d34bb42bd1951b1942c4e',1,'Zero::NMMta']]],
+  ['sub',['sub',['../classZero_1_1Runtime.html#ab88034226cbe624ec30d7d424475bbf3',1,'Zero::Runtime']]],
+  ['substringstring',['substringString',['../classZero_1_1Runtime.html#abcfe306cb2179b9d05b81197700e1ab8',1,'Zero::Runtime']]],
+  ['sum',['sum',['../classZero_1_1Runtime.html#afeb86f06d3800962605a34ff10e67746',1,'Zero::Runtime']]],
+  ['swizzled',['swizzled',['../classZero_1_1Referencia.html#a96f7c9bd733c5b7ad465dabddaef872e',1,'Zero::Referencia']]]
+];

@@ -1,0 +1,1090 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia de la Clase Zero::Compilador</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>P√°gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>√çndice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarqu√≠a&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceZero.html">Zero</a></li><li class="navelem"><a class="el" href="classZero_1_1Compilador.html">Compilador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos p√∫blicos</a> &#124;
+<a href="#pub-methods">M√©todos p√∫blicos</a> &#124;
+<a href="#pub-attribs">Atributos p√∫blicos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#friends">Amigas</a> &#124;
+<a href="classZero_1_1Compilador-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Zero::Compilador</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="compilador_8h_source.html">compilador.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Zero::Compilador</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classZero_1_1Compilador.png" usemap="#Zero::Compilador_map" alt=""/>
+  <map id="Zero::Compilador_map" name="Zero::Compilador_map">
+<area href="classPartesCompilador.html" alt="PartesCompilador" shape="rect" coords="0,0,112,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos p√∫blicos</h2></td></tr>
+<tr class="memitem:a7e8899ad610f11a00a5bcab6b72afb91"><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">ListaMnemos</a></td></tr>
+<tr class="separator:a7e8899ad610f11a00a5bcab6b72afb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+M√©todos p√∫blicos</h2></td></tr>
+<tr class="memitem:a709911bbcd89e536637ce58f4a5d1ec4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a709911bbcd89e536637ce58f4a5d1ec4">Compilador</a> (std::string *=NULL, <a class="el" href="classZero_1_1Optimizador.html">Optimizador</a> *=NULL, <a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *=NULL, <a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *=NULL)</td></tr>
+<tr class="memdesc:a709911bbcd89e536637ce58f4a5d1ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda todos los ids de una compilaciÛn  <a href="#a709911bbcd89e536637ce58f4a5d1ec4">M√°s...</a><br/></td></tr>
+<tr class="separator:a709911bbcd89e536637ce58f4a5d1ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfab9a7421c41cbff4cde98f73bdf0dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#adfab9a7421c41cbff4cde98f73bdf0dc">~Compilador</a> ()</td></tr>
+<tr class="separator:adfab9a7421c41cbff4cde98f73bdf0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed76192ba5a192a72bd4d330e55f837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#aeed76192ba5a192a72bd4d330e55f837">reset</a> (std::string *, <a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *=NULL, <a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *=NULL)</td></tr>
+<tr class="memdesc:aeed76192ba5a192a72bd4d330e55f837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preparar el compilador para comenzar.  <a href="#aeed76192ba5a192a72bd4d330e55f837">M√°s...</a><br/></td></tr>
+<tr class="separator:aeed76192ba5a192a72bd4d330e55f837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace3351eb0896dcef184a027f996f669a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classZero_1_1Optimizador.html">Optimizador</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#ace3351eb0896dcef184a027f996f669a">getOptimizador</a> () const </td></tr>
+<tr class="memdesc:ace3351eb0896dcef184a027f996f669a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener el optimizador.  <a href="#ace3351eb0896dcef184a027f996f669a">M√°s...</a><br/></td></tr>
+<tr class="separator:ace3351eb0896dcef184a027f996f669a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8496ca25eb01d749f7450d6adc52d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#aed8496ca25eb01d749f7450d6adc52d2">prepararCompilacion</a> ()</td></tr>
+<tr class="memdesc:aed8496ca25eb01d749f7450d6adc52d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compilar.  <a href="#aed8496ca25eb01d749f7450d6adc52d2">M√°s...</a><br/></td></tr>
+<tr class="separator:aed8496ca25eb01d749f7450d6adc52d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27839f62ed6c03291c0736982a7c1019"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">ListaMnemos</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a27839f62ed6c03291c0736982a7c1019">compilar</a> (<a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">TipoOptimizacion</a>)</td></tr>
+<tr class="separator:a27839f62ed6c03291c0736982a7c1019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67cb6cd2883d8bcff1813f231c42a07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">ListaMnemos</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#ae67cb6cd2883d8bcff1813f231c42a07">getListaMnemos</a> ()</td></tr>
+<tr class="separator:ae67cb6cd2883d8bcff1813f231c42a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8d44ded0b7a092698d95b44103bed8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#aa8d44ded0b7a092698d95b44103bed8e">chkMnemo</a> (<a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *)</td></tr>
+<tr class="memdesc:aa8d44ded0b7a092698d95b44103bed8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realizar comprobaciones.  <a href="#aa8d44ded0b7a092698d95b44103bed8e">M√°s...</a><br/></td></tr>
+<tr class="separator:aa8d44ded0b7a092698d95b44103bed8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691d51fc984b4b74b1448014ae806828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a691d51fc984b4b74b1448014ae806828">chkNMDef</a> (<a class="el" href="classZero_1_1NMDef.html">NMDef</a> *)</td></tr>
+<tr class="memdesc:a691d51fc984b4b74b1448014ae806828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprobar los mnemotÈcnicos Def.  <a href="#a691d51fc984b4b74b1448014ae806828">M√°s...</a><br/></td></tr>
+<tr class="separator:a691d51fc984b4b74b1448014ae806828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8d39eb809852218faf214259b21fc84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#aa8d39eb809852218faf214259b21fc84">chkNMRet</a> (<a class="el" href="classZero_1_1NMRet.html">NMRet</a> *)</td></tr>
+<tr class="memdesc:aa8d39eb809852218faf214259b21fc84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprobar los mnemotÈcnicos Ret.  <a href="#aa8d39eb809852218faf214259b21fc84">M√°s...</a><br/></td></tr>
+<tr class="separator:aa8d39eb809852218faf214259b21fc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cba96e26650e58b8d7985ee23a4dfd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a9cba96e26650e58b8d7985ee23a4dfd9">chkNMAsg</a> (<a class="el" href="classZero_1_1NMAsg.html">NMAsg</a> *)</td></tr>
+<tr class="memdesc:a9cba96e26650e58b8d7985ee23a4dfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprobar los mnemotÈcnicos Asg.  <a href="#a9cba96e26650e58b8d7985ee23a4dfd9">M√°s...</a><br/></td></tr>
+<tr class="separator:a9cba96e26650e58b8d7985ee23a4dfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa74998cc8b1b488dc92110e00bbb73a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#afa74998cc8b1b488dc92110e00bbb73a">chkNMMsg</a> (<a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> *)</td></tr>
+<tr class="memdesc:afa74998cc8b1b488dc92110e00bbb73a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprobar los mnemotÈcnicos Msg.  <a href="#afa74998cc8b1b488dc92110e00bbb73a">M√°s...</a><br/></td></tr>
+<tr class="separator:afa74998cc8b1b488dc92110e00bbb73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1000ffb84fea0efb842e1fbcca1b72b6"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a1000ffb84fea0efb842e1fbcca1b72b6">getCadenaAvisos</a> () const </td></tr>
+<tr class="memdesc:a1000ffb84fea0efb842e1fbcca1b72b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener la cadena de avisos dados por el compilador.  <a href="#a1000ffb84fea0efb842e1fbcca1b72b6">M√°s...</a><br/></td></tr>
+<tr class="separator:a1000ffb84fea0efb842e1fbcca1b72b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e70f215adaf16cea8f6a2bb069a7d5f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a1e70f215adaf16cea8f6a2bb069a7d5f">getNumLinea</a> () const </td></tr>
+<tr class="memdesc:a1e70f215adaf16cea8f6a2bb069a7d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener el n˙mero de lÌnea que est· compilando.  <a href="#a1e70f215adaf16cea8f6a2bb069a7d5f">M√°s...</a><br/></td></tr>
+<tr class="separator:a1e70f215adaf16cea8f6a2bb069a7d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos p√∫blicos</h2></td></tr>
+<tr class="memitem:a4bff44111806c34d6730ef8b8faf198e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Optimizador.html">Optimizador</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a></td></tr>
+<tr class="separator:a4bff44111806c34d6730ef8b8faf198e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94841121c565d80736cd60bbd7b931b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1AnalizadorLexico.html">AnalizadorLexico</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a></td></tr>
+<tr class="separator:a94841121c565d80736cd60bbd7b931b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b102658cf06775c4e1b0bd45ed3a7e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a98b102658cf06775c4e1b0bd45ed3a7e">cadAviso</a></td></tr>
+<tr class="separator:a98b102658cf06775c4e1b0bd45ed3a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a75908420a8f1ce7083d14cef334dff84"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a75908420a8f1ce7083d14cef334dff84">lin</a></td></tr>
+<tr class="separator:a75908420a8f1ce7083d14cef334dff84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0eb1f31d4507e8dd095afc3cbc7898"><td class="memItemLeft" align="right" valign="top">std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a></td></tr>
+<tr class="separator:a7c0eb1f31d4507e8dd095afc3cbc7898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9498c7c8b41dd1f9624842780497edce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">ListaMnemos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a9498c7c8b41dd1f9624842780497edce">listaMnemos</a></td></tr>
+<tr class="separator:a9498c7c8b41dd1f9624842780497edce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66233569cd50a8a08833e042d79b1d14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a></td></tr>
+<tr class="separator:a66233569cd50a8a08833e042d79b1d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f55f583a5a34e2f38612bf3cf2e6051"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051">atrs</a></td></tr>
+<tr class="memdesc:a7f55f583a5a34e2f38612bf3cf2e6051"><td class="mdescLeft">&#160;</td><td class="mdescRight">argumentos formales del mÈtodo  <a href="#a7f55f583a5a34e2f38612bf3cf2e6051">M√°s...</a><br/></td></tr>
+<tr class="separator:a7f55f583a5a34e2f38612bf3cf2e6051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a037b2233b7b99af1ad6dd546023837"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837">ids</a></td></tr>
+<tr class="memdesc:a9a037b2233b7b99af1ad6dd546023837"><td class="mdescLeft">&#160;</td><td class="mdescRight">atributos del objeto del mÈtodo  <a href="#a9a037b2233b7b99af1ad6dd546023837">M√°s...</a><br/></td></tr>
+<tr class="separator:a9a037b2233b7b99af1ad6dd546023837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Amigas</h2></td></tr>
+<tr class="memitem:a08c5037d77c961ce104550002cffaafc"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Compilador.html#a08c5037d77c961ce104550002cffaafc">Optimizador</a></td></tr>
+<tr class="separator:a08c5037d77c961ce104550002cffaafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_types_classPartesCompilador"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classPartesCompilador')"><img src="closed.png" alt="-"/>&#160;Tipos privados heredados desde <a class="el" href="classPartesCompilador.html">PartesCompilador</a></td></tr>
+<tr class="memitem:ae8232107b7c3bc83f717b91f4be322bf inherit pub_types_classPartesCompilador"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">TipoOptimizacion</a> { <a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa6c7d4794ace67bb4a5b45afa2e0e663e">opt0</a>, 
+<a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfa3e5bd9f0d18f2521c86ef6b350a812a9">opt1</a>, 
+<a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bfad29068c2282a5c5f0a0a148fce4a5d0a">opt2</a>
+ }</td></tr>
+<tr class="separator:ae8232107b7c3bc83f717b91f4be322bf inherit pub_types_classPartesCompilador"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripci√≥n detallada</h2>
+<div class="textblock"><p>La clase <a class="el" href="classZero_1_1Compilador.html">Compilador</a>. Se encarga de compilar unos mnemotÈcnicos que vienen en formato de texto, separados por cambios de lÌnea <br/>
+. Se asume que los mnemotÈcnicos son los derivados de <a class="el" href="classZero_1_1Instr.html">Instr</a>, es decir, los que pueden ir dentro de un mÈtodo, pues es lo que se compila. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00030">30</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+</div><h2 class="groupheader">Documentaci√≥n de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="a7e8899ad610f11a00a5bcab6b72afb91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *&gt; <a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Zero::Compilador::ListaMnemos</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00033">33</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentaci√≥n del constructor y destructor</h2>
+<a class="anchor" id="a709911bbcd89e536637ce58f4a5d1ec4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Compilador::Compilador </td>
+          <td>(</td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>t</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html">Optimizador</a> *&#160;</td>
+          <td class="paramname"><em>o</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td>
+          <td class="paramname"><em>args</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td>
+          <td class="paramname"><em>atrs</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda todos los ids de una compilaciÛn </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00018">18</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00034">opt</a>, <a class="el" href="compilador_8h_source.html#l00031">Optimizador</a>, <a class="el" href="compilador_8cpp_source.html#l00049">reset()</a> y <a class="el" href="compilador_8h_source.html#l00039">txt</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    : <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a>(o), <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>(NULL), <a class="code" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a>(t)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Crear el optimizador</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a> == NULL ) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a> = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1Compilador.html#a08c5037d77c961ce104550002cffaafc">Optimizador</a>( <span class="keyword">this</span> );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a> == NULL ) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;construyendo optimizador&quot;</span> );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Resetear el compilador con el cÛdigo</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#aeed76192ba5a192a72bd4d330e55f837" title="Preparar el compilador para comenzar.">reset</a>( <a class="code" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a>, <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a>, <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a> );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="adfab9a7421c41cbff4cde98f73bdf0dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::Compilador::~Compilador </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00037">37</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00041">args</a>, <a class="el" href="compilador_8h_source.html#l00042">atrs</a>, <a class="el" href="compilador_8h_source.html#l00035">lex</a> y <a class="el" href="compilador_8h_source.html#l00034">opt</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>  = NULL;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a>  = NULL;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051" title="argumentos formales del mÈtodo">atrs</a> = NULL;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a> = NULL;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentaci√≥n de las funciones miembro</h2>
+<a class="anchor" id="aa8d44ded0b7a092698d95b44103bed8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::chkMnemo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Mnemotecnico.html">Mnemotecnico</a> *&#160;</td>
+          <td class="paramname"><em>mnemo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realizar comprobaciones. </p>
+<p>Realiza varias comprobaciones. Por ejemplo, no tienen sentido: </p>
+<ul>
+<li>
+<a class="el" href="classZero_1_1NMObj.html">NMObj</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMAtr.html">NMAtr</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMEno.html">NMEno</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMMth.html">NMMth</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMEnm.html">NMEnm</a> </li>
+</ul>
+<p>Y debido a que utilizan exclusivamente ref. locales, las siguientes deben ser comprobadas minuciosamente: </p>
+<ul>
+<li>
+<a class="el" href="classZero_1_1NMDef.html">NMDef</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMRet.html">NMRet</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMAsg.html">NMAsg</a> </li>
+<li>
+<a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> </li>
+</ul>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00161">161</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8cpp_source.html#l00264">chkNMAsg()</a>, <a class="el" href="compilador_8cpp_source.html#l00232">chkNMDef()</a>, <a class="el" href="compilador_8cpp_source.html#l00282">chkNMMsg()</a> y <a class="el" href="compilador_8cpp_source.html#l00246">chkNMRet()</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMObj *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">throw</span> ESintxEnoNoPermitido( <span class="stringliteral">&quot;compilando mth&quot;</span> );</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMEno *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">throw</span> ESintxEnoNoPermitido( <span class="stringliteral">&quot;compilando mth&quot;</span> );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMMth *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">throw</span> ESintxMthNoPermitido( <span class="stringliteral">&quot;compilando mth&quot;</span> );</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMEnm *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">throw</span> ESintxEnmNoPermitido( <span class="stringliteral">&quot;compilando mth&quot;</span> );</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMAtr *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">throw</span> ESintxAtrNoPermitido( <span class="stringliteral">&quot;compilando mth&quot;</span> );</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMDef *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a691d51fc984b4b74b1448014ae806828" title="Comprobar los mnemotÈcnicos Def.">chkNMDef</a>( (NMDef *) mnemo );</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMRet *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#aa8d39eb809852218faf214259b21fc84" title="Comprobar los mnemotÈcnicos Ret.">chkNMRet</a>( (NMRet *) mnemo );</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMAsg *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a9cba96e26650e58b8d7985ee23a4dfd9" title="Comprobar los mnemotÈcnicos Asg.">chkNMAsg</a>( (NMAsg *) mnemo );</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMMsg *&gt;( mnemo ) != NULL )</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#afa74998cc8b1b488dc92110e00bbb73a" title="Comprobar los mnemotÈcnicos Msg.">chkNMMsg</a>( (NMMsg *) mnemo );</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9cba96e26650e58b8d7985ee23a4dfd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::chkNMAsg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMAsg.html">NMAsg</a> *&#160;</td>
+          <td class="paramname"><em>mnemo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprobar los mnemotÈcnicos Asg. </p>
+<p>Comprueba que la referencia local exista. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00264">264</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00042">atrs</a>, <a class="el" href="ident_8cpp_source.html#l00076">Zero::Identificadores::busca()</a>, <a class="el" href="compilador_8h_source.html#l00036">cadAviso</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00553">Zero::NMAsg::getReferencia()</a> y <a class="el" href="compilador_8h_source.html#l00043">ids</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00161">chkMnemo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">const</span> std::string &amp;nombreRef = mnemo-&gt;getReferencia()-&gt;getNombre();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>( nombreRef )</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;          &amp;&amp; !<a class="code" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051" title="argumentos formales del mÈtodo">atrs</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>( nombreRef ) )</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a98b102658cf06775c4e1b0bd45ed3a7e">cadAviso</a> += <span class="stringliteral">&quot;ref. local indefinida: &quot;</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                            + nombreRef</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                    + <span class="stringliteral">&quot;, en ASG\n&quot;</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        ;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a691d51fc984b4b74b1448014ae806828"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::chkNMDef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMDef.html">NMDef</a> *&#160;</td>
+          <td class="paramname"><em>mnemo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprobar los mnemotÈcnicos Def. </p>
+<p>Comprueba que una def. no sea duplicada. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00232">232</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="ident_8cpp_source.html#l00076">Zero::Identificadores::busca()</a>, <a class="el" href="mnemos_8h_source.html#l00495">Zero::NMDef::getNombre()</a>, <a class="el" href="compilador_8h_source.html#l00043">ids</a> y <a class="el" href="ident_8cpp_source.html#l00082">Zero::Identificadores::inserta()</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00161">chkMnemo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>( mnemo-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">throw</span> ESintxIdNoValido( std::string( <span class="stringliteral">&quot;nombre de ref. local duplicado: &quot;</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                            + mnemo-&gt;getNombre()</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    + <span class="stringliteral">&quot;, en DEF&quot;</span> ).c_str() );</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#a020556abf5806925da347716b41a1c5c">inserta</a>( mnemo-&gt;getNombre() );</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afa74998cc8b1b488dc92110e00bbb73a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::chkNMMsg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> *&#160;</td>
+          <td class="paramname"><em>mnemo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprobar los mnemotÈcnicos Msg. </p>
+<p>Comprueba que los argumentos sean refs. locales o atributos. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00282">282</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="ident_8cpp_source.html#l00076">Zero::Identificadores::busca()</a>, <a class="el" href="mnemos_8h_source.html#l00212">Zero::MixinConArgumentos::getArgs()</a> y <a class="el" href="compilador_8h_source.html#l00043">ids</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00161">chkMnemo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; mnemo-&gt;getArgs()-&gt;size(); ++i)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>( (*(mnemo-&gt;getArgs()))[i]-&gt;getNombre() ) )</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordflow">throw</span> EChkArgInvalido(</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                std::string( <span class="stringliteral">&quot;ref. local indefinida: &quot;</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                   + (*(mnemo-&gt;getArgs()))[i]-&gt;getNombre()</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                   + <span class="stringliteral">&quot;, como argumento en MSG\n&quot;</span> ).c_str()</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            );</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa8d39eb809852218faf214259b21fc84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::chkNMRet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMRet.html">NMRet</a> *&#160;</td>
+          <td class="paramname"><em>mnemo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprobar los mnemotÈcnicos Ret. </p>
+<p>Comprueba que la referencia del return exista. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00246">246</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00042">atrs</a>, <a class="el" href="ident_8cpp_source.html#l00076">Zero::Identificadores::busca()</a>, <a class="el" href="compilador_8h_source.html#l00036">cadAviso</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00523">Zero::NMRet::getReferencia()</a> y <a class="el" href="compilador_8h_source.html#l00043">ids</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00161">chkMnemo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">const</span> std::string &amp;nombreRef = mnemo-&gt;getReferencia()-&gt;getNombre();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>( nombreRef )</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;          &amp;&amp; !<a class="code" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051" title="argumentos formales del mÈtodo">atrs</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>( nombreRef ) )</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a98b102658cf06775c4e1b0bd45ed3a7e">cadAviso</a> += <span class="stringliteral">&quot;ref. local o atributo indefinido: &quot;</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                + mnemo-&gt;getReferencia()-&gt;getNombre()</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                + <span class="stringliteral">&quot;, en RET\n&quot;</span>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        ;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a27839f62ed6c03291c0736982a7c1019"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">Compilador::ListaMnemos</a> &amp; Zero::Compilador::compilar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Optimizador::TipoOptimizacion</a>&#160;</td>
+          <td class="paramname"><em>nivelOpt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00119">119</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00041">args</a>, <a class="el" href="compilador_8h_source.html#l00042">atrs</a>, <a class="el" href="compilador_8cpp_source.html#l00161">chkMnemo()</a>, <a class="el" href="mnemos_8cpp_source.html#l00257">Zero::Mnemotecnico::compilar()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00054">Zero::AnalizadorLexico::esEol()</a>, <a class="el" href="analizadorlexico_8h_source.html#l00043">Zero::AnalizadorLexico::getTokenActual()</a>, <a class="el" href="compilador_8h_source.html#l00035">lex</a>, <a class="el" href="compilador_8h_source.html#l00038">lin</a>, <a class="el" href="compilador_8h_source.html#l00040">listaMnemos</a>, <a class="el" href="compilador_8h_source.html#l00034">opt</a>, <a class="el" href="optimizador_8cpp_source.html#l00083">Zero::Optimizador::optimizar()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00042">Zero::AnalizadorLexico::pasaEsp()</a>, <a class="el" href="compilador_8cpp_source.html#l00097">prepararCompilacion()</a>, <a class="el" href="excep_8h_source.html#l00139">Zero::ECompilacion::putLinMetodo()</a> y <a class="el" href="compilador_8h_source.html#l00039">txt</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00487">EnsamZ::compilaMetodo()</a> y <a class="el" href="runtime_8cpp_source.html#l03676">Zero::Runtime::compileToMethodYOfX()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a> != NULL )</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;          <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#aed8496ca25eb01d749f7450d6adc52d2" title="Compilar.">prepararCompilacion</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a> != NULL )</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          <span class="keywordflow">while</span>( !<a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>-&gt;<a class="code" href="classZero_1_1AnalizadorLexico.html#ad6a2ca2b6731977b8cd465813be824d0" title="øEs fin de lÌnea?">esEol</a>() )</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;          {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                ++<a class="code" href="classZero_1_1Compilador.html#a75908420a8f1ce7083d14cef334dff84">lin</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>-&gt;<a class="code" href="classZero_1_1AnalizadorLexico.html#af903e203ccc7eee696d15df71f2cb084">pasaEsp</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                Mnemotecnico *mnemo = <a class="code" href="classZero_1_1Mnemotecnico.html#ab7464ac0f70f6bbc7831918cfac35b9a">Mnemotecnico::compilar</a>( *<a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a> );</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">if</span> ( mnemo != NULL) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        <span class="comment">// Hacer comprobaciones</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                        <a class="code" href="classZero_1_1Compilador.html#aa8d44ded0b7a092698d95b44103bed8e" title="Realizar comprobaciones.">chkMnemo</a>( mnemo );</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        <span class="comment">// Guardar el mnemo</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        <a class="code" href="classZero_1_1Compilador.html#a9498c7c8b41dd1f9624842780497edce">listaMnemos</a>.push_back( mnemo );</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        <span class="keywordflow">throw</span> ESintxMnemoInvalido(</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                std::string( <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>-&gt;<a class="code" href="classZero_1_1AnalizadorLexico.html#a46b0cc4561efee8f27d28e4a0c36940f" title="Devuelve el token actual.">getTokenActual</a>() ).c_str() )</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        ;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;              }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;              <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a>-&gt;<a class="code" href="classZero_1_1Optimizador.html#a70486438d2037916114c19a1f0406343">optimizar</a>( <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a>, <a class="code" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051" title="argumentos formales del mÈtodo">atrs</a>, NULL, nivelOpt );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          } <span class="keywordflow">catch</span>(ECompilacion &amp;e)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;              e.putLinMetodo( <a class="code" href="classZero_1_1Compilador.html#a75908420a8f1ce7083d14cef334dff84">lin</a> );</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;              <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Compilador.html#a9498c7c8b41dd1f9624842780497edce">listaMnemos</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1000ffb84fea0efb842e1fbcca1b72b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Zero::Compilador::getCadenaAvisos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtener la cadena de avisos dados por el compilador. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00084">84</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00036">cadAviso</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8cpp_source.html#l00487">EnsamZ::compilaMetodo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Compilador.html#a98b102658cf06775c4e1b0bd45ed3a7e">cadAviso</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae67cb6cd2883d8bcff1813f231c42a07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">ListaMnemos</a>&amp; Zero::Compilador::getListaMnemos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00066">66</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00040">listaMnemos</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Compilador.html#a9498c7c8b41dd1f9624842780497edce">listaMnemos</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1e70f215adaf16cea8f6a2bb069a7d5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Zero::Compilador::getNumLinea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtener el n˙mero de lÌnea que est· compilando. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00087">87</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00038">lin</a>.</p>
+
+<p>Referenciado por <a class="el" href="za_8h_source.html#l00068">EnsamZ::getNumeroLineaMetodo()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Compilador.html#a75908420a8f1ce7083d14cef334dff84">lin</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ace3351eb0896dcef184a027f996f669a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classZero_1_1Optimizador.html">Optimizador</a>* Zero::Compilador::getOptimizador </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtener el optimizador. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00061">61</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00034">opt</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Compilador.html#a4bff44111806c34d6730ef8b8faf198e">opt</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aed8496ca25eb01d749f7450d6adc52d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::prepararCompilacion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compilar. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00097">97</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="compilador_8h_source.html#l00041">args</a>, <a class="el" href="compilador_8h_source.html#l00036">cadAviso</a>, <a class="el" href="ident_8cpp_source.html#l00094">Zero::Identificadores::getID()</a>, <a class="el" href="ident_8h_source.html#l00061">Zero::Identificadores::getNumero()</a>, <a class="el" href="compilador_8h_source.html#l00043">ids</a>, <a class="el" href="ident_8cpp_source.html#l00082">Zero::Identificadores::inserta()</a>, <a class="el" href="compilador_8h_source.html#l00035">lex</a>, <a class="el" href="compilador_8h_source.html#l00040">listaMnemos</a>, <a class="el" href="ident_8cpp_source.html#l00104">Zero::Identificadores::reset()</a> y <a class="el" href="analizadorlexico_8h_source.html#l00077">Zero::AnalizadorLexico::reset()</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a98b102658cf06775c4e1b0bd45ed3a7e">cadAviso</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Ponernos al principio del texto a compilar</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>-&gt;<a class="code" href="classZero_1_1AnalizadorLexico.html#aa8aeeb710d6a5d8d1146cfd346315946" title="Coloca el indicador de posiciÛn a cero.">reset</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Borrar la lista de mnemotÈcnicos</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a9498c7c8b41dd1f9624842780497edce">listaMnemos</a>.clear();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// Preparar los identificadores</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#a9cbed269b36653f2ba6e06583179cd2e">reset</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Meter los argumentos formales en los ids</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#ad39da3ca3d49774b2d2d81a699f26432">getNumero</a>(); ++i)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a9a037b2233b7b99af1ad6dd546023837" title="atributos del objeto del mÈtodo">ids</a>.<a class="code" href="classZero_1_1Identificadores.html#a020556abf5806925da347716b41a1c5c">inserta</a>( <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#a3da94ab8bdb4b8f9f52f336439bf984d">getID</a>( i ) );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aeed76192ba5a192a72bd4d330e55f837"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::Compilador::reset </td>
+          <td>(</td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td>
+          <td class="paramname"><em>args</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td>
+          <td class="paramname"><em>atrs</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Preparar el compilador para comenzar. </p>
+<p>Coloca una nueva cadena para que sea compilada. Implica un nuevo analizador lÈxico. Si no se puede crear, lanza una excepciÛn <a class="el" href="classZero_1_1ENoHayMemoria.html">ENoHayMemoria</a>.</p>
+<p>Cada vez que se llama a compilar, se empieza desde el principio de la cadena, por lo que ser· muy ineficiente e innecesario llamar a <a class="el" href="classZero_1_1Compilador.html#aeed76192ba5a192a72bd4d330e55f837" title="Preparar el compilador para comenzar.">reset()</a> para compilar la misma cadena.</p>
+<p>Hay que pasarle los atributos del objeto y los argumentos formales, para que pueda hacer comprobaciones en aquellos mnemos en los que obligatoriamente hay que incluir una ref. local. </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8cpp_source.html#l00049">49</a> del archivo <a class="el" href="compilador_8cpp_source.html">compilador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__ACC</a>, <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="compilador_8h_source.html#l00041">args</a>, <a class="el" href="compilador_8h_source.html#l00042">atrs</a>, <a class="el" href="mnemos_8cpp_source.html#l00507">Zero::NombreRegistro::cnvtCodigoRegistroANombre()</a>, <a class="el" href="ident_8cpp_source.html#l00082">Zero::Identificadores::inserta()</a>, <a class="el" href="compilador_8h_source.html#l00035">lex</a>, <a class="el" href="compilador_8h_source.html#l00038">lin</a> y <a class="el" href="compilador_8h_source.html#l00039">txt</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00018">Compilador()</a>, <a class="el" href="za_8cpp_source.html#l00487">EnsamZ::compilaMetodo()</a> y <a class="el" href="runtime_8cpp_source.html#l03676">Zero::Runtime::compileToMethodYOfX()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Crear el lexer</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> ( t != NULL ) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a75908420a8f1ce7083d14cef334dff84">lin</a> = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a> = t;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a> = <span class="keyword">new</span>(std::nothrow) AnalizadorLexico( <a class="code" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a> );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a> == NULL ) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;construyendo lexer&quot;</span> );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// Almacenar las refs. locales</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        this-&gt;<a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a> = <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>; ++i) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classZero_1_1Compilador.html#a66233569cd50a8a08833e042d79b1d14">args</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#a020556abf5806925da347716b41a1c5c">inserta</a>(</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classZero_1_1NombreRegistro.html#ab22eb8ee5e37f0d8e920be260fba40a5">NombreRegistro::cnvtCodigoRegistroANombre</a>(</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    (<a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        ( <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a> + i ) )</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            );</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// Almacenar los atributos</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        this-&gt;<a class="code" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051" title="argumentos formales del mÈtodo">atrs</a> = <a class="code" href="classZero_1_1Compilador.html#a7f55f583a5a34e2f38612bf3cf2e6051" title="argumentos formales del mÈtodo">atrs</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a94841121c565d80736cd60bbd7b931b7">lex</a> = NULL;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classZero_1_1Compilador.html#a7c0eb1f31d4507e8dd095afc3cbc7898">txt</a> = NULL;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentaci√≥n de las funciones relacionadas y clases amigas</h2>
+<a class="anchor" id="a08c5037d77c961ce104550002cffaafc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classZero_1_1Optimizador.html">Optimizador</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00031">31</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00018">Compilador()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentaci√≥n de los datos miembro</h2>
+<a class="anchor" id="a66233569cd50a8a08833e042d79b1d14"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a>* Zero::Compilador::args</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00041">41</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>, <a class="el" href="compilador_8cpp_source.html#l00097">prepararCompilacion()</a>, <a class="el" href="compilador_8cpp_source.html#l00049">reset()</a> y <a class="el" href="compilador_8cpp_source.html#l00037">~Compilador()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f55f583a5a34e2f38612bf3cf2e6051"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a>* Zero::Compilador::atrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>argumentos formales del mÈtodo </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00042">42</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00264">chkNMAsg()</a>, <a class="el" href="compilador_8cpp_source.html#l00246">chkNMRet()</a>, <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>, <a class="el" href="compilador_8cpp_source.html#l00049">reset()</a> y <a class="el" href="compilador_8cpp_source.html#l00037">~Compilador()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98b102658cf06775c4e1b0bd45ed3a7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Zero::Compilador::cadAviso</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00036">36</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00264">chkNMAsg()</a>, <a class="el" href="compilador_8cpp_source.html#l00246">chkNMRet()</a>, <a class="el" href="compilador_8h_source.html#l00084">getCadenaAvisos()</a> y <a class="el" href="compilador_8cpp_source.html#l00097">prepararCompilacion()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a037b2233b7b99af1ad6dd546023837"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> Zero::Compilador::ids</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>atributos del objeto del mÈtodo </p>
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00043">43</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00264">chkNMAsg()</a>, <a class="el" href="compilador_8cpp_source.html#l00232">chkNMDef()</a>, <a class="el" href="compilador_8cpp_source.html#l00282">chkNMMsg()</a>, <a class="el" href="compilador_8cpp_source.html#l00246">chkNMRet()</a> y <a class="el" href="compilador_8cpp_source.html#l00097">prepararCompilacion()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94841121c565d80736cd60bbd7b931b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1AnalizadorLexico.html">AnalizadorLexico</a>* Zero::Compilador::lex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00035">35</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>, <a class="el" href="compilador_8cpp_source.html#l00097">prepararCompilacion()</a>, <a class="el" href="compilador_8cpp_source.html#l00049">reset()</a> y <a class="el" href="compilador_8cpp_source.html#l00037">~Compilador()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a75908420a8f1ce7083d14cef334dff84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Zero::Compilador::lin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00038">38</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>, <a class="el" href="compilador_8h_source.html#l00087">getNumLinea()</a> y <a class="el" href="compilador_8cpp_source.html#l00049">reset()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9498c7c8b41dd1f9624842780497edce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Compilador.html#a7e8899ad610f11a00a5bcab6b72afb91">ListaMnemos</a> Zero::Compilador::listaMnemos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00040">40</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>, <a class="el" href="compilador_8h_source.html#l00066">getListaMnemos()</a>, <a class="el" href="optimizador_8cpp_source.html#l00083">Zero::Optimizador::optimizar()</a> y <a class="el" href="compilador_8cpp_source.html#l00097">prepararCompilacion()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bff44111806c34d6730ef8b8faf198e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Optimizador.html">Optimizador</a>* Zero::Compilador::opt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00034">34</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00018">Compilador()</a>, <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a>, <a class="el" href="compilador_8h_source.html#l00061">getOptimizador()</a> y <a class="el" href="compilador_8cpp_source.html#l00037">~Compilador()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c0eb1f31d4507e8dd095afc3cbc7898"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string* Zero::Compilador::txt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definici√≥n en la l√≠nea <a class="el" href="compilador_8h_source.html#l00039">39</a> del archivo <a class="el" href="compilador_8h_source.html">compilador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="compilador_8cpp_source.html#l00018">Compilador()</a>, <a class="el" href="compilador_8cpp_source.html#l00119">compilar()</a> y <a class="el" href="compilador_8cpp_source.html#l00049">reset()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentaci√≥n para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="compilador_8h_source.html">compilador.h</a></li>
+<li><a class="el" href="compilador_8cpp_source.html">compilador.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

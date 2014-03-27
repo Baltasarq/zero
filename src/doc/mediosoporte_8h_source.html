@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente mediosoporte.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>P√°gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mediosoporte.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mediosoporte_8h.html">Ir a la documentaci√≥n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// mediosoporte.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">    Lleva los diferentes soportes posibles para objetos Zero.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __MEDIOSOPORTE__H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __MEDIOSOPORTE__H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>Zero {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Tipos  ---------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>      <a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">   16</a></span>&#160;<span class="keyword">typedef</span> __uint16_t         <a class="code" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">UINT16</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="namespaceZero.html#ac23919663ba7f2a42c469b777bcd8fb9">   17</a></span>&#160;<span class="keyword">typedef</span> __int16_t          <a class="code" href="namespaceZero.html#ac23919663ba7f2a42c469b777bcd8fb9">INT16</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">   18</a></span>&#160;<span class="keyword">typedef</span> __int32_t          <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="namespaceZero.html#ab8eeca93b8a8c084b4071f8d05b16a8b">   19</a></span>&#160;<span class="keyword">typedef</span> __uint32_t         <a class="code" href="namespaceZero.html#ab8eeca93b8a8c084b4071f8d05b16a8b">UINT32</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span>             <a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classZero_1_1MedioSoporte.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1MedioSoporte.html">MedioSoporte</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classZero_1_1MedioSoporte.html#a5fcc095a442083ee200d90e97963794e">   29</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classZero_1_1MedioSoporte.html#a5fcc095a442083ee200d90e97963794e">precisionFlt</a> = 100000000;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">static</span> <a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a> <a class="code" href="classZero_1_1MedioSoporte.html#a9da63b752790c1beb7886c272da66914">decodificarReal</a>(<a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> mantisa, <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> exponente);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a2b82d3fdac945239ed812743a1e4d647">codificarReal</a>(<a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a> x, <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> &amp;mantisa, <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> &amp;exponente);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classZero_1_1MedioSoporte.html#a5436890539d8cc0a629e6155362a8fca">~MedioSoporte</a>() = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Bajo nivel</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>   <a class="code" href="classZero_1_1MedioSoporte.html#a87ca9ebfbf3b3f05d102aea6a877b5c7">leeBajoNivelUINT8</a>()                              = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">UINT16</a>  <a class="code" href="classZero_1_1MedioSoporte.html#a093a3a7b10e0628abdbebdd3663325a8">leeBajoNivelUINT16</a>()                             = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a>    <a class="code" href="classZero_1_1MedioSoporte.html#adbda30f1e342687b1d36a5568f53a47b">leeBajoNivelREAL</a>()                               = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ac23919663ba7f2a42c469b777bcd8fb9">INT16</a>   <a class="code" href="classZero_1_1MedioSoporte.html#a1920f9361c109f90911e58fd52c66237">leeBajoNivelINT16</a>()                              = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a>   <a class="code" href="classZero_1_1MedioSoporte.html#afe013acaa633cca07a773948625f26a3">leeBajoNivelINT32</a>()                              = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1MedioSoporte.html#afa7bf40f4a5983b0c171cbd9dd7b0794">leeBajoNivelStr</a>(std::string &amp;)                   = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a46a7b771f75b13281fbb0446251215c6">escribeBajoNivelUINT8</a>(<a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>)                        = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a73fc5acb3309a3e1d9343e3908588a9d">escribeBajoNivelUINT16</a>(<a class="code" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">UINT16</a>)                      = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a50a14ad3e392ef44e6c724a368fab570">escribeBajoNivelINT16</a>(<a class="code" href="namespaceZero.html#ac23919663ba7f2a42c469b777bcd8fb9">INT16</a>)                        = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#ad17f224410f9ec74188eae527272c636">escribeBajoNivelINT32</a>(<a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a>)                        = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#ab93e81b42dc78505cfbbb8c152200974">escribeBajoNivelStr</a>(<span class="keyword">const</span> std::string &amp;)                 = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Datos usuario</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a11962da2aaffe124b8f22fb19f8b20d3">escribeStr</a>(<span class="keyword">const</span> std::string &amp;x)                    = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1MedioSoporte.html#a310fef65d9e3afae3f01c2f475343015">leeStr</a>(std::string &amp;)                            = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a> <a class="code" href="classZero_1_1MedioSoporte.html#aa9b2181bf7ed81d078301b8a6448cb60">leeNumReal</a>()                                        = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a5f874a5ed0049edabb189c000eb0e11c">escribeNumReal</a>(<a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a> x)                              = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#aa1820dc066f0ad8d525f8305914e79eb">escribeBajoNivelREAL</a>(<a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a>)                          = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a23ca9d2991c4779f63084414dbafd2a6">escribeNumEntero</a>(<a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> x)                           = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> <a class="code" href="classZero_1_1MedioSoporte.html#a6082fac0795daa29d9a41ef21005a4c1">leeNumEntero</a>()                                     = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Datos de la m·quina virtual</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a2bba65703100b664959f21af446b5388">escribeRegistro</a>(<a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>)                              = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1MedioSoporte.html#aa307eb36241adbc040e2fbd3db1b3a6a">leeRegistro</a>(<a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a> &amp;)                                = 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a76f8605e55ba01f80ae29298e2cf6b99">escribeIdentificador</a>(<span class="keyword">const</span> std::string &amp;)                = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1MedioSoporte.html#a8e3c6179bd23b5cb82c3fe0c56a80a44">leeIdentificador</a>(std::string&amp;)                        = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1MedioSoporte.html#a269df9f9babdd4576758e3d3227163bc">escribeReferencia</a>(<span class="keyword">const</span> std::string &amp;)                   = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1MedioSoporte.html#a33f8296279cd1a84b7b5cb1d2f0ba557">leeReferencia</a>(std::string &amp;)                          = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1MedioSoporte.html#abe1f736dcadbd70359026c3c0d2cf67b">esFinal</a>()                       = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1FicheroSoporte.html">FicheroSoporte</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1MedioSoporte.html">MedioSoporte</a> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7adc93d184f9f34163e69ee457b7ca9690">   79</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7a9d73a2c9394e6188e3f5d7731845e4df">Existente</a>, <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7adc93d184f9f34163e69ee457b7ca9690">Nuevo</a> } <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7">ModoApertura</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html#ae6c87e7abbe3fcae420ef0419e2b97da">   81</a></span>&#160;    FILE *<a class="code" href="classZero_1_1FicheroSoporte.html#ae6c87e7abbe3fcae420ef0419e2b97da">f</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html#ab05864cd782bb68b2fc5b4ae823c8de3">   82</a></span>&#160;    std::string <a class="code" href="classZero_1_1FicheroSoporte.html#ab05864cd782bb68b2fc5b4ae823c8de3">nomf</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html#a25873e09b190b50f659d29a9101a0060">   84</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classZero_1_1FicheroSoporte.html#a25873e09b190b50f659d29a9101a0060">aperturaNuevo</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html#a8c3d6e5bb0fe8ea5f69d1634ca3ace8f">   85</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classZero_1_1FicheroSoporte.html#a8c3d6e5bb0fe8ea5f69d1634ca3ace8f">aperturaExistente</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classZero_1_1FicheroSoporte.html#a8ed06afdb349fe4fa6e93fdf9bee29fa">FicheroSoporte</a>(<span class="keyword">const</span> std::string &amp;, <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7">ModoApertura</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classZero_1_1FicheroSoporte.html#a51c58c62cda79c9a128d70290d6d1b21">~FicheroSoporte</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="classZero_1_1FicheroSoporte.html#a7662da7d446592987c35fd596d4d2f07">   91</a></span>&#160;    <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1FicheroSoporte.html#a7662da7d446592987c35fd596d4d2f07">getNombre</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">        </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1FicheroSoporte.html#ab05864cd782bb68b2fc5b4ae823c8de3">nomf</a>; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a26e533e15ec02f360f9313c9ef326b0e">existe</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Bajo nivel</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>   <a class="code" href="classZero_1_1FicheroSoporte.html#a5136adf781257be20a620c7d4b3a9da7">leeBajoNivelUINT8</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">UINT16</a>  <a class="code" href="classZero_1_1FicheroSoporte.html#aa1ef53ea284d5b20c08cbcf44cae9820">leeBajoNivelUINT16</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a>    <a class="code" href="classZero_1_1FicheroSoporte.html#a41b8b37a3d6ad67022fd94a5408fed99">leeBajoNivelREAL</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ac23919663ba7f2a42c469b777bcd8fb9">INT16</a>   <a class="code" href="classZero_1_1FicheroSoporte.html#a185077c8b731c2ce2f09865f751cca34">leeBajoNivelINT16</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a>   <a class="code" href="classZero_1_1FicheroSoporte.html#ad51a7e218c24413eec90574c611f120d">leeBajoNivelINT32</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1FicheroSoporte.html#a21cdb51fa38f350fe803cab6e4c0b14b">leeBajoNivelStr</a>(std::string &amp;);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#aeaf5a9cd51e9044d9e935e17ef391a72">escribeBajoNivelUINT8</a>(<a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a71f1f33a10d9056e18a726dfc6c3a2ac">escribeBajoNivelUINT16</a>(<a class="code" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">UINT16</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a1f5827d5555fc1673c0f7c2961928b36">escribeBajoNivelINT16</a>(<a class="code" href="namespaceZero.html#ac23919663ba7f2a42c469b777bcd8fb9">INT16</a>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a7d5b6d588055a6d33fbd7e70a3a11a7f">escribeBajoNivelINT32</a>(<a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#ab26fc80cfc75c5a11ac21e03c9745507">escribeBajoNivelStr</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Datos usuario</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a9a87b98b6c4611838e57ad546f38f636">escribeStr</a>(<span class="keyword">const</span> std::string &amp;x);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1FicheroSoporte.html#a7bab9e1dfd9e03b4ae76cf8d214c25c8">leeStr</a>(std::string &amp;);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a> <a class="code" href="classZero_1_1FicheroSoporte.html#adcc87a0b315c898b4b08b3735a1d5d4d" title="Lee un n˙mero real guardado utilizando el complemento a 2.">leeNumReal</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#acd47f09bcd2a928c709a035cd217fd23" title="Escribe un n˙mero real al bytecode.">escribeNumReal</a>(<a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a> x);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a50cfd37a62d14ae0727d9d8e52a45889">escribeBajoNivelREAL</a>(<a class="code" href="namespaceZero.html#ae633789c2f7d536b63bc01c3d27edb57">REAL</a>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a42e694964b2a5082f83bd6c3deec40a8" title="Escribe un n˙mero entero de 32 bits al bytecode.">escribeNumEntero</a>(<a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> x);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="namespaceZero.html#ad1658a6dc6bdc6049cc4275e5e198bca">INT32</a> <a class="code" href="classZero_1_1FicheroSoporte.html#a534a9ed890c85d04e87bf80425a1c1f2" title="Lee un n˙mero entero de 32 bits del bytecode.">leeNumEntero</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Datos de la m·quina virtual</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#abce9f7e961d39672185945f28fd677de" title="Escribe la referencia a un registro de la m·quina.">escribeRegistro</a>(<a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1FicheroSoporte.html#ae24629b43082c2079669aff282ad44c9" title="Lee la referencia a un registro de la m·quina.">leeRegistro</a>(<a class="code" href="namespaceZero.html#a8926290bcb7bb67df11cbf400b940c9b">UINT8</a> &amp;);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a9dc76cfba7e5261ddd1d4ef3e09694c6" title="Escribe un identificador (vble local, por ejemplo) al bytecode.">escribeIdentificador</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1FicheroSoporte.html#a5e8127b755f53d31172bfdb5903f2a7c" title="Lee un identificador (vble local, por ejemplo) del bytecode.">leeIdentificador</a>(std::string&amp;);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1FicheroSoporte.html#aa5836b637136870127ed2a7c5852efce" title="Escribe una referencia ( System.console, por ejemplo) al bytecode.">escribeReferencia</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">virtual</span> std::string &amp;<a class="code" href="classZero_1_1FicheroSoporte.html#af65b1c2708005e102045479441b3215b" title="Lee una referencia ( System.console, por ejemplo) del bytecode.">leeReferencia</a>(std::string &amp;);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1FicheroSoporte.html#a560e7870efbe759d58dd9546e58932f1">esFinal</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

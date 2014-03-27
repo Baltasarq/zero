@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia del Archivo zd.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo zd.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="zd_8h_source.html">zd.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="mnemos_8h_source.html">mnemos.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="excep_8h_source.html">excep.h</a>&quot;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;ctime&gt;</code><br/>
+<code>#include &lt;memory&gt;</code><br/>
+</div>
+<p><a href="zd_8cpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a22b85dab521eb916358ea522a8b4af02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a22b85dab521eb916358ea522a8b4af02">aviso</a> (const string &amp;x)</td></tr>
+<tr class="separator:a22b85dab521eb916358ea522a8b4af02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a6727386ea60bc3ad05618c75044cf003"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a6727386ea60bc3ad05618c75044cf003">nombre</a> = &quot;Zd - Desensamblador Zero (Zero Disassembler)&quot;</td></tr>
+<tr class="separator:a6727386ea60bc3ad05618c75044cf003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3077da85c31208a8471d18521c99bd93"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a3077da85c31208a8471d18521c99bd93">version</a> = &quot;v2.3&quot;</td></tr>
+<tr class="separator:a3077da85c31208a8471d18521c99bd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad07e43dba619b3aec2e64deb5ec9d5ab"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#ad07e43dba619b3aec2e64deb5ec9d5ab">serial</a> = &quot;120509&quot;</td></tr>
+<tr class="separator:ad07e43dba619b3aec2e64deb5ec9d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2237b646b39570ea8666a2f171ff7d57"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a2237b646b39570ea8666a2f171ff7d57">sintaxis</a></td></tr>
+<tr class="separator:a2237b646b39570ea8666a2f171ff7d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac17f2b6f9ea61f66b110e49fec3fd3"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a3ac17f2b6f9ea61f66b110e49fec3fd3">defext</a> = &quot;.def&quot;</td></tr>
+<tr class="separator:a3ac17f2b6f9ea61f66b110e49fec3fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b86dfc5f3db44d5d1643d73415f213c"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a0b86dfc5f3db44d5d1643d73415f213c">XmlExt</a> = &quot;.xml&quot;</td></tr>
+<tr class="separator:a0b86dfc5f3db44d5d1643d73415f213c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4adcc735ce311715f477d128e011bfc2"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a4adcc735ce311715f477d128e011bfc2">TxtExt</a> = &quot;.txt&quot;</td></tr>
+<tr class="separator:a4adcc735ce311715f477d128e011bfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed37f43d12b85b1cc65d482f1cfca80d"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#aed37f43d12b85b1cc65d482f1cfca80d">COMENTARIO</a> = &quot;; &quot;</td></tr>
+<tr class="separator:aed37f43d12b85b1cc65d482f1cfca80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e07fdfb9d756f6e1c178bafa8eca5b4"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a0e07fdfb9d756f6e1c178bafa8eca5b4">FIN_COMENTARIO</a> = &quot;.&quot;</td></tr>
+<tr class="separator:a0e07fdfb9d756f6e1c178bafa8eca5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd220f6b479a66babbadf8683df807e3"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#afd220f6b479a66babbadf8683df807e3">COMENTARIO_XML</a> = &quot;&lt;!-- &quot;</td></tr>
+<tr class="separator:afd220f6b479a66babbadf8683df807e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a3eccfa70e33c69c48471dba90a7df"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a80a3eccfa70e33c69c48471dba90a7df">FIN_COMENTARIO_XML</a> = &quot; --&gt;&quot;</td></tr>
+<tr class="separator:a80a3eccfa70e33c69c48471dba90a7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a674b587b1ddb76b40afd4581eed5af99"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#a674b587b1ddb76b40afd4581eed5af99">TAB</a> = &quot; &quot;</td></tr>
+<tr class="separator:a674b587b1ddb76b40afd4581eed5af99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf17b73084b453faece4c82e5aa74d34"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zd_8cpp.html#abf17b73084b453faece4c82e5aa74d34">VERSION_XML</a></td></tr>
+<tr class="separator:abf17b73084b453faece4c82e5aa74d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="a22b85dab521eb916358ea522a8b4af02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void aviso </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00277">277</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00283">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;AVISO (warning): &quot;</span> &lt;&lt; x &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00283">283</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="zd_8cpp_source.html#l00277">aviso()</a>, <a class="el" href="za_8cpp_source.html#l00030">defext</a>, <a class="el" href="mediosoporte_8h_source.html#l00079">Zero::FicheroSoporte::Existente</a>, <a class="el" href="reservadas_8cpp_source.html#l00139">Zero::EXT_ARCHIVOS_ZERO</a>, <a class="el" href="excep_8h_source.html#l00041">Zero::Excepcion::getDetalles()</a>, <a class="el" href="excep_8h_source.html#l00038">Zero::Excepcion::getMensaje()</a>, <a class="el" href="mnemos_8cpp_source.html#l00022">Zero::hver</a>, <a class="el" href="mnemos_8cpp_source.html#l00023">Zero::lver</a>, <a class="el" href="za_8cpp_source.html#l00024">nombre</a>, <a class="el" href="za_8cpp_source.html#l00026">serial</a>, <a class="el" href="za_8cpp_source.html#l00032">sintaxis</a>, <a class="el" href="zd_8cpp_source.html#l00026">TxtExt</a>, <a class="el" href="za_8cpp_source.html#l00025">version</a> y <a class="el" href="zd_8cpp_source.html#l00025">XmlExt</a>.</p>
+<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <span class="keywordtype">bool</span>   embellecedor = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      <span class="keywordtype">bool</span>   xml          = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      <span class="keywordtype">string</span> fichentrada;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      <span class="keywordtype">string</span> fichsalida;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      FILE *fsal;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      FILE *fxml;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;         <span class="comment">// Cr�ditos</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;         cout &lt;&lt; <a class="code" href="za_8cpp.html#a6727386ea60bc3ad05618c75044cf003">nombre</a> &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; <a class="code" href="za_8cpp.html#a3077da85c31208a8471d18521c99bd93">version</a>    &lt;&lt; <span class="stringliteral">&quot; serial &quot;</span> &lt;&lt; <a class="code" href="za_8cpp.html#ad07e43dba619b3aec2e64deb5ec9d5ab">serial</a></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; Opcodes v&quot;</span>  &lt;&lt; (int) <a class="code" href="namespaceZero.html#a8857412fa56d5f4be5958c85f8e1b94e">Zero::hver</a> &lt;&lt; <span class="charliteral">&#39;.&#39;</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;              &lt;&lt; (<span class="keywordtype">int</span>) Zero::<a class="code" href="namespaceZero.html#ab1e1f3cbc09ca6446997ca78629a8563">lver</a>    &lt;&lt; endl       &lt;&lt; endl;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;         <span class="comment">// Coger los argumentos</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;         if ( argc == 2 )</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;         {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        fichentrada  = fichsalida = argv[1];</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        fichentrada += <a class="code" href="namespaceZero.html#a12630b9f40250415140c0dda54fe48d4">Zero::EXT_ARCHIVOS_ZERO</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        fichsalida  += <a class="code" href="zd_8cpp.html#a4adcc735ce311715f477d128e011bfc2">TxtExt</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Salida: ensamblador&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;         }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;         <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;         <span class="keywordflow">if</span> ( argc == 3 )</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;         {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                fichentrada  = fichsalida = argv[2];</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                fichentrada += <a class="code" href="namespaceZero.html#a12630b9f40250415140c0dda54fe48d4">Zero::EXT_ARCHIVOS_ZERO</a>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordflow">if</span> (<span class="keywordtype">string</span>( argv[1] ) == <span class="stringliteral">&quot;-b&quot;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                 || string( argv[1] ) == <span class="stringliteral">&quot;/b&quot;</span>)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            embellecedor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            fichsalida  += <a class="code" href="zd_8cpp.html#a4adcc735ce311715f477d128e011bfc2">TxtExt</a>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;Salida: listado&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">string</span>(argv[1])==<span class="stringliteral">&quot;-x&quot;</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        || string(argv[1])==<span class="stringliteral">&quot;/x&quot;</span>)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                        {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                xml = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                fichsalida  += <a class="code" href="zd_8cpp.html#a0b86dfc5f3db44d5d1643d73415f213c">XmlExt</a>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                cout &lt;&lt; <span class="stringliteral">&quot;Salida: XML&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                fichsalida  += <a class="code" href="zd_8cpp.html#a4adcc735ce311715f477d128e011bfc2">TxtExt</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                cout &lt;&lt; <span class="stringliteral">&quot;Salida: ensamblador&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                        }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;         }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;         <span class="keywordflow">else</span> std::cout &lt;&lt; <a class="code" href="za_8cpp.html#a2237b646b39570ea8666a2f171ff7d57">sintaxis</a> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;     <span class="comment">// Ahora s�, procesar</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;         <span class="keywordflow">if</span> ( !fichentrada.empty() )</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;         {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="comment">// Comprobar el fichero de entrada</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                std::auto_ptr&lt;Zero::FicheroSoporte&gt; ent(</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                    <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1FicheroSoporte.html">Zero::FicheroSoporte</a>( fichentrada,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                <a class="code" href="classZero_1_1FicheroSoporte.html#aed957c54bb11c22ea579f53334b9abe7a9d73a2c9394e6188e3f5d7731845e4df">Zero::FicheroSoporte::Existente</a></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                    )</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                );</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="keywordflow">if</span> ( ent.get() != NULL )</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                      <span class="keywordtype">string</span> listado;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                      <a class="code" href="classDesensamZ.html">DesensamZ</a> dsm( ent.get(), fichentrada, xml, embellecedor );</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                      fsal = std::fopen( fichsalida.c_str(), <span class="stringliteral">&quot;wt&quot;</span> );</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                      <span class="keywordflow">if</span> ( fsal != NULL )</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                      {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                            <span class="keywordflow">if</span> ( dsm.esZeroLegal() )</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                            {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                <span class="comment">// Escribir listado en el formato pedido</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                fprintf( fsal, <span class="stringliteral">&quot;%s&quot;</span>, dsm.getListado().c_str() );</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                fclose( fsal );</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                <span class="comment">// Escribir fichero .def</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                fxml = fopen(</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                    ( fichsalida + <a class="code" href="za_8cpp.html#a3ac17f2b6f9ea61f66b110e49fec3fd3">defext</a> ).c_str(),</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                    <span class="stringliteral">&quot;wt&quot;</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                );</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                <span class="keywordflow">if</span> ( fxml != NULL ) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                                    fprintf( fxml, <span class="stringliteral">&quot;%s&quot;</span>,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                         dsm.idsProg.toXML().c_str()</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                    );</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                    fclose( fxml );</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                } <span class="keywordflow">else</span> <a class="code" href="zd_8cpp.html#a22b85dab521eb916358ea522a8b4af02">aviso</a>( <span class="stringliteral">&quot;No se pudo crear fichero .def&quot;</span> );</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                            }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                            <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1ENoEsZero.html">Zero::ENoEsZero</a>( fichentrada.c_str() );</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                      }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                      <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1EMedioNoEncontrado.html">Zero::EMedioNoEncontrado</a>( fichsalida.c_str() );</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                      cout &lt;&lt; <span class="stringliteral">&quot;Finalizado: &quot;</span> &lt;&lt; fichsalida &lt;&lt; endl;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code" href="classZero_1_1ENoHayMemoria.html">Zero::ENoHayMemoria</a>( ( std::string( <span class="stringliteral">&quot;abriendo: &quot;</span> ) + fichentrada ).c_str() );</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;         }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classZero_1_1Excepcion.html">Zero::Excepcion</a> &amp;e)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;      {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            std::cerr &lt;&lt; e.<a class="code" href="classZero_1_1Excepcion.html#a5878bfe8e8b1854c3773bc99cb916544">getMensaje</a>() &lt;&lt; <span class="charliteral">&#39;(&#39;</span> &lt;&lt; e.<a class="code" href="classZero_1_1Excepcion.html#a80484e27ab2a3ea58afa688666027fb7">getDetalles</a>() &lt;&lt; <span class="charliteral">&#39;)&#39;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            exit( EXIT_FAILURE );</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;      }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a class="anchor" id="aed37f43d12b85b1cc65d482f1cfca80d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COMENTARIO = &quot;; &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00028">28</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00049">DesensamZ::generarListado()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd220f6b479a66babbadf8683df807e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COMENTARIO_XML = &quot;&lt;!-- &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00030">30</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00049">DesensamZ::generarListado()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ac17f2b6f9ea61f66b110e49fec3fd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string defext = &quot;.def&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00024">24</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e07fdfb9d756f6e1c178bafa8eca5b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string FIN_COMENTARIO = &quot;.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00029">29</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00049">DesensamZ::generarListado()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80a3eccfa70e33c69c48471dba90a7df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string FIN_COMENTARIO_XML = &quot; --&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00031">31</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00049">DesensamZ::generarListado()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6727386ea60bc3ad05618c75044cf003"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string nombre = &quot;Zd - Desensamblador Zero (Zero Disassembler)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00018">18</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad07e43dba619b3aec2e64deb5ec9d5ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string serial = &quot;120509&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00020">20</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2237b646b39570ea8666a2f171ff7d57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string sintaxis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;zd [-b|-x] &lt;nombre_fichero.zbj&gt;\n\n -b &quot;</span></div>
+<div class="line">                                   <span class="stringliteral">&quot;beautifier\n -x XML output&quot;</span></div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00021">21</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a674b587b1ddb76b40afd4581eed5af99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string TAB = &quot; &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00032">32</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00049">DesensamZ::generarListado()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4adcc735ce311715f477d128e011bfc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string TxtExt = &quot;.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00026">26</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00283">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3077da85c31208a8471d18521c99bd93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string version = &quot;v2.3&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00019">19</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf17b73084b453faece4c82e5aa74d34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string VERSION_XML</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;ISO-8859-1&quot;</span></div>
+<div class="line">                                   <span class="stringliteral">&quot;\&quot;?&gt;&quot;</span></div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00033">33</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b86dfc5f3db44d5d1643d73415f213c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string XmlExt = &quot;.xml&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="zd_8cpp_source.html#l00025">25</a> del archivo <a class="el" href="zd_8cpp_source.html">zd.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="zd_8cpp_source.html#l00283">main()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

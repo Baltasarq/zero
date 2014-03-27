@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['raizcnt',['raizCnt',['../classZero_1_1Runtime.html#a4df3b51f1c3345f1fa813a4399e2a709',1,'Zero::Runtime']]],
+  ['rc',['rc',['../classZero_1_1NombreRegistro.html#ade6f38ee84eb8f1af2c55aa3ebccbc66',1,'Zero::NombreRegistro']]],
+  ['recursivo',['recursivo',['../classZero_1_1Metodo.html#a4d24ad53b41a75e512895e61bde6d0d8',1,'Zero::Metodo']]],
+  ['ref',['ref',['../classZero_1_1NMAtr.html#a35d922fc0e1e3e79daf861f9d3ae0075',1,'Zero::NMAtr::ref()'],['../classZero_1_1NMMsg.html#a0c004abbc7e15e851d416d0eb83c5390',1,'Zero::NMMsg::ref()'],['../classZero_1_1NMIof.html#ac4dca28fafab6985177c7d8ac14bb645',1,'Zero::NMIof::ref()'],['../classZero_1_1NMSet.html#ae69c58f82f0e4b5afc7acd0cdbc83763',1,'Zero::NMSet::ref()'],['../classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3',1,'Zero::NMTrw::ref()'],['../classZero_1_1OcMSG.html#a79042a29822e30094fb33230786bfe60',1,'Zero::OcMSG::ref()'],['../classZero_1_1OcSET.html#a254c5d039f3facab1f30942d4110db2b',1,'Zero::OcSET::ref()'],['../classZero_1_1OcASG.html#a4c4487deede83618478a34fc473482b8',1,'Zero::OcASG::ref()'],['../classZero_1_1OcIOF.html#a442d10c92a2e176718dc94f4dcff5b4f',1,'Zero::OcIOF::ref()']]],
+  ['referencecount',['referenceCount',['../classZero_1_1Objeto.html#a511b1145268473f7bc461666543dffe1',1,'Zero::Objeto']]],
+  ['refext',['refExt',['../classZero_1_1PersistentStore.html#a4b72cb7e022e80d8ab64d68cc7cd5037',1,'Zero::PersistentStore']]],
+  ['refmensaje',['refMensaje',['../classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419',1,'Zero::NMTrw']]],
+  ['refraizcnt',['refRaizCnt',['../classZero_1_1Runtime.html#ad6a03eaf0e024a79ea46cdb19b6d7a4d',1,'Zero::Runtime']]],
+  ['refsextobjeto',['refsExtObjeto',['../classZero_1_1Objeto.html#a7bcc257b58e03bd4586444b7877b7aef',1,'Zero::Objeto']]],
+  ['refslocales',['refsLocales',['../classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e',1,'Zero::OptRedccOp']]],
+  ['reg',['reg',['../classZero_1_1Metodo.html#a892cbd5b48481d708bc54a096caf333e',1,'Zero::Metodo::reg()'],['../classZero_1_1NMAsg.html#a7a6d7c6e6f08a1c2d15c4b2313eb5a47',1,'Zero::NMAsg::reg()'],['../classZero_1_1NMIof.html#afa8d7eb42ef839769dded0da98edb58d',1,'Zero::NMIof::reg()'],['../classZero_1_1NMSet.html#a7a4eb1c3f56884965e07d405ae242cd0',1,'Zero::NMSet::reg()'],['../classZero_1_1OcSET.html#ad194db9c307074c529ed6651ac54fb0c',1,'Zero::OcSET::reg()'],['../classZero_1_1OcASG.html#a9e63ad5bfbf2fabb3f631a5779cad365',1,'Zero::OcASG::reg()'],['../classZero_1_1OcIOF.html#a50cc0fa71201fec7dc69e92a9510cb51',1,'Zero::OcIOF::reg()'],['../classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336',1,'Zero::OptRedccOp::Objetivo::reg()']]],
+  ['reggenericos',['regGenericos',['../classGestorNombresLoc.html#a7d41f34ddfa1ece8918423b4c5753635',1,'GestorNombresLoc']]],
+  ['regsreducidos',['regsReducidos',['../classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043',1,'Zero::OptRedccOp::Objetivo']]],
+  ['resta',['RESTA',['../classZero_1_1Operando.html#a5555b6dc507b981e6d652dca491759ed',1,'Zero::Operando']]],
+  ['resultadoejecucion',['resultadoEjecucion',['../classZero_1_1Runtime.html#aa8e34916d296b595ef4a9cea4ff1aaf1',1,'Zero::Runtime']]],
+  ['ruta',['ruta',['../classZero_1_1Directorio.html#a56c46c20abcb0592eb13e194ec163661',1,'Zero::Directorio']]]
+];

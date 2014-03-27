@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia de la Clase Zero::OptLitAg</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceZero.html">Zero</a></li><li class="navelem"><a class="el" href="classZero_1_1OptLitAg.html">OptLitAg</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-types">Tipos públicos</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="classZero_1_1OptLitAg-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Zero::OptLitAg</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="optimizador_8h_source.html">optimizador.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Zero::OptLitAg</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classZero_1_1OptLitAg.png" usemap="#Zero::OptLitAg_map" alt=""/>
+  <map id="Zero::OptLitAg_map" name="Zero::OptLitAg_map">
+<area href="classZero_1_1Optimizacion.html" alt="Zero::Optimizacion" shape="rect" coords="0,0,118,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg_1_1OperadorMenor.html">OperadorMenor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr class="memitem:ac54f55867d34f454bcf347b54ff9df3b"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string <br class="typebreak"/>
+*const, std::string, <br class="typebreak"/>
+<a class="el" href="classZero_1_1OptLitAg_1_1OperadorMenor.html">OperadorMenor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a></td></tr>
+<tr class="separator:ac54f55867d34f454bcf347b54ff9df3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a93fd187b0f813b0ffcf7b767c3bdcb74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a93fd187b0f813b0ffcf7b767c3bdcb74">~OptLitAg</a> ()</td></tr>
+<tr class="separator:a93fd187b0f813b0ffcf7b767c3bdcb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18dc02e5c44a93b932b216afee9e5dd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a18dc02e5c44a93b932b216afee9e5dd6">hazOpt</a> ()</td></tr>
+<tr class="separator:a18dc02e5c44a93b932b216afee9e5dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Optimizacion"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Optimizacion')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Optimizacion.html">Zero::Optimizacion</a></td></tr>
+<tr class="memitem:a8be42ac85b3720e7cf7cb520896e7398 inherit pub_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a8be42ac85b3720e7cf7cb520896e7398">ponListaMnemos</a> (<a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *l)</td></tr>
+<tr class="separator:a8be42ac85b3720e7cf7cb520896e7398 inherit pub_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d61ae16895cb1ae43a9d11984aeb37 inherit pub_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#ad8d61ae16895cb1ae43a9d11984aeb37">ponIds</a> (<a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *args, <a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *atrs)</td></tr>
+<tr class="separator:ad8d61ae16895cb1ae43a9d11984aeb37 inherit pub_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b18dac06b01e7373a708415a8eac75 inherit pub_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a21b18dac06b01e7373a708415a8eac75">~Optimizacion</a> ()</td></tr>
+<tr class="separator:a21b18dac06b01e7373a708415a8eac75 inherit pub_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:afdceb73ca51a9f9299dbd8365cf7ea61"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1OptLitAg.html">OptLitAg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#afdceb73ca51a9f9299dbd8365cf7ea61">getOpt</a> ()</td></tr>
+<tr class="separator:afdceb73ca51a9f9299dbd8365cf7ea61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a8c60ecc5b7349fe6361d65af16766afd"><td class="memItemLeft" align="right" valign="top">static const std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a8c60ecc5b7349fe6361d65af16766afd">nombreLit</a> = &amp;<a class="el" href="namespaceZero.html#ab13b7bfa0c67c6f64b3c4ffab4e89fa8">LOC_LIT</a></td></tr>
+<tr class="separator:a8c60ecc5b7349fe6361d65af16766afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:ac50ba5577a939cd7aff0486e7f33957a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#ac50ba5577a939cd7aff0486e7f33957a">OptLitAg</a> (<a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *l)</td></tr>
+<tr class="separator:ac50ba5577a939cd7aff0486e7f33957a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5384429f85aad59d4f050d673f1c9fa1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a5384429f85aad59d4f050d673f1c9fa1">getNuevoIdLit</a> ()</td></tr>
+<tr class="separator:a5384429f85aad59d4f050d673f1c9fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb1d1d4460fdc3ba1a7d1296531034f"><td class="memItemLeft" align="right" valign="top">const std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#afcb1d1d4460fdc3ba1a7d1296531034f">buscaLiteral</a> (<a class="el" href="classZero_1_1Lit.html">Lit</a> *)</td></tr>
+<tr class="separator:afcb1d1d4460fdc3ba1a7d1296531034f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96aba9a8dbf055a1dd5649e5835017f3"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a96aba9a8dbf055a1dd5649e5835017f3">creaLiteral</a> (<a class="el" href="classZero_1_1Lit.html">Lit</a> *)</td></tr>
+<tr class="separator:a96aba9a8dbf055a1dd5649e5835017f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58bfc7a3ed967690f036643c387941c"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#ab58bfc7a3ed967690f036643c387941c">registraLit</a> (<a class="el" href="classZero_1_1Lit.html">Lit</a> *)</td></tr>
+<tr class="separator:ab58bfc7a3ed967690f036643c387941c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6836d54084c11e4c15fcd78326e91275"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a6836d54084c11e4c15fcd78326e91275">colocaConstEnd</a> ()</td></tr>
+<tr class="separator:a6836d54084c11e4c15fcd78326e91275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a040847f635364ef908fbfd59c5c04317"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a040847f635364ef908fbfd59c5c04317">numLits</a></td></tr>
+<tr class="separator:a040847f635364ef908fbfd59c5c04317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed9fbd7965e9684778f42e9da20be1d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a></td></tr>
+<tr class="separator:aed9fbd7965e9684778f42e9da20be1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15712c6a59c2a9d3d1be16fdc649acdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a></td></tr>
+<tr class="separator:a15712c6a59c2a9d3d1be16fdc649acdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5eb91d692b5dc166f665147410c2452"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a></td></tr>
+<tr class="separator:aa5eb91d692b5dc166f665147410c2452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:aadfa1786d8a85fd9b97a02bacbf5eb5c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1Optimizacion.html">Optimizacion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a> = NULL</td></tr>
+<tr class="separator:aadfa1786d8a85fd9b97a02bacbf5eb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_methods_classZero_1_1Optimizacion"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classZero_1_1Optimizacion')"><img src="closed.png" alt="-"/>&#160;Métodos protegidos heredados desde <a class="el" href="classZero_1_1Optimizacion.html">Zero::Optimizacion</a></td></tr>
+<tr class="memitem:a38f48a2042b829534c01f6236234babf inherit pro_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a38f48a2042b829534c01f6236234babf">Optimizacion</a> (<a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *l)</td></tr>
+<tr class="separator:a38f48a2042b829534c01f6236234babf inherit pro_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classZero_1_1Optimizacion"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classZero_1_1Optimizacion')"><img src="closed.png" alt="-"/>&#160;Atributos protegidos heredados desde <a class="el" href="classZero_1_1Optimizacion.html">Zero::Optimizacion</a></td></tr>
+<tr class="memitem:a3210fc5c8427beef63ee012c325e2ed5 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a3210fc5c8427beef63ee012c325e2ed5">atrsObj</a></td></tr>
+<tr class="separator:a3210fc5c8427beef63ee012c325e2ed5 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8704ea72ee914c6651f0f3c5273f9c9 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#ab8704ea72ee914c6651f0f3c5273f9c9">argsFormales</a></td></tr>
+<tr class="separator:ab8704ea72ee914c6651f0f3c5273f9c9 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab871e45a0a093bd22ba8fc83db59d14e inherit pro_attribs_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a></td></tr>
+<tr class="separator:ab871e45a0a093bd22ba8fc83db59d14e inherit pro_attribs_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>La clase <a class="el" href="classZero_1_1OptLitAg.html">OptLitAg</a> sirve para la opt. simple que consiste en mover todas las literales al principio del m�todo. Singleton </p>
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00132">132</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+</div><h2 class="groupheader">Documentación de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="ac54f55867d34f454bcf347b54ff9df3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string * const, std::string, <a class="el" href="classZero_1_1OptLitAg_1_1OperadorMenor.html">OperadorMenor</a>&gt; <a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">Zero::OptLitAg::ListaIds</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00148">148</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="ac50ba5577a939cd7aff0486e7f33957a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::OptLitAg::OptLitAg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00135">135</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00313">getOpt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html#a38f48a2042b829534c01f6236234babf">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a93fd187b0f813b0ffcf7b767c3bdcb74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::OptLitAg::~OptLitAg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00164">164</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00133">opt</a>.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{ <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a> = NULL; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="afcb1d1d4460fdc3ba1a7d1296531034f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string * Zero::OptLitAg::buscaLiteral </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Lit.html">Lit</a> *&#160;</td>
+          <td class="paramname"><em>lit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00338">338</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00161">idsFlt</a>, <a class="el" href="optimizador_8h_source.html#l00160">idsInt</a> y <a class="el" href="optimizador_8h_source.html#l00162">idsStr</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00421">registraLit()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">const</span> std::string * toret = NULL;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    ListaIds::iterator itStr;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    ListaIds::iterator itInt;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    ListaIds::iterator itFlt;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// �Es una cadena?</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMStr *&gt;( lit ) != NULL ) {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        itStr = <a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a>.find(</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            (std::string *) &amp;( ( (NMStr *) lit )-&gt;getLitAsString() )</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        );</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">if</span> ( itStr != <a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a>.end() ) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            toret = &amp;( itStr-&gt;second );</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="comment">// �Es un entero?</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMInt *&gt;( lit ) != NULL ) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        itInt = <a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a>.find(</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            (std::string *) &amp;( ( (NMInt *) lit )-&gt;getLitAsString() )</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        );</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span> ( itInt != <a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a>.end() ) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            toret = &amp;( itInt-&gt;second );</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// �Es un flotante?</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMFlt *&gt;( lit ) != NULL ) {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        itFlt = <a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a>.find(</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            (std::string *) &amp;( ( (NMFlt *) lit )-&gt;getLitAsString() )</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        );</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> ( itFlt != <a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a>.end() ) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            toret = &amp;( itFlt-&gt;second );</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;OptLitAg: registrando literal: no es literal&quot;</span> );</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6836d54084c11e4c15fcd78326e91275"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptLitAg::colocaConstEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Coloca un mnemo: MTA .CONSTEND "" Al principio del m�todo. De esta forma, al meter los literales, va a ser el primero</p>
+<p>DEF __lit__0 STR "kk" ASG __lit__0 MTA .CONSTEND "" ; resto del mth </p>
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00458">458</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00248">Zero::NMMta::FinalDeclConstantes</a> y <a class="el" href="optimizador_8h_source.html#l00066">Zero::Optimizacion::listaMnemos</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00482">hazOpt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;{</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        NMMta * mta = <span class="keyword">new</span>(std::nothrow) NMMta( <a class="code" href="classZero_1_1NMMta.html#a4d7d7779661edfca6b16be64b09961efa0524fd85dc191f2563f11d83e0472cc3">NMMta::FinalDeclConstantes</a>, <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <span class="keywordflow">if</span> ( mta == NULL ) {</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;creando meta decl constantes&quot;</span> );</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        }</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;push_front( mta );</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a96aba9a8dbf055a1dd5649e5835017f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; Zero::OptLitAg::creaLiteral </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Lit.html">Lit</a> *&#160;</td>
+          <td class="paramname"><em>lit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00383">383</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8cpp_source.html#l00328">getNuevoIdLit()</a>, <a class="el" href="optimizador_8h_source.html#l00161">idsFlt</a>, <a class="el" href="optimizador_8h_source.html#l00160">idsInt</a> y <a class="el" href="optimizador_8h_source.html#l00162">idsStr</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00421">registraLit()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    std::string nombreId = <a class="code" href="classZero_1_1OptLitAg.html#a5384429f85aad59d4f050d673f1c9fa1">getNuevoIdLit</a>();</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// Crearlo en la lista de identidicadores</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMStr *&gt;( lit ) != NULL ) {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a>.insert(</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a>.begin(),</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            ListaIds::value_type(</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                (std::string *)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                     &amp;( ( (NMStr *) lit )-&gt;getLitAsString() ),</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                nombreId )</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        )-&gt;second;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMInt *&gt;( lit ) != NULL ) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a>.insert(</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a>.begin(),</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            ListaIds::value_type(</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                (std::string *)</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                     &amp;( ( (NMInt *) lit )-&gt;getLitAsString() ),</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                nombreId )</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        )-&gt;second;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMFlt *&gt;( lit ) != NULL ) {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a>.insert(</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a>.begin(),</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            ListaIds::value_type(</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                (std::string *)</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                     &amp;( ( (NMFlt *) lit )-&gt;getLitAsString() ),</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                nombreId )</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        )-&gt;second;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">throw</span> EInterno( <span class="stringliteral">&quot;OptCnstAg: registrando literal: no es literal&quot;</span> );</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5384429f85aad59d4f050d673f1c9fa1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Zero::OptLitAg::getNuevoIdLit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00328">328</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00147">nombreLit</a>, <a class="el" href="optimizador_8h_source.html#l00151">numLits</a> y <a class="el" href="analizadorlexico_8cpp_source.html#l00344">Zero::AnalizadorLexico::toString()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00383">creaLiteral()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    std::string toret = *<a class="code" href="classZero_1_1OptLitAg.html#a8c60ecc5b7349fe6361d65af16766afd">nombreLit</a>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    toret.append( <a class="code" href="classZero_1_1AnalizadorLexico.html#aa58157c4f78f19059aa541a989946bb3">AnalizadorLexico::toString</a>( <a class="code" href="classZero_1_1OptLitAg.html#a040847f635364ef908fbfd59c5c04317">numLits</a>++ ) );</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afdceb73ca51a9f9299dbd8365cf7ea61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptLitAg.html">OptLitAg</a> * Zero::OptLitAg::getOpt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00313">313</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00133">opt</a> y <a class="el" href="optimizador_8h_source.html#l00135">OptLitAg()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00014">Zero::Optimizador::iniciaVectorOpts()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;{</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a> == NULL )</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a> = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1OptLitAg.html#ac50ba5577a939cd7aff0486e7f33957a">OptLitAg</a>( NULL );</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a> == NULL ) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;Creando opt. de constantes&quot;</span> );</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classZero_1_1OptLitAg.html#ac50ba5577a939cd7aff0486e7f33957a">OptLitAg</a> *) <a class="code" href="classZero_1_1OptLitAg.html#aadfa1786d8a85fd9b97a02bacbf5eb5c">opt</a>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a18dc02e5c44a93b932b216afee9e5dd6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptLitAg::hazOpt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Agrupa la creaci�n de todas las constantes al comienzo. Si hay varias repetidas, entonces evita que se cree m�s de una. </p>
+
+<p>Implementa <a class="el" href="classZero_1_1Optimizacion.html#acc3e6bee78489f813f332d9db513efb3">Zero::Optimizacion</a>.</p>
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00482">482</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__ACC</a>, <a class="el" href="optimizador_8cpp_source.html#l00458">colocaConstEnd()</a>, <a class="el" href="optimizador_8h_source.html#l00161">idsFlt</a>, <a class="el" href="optimizador_8h_source.html#l00160">idsInt</a>, <a class="el" href="optimizador_8h_source.html#l00162">idsStr</a>, <a class="el" href="optimizador_8h_source.html#l00066">Zero::Optimizacion::listaMnemos</a>, <a class="el" href="optimizador_8h_source.html#l00151">numLits</a> y <a class="el" href="optimizador_8cpp_source.html#l00421">registraLit()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;{</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    Optimizador::ListaMnemos::iterator it;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keyword">const</span> std::string * nombreId;</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    NMSet  * nmSet;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="comment">// Comprobar que hay algo que hacer</span></div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>         == NULL</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;      || <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;size() == 0 )</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    {</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="keywordflow">goto</span> FIN;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    }</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="comment">// Iniciar</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <a class="code" href="classZero_1_1OptLitAg.html#aed9fbd7965e9684778f42e9da20be1d7">idsInt</a>.clear();</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="classZero_1_1OptLitAg.html#a15712c6a59c2a9d3d1be16fdc649acdd">idsFlt</a>.clear();</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="classZero_1_1OptLitAg.html#aa5eb91d692b5dc166f665147410c2452">idsStr</a>.clear();</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <a class="code" href="classZero_1_1OptLitAg.html#a040847f635364ef908fbfd59c5c04317">numLits</a>   = 0;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <a class="code" href="classZero_1_1OptLitAg.html#a6836d54084c11e4c15fcd78326e91275">colocaConstEnd</a>();</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="comment">// Buscar las constantes en el c�digo</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keywordflow">for</span> (it = <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;begin(); it != <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;end(); ++it )</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    {</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="comment">// �Es un literal? ... si lo es, actuar ...</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <span class="keywordflow">if</span> ( dynamic_cast&lt;Lit *&gt;( *it ) != NULL )</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        {</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;            <span class="comment">// Obtener el nombre de la ref local para el lit</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            nombreId = &amp;( <a class="code" href="classZero_1_1OptLitAg.html#ab58bfc7a3ed967690f036643c387941c">registraLit</a>( ( (Lit *) *it ) ) );</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            <span class="comment">// Cambiar esta instrucci�n por un SET</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;            nmSet = <span class="keyword">new</span>(std::nothrow) NMSet( <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a>, *nombreId );</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            <span class="keywordflow">if</span> ( nmSet != NULL ) {</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                *it = nmSet;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            }</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;Optimizando constantes&quot;</span> );</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    }</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    FIN:</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab58bfc7a3ed967690f036643c387941c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; Zero::OptLitAg::registraLit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Lit.html">Lit</a> *&#160;</td>
+          <td class="paramname"><em>lit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00421">421</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__ACC</a>, <a class="el" href="optimizador_8cpp_source.html#l00338">buscaLiteral()</a>, <a class="el" href="optimizador_8cpp_source.html#l00383">creaLiteral()</a> y <a class="el" href="optimizador_8h_source.html#l00066">Zero::Optimizacion::listaMnemos</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00482">hazOpt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    NMAsg  * nmAsg;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">const</span> std::string *toret = NULL;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    NMDef * defId;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    toret = <a class="code" href="classZero_1_1OptLitAg.html#afcb1d1d4460fdc3ba1a7d1296531034f">buscaLiteral</a>( lit );</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="comment">// Si no se ha encontrado, entonces crearlo</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">if</span> ( toret == NULL )</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    {</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        toret = &amp;( <a class="code" href="classZero_1_1OptLitAg.html#a96aba9a8dbf055a1dd5649e5835017f3">creaLiteral</a>( lit ) );</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="comment">// A�adir un ASG para meterlo en el id adecuado</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        nmAsg = <span class="keyword">new</span>(std::nothrow) NMAsg( *toret, <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a> );</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="keywordflow">if</span> ( nmAsg != NULL ) {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;push_front( nmAsg );</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;Optimizando constantes&quot;</span> );</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="comment">// Insertar creaci�n del literal</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;push_front( lit );</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="comment">// Insertar el nuevo mnemo DEF en la lista de Mnemos</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        defId = <span class="keyword">new</span>(std::nothrow) NMDef( *toret );</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">if</span> ( defId == NULL ) {</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;optimizando consts&quot;</span> );</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        }</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;push_front( defId );</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="keywordflow">else</span> <span class="keyword">delete</span> lit;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordflow">return</span> *toret;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a15712c6a59c2a9d3d1be16fdc649acdd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a> Zero::OptLitAg::idsFlt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00161">161</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00338">buscaLiteral()</a>, <a class="el" href="optimizador_8cpp_source.html#l00383">creaLiteral()</a> y <a class="el" href="optimizador_8cpp_source.html#l00482">hazOpt()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed9fbd7965e9684778f42e9da20be1d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a> Zero::OptLitAg::idsInt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00160">160</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00338">buscaLiteral()</a>, <a class="el" href="optimizador_8cpp_source.html#l00383">creaLiteral()</a> y <a class="el" href="optimizador_8cpp_source.html#l00482">hazOpt()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa5eb91d692b5dc166f665147410c2452"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptLitAg.html#ac54f55867d34f454bcf347b54ff9df3b">ListaIds</a> Zero::OptLitAg::idsStr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00162">162</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00338">buscaLiteral()</a>, <a class="el" href="optimizador_8cpp_source.html#l00383">creaLiteral()</a> y <a class="el" href="optimizador_8cpp_source.html#l00482">hazOpt()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c60ecc5b7349fe6361d65af16766afd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string * Zero::OptLitAg::nombreLit = &amp;<a class="el" href="namespaceZero.html#ab13b7bfa0c67c6f64b3c4ffab4e89fa8">LOC_LIT</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00147">147</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00963">Zero::OptChkMta::chkId()</a> y <a class="el" href="optimizador_8cpp_source.html#l00328">getNuevoIdLit()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a040847f635364ef908fbfd59c5c04317"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Zero::OptLitAg::numLits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00151">151</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00328">getNuevoIdLit()</a> y <a class="el" href="optimizador_8cpp_source.html#l00482">hazOpt()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aadfa1786d8a85fd9b97a02bacbf5eb5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Optimizacion.html">Optimizacion</a> * Zero::OptLitAg::opt = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00133">133</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00313">getOpt()</a> y <a class="el" href="optimizador_8h_source.html#l00164">~OptLitAg()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="optimizador_8h_source.html">optimizador.h</a></li>
+<li><a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:31 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

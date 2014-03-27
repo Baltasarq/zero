@@ -1,0 +1,1363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia de la Clase Zero::OptRedccOp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceZero.html">Zero</a></li><li class="navelem"><a class="el" href="classZero_1_1OptRedccOp.html">OptRedccOp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-types">Tipos públicos</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-static-methods">Métodos privados estáticos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="classZero_1_1OptRedccOp-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Zero::OptRedccOp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="optimizador_8h_source.html">optimizador.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Zero::OptRedccOp</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classZero_1_1OptRedccOp.png" usemap="#Zero::OptRedccOp_map" alt=""/>
+  <map id="Zero::OptRedccOp_map" name="Zero::OptRedccOp_map">
+<area href="classZero_1_1Optimizacion.html" alt="Zero::Optimizacion" shape="rect" coords="0,0,119,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp_1_1Objetivo.html">Objetivo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr class="memitem:a172b36fc5dc7aa4474d889a2cf96264f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264f">TipoSentencia</a> { <a class="el" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa995c48da927a2329b904c0922a05f247">_sentencia_MSG</a>, 
+<a class="el" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa46459a9464786970d4b8c6304b1f64ff">_sentencia_TRW</a>, 
+<a class="el" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa608e0fdb217e100d9f58da6544aba45c">_sentencia_RET</a>, 
+<a class="el" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264faa09c44ff5b655c5246aca9d556cebac8">_sentencia_ERROR</a>
+ }</td></tr>
+<tr class="separator:a172b36fc5dc7aa4474d889a2cf96264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ed61aa23dbbd065353e6d4f88b541c"><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">TablaRefsLocales</a></td></tr>
+<tr class="separator:ae8ed61aa23dbbd065353e6d4f88b541c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:abd4f20b325a60085d770179dccd8d616"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#abd4f20b325a60085d770179dccd8d616">~OptRedccOp</a> ()</td></tr>
+<tr class="separator:abd4f20b325a60085d770179dccd8d616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af481932f9404ba5aad500836121a0288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#af481932f9404ba5aad500836121a0288">hazOpt</a> ()</td></tr>
+<tr class="separator:af481932f9404ba5aad500836121a0288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Optimizacion"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Optimizacion')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Optimizacion.html">Zero::Optimizacion</a></td></tr>
+<tr class="memitem:a8be42ac85b3720e7cf7cb520896e7398 inherit pub_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a8be42ac85b3720e7cf7cb520896e7398">ponListaMnemos</a> (<a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *l)</td></tr>
+<tr class="separator:a8be42ac85b3720e7cf7cb520896e7398 inherit pub_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d61ae16895cb1ae43a9d11984aeb37 inherit pub_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#ad8d61ae16895cb1ae43a9d11984aeb37">ponIds</a> (<a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *args, <a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *atrs)</td></tr>
+<tr class="separator:ad8d61ae16895cb1ae43a9d11984aeb37 inherit pub_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b18dac06b01e7373a708415a8eac75 inherit pub_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a21b18dac06b01e7373a708415a8eac75">~Optimizacion</a> ()</td></tr>
+<tr class="separator:a21b18dac06b01e7373a708415a8eac75 inherit pub_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:ab26bf8d6eacf42aa4a2385afc14beb32"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1OptRedccOp.html">OptRedccOp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#ab26bf8d6eacf42aa4a2385afc14beb32">getOpt</a> ()</td></tr>
+<tr class="separator:ab26bf8d6eacf42aa4a2385afc14beb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a52beb6d39f95859e9094d78caf9ed76f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a52beb6d39f95859e9094d78caf9ed76f">comprobarSiAcumuladorPosible</a> (<a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>, <a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>)</td></tr>
+<tr class="separator:a52beb6d39f95859e9094d78caf9ed76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d335f5c2b27617fbec03c212a2ed899"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a7d335f5c2b27617fbec03c212a2ed899">OptRedccOp</a> (<a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *l)</td></tr>
+<tr class="separator:a7d335f5c2b27617fbec03c212a2ed899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2efd57ba9822eb1f9984e4697f7f7f06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a2efd57ba9822eb1f9984e4697f7f7f06">reducir</a> ()</td></tr>
+<tr class="separator:a2efd57ba9822eb1f9984e4697f7f7f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e26f17a33c86d3d3f59c622be7b4ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a68e26f17a33c86d3d3f59c622be7b4ce">reduceSentenciaActual</a> ()</td></tr>
+<tr class="separator:a68e26f17a33c86d3d3f59c622be7b4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad942da9156ec3bd856f6b6e54210412b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#ad942da9156ec3bd856f6b6e54210412b">buscaSigRegistro</a> ()</td></tr>
+<tr class="separator:ad942da9156ec3bd856f6b6e54210412b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0e5469ca9f675c9cbc80b3e54c7d24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#aff0e5469ca9f675c9cbc80b3e54c7d24">buscaSigRegistroMsg</a> (<a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> *)</td></tr>
+<tr class="separator:aff0e5469ca9f675c9cbc80b3e54c7d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39ebce8a78593e34769148a97e09cb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#aa39ebce8a78593e34769148a97e09cb1">buscaSigRegistroTrw</a> (<a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> *)</td></tr>
+<tr class="separator:aa39ebce8a78593e34769148a97e09cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1d5b2df91958f3813f0750b412c32a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#aca1d5b2df91958f3813f0750b412c32a">buscaSigRegistroRet</a> (<a class="el" href="classZero_1_1NMRet.html">NMRet</a> *)</td></tr>
+<tr class="separator:aca1d5b2df91958f3813f0750b412c32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafade46327bc2604121a12643c496a46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#aafade46327bc2604121a12643c496a46">esMovimientoRegs</a> (<a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>)</td></tr>
+<tr class="separator:aafade46327bc2604121a12643c496a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca593a25e2b3d4029967d560b5a89e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a8ca593a25e2b3d4029967d560b5a89e1">esMovimientoRelevante</a> (<a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> it, <a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> &amp;obj, bool &amp;eliminar, bool &amp;acumuladorModificado)</td></tr>
+<tr class="separator:a8ca593a25e2b3d4029967d560b5a89e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa9074829b9315260c1ab07186dd27f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#adaa9074829b9315260c1ab07186dd27f">esRefLocal</a> (const std::string &amp;ref)</td></tr>
+<tr class="separator:adaa9074829b9315260c1ab07186dd27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Métodos privados estáticos</h2></td></tr>
+<tr class="memitem:a8d7bb25efc0e5da8843ac775605278c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a8d7bb25efc0e5da8843ac775605278c4">aplicarCambio</a> (<a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>, <a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org, const std::string &amp;dest)</td></tr>
+<tr class="separator:a8d7bb25efc0e5da8843ac775605278c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aef6221f7bafc30e9eeaa9efbac1bd4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a2aef6221f7bafc30e9eeaa9efbac1bd4">aplicarCambioMsg</a> (<a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> *, <a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org, const std::string &amp;dest)</td></tr>
+<tr class="separator:a2aef6221f7bafc30e9eeaa9efbac1bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4930ae79db43a6f0117c38614b3df46b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a4930ae79db43a6f0117c38614b3df46b">aplicarCambioTrw</a> (<a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> *, <a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org, const std::string &amp;dest)</td></tr>
+<tr class="separator:a4930ae79db43a6f0117c38614b3df46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216d4bb32f0da7334c247715508bf8c7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a216d4bb32f0da7334c247715508bf8c7">aplicarCambioRet</a> (<a class="el" href="classZero_1_1NMRet.html">NMRet</a> *, <a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org, const std::string &amp;dest)</td></tr>
+<tr class="separator:a216d4bb32f0da7334c247715508bf8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ec4c45dc2073ef310dc0e5c9a6da3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a> (<a class="el" href="classZero_1_1Nombre.html">Nombre</a> **, <a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> org, const std::string &amp;dest)</td></tr>
+<tr class="separator:aa5ec4c45dc2073ef310dc0e5c9a6da3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:aa1a0f08cbad259b3f9e2a4b0d2b7b32e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">TablaRefsLocales</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a></td></tr>
+<tr class="separator:aa1a0f08cbad259b3f9e2a4b0d2b7b32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41a949e6a0ef68f65bb255c80abe4db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1OptRedccOp_1_1Objetivo.html">Objetivo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a></td></tr>
+<tr class="separator:ab41a949e6a0ef68f65bb255c80abe4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a0edd6400fc903e009f9299c666a04f45"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1Optimizacion.html">Optimizacion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a> = NULL</td></tr>
+<tr class="separator:a0edd6400fc903e009f9299c666a04f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_methods_classZero_1_1Optimizacion"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classZero_1_1Optimizacion')"><img src="closed.png" alt="-"/>&#160;Métodos protegidos heredados desde <a class="el" href="classZero_1_1Optimizacion.html">Zero::Optimizacion</a></td></tr>
+<tr class="memitem:a38f48a2042b829534c01f6236234babf inherit pro_methods_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a38f48a2042b829534c01f6236234babf">Optimizacion</a> (<a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *l)</td></tr>
+<tr class="separator:a38f48a2042b829534c01f6236234babf inherit pro_methods_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classZero_1_1Optimizacion"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classZero_1_1Optimizacion')"><img src="closed.png" alt="-"/>&#160;Atributos protegidos heredados desde <a class="el" href="classZero_1_1Optimizacion.html">Zero::Optimizacion</a></td></tr>
+<tr class="memitem:a3210fc5c8427beef63ee012c325e2ed5 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#a3210fc5c8427beef63ee012c325e2ed5">atrsObj</a></td></tr>
+<tr class="separator:a3210fc5c8427beef63ee012c325e2ed5 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8704ea72ee914c6651f0f3c5273f9c9 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Identificadores.html">Identificadores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#ab8704ea72ee914c6651f0f3c5273f9c9">argsFormales</a></td></tr>
+<tr class="separator:ab8704ea72ee914c6651f0f3c5273f9c9 inherit pro_attribs_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab871e45a0a093bd22ba8fc83db59d14e inherit pro_attribs_classZero_1_1Optimizacion"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a></td></tr>
+<tr class="separator:ab871e45a0a093bd22ba8fc83db59d14e inherit pro_attribs_classZero_1_1Optimizacion"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>La clase <a class="el" href="classZero_1_1OptRedccOp.html">OptRedccOp</a> sirve para la opt. que consiste en intentar reducir al m�ximo los movimientos de referencias entre registros. Singleton </p>
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00175">175</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+</div><h2 class="groupheader">Documentación de los 'Typedef' miembros de la clase</h2>
+<a class="anchor" id="ae8ed61aa23dbbd065353e6d4f88b541c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::set&lt;std::string&gt; <a class="el" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">Zero::OptRedccOp::TablaRefsLocales</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00177">177</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las enumeraciones miembro de la clase</h2>
+<a class="anchor" id="a172b36fc5dc7aa4474d889a2cf96264f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264f">Zero::OptRedccOp::TipoSentencia</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a172b36fc5dc7aa4474d889a2cf96264fa995c48da927a2329b904c0922a05f247"></a>_sentencia_MSG</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a172b36fc5dc7aa4474d889a2cf96264fa46459a9464786970d4b8c6304b1f64ff"></a>_sentencia_TRW</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a172b36fc5dc7aa4474d889a2cf96264fa608e0fdb217e100d9f58da6544aba45c"></a>_sentencia_RET</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a172b36fc5dc7aa4474d889a2cf96264faa09c44ff5b655c5246aca9d556cebac8"></a>_sentencia_ERROR</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00179">179</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                           {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa995c48da927a2329b904c0922a05f247">_sentencia_MSG</a>, <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa46459a9464786970d4b8c6304b1f64ff">_sentencia_TRW</a>, <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa608e0fdb217e100d9f58da6544aba45c">_sentencia_RET</a>, <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264faa09c44ff5b655c5246aca9d556cebac8">_sentencia_ERROR</a></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="abd4f20b325a60085d770179dccd8d616"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::OptRedccOp::~OptRedccOp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00211">211</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00217">opt</a>.</p>
+<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{ <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a> = NULL; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7d335f5c2b27617fbec03c212a2ed899"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::OptRedccOp::OptRedccOp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a7129bc62ee00c609a0bad7c7034b7f96">Optimizador::ListaMnemos</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00219">219</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00533">getOpt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            : <a class="code" href="classZero_1_1Optimizacion.html#a38f48a2042b829534c01f6236234babf">Optimizacion</a>(l)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a8d7bb25efc0e5da8843ac775605278c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::aplicarCambio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td>
+          <td class="paramname"><em>org</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00678">678</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8cpp_source.html#l00640">aplicarCambioMsg()</a>, <a class="el" href="optimizador_8cpp_source.html#l00668">aplicarCambioRet()</a> y <a class="el" href="optimizador_8cpp_source.html#l00655">aplicarCambioTrw()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00701">reducir()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;{</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    NMMsg * msg = <span class="keyword">dynamic_cast&lt;</span>NMMsg *<span class="keyword">&gt;</span>( *it );</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    NMTrw * trw = <span class="keyword">dynamic_cast&lt;</span>NMTrw *<span class="keyword">&gt;</span>( *it );</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    NMRet * ret = <span class="keyword">dynamic_cast&lt;</span>NMRet *<span class="keyword">&gt;</span>( *it );</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordflow">if</span> ( msg != NULL ) {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#a2aef6221f7bafc30e9eeaa9efbac1bd4">aplicarCambioMsg</a>( msg, org, dest );</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    }</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="keywordflow">if</span> ( trw != NULL ) {</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#a4930ae79db43a6f0117c38614b3df46b">aplicarCambioTrw</a>( trw, org, dest );</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    }</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keywordflow">if</span> ( ret != NULL ) {</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#a216d4bb32f0da7334c247715508bf8c7">aplicarCambioRet</a>( ret, org, dest );</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    }</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2aef6221f7bafc30e9eeaa9efbac1bd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::aplicarCambioMsg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td>
+          <td class="paramname"><em>org</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00640">640</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8cpp_source.html#l00626">aplicarCambioReg()</a>, <a class="el" href="mnemos_8h_source.html#l00212">Zero::MixinConArgumentos::getArgs()</a> y <a class="el" href="mnemos_8h_source.html#l00468">Zero::NMMsg::getReferencia()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00678">aplicarCambio()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;{</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="comment">// La referencia al objeto a lanzar el mensaje</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a>( &amp;( msg-&gt;getReferencia() ), org, dest );</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="comment">// Los argumentos</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; msg-&gt;getArgs()-&gt;size(); ++i) {</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a>( &amp;( ( *( msg-&gt;getArgs() ) )[ i ] ), org, dest );</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    }</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa5ec4c45dc2073ef310dc0e5c9a6da3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::aplicarCambioReg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> **&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td>
+          <td class="paramname"><em>org</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00626">626</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8cpp_source.html#l00385">Zero::Nombre::creaNombreAdecuado()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00640">aplicarCambioMsg()</a>, <a class="el" href="optimizador_8cpp_source.html#l00668">aplicarCambioRet()</a> y <a class="el" href="optimizador_8cpp_source.html#l00655">aplicarCambioTrw()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;{</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NombreRegistro *&gt;( *reg ) != NULL ) {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <span class="keywordflow">if</span> ( (*( ( NombreRegistro **) reg ) )-&gt;getCodigoRegistro() == org ) {</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="keyword">delete</span> *reg;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            *reg = <a class="code" href="classZero_1_1Nombre.html#aeb71e4c7353966bf53a5cca485376731">Nombre::creaNombreAdecuado</a>( dest );</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        }</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    }</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a216d4bb32f0da7334c247715508bf8c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::aplicarCambioRet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMRet.html">NMRet</a> *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td>
+          <td class="paramname"><em>org</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00668">668</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8cpp_source.html#l00626">aplicarCambioReg()</a> y <a class="el" href="mnemos_8h_source.html#l00523">Zero::NMRet::getReferencia()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00678">aplicarCambio()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;{</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">// El mensaje a lanzar como excepci�n</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a>( &amp;( ret-&gt;getReferencia() ), org, dest );</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4930ae79db43a6f0117c38614b3df46b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::aplicarCambioTrw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> *&#160;</td>
+          <td class="paramname"><em>trw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a>&#160;</td>
+          <td class="paramname"><em>org</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00655">655</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8cpp_source.html#l00626">aplicarCambioReg()</a>, <a class="el" href="mnemos_8h_source.html#l00790">Zero::NMTrw::getReferencia()</a> y <a class="el" href="mnemos_8h_source.html#l00791">Zero::NMTrw::getReferenciaMensaje()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00678">aplicarCambio()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;{</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="comment">// El mensaje a lanzar como excepci�n</span></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a>( &amp;( trw-&gt;getReferenciaMensaje() ), org, dest );</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">// La referencia al objeto a lanzar</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#aa5ec4c45dc2073ef310dc0e5c9a6da3f">aplicarCambioReg</a>( &amp;( trw-&gt;getReferencia() ), org, dest );</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad942da9156ec3bd856f6b6e54210412b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> Zero::OptRedccOp::buscaSigRegistro </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00872">872</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__EXC</a>, <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__THIS</a>, <a class="el" href="optimizador_8cpp_source.html#l00791">buscaSigRegistroMsg()</a>, <a class="el" href="optimizador_8cpp_source.html#l00853">buscaSigRegistroRet()</a>, <a class="el" href="optimizador_8cpp_source.html#l00825">buscaSigRegistroTrw()</a>, <a class="el" href="optimizador_8h_source.html#l00186">Zero::OptRedccOp::Objetivo::mnemoActual</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a> y <a class="el" href="optimizador_8h_source.html#l00188">Zero::OptRedccOp::Objetivo::reg</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00900">reduceSentenciaActual()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;{</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> toret = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = toret;</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMMsg *&gt;( *<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) != NULL ) {</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        toret = <a class="code" href="classZero_1_1OptRedccOp.html#aff0e5469ca9f675c9cbc80b3e54c7d24">buscaSigRegistroMsg</a>( (NMMsg *) ( *<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) );</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <span class="comment">// �Es un throw (lanzamiento de excepciones)?</span></div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMTrw *&gt;( *<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) != NULL ) {</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        toret = <a class="code" href="classZero_1_1OptRedccOp.html#aa39ebce8a78593e34769148a97e09cb1">buscaSigRegistroTrw</a>( (NMTrw *) ( *<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) );</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    }</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    <span class="comment">// �Es un ret (return)?</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <span class="keywordflow">if</span> ( dynamic_cast&lt;NMRet *&gt;( *<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) != NULL ) {</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        toret = <a class="code" href="classZero_1_1OptRedccOp.html#aca1d5b2df91958f3813f0750b412c32a">buscaSigRegistroRet</a>( (NMRet *) ( *<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) );</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    }</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    <span class="keywordflow">if</span> ( toret == <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a95aa739ebba0be3c4867a2e0df4a66d9">NombreRegistro::__THIS</a></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;      || toret == <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a5f604082f01a8cea10b8bbd43f4b0156">NombreRegistro::__EXC</a> )</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    {</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = toret = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    }</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aff0e5469ca9f675c9cbc80b3e54c7d24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> Zero::OptRedccOp::buscaSigRegistroMsg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMMsg.html">NMMsg</a> *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00791">791</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="optimizador_8h_source.html#l00180">_sentencia_MSG</a>, <a class="el" href="optimizador_8h_source.html#l00191">Zero::OptRedccOp::Objetivo::fueReducido()</a>, <a class="el" href="mnemos_8h_source.html#l00212">Zero::MixinConArgumentos::getArgs()</a>, <a class="el" href="mnemos_8h_source.html#l00097">Zero::NombreRegistro::getCodigoRegistro()</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00098">Zero::NombreRegistro::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00468">Zero::NMMsg::getReferencia()</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>, <a class="el" href="optimizador_8h_source.html#l00188">Zero::OptRedccOp::Objetivo::reg</a> y <a class="el" href="optimizador_8h_source.html#l00187">Zero::OptRedccOp::Objetivo::tipoSentencia</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00872">buscaSigRegistro()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;{</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> toret = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    NombreRegistro * nr;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">tipoSentencia</a> = <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa995c48da927a2329b904c0922a05f247">_sentencia_MSG</a>;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="comment">// Comprobar si la referencia es un registro</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    nr = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( msg-&gt;getReferencia() );</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="keywordflow">if</span> ( nr != NULL )</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    {</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">fueReducido</a>( nr-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            toret = <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = nr-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        }</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    }</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="comment">// ... o si alguno de los argumentos es un registro</span></div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; msg-&gt;getArgs()-&gt;size(); ++i) {</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        Nombre * arg = (*( msg-&gt;getArgs() ))[ i ];</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordflow">if</span> ( dynamic_cast&lt;NombreRegistro *&gt;( arg ) != NULL ) {</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">fueReducido</a>( arg-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                toret =</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> =</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                        ( (NombreRegistro *) arg ) -&gt;getCodigoRegistro()</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                ;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            }</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        }</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    }</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aca1d5b2df91958f3813f0750b412c32a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> Zero::OptRedccOp::buscaSigRegistroRet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMRet.html">NMRet</a> *&#160;</td>
+          <td class="paramname"><em>ret</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00853">853</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="optimizador_8h_source.html#l00180">_sentencia_RET</a>, <a class="el" href="optimizador_8h_source.html#l00191">Zero::OptRedccOp::Objetivo::fueReducido()</a>, <a class="el" href="mnemos_8h_source.html#l00097">Zero::NombreRegistro::getCodigoRegistro()</a>, <a class="el" href="mnemos_8h_source.html#l00098">Zero::NombreRegistro::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00523">Zero::NMRet::getReferencia()</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>, <a class="el" href="optimizador_8h_source.html#l00188">Zero::OptRedccOp::Objetivo::reg</a> y <a class="el" href="optimizador_8h_source.html#l00187">Zero::OptRedccOp::Objetivo::tipoSentencia</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00872">buscaSigRegistro()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;{</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    NombreRegistro * reg;</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> toret = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">tipoSentencia</a> = <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa608e0fdb217e100d9f58da6544aba45c">_sentencia_RET</a>;</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    <span class="comment">// Comprobar si la referencia es un registro</span></div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    reg = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( ret-&gt;getReferencia() );</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    <span class="keywordflow">if</span> (  reg != NULL ) {</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">fueReducido</a>( reg-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            toret = <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = reg-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        }</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    }</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa39ebce8a78593e34769148a97e09cb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> Zero::OptRedccOp::buscaSigRegistroTrw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> *&#160;</td>
+          <td class="paramname"><em>trw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00825">825</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="optimizador_8h_source.html#l00180">_sentencia_TRW</a>, <a class="el" href="optimizador_8h_source.html#l00191">Zero::OptRedccOp::Objetivo::fueReducido()</a>, <a class="el" href="mnemos_8h_source.html#l00097">Zero::NombreRegistro::getCodigoRegistro()</a>, <a class="el" href="mnemos_8h_source.html#l00098">Zero::NombreRegistro::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00790">Zero::NMTrw::getReferencia()</a>, <a class="el" href="mnemos_8h_source.html#l00791">Zero::NMTrw::getReferenciaMensaje()</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>, <a class="el" href="optimizador_8h_source.html#l00188">Zero::OptRedccOp::Objetivo::reg</a> y <a class="el" href="optimizador_8h_source.html#l00187">Zero::OptRedccOp::Objetivo::tipoSentencia</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00872">buscaSigRegistro()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;{</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> toret = <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a>;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a021758f8342dd980c80ca12f11959e01">tipoSentencia</a> = <a class="code" href="classZero_1_1OptRedccOp.html#a172b36fc5dc7aa4474d889a2cf96264fa46459a9464786970d4b8c6304b1f64ff">_sentencia_TRW</a>;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    NombreRegistro *nr;</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="comment">// Comprobar si la referencia es un registro</span></div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    nr = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( trw-&gt;getReferencia() );</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">if</span> ( nr != NULL )</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    {</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">fueReducido</a>( nr-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            toret = <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = nr-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        }</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    }</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    <span class="comment">// Comprobar si el lanzamiento es un registro</span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    nr = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( trw-&gt;getReferenciaMensaje() );</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    <span class="keywordflow">if</span> ( nr != NULL )</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    {</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad02c477d12016bae8266684da7562106">fueReducido</a>( nr-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            toret = <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> = nr-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        }</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    }</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a52beb6d39f95859e9094d78caf9ed76f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::OptRedccOp::comprobarSiAcumuladorPosible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>&#160;</td>
+          <td class="paramname"><em>orig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00759">759</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__ACC</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00701">reducir()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;{</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">for</span>( ; orig != dest; ++orig ) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <span class="keywordflow">if</span> ( dynamic_cast&lt;NMTrw *&gt;( *orig ) == NULL</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;          &amp;&amp; dynamic_cast&lt;Flw *&gt;( *orig )   == NULL</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;          &amp;&amp; dynamic_cast&lt;NMDef *&gt;( *orig ) == NULL</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;          &amp;&amp; dynamic_cast&lt;NMNop *&gt;( *orig ) == NULL</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;          &amp;&amp; dynamic_cast&lt;NMEtq *&gt;( *orig ) == NULL )</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        {</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            <span class="comment">// Una asignac. que modifica el acumulador</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;            <span class="keywordflow">if</span> ( dynamic_cast&lt;NMAsg *&gt;( *orig ) != NULL</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;              &amp;&amp; ( (NMAsg *) *orig)-&gt;getRegistro()-&gt;getCodigoRegistro() != <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a> )</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            }</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            <span class="comment">// Una asignac. que modifica el acumulador</span></div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            <span class="keywordflow">if</span> ( dynamic_cast&lt;NMSet *&gt;( *orig ) != NULL</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;              &amp;&amp; ( (NMSet *) (*orig))-&gt;getRegistro()-&gt;getCodigoRegistro() != <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a> )</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            {</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            }</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        }</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keywordflow">return</span> ( orig == dest );</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aafade46327bc2604121a12643c496a46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::OptRedccOp::esMovimientoRegs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00618">618</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00701">reducir()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;{</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="keywordflow">return</span> ( dynamic_cast&lt;NMAsg *&gt;( *it ) != NULL</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;          || dynamic_cast&lt;NMSet *&gt;( *it ) != NULL )</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    ;</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8ca593a25e2b3d4029967d560b5a89e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::OptRedccOp::esMovimientoRelevante </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a>&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>eliminar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>acumuladorModificado</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00547">547</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__ACC</a>, <a class="el" href="mnemos_8cpp_source.html#l00507">Zero::NombreRegistro::cnvtCodigoRegistroANombre()</a>, <a class="el" href="optimizador_8h_source.html#l00189">Zero::OptRedccOp::Objetivo::destino</a>, <a class="el" href="optimizador_8h_source.html#l00241">esRefLocal()</a>, <a class="el" href="mnemos_8h_source.html#l00097">Zero::NombreRegistro::getCodigoRegistro()</a>, <a class="el" href="mnemos_8h_source.html#l00553">Zero::NMAsg::getReferencia()</a>, <a class="el" href="mnemos_8h_source.html#l00552">Zero::NMAsg::getRegistro()</a> y <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00701">reducir()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;{</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    NombreRegistro * nr;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keywordtype">bool</span> toret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    NMSet *<span class="keyword">set</span> = <span class="keyword">dynamic_cast&lt;</span>NMSet *<span class="keyword">&gt;</span>( *it );</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    NMAsg *asg = <span class="keyword">dynamic_cast&lt;</span>NMAsg *<span class="keyword">&gt;</span>( *it );</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="comment">// Por defecto, eliminar la sentencia</span></div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    eliminar = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="comment">// Es un SET</span></div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordflow">if</span> ( <span class="keyword">set</span> != NULL ) {</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="comment">// Buscar el registro origen, si es que es reg</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="keywordflow">if</span> ( set-&gt;getRegistro()-&gt;getCodigoRegistro() == obj )</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        {</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <span class="keywordflow">if</span> ( obj == <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a> )</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            {</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="comment">//      acumuladorModificado = true;</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            }</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            toret = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="comment">// Es un SET __obj __reg | &lt;referencia&gt;</span></div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <span class="comment">// Puede ser el destino, si no es registro, claro.</span></div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            nr = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( <span class="keyword">set</span>-&gt;getReferencia() );</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">if</span> ( nr != NULL )</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    obj = nr-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                    <span class="keywordflow">if</span> ( obj == <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                      &amp;&amp; acumuladorModificado )</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                    {</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                        toret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                    }</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                <span class="comment">// Se trata de un SET __obj &lt;referencia&gt;</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                <span class="comment">// Si la referencia es a un reg o ref local, vale, sino hay que tomar</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                <span class="comment">// el �ltimo registro como v�lido.</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#adaa9074829b9315260c1ab07186dd27f">esRefLocal</a>( set-&gt;getReferencia()-&gt;getNombre() ) ) {</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                        <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a> = <span class="keyword">set</span>-&gt;getReferencia()-&gt;getNombre();</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                }</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                    eliminar = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a> = <a class="code" href="classZero_1_1NombreRegistro.html#ab22eb8ee5e37f0d8e920be260fba40a5">NombreRegistro::cnvtCodigoRegistroANombre</a>( obj );</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                }</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;            }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        }</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    }</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// Es un ASG</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keywordflow">if</span> ( asg != NULL ) {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        nr = <span class="keyword">dynamic_cast&lt;</span>NombreRegistro *<span class="keyword">&gt;</span>( asg-&gt;getReferencia() );</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="comment">// Buscar el registro origen</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordflow">if</span> ( nr != NULL</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;          &amp;&amp; nr-&gt;getCodigoRegistro() == obj ) {</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            toret = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            <span class="comment">// Ahora, tomar el nuevo registro objetivo</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;            obj = asg-&gt;getRegistro()-&gt;getCodigoRegistro();</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            <span class="comment">// Nunca eliminar un ASG</span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            eliminar = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        }</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="adaa9074829b9315260c1ab07186dd27f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zero::OptRedccOp::esRefLocal </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ref</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00241">241</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00223">refsLocales</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00547">esMovimientoRelevante()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            { <span class="keywordflow">return</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a>.find( ref ) != <a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a>.end() ); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab26bf8d6eacf42aa4a2385afc14beb32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptRedccOp.html">OptRedccOp</a> * Zero::OptRedccOp::getOpt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00533">533</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="optimizador_8h_source.html#l00217">opt</a> y <a class="el" href="optimizador_8h_source.html#l00219">OptRedccOp()</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00014">Zero::Optimizador::iniciaVectorOpts()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;{</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a> == NULL ) {</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a> = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1OptRedccOp.html#a7d335f5c2b27617fbec03c212a2ed899">OptRedccOp</a>( NULL );</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a> == NULL ) {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                        <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;Creando opt. de reducc.&quot;</span> );</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                }</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        }</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classZero_1_1OptRedccOp.html#a7d335f5c2b27617fbec03c212a2ed899">OptRedccOp</a> *) <a class="code" href="classZero_1_1OptRedccOp.html#a0edd6400fc903e009f9299c666a04f45">opt</a>;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af481932f9404ba5aad500836121a0288"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::hazOpt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Realiza una serie de reducciones de opcodes. El objetivo es evitar el trasiego de referencias entre registros. </p>
+
+<p>Implementa <a class="el" href="classZero_1_1Optimizacion.html#acc3e6bee78489f813f332d9db513efb3">Zero::Optimizacion</a>.</p>
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00914">914</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00495">Zero::NMDef::getNombre()</a>, <a class="el" href="optimizador_8h_source.html#l00202">Zero::OptRedccOp::Objetivo::init()</a>, <a class="el" href="optimizador_8h_source.html#l00066">Zero::Optimizacion::listaMnemos</a>, <a class="el" href="optimizador_8h_source.html#l00186">Zero::OptRedccOp::Objetivo::mnemoActual</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>, <a class="el" href="optimizador_8h_source.html#l00194">Zero::OptRedccOp::Objetivo::preparaSigBusqueda()</a>, <a class="el" href="optimizador_8cpp_source.html#l00900">reduceSentenciaActual()</a> y <a class="el" href="optimizador_8h_source.html#l00223">refsLocales</a>.</p>
+<div class="fragment"><div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;{</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    <span class="comment">// Registrar las referencias locales</span></div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    NMDef * ref;</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> it = <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;begin();</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    <span class="keywordflow">while</span>( it != <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;end() ) {</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;        ref = <span class="keyword">dynamic_cast&lt;</span>NMDef *<span class="keyword">&gt;</span>( *it );</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        <span class="keywordflow">if</span> ( ref != NULL ) {</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#aa1a0f08cbad259b3f9e2a4b0d2b7b32e">refsLocales</a>.insert( ref-&gt;getNombre() );</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        }</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        ++it;</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    }</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="comment">// Reducir opcodes</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a50c4c1a5ae42283c549d4af0b00acf54">init</a>();</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> = <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;end();</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#a68e26f17a33c86d3d3f59c622be7b4ce">reduceSentenciaActual</a>();</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keywordflow">while</span>( <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> != <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;begin() ) {</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#a68e26f17a33c86d3d3f59c622be7b4ce">reduceSentenciaActual</a>();</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a7e09c31d5dfe0d4f4a7084fe406df8f3">preparaSigBusqueda</a>();</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    }</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a68e26f17a33c86d3d3f59c622be7b4ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> Zero::OptRedccOp::reduceSentenciaActual </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00900">900</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00082">Zero::NombreRegistro::__NOREG</a>, <a class="el" href="optimizador_8cpp_source.html#l00872">buscaSigRegistro()</a>, <a class="el" href="optimizador_8h_source.html#l00186">Zero::OptRedccOp::Objetivo::mnemoActual</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>, <a class="el" href="optimizador_8cpp_source.html#l00701">reducir()</a> y <a class="el" href="optimizador_8h_source.html#l00188">Zero::OptRedccOp::Objetivo::reg</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00914">hazOpt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;{</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ad942da9156ec3bd856f6b6e54210412b">buscaSigRegistro</a>();</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <span class="comment">// Reducir</span></div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    <span class="keywordflow">while</span>( <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a> != <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140a729ae11ecbd78e98a4215957111700cb">NombreRegistro::__NOREG</a> ) {</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#a2efd57ba9822eb1f9984e4697f7f7f06">reducir</a>();</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;        <a class="code" href="classZero_1_1OptRedccOp.html#ad942da9156ec3bd856f6b6e54210412b">buscaSigRegistro</a>();</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    }</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a>;</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2efd57ba9822eb1f9984e4697f7f7f06"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::OptRedccOp::reducir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Este es el meollo. Una vez localizada la instrucci�n relevante, hay que ir hacia arriba y buscar reducir el uso de registros. </p>
+
+<p>Definición en la línea <a class="el" href="optimizador_8cpp_source.html#l00701">701</a> del archivo <a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00081">Zero::NombreRegistro::__ACC</a>, <a class="el" href="optimizador_8cpp_source.html#l00678">aplicarCambio()</a>, <a class="el" href="mnemos_8cpp_source.html#l00507">Zero::NombreRegistro::cnvtCodigoRegistroANombre()</a>, <a class="el" href="optimizador_8cpp_source.html#l00759">comprobarSiAcumuladorPosible()</a>, <a class="el" href="optimizador_8h_source.html#l00189">Zero::OptRedccOp::Objetivo::destino</a>, <a class="el" href="optimizador_8cpp_source.html#l00618">esMovimientoRegs()</a>, <a class="el" href="optimizador_8cpp_source.html#l00547">esMovimientoRelevante()</a>, <a class="el" href="optimizador_8h_source.html#l00066">Zero::Optimizacion::listaMnemos</a>, <a class="el" href="optimizador_8h_source.html#l00186">Zero::OptRedccOp::Objetivo::mnemoActual</a>, <a class="el" href="optimizador_8h_source.html#l00224">objetivo</a>, <a class="el" href="optimizador_8h_source.html#l00188">Zero::OptRedccOp::Objetivo::reg</a> y <a class="el" href="optimizador_8h_source.html#l00185">Zero::OptRedccOp::Objetivo::regsReducidos</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00900">reduceSentenciaActual()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;{</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keywordtype">bool</span> hayModificacion = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordtype">bool</span> acumuladorModificado = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordtype">bool</span> eliminarSentencia;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140">NombreRegistro::CodigoRegistro</a> obj = <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a>;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    std::vector&lt;Optimizador::MnemoIterator&gt; aBorrar;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">// En cualquier caso, no volver a repetir esta b�squeda</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a4a7b27ebcd00b75ebf6e024824c3f043">regsReducidos</a>.insert( <a class="code" href="classZero_1_1NombreRegistro.html#ab22eb8ee5e37f0d8e920be260fba40a5">NombreRegistro::cnvtCodigoRegistroANombre</a>( obj ) );</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="comment">// Llegar hasta el primero que puede ser</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="classZero_1_1Optimizador.html#a344046d44102d6af29dfcfeab1cc86ef">Optimizador::MnemoIterator</a> actual = <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a>;</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="comment">// Buscar las sentencias a reducir</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    --actual;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordflow">while</span>( actual != <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;begin()</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;           &amp;&amp;  <a class="code" href="classZero_1_1OptRedccOp.html#aafade46327bc2604121a12643c496a46">esMovimientoRegs</a>( actual ) )</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    {</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#a8ca593a25e2b3d4029967d560b5a89e1">esMovimientoRelevante</a>( actual, obj, eliminarSentencia, acumuladorModificado ) ) {</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordflow">if</span> ( eliminarSentencia ) {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                aBorrar.push_back( actual );</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            }</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            hayModificacion = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            <span class="keywordflow">if</span> ( !( <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a>.empty() ) ) {</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        }</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        --actual;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    }</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordflow">if</span> ( hayModificacion ) {</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="comment">// �Cu�l es el destino?</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a>.empty() ) {</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a> = <a class="code" href="classZero_1_1NombreRegistro.html#ab22eb8ee5e37f0d8e920be260fba40a5">NombreRegistro::cnvtCodigoRegistroANombre</a>( obj );</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        }</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="comment">// Eliminar las sentencias encontradas</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0 ; i &lt; aBorrar.size(); ++i) {</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                <a class="code" href="classZero_1_1Optimizacion.html#ab871e45a0a093bd22ba8fc83db59d14e">listaMnemos</a>-&gt;erase( aBorrar[ i ] );</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        }</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        aBorrar.clear();</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <span class="keywordflow">if</span> ( obj == <a class="code" href="classZero_1_1NombreRegistro.html#a448327175b71df1dffcdff3e65475140ace07e939962352dcb380002e37f4763a">NombreRegistro::__ACC</a></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;          &amp;&amp; <a class="code" href="classZero_1_1OptRedccOp.html#a52beb6d39f95859e9094d78caf9ed76f">comprobarSiAcumuladorPosible</a>( actual, <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a> ) )</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;            <span class="comment">// Aplicar el cambio en la sentencia objetivo</span></div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            <a class="code" href="classZero_1_1OptRedccOp.html#a8d7bb25efc0e5da8843ac775605278c4">aplicarCambio</a>( <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#ad52101204ad69562669f7fa2ca2bb2e3">mnemoActual</a>, <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#a996d41604e8aa82929a3d8f552601336">reg</a>, <a class="code" href="classZero_1_1OptRedccOp.html#ab41a949e6a0ef68f65bb255c80abe4db">objetivo</a>.<a class="code" href="classZero_1_1OptRedccOp_1_1Objetivo.html#aac1e2fc7fc23decde1612cb8f45b2c81">destino</a> );</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        }</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    }</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="ab41a949e6a0ef68f65bb255c80abe4db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptRedccOp_1_1Objetivo.html">Objetivo</a> Zero::OptRedccOp::objetivo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00224">224</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00872">buscaSigRegistro()</a>, <a class="el" href="optimizador_8cpp_source.html#l00791">buscaSigRegistroMsg()</a>, <a class="el" href="optimizador_8cpp_source.html#l00853">buscaSigRegistroRet()</a>, <a class="el" href="optimizador_8cpp_source.html#l00825">buscaSigRegistroTrw()</a>, <a class="el" href="optimizador_8cpp_source.html#l00547">esMovimientoRelevante()</a>, <a class="el" href="optimizador_8cpp_source.html#l00914">hazOpt()</a>, <a class="el" href="optimizador_8cpp_source.html#l00900">reduceSentenciaActual()</a> y <a class="el" href="optimizador_8cpp_source.html#l00701">reducir()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0edd6400fc903e009f9299c666a04f45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Optimizacion.html">Optimizacion</a> * Zero::OptRedccOp::opt = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00217">217</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00533">getOpt()</a> y <a class="el" href="optimizador_8h_source.html#l00211">~OptRedccOp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1a0f08cbad259b3f9e2a4b0d2b7b32e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1OptRedccOp.html#ae8ed61aa23dbbd065353e6d4f88b541c">TablaRefsLocales</a> Zero::OptRedccOp::refsLocales</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="optimizador_8h_source.html#l00223">223</a> del archivo <a class="el" href="optimizador_8h_source.html">optimizador.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8h_source.html#l00241">esRefLocal()</a> y <a class="el" href="optimizador_8cpp_source.html#l00914">hazOpt()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="optimizador_8h_source.html">optimizador.h</a></li>
+<li><a class="el" href="optimizador_8cpp_source.html">optimizador.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:31 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

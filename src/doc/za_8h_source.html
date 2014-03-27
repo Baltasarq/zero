@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente za.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>P√°gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">za.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="za_8h.html">Ir a la documentaci√≥n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// za.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">      Cabecera del ensamblador Zero</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">      jbgarcia@uvigo.es</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ZA_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ZA_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="analizadorlexico_8h.html">analizadorlexico.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mnemos_8h.html">mnemos.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="compilador_8h.html">compilador.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="optimizador_8h.html">optimizador.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ident_8h.html">ident.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="za_8h.html#af1cbf18271e759cf6c053d8fe19bd907">   20</a></span>&#160;<span class="preprocessor">#define TEXT_UI_MAIN      // Provee de una interfaz de texto, con fn. main()</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// ================================ Constantes ===============================</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a2dec30a67575c2025826dec36e693ff2">MARCANASG</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a274c99374a5c6835802f8362b5933910">MARCANATR</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a1fc77d42fc12ae5339b96084cabfd86f">MARCANCMP</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a74c70661e6364c4b62b1e874e63a7b1f">MARCANCND</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#ac091882becdac417323a03488140168d">MARCANDEF</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#ab334f60cf136bdc1b41863373a5a42ab">MARCANENM</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#af582158dbb48d014ff5b58f7b0e5f51c">MARCANENO</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#ad86b97f20f508be6942ae3e2ffdd4137">MARCANFLT</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a1662946c397c2fb9c082ece1758334c1">MARCANIOF</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a9d2847501ffd1bd1a4bfd97d56c5ce5c">MARCANMTH</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a88921fe851d36bf5d76a6936533370ee">MARCANMSG</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a61f4aad6f62d7f075f640cc8747e725c">MARCANNEW</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a24565c5e631ee381d12b670d53327f2e">MARCANOBJ</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a30018845b51bd9e17ee927a7ce947cc5">MARCANRET</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a541a32292c115c8ee8e5c1b777ee5fc0">MARCANSET</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a07422f326596765141483ec92996800f">MARCANSTR</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#abe01f0a2a29b1ab50ca2b64222b2611b">MARCANTRW</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#aa19c12f39459cc67c9d16f83580aaa14">MARCANELS</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#a6d0bfd5410241f0ca5f4a0ea9133edb2">MARCANENC</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#af2964feed3285e0204e56c1a689641d2">MARCANWHL</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#ab08ee0b1b01e5d8730381edb491fb45d">MARCANLOP</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> std::string <a class="code" href="za_8h.html#ac6792b4012b0294b75af361a28d44fe0">MARCANNOP</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span>   <a class="code" href="za_8cpp.html#a872cc0ff78aa1dfda1cba1bcfa1631cf">MARCACOMENTARIO</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// ================================ EnsamZ ================================</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classEnsamZ.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEnsamZ.html">EnsamZ</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a3ac837a1146f22648356d0b8117d4655">   50</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a3ac837a1146f22648356d0b8117d4655aab77df88e7ed34d13934f5b109f90670">   51</a></span>&#160;        <a class="code" href="classEnsamZ.html#a3ac837a1146f22648356d0b8117d4655ae8ccad79a683d55bb3d431b2fe6e1c61">SALTO_COND_FALSE</a>, <a class="code" href="classEnsamZ.html#a3ac837a1146f22648356d0b8117d4655aab77df88e7ed34d13934f5b109f90670">SALTO_COND_TRUE</a>, <a class="code" href="classEnsamZ.html#a3ac837a1146f22648356d0b8117d4655adc682583af6ac4a6a6d9ac80bd66ac5d">SALTO_ABSOLUTO</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    } <a class="code" href="classEnsamZ.html#a3ac837a1146f22648356d0b8117d4655">TipoSalto</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0ae8920199c1c8e6078d7f9e58a9fd5e75">   54</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0ae8920199c1c8e6078d7f9e58a9fd5e75">TOPLEVEL</a>, <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0a55d1ccbfc4aa3492cda2d30400b49167">ENOBJETO</a>, <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0a157edbb5e42bcc77423ff335e6154536">ENCUERPOMETODO</a>, <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0a81fde7a5cda1374abf7cc93870c44389">ENEXCEPMETODO</a>,</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0a7bac664e748b8761fc16331f4def14ff">   55</a></span>&#160;                       <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0a7bac664e748b8761fc16331f4def14ff">ENFINMETODO</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    } <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0">Estado</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a6c40f28530b0781bca6bd7882cd0c5c4">   59</a></span>&#160;        std::vector&lt;Zero::Literal&gt; <a class="code" href="classEnsamZ.html#a6c40f28530b0781bca6bd7882cd0c5c4">literalesPorObjeto</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="classEnsamZ.html#ab38ba9588cb5967f921e31fa44fc592f">   60</a></span>&#160;        std::string <a class="code" href="classEnsamZ.html#ab38ba9588cb5967f921e31fa44fc592f">objetoActual</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a1dfc544d25f93e20cb0844f5191a2de2">   61</a></span>&#160;        std::string <a class="code" href="classEnsamZ.html#a1dfc544d25f93e20cb0844f5191a2de2">metodoActual</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a2b778f09d70928f0580c376edca6a3c4">   62</a></span>&#160;        <a class="code" href="classZero_1_1IdsPorPrograma.html">Zero::IdsPorPrograma</a> <a class="code" href="classEnsamZ.html#a2b778f09d70928f0580c376edca6a3c4">idsProg</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classEnsamZ.html#a426f5d913946cb2c22d8b5fec83a08fd">EnsamZ</a>(FILE *e, <a class="code" href="classZero_1_1MedioSoporte.html">Zero::MedioSoporte</a> *f, <span class="keyword">const</span> std::string &amp;nomf);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classEnsamZ.html#a35a78605a2a2c3b511d3d9acafeb2df7">~EnsamZ</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classEnsamZ.html#a7955dbfefb6a67f9f4d21cc6ad27c1d1">getNumeroLinea</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classEnsamZ.html#ab942a89c7519d5357f756ba0b3e4c559">   68</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classEnsamZ.html#ab942a89c7519d5357f756ba0b3e4c559">getNumeroLineaMetodo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classEnsamZ.html#acaf0abd779c93cffd483f6e1639df397">c</a>-&gt;<a class="code" href="classZero_1_1Compilador.html#a1e70f215adaf16cea8f6a2bb069a7d5f" title="Obtener el n˙mero de lÌnea que est· compilando.">getNumLinea</a>(); }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::string &amp;<a class="code" href="classEnsamZ.html#a97cc50ed6b2840f977e51f5ceeedf5ef">getLinActual</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a878d163b157e6043b72be97781d5b704">generaCodigo</a>(<a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::string <a class="code" href="classEnsamZ.html#a16cebf5e81994827449d034cc5da0e27">getAtributo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classEnsamZ.html#a5479db9efb56a0a870c3afbb815f260f">buscaVbleAtributo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classZero_1_1Identificadores.html">Zero::Identificadores</a> * <a class="code" href="classEnsamZ.html#a99e047ba8b02e2bc2c2e21a556cea3f4">buscaMetodo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classZero_1_1Identificadores.html">Zero::Identificadores</a> * <a class="code" href="classEnsamZ.html#a75947edcb14cccf762f5db8660dc6345">buscaAtributosObjeto</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="classEnsamZ.html#afa6b3bd60e2afbd515dfa4b2efebb1fd">   76</a></span>&#160;        <a class="code" href="classZero_1_1IdsPorObjeto.html">Zero::IdsPorObjeto</a> * <a class="code" href="classEnsamZ.html#afa6b3bd60e2afbd515dfa4b2efebb1fd">buscaObjeto</a>(<span class="keyword">const</span> std::string &amp;x)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classEnsamZ.html#a2b778f09d70928f0580c376edca6a3c4">idsProg</a>.<a class="code" href="classZero_1_1IdsPorPrograma.html#a5266b931439d7918807efa10824ca03c">buscaObjeto</a>( x ); }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classEnsamZ.html#ab56da835988e84f861f73a65abff4acd">   80</a></span>&#160;        FILE *<a class="code" href="classEnsamZ.html#ab56da835988e84f861f73a65abff4acd">ent</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a771b0ae2e94f0691d7400cc5d8380688">   81</a></span>&#160;        <a class="code" href="classZero_1_1MedioSoporte.html">Zero::MedioSoporte</a> *<a class="code" href="classEnsamZ.html#a771b0ae2e94f0691d7400cc5d8380688">sal</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classEnsamZ.html#adbb3e42dc05518c5f4ad76e954debf93">   82</a></span>&#160;        std::string <a class="code" href="classEnsamZ.html#adbb3e42dc05518c5f4ad76e954debf93">fichsalida</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classEnsamZ.html#affec3afb7cb79bee598e056385639ebe">   83</a></span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classEnsamZ.html#affec3afb7cb79bee598e056385639ebe">lin</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a9d29883733f0774320df6234669c5e4e">   84</a></span>&#160;        std::string <a class="code" href="classEnsamZ.html#a9d29883733f0774320df6234669c5e4e">buffer</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a419153cdd3f9df737a9145ff4ad66016">   85</a></span>&#160;        std::string <a class="code" href="classEnsamZ.html#a419153cdd3f9df737a9145ff4ad66016">txtMet</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="classEnsamZ.html#acaf0abd779c93cffd483f6e1639df397">   86</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classZero_1_1Compilador.html">Zero::Compilador</a> *<a class="code" href="classEnsamZ.html#acaf0abd779c93cffd483f6e1639df397">c</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="classEnsamZ.html#a7c785d639c7777c4d52724b6f7d3c3cf">   88</a></span>&#160;        <a class="code" href="classEnsamZ.html#ad705bf3f945fd15280c825a6595e0af0">Estado</a> <a class="code" href="classEnsamZ.html#a7c785d639c7777c4d52724b6f7d3c3cf">estado</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a42339a0ee42cc2ca3bf0b085af18a931">procesaLinea</a>(<a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a2e1706e5a1bbf93888bde4fadf797389">sigLinea</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a21fa8851fe807f68fe7a8421805f619c">compNMObj</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#ad710132b357288fa862edf7720892ac3">compNMEno</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a4accd657cd561a3acc76e0b508d2dfc7">compNMMth</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#ab63b69f3089165b0bce584cd2eb16373">compNMEnm</a>(<a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a> opt);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#aea9deff1b3973746af7f01e8c4fa4024">compNMAtr</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a58a9b4510444147f243d0b2e4af4b223">compNMMta</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a9f2ec15ce6485f3df5df57b42ec0300d">chkNMMsg</a>(<a class="code" href="classZero_1_1NMMsg.html">Zero::NMMsg</a> *);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classEnsamZ.html#a17d234b4d63f175eff6e8669eef6e24b">compilaMetodo</a>(<a class="code" href="classPartesCompilador.html#ae8232107b7c3bc83f717b91f4be322bf">Zero::Optimizador::TipoOptimizacion</a> opt);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// Interface ===================================================================</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="za_8cpp.html#a69042966ff63cc80389e55e0de0ed057">warning</a>(<a class="code" href="classEnsamZ.html">EnsamZ</a> *, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="za_8cpp.html#a69042966ff63cc80389e55e0de0ed057">warning</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="zvm" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/zvm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="Version" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/zvm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=i686" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="zero/analizadorlexico.cpp" />
+		<Unit filename="zero/analizadorlexico.h" />
+		<Unit filename="zero/cargaobj.cpp" />
+		<Unit filename="zero/cargaobj.h" />
+		<Unit filename="zero/coleccion.h" />
+		<Unit filename="zero/compilador.cpp" />
+		<Unit filename="zero/compilador.h" />
+		<Unit filename="zero/conim.cpp" />
+		<Unit filename="zero/conim.h" />
+		<Unit filename="zero/container.cpp" />
+		<Unit filename="zero/container.h" />
+		<Unit filename="zero/container_interface.h" />
+		<Unit filename="zero/containerinspector.h" />
+		<Unit filename="zero/directorio.cpp" />
+		<Unit filename="zero/directorio.h" />
+		<Unit filename="zero/excep.h" />
+		<Unit filename="zero/gestormemoria.h" />
+		<Unit filename="zero/ident.cpp" />
+		<Unit filename="zero/ident.h" />
+		<Unit filename="zero/mediosoporte.cpp" />
+		<Unit filename="zero/mediosoporte.h" />
+		<Unit filename="zero/metodos.cpp" />
+		<Unit filename="zero/metodos.h" />
+		<Unit filename="zero/mnemos.cpp" />
+		<Unit filename="zero/mnemos.h" />
+		<Unit filename="zero/objeto.cpp" />
+		<Unit filename="zero/objeto.h" />
+		<Unit filename="zero/observador.cpp" />
+		<Unit filename="zero/observador.h" />
+		<Unit filename="zero/opcodes.cpp" />
+		<Unit filename="zero/opcodes.h" />
+		<Unit filename="zero/optimizador.cpp" />
+		<Unit filename="zero/optimizador.h" />
+		<Unit filename="zero/persistentstore.cpp" />
+		<Unit filename="zero/persistentstore.h" />
+		<Unit filename="zero/props.cpp" />
+		<Unit filename="zero/props.h" />
+		<Unit filename="zero/referencia.cpp" />
+		<Unit filename="zero/referencia.h" />
+		<Unit filename="zero/reservadas.cpp" />
+		<Unit filename="zero/reservadas.h" />
+		<Unit filename="zero/runtime.cpp" />
+		<Unit filename="zero/runtime.h" />
+		<Unit filename="zero/servnom.cpp" />
+		<Unit filename="zero/servnom.h" />
+		<Unit filename="zero/uintf.h" />
+		<Unit filename="zero/vmcap.cpp" />
+		<Unit filename="zero/vmcap.h" />
+		<Unit filename="zero/zvm.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

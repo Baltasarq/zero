@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente ident.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ident.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ident_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ident.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">    Control de listas de identificadores</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __IDENT__H__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __IDENT__H__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mnemos_8h.html">mnemos.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>Zero {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1Literal.html">Literal</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752">   25</a></span>&#160;        <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752a82ed0e2a8dd6ff1008deb5da510e4a72">LitNumInt</a>, <a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752aa651ce4c6e032a848f3bc77cb7902ec8">LitNumFlt</a>, <a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752ada969cb85c4fa32090b72ecd3b5452d8">LitStr</a> } <a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752">Tipo</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#a41d4c6a74505761afae10776e27b858e">   27</a></span>&#160;        std::string <a class="code" href="classZero_1_1Literal.html#a41d4c6a74505761afae10776e27b858e">atributo</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#a32fcd52a0523fe5d16be61aa44f2ee5d">   28</a></span>&#160;        std::string <a class="code" href="classZero_1_1Literal.html#a32fcd52a0523fe5d16be61aa44f2ee5d">lit</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#a4dd15dfbdfe4ea667aaf8384d454f867">   29</a></span>&#160;        <a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752">Tipo</a> <a class="code" href="classZero_1_1Literal.html#a4dd15dfbdfe4ea667aaf8384d454f867">tipo</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classZero_1_1Literal.html#afb5b7a8f9218218bbfdb2c8e148f5928">Literal</a>(<span class="keyword">const</span> std::string &amp;n, <span class="keyword">const</span> std::string &amp;l);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#a44e11a88fefc9e2658d55577c7265dcc">   33</a></span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1Literal.html#a44e11a88fefc9e2658d55577c7265dcc">getNombreAtributo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Literal.html#a41d4c6a74505761afae10776e27b858e">atributo</a>; }</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#aa8339517644841e37a80ceccdf810a9a">   35</a></span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1Literal.html#aa8339517644841e37a80ceccdf810a9a">getLiteral</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Literal.html#a32fcd52a0523fe5d16be61aa44f2ee5d">lit</a>; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classZero_1_1Literal.html#a3cc05bcc9e959ad0284070f1217ce461">   37</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="classZero_1_1Literal.html#a2782eb21a8e51037eb9eb07fe269d752">Tipo</a> &amp;<a class="code" href="classZero_1_1Literal.html#a3cc05bcc9e959ad0284070f1217ce461">getTipo</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Literal.html#a4dd15dfbdfe4ea667aaf8384d454f867">tipo</a>; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::string <a class="code" href="classZero_1_1Literal.html#a0aacbe87f9b1228609428dd12b38774c">getLiteralConTipo</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html#ac955d73893c50760e9126570f4f8244b">   50</a></span>&#160;        <span class="keyword">typedef</span> std::set&lt;std::string&gt; <a class="code" href="classZero_1_1Identificadores.html#ac955d73893c50760e9126570f4f8244b">ListaIds</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classZero_1_1Identificadores.html#a5796e8262367ab2a2372e7763505a8e3">Identificadores</a>(<span class="keyword">const</span> std::string &amp; = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classZero_1_1Identificadores.html#a5796e8262367ab2a2372e7763505a8e3">Identificadores</a>(<span class="keyword">const</span> <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> &amp;);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html#a7d59c193e6e11c04305f7944d25abe59">   54</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classZero_1_1Identificadores.html#a7d59c193e6e11c04305f7944d25abe59">~Identificadores</a>() {}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classZero_1_1Identificadores.html#a9cbed269b36653f2ba6e06583179cd2e">reset</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1Identificadores.html#aa2c2bfe321f6dfd62d8e5520e8185cb2">busca</a>(<span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1Identificadores.html#a020556abf5806925da347716b41a1c5c">inserta</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classZero_1_1Identificadores.html#a3da94ab8bdb4b8f9f52f336439bf984d">getID</a>(<span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html#ad39da3ca3d49774b2d2d81a699f26432">   61</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classZero_1_1Identificadores.html#ad39da3ca3d49774b2d2d81a699f26432">getNumero</a>()<span class="keyword">  const</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Identificadores.html#a71eb415a731bc9907e47580a5ed61bc3">listaIds</a>.size(); }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html#a40cfd7316e92585b11b8d0f763c16e4c">   63</a></span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1Identificadores.html#a40cfd7316e92585b11b8d0f763c16e4c">getNombre</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1Identificadores.html#aeb2b228fdd8c81047f82d20f7754b0d6">nombre</a>; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> &amp;<a class="code" href="classZero_1_1Identificadores.html#a3b41497f1882195983445b4cb505cc88">operator=</a>(<span class="keyword">const</span> <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> &amp;);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html#a71eb415a731bc9907e47580a5ed61bc3">   68</a></span>&#160;        <a class="code" href="classZero_1_1Identificadores.html#ac955d73893c50760e9126570f4f8244b">ListaIds</a> <a class="code" href="classZero_1_1Identificadores.html#a71eb415a731bc9907e47580a5ed61bc3">listaIds</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="classZero_1_1Identificadores.html#aeb2b228fdd8c81047f82d20f7754b0d6">   69</a></span>&#160;        std::string <a class="code" href="classZero_1_1Identificadores.html#aeb2b228fdd8c81047f82d20f7754b0d6">nombre</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="classZero_1_1IdentificadoresVisibles.html">   76</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1IdentificadoresVisibles.html">IdentificadoresVisibles</a> : <span class="keyword">public</span> <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classZero_1_1IdentificadoresVisibles.html#a8e2cdc13dd599ee4c0cbb4d7a1b2822c">IdentificadoresVisibles</a>(<span class="keyword">const</span> std::string &amp; = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdentificadoresVisibles.html#afe82e85feb403a49bf38d24d69987f0a">busca</a>(<span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdentificadoresVisibles.html#a7c832de40e46c319bdd27265c0bb8ea6">inserta</a>(<span class="keyword">const</span> std::string &amp;, <span class="keywordtype">bool</span> = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::string <a class="code" href="classZero_1_1IdentificadoresVisibles.html#a419f09ff3b5c700b055e9d7db804aac2">getID</a>(<span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdentificadoresVisibles.html#a8d0080978f5baea4e5e421e7bc5082c5">esVisible</a>(<span class="keywordtype">size_t</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">using</span> <a class="code" href="classZero_1_1Identificadores.html#a020556abf5806925da347716b41a1c5c">Identificadores::inserta</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html">   93</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1IdsPorObjeto.html">IdsPorObjeto</a> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a9972188a2385de211dd87a4c120dcf29">   94</a></span>&#160;        std::string <a class="code" href="classZero_1_1IdsPorObjeto.html#a9972188a2385de211dd87a4c120dcf29">nombre</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#ad4cac225f90f381488a9b283050113d4">   95</a></span>&#160;        std::string <a class="code" href="classZero_1_1IdsPorObjeto.html#ad4cac225f90f381488a9b283050113d4">padre</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a8b79a26aa5fbc4eb1cb0cdb7592aece0">   96</a></span>&#160;        <a class="code" href="classZero_1_1IdentificadoresVisibles.html">IdentificadoresVisibles</a> *<a class="code" href="classZero_1_1IdsPorObjeto.html#a8b79a26aa5fbc4eb1cb0cdb7592aece0">nombresDeAtributos</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a02ee47a0b1e952154b7fd9212635ec91">   97</a></span>&#160;        <a class="code" href="classZero_1_1IdentificadoresVisibles.html">IdentificadoresVisibles</a> *<a class="code" href="classZero_1_1IdsPorObjeto.html#a02ee47a0b1e952154b7fd9212635ec91">nombresDeMetodos</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#ac9925c5fd362f99366c785fe4026592b">   98</a></span>&#160;        <span class="keyword">typedef</span> std::map &lt;std::string, Identificadores *&gt; <a class="code" href="classZero_1_1IdsPorObjeto.html#ac9925c5fd362f99366c785fe4026592b">Metodos</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a4296f863a306a81edd325e1a11effa50">   99</a></span>&#160;    <a class="code" href="classZero_1_1IdsPorObjeto.html#ac9925c5fd362f99366c785fe4026592b">Metodos</a> <a class="code" href="classZero_1_1IdsPorObjeto.html#a4296f863a306a81edd325e1a11effa50">metodos</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classZero_1_1IdsPorObjeto.html#a99c1e470291254249de19a4aa3007254">IdsPorObjeto</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="classZero_1_1IdsPorObjeto.html#a99c1e470291254249de19a4aa3007254">IdsPorObjeto</a>(<span class="keyword">const</span> <a class="code" href="classZero_1_1IdsPorObjeto.html">IdsPorObjeto</a> &amp;);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classZero_1_1IdsPorObjeto.html#a7d989b98a1c67feb2bd49328bcd46e47">~IdsPorObjeto</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#ad76e212d2ab5a01449af1ec08b7cf75c">  106</a></span>&#160;        <a class="code" href="classZero_1_1IdentificadoresVisibles.html">IdentificadoresVisibles</a> *<a class="code" href="classZero_1_1IdsPorObjeto.html#ad76e212d2ab5a01449af1ec08b7cf75c">getAtributos</a>()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a8b79a26aa5fbc4eb1cb0cdb7592aece0">nombresDeAtributos</a>; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a845a66c076cf02f23c2eaa1a3f95fc0a">  109</a></span>&#160;        <a class="code" href="classZero_1_1IdentificadoresVisibles.html">IdentificadoresVisibles</a> *<a class="code" href="classZero_1_1IdsPorObjeto.html#a845a66c076cf02f23c2eaa1a3f95fc0a">getMetodos</a>()</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a02ee47a0b1e952154b7fd9212635ec91">nombresDeMetodos</a>; }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#ad38bfa12be7cceb4b11d4244656f29d9">buscaAtributo</a>(<span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a53516e9e7fd26ae8e0ab644d0665be81">insertaAtributo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keywordtype">bool</span> visibilidad);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        std::string <a class="code" href="classZero_1_1IdsPorObjeto.html#a9acaa4841674dca057a897502ec55209">getAtributo</a>(<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#ab8b692b02b116bc348ee09c792d05b59">  115</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#ab8b692b02b116bc348ee09c792d05b59">getNumeroAtributos</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">                </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a8b79a26aa5fbc4eb1cb0cdb7592aece0">nombresDeAtributos</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#ad39da3ca3d49774b2d2d81a699f26432">getNumero</a>(); }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a1a244b12718e96164af903ea3b125cac">buscaMetodo</a>(<span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classZero_1_1Identificadores.html">Identificadores</a> * <a class="code" href="classZero_1_1IdsPorObjeto.html#aa62df04dc958c15891a155cd525dc894">getIdsMetodo</a>(<span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a8399fa15bf3cbf5658b9e186235f7be6">buscaVbleMetodo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#ab6c7a9239e591709b4c45717b257c0a8">insertaMetodo</a>(<span class="keyword">const</span> std::string &amp;,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;               <span class="keywordtype">bool</span>,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;               <span class="keyword">const</span> <a class="code" href="classZero_1_1MixinConArgumentos.html#a7d248be9058c2ba68ae0db23ccbf3080">MixinConArgumentos::Argumentos</a> &amp;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        );</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#ad76c529a1153b6e8cdd3d3c0b0c65007">insertaVbleMetodo</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a815709545e51db1cb5d3d7b22115ca72">  126</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a815709545e51db1cb5d3d7b22115ca72">getNumeroMetodos</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">                </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a8b79a26aa5fbc4eb1cb0cdb7592aece0">nombresDeAtributos</a>-&gt;<a class="code" href="classZero_1_1Identificadores.html#ad39da3ca3d49774b2d2d81a699f26432">getNumero</a>(); }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="classZero_1_1IdsPorObjeto.html">IdsPorObjeto</a> &amp;<a class="code" href="classZero_1_1IdsPorObjeto.html#ac4d21be0966e6f775e1b5de160c52a7c">operator=</a>(<span class="keyword">const</span> <a class="code" href="classZero_1_1IdsPorObjeto.html">IdsPorObjeto</a> &amp;);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#a992d763e770b83e35510fe964b76e725">  131</a></span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1IdsPorObjeto.html#a992d763e770b83e35510fe964b76e725">getNombre</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#a9972188a2385de211dd87a4c120dcf29">nombre</a>; }</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorObjeto.html#ab0a7fb48a3a3beb9d3de8fb5844342d0">  133</a></span>&#160;        <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1IdsPorObjeto.html#ab0a7fb48a3a3beb9d3de8fb5844342d0">getNombrePadre</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorObjeto.html#ad4cac225f90f381488a9b283050113d4">padre</a>; }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        std::string <a class="code" href="classZero_1_1IdsPorObjeto.html#a16727e1501ef8394bbd13026f286be79">toXML</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorPrograma.html">  138</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1IdsPorPrograma.html">IdsPorPrograma</a> {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorPrograma.html#aedf36b91b896d2d85d4b66bea0a7ff91">  140</a></span>&#160;        <span class="keyword">typedef</span> std::map&lt;std::string, IdsPorObjeto *&gt; <a class="code" href="classZero_1_1IdsPorPrograma.html#aedf36b91b896d2d85d4b66bea0a7ff91">ListaIdsPorObj</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorPrograma.html#a4701ec37bb348139b4a457d24ea08ab6">  141</a></span>&#160;        <a class="code" href="classZero_1_1IdsPorPrograma.html#aedf36b91b896d2d85d4b66bea0a7ff91">ListaIdsPorObj</a> <a class="code" href="classZero_1_1IdsPorPrograma.html#a4701ec37bb348139b4a457d24ea08ab6">vIdsObj</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="classZero_1_1IdsPorPrograma.html#afa7ab0eab8143c56dfeb3ed0caae1514">IdsPorPrograma</a>();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="classZero_1_1IdsPorPrograma.html#a471bd20ab9ebaf50f7f6e00596dc0ec0">~IdsPorPrograma</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="classZero_1_1IdsPorObjeto.html">IdsPorObjeto</a> *<a class="code" href="classZero_1_1IdsPorPrograma.html#a5266b931439d7918807efa10824ca03c">buscaObjeto</a>(<span class="keyword">const</span> std::string &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1IdsPorPrograma.html#ac85e62d936dba6a4553ba381d22ef677">insertaObjeto</a>(<span class="keyword">const</span> std::string &amp;, <span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classZero_1_1IdsPorPrograma.html#ad62436b778b5cdf8b782b78e9b9c10b4">  148</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classZero_1_1IdsPorPrograma.html#ad62436b778b5cdf8b782b78e9b9c10b4">getNumero</a>()<span class="keyword">  const</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">            </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1IdsPorPrograma.html#a4701ec37bb348139b4a457d24ea08ab6">vIdsObj</a>.size(); }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        std::string <a class="code" href="classZero_1_1IdsPorPrograma.html#a81d460bd4c509d278132740514fa5689">toXML</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

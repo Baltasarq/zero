@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Referencia de la Clase Zero::NMTrw</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceZero.html">Zero</a></li><li class="navelem"><a class="el" href="classZero_1_1NMTrw.html">NMTrw</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classZero_1_1NMTrw-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Zero::NMTrw</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mnemos_8h_source.html">mnemos.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Zero::NMTrw</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classZero_1_1NMTrw.png" usemap="#Zero::NMTrw_map" alt=""/>
+  <map id="Zero::NMTrw_map" name="Zero::NMTrw_map">
+<area href="classZero_1_1Instr.html" alt="Zero::Instr" shape="rect" coords="0,56,128,80"/>
+<area href="classZero_1_1Mnemotecnico.html" alt="Zero::Mnemotecnico" shape="rect" coords="0,0,128,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aa513324fc7bf8f4983054bbe71d493ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#aa513324fc7bf8f4983054bbe71d493ba">NMTrw</a> ()</td></tr>
+<tr class="separator:aa513324fc7bf8f4983054bbe71d493ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fed0f4b8de4536d1b25f9a5bd87d0a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a3fed0f4b8de4536d1b25f9a5bd87d0a2">NMTrw</a> (const std::string &amp;r, const std::string &amp;m=&quot;&quot;)</td></tr>
+<tr class="separator:a3fed0f4b8de4536d1b25f9a5bd87d0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a538ae3dc7641b408fa531a7b9795b03c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a538ae3dc7641b408fa531a7b9795b03c">~NMTrw</a> ()</td></tr>
+<tr class="separator:a538ae3dc7641b408fa531a7b9795b03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f0518148d51b82733bb4f5c2f0260f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#aa7f0518148d51b82733bb4f5c2f0260f">NMTrw</a> (const <a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> &amp;)</td></tr>
+<tr class="separator:aa7f0518148d51b82733bb4f5c2f0260f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0796338defc2ff938895983108331e28"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a0796338defc2ff938895983108331e28">getNombre</a> () const </td></tr>
+<tr class="separator:a0796338defc2ff938895983108331e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42204d42681389a6cebd96dfef3e5a83"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a42204d42681389a6cebd96dfef3e5a83">getMensaje</a> () const </td></tr>
+<tr class="separator:a42204d42681389a6cebd96dfef3e5a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eedfeb11796f190a65cb016711d6e72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a2eedfeb11796f190a65cb016711d6e72">getReferencia</a> ()</td></tr>
+<tr class="separator:a2eedfeb11796f190a65cb016711d6e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1df0af35e71459a92b4fa4b6321c00a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#aa1df0af35e71459a92b4fa4b6321c00a">getReferenciaMensaje</a> ()</td></tr>
+<tr class="separator:aa1df0af35e71459a92b4fa4b6321c00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0458ac2eaf877d82e3dfece6c36aef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a3b0458ac2eaf877d82e3dfece6c36aef">getReferencia</a> () const </td></tr>
+<tr class="separator:a3b0458ac2eaf877d82e3dfece6c36aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1573452de6fa5ecd16d6cb87ed42bab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#ad1573452de6fa5ecd16d6cb87ed42bab">getReferenciaMensaje</a> () const </td></tr>
+<tr class="separator:ad1573452de6fa5ecd16d6cb87ed42bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a55444c934e74e924e2b3cb113eccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a96a55444c934e74e924e2b3cb113eccd">verifica</a> ()  throw (ECompilacion)</td></tr>
+<tr class="separator:a96a55444c934e74e924e2b3cb113eccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f36b80d872ac967e159aa3a7f43180e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a1f36b80d872ac967e159aa3a7f43180e">escribe</a> (<a class="el" href="classZero_1_1MedioSoporte.html">MedioSoporte</a> *)</td></tr>
+<tr class="memdesc:a1f36b80d872ac967e159aa3a7f43180e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe la info del mnemo al bytecode.  <a href="#a1f36b80d872ac967e159aa3a7f43180e">Más...</a><br/></td></tr>
+<tr class="separator:a1f36b80d872ac967e159aa3a7f43180e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2d8fdb4ee1abc5eecf43452938df55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#afd2d8fdb4ee1abc5eecf43452938df55">lee</a> (<a class="el" href="classZero_1_1MedioSoporte.html">MedioSoporte</a> *, bool leeMnemo=false)</td></tr>
+<tr class="memdesc:afd2d8fdb4ee1abc5eecf43452938df55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee la info del mnemo del bytecode.  <a href="#afd2d8fdb4ee1abc5eecf43452938df55">Más...</a><br/></td></tr>
+<tr class="separator:afd2d8fdb4ee1abc5eecf43452938df55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ba77c92ed08191a2b5314ddec49098"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a40ba77c92ed08191a2b5314ddec49098">listar</a> (bool bello=false)</td></tr>
+<tr class="memdesc:a40ba77c92ed08191a2b5314ddec49098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la info del mnemo en formato ensamblador.  <a href="#a40ba77c92ed08191a2b5314ddec49098">Más...</a><br/></td></tr>
+<tr class="separator:a40ba77c92ed08191a2b5314ddec49098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb7e03c1c0767303d1a2520c8397052"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a2bb7e03c1c0767303d1a2520c8397052">getFormatoXML</a> ()</td></tr>
+<tr class="separator:a2bb7e03c1c0767303d1a2520c8397052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Instr"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Instr')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Instr.html">Zero::Instr</a></td></tr>
+<tr class="memitem:a9ef7f378609e09d1194ffca2fc871978 inherit pub_methods_classZero_1_1Instr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Instr.html#a9ef7f378609e09d1194ffca2fc871978">Instr</a> (int nm)</td></tr>
+<tr class="separator:a9ef7f378609e09d1194ffca2fc871978 inherit pub_methods_classZero_1_1Instr"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34bf3baafc20e135f4b0673000cd0a0 inherit pub_methods_classZero_1_1Instr"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Instr.html#ad34bf3baafc20e135f4b0673000cd0a0">~Instr</a> ()</td></tr>
+<tr class="separator:ad34bf3baafc20e135f4b0673000cd0a0 inherit pub_methods_classZero_1_1Instr"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classZero_1_1Mnemotecnico"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classZero_1_1Mnemotecnico')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classZero_1_1Mnemotecnico.html">Zero::Mnemotecnico</a></td></tr>
+<tr class="memitem:a517a1afdcedc10511ede6dbfa2da2230 inherit pub_methods_classZero_1_1Mnemotecnico"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Mnemotecnico.html#a517a1afdcedc10511ede6dbfa2da2230">Mnemotecnico</a> (int nm)</td></tr>
+<tr class="separator:a517a1afdcedc10511ede6dbfa2da2230 inherit pub_methods_classZero_1_1Mnemotecnico"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a9e23ac1dc49675c1e165f7a6a2d74 inherit pub_methods_classZero_1_1Mnemotecnico"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Mnemotecnico.html#ac4a9e23ac1dc49675c1e165f7a6a2d74">~Mnemotecnico</a> ()</td></tr>
+<tr class="separator:ac4a9e23ac1dc49675c1e165f7a6a2d74 inherit pub_methods_classZero_1_1Mnemotecnico"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:a44f7bc0dba0dceb3c5b0f473f07bc783"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a44f7bc0dba0dceb3c5b0f473f07bc783">compilar</a> (<a class="el" href="classZero_1_1AnalizadorLexico.html">AnalizadorLexico</a> &amp;)</td></tr>
+<tr class="memdesc:a44f7bc0dba0dceb3c5b0f473f07bc783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toma la info del mnemo de una cadena, en formato ensamblador, y la compila.  <a href="#a44f7bc0dba0dceb3c5b0f473f07bc783">Más...</a><br/></td></tr>
+<tr class="separator:a44f7bc0dba0dceb3c5b0f473f07bc783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:aeb72543a11ca4dee1d4e605b4c701001"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#aeb72543a11ca4dee1d4e605b4c701001">mensajeNulo</a> = &quot;&quot;</td></tr>
+<tr class="separator:aeb72543a11ca4dee1d4e605b4c701001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc3017825c62bea6c812d52eb30ffd1"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a5bc3017825c62bea6c812d52eb30ffd1">formatoXML</a> = &quot;throw&quot;</td></tr>
+<tr class="separator:a5bc3017825c62bea6c812d52eb30ffd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057f3e6cf814115e69730a4da51569be"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a057f3e6cf814115e69730a4da51569be">mnemoStr</a> = &quot;TRW&quot;</td></tr>
+<tr class="separator:a057f3e6cf814115e69730a4da51569be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:ad66083742f9e55ac232b50d0d944ccc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a></td></tr>
+<tr class="separator:ad66083742f9e55ac232b50d0d944ccc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fe2f7c415f9b5dfb129c25469b2419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classZero_1_1Nombre.html">Nombre</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a></td></tr>
+<tr class="separator:a55fe2f7c415f9b5dfb129c25469b2419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_attribs_classZero_1_1Mnemotecnico"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classZero_1_1Mnemotecnico')"><img src="closed.png" alt="-"/>&#160;Atributos protegidos heredados desde <a class="el" href="classZero_1_1Mnemotecnico.html">Zero::Mnemotecnico</a></td></tr>
+<tr class="memitem:aa3a46e2c27927a60842824e53a8b4b94 inherit pro_attribs_classZero_1_1Mnemotecnico"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceZero.html#adb36c7fa41fa203df15b201d2e8b6d68">UINT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZero_1_1Mnemotecnico.html#aa3a46e2c27927a60842824e53a8b4b94">mnemo</a></td></tr>
+<tr class="separator:aa3a46e2c27927a60842824e53a8b4b94 inherit pro_attribs_classZero_1_1Mnemotecnico"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00769">769</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="aa513324fc7bf8f4983054bbe71d493ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::NMTrw::NMTrw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03391">3391</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l03509">compilar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l03391"></a><span class="lineno"> 3391</span>&#160;             : <a class="code" href="classZero_1_1Instr.html#a9ef7f378609e09d1194ffca2fc871978">Instr</a>(<a class="code" href="namespaceZero.html#a803d148e035b8d2cee211da86a502eb7">NTRW</a>), <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>(NULL), <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>(NULL)</div>
+<div class="line"><a name="l03392"></a><span class="lineno"> 3392</span>&#160;{</div>
+<div class="line"><a name="l03393"></a><span class="lineno"> 3393</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3fed0f4b8de4536d1b25f9a5bd87d0a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::NMTrw::NMTrw </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>m</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03395">3395</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8cpp_source.html#l00385">Zero::Nombre::creaNombreAdecuado()</a>, <a class="el" href="mnemos_8h_source.html#l00770">ref</a> y <a class="el" href="mnemos_8h_source.html#l00771">refMensaje</a>.</p>
+<div class="fragment"><div class="line"><a name="l03396"></a><span class="lineno"> 3396</span>&#160;        : <a class="code" href="classZero_1_1Instr.html#a9ef7f378609e09d1194ffca2fc871978">Instr</a>(<a class="code" href="namespaceZero.html#a803d148e035b8d2cee211da86a502eb7">NTRW</a>), <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>(NULL)</div>
+<div class="line"><a name="l03397"></a><span class="lineno"> 3397</span>&#160;{</div>
+<div class="line"><a name="l03398"></a><span class="lineno"> 3398</span>&#160;    <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a> = <a class="code" href="classZero_1_1Nombre.html#aeb71e4c7353966bf53a5cca485376731">Nombre::creaNombreAdecuado</a>( r );</div>
+<div class="line"><a name="l03399"></a><span class="lineno"> 3399</span>&#160;</div>
+<div class="line"><a name="l03400"></a><span class="lineno"> 3400</span>&#160;        <span class="keywordflow">if</span> ( !m.empty() ) {</div>
+<div class="line"><a name="l03401"></a><span class="lineno"> 3401</span>&#160;            <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> = <a class="code" href="classZero_1_1Nombre.html#aeb71e4c7353966bf53a5cca485376731">Nombre::creaNombreAdecuado</a>( m);</div>
+<div class="line"><a name="l03402"></a><span class="lineno"> 3402</span>&#160;        }</div>
+<div class="line"><a name="l03403"></a><span class="lineno"> 3403</span>&#160;</div>
+<div class="line"><a name="l03404"></a><span class="lineno"> 3404</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a> == NULL ) {</div>
+<div class="line"><a name="l03405"></a><span class="lineno"> 3405</span>&#160;        <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;construyendo NMTrw, ref&quot;</span> );</div>
+<div class="line"><a name="l03406"></a><span class="lineno"> 3406</span>&#160;    }</div>
+<div class="line"><a name="l03407"></a><span class="lineno"> 3407</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a538ae3dc7641b408fa531a7b9795b03c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::NMTrw::~NMTrw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00779">779</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;{ <span class="keyword">delete</span> <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>; <span class="keyword">delete</span> <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa7f0518148d51b82733bb4f5c2f0260f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Zero::NMTrw::NMTrw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03409">3409</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="classZero_1_1Nombre.html#a18edb4e8b7ab64618931afab8dbabf06">Zero::Nombre::copia()</a>, <a class="el" href="mnemos_8h_source.html#l00770">ref</a> y <a class="el" href="mnemos_8h_source.html#l00771">refMensaje</a>.</p>
+<div class="fragment"><div class="line"><a name="l03409"></a><span class="lineno"> 3409</span>&#160;                           : <a class="code" href="classZero_1_1Instr.html#a9ef7f378609e09d1194ffca2fc871978">Instr</a>(<a class="code" href="namespaceZero.html#a803d148e035b8d2cee211da86a502eb7">NTRW</a>), <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>(NULL)</div>
+<div class="line"><a name="l03410"></a><span class="lineno"> 3410</span>&#160;{</div>
+<div class="line"><a name="l03411"></a><span class="lineno"> 3411</span>&#160;        <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a> = x.ref-&gt;<a class="code" href="classZero_1_1Nombre.html#a18edb4e8b7ab64618931afab8dbabf06">copia</a>();</div>
+<div class="line"><a name="l03412"></a><span class="lineno"> 3412</span>&#160;</div>
+<div class="line"><a name="l03413"></a><span class="lineno"> 3413</span>&#160;    <span class="keywordflow">if</span> ( x.refMensaje != NULL ) {</div>
+<div class="line"><a name="l03414"></a><span class="lineno"> 3414</span>&#160;            <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> = x.refMensaje-&gt;<a class="code" href="classZero_1_1Nombre.html#a18edb4e8b7ab64618931afab8dbabf06">copia</a>();</div>
+<div class="line"><a name="l03415"></a><span class="lineno"> 3415</span>&#160;    }</div>
+<div class="line"><a name="l03416"></a><span class="lineno"> 3416</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a44f7bc0dba0dceb3c5b0f473f07bc783"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1NMTrw.html">NMTrw</a> * Zero::NMTrw::compilar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1AnalizadorLexico.html">AnalizadorLexico</a> &amp;&#160;</td>
+          <td class="paramname"><em>lex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toma la info del mnemo de una cadena, en formato ensamblador, y la compila. </p>
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03509">3509</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8cpp_source.html#l00658">Zero::NombreIdentificador::compruebaId()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00054">Zero::AnalizadorLexico::esEol()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00097">Zero::AnalizadorLexico::getCaracterActual()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00030">Zero::AnalizadorLexico::getToken()</a>, <a class="el" href="analizadorlexico_8h_source.html#l00043">Zero::AnalizadorLexico::getTokenActual()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00325">Zero::AnalizadorLexico::maysCnvt()</a>, <a class="el" href="mnemos_8h_source.html#l00775">mnemoStr</a>, <a class="el" href="mnemos_8cpp_source.html#l03391">NMTrw()</a>, <a class="el" href="analizadorlexico_8cpp_source.html#l00048">Zero::AnalizadorLexico::pasaSoloEsp()</a> y <a class="el" href="mnemos_8h_source.html#l00770">ref</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l00257">Zero::Mnemotecnico::compilar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l03511"></a><span class="lineno"> 3511</span>&#160;{</div>
+<div class="line"><a name="l03512"></a><span class="lineno"> 3512</span>&#160;    std::string <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>;</div>
+<div class="line"><a name="l03513"></a><span class="lineno"> 3513</span>&#160;    <a class="code" href="classZero_1_1NMTrw.html#aa513324fc7bf8f4983054bbe71d493ba">NMTrw</a> * toret = NULL;</div>
+<div class="line"><a name="l03514"></a><span class="lineno"> 3514</span>&#160;</div>
+<div class="line"><a name="l03515"></a><span class="lineno"> 3515</span>&#160;    <a class="code" href="classZero_1_1AnalizadorLexico.html#af0e9afa7693dab883684921286a9c6ee">AnalizadorLexico::maysCnvt</a>( lex.getToken() );</div>
+<div class="line"><a name="l03516"></a><span class="lineno"> 3516</span>&#160;    <span class="keywordflow">if</span> ( lex.getTokenActual() == <a class="code" href="classZero_1_1NMTrw.html#a057f3e6cf814115e69730a4da51569be">mnemoStr</a> )</div>
+<div class="line"><a name="l03517"></a><span class="lineno"> 3517</span>&#160;    {</div>
+<div class="line"><a name="l03518"></a><span class="lineno"> 3518</span>&#160;        lex.getToken();</div>
+<div class="line"><a name="l03519"></a><span class="lineno"> 3519</span>&#160;</div>
+<div class="line"><a name="l03520"></a><span class="lineno"> 3520</span>&#160;        <span class="keywordflow">if</span> ( lex.getTokenActual().empty() ) {</div>
+<div class="line"><a name="l03521"></a><span class="lineno"> 3521</span>&#160;            <span class="keywordflow">throw</span> ESintxIdNoValido( std::string(</div>
+<div class="line"><a name="l03522"></a><span class="lineno"> 3522</span>&#160;                    <span class="stringliteral">&quot;compilando &quot;</span> + <a class="code" href="classZero_1_1NMTrw.html#a057f3e6cf814115e69730a4da51569be">mnemoStr</a> + <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l03523"></a><span class="lineno"> 3523</span>&#160;                    <span class="stringliteral">&quot;se esperaba referencia de objeto&quot;</span></div>
+<div class="line"><a name="l03524"></a><span class="lineno"> 3524</span>&#160;                    <span class="stringliteral">&quot; a lanzar como &#39;exception&#39;&quot;</span> ).c_str()</div>
+<div class="line"><a name="l03525"></a><span class="lineno"> 3525</span>&#160;            );</div>
+<div class="line"><a name="l03526"></a><span class="lineno"> 3526</span>&#160;        }</div>
+<div class="line"><a name="l03527"></a><span class="lineno"> 3527</span>&#160;</div>
+<div class="line"><a name="l03528"></a><span class="lineno"> 3528</span>&#160;        <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1NombreIdentificador.html#af7a7675f8986b08f9ac03dd5a7e0df85">NombreIdentificador::compruebaId</a>( lex.getTokenActual() ) ) {</div>
+<div class="line"><a name="l03529"></a><span class="lineno"> 3529</span>&#160;            <span class="keywordflow">throw</span> ESintxIdNoValido( std::string(</div>
+<div class="line"><a name="l03530"></a><span class="lineno"> 3530</span>&#160;                        <span class="stringliteral">&quot;compilando &quot;</span> + <a class="code" href="classZero_1_1NMTrw.html#a057f3e6cf814115e69730a4da51569be">mnemoStr</a> + <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a name="l03531"></a><span class="lineno"> 3531</span>&#160;                        <span class="stringliteral">&quot;se esperaba referencia de objeto&quot;</span></div>
+<div class="line"><a name="l03532"></a><span class="lineno"> 3532</span>&#160;                        <span class="stringliteral">&quot; a lanzar como &#39;exception&#39;, no: &quot;</span></div>
+<div class="line"><a name="l03533"></a><span class="lineno"> 3533</span>&#160;                        + lex.getTokenActual() ).c_str()</div>
+<div class="line"><a name="l03534"></a><span class="lineno"> 3534</span>&#160;            );</div>
+<div class="line"><a name="l03535"></a><span class="lineno"> 3535</span>&#160;        }</div>
+<div class="line"><a name="l03536"></a><span class="lineno"> 3536</span>&#160;</div>
+<div class="line"><a name="l03537"></a><span class="lineno"> 3537</span>&#160;        ref = lex.getTokenActual();</div>
+<div class="line"><a name="l03538"></a><span class="lineno"> 3538</span>&#160;        lex.pasaSoloEsp();</div>
+<div class="line"><a name="l03539"></a><span class="lineno"> 3539</span>&#160;</div>
+<div class="line"><a name="l03540"></a><span class="lineno"> 3540</span>&#160;        <span class="comment">// Si hay mensaje, es de un tipo, sino, del otro</span></div>
+<div class="line"><a name="l03541"></a><span class="lineno"> 3541</span>&#160;        <span class="comment">// El mensaje es en realidad una referencia a un objeto String</span></div>
+<div class="line"><a name="l03542"></a><span class="lineno"> 3542</span>&#160;        <span class="keywordflow">if</span> ( lex.getCaracterActual() != <span class="charliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l03543"></a><span class="lineno"> 3543</span>&#160;          &amp;&amp; !lex.esEol()  )</div>
+<div class="line"><a name="l03544"></a><span class="lineno"> 3544</span>&#160;        {</div>
+<div class="line"><a name="l03545"></a><span class="lineno"> 3545</span>&#160;            lex.getToken();</div>
+<div class="line"><a name="l03546"></a><span class="lineno"> 3546</span>&#160;</div>
+<div class="line"><a name="l03547"></a><span class="lineno"> 3547</span>&#160;            <span class="keywordflow">if</span> ( !<a class="code" href="classZero_1_1NombreIdentificador.html#af7a7675f8986b08f9ac03dd5a7e0df85">NombreIdentificador::compruebaId</a>(</div>
+<div class="line"><a name="l03548"></a><span class="lineno"> 3548</span>&#160;                            lex.getTokenActual() ))</div>
+<div class="line"><a name="l03549"></a><span class="lineno"> 3549</span>&#160;            {</div>
+<div class="line"><a name="l03550"></a><span class="lineno"> 3550</span>&#160;                <span class="keywordflow">throw</span> ESintxIdNoValido( lex.getTokenActual().c_str() );</div>
+<div class="line"><a name="l03551"></a><span class="lineno"> 3551</span>&#160;            }</div>
+<div class="line"><a name="l03552"></a><span class="lineno"> 3552</span>&#160;</div>
+<div class="line"><a name="l03553"></a><span class="lineno"> 3553</span>&#160;            toret = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1NMTrw.html#aa513324fc7bf8f4983054bbe71d493ba">NMTrw</a>( ref, lex.getTokenActual() );</div>
+<div class="line"><a name="l03554"></a><span class="lineno"> 3554</span>&#160;        } <span class="keywordflow">else</span> toret = <span class="keyword">new</span>(std::nothrow) <a class="code" href="classZero_1_1NMTrw.html#aa513324fc7bf8f4983054bbe71d493ba">NMTrw</a>( ref );</div>
+<div class="line"><a name="l03555"></a><span class="lineno"> 3555</span>&#160;</div>
+<div class="line"><a name="l03556"></a><span class="lineno"> 3556</span>&#160;        <span class="keywordflow">if</span> ( toret == NULL ) {</div>
+<div class="line"><a name="l03557"></a><span class="lineno"> 3557</span>&#160;            <span class="keywordflow">throw</span> ENoHayMemoria( <span class="stringliteral">&quot;compilando NMTrw&quot;</span> );</div>
+<div class="line"><a name="l03558"></a><span class="lineno"> 3558</span>&#160;        }</div>
+<div class="line"><a name="l03559"></a><span class="lineno"> 3559</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">throw</span> ESintxMnemoInvalido( lex.getTokenActual().c_str() );</div>
+<div class="line"><a name="l03560"></a><span class="lineno"> 3560</span>&#160;</div>
+<div class="line"><a name="l03561"></a><span class="lineno"> 3561</span>&#160;    <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l03562"></a><span class="lineno"> 3562</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1f36b80d872ac967e159aa3a7f43180e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::NMTrw::escribe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1MedioSoporte.html">MedioSoporte</a> *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escribe la info del mnemo al bytecode. </p>
+
+<p>Reimplementado de <a class="el" href="classZero_1_1Mnemotecnico.html#a1a7935e478dddac4d84c6d4399d22c68">Zero::Mnemotecnico</a>.</p>
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03424">3424</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="classZero_1_1Nombre.html#a2d7ee5b6cd6e665230e18d500c804f7b">Zero::Nombre::escribe()</a>, <a class="el" href="mnemos_8cpp_source.html#l00245">Zero::Mnemotecnico::escribe()</a>, <a class="el" href="classZero_1_1MedioSoporte.html#a269df9f9babdd4576758e3d3227163bc">Zero::MedioSoporte::escribeReferencia()</a>, <a class="el" href="mnemos_8h_source.html#l00770">ref</a>, <a class="el" href="mnemos_8h_source.html#l00771">refMensaje</a> y <a class="el" href="mnemos_8cpp_source.html#l03419">verifica()</a>.</p>
+<div class="fragment"><div class="line"><a name="l03426"></a><span class="lineno"> 3426</span>&#160;{</div>
+<div class="line"><a name="l03427"></a><span class="lineno"> 3427</span>&#160;    <a class="code" href="classZero_1_1NMTrw.html#a96a55444c934e74e924e2b3cb113eccd">verifica</a>();</div>
+<div class="line"><a name="l03428"></a><span class="lineno"> 3428</span>&#160;</div>
+<div class="line"><a name="l03429"></a><span class="lineno"> 3429</span>&#160;        <a class="code" href="classZero_1_1Mnemotecnico.html#a1a7935e478dddac4d84c6d4399d22c68">Mnemotecnico::escribe</a>( m );</div>
+<div class="line"><a name="l03430"></a><span class="lineno"> 3430</span>&#160;        <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#a2d7ee5b6cd6e665230e18d500c804f7b">escribe</a>( m );</div>
+<div class="line"><a name="l03431"></a><span class="lineno"> 3431</span>&#160;</div>
+<div class="line"><a name="l03432"></a><span class="lineno"> 3432</span>&#160;        <span class="comment">// El identificador del objeto del mensaje se escribe s�lo si existe</span></div>
+<div class="line"><a name="l03433"></a><span class="lineno"> 3433</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> != NULL) {</div>
+<div class="line"><a name="l03434"></a><span class="lineno"> 3434</span>&#160;               <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#a2d7ee5b6cd6e665230e18d500c804f7b">escribe</a>( m );</div>
+<div class="line"><a name="l03435"></a><span class="lineno"> 3435</span>&#160;        }</div>
+<div class="line"><a name="l03436"></a><span class="lineno"> 3436</span>&#160;        <span class="keywordflow">else</span> m-&gt;escribeReferencia( <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l03437"></a><span class="lineno"> 3437</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2bb7e03c1c0767303d1a2520c8397052"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Zero::NMTrw::getFormatoXML </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementa <a class="el" href="classZero_1_1Mnemotecnico.html#afb154e61ea0760f04a056e23cfd05bf3">Zero::Mnemotecnico</a>.</p>
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03493">3493</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00774">formatoXML</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00770">ref</a> y <a class="el" href="mnemos_8h_source.html#l00771">refMensaje</a>.</p>
+<div class="fragment"><div class="line"><a name="l03494"></a><span class="lineno"> 3494</span>&#160;{</div>
+<div class="line"><a name="l03495"></a><span class="lineno"> 3495</span>&#160;      std::string toret;</div>
+<div class="line"><a name="l03496"></a><span class="lineno"> 3496</span>&#160;</div>
+<div class="line"><a name="l03497"></a><span class="lineno"> 3497</span>&#160;      toret += <span class="charliteral">&#39;&lt;&#39;</span>;</div>
+<div class="line"><a name="l03498"></a><span class="lineno"> 3498</span>&#160;      toret += <a class="code" href="classZero_1_1NMTrw.html#a5bc3017825c62bea6c812d52eb30ffd1">formatoXML</a>;</div>
+<div class="line"><a name="l03499"></a><span class="lineno"> 3499</span>&#160;      toret += <span class="stringliteral">&quot; reference=\&quot;&quot;</span>;</div>
+<div class="line"><a name="l03500"></a><span class="lineno"> 3500</span>&#160;      toret += <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">getNombre</a>();</div>
+<div class="line"><a name="l03501"></a><span class="lineno"> 3501</span>&#160;      toret += <span class="stringliteral">&quot;\&quot; messageReference=\&quot;&quot;</span>;</div>
+<div class="line"><a name="l03502"></a><span class="lineno"> 3502</span>&#160;      toret += <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">getNombre</a>();</div>
+<div class="line"><a name="l03503"></a><span class="lineno"> 3503</span>&#160;      toret += <span class="stringliteral">&quot;\&quot;/&gt;&quot;</span>;</div>
+<div class="line"><a name="l03504"></a><span class="lineno"> 3504</span>&#160;</div>
+<div class="line"><a name="l03505"></a><span class="lineno"> 3505</span>&#160;      <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l03506"></a><span class="lineno"> 3506</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a42204d42681389a6cebd96dfef3e5a83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Zero::NMTrw::getMensaje </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00784">784</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l03464">listar()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                                               {</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> != NULL)</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">getNombre</a>();</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                <span class="keywordflow">else</span>    <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#aeb72543a11ca4dee1d4e605b4c701001">mensajeNulo</a>;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0796338defc2ff938895983108331e28"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Zero::NMTrw::getNombre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00783">783</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Hace referencia a <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">getNombre</a>(); };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2eedfeb11796f190a65cb016711d6e72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Nombre.html">Nombre</a>*&amp; Zero::NMTrw::getReferencia </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00790">790</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00655">Zero::OptRedccOp::aplicarCambioTrw()</a> y <a class="el" href="optimizador_8cpp_source.html#l00825">Zero::OptRedccOp::buscaSigRegistroTrw()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3b0458ac2eaf877d82e3dfece6c36aef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Nombre.html">Nombre</a>* Zero::NMTrw::getReferencia </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00793">793</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa1df0af35e71459a92b4fa4b6321c00a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Nombre.html">Nombre</a>*&amp; Zero::NMTrw::getReferenciaMensaje </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00791">791</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="optimizador_8cpp_source.html#l00655">Zero::OptRedccOp::aplicarCambioTrw()</a> y <a class="el" href="optimizador_8cpp_source.html#l00825">Zero::OptRedccOp::buscaSigRegistroTrw()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad1573452de6fa5ecd16d6cb87ed42bab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Nombre.html">Nombre</a>* Zero::NMTrw::getReferenciaMensaje </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00794">794</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afd2d8fdb4ee1abc5eecf43452938df55"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::NMTrw::lee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classZero_1_1MedioSoporte.html">MedioSoporte</a> *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>leeMnemo</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lee la info del mnemo del bytecode. </p>
+
+<p>Reimplementado de <a class="el" href="classZero_1_1Mnemotecnico.html#a3e43aefbc3e50015973e21254c8bfcbd">Zero::Mnemotecnico</a>.</p>
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03440">3440</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8cpp_source.html#l00362">Zero::Nombre::lee()</a>, <a class="el" href="mnemos_8cpp_source.html#l00251">Zero::Mnemotecnico::lee()</a>, <a class="el" href="mnemos_8h_source.html#l00770">ref</a>, <a class="el" href="mnemos_8h_source.html#l00771">refMensaje</a> y <a class="el" href="mnemos_8cpp_source.html#l03419">verifica()</a>.</p>
+<div class="fragment"><div class="line"><a name="l03442"></a><span class="lineno"> 3442</span>&#160;{</div>
+<div class="line"><a name="l03443"></a><span class="lineno"> 3443</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>;</div>
+<div class="line"><a name="l03444"></a><span class="lineno"> 3444</span>&#160;        <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a> = <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> = NULL;</div>
+<div class="line"><a name="l03445"></a><span class="lineno"> 3445</span>&#160;</div>
+<div class="line"><a name="l03446"></a><span class="lineno"> 3446</span>&#160;    <span class="keywordflow">if</span> ( leeMnemo ) {</div>
+<div class="line"><a name="l03447"></a><span class="lineno"> 3447</span>&#160;            <a class="code" href="classZero_1_1Mnemotecnico.html#a3e43aefbc3e50015973e21254c8bfcbd">Mnemotecnico::lee</a>( m );</div>
+<div class="line"><a name="l03448"></a><span class="lineno"> 3448</span>&#160;    }</div>
+<div class="line"><a name="l03449"></a><span class="lineno"> 3449</span>&#160;</div>
+<div class="line"><a name="l03450"></a><span class="lineno"> 3450</span>&#160;        <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a> = <a class="code" href="classZero_1_1Nombre.html#ae840a086feabf82fda162675395b81b6" title="Lee un Nombre, puede ser bien un registro o una referencia.">Nombre::lee</a>( m );</div>
+<div class="line"><a name="l03451"></a><span class="lineno"> 3451</span>&#160;</div>
+<div class="line"><a name="l03452"></a><span class="lineno"> 3452</span>&#160;        <span class="comment">// Leer el mensaje seg�n exista o no</span></div>
+<div class="line"><a name="l03453"></a><span class="lineno"> 3453</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l03454"></a><span class="lineno"> 3454</span>&#160;            <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> = <a class="code" href="classZero_1_1Nombre.html#ae840a086feabf82fda162675395b81b6" title="Lee un Nombre, puede ser bien un registro o una referencia.">Nombre::lee</a>( m );</div>
+<div class="line"><a name="l03455"></a><span class="lineno"> 3455</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> ESintxIdNoValido &amp;e) {</div>
+<div class="line"><a name="l03456"></a><span class="lineno"> 3456</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a>;</div>
+<div class="line"><a name="l03457"></a><span class="lineno"> 3457</span>&#160;        <a class="code" href="classZero_1_1NMTrw.html#a55fe2f7c415f9b5dfb129c25469b2419">refMensaje</a> = NULL;</div>
+<div class="line"><a name="l03458"></a><span class="lineno"> 3458</span>&#160;    }</div>
+<div class="line"><a name="l03459"></a><span class="lineno"> 3459</span>&#160;</div>
+<div class="line"><a name="l03460"></a><span class="lineno"> 3460</span>&#160;    <a class="code" href="classZero_1_1NMTrw.html#a96a55444c934e74e924e2b3cb113eccd">verifica</a>();</div>
+<div class="line"><a name="l03461"></a><span class="lineno"> 3461</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a40ba77c92ed08191a2b5314ddec49098"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Zero::NMTrw::listar </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bello</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Devuelve la info del mnemo en formato ensamblador. </p>
+
+<p>Implementa <a class="el" href="classZero_1_1Mnemotecnico.html#a24604920a15c719a52b49e4fba8e8a30">Zero::Mnemotecnico</a>.</p>
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03464">3464</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Hace referencia a <a class="el" href="mnemos_8h_source.html#l00774">formatoXML</a>, <a class="el" href="mnemos_8h_source.html#l00784">getMensaje()</a>, <a class="el" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">Zero::Nombre::getNombre()</a>, <a class="el" href="mnemos_8h_source.html#l00775">mnemoStr</a> y <a class="el" href="mnemos_8h_source.html#l00770">ref</a>.</p>
+
+<p>Referenciado por <a class="el" href="zma_8cpp_source.html#l00536">MacroEnsamZ::compNMTrw()</a>.</p>
+<div class="fragment"><div class="line"><a name="l03466"></a><span class="lineno"> 3466</span>&#160;{</div>
+<div class="line"><a name="l03467"></a><span class="lineno"> 3467</span>&#160;      std::string toret;</div>
+<div class="line"><a name="l03468"></a><span class="lineno"> 3468</span>&#160;</div>
+<div class="line"><a name="l03469"></a><span class="lineno"> 3469</span>&#160;      <span class="keywordflow">if</span> (!bello) {</div>
+<div class="line"><a name="l03470"></a><span class="lineno"> 3470</span>&#160;        toret = <a class="code" href="classZero_1_1NMTrw.html#a057f3e6cf814115e69730a4da51569be">mnemoStr</a>;</div>
+<div class="line"><a name="l03471"></a><span class="lineno"> 3471</span>&#160;</div>
+<div class="line"><a name="l03472"></a><span class="lineno"> 3472</span>&#160;        toret += <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l03473"></a><span class="lineno"> 3473</span>&#160;        toret += <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">getNombre</a>();</div>
+<div class="line"><a name="l03474"></a><span class="lineno"> 3474</span>&#160;</div>
+<div class="line"><a name="l03475"></a><span class="lineno"> 3475</span>&#160;        toret += <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l03476"></a><span class="lineno"> 3476</span>&#160;        toret += <a class="code" href="classZero_1_1NMTrw.html#a42204d42681389a6cebd96dfef3e5a83">getMensaje</a>();</div>
+<div class="line"><a name="l03477"></a><span class="lineno"> 3477</span>&#160;      }</div>
+<div class="line"><a name="l03478"></a><span class="lineno"> 3478</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l03479"></a><span class="lineno"> 3479</span>&#160;        toret = <a class="code" href="classZero_1_1NMTrw.html#a5bc3017825c62bea6c812d52eb30ffd1">formatoXML</a>;</div>
+<div class="line"><a name="l03480"></a><span class="lineno"> 3480</span>&#160;</div>
+<div class="line"><a name="l03481"></a><span class="lineno"> 3481</span>&#160;        toret += <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l03482"></a><span class="lineno"> 3482</span>&#160;        toret += <a class="code" href="classZero_1_1NMTrw.html#ad66083742f9e55ac232b50d0d944ccc3">ref</a>-&gt;<a class="code" href="classZero_1_1Nombre.html#af8b75731e27717ac408002aba64127c3">getNombre</a>();</div>
+<div class="line"><a name="l03483"></a><span class="lineno"> 3483</span>&#160;        toret += <span class="charliteral">&#39;(&#39;</span>;</div>
+<div class="line"><a name="l03484"></a><span class="lineno"> 3484</span>&#160;        toret += <a class="code" href="classZero_1_1NMTrw.html#a42204d42681389a6cebd96dfef3e5a83">getMensaje</a>();</div>
+<div class="line"><a name="l03485"></a><span class="lineno"> 3485</span>&#160;        toret += <span class="charliteral">&#39;)&#39;</span>;</div>
+<div class="line"><a name="l03486"></a><span class="lineno"> 3486</span>&#160;      }</div>
+<div class="line"><a name="l03487"></a><span class="lineno"> 3487</span>&#160;</div>
+<div class="line"><a name="l03488"></a><span class="lineno"> 3488</span>&#160;</div>
+<div class="line"><a name="l03489"></a><span class="lineno"> 3489</span>&#160;      <span class="keywordflow">return</span> toret;</div>
+<div class="line"><a name="l03490"></a><span class="lineno"> 3490</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a96a55444c934e74e924e2b3cb113eccd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zero::NMTrw::verifica </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="classZero_1_1ECompilacion.html">ECompilacion</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementa <a class="el" href="classZero_1_1Instr.html#af90a8708fd9bc9fb4ead687d995b3bdf">Zero::Instr</a>.</p>
+
+<p>Definición en la línea <a class="el" href="mnemos_8cpp_source.html#l03419">3419</a> del archivo <a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l03424">escribe()</a> y <a class="el" href="mnemos_8cpp_source.html#l03440">lee()</a>.</p>
+<div class="fragment"><div class="line"><a name="l03420"></a><span class="lineno"> 3420</span>&#160;{</div>
+<div class="line"><a name="l03421"></a><span class="lineno"> 3421</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a5bc3017825c62bea6c812d52eb30ffd1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Zero::NMTrw::formatoXML = &quot;throw&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00774">774</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l03493">getFormatoXML()</a>, <a class="el" href="mnemos_8cpp_source.html#l03464">listar()</a> y <a class="el" href="zma_8cpp_source.html#l00827">MacroEnsamZ::procesaLinea()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb72543a11ca4dee1d4e605b4c701001"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Zero::NMTrw::mensajeNulo = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00773">773</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a057f3e6cf814115e69730a4da51569be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Zero::NMTrw::mnemoStr = &quot;TRW&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00775">775</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l00257">Zero::Mnemotecnico::compilar()</a>, <a class="el" href="mnemos_8cpp_source.html#l03509">compilar()</a>, <a class="el" href="mnemos_8cpp_source.html#l03464">listar()</a> y <a class="el" href="za_8cpp_source.html#l00264">EnsamZ::procesaLinea()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad66083742f9e55ac232b50d0d944ccc3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Nombre.html">Nombre</a>* Zero::NMTrw::ref</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00770">770</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l03509">compilar()</a>, <a class="el" href="mnemos_8cpp_source.html#l03424">escribe()</a>, <a class="el" href="mnemos_8cpp_source.html#l03493">getFormatoXML()</a>, <a class="el" href="mnemos_8cpp_source.html#l03440">lee()</a>, <a class="el" href="mnemos_8cpp_source.html#l03464">listar()</a> y <a class="el" href="mnemos_8cpp_source.html#l03395">NMTrw()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a55fe2f7c415f9b5dfb129c25469b2419"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classZero_1_1Nombre.html">Nombre</a>* Zero::NMTrw::refMensaje</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="mnemos_8h_source.html#l00771">771</a> del archivo <a class="el" href="mnemos_8h_source.html">mnemos.h</a>.</p>
+
+<p>Referenciado por <a class="el" href="mnemos_8cpp_source.html#l03424">escribe()</a>, <a class="el" href="mnemos_8cpp_source.html#l03493">getFormatoXML()</a>, <a class="el" href="mnemos_8cpp_source.html#l03440">lee()</a> y <a class="el" href="mnemos_8cpp_source.html#l03395">NMTrw()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="mnemos_8h_source.html">mnemos.h</a></li>
+<li><a class="el" href="mnemos_8cpp_source.html">mnemos.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:31 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

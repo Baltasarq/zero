@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Zero: Fichero Fuente analizadorlexico.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Zero
+   </div>
+   <div id="projectbrief">Zero virtual machine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>PÃ¡gina&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">analizadorlexico.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="analizadorlexico_8h.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// analizadorlexico.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">    Cabecera del analizador léxico.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    jbgarcia@uvigo.es</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ANALIZADOR_LEXICO_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ANALIZADOR_LEXICO_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>Zero {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/***</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">    Clase AnalizadorLexico.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    Esta clase es necesaria para compilar ensamblador.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    Hay que tener en cuenta que la máquina virtual debe</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">    poder ensamblar código en tiempo de compilación.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classZero_1_1AnalizadorLexico.html">AnalizadorLexico</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#a60374fc93f6e7550743ff56b1186ad6b">   24</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a60374fc93f6e7550743ff56b1186ad6b">buffer</a>[];</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">   25</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#ab580b9b511d99080c0517539427d7770">   26</a></span>&#160;    std::string *<a class="code" href="classZero_1_1AnalizadorLexico.html#ab580b9b511d99080c0517539427d7770">txt</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#a840622247201a77308f3e40eef1a50b8">   27</a></span>&#160;    std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#a840622247201a77308f3e40eef1a50b8">token</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ff">   31</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ff" title="Tipos de literales.">TipoToken</a> { <a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ffae37a86217433ac1d4f359e2b24908148">NADA</a>, <a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ffa7f72f60a22b19311ed6763a2618c91d3">IDENTIFICADOR</a>, <a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ffad2d41eadd27258502ca763f6ab9340e8">LITNUMERICO</a>, <a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ffaf59bef6d2e7a11782898467758f97422">LITCADENA</a> };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#aaeb87f57060e878a633e94e516448a7f">   34</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#aaeb87f57060e878a633e94e516448a7f" title="Tipo de avance.">Avance</a> { <a class="code" href="classZero_1_1AnalizadorLexico.html#aaeb87f57060e878a633e94e516448a7fae07e855270ac81ade34dec9cf5e53920">Adelante</a>, <a class="code" href="classZero_1_1AnalizadorLexico.html#aaeb87f57060e878a633e94e516448a7fae174f6ef0fe4238caef650aae48406d2">Atras</a> };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classZero_1_1AnalizadorLexico.html#a3fdac159f1588397a0b0cc3635b1031f" title="Constructor del AnalizadorLexico.">AnalizadorLexico</a>(std::string *cad);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#a7c545bb7009e2386fab4617acb507ff9">   40</a></span>&#160;    <span class="keyword">const</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a7c545bb7009e2386fab4617acb507ff9" title="Devuelve la línea actual.">getLinea</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *<a class="code" href="classZero_1_1AnalizadorLexico.html#ab580b9b511d99080c0517539427d7770">txt</a>; };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#a46b0cc4561efee8f27d28e4a0c36940f">   43</a></span>&#160;    std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a46b0cc4561efee8f27d28e4a0c36940f" title="Devuelve el token actual.">getTokenActual</a>() { <span class="keywordflow">return</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a840622247201a77308f3e40eef1a50b8">token</a>; };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#a3e05bd83989c370a172b8e1e3268f3bf">   46</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a3e05bd83989c370a172b8e1e3268f3bf" title="Determina si el token actual es un flotante.">esTokenActualFlotante</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a839f63ebddb6a3f0c56283bc931436d5">compruebaFlotante</a>( <a class="code" href="classZero_1_1AnalizadorLexico.html#a840622247201a77308f3e40eef1a50b8">token</a> ); }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a33c7e8212634ee300b0547601e1031e3" title="Devuelve el siguiente token.">getToken</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a1ea3f5d172f789bece458e395595b6fd" title="Devuelve el siguiente número.">getNumero</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#af903e203ccc7eee696d15df71f2cb084">pasaEsp</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#ab9472abc6432fe4ebf75d97468a76a40" title="Pasa sólo los posibles espacios y tabuladores que haya.">pasaSoloEsp</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classZero_1_1AnalizadorLexico.html#adfff564f6f45da17c6c3f25af50458ff" title="Tipos de literales.">TipoToken</a> <a class="code" href="classZero_1_1AnalizadorLexico.html#a0ed8e2be412e9b851538ab5741c17a98" title="Devolver el tipo del siguiente token sin leerlo.">getTipoSiguienteToken</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a1cfe315fb520489e3339e09ef6ef9a29" title="Devolver el siguiente literal.">getLiteral</a>(<span class="keywordtype">char</span> delim);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#ad6a2ca2b6731977b8cd465813be824d0" title="¿Es fin de línea?">esEol</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a76aaa900612fa2ead19fc3d0aecb7e6c" title="Avanza en el texto.">avanza</a>(<span class="keywordtype">int</span> avance = 1);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#ad6a918c8f9d1a4890cf8e7cf594bfd12">   74</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#ad6a918c8f9d1a4890cf8e7cf594bfd12" title="Devuelve la pos actual dentro del texto.">getPosActual</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="classZero_1_1AnalizadorLexico.html#aa8aeeb710d6a5d8d1146cfd346315946">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#aa8aeeb710d6a5d8d1146cfd346315946" title="Coloca el indicador de posición a cero.">reset</a>() { <a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a> = 0; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a4b9d6e2bdbfa3287f5812ab58f93a896" title="Devuelve el carácter que será evaluado a continuación">getCaracterActual</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Herramientas útiles --------------------------------------</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Convertir a mayúsculas</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#a816ec07aebc788dd82bb876791268f15">mays</a>(<span class="keyword">const</span> std::string &amp;x);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#af0e9afa7693dab883684921286a9c6ee">maysCnvt</a>(std::string &amp;x);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Elimina espacios y caracteres inútiles</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a8cc06918c98bcfce1a175ce6f280f682">rTrimCnvt</a>(std::string &amp;x);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a91a5160f8c2673bc10e9aef05d09cda4">lTrimCnvt</a>(std::string &amp;x);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#ae9f0ce5b89d6d4cce77e4b316bd304f7">trimCnvt</a>(std::string &amp;x);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#a3a691022e20c4dea5e74b3a6604dcdcb">rTrim</a>(<span class="keyword">const</span> std::string &amp;x);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#a4400c2ad63deca8a2fb7498a45dec8ba">lTrim</a>(<span class="keyword">const</span> std::string &amp;x);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#ab11dfa1c25bf71855c46b39d5fae5618">trim</a>(<span class="keyword">const</span> std::string &amp;x);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Útiles para analizar</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a1ea3f5d172f789bece458e395595b6fd" title="Devuelve el siguiente número.">getNumero</a>(<span class="keyword">const</span> std::string &amp;lin, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>, std::string &amp;num);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a33c7e8212634ee300b0547601e1031e3" title="Devuelve el siguiente token.">getToken</a>(<span class="keyword">const</span> std::string &amp;lin, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>, std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a840622247201a77308f3e40eef1a50b8">token</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#af903e203ccc7eee696d15df71f2cb084">pasaEsp</a>(<span class="keyword">const</span> std::string &amp;lin, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>, <span class="keywordtype">int</span> avance = 1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#ab9472abc6432fe4ebf75d97468a76a40" title="Pasa sólo los posibles espacios y tabuladores que haya.">pasaSoloEsp</a>(<span class="keyword">const</span> std::string &amp;lin, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>, <span class="keywordtype">int</span> avance = 1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">static</span> std::string &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a1cfe315fb520489e3339e09ef6ef9a29" title="Devolver el siguiente literal.">getLiteral</a>(<span class="keyword">const</span> std::string &amp;lin, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classZero_1_1AnalizadorLexico.html#a24102d7edbc3d6c90148bafcb30d7fbe">pos</a>,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                              <span class="keywordtype">char</span> delim, std::string &amp;lit);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#a839f63ebddb6a3f0c56283bc931436d5">compruebaFlotante</a>(<span class="keyword">const</span> std::string &amp;s);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#aa58157c4f78f19059aa541a989946bb3">toString</a>(<span class="keywordtype">void</span> *);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#aa58157c4f78f19059aa541a989946bb3">toString</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span> = 0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#aa58157c4f78f19059aa541a989946bb3">toString</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, <span class="keywordtype">int</span> = 0);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#aa58157c4f78f19059aa541a989946bb3">toString</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>, <span class="keywordtype">int</span> = 0);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classZero_1_1AnalizadorLexico.html#aa58157c4f78f19059aa541a989946bb3">toString</a>(<span class="keywordtype">double</span>, <span class="keywordtype">int</span> = 0, <span class="keywordtype">int</span> = 0);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classZero_1_1AnalizadorLexico.html#aab3509f5886865e17864dbdaefd96a2c">toInt</a>(<span class="keyword">const</span> std::string &amp;);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 4 de Junio de 2013 14:56:30 para Zero por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>
