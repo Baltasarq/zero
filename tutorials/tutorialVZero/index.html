@@ -1,529 +1,728 @@
 <html>
-<head>
-<title>
-Tutorial de manejo de Visual Zero VM
-</title>
-</head>
-
-<body>
-
-<P>
-<hr>
-<TABLE WIDTH=100%>
-<TR>
-      <TD>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>
+      Tutorial de manejo de Visual Zero VM
+    </title>
+  </head>
+  <body>
+    <p>
+    </p>
+    <hr>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td>
             <h1>Tutorial de manejo de Visual Zero VM</h1>
-      </TD>
-	  <TD>
-			<a href="index_en.html">
-            <IMG HEIGHT=25 WIDTH=50 ALIGN=CENTER SRC="english-flag.jpg" ALT="in english">
-			</a>
-	  </TD>
-	  <TD>
-			<a href="index_en.html">Read this document in english</a>
-	  </TD>
-      <TD>
-            <IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
-      </TD>
-</TR>
-</TABLE>
-<hr>
-<P>
-
-
-
-<P>
-Visual Zero VM es la misma máquina virtual que la herramienta de línea de
-comando zvm ("Zero Virtual Machine", Máquina virtual Zero), con una interfaz
-gráfica, lo que permite una mayor interacción por parte del usuario y obtener
-el máximo partido de las posibilidades de reflexión estructural de la máquina
-virtual.
-<P>
-Para comenzar, es necesario desempaquetar el archivo binario de Zero (para su plataforma) en un directorio,
-si no se ha hecho ya. Además, es necesario compilar la librería estándar, lo
-cuál hay que hacer una vez descomprimido el paquete. Ésto puede conseguirse
-abriendo una consola de comandos en la carpeta donde reside Zero y tecleando:
-
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-za IntStdLib
-</code>
-
-</td>
-</tr>
-</table>
+          </td>
+          <td> <a href="index_en.html"> <img src="english-flag.jpg" alt="in english"
+                height="25" align="MIDDLE" width="50"> </a> </td>
+          <td> <a href="index_en.html">Read this document in english</a> </td>
+          <td> <img src="tiraZero.jpg" alt="Zero (el avi&#243;n)" align="RIGHT">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p>
+    </p>
+    <p>
+      Visual Zero VM es la misma m&#225;quina virtual que la herramienta de
+      l&#237;nea de
+      comando zvm ("Zero Virtual Machine", M&#225;quina virtual Zero), con una
+      interfaz
+      gr&#225;fica, lo que permite una mayor interacci&#243;n por parte del
+      usuario y obtener
+      el m&#225;ximo partido de las posibilidades de reflexi&#243;n estructural
+      de la m&#225;quina
+      virtual.
+    </p>
+    <p>
+      Para comenzar, es necesario desempaquetar el archivo binario de Zero (para
+      su plataforma) en un directorio,
+      si no se ha hecho ya. Adem&#225;s, es necesario compilar la librer&#237;a
+      est&#225;ndar, lo
+      cu&#225;l hay que hacer una vez descomprimido el paquete. &#201;sto puede
+      conseguirse
+      abriendo una consola de comandos en la carpeta donde reside Zero y
+      tecleando:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                za IntStdLib
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+    </p>
+    <p>
+      Tambi&#233;n es posible intentar soltar el archivo <code>IntStdLib</code>
+      sobre el ejecutable <code>za</code>. En algunos sistemas (linux, unix y
+      similares), es necesario dar permisos de ejecuci&#243;n a los archivos con
+      funcionalidad:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                chmod +x za
+                <br>
+                chmod +x zm
+                <br>
+                chmod +x zd
+                <br>
+                chmod +x zvm
+                <p></p>
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      Una vez hecho &#233;sto, intente compilar de nuevo la librer&#237;a
+      est&#225;ndar si anteriormente este paso fall&#243;.
+    </p>
+    <p>
+      S&#243;lo es necesario compilar la librer&#237;a est&#225;ndar una vez.
+    </p>
+    <p>
+      El programa Visual Zero VM es "vzero.exe", que puede ejecutarse desde una
+      consola de l&#237;nea de comando:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                vzero
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      o haciendo doble-clic sobre el programa en la carpeta donde se ha
+      descomprimido
+      Zero.
+    </p>
+    <h2>Comenzando: conceptos b&#225;sicos</h2>
+    Una vez arrancado, Visual Zero VM muestra el explorador de contenedores. Los
+    contenedores son similares a los directorios (o carpetas) de archivos,
+    s&#243;lo que
+    contienen objetos en lugar de archivos. El contenedor donde ocurren todas
+    las
+    ejecuciones es el denominado Exe, que cuelga del ra&#237;z. Para indicar un
+    contenedor que est&#225; dentro de otro, se utiliza el '.' para separarlos,
+    de la
+    misma manera que cuando se accede a un atributo dentro de un objeto. Sin
+    embargo, el contenendor raiz no tiene nombre. El camino para llegar al
+    contenedor
+    Exe es por tanto ".Exe".
+    <p align="center">
+      <img src="vzero_intro.png" alt="intro a VZero VM">
+    </p>
+    <p>
+    </p>
+    <p>
+      Todos los posibles valores que puedan manejarse en la m&#225;quina virtual
+      Zero son
+      objetos. Al contrario que en otros sistemas orientados a objetos, no
+      existen
+      datos "primitivos", sino que son representados mediante objetos. En Zero,
+      pueden utilizarse enteros, flotantes, cadenas y vectores en cuanto a datos
+      primitivos, pero t&#233;ngase en cuenta que son representados mediante
+      objetos y no
+      mediante otras t&#233;cnicas.
+    </p>
+    <p>
+    </p>
+    <h3>Creaci&#243;n de objetos</h3>
+    <p>
+      Debajo del explorador de contenedores se encuentra una caja con men&#250;
+      deslizante que originalmente indica "objeto" y un bot&#243;n que indica
+      nuevo. Basta
+      elegir "entero" en el men&#250; deslizante de la caja y pulsar en "nuevo"
+      para crear
+      un objeto con un valor entero asociado. El programa preguntar&#225; el
+      valor
+      num&#233;rico del objeto antes de crearlo, y aparecer&#225; en el
+      contenedor Exe.
+    </p>
+    <p>
+      Lo mismo suceder&#225; con los flotantes y las cadenas. El caso de los
+      vectores es
+      un poco m&#225;s especial. </p>
+    <p>
+    </p>
+    <h4>Introduciendo vectores</h4>
+    <p>
+      Al seleccionar "vector" y pulsar "nuevo", se abrir&#225; una
+      caja de di&#225;logo preguntando por el contenido. El vector m&#225;s
+      sencillo posible es
+      el vector vac&#237;o (sin elementos) que se indica de la siguiente forma:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                {}
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      En cambio, un vector con un elemento se indica con:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                { 1 }
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      ... creando un vector que contendr&#237;a un valor entero. Su logntiud
+      ser&#237;a 1, y el &#237;ndice del primer elemento, 0.
+    </p>
+    <p>
+      Para introducir varios elementos, &#233;stos se separan por comas:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                { 1, 2, 3 }
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      Es necesario tener en cuenta que los vectores pueden contener referencias
+      a
+      cualquier objeto, no es necesario que todos los elementos de un vector
+      "pertenezcan" al mismo "tipo". Por ejemplo:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                { 1, "hola", 2.0 }
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      Es incluso posible incluir otros vectores:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                { 1, { 3, 4 }, 2.0 }
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+    </p>
+    <h3>Eliminaci&#243;n de objetos</h3>
+    <p>
+      Haga clic encima del objeto a eliminar en el explorador de contenedores,
+      haga
+      clic con el bot&#243;n derecho del rat&#243;n y seleccione "eliminar".
+      N&#243;tese que &#233;sto
+      s&#243;lo elimina al objeto del contenedor, ser&#225; realmente borrado si
+      no est&#225; siendo
+      referenciado por ning&#250;n otro objeto.
+    </p>
+    <p>
+    </p>
+    <h2>Un ejemplo pr&#225;ctico: personas y empleados</h2>
+    <p>
+      Arranque el programa y pulse "nuevo" con "objeto" seleccionado en los
+      controles
+      debajo del explorador de contenedores. </p>
+    <p align="center">
+      <img src="vzero_creartraitspersona.png" alt="creando TraitsPersona">
+    </p>
+    <p>
+      Se le pedir&#225; el nombre del objeto.
+      Introduzca "TraitsPersona" (sin las comillas). Haga doble-clic en
+      TraitsPersona. Aparece entonces el explorador de objetos, dividido en
+      tres secciones: los atributos del objeto, en la parte superior; los
+      m&#233;todos del
+      objeto, en el medio; y finalmente los m&#233;todos heredados, en la parte
+      inferior.
+    </p>
+    <p align="center">
+      <img src="vzero_traitspersonacreado.png" alt="TraitsPersona creado">
+    </p>
+    En los m&#233;todos heredados, busque "addAttribute". Haga clic encima del
+    mismo y
+    despu&#233;s, con el bot&#243;n derecho, seleccione "ejecutar".
+    <p align="center">
+      <img src="vzero_exeaddattribute.png" alt="ejecutando addAttribute">
+    </p>
+    Aparecer&#225; un nuevo cuadro
+    de di&#225;logo pidiendo los argumentos. Se trata del nombre del atributo,
+    que en
+    este caso es el nombre de la persona, "nombre", y el objeto al que apunta,
+    el
+    segundo atributo para el que introduciremos "Juan Nadie". Esta vez,
+    ser&#225;
+    necesario introducir las comillas, ya que el programa realiza una
+    peque&#241;a
+    interpretaci&#243;n y en caso encontrarse unas comillas, crea directamente
+    un nuevo
+    objeto cadena con el valor proporcionado.
+    Una vez hecho, se pulsa en "Aceptar", y la m&#225;quina virtual ejecuta el
+    m&#233;todo.
+    <p align="center">
+      <img src="vzero_addattributeargs.png" alt="introduciendo argumentos para addAttribute">
+    </p>
+    Cuando un m&#233;todo es ejecutado, como ahora, se visualiza la salida
+    est&#225;ndar, por si la ejecuci&#243;n ha volcado algo, y se abre un
+    explorador con el objeto que ha
+    devuelto el m&#233;todo, que en este caso no es demasiado interesante.
+    Es conveniente cerrar la salida, y probablemente el objeto resultado de la
+    ejecuci&#243;n, y volver al explorador del objeto TraitsPersona que se
+    estaba
+    utilizando. El nuevo atributo aparece en la secci&#243;n de atributos del
+    explorador
+    de TraitsPersona. Es posible hacer doble-clic sobre &#233;l para comprobar
+    el objeto
+    al que apunta.
+    <p>De la misma forma que a&#241;adimos el atributo nombre a TraitsPersona,
+      se
+      a&#241;adir&#225; el atributo "email" con valor "juan@nadie.com" (recuerde
+      utilizar las
+      comillas).
+    </p>
+    <p>
+      El m&#233;todo <code>toString</code> existe en <b>Object</b>, y puede y
+      debe ser
+      sobreescrito por cada nuevo objeto para codificar informaci&#243;n
+      relevante en una
+      cadena de caracteres. La versi&#243;n de <b>Object</b> s&#243;lo devuelve
+      el nombre del objeto (o su valor, si es un entero, un flotante, una cadena
+      o incluso un
+      vector (devolviendo el resultado de invocar <code>toString</code> por
+      cada elemento)). Para personas, ser&#237;a interesante devolver una cadena
+      con su informaci&#243;n m&#225;s relevante.
+      Ahora, necesitaremos por tanto crear un m&#233;todo toString para
+      TraitsPersona. El m&#233;todo
+      toString es llamado cuando, por ejemplo, se intenta mostrar un objeto por
+      consola. Debe se posible devolver la informaci&#243;n contenida en el
+      objeto de
+      manera simple.
+    </p>
+    <p>Busque el m&#233;todo addMethod y seleccione con el bot&#243;n derecho
+      del rat&#243;n
+      "ejecutar". Aparecer&#225; la misma ventana de di&#225;logo que con los
+      atributos. Esta
+      vez es necesario proporcionar el nombre del m&#233;todo y los argumentos
+      (en forma
+      de vector). El primero es "toString" (comillas incluidas) y el segundo, ya
+      que
+      el m&#233;todo no implica uso de par&#225;metros, {}
+    </p>
+    <p align="center">
+      <img src="vzero_addmethodargs.png" alt="introduciendo argumentos para addMethod( toString )">
+    </p>
+    <p>Una vez creado, aparecer&#225; en la secci&#243;n de m&#233;todos del
+      objeto. Haciendo
+      doble-clic sobre &#233;l, aparece el editor de c&#243;digo, donde
+      tecleamos el siguiente
+      c&#243;digo ensamblador Zero:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                SET nombre
+                <br>
+                ASG __rr
+                <br>
+                <br>
+                STR ": "
+                <br>
+                MSG __rr concat __acc
+                <br>
+                ASG __rr
+                <br>
+                <br>
+                SET email
+                <br>
+                MSG __rr concat __acc
+                <br>
+                ASG __rr
+                <br>
+                <br>
+                RET
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      Este c&#243;digo ensamblador s&#237;mplemente pone el objeto apuntado por
+      el atributo <i>nombre</i> en el registro de retorno (__rr), para
+      despu&#233;s concatenarle un literal (": ") y m&#225;s tarde el <i>e.mail</i>,
+      para finalmente devolverlo todo.
+    </p>
+    <p align="center">
+      <img src="vzero_creandotostring.png" alt="introduciendo cuerpo de toString">
+    </p>
+    Una vez hecho, se hace clic sobre compilar, debiendo aparecer el mensaje
+    "compilaci&#243;n realizada con &#233;xito". Una vez compilado, haga clic
+    sobre descartar.
+    <p>
+      Puede ejecutar el nuevo m&#233;todo de la misma forma que se han ejecutado
+      cualquiera de los otros: con la opci&#243;n del bot&#243;n derecho del
+      rat&#243;n sobre el
+      m&#233;todo "ejecutar". Si lo hace, obtendr&#225; un nuevo objeto cadena:
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99">
+        <tbody>
+          <tr>
+            <td>
+              <code>
+                Juan Nadie: juan@nadie.com
+              </code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+    </p>
+    <p align="center">
+      <img src="vzero_resultadotostring.png" alt="resultado de toString">
+    </p>
+    ... el cual puede descartar (cerrando su explorador). Se ha comprobado que
+    el m&#233;todo reci&#233;n creado funciona.
+    <p>Ser&#225; interesante crear un par de m&#233;todos m&#225;s. Estos
+      podr&#237;an ser "setNombre"
+      con argumentos { "n" }, y "setEmail" con argumentos { "e" }. Una vez
+      creados,
+      introduzca el siguiente c&#243;digo para cada uno de ellos.
+    </p>
+    <p>
+      <table align="center" bgcolor="#FFFF99" width="70%">
+        <tbody>
+          <tr>
+            <td>
+              <code>method + setNombre(n)</code>
+            </td>
+            <td>
+          </td>
+          <td>
+            <code>method + setEmail(e)</code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr>
+          </td>
+          <td>
+            <hr>
+          </td>
+          <td>
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>
+              SET n
+              <br>
+              ASG nombre
+              <br>
+              RET
+            </code>
+          </td>
+          <td>
+        </td>
+        <td>
+          <code>
+            SET e
+            <br>
+            ASG email
+            <br>
+            RET
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
 <p>
+</p>
+<p align="center">
+  <img src="vzero_creandosetnombre.png" alt="argumentos para setNombre">
+</p>
 <p>
-También es posible intentar soltar el archivo <code>IntStdLib</code> sobre el ejecutable <code>za</code>. En algunos sistemas (linux, unix y similares), es necesario dar permisos de ejecución a los archivos con funcionalidad:
-<p><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-chmod +x za
-<br>chmod +x zm
-<br>chmod +x zd
-<br>chmod +x zvm
-</p></code>
-
-</td>
-</tr>
-</table>
-
-<P>
-Una vez hecho ésto, intente compilar de nuevo la librería estándar si anteriormente este paso falló.
-<P>
-Sólo es necesario compilar la librería estándar una vez.
-<P>
-El programa Visual Zero VM es "vzero.exe", que puede ejecutarse desde una
-consola de línea de comando:
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-vzero
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-o haciendo doble-clic sobre el programa en la carpeta donde se ha descomprimido
-Zero.
-<h2>Comenzando: conceptos básicos</h2>
-Una vez arrancado, Visual Zero VM muestra el explorador de contenedores. Los
-contenedores son similares a los directorios (o carpetas) de archivos, sólo que
-contienen objetos en lugar de archivos. El contenedor donde ocurren todas las
-ejecuciones es el denominado Exe, que cuelga del raíz. Para indicar un
-contenedor que está dentro de otro, se utiliza el '.' para separarlos, de la
-misma manera que cuando se accede a un atributo dentro de un objeto. Sin
-embargo, el contenendor raiz no tiene nombre. El camino para llegar al contenedor
-Exe es por tanto ".Exe".
-<P align=center>
-<img src="vzero_intro.png" alt="intro a VZero VM">
+  Este c&#243;digo ensamblador s&#237;mplemente asigna el objeto pasado como
+  argument a los atributos <i>nombre</i> e <i>email</i>. Estamos asumiendo que
+  el objeto recibido en cada funci&#243;n como argumento es una cadena con la
+  informaci&#243;n correcta. Podemos asegurarnos de que al menos el objeto
+  recibido es una cadena colocando entre las instrucciones SET y ASG de cada
+  m&#233;todo las siguientes instrucciones:
 </p>
-<P>
-<P>
-Todos los posibles valores que puedan manejarse en la máquina virtual Zero son
-objetos. Al contrario que en otros sistemas orientados a objetos, no existen
-datos "primitivos", sino que son representados mediante objetos. En Zero,
-pueden utilizarse enteros, flotantes, cadenas y vectores en cuanto a datos
-primitivos, pero téngase en cuenta que son representados mediante objetos y no
-mediante otras técnicas.
-<P>
-<h3>Creación de objetos</h3>
-<P>
-Debajo del explorador de contenedores se encuentra una caja con menú
-deslizante que originalmente indica "objeto" y un botón que indica nuevo. Basta
-elegir "entero" en el menú deslizante de la caja y pulsar en "nuevo" para crear
-un objeto con un valor entero asociado. El programa preguntará el valor
-numérico del objeto antes de crearlo, y aparecerá en el contenedor Exe.
-<P>
-Lo mismo sucederá con los flotantes y las cadenas. El caso de los vectores es
-un poco más especial. 
-<P>
-<h4>Introduciendo vectores</h4>
-<P>
-Al seleccionar "vector" y pulsar "nuevo", se abrirá una
-caja de diálogo preguntando por el contenido. El vector más sencillo posible es
-el vector vacío (sin elementos) que se indica de la siguiente forma:
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-{}
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-En cambio, un vector con un elemento se indica con:
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-{ 1 }
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-... creando un vector que contendría un valor entero. Su logntiud sería 1, y el índice del primer elemento, 0.
-<P>
-Para introducir varios elementos, éstos se separan por comas:
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-{ 1, 2, 3 }
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-Es necesario tener en cuenta que los vectores pueden contener referencias a
-cualquier objeto, no es necesario que todos los elementos de un vector
-"pertenezcan" al mismo "tipo". Por ejemplo:
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-{ 1, "hola", 2.0 }
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-Es incluso posible incluir otros vectores:
-<P><table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-{ 1, { 3, 4 }, 2.0 }
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-<h3>Eliminación de objetos</h3>
-<P>
-Haga clic encima del objeto a eliminar en el explorador de contenedores, haga
-clic con el botón derecho del ratón y seleccione "eliminar". Nótese que ésto
-sólo elimina al objeto del contenedor, será realmente borrado si no está siendo
-referenciado por ningún otro objeto.
-<P>
-<h2>Un ejemplo práctico: personas y empleados</h2>
-<P>
-Arranque el programa y pulse "nuevo" con "objeto" seleccionado en los controles
-debajo del explorador de contenedores. 
-<P align=center>
-<img src="vzero_creartraitspersona.png" alt="creando TraitsPersona">
+<p>
+  <table align="center" bgcolor="#FFFF99">
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            IOF String
+            <br>
+            JOT assign
+            <br>
+            TRW ETypeMismatch
+            <br>
+            ETQ assign
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </p>
-<P>
-Se le pedirá el nombre del objeto.
-Introduzca "TraitsPersona" (sin las comillas). Haga doble-clic en TraitsPersona. 
-Aparece entonces el explorador de objetos, dividido en
-tres secciones: los atributos del objeto, en la parte superior; los métodos del
-objeto, en el medio; y finalmente los métodos heredados, en la parte inferior.
-<P align=center>
-<img src="vzero_traitspersonacreado.png" alt="TraitsPersona creado">
+<p>
 </p>
-En los métodos heredados, busque "addAttribute". Haga clic encima del mismo y
-después, con el botón derecho, seleccione "ejecutar". 
-<P align=center>
-<img src="vzero_exeaddattribute.png" alt="ejecutando addAttribute">
+<p>
+  Ahora, en caso de recibir un argumento de tipo inadecuado, se lanzar&#225; una
+  excepci&#243;n.
 </p>
-Aparecerá un nuevo cuadro
-de diálogo pidiendo los argumentos. Se trata del nombre del atributo, que en
-este caso es el nombre de la persona, "nombre", y el objeto al que apunta, el
-segundo atributo para el que introduciremos "Juan Nadie". Esta vez, será
-necesario introducir las comillas, ya que el programa realiza una pequeña
-interpretación y en caso encontrarse unas comillas, crea directamente un nuevo
-objeto cadena con el valor proporcionado.
-Una vez hecho, se pulsa en "Aceptar", y la máquina virtual ejecuta el método.
-<P align=center>
-<img src="vzero_addattributeargs.png" alt="introduciendo argumentos para addAttribute">
+<p>Utilizando los controles debajo del explorador de contenedores de la ventana
+  principal, cree un nuevo objeto, denominado "Persona" (sin las comillas).
 </p>
-Cuando un método es ejecutado, como ahora, se visualiza la salida estándar, por si la ejecución ha volcado algo, y se abre un explorador con el objeto que ha
-devuelto el método, que en este caso no es demasiado interesante.
-Es conveniente cerrar la salida, y probablemente el objeto resultado de la
-ejecución, y volver al explorador del objeto TraitsPersona que se estaba
-utilizando. El nuevo atributo aparece en la sección de atributos del explorador
-de TraitsPersona. Es posible hacer doble-clic sobre él para comprobar el objeto
-al que apunta.
-<P>De la misma forma que añadimos el atributo nombre a TraitsPersona, se
-añadirá el atributo "email" con valor "juan@nadie.com" (recuerde utilizar las
-comillas).
-<P>
-El método <code>toString</code> existe en <b>Object</b>, y puede y debe ser
-sobreescrito por cada nuevo objeto para codificar información relevante en una
-cadena de caracteres. La versión de <b>Object</b> sólo devuelve el nombre del objeto (o su valor, si es un entero, un flotante, una cadena o incluso un
-vector (devolviendo el resultado de invocar <code>toString</code> por cada elemento)). Para personas, sería interesante devolver una cadena con su información más relevante.
-Ahora, necesitaremos por tanto crear un método toString para TraitsPersona. El método
-toString es llamado cuando, por ejemplo, se intenta mostrar un objeto por
-consola. Debe se posible devolver la información contenida en el objeto de
-manera simple.
-<P>Busque el método addMethod y seleccione con el botón derecho del ratón
-"ejecutar". Aparecerá la misma ventana de diálogo que con los atributos. Esta
-vez es necesario proporcionar el nombre del método y los argumentos (en forma
-de vector). El primero es "toString" (comillas incluidas) y el segundo, ya que
-el método no implica uso de parámetros, {}
-<P align=center>
-<img src="vzero_addmethodargs.png" alt="introduciendo argumentos para addMethod( toString )">
-</p>
-<P>Una vez creado, aparecerá en la sección de métodos del objeto. Haciendo
-doble-clic sobre él, aparece el editor de código, donde tecleamos el siguiente
-código ensamblador Zero:
-<P>
-<table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-SET nombre
-<br>ASG __rr
-<br>
-<br>STR ": "
-<br>MSG __rr concat __acc
-<br>ASG __rr
-<br>
-<br>SET email
-<br>MSG __rr concat __acc
-<br>ASG __rr
-<br>
-<br>RET
-</code>
-
-</td>
-</tr>
-</table>
-<P>
-Este código ensamblador símplemente pone el objeto apuntado por el atributo <i>nombre</i> en el registro de retorno (__rr), para después concatenarle un literal (": ") y más tarde el <i>e.mail</i>, para finalmente devolverlo todo.
-<P align=center>
-<img src="vzero_creandotostring.png" alt="introduciendo cuerpo de toString">
-</p>
-Una vez hecho, se hace clic sobre compilar, debiendo aparecer el mensaje
-"compilación realizada con éxito". Una vez compilado, haga clic sobre descartar.
-<P>
-Puede ejecutar el nuevo método de la misma forma que se han ejecutado
-cualquiera de los otros: con la opción del botón derecho del ratón sobre el
-método "ejecutar". Si lo hace, obtendrá un nuevo objeto cadena:
-<P>
-<table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-Juan Nadie: juan@nadie.com
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-<P align=center>
-<img src="vzero_resultadotostring.png" alt="resultado de toString">
-</p>
-... el cual puede descartar (cerrando su explorador). Se ha comprobado que el método recién creado funciona.
-<P>Será interesante crear un par de métodos más. Estos podrían ser "setNombre"
-con argumentos { "n" }, y "setEmail" con argumentos { "e" }. Una vez creados,
-introduzca el siguiente código para cada uno de ellos.
-<P>
-<table width=70% align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>method + setNombre(n)</code>
-</td>
-
-<td>
-</td>
-
-<td>
-<code>method + setEmail(e)</code>
-</td>
-
-<tr>
-<td>
-<hr>
-</td>
-
-<td>
-<hr>
-</td>
-
-
-<td>
-<hr>
-</td>
-</tr>
-
-<tr>
-<td><code>
-SET n
-<br>ASG nombre
-<br>RET
-</code>
-</td>
-
-<td>
-</td>
-
-<td><code>
-SET e
-<br>ASG email
-<br>RET
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-<P align=center>
-<img src="vzero_creandosetnombre.png" alt="argumentos para setNombre">
-</p>
-
-<P>
-Este código ensamblador símplemente asigna el objeto pasado como argument a los atributos <i>nombre</i> e <i>email</i>. Estamos asumiendo que el objeto recibido en cada función como argumento es una cadena con la información correcta. Podemos asegurarnos de que al menos el objeto recibido es una cadena colocando entre las instrucciones SET y ASG de cada método las siguientes instrucciones:
-
-<P>
-<table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<CODE>
-IOF String
-<br>JOT assign
-<br>TRW ETypeMismatch
-<br>ETQ assign
-</CODE>
-</td>
-</tr>
-</table>
-<P>
-
-<P>
-Ahora, en caso de recibir un argumento de tipo inadecuado, se lanzará una excepción.
-
-<P>Utilizando los controles debajo del explorador de contenedores de la ventana
-principal, cree un nuevo objeto, denominado "Persona" (sin las comillas).
-<P align=center>
-<img src="vzero_crearpersona.png" alt="creando Persona">
+<p align="center">
+  <img src="vzero_crearpersona.png" alt="creando Persona">
 </p>
 Una
-vez creado, haga doble-clic sobre él para que aparezca en un explorador de
-objetos. 
-<P align=center>
-<img src="vzero_personacreado.png" alt="Persona creado">
+vez creado, haga doble-clic sobre &#233;l para que aparezca en un explorador de
+objetos.
+<p align="center">
+  <img src="vzero_personacreado.png" alt="Persona creado">
 </p>
-Seleccione el atributo parent, y haciendo clic con el botón derecho
-sobre él, una vez seleccionado el objeto, elija "cambiar". 
-<P align=center>
-<img src="vzero_cambiarparentpersona.png" alt="cambiar parent de Persona">
+Seleccione el atributo parent, y haciendo clic con el bot&#243;n derecho
+sobre &#233;l, una vez seleccionado el objeto, elija "cambiar".
+<p align="center">
+  <img src="vzero_cambiarparentpersona.png" alt="cambiar parent de Persona">
 </p>
 De la lista
-desplegable que aparece en el cuadro de diálogo de asignar objeto, seleccione
-TraitsPersona. Con esta acción, se acaba de crear el prototipo que será copiado
+desplegable que aparece en el cuadro de di&#225;logo de asignar objeto,
+seleccione
+TraitsPersona. Con esta acci&#243;n, se acaba de crear el prototipo que
+ser&#225; copiado
 para crear nuevos objetos Persona.
-<P align=center>
-<img src="vzero_cambiarparentpersonaargs.png" alt="argumentos para cambiar parent de Persona">
+<p align="center">
+  <img src="vzero_cambiarparentpersonaargs.png" alt="argumentos para cambiar parent de Persona">
 </p>
-<P>Esto puede hacerse de manera sencilla ejecutando el método copy de la lista
-de métodos heredados del objeto Persona. Es necesario aportar el nombre del
-objeto, entre comillas. Para un ejemplo de persona con uno de los
-desarrolladores de Zero, el nombre podría ser "personaBaltasar". Una vez creado,
-el objeto aparece con un explorador de objetos. Este objeto no está ligado a
-ningún contenedor, por lo que si desea descartarlo será destruido en cuanto
-cierre su explorador de objetos, mientras que si desea conservarlo deberá
-pulsar en su botón "Guardar en Exe", con lo que ya aparecerá en el explorador
-de contenedores.
-<P>Nótese que es posible evitar tener por separado TraitsPersona y Persona, 
-y copiar directamente el objeto que proporciona estado y comportamiento. Sin embargo,
-hacer ésto sería poco óptimo, puesto que cada vez que se copiara el objeto se estarían
-copiando todos sus métodos. Esto puede no tener importancia en el contexto de este
-tutorial, pero sí en el contexto de una aplicación,
-<P>Siguiendo con el objeto "personaBaltasar", debemos ejecutar sus métodos
-setNombre y setEmail para que los datos de este objeto sean los correctos. Así,
-el argumento a pasar a cada uno de ellos sería "Baltasar" y "jbgarcia@nospampofavo.uvigo.es",
-respectivamente e incluyendo las comillas. Fíjese que los atributos nombre y email
-aparecen ahora como parte del objeto personaBaltasar. Esto es así porque mientras no sean
-modificados se comparten los mismos atributos que con TraitsPersona, pero en cuanto
-se modifican, son duplicados en el objeto que intenta escribir en ellos. Se trata de
-una técnica Copy-On-Write, que sólo realiza la duplicación cuando es estrictamente
-necesario.
-<P>Si ejecutamos el método toString de personaBaltasar, se obtiene lo siguiente:
-<P>
-<table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-Baltasar: jbgarcia@nospampofavo.uvigo.es
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-<P align=center>
-<img src="vzero_personaBaltasar.png" alt="argumentos para cambiar parent de Persona">
+<p>Esto puede hacerse de manera sencilla ejecutando el m&#233;todo copy de la
+  lista
+  de m&#233;todos heredados del objeto Persona. Es necesario aportar el nombre
+  del
+  objeto, entre comillas. Para un ejemplo de persona con uno de los
+  desarrolladores de Zero, el nombre podr&#237;a ser "personaBaltasar". Una vez
+  creado,
+  el objeto aparece con un explorador de objetos. Este objeto no est&#225;
+  ligado a
+  ning&#250;n contenedor, por lo que si desea descartarlo ser&#225; destruido en
+  cuanto
+  cierre su explorador de objetos, mientras que si desea conservarlo deber&#225;
+  pulsar en su bot&#243;n "Guardar en Exe", con lo que ya aparecer&#225; en el
+  explorador
+  de contenedores.
 </p>
-A continuación podríamos realizar un ejercicio de herencia. Cree un nuevo objeto al que llamará TraitsEmpleado, usando el método createChild del objeto TraitsPersona. Esto creará un objeto vacío con su atributo parent apuntando a TraitsPersona.
-<P>Cree el atributo "salario" tal y como se ha descrito (ejecutando el método addAttribute). Por ahora, le asignaremos un valor 0. Esto quiere decir que en el campo nombre debe escribir "salario" (con comillas, pues es un valor de cadena), y como argumento, 0 (en este caso, sin comillas, ya que es un valor numérico). 
-<P>Cree el método "setSalario" mediante addMethod. Debe indicar { "s" } como vector de argumentos para el método. El cuerpo del método será el siguiente:
-<P>
-<table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-SET s
-<br>ASG salario
-<br>RET
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-A continuación, debemos crear un nuevo método toString para TraitsEmpleado:
-<P>
-<table align=center bgcolor="#FFFF99">
-<tr>
-<td>
-<code>
-
-MSG __this ^toString
-<br>ASG __rr
-<br>
-<br>STR ", cobra "
-<br>MSG __rr concat __acc
-<br>ASG __rr
-<br>
-<br>MSG salario toString
-<br>MSG __rr concat __acc
-<br>ASG __rr
-<br>
-<br>RET
-</code>
-
-</td>
-</tr>
-</table>
-
-<P>
-Mediante el primer mensaje a __this (registro que referencia al objeto que está ejecutando el método), con ^toString, se asegura que será llamado el método toString de TraitsPersona. Sólo es necesario ahora concatenar el salario.
-<P>Ya sólo es necesario crear un nuevo objeto Empleado, al que se cambiará su atributo parent para que apunte a TraitsEmpleado. Los nuevos objetos de empleados se crearán mediante copia de Empleado.
-<P>
-Veremos un ejemplo de herencia dinámica. Abra el explorador de objetos para personaBaltasar y cambie su atributo parent para que apunte a TraitsEmpleado, en lugar de a TraitsPersona. Como resultado, mientras se mantienen los miembros que fueron creados para la persona, podemos ahora ejecutar setSalario para indicar un nuevo salario y, por supuesto, toString para obtener toda la información almacenada.
-<P>Por supuesto, es posible revertir el cambio y devolver personaBaltasar a heredar de Persona volviendo a cambiar el atributo parent. Si se ha dado valor a su salario, este evidentemente sguirá existiendo, aunque no se utilizará para obtener los datos del objeto mediante toString.
-<P>
-Puede verse a continuación un diagrama con los objetos realizados en este ejercicio. La línea punteada indica el cambio de relación de parentesco de TraitsPersona a TraitsEmpleado.
-<P>
-<img src="personaEmpleado.png" alt="diagrama de objetos">
-<P>
+<p>N&#243;tese que es posible evitar tener por separado TraitsPersona y Persona,
+  y copiar directamente el objeto que proporciona estado y comportamiento. Sin
+  embargo,
+  hacer &#233;sto ser&#237;a poco &#243;ptimo, puesto que cada vez que se
+  copiara el objeto se estar&#237;an
+  copiando todos sus m&#233;todos. Esto puede no tener importancia en el
+  contexto de este
+  tutorial, pero s&#237; en el contexto de una aplicaci&#243;n,
+</p>
+<p>Siguiendo con el objeto "personaBaltasar", debemos ejecutar sus m&#233;todos
+  setNombre y setEmail para que los datos de este objeto sean los correctos.
+  As&#237;,
+  el argumento a pasar a cada uno de ellos ser&#237;a "Baltasar" y
+  "jbgarcia@nospampofavo.uvigo.es",
+  respectivamente e incluyendo las comillas. F&#237;jese que los atributos
+  nombre y email
+  aparecen ahora como parte del objeto personaBaltasar. Esto es as&#237; porque
+  mientras no sean
+  modificados se comparten los mismos atributos que con TraitsPersona, pero en
+  cuanto
+  se modifican, son duplicados en el objeto que intenta escribir en ellos. Se
+  trata de
+  una t&#233;cnica Copy-On-Write, que s&#243;lo realiza la duplicaci&#243;n
+  cuando es estrictamente
+  necesario.
+</p>
+<p>Si ejecutamos el m&#233;todo toString de personaBaltasar, se obtiene lo
+  siguiente:
+</p>
+<p>
+  <table align="center" bgcolor="#FFFF99">
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            Baltasar: jbgarcia@nospampofavo.uvigo.es
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+<p>
+</p>
+<p align="center">
+  <img src="vzero_personaBaltasar.png" alt="argumentos para cambiar parent de Persona">
+</p>
+A continuaci&#243;n podr&#237;amos realizar un ejercicio de herencia. Cree un
+nuevo objeto al que llamar&#225; TraitsEmpleado, usando el m&#233;todo
+createChild del objeto TraitsPersona. Esto crear&#225; un objeto vac&#237;o con
+su atributo parent apuntando a TraitsPersona.
+<p>Cree el atributo "salario" tal y como se ha descrito (ejecutando el
+  m&#233;todo addAttribute). Por ahora, le asignaremos un valor 0. Esto quiere
+  decir que en el campo nombre debe escribir "salario" (con comillas, pues es un
+  valor de cadena), y como argumento, 0 (en este caso, sin comillas, ya que es
+  un valor num&#233;rico). </p>
+<p>Cree el m&#233;todo "setSalario" mediante addMethod. Debe indicar { "s" }
+  como vector de argumentos para el m&#233;todo. El cuerpo del m&#233;todo
+  ser&#225; el siguiente:
+</p>
+<p>
+  <table align="center" bgcolor="#FFFF99">
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            SET s
+            <br>
+            ASG salario
+            <br>
+            RET
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+<p>
+  A continuaci&#243;n, debemos crear un nuevo m&#233;todo toString para
+  TraitsEmpleado:
+</p>
+<p>
+  <table align="center" bgcolor="#FFFF99">
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            MSG __this ^toString
+            <br>
+            ASG __rr
+            <br>
+            <br>
+            STR ", cobra "
+            <br>
+            MSG __rr concat __acc
+            <br>
+            ASG __rr
+            <br>
+            <br>
+            MSG salario toString
+            <br>
+            MSG __rr concat __acc
+            <br>
+            ASG __rr
+            <br>
+            <br>
+            RET
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+<p>
+  Mediante el primer mensaje a __this (registro que referencia al objeto que
+  est&#225; ejecutando el m&#233;todo), con ^toString, se asegura que ser&#225;
+  llamado el m&#233;todo toString de TraitsPersona. S&#243;lo es necesario ahora
+  concatenar el salario.
+</p>
+<p>Ya s&#243;lo es necesario crear un nuevo objeto Empleado, al que se
+  cambiar&#225; su atributo parent para que apunte a TraitsEmpleado. Los nuevos
+  objetos de empleados se crear&#225;n mediante copia de Empleado.
+</p>
+<p>
+  Veremos un ejemplo de herencia din&#225;mica. Abra el explorador de objetos
+  para personaBaltasar y cambie su atributo parent para que apunte a
+  TraitsEmpleado, en lugar de a TraitsPersona. Como resultado, mientras se
+  mantienen los miembros que fueron creados para la persona, podemos ahora
+  ejecutar setSalario para indicar un nuevo salario y, por supuesto, toString
+  para obtener toda la informaci&#243;n almacenada.
+</p>
+<p>Por supuesto, es posible revertir el cambio y devolver personaBaltasar a
+  heredar de Persona volviendo a cambiar el atributo parent. Si se ha dado valor
+  a su salario, este evidentemente sguir&#225; existiendo, aunque no se
+  utilizar&#225; para obtener los datos del objeto mediante toString.
+</p>
+<p>
+  Puede verse a continuaci&#243;n un diagrama con los objetos realizados en este
+  ejercicio. La l&#237;nea punteada indica el cambio de relaci&#243;n de
+  parentesco de TraitsPersona a TraitsEmpleado.
+</p>
+<p>
+  <img src="personaEmpleado.png" alt="diagrama de objetos">
+</p>
+<p>
+</p>
 <hr>
 <i>Tutorial de empleo de Visual Zero VM
-<br>(c) 2005</i>
-
+  <br>
+  (c) 2005</i>
 </body>
 </html>
