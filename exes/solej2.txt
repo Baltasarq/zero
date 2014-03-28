@@ -1,0 +1,73 @@
+! ================================
+! Creación de un objeto Linea
+! Ejemplo de programación en Zero
+! jbgarcia@uvigo.es
+! ================================
+! 	Debe ser guardado como "PruebaLina.zm"
+
+
+object Punto
+      attribute + x = 0
+      attribute + y = 0
+      
+      method + mueve(a, b)
+      	    isInstanceOf Float, a
+            jumpOnTrueTo testB
+                  throw EMismatch                  ! No lo es
+
+	    :testB
+      	    isInstanceOf Float, b	           ! Es un número ?
+            jumpOnTrueTo fin
+                  throw EMismatch                  ! No lo es
+            
+	    :fin
+            x = a
+            y = b
+      return
+      endMethod
+      
+      method + toString()
+      	    reference toret
+	    
+	    toret = "("
+	    toret = toret.concat(x.toString())	    
+	    toret = toret.concat(", ")
+	    toret = toret.concat(y.toString())
+	    toret = toret.concat(")")
+      return toret
+      endMethod
+endObject
+
+object Linea
+      attribute + p1 = Punto
+      attribute + p2 = Punto
+      
+      method + mueve(a, b, c, d)
+            p1.mueve(a, b)
+            p2.mueve(c, d)
+      return
+      endMethod
+      
+      method + toString()
+            reference toret = p1.toString()
+            
+            toret = toret.concat(" - ")
+            toret = toret.concat(p2.toString())
+      return toret
+      endMethod
+endObject
+
+object PruebaLinea : ConsoleApplication
+      method + doIt()
+	    reference miLinea = Linea.copy("")
+                  
+            __this.prepare();
+	    
+	    miLinea.mueve(100, 100, 200, 200)
+	    
+            System.console.write(miLinea)
+	    System.console.lf()
+      return
+      endMethod
+endObject
+!

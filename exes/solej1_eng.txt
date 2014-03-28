@@ -1,0 +1,56 @@
+! ================================
+! Creating a point object
+! Zero's macroassembler programming example
+! jbgarcia@uvigo.es
+! ================================
+! 	Must be saved as "PointTest.zm"
+
+object Point
+      attribute + x = 0
+      attribute + y = 0
+      
+      method + move(a, b)
+      	    isInstanceOf Float, a
+            jumpOnTrueTo testB
+                  throw EMismatch                  
+
+	    :testB
+      	    isInstanceOf Float, b	           
+            jumpOnTrueTo end
+                  throw EMismatch                  
+            
+	    :end
+            x = a
+            y = b
+      return
+      endMethod
+      
+      method + toString()
+      	    reference toret
+	    
+	    toret = "("
+	    toret = toret.concat(x.toString())	    
+	    toret = toret.concat(", ")
+	    toret = toret.concat(y.toString())
+	    toret = toret.concat(")")
+      return toret
+      endMethod
+endObject
+
+object PointTest : ConsoleApplication
+      method + doIt()
+            reference x = 100
+	    reference y = 100
+            reference myPoint = Point.copy("")	    ! Copy the object
+            
+            __this.prepare()                        ! Intitialize
+            
+             
+            myPoint.move(x, y)                      ! move the point
+            
+            System.console.write( myPoint )         ! Show the point
+	    System.console.lf()
+      return
+      endMethod
+endObject
+!

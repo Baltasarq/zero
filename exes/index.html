@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+  <head>
+    <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
+    <meta name="author" content="J. Baltasar Garcia Perez-Schofield">
+    <meta name="generator" content="Bluefish 1.0.4">
+    <meta name="KeyWords" content="inform&#225;tica de gesti&#243;n, persistencia, C++, C, OOP, POO, prototypes">
+    <title>Curso de doctorado "Tecnolog&#237;as de Objetos"</title>
+  </head>
+  <body style="color: rgb(0, 0, 0); background-color: rgb(192, 192, 192);" alink="#000088"
+    link="#0000ff" vlink="#ff0000">
+    <p> </p>
+    <hr width="100%">
+    <center>
+      <h1>Tecnolog&#237;as de Objetos</h1>
+      <big style="font-weight: bold;"><big><span style="font-style: italic;">(Object
+            Technology)</span></big></big> </center>
+    <hr>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td>
+            <center> <b>Impartido por<br>
+                (</b><span style="font-style: italic;">lectured by</span><b>):</b>
+              <br>
+              <a href="/jbgarcia/index.html">J. Baltasar Garc&#237;a
+                Perez-Schofield</a> </center>
+          </td>
+          <td>
+            <center> <b>Lugar<br>
+                (</b><span style="font-style: italic;">place</span><b>):</b> <br>
+              Despacho 307. Edif. Polit&#233;cnico, s/n <br>
+              Campus As Lagoas (Universidad de Vigo). <br>
+              32004 Vigo, Espa&#241;a. </center>
+          </td>
+          <td>
+            <center> <b>Horario<br>
+                (</b><span style="font-style: italic;">schedule</span><b>):</b>
+              <br>
+              del 8 al 9 de Enero de 2009, <br>
+              de 10 a 13h. </center>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p></p>
+    <ul>
+      <p></p>
+      <li>
+        <h2>Informaci&#243;n general</h2>
+        <ul>
+          <li><a href="/jbgarcia/prys/index.html">Sistema de programaci&#243;n
+              orientada a objetos Zero</a>, importante para realizar algunos
+            ejercicios. <br>
+            <i><a href="/jbgarcia/prys/index.html">The Zero object-oriented,
+                persistent programming system</a></i>.
+            <p></p>
+          </li>
+          <li>Temario resumido: <br>
+            <i>(summary):</i>
+            <ol>
+              <p></p>
+              <li>Introducci&#243;n <br>
+                <i>(introduction)</i>
+                <p></p>
+              </li>
+              <li>El modelo de orientaci&#243;n a objetos basado en prototipos.
+                <br>
+                <i>(The prototype-based object-oriented model)</i>
+                <p></p>
+              </li>
+              <li>Implantaci&#243;n de lenguajes orientados a objetos. <br>
+                <i>(implementation of object-oriented languages)</i>
+                <p></p>
+              </li>
+              <li>Persistencia. Su influencia en los lenguajes de
+                programaci&#243;n. <br>
+                <i>Persistence. Its part on programming languages.</i> </li>
+            </ol>
+          </li>
+        </ul>
+        <p></p>
+      </li>
+      <li>
+        <h2>Transparencias resumen del curso, y ejercicios.</h2>
+        <ol>
+          <p></p>
+          <li>Tema: <a href="transparencias1.pdf">Sistemas orientados a objetos
+              basados en prototipos</a>. <br>
+            <i><a href="transparencias1_eng.pdf">(Object-Oriented,
+                prototypye-based Systems)</a></i>
+            <ul>
+              <p></p>
+              <li><a href="http://www.di.uniovi.es/ioos/lab/oodbms.html">Publicaciones</a>
+                sobre Oviedo3 en la <a href="http://www.uniovi.es/">Universidad
+                  de Oviedo</a>. <br>
+                <i>(<a href="http://www.di.uniovi.es/ioos/lab/oodbms.html">Publications</a>
+                  of the University of Oviedo, OOTLab group).</i>
+                <p></p>
+              </li>
+              <li>Ejercicios <br>
+                <i>(exercises)</i>
+                <ol>
+                  <p></p>
+                  <li>Creaci&#243;n de objetos. <br>
+                    <i> Se trata de crear un prototipo Punto, con los atributos
+                      x e y, copiarlo para crear un objeto, e imprimir sus
+                      propiedades en pantalla. <br>
+                    </i> <a href="solej1.txt">Solution</a>.
+                    <p> Object creation.<br>
+                      <i>You should create the "Point" prototype, with the x and
+                        y attributes, and write its attributes on screen. <br>
+                      </i> <a href="solej1_eng.txt">Solution</a>. </p>
+                  </li>
+                  <li>Herencia. <br>
+                    <i> Se trata de crear un prototipo L&#237;nea, que
+                      tendr&#225; dos atributos, p1 y p2, que
+                      se&#241;alar&#225;n al prototipo Punto. Es necesario
+                      copiarlo para crear un objeto, e imprimir sus propiedades
+                      en pantalla. <br>
+                    </i> <a href="solej2.txt">Solution</a>.
+                    <p> Inheritance. <br>
+                      <i> The objective is to create the "Line" prototype, with
+                        two attributes pointing to two objects of the "Point"
+                        prototype. It is necessary to copy this object in order
+                        to create a new one, and write its attributes on screen.<br>
+                      </i> <a href="solej2_eng.txt">Solution</a>. </p>
+                  </li>
+                  <li>Polimorfismo. <br>
+                    <i> Se trata de crear un prototipo Figura, del que
+                      heredar&#225;n Rectangulo y Circulo, implementando cada
+                      uno de ellos el m&#233;todo "calcArea()", que debe forzar
+                      el prototipo Figura. Debe darse opci&#243;n a crear un
+                      c&#237;rculo o un rect&#225;ngulo, y, una vez creados,
+                      calcular su &#225;rea. <br>
+                    </i> <a href="solej3.txt">Soluci&#243;n</a>.
+                    <p> Polyphormism. <br>
+                      <i> The objective is to create a "Shape" prototype.
+                        "Circle" and "Rectangle" should derive from it,
+                        implementing the "calcArea" method, mandatorily because
+                        of the inheritance from "Shape". Give the user the
+                        option to create a circle or a rectangle and, once
+                        created, calculate the are of the shape without knowing
+                        what kind of shape is involved.<br>
+                      </i> <a href="solej3_eng.txt">Solution</a>. </p>
+                  </li>
+                  <li>Herencia din&#225;mica. <br>
+                    <i> Se trata de, utilizando el contenedor "Map"
+                      proporcionado por la librer&#237;a, capaz de almacenar
+                      elementos de forma asociativa, crear dos subprototipos,
+                      "MapaVacio", y "MapaNoVacio". Debe crearse un objeto que,
+                      heredando bien de uno o de otro, almacene elementos o no.
+                      &#201;sto implica cambiar el atributo Parent. <br>
+                    </i> <a href="solej4.txt">Soluci&#243;n</a>.
+                    <p> Dynamic inheritance<br>
+                      <i> The objective is to create, using the "Map" container
+                        of the standard library, able to store object in an
+                        associative manner, create two protoypes, "EmptyMap" and
+                        "NonEmptyMap". Create another object inheriting from
+                        these two prototypes (alternatively), when the
+                        conditions given by their names are met. This implies
+                        changing the "parent" attribute.<br>
+                      </i> <a href="solej4_eng.txt">Solution</a>. </p>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+            <p></p>
+          </li>
+          <li>Tema: <a href="transparencias3.pdf">Implementaci&#243;n de
+              Lenguajes Orientados a Objetos</a> <br>
+            <i>(<a href="transparencias3_eng.pdf">Implementation of
+                object-oriented programming languages</a>)</i>
+            <p></p>
+          </li>
+          <li>Tema: <a href="transparencias2.pdf">Persistencia en Sistemas
+              Orientados a Objetos</a>. <br>
+            <i>(<a href="transparencias2_eng.pdf">Persistence in object-oriented
+                systems</a>)</i>
+            <ul>
+              <p></p>
+              <li>Charla sobre <a href="/jbgarcia/charlas/index.html">persistencia
+                  y sistemas operativos</a> en los coloquios abiertos<a href="http://trevinca.ei.uvigo.es/%7Eca/"></a>,
+                de la <a href="http://www.esei.uvigo.es">Escuela Superior de
+                  Ingenier&#237;a Inform&#225;tica</a> de la <a href="http://www.uvigo.es/">Universidad
+                  de Vigo</a>.
+                <p></p>
+              </li>
+              <li><a href="http://webs.uvigo.es/grupoimo/">Publicaciones</a>
+                sobre persistencia del profesor que imparte el curso. </li>
+              <br>
+              <i>(<a href="http://webs.uvigo.es/grupoimo/">Publications</a> on
+                persistence from the lecturer of this course)</i>.
+            </ul>
+          </li>
+        </ol>
+        <p></p>
+      </li>
+    </ul>
+    <hr style="height: 1px; color: black; margin-left: auto; margin-right: auto;">
+    <p></p>
+    <center> <strong><a title="Departamento de Inform&#225;tica" href="http://www.di.uvigo.es/">[P&#225;gina
+          personal</a>][<a title="Departamento de Inform&#225;tica" href="http://www.di.uvigo.es/">Departamento
+          de Inform&#225;tica</a>][<a href="http://www.uvigo.es">Universidad de
+          Vigo]</a></strong>
+    </center>
+    <p style="text-align: center;"> <a href="http://www.anybrowser.org/campaign/">
+      </a><a href="http://www.adobe.es/products/acrobat/readstep.html"> </a></p>
+    <p>
+    </p>
+  </body>
+</html>

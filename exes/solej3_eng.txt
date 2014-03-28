@@ -1,0 +1,175 @@
+! ===========================================
+! Demonstration of polymorphism with a figure
+! jbgarcia@uvigo.es
+! ===========================================
+
+!		Should be saved as "FigureTest.zm"
+
+object Figure
+      method + calcArea()
+            throw ETypeMismatch
+      return
+      endMethod
+endObject
+
+
+object Rectangle : Figure
+      attribute + side1 = 0
+      attribute + side2 = 0
+      
+      method + calcArea()
+      	return side1.multiplyBy( side2 )
+      endMethod
+      
+      method + setSides(l1, l2)
+            :testLado1
+            isInstanceOf Float, l1
+            jumpOnTrueTo testLado2
+                  throw ETypeMismatch
+            
+	    :testLado2
+            isInstanceOf Float, l2            
+	    jumpOnTrueTo fin
+                  throw ETypeMismatch
+
+            :fin
+            side1 = l1
+            side2 = l2
+      return
+      endMethod
+endObject
+
+object Circle : Figure
+      attribute + radius = 0
+      
+      method + calcArea()
+            reference toret = 3.1415927
+            
+            toret = toret.multiplyBy(radius.multiplyBy(radius))
+      return toret
+      endMethod
+
+      method + setRadius(r)
+      	    isInstanceOf Float, r
+            jumpOnTrueTo fin
+                  throw ETypeMismatch
+
+            :fin
+            radius = r
+      return
+      endMethod   
+endObject
+
+
+object FigureTest : ConsoleApplication
+      method + createRectangle()
+            reference l1
+            reference l2
+	    reference miRectangulo
+            
+            System.console.write("Type a side length: ")
+            l1 = Float.parseString(System.console.read())
+	    
+            System.console.write("Type another side length: ")
+            l2 = Float.parseString(System.console.read())               
+
+            myRectangle = Rectangulo.copy("")
+            myRectangle.setSides(l1, l2)
+            
+            System.console.lf()
+            System.console.lf()            
+      return miRectangulo
+            System.console.write("It was necessary to introduce numbers.")
+            System.console.lf()
+      endMethod
+      
+      method + createCircle()
+            reference r
+	    reference myCircle
+            
+            System.console.write("Type in radius: ")
+            r = Float.parseString(System.console.read())
+            
+	    myCircle = Circulo.copy("")
+            
+            myCircle.setRadius(r)
+            System.console.lf()
+            System.console.lf()
+      return myCircle
+            System.console.write("It was necessary to introduce a number.")
+            System.console.lf()
+      endMethod
+            
+      method + setArea(figura)
+      	    isInstanceOf Figure, figura
+            jumpOnTrueTo calculaArea
+                  throw ETypeMismatch
+ 
+            :calculaArea     
+            System.console.write("The area is: ")
+            System.console.write(figura.calcArea());
+            System.console.lf()
+      return
+            System.console.write("ERROR: only figures can have their are calculated.")
+            System.console.lf()
+      endMethod   
+      
+      method + doIt()
+            reference figura
+            reference op
+            reference peticion       = "Enter option: "
+            reference opcion1        = "1. Create a rectangle"
+            reference opcion2        = "2. Create a circle"
+            reference opcion3        = "3. Exit"
+            reference numOpciones    = 3
+            reference opcionNoValida = "Invalid option."
+
+            __this.prepare()
+
+            : Loop
+                  ! Mostrar menú
+                  System.console.write(opcion1)
+                  System.console.lf()
+                  System.console.write(opcion2)
+                  System.console.lf()
+                  System.console.write(opcion3)
+                  System.console.lf()
+                  System.console.write(peticion)
+
+                  ! Pedir opción
+                  op = LiteralFloat.parseString(System.console.read())
+
+                  :esMayorQueNumOpciones
+                  op.isGreaterThan(numOpciones)
+                  jumpOnFalseTo esMenorQueUno
+                  System.console.write(opcionNoValida)
+                  System.console.lf()
+                  jumpTo Loop
+
+		  :esMenorQueUno
+                  op.isLessThan(1)
+                  jumpOnFalseTo ejecutarOpcion1
+                  System.console.write(opcionNoValida)
+                  System.console.lf()
+                  jumpTo Loop
+
+                  :ejecutarOpcion1
+                  op.isEqualTo(1)
+                  jumpOnFalseTo ejecutarOpcion2
+                  __this.ponArea(__this.createRectangulo())
+                  jumpTo Loop
+
+		  :ejecutarOpcion2
+                  op.isEqualTo(2)
+                  jumpOnFalseTo fin
+                  __this.ponArea(__this.createCirculo())                  
+            jumpTo Loop
+
+
+            :fin
+            System.console.write("End")
+            System.console.lf()
+      return
+      endMethod
+endObject
+!

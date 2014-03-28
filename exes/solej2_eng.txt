@@ -1,0 +1,73 @@
+! ================================
+! Creation of a Line object 
+! Zero's macroassembler programming example
+! jbgarcia@uvigo.es
+! ================================
+! 	Should be saved as "LineTest.zm"
+
+
+object Point
+      attribute + x = 0
+      attribute + y = 0
+      
+      method + move(a, b)
+      	    isInstanceOf Float, a
+            jumpOnTrueTo testB
+                  throw EMismatch                  
+
+	    :testB
+      	    isInstanceOf Float, b	           
+            jumpOnTrueTo end
+                  throw EMismatch                  
+            
+	    :end
+            x = a
+            y = b
+      return
+      endMethod
+      
+      method + toString()
+      	    reference toret
+	    
+	    toret = "("
+	    toret = toret.concat(x.toString())	    
+	    toret = toret.concat(", ")
+	    toret = toret.concat(y.toString())
+	    toret = toret.concat(")")
+      return toret
+      endMethod
+endObject
+
+object Line
+      attribute + p1 = Punto
+      attribute + p2 = Punto
+      
+      method + move(a, b, c, d)
+            p1.move(a, b)
+            p2.move(c, d)
+      return
+      endMethod
+      
+      method + toString()
+            reference toret = p1.toString()
+            
+            toret = toret.concat(" - ")
+            toret = toret.concat(p2.toString())
+      return toret
+      endMethod
+endObject
+
+object LineTest : ConsoleApplication
+      method + doIt()
+	    reference myLine = Line.copy( "" )
+                  
+            __this.prepare();
+	    
+	    myLine.move( 100, 100, 200, 200 )
+	    
+            System.console.write(myLine)
+	    System.console.lf()
+      return
+      endMethod
+endObject
+!

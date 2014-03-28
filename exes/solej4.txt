@@ -1,0 +1,79 @@
+! Herencia dinámica -- demostración
+
+! Debe ser guardado como "Dinamica.zm"
+
+object MapaVacio : Map
+      method + lookUp(name)
+            throw EObjectNotFound
+      return
+      endMethod
+
+      method + modify(name, obj)
+            throw EObjectNotFound
+      return
+      endMethod
+
+      method + add(name,obj)
+            System.console.write("MapaVacio::add")
+            System.console.lf()
+
+            __this.^add(name, obj)
+            parent = MapaNoVacio
+      return
+      endMethod
+endObject
+
+object MapaNoVacio : Map
+        method + delete(name)
+	    reference numAtributos
+	    
+            System.console.write("MapaNoVacio::delete")
+            System.console.lf()
+
+            __this.^delete(name)
+
+            numAtributos = __this.getNumberOfAttributes()
+            
+	    numAtributos.isLessThan(2)
+            jumpOnFalseTo fin
+            	parent = MapaVacio
+            :fin
+        return
+        endMethod
+endObject
+
+object Dinamica : ConsoleApplication
+	method + doIt()
+            reference miMapa
+
+	    ! Preparar la consola
+            parent.prepare()
+
+	    ! Crear el objeto map
+            System.console.write("Creando el objeto Map ...")
+            System.console.lf()
+            miMapa = MapaVacio.createChild("")
+            __this.escribeParent(miMapa)
+
+	    ! Insertar un elemento
+            System.console.write("Insertando un elemento ...")
+            System.console.lf()
+            miMapa.add("1", 1)
+            __this.escribeParent(miMapa)
+
+            System.console.write("Borrando un elemento ...")
+            System.console.lf()
+
+            miMapa.delete("1")
+            __this.escribeParent(miMapa)
+
+	return
+	endMethod
+
+      method + escribeParent(obj)
+            System.console.write("El padre es: ")
+            System.console.write(obj.parent)
+            System.console.lf()
+      return
+      endMethod
+endObject

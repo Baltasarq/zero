@@ -1,0 +1,175 @@
+! =======================================
+! Demostración de polimorfismo con figura
+! jbgarcia@uvigo.es
+! =======================================
+
+!		Debe ser guardado como "PruebaFigura.zm"
+
+object Figura
+      method + calcArea()
+            throw ETypeMismatch
+      return
+      endMethod
+endObject
+
+
+object Rectangulo : Figura
+      attribute + lado1 = 0
+      attribute + lado2 = 0
+      
+      method + calcArea()
+      	return lado1.multiplyBy(lado2)
+      endMethod
+      
+      method + ponLados(l1, l2)
+            :testLado1
+            isInstanceOf Float, l1
+            jumpOnTrueTo testLado2
+                  throw ETypeMismatch
+            
+	    :testLado2
+            isInstanceOf Float, l2            
+	    jumpOnTrueTo fin
+                  throw ETypeMismatch
+
+            :fin
+            lado1 = l1
+            lado2 = l2
+      return
+      endMethod
+endObject
+
+object Circulo : Figura
+      attribute + radio = 0
+      
+      method + calcArea()
+            reference toret = 3.1415927
+            
+            toret = toret.multiplyBy(radio.multiplyBy(radio))
+      return toret
+      endMethod
+
+      method + ponRadio(r)
+      	    isInstanceOf Float, r
+            jumpOnTrueTo fin
+                  throw ETypeMismatch
+
+            :fin
+            radio = r
+      return
+      endMethod   
+endObject
+
+
+object PruebaFigura : ConsoleApplication
+      method + creaRectangulo()
+            reference l1
+            reference l2
+	    reference miRectangulo
+            
+            System.console.write("Introduzca un lado: ")
+            l1 = Float.parseString(System.console.read())
+	    
+            System.console.write("Introduzca otro lado: ")
+            l2 = Float.parseString(System.console.read())               
+
+            miRectangulo = Rectangulo.copy("")
+            miRectangulo.ponLados(l1, l2)
+            
+            System.console.lf()
+            System.console.lf()            
+      return miRectangulo
+            System.console.write("Era necesario introducir números.")
+            System.console.lf()
+      endMethod
+      
+      method + creaCirculo()
+            reference r
+	    reference miCirculo
+            
+            System.console.write("Introduzca un radio: ")
+            r = Float.parseString(System.console.read())
+            
+	    miCirculo = Circulo.copy("")
+            
+            miCirculo.ponRadio(r)
+            System.console.lf()
+            System.console.lf()
+      return miCirculo
+            System.console.write("Era necesario introducir un número.")
+            System.console.lf()
+      endMethod
+            
+      method + ponArea(figura)
+      	    isInstanceOf Figura, figura
+            jumpOnTrueTo calculaArea
+                  throw ETypeMismatch
+ 
+            :calculaArea     
+            System.console.write("El área es: ")
+            System.console.write(figura.calcArea());
+            System.console.lf()
+      return
+            System.console.write("ERROR: sólo puede calcularse el área de una figura.")
+            System.console.lf()
+      endMethod   
+      
+      method + doIt()
+            reference figura
+            reference op
+            reference peticion       = "Introduzca opción: "
+            reference opcion1        = "1. Crear un rectángulo"
+            reference opcion2        = "2. Crear un círculo"
+            reference opcion3        = "3. Salir"
+            reference numOpciones    = 3
+            reference opcionNoValida = "Opción no válida."
+
+            __this.prepare()
+
+            : Loop
+                  ! Mostrar menú
+                  System.console.write(opcion1)
+                  System.console.lf()
+                  System.console.write(opcion2)
+                  System.console.lf()
+                  System.console.write(opcion3)
+                  System.console.lf()
+                  System.console.write(peticion)
+
+                  ! Pedir opción
+                  op = LiteralFloat.parseString(System.console.read())
+
+                  :esMayorQueNumOpciones
+                  op.isGreaterThan(numOpciones)
+                  jumpOnFalseTo esMenorQueUno
+                  System.console.write(opcionNoValida)
+                  System.console.lf()
+                  jumpTo Loop
+
+		  :esMenorQueUno
+                  op.isLessThan(1)
+                  jumpOnFalseTo ejecutarOpcion1
+                  System.console.write(opcionNoValida)
+                  System.console.lf()
+                  jumpTo Loop
+
+                  :ejecutarOpcion1
+                  op.isEqualTo(1)
+                  jumpOnFalseTo ejecutarOpcion2
+                  __this.ponArea(__this.creaRectangulo())
+                  jumpTo Loop
+
+		  :ejecutarOpcion2
+                  op.isEqualTo(2)
+                  jumpOnFalseTo fin
+                  __this.ponArea(__this.creaCirculo())                  
+            jumpTo Loop
+
+
+            :fin
+            System.console.write("Fin")
+            System.console.lf()
+      return
+      endMethod
+endObject
+!

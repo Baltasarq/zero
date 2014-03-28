@@ -1,0 +1,56 @@
+! ================================
+! Creación de un objeto Punto
+! Ejemplo de programación en Zero
+! jbgarcia@uvigo.es
+! ================================
+! 	Debe ser guardado como "PruebaPunto.zm"
+
+object Punto
+      attribute + x = 0
+      attribute + y = 0
+      
+      method + mueve(a, b)
+      	    isInstanceOf Float, a
+            jumpOnTrueTo testB
+                  throw EMismatch                  ! No lo es
+
+	    :testB
+      	    isInstanceOf Float, b	           ! Es un número ?
+            jumpOnTrueTo fin
+                  throw EMismatch                  ! No lo es
+            
+	    :fin
+            x = a
+            y = b
+      return
+      endMethod
+      
+      method + toString()
+      	    reference toret
+	    
+	    toret = "("
+	    toret = toret.concat(x.toString())	    
+	    toret = toret.concat(", ")
+	    toret = toret.concat(y.toString())
+	    toret = toret.concat(")")
+      return toret
+      endMethod
+endObject
+
+object PruebaPunto : ConsoleApplication
+      method + doIt()
+            reference x = 100
+	    reference y = 100
+            reference miPunto = Punto.copy("")	    ! Copiar el objeto
+            
+            __this.prepare()                        ! Inicializaciones
+            
+            
+            miPunto.mueve(x, y)                     ! mover al punto
+            
+            System.console.write(miPunto)           ! Visualizar el punto
+	    System.console.lf()
+      return
+      endMethod
+endObject
+!
