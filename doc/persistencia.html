@@ -1,0 +1,724 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  <meta name="Author" content="Baltasar Garc&iacute;a Perez-Schofield (jbgarcia)">
+
+  <meta name="KeyWords" content="Zero, programaci&oacute;n, programming, persistence,
+persistencia, persistent, OOP, POO, prototypes, prototipos, objetos, objects,
+librer&iacute;a, est&aacute;ndar, standard, library">
+  <title>Transparent persistence in Zero</title>
+
+
+</head>
+
+
+<body>
+
+<hr>
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <h1>Persistencia en Zero</h1>
+
+      <br>
+
+       Persistence in the Zero virtual machine  </td>
+
+      <td> <img src="tiraZero.jpg" alt="Zero (el avi&oacute;n)" align="right"> </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<hr>
+<h1>&Iacute;ndice(index)</h1>
+
+<p>
+</p>
+
+<ol>
+
+  <li><a href="#intro">Soporte de persistencia en
+Zero (persistence support in Zero)</a>
+  </li>
+
+  <li><a href="#how">C&oacute;mo funciona (how
+it works)</a>
+  </li>
+
+  <li><a href="#example">Un ejemplo sencillo (a
+simple example)
+    </a></li>
+
+  <li><a href="#Internals">Interioridades (internals)</a>
+  </li>
+
+</ol>
+
+<p>
+</p>
+
+<hr>
+<h1><a name="intro">Soporte de persistencia
+transparente en Zero</a></h1>
+
+<h1 style="font-style: italic;">(Support
+of transparent
+persistence in Zero)</h1>
+
+<p>Persistencia es la capacidad de un sistema de salvaguardar objetos de manera que puedan ser recuperados posteriormente, asi que los objetos pueden sobrevivir al proceso que los creó. En el caso de Zero, este soporte de persistencia es transparente, de manera que no es necesario utilizar ningún método o clase especial para guardar o acceder a los objetos en el almacenamiento persistente.
+<br>
+<i>
+Persistence is the capability of a system of saving objects in a way that they can be restored later, so objects can outlive the process that created them. Persistence support in Zero is managed transparently, so it is not necessary to use any special method or special class in order to save or restore objects in the persistent store.
+</i>
+</p>
+
+
+<p>Tanto es así que los lenguajes de alto nivel diseñados para la máquina virtual Zero no tienen noción alguna de que estén tratando en algún momento con objetos persistentes o no persistentes. No existe ninguna construcción especial, ni un tipo especial de referencia, ni siquiera un objeto especial que represente el almacenamiento persistente.
+<br>
+<i>
+Moreover, the programming languages designed for the Zero virtual machine don't have any notion about persistence, or about when they are dealing with persistent or not persistent objects. There isn't an special constructions, nor a special 
+</i>
+</p>
+
+<p>El sistema identifica aquellos objetos que deben ser hechos persistentes por alcanzabilidad. Es decir, si un objeto es alcanzable desde otro que es persistente (si hay alguna referencia del primero al segundo, o que a partir del primero, desde varios objetos intermedios, se puede llegar al segundo), entonces el sistema hará que el objeto sea persistente. Como se ha comentado, ésto se llama persistencia por alcanzabilidad (persistence by reachability), y explica por qué los lenguajes de programación de la máquina no necesitan ninguna construcción especial para manejarse con persistencia.
+<br>
+<i>
+The virtual machine identifies those objects that must be made persistent by reachability. This means that if an object is reachable from another object that is a persistent object (i.e. a reference from the first object points to the second object directly, or through any number of intermediate objects), then the system will make it persistent. As explained before, this is called persistence by reachability and explains why the programming languages created dor this virtual machine doesn't need any special construction for persistence.
+</i>
+</p>
+
+<p>
+</p>
+
+<hr>
+<h1>
+<p><a name="how">C&oacute;mo funciona</a></p>
+
+<p style="font-style: italic;"> (How
+it works)</p>
+
+</h1>
+<p>
+<p>Los objetos en Zero son guardados en directorios de objetos, que en terminología Zero se conocen como contenedores (containers). Estos directorios existen como objetos totalmente normales en el modelo de objetos de Zero, sólo que cuando la máquina virtual se encuentra con estos objetos, conoce, por semántica, que se trata de una parte del almacenamiento persistente. El almacenamiento persistente es jerárquico, de manera que existe un contenedor root del que cuelgan todos los demás, especialmente el contenedor de la librería estándar, IntStdLib.
+<br>
+<i>
+Objects in Zero are saved in directory objects, which in Zero terminology are known as containers. These directories wxist as regular objects in the Zero's object model. The only difference comes inside the virtual machine, as Zero recognizes them as they actual meaning, parts of the persistent store. The persistent store is hierarchical, presenting a container, namely root, which is the parent one of the reamining ones, specially IntStdLib.
+</i>
+</p>
+
+<p>Para guardar objetos, el programador lo único que ha de hacer es crear un contenedor, enlazar los objetos que desea guardar en ese contenedor (tal cual se enlazan cualesquiera otros objetos entre sí), y finalmente enlazar el contenedor con algún otro contenedor ya presente en el almacenamiento persistente, lo que garantiza que esos objetos se hagan, por alcanzabilidad, persistentes a su vez. La mecánica de ésto se puede ver en el siguiente ejemplo.
+<br>
+<i>
+In order to store objects, programmers do only need to create a container, link the objects he or she whises to save in that container (as any other object is linked with others, using references), and finally link the container with any other container present in the persistent store, which will guarantee that these objects will be made, because of reachability, also persistent. The mechanism exposed here is shown in the following example.
+</i>
+</p>
+
+
+<p>
+
+
+<hr>
+<h1>
+<p><a name="example">Un ejemplo sencillo (a
+simple example) </a></p>
+
+</h1>
+
+<p></p>
+
+En este ejemplo (desarrollado mediante el macroensamblador zm), se
+utilizar&aacute;n varios objetos relacionados entre s&iacute;
+que permitir&aacute;n representar a personas y a parejas. El
+primero objeto, <b>Persona</b>,
+ser&aacute; el que acumule los rasgos de
+todos los objetos representando a personas en la aplicaci&oacute;n:
+<br>
+<i>In this example
+(developed by means of the macroassembler zm), various objects related
+with each other are used,&nbsp;representing persons and couples.
+&nbsp;The first object, <b>Persona</b>, shown below,
+will contain all
+traits of persons:</i>
+<p></p>
+
+<code>object Persona <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;attribute + nombre
+= "juan nadie" <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;attribute +
+email&nbsp; = Nothing <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method
++ ponNombre(n) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nombre = n <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; return <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endMethod
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method
++ ponEmail(e) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+email = e <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; return <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;endMethod <br>
+
+&nbsp;<br>
+
+&nbsp; &nbsp; &nbsp;&nbsp; method + toString() <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp;__rr = nombre.toString() <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+email.isTheSameAs( Nothing ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+jumpOnTrueTo fin <br>
+
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __rr = __rr.concat(
+": " ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; __rr =
+__rr.concat( email.toString() ) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+:fin <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; return <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; endMethod <br>
+
+endObject</code>
+<p>Para representar a parejas, se utilizar&aacute; un objeto
+que se asocie con personas:
+<br>
+<i>
+In order to represent couples, an object related to persons
+will be used:</i>
+ </p>
+
+<code>object Pareja <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; attribute + hombre
+= Persona <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; attribute +
+mujer&nbsp; = Persona <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; attribute +
+dependientes = Nothing <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; method +
+ponPareja(a, b) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; hombre = a <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; mujer&nbsp; = b <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; return <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; endMethod <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; method +
+ponDependiente(x) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; dependientes.isTheSameAs(
+Nothing ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; jumpOnFalseTo mas <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dependientes =
+VectorInstance.copy( "" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+:mas <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; dependientes.add( x ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; return <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; endMethod <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;method +
+toString() <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; __rr = "Pareja formada por:
+" <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; __rr = __rr.concat(
+hombre.toString() ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; __rr = __rr.concat( ", y "
+) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; __rr = __rr.concat(
+mujer.toString() ) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; dependientes.isTheSameAs(
+Nothing ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; jumpOnTrueTo Fin <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;__rr = __rr.concat(
+"\nDependientes: " ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;__rr = __rr.concat(
+dependientes.toString() ) <br>
+
+&nbsp;<br>
+
+&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :Fin <br>
+
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;__rr =
+__rr.concat( "." ) <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; return <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp; endMethod <br>
+
+endObject<br>
+
+</code>
+<p>Finalmente, en el objeto de la aplicaci&oacute;n
+se
+crear&aacute;n varias personas, relacion&aacute;ndolas mediante
+una pareja:&nbsp;
+<br>
+<i>
+Finally, in the application object a few persons will be
+created, being related by a couple:</i></p>
+
+<code>
+object PruebaPersistente : ConsoleApplication <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+method + doIt() <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; reference disney &nbsp; &nbsp;
+&nbsp; =
+ContainerInstance.copy( "Disney" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; reference mascotas &nbsp;
+&nbsp; =
+VectorInstance.copy( "mascotas" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;reference donaldYdaisy =
+Pareja.copy( "" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference
+donald&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Persona.copy( "" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference
+daisy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= Persona.copy( "" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference
+jorgito&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Persona.copy( "" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference
+juanito&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Persona.copy( "" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;reference
+jaimito&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Persona.copy( "" ) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donald.ponNombre(
+"Donald" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donald.ponEmail(
+"donald@disney.com" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daisy.ponNombre(
+"Daisy" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daisy.ponEmail(
+"daisy@disney.com" ) <br>
+
+&nbsp;<br>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; jorgito.ponNombre( "Jorgito" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; jaimito.ponNombre( "Jaimito" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;juanito.ponNombre( "Juanito"
+) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donaldYdaisy.ponPareja(
+donald, daisy ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donaldYdaisy.ponDependiente(
+jorgito ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donaldYdaisy.ponDependiente(
+jaimito ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donaldYdaisy.ponDependiente(
+juanito )<br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; mascotas.add(
+"Pluto" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; mascotas.add( "Goofy" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+donaldYdaisy.ponDependiente( mascotas ) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.console.write( "\nComenzando guardado ...\n" ) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.console.write( donaldYdaisy ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.console.lf() <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+disney.addRenamedObject( "donaldYdaisy", donaldYdaisy ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;psRoot.add( disney ) <br>
+
+&nbsp;<br>
+
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;System.console.write( "\nGuardado de manera
+persistente\n" ) <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+endMethod <br>
+
+endObject
+</code>
+<p>Una vez que se ejecuta este programa, los objetos
+relacionados
+con la pareja donaldYdisney han sido guardados en el almacenamiento
+persistente. La m&aacute;quina virtual sigue todos los enlaces
+desde la pareja, asegur&aacute;ndose de que todos los objetos
+necesarios son guardados, de manera
+que puedan ser recuperados m&aacute;s tarde.
+<br>
+<i>
+Once this program is executed, all objects related to the
+couple donaldYdisney are saved in the persistent store. The virtual
+machine
+will follow all links in order to be sure that all needed objects are
+saved, so they can be restored later.</i></p>
+
+<p>Para garantizar que la informaci&oacute;n que se
+lee es la
+guardada por el programa anterior, se utilizar&aacute; otro objeto
+(mucho m&aacute;s peque&ntilde;o) que se encargue,
+s&iacute;mplemente, de recuperarla.
+<br>
+<i>
+In order to guarantee that the information retrieved is just the
+one  stored  in  the  persistent store  another  smaller  object 
+will  be  created  for  simple restoring.</i></p>
+
+<code>
+object VerPruebaPersistente : ConsoleApplication <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;method +
+doIt() <br>
+
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;__this.prepare() <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;System.console.write(
+"Recuperando info persistente:\n" ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;System.console.lf() <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;System.console.write(
+psRoot.Disney.donaldYdaisy ) <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;System.console.lf()<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;return<br>
+
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;endMethod <br>
+
+endObject
+ </code>
+<p>La salida de este objeto, una vez ejecutado, es:
+<br>
+<i>The output of this object, once executed, follows:</i></p>
+
+<code>
+ $ zvm VerPruebaPersistente
+<br>
+
+Recuperando info persistente:
+<br>
+
+Pareja formada por: Donald: donald@disney.com, y Daisy: daisy@disney.com<br>
+
+Dependientes: Jorgito, Jaimito, Juanito, Pluto, Goofy.<br>
+
+ </code>
+<p></p>
+
+<hr>
+<h1>
+<p> <a name="Internals">Algunas
+interioridades </a> </p>
+
+<p style="font-style: italic;">  (Internals)  </p>
+
+</h1>
+
+<p>
+Inicialmente, en el directorio de instalación de Zero, la máquina virtual (zvm) y la librería estándar deben existir juntos. Cuando la máquina virtual es lanzada la primera vez con soporte de persistencia (es decir, sin el modificador --nops), se crea un directorio bajo el directorio de instalación llamado ZeroPS. En ese directorio se encontrará el contenedor root.zbj y el directorio Root, que aglutinará bajo él a todos los demás contenedores (directa o indirectamente), ya que es el contenedor raiz. La lbrería estándar estará guardada bajo este contenedor raiz, como InstStdLib.zbj, de manera que cuando la máquina virtual, zvm, es llamada con --nops ...
+<br><i>Initially, in the
+installation directory of Zero, the virtual
+machine (zvm program) and the standard library (IntStdLib.zbj) must be
+found together. When the VM is&nbsp;triggered for the first time
+with
+persistence support (i.e., without the --nops switch), the&nbsp;VM
+creates a directory called ZeroPS under the installation directory.
+Under this directory, the root one also appears, which is representing
+the root container (apart from root.zbj), the root container . The
+standard library is found saved under this root directory, as
+IntStdLib.zbj. When the VM is executed with the --nops switch,</i></p>
+
+<p><code>
+ $ ./zvm --nops Version
+ </code></p>
+
+<p>
+entonces se usa la librería estándar en el directorio de instalación, mientras que la encontrada en el almacenamiento persistente es utilizada con soporte de persistencia:
+<br><i>then the
+standard library in the installation directory is used, while the one
+present in the PS is used when triggered with persistence support:
+</i></p>
+
+<p><code>
+ $ ./zvm Version
+ </code></p>
+
+<p>
+Si bien, el objeto Version.zbj distribuido con el sistema no hace uso del almacenamiento persistente (aparte, claro está, de IntStdLib).
+<br><i>Though the Version.zbj object
+distributed with the system
+doesn't make use of the PS (apart from the IntStdLib, of course).
+</i></p>
+
+<p>
+La estructura completa del almacenamiento persistente es una asociación entre contenedores y directorios (ahora sí, directorios del sistema de ficheros). Si un contenedor no tiene subcontenedores, entonces no tendrá un directorio asociado o estará vacío. En caso contrario, el directorio existe, contiene los .zbj de sus contenedores (y sus respectivos directorios asociados), y tiene el mismo nombre que el contenedor (sin la extensión .zbj).
+<br><i>The whole structure of the
+persistent store is a mapping
+between containers and directories (of the file system). If a container doesn't have
+children containers then it won't have a subdirectory or it will be
+empty. If it has, then the subdirectory won't be empty. Otherwise, it will
+have the same name the container has, containing its subcontainers files (*.zbj) and their associated directories.
+</i></p>
+
+<p>
+Es posible crear un objeto con cualquier de los lenguajes disponibles que generen Zero <i>bytecode</i>, o con el [macro]ensamblador Zero mismo, y colocar adcuadamente el fichero zbj generado en la estructura de directorios. Por ejemplo, si un objeto llamado <b>Areas</b> es compilado dentro de un archivo llamado Math, (que debería convertirse en Math.zbj), será considerado como el contenedor <b>Math</b> con el objeto <b>Areas</b> en su interior.
+<br><i>It is possible to create an
+object with a programming language
+generating zero bytecode, or with the zero [macro]assembler itself and
+place it (the .zbj file) adequately in the directory structure. For
+example, if an object called <b>Areas</b> is compiled
+using a file name Math, (which should become Math.zbj), then it will be
+considered as the <b>Math</b> container with the <b>Areas</b>
+object inside it.
+</i></p>
+
+<p><code>
+ OBJ Areas
+<br>
+
+&nbsp;&nbsp;MTH + areaOfSquare x
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;SET x
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;MSG __acc multiplyBy __acc
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;ASG __rr
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;RET
+<br>
+
+&nbsp;&nbsp;ENM
+<br>
+
+ENO
+ </code></p>
+
+<p>Por ejemplo, podría ser emplazado dentro del contenedor raiz, Root.
+<br><i>For instance, it could be
+placed under the root directory,
+</i></p>
+
+<p><code>
+ $ ./za Math
+<br>
+
+$ cd ZeroPS
+<br>
+
+$ cd Root
+<br>
+
+$ mv ../../Math.zbj .
+ </code>
+</p>
+
+Así podría ser accedido (usando Prowl o macroensamblador) mediante la sentencia:
+<br><i>so it could be accessed through (using
+the Prowl programming language,
+or the macroassembler), by a sentence such as:</i>
+ 
+<p><code> System.console.write(
+psRoot.Math.Areas.areaOfSquare( 7 ) );
+ </code></p>
+
+<p>
+O mediante (utilizando el ensamblador):
+<br><i>or through (using plain
+assembler):
+</i></p>
+
+<p><code>
+ INT 7
+<br>
+
+MSG psRoot.Math.Areas areaOfSquare __acc
+<br>
+
+MSG System.console write __acc
+ </code></p>
+
+<p>
+Mostrando 49, como se esperaba.
+<br><i>Showing 49 as result, as
+expected.</i>
+ </p>
+
+<p>
+</p>
+
+<hr>
+<table width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td> <a href="http://www.ei.uvigo.es/%7Ejgarcia/">J.
+Baltasar Garc&iacute;a Perez-Schofield</a>&nbsp; <a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;
+      <a href="http://www.lsi.uvigo.es">Departamento
+de
+Inform&aacute;tica</a>&nbsp; <a href="http://www.uvigo.es">Universidad de Vigo</a> </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<hr>
+</body>
+</html>

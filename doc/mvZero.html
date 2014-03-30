@@ -1,0 +1,1252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+  
+  
+  <meta name="Author" content="Baltasar García Perez-Schofield (jbgarcia)">
+
+
+  
+  
+  <meta name="KeyWords" content="Zero, programación, programming, persistence,
+persistencia, persistent, OOP, POO, prototypes, prototipos, objetos, objects, 
+máquina virtual, virtual machine">
+
+
+  
+  <title>Máquina virtual Zero</title></head>
+
+<body>
+
+
+
+<hr>
+<table width="100%">
+
+
+  <tbody>
+
+    <tr>
+
+
+      <td>
+            
+      
+      <h1>Máquina virtual Zero</h1>
+
+
+      </td>
+
+
+      <td>
+            <img src="tiraZero.jpg" alt="Zero (el avión)" align="right">
+      </td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+<hr>
+
+
+<p></p>
+
+<h2>Introducción</h2>
+
+
+Este archivo contiene la especificación de la máquina virtual Zero.
+Aquellos elementos que aparezcan con un asterisco, significa que todavía no son soportados.
+La especificación del ensamblador Zero,
+puede encontrarse <a href="ensambladorZero.html">aquí</a>.
+La máquina virtual debe:
+<ul>
+
+
+	
+  
+  <p></p>
+
+  <li>Ser multiplataforma.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar soporte nativo para números enteros.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar soporte nativo para números reales. 
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar soporte nativo para cadenas.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar soporte de persistencia.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar soporte de interfaz gráfica de usuario. *
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar soporte para la interacción en red.*
+	
+    
+    <p></p>
+
+  </li>
+
+  <li>Proporcionar el soporte para la programación orientada a objetos pura basada en prototipos.</li>
+
+</ul><h2>Arquitectura de la máquina virtual</h2><div style="text-align: center;"><img style="width: 522px; height: 401px;" alt="Description of the Zero programming system architecture" src="zeroSystem.png"><br></div>
+
+
+
+
+<p>Existen tres formas de generar programas para la máquina virtual:
+mediante el macroensamblador, mediante el lenguaje de programación
+PROWL, y mediante el lenguaje de programación J--. Estos tres
+compiladores generarn código fuente para el ensamblador, za, el <span style="font-style: italic;">backend</span> del sistema. La máquina virtual ejecuta entonces el bytecode, accediendo al almacenamiento persistente cuando sea necesario.</p>
+
+<h2>Descripción de la máquina virtual</h2>
+
+
+<img src="zerovm.bmp">
+<p></p>
+
+<h3>Registros</h3>
+
+
+La máquina virtual maneja los siguientes registros:
+<ul>
+
+
+	
+  
+  <p></p>
+
+  <li><b>Acumulador:</b> Proporciona un repositorio para gardar los resultados de los mensajes enviados a los objetos.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li><b>this:</b> Señala al objeto que está ejecutando el método.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li><b>Propósito general:</b> Guardan cualquier resultado intermedio. Pueden ser
+empleados libremente.
+	
+    
+    <p></p>
+
+  </li>
+
+  <li><b>Indicador de instrucciones:</b> No se tiene acceso a él, a no ser mediante los opcodes JMP, JOT, y JOF.
+  </li>
+
+</ul>
+
+
+<p></p>
+
+<h3>Referencias</h3>
+
+
+<p>
+<a name="ListaClasesInternas">
+</a></p>
+
+<ul>
+
+  <a name="ListaClasesInternas">Lista de clases internas que debe ofrecer la máquina virtual:
+  </a><a name="Zero_Console_$"></a>
+  
+  <p></p>
+
+  <li><code><a name="Zero_Console_$">Zero_Console_$</a></code>
+    <a name="Zero_Socket_$ *"></a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="Zero_Socket_$ *">Zero_Socket_$</a></code>
+    <a name="Zero_Data_$"></a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="Zero_Data_$">Zero_Data_$</a></code>
+    <a name="Zero_Float_$"></a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="Zero_Float_$">Zero_Float_$</a></code>
+    <a name="Zero_Int_$"></a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="Zero_Int_$">Zero_Int_$</a></code>
+    <a name="Zero_String_$"></a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="Zero_String_$">Zero_String_$</a></code>
+    
+    <p>
+    <a name="Zero_String_$">Estas clases se encargan de mapear cadenas, números ... a objetos, o proveer de
+servicios de consola, red ... etc.
+    </a></p>
+
+    
+    <p>
+
+    </p>
+
+  </li>
+
+</ul>
+
+
+<a name="ListaClases">
+</a>
+<p></p>
+
+<h3><a name="ListaClases">API de la máquina virtual</a></h3>
+
+
+<ul>
+
+
+  <a name="ListaClases">La API es la lista de objetos y métodos básicos que debe proveer la máquina virtual.
+Nunca será necesario emplear estos métodos directamente, puesto que
+la librería estándar se encarga de interaccionar con la API de forma
+transparente para ofrecer una funcionalidad más directa.
+  </a><a name="VMConsole">
+  </a>
+  
+  <p></p>
+
+  <li><code><a name="VMConsole">VM</a></code>
+    
+    <ol>
+
+
+
+      <a name="VMConsole">      </a><a name="VMGetHiVersionNumber">
+      </a>
+      
+      <p></p>
+
+      <li><a name="VMGetHiVersionNumber"><b>getHiVersionNumber</b>: devuelve el número alto de la versión
+      de la máquina Zero.            
+      
+      </a><a name="VMGetLoVersionNumber">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetLoVersionNumber"><b>getLoVersionNumber</b>: devuelve el número bajo de la versión
+      de la máquina Zero.
+            
+      </a><a name="VMGetPlatformName">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformName"><b>getPlatformName</b>: devuelve el nombre de la plataforma sobre
+      la que se asienta la máquina virtual Zero. Puede devolver los siguientes valores:
+      </a>
+        
+        <ul>
+
+
+          <a name="VMGetPlatformName">	<li>
+            
+            <p><b>Linux</b>: Lo devuelve una mv que se ejecuta sobre Unix/Linux.
+	</p>
+
+          </li>
+
+          <li>
+            
+            <p><b>Windows</b>: Lo devuelve una mv que se ejecuta sobre Windows.
+	</p>
+
+          </li>
+
+          <li>
+            
+            <p><b>MacOS</b>: Lo devuelve una mv que se ejecuta sobre Macintosh.
+	</p>
+
+          </li>
+
+          <li>
+            
+            <p><b>Other</b>: Lo devuelve una mv que se ejecuta sobre Palm.
+      </p>
+
+          </li>
+
+          </a>
+        
+        </ul>
+
+
+
+        <a name="VMGetPlatformName">      </a><a name="VMGetPlatformCode">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getHiPlatformCode *</b>: devuelve un código según el hardware sobre
+      la que se asienta la máquina virtual Zero. Puede devolver los siguientes valores:
+      </a>
+        
+        <ul>
+
+
+          <a name="VMGetPlatformCode">	<li>0: Intel 
+	</li>
+
+          <li>1: Sparc
+	</li>
+
+          <li>2: ARM</li>
+
+          <li>3: PowerPC</li>
+          <li>4: Motorola</li>
+          <li>5: Zilog</li>
+
+          <li>6: Otro
+      </li>
+
+          </a>
+        
+        </ul>
+
+
+        <a name="VMGetPlatformCode">      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getLoPlatformCode *</b>: devuelve un código según el SO sobre
+      la que se asienta la máquina virtual Zero. Puede devolver los siguientes valores:
+      </a>
+        
+        <ul>
+
+
+          <a name="VMGetPlatformCode">	<li>0: Linux
+	</li>
+
+          <li>1: Unix
+	</li>
+
+          <li>2: Windows
+	</li>
+
+          <li>3: MacOS
+	</li>
+
+          <li>99: Otro
+      </li>
+
+          </a>
+        
+        </ul>
+
+
+        <a name="VMGetPlatformCode">      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>copyObject</b>: Crea una copia de un objeto.
+      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getNameOf</b>: Devuelve el nombre de un objeto.
+      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>createChildOf</b>: Crea un objeto vacío, con su puntero
+        <code>parent</code> apuntando a un objeto dado.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>compareReferences</b>: Devuelve verdadero si dos referencias
+son iguales.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getNumberOfMethodsOf</b>: Devuelve el número de métodos de un
+objeto.
+      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getNameOf</b>: Devuelve el nombre de un objeto.      
+      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getMethodNumberByNameYOfX</b>: Devuelve el índice de un método
+dado por nombre.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>callMethodNumberOfObj</b>: Ejecuta un método dado por un índice.
+      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>deleteMethodNumberYOfX</b>: Elimina un método dado por un
+índice.     
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getInfoOnMethodNumberYOfX</b>: Devuelve información
+introspectiva de un método dado por un índice.     
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getNameOfMethodNumberYOfX</b>: Devuelve el nombre
+de un método dado por un índice.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getAttributeNumberByNameYOfX</b>: Devuelve el índice de un
+atributo según su nombre.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getAttributeNumberYOfX</b>: Devuelve un método según su índice.
+      
+      
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getNumberOfAttributesOf</b>: Devuelve el número de atributos
+de un objeto.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>addAttributeYOfXValueZ</b>: Añade un atributo a un objeto.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>deleteAttributeNumberYOfX</b>: Elimina un atributo de un
+objeto, según su índice.
+
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getInfoOnAttributeNumberYOfX</b>: Devuelve información
+introspectiva de un método según su índice.
+
+        
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMGetPlatformCode"><b>getNameOfAttributeNumberYOfX</b>: Devuelve el nombre
+de un método según su índice.
+      
+
+        </a></li>
+
+    
+    </ol>
+
+
+    <a name="VMConsole">
+    </a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="VMConsole">VM.Console</a></code>
+    
+    <ol>
+
+
+      <a name="VMConsole">      </a><a name="VMConsoleWrite">
+      </a>
+      
+      <p></p>
+
+      <li><a name="VMConsoleWrite">openDefaultConsole
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMConsoleWrite">closeDefaultConsole
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMConsoleWrite">lfDefaultConsole
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMConsoleWrite"><b>writeToDefaultConsole</b>: Es una función a la que se le pasa un
+objeto de tipo </a><a href="ensambladorZero.html#LiteralString">LiteralString</a>,
+      y lo imprime por pantalla. 
+      <br>
+
+En caso de producirse algún error, lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a>.
+      
+      <a name="VMConsoleRead">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMConsoleRead"><b>readFromDefaultConsole</b>: No toma parámetros. Deja en el
+acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralString">LiteralString</a>, 
+      que consiste en la entrada capturada por teclado,
+      hasta que el usuario pulsó ENTER. Si se produce un error, lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a>.
+      </li>
+
+    
+    </ol>
+
+
+    <a name="VMFloat">
+    </a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="VMFloat">VM.Float</a></code>
+    
+    <ol>
+
+
+      <a name="VMFloat">      </a><a name="VMFloatToString">
+      </a>
+      
+      <p></p>
+
+      <li><a name="VMFloatToString"><b>toString</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralString">LiteralString</a>, 
+      que consiste en la conversión de un objeto <a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>,
+      pasado por parámetro, a cadena. Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.      
+
+      <a name="VMFloatZero">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMFloatZero"><b>zero</b>: No toma parámetros. Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      con valor 0. Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      
+      <a name="VMFloatIsZero">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMFloatIsZero"><b>isZero</b>: Deja en el acumulador una referencia a un objeto
+      de tipo </a><a href="ensambladorZero.html#Conditional">Conditional</a>, 
+      según si el objeto del acumulador es un flotante con valor 0 o no.
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que el objeto no sea de tipo flotante.      
+      
+      <a name="VMFloatIsNegative">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMFloatIsNegative"><b>isNegative</b>: Deja una referencia a un objeto
+      de tipo </a><a href="ensambladorZero.html#Conditional">Conditional</a>, 
+      según si el objeto del acumulador es un flotante con valor negativo o no.
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que el objeto no sea de tipo flotante.      
+      
+      <a name="VMFloatMultiplyBy">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMFloatMultiplyBy"><b>multiplyBy</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      con valor de la multiplicación entre dos objetos pasados por parámetro.
+      Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que los objetos pasados por parámetro no sean LiteralFloat.
+      
+      <a name="VMFloatDivideBy">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMFloatDivideBy"><b>divideBy</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      con valor de la división entre el objeto LiteralFloat que hace
+      la llamada y el objeto LiteralFloat que se pasa por el acumulador. Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que "this" no sea una referencia a un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+      
+      <a name="VMFloatSum">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMFloatSum"><b>sum</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      con valor de la suma entre el objeto LiteralFloat que hace
+      la llamada y el objeto LiteralFloat que se pasa por el acumulador. Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+
+      <a name="vmFloatSubstractFloat">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="vmFloatSubstractFloat"><b>substract</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      con valor de la suma entre el objeto LiteralFloat que hace
+      la llamada y el objeto LiteralFloat que se pasa por el acumulador. Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+      
+      <a name="vmAbsFloat">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="vmAbsFloat"><b>abs</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      con el valor absoluto del LiteralFloat que se pasa por el acumulador. Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+      
+      
+        
+        <p></p>
+
+      </li>
+
+      <li>parseString
+      
+      <a name="vmAssignFloat">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="vmAssignFloat"><b>assign</b>: Toma del acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      y hace que el objeto <a href="@ensambladorZero.html#this">this</a> tenga el mismo valor. Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+        
+        <p></p>
+
+      </li>
+
+      <li>isEqualTo
+        
+        <p></p>
+
+      </li>
+
+      <li>isLessThan
+        
+        <p></p>
+
+      </li>
+
+      <li>isGreaterThan
+      </li>
+
+    
+    </ol>
+
+  
+    <a name="VMInt">
+    </a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="VMInt">VM.Int</a></code>
+    
+    <ol>
+
+
+      <a name="VMInt">      </a><a name="VMIntToString">
+      </a>
+      
+      <p></p>
+
+      <li><a name="VMIntToString"><b>toString</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralString">LiteralString</a>, 
+      que consiste en la conversión de un objeto <a href="ensambladorZero.html#LiteralInt">LiteralInt</a>,
+      pasado por parámetro, a cadena. Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.      
+
+      <a name="VMIntZero">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMIntZero"><b>zero</b>: No toma parámetros. Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      con valor 0. Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      
+      <a name="VMIntIsZero">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMIntIsZero"><b>isZero</b>: Deja en el acumulador una referencia a un objeto
+      de tipo </a><a href="ensambladorZero.html#Conditional">Conditional</a>, 
+      según si el objeto del acumulador es un flotante con valor 0 o no.
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que el objeto no sea de tipo flotante.      
+      
+      <a name="VMIntIsNegative">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMIntIsNegative"><b>isNegative</b>: Deja una referencia a un objeto
+      de tipo </a><a href="ensambladorZero.html#Conditional">Conditional</a>, 
+      según si el objeto del acumulador es un flotante con valor negativo o no.
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que el objeto no sea de tipo flotante.      
+      
+      <a name="VMIntMultiplyBy">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMIntMultiplyBy"><b>multiplyBy</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      con valor de la multiplicación entre dos objetos pasados por parámetro.
+      Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que los objetos pasados por parámetro no sean LiteralInt.
+      
+      <a name="VMIntDivideBy">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMIntDivideBy"><b>divideBy</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      con valor de la división entre el objeto LiteralInt que hace
+      la llamada y el objeto LiteralInt que se pasa por el acumulador. Lanza
+la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#EInternalError">EInternalError</a> en
+      caso de que "this" no sea una referencia a un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+      
+      <a name="VMIntSum">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="VMIntSum"><b>sum</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      con valor de la suma entre el objeto LiteralInt que hace
+      la llamada y el objeto LiteralInt que se pasa por el acumulador. Lanza
+la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+
+      <a name="vmIntSubstractInt">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="vmIntSubstractInt"><b>substract</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      con valor de la suma entre el objeto LiteralInt que hace
+      la llamada y el objeto LiteralInt que se pasa por el acumulador. Lanza
+la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+      
+      <a name="vmAbsInt">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="vmAbsInt"><b>abs</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      con el valor absoluto del LiteralInt que se pasa por el acumulador.
+Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+      
+      
+        
+        <p></p>
+
+      </li>
+
+      <li>parseString
+      
+      <a name="vmAssignInt">
+      </a>
+        
+        <p></p>
+
+      </li>
+
+      <li><a name="vmAssignInt"><b>assign</b>: Toma del acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralInt">LiteralInt</a>, 
+      y hace que el objeto <a href="@ensambladorZero.html#this">this</a> tenga
+el mismo valor. Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      <br>
+
+Lanza la excepción
+      <a href="ensambladorZero.html#ETypeMismatch">ETypeMismatch</a> en
+      caso de que "this" no sea un objeto albergando un flotante,
+      o de que suceda lo mismo con el que se pasa por el acumulador.
+        
+        <p></p>
+
+      </li>
+
+      <li>isEqualTo
+        
+        <p></p>
+
+      </li>
+
+      <li>isLessThan
+        
+        <p></p>
+
+      </li>
+
+      <li>isGreaterThan
+      </li>
+
+    
+    </ol>
+
+ 
+    <a name="VMString">
+    </a>
+    
+    <p></p>
+
+  </li>
+
+  <li><code><a name="VMString">VM.String</a></code><a name="VMString">    
+    </a>
+    
+    <ol>
+
+
+      <a name="VMString">      </a><a name="vmStringToFloat">
+      </a>
+      
+      <p></p>
+
+      <li><a name="vmStringToFloat"><b>toFloat</b>: Deja en el acumulador un objeto
+      de tipo </a><a href="ensambladorZero.html#LiteralFloat">LiteralFloat</a>, 
+      que consiste en la conversión de una cadena, en el acumulador, a flotante. Lanza la excepción
+      <a href="ensambladorZero.html#ENotEnoughMemory">ENotEnoughMemory</a> en
+      caso de que no exista suficiente memoria para crear el objeto.
+      Lanza la excepción
+      <a href="ensambladorZero.html#EMath">EMath</a> en
+      caso de que no la cadena no almacene realmente un flotante.      
+             
+        
+        <p></p>
+
+      </li>
+
+      <li>isEqualTo
+        
+        <p></p>
+
+      </li>
+
+      <li>isLessThan
+        
+        <p></p>
+
+      </li>
+
+      <li>isGreaterThan    
+        
+        <p></p>
+
+      </li>
+
+      <li>assign
+        
+        <p></p>
+
+      </li>
+
+      <li>zero
+        
+        <p></p>
+
+      </li>
+
+      <li>isEmpty
+        
+        <p></p>
+
+      </li>
+
+      <li>isZero
+        
+        <p></p>
+
+      </li>
+
+      <li>getPosition
+        
+        <p></p>
+
+      </li>
+
+      <li>toString
+        
+        <p></p>
+
+      </li>
+
+      <li>sub
+        
+        <p></p>
+
+      </li>
+
+      <li>length
+        
+        <p></p>
+
+      </li>
+
+      <li>concat
+        
+        <p></p>
+
+      </li>
+
+      <li>left
+        
+        <p></p>
+
+      </li>
+
+      <li>right
+
+      
+       
+      </li>
+
+    
+    </ol>
+
+
+
+    
+    <p></p>
+
+  </li>
+
+  <li><code>VM.Stack</code>
+    
+    <ol>
+
+
+      
+      <p></p>
+
+      <li>toStringStack
+      </li>
+
+    
+    </ol>
+
+
+  </li>
+
+</ul>
+
+
+
+
+<hr>
+<i>
+<table width="100%">
+
+
+  <tbody>
+
+    <tr>
+
+
+      <td>
+      <a href="http://www.ei.uvigo.es/%7Ejgarcia/">J. Baltasar García Perez-Schofield</a>&nbsp;
+      <a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;
+      <a href="http://www.lsi.uvigo.es">Departamento de Informática</a>&nbsp;
+      <a href="http://www.uvigo.es">Universidad de Vigo</a>
+      </td>
+
+
+      <td>
+      <img src="tiraZero.jpg" alt="Zero (el avión)" align="right">
+      </td>
+
+
+    </tr>
+
+
+  
+  </tbody>
+</table>
+
+
+</i>
+<hr>
+
+</body></html>

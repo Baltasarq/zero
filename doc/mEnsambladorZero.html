@@ -1,0 +1,635 @@
+<html>
+<head>
+  <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <META name="Author" content="Baltasar García Perez-Schofield (jbgarcia)">
+  <META name="KeyWords" content="Zero, programación, programming, persistence,
+persistencia, persistent, OOP, POO, prototypes, prototipos, objetos, objects,
+macroensamblador, macroassembler">
+<title>Macroensamblador Zero</title>
+</head>
+<body>
+<hr>
+<TABLE WIDTH=100%>
+<TR>
+      <TD>
+            <h1>Macroensamblador Zero</h1>
+      </TD>
+      <TD>
+            <IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
+      </TD>
+</TR>
+</TABLE>
+<hr>
+
+
+
+<body>
+<h1>Manual de programación en Macroensamblador Zero</h1>
+<P>
+El presente documento explica cómo utilizar el macroensamblador para
+crear programas para la máquina virtual Zero.
+Hay otra información que también es posible utilizar como referencia, como
+por ejemplo, la contenida en el <a href="ensambladorZero.html">
+manual de programación en ensamblador Zero</a>, y, sobre todo, la
+<a href="intstdlib.html">documentación
+sobre la librería estándar</a>.
+<P>
+<h2>Introducción</h2>
+<P>
+En esta sección se describirá la compilación de un objeto sencillo, como el
+que se ve a continuación:
+<P>
+<CODE>
+<br><a href="#obj">object</a> HolaMundo : ConsoleApplication
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + doIt()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;parent.prepare()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write("¡Hola, Mundo!")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+Este objeto recibe y envía información por consola, por lo que debe derivar del
+objeto
+"ConsoleApplication", que es la que prepara este tipo de E/S.
+El objeto <i>HolaMundo</i>, por su parte, sólo manda un mensaje a la consola
+para visualizar el mensaje "¡Hola, Mundo!".
+<P>Este código fuente puede escribirse en cualquier editor de texto, pero debe
+llamarse
+de la misma forma que el objeto principal, es decir, "HolaMundo.zm".
+<P>
+La compilación del objeto se realiza de la siguiente forma:
+<P>
+<CODE>$ zm HolaMundo.zm</CODE>
+<P>
+La ejecución de este objeto se realiza como sigue:
+<P>
+<CODE>
+<br>$ zvm HolaMundo
+<br>¡Hola, Mundo!
+</CODE>
+<P>
+
+
+
+
+
+
+<h2>Descripción detallada de las macros</h2>
+Las siguientes macros pueden ser empleadas en cualquier programa en Zero.
+<P>
+
+<UL>
+
+
+<a name="obj">
+<P><li><b><a href="#obj">object</a></b>/<b><a href="#obj">endObject</a></b>:
+Permiten definir un objeto. Los métodos y atributos
+que se definan entre estas dos marcas serán incluidos dentro del objeto nombrado
+con
+<b><a href="#obj">object</a></b>. También es posible indicar que un objeto
+hereda de otro ya existente, colocando
+dos puntos (':') después del nombre del objeto que se está definiendo y, a
+continuación,
+el nombre del objeto del que se hereda. 
+<br>Si no se indica que un objeto hereda
+de algún otro, entonces, automáticamente, hereda del prototipo Object.
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#obj">object</a> &lt;nombre_objeto&gt; [ : &lt;nombre_objeto_padre&gt;
+]
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> HolaMundo : ConsoleApplication
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+<a name="atr">
+<P><li><b><a href="#atr">attribute</a></b>: Permite definir atributos. Debe
+estar entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>.
+El símbolo '+' significará público, mientras un '-' significará privado. A un
+atributo se le puede asignar un literal, que será de tipo cadena (encerrado
+entre comillas dobles), o numérico.
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#atr">attribute</a> <+/-> &lt;nombre_atributo&gt; [ =
+&ltliteral&gt;/&lt;nombre_de_objeto&gt; ]
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+
+<a name="mth">
+<P><li><b><a href="#mth">method</a></b>/<b><a href="#mth">endMethod</a></b>:
+Permite definir métodos. Debe estar entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>.
+El símbolo '+' significará público,
+mientras un '-' significará privado. Un método debe terminar en al menos un
+<a href="#ret"><a href="#ret">return</a></a>. Las instrucciones entre el primer
+<a href="#ret">return</a> y el <b><a href="#mth">endMethod</a></b> son las que se
+ejecutarán en caso de ocurrir alguna excepción.
+Si no existe gestor de excepciones (es decir, si no hay instrucciones), entonces
+la excepción salta al método que realizó la llamada al presente.
+<P>Una comenzado un gestor de excepciones, la excepción producida está en el
+registro __exc.
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#mth">method</a> <+/-> &lt;nombre_método&gt;([&lt;parámetro1&gt;,
+[&lt;parámetro2&gt;, ...]])
+<br><a href="#mth">endMethod</a>
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br><a href="#coment">! Les damos valor 0, pero podría ser otro valor</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponCoordenadas(a, b)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;y = b
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+<a name="#ret">
+<P><li><b><a href="#ret">return</a></b>: Devuelve una referencia como retorno del
+método. Debe estar
+entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a> y
+un <a href="#mth">par <a href="#mth">method</a>/<a
+href="#mth">endMethod</a></a>. Un método debe terminar en al menos un
+<a href="#ret"><a href="#ret">return</a></a>. Las instrucciones entre el primer
+<a href="#ret">return</a> y el
+<b><a href="#mth">endMethod</a></b> son las que se ejecutarán en caso de ocurrir
+alguna excepción.
+Si no existe gestor de excepciones (es decir, si no hay instrucciones), entonces
+la excepción salta al método que realizó la llamada al presente.
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#ret">return</a> &lt;expresión&gt;
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + toString()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;reference toret =<a href="#lit"> "("</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(x.toString())
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(<a href="#lit">", "</a>)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(y.toString())
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(")")
+<br>&nbsp;&nbsp;<a href="#ret">return</a> toret
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+
+<a name="ref">
+<P><li><b><a href="#ref">reference</a></b>: Permite definir referencias locales.
+Debe
+estar entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>.
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#ref">reference</a> &lt;nombre_referencia&gt; [ =
+&ltliteral&gt;/&lt;expresión&gt; ]
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + toString()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;reference toret = <a href="#lit">"("</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(x.toString())
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(<a href="#lit">", "</a>)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(y.toString())
+<br>&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat(")")
+<br>&nbsp;&nbsp;<a href="#ret">return</a> toret
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+
+
+
+
+
+<a name="trw">
+<P><li><b><a href="#trw">throw</a></b>: Lanza una excepción. Debe
+estar
+entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>, y
+un <a href="#mth">par
+<a href="#mth">method</a>/<a href="#mth">endMethod</a></a>. 
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#trw">throw</a> &lt;nombre_objeto&gt;
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponValorX(a)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iof">isInstanceOf</a> Float, a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jot">jumpOnTrueTo</a> fin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#trw">throw</a> ETypeMismatch
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:fin</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write(<a href="#lit">"Error de
+asignación"</a>)
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+
+<a name="iof">
+<P><li><b>isInstanceOf</b>: Pone un True o un False en el acumulador, según un
+objeto herede de otro dado, o no. Debe
+estar
+entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>, y
+un <a href="#mth">par
+<a href="#mth">method</a>/<a href="#mth">endMethod</a></a>. 
+<P>
+Sintaxis:
+<P>
+<CODE>
+isInstanceOf &lt;referencia&gt;, [&lt;expresión&gt;]
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponValorX(a)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;isInstanceOf Float, a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jot">jumpOnTrueTo</a> fin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#trw">throw</a> ETypeMismatch
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:fin</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write(<a href="#lit">"Error de
+asignación"</a>)
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+<a name="jmp">
+<P><li><b>jumpTo</b>: Realiza un salto a una etiqueta. Debe
+estar
+entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>, y
+un <a href="#mth">par
+<a href="#mth">method</a>/<a href="#mth">endMethod</a></a>. 
+<P>
+Sintaxis:
+<P>
+<CODE>
+jump &lt;nombre_etiqueta&gt;
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponValorX(a)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iof">isInstanceOf</a> Float, a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jot">jumpOnTrueTo</a> fin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#trw">throw</a> ETypeMismatch
+<br><a href="#coment">! En realidad, lo siguiente nunca se ejecuta ...</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpTo fin 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:fin</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write(<a href="#lit">"Error de
+asignación"</a>)
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+<a name="#jot">
+<P><li><b>jumpOnTrueTo</b>: Salto condicional. Si el contenido del acumulador es
+True, entonces realiza un salto a la etiqueta indicada. Debe
+estar
+entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>, y
+un <a href="#mth">par
+<a href="#mth">method</a>/<a href="#mth">endMethod</a></a>. 
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#jot">jumpOnTrueTo</a> &lt;nombre_etiqueta&gt;
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponValorX(a)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iof">isInstanceOf</a> Float, a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jot">jumpOnTrueTo</a> fin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#trw">throw</a> ETypeMismatch
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:fin</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write(<a href="#lit">"Error de
+asignación"</a>)
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+<a name="jof">
+<P><li><b>jumpOnFalseTo</b>: Salto condicional. Si el contenido del acumulador
+es
+False, entonces realiza un salto a la etiqueta indicada. Debe
+estar
+entre un
+<a href="#obj">par <a href="#obj">object</a>/<a href="#obj">endObject</a></a>, y
+un <a href="#mth">par
+<a href="#mth">method</a>/<a href="#mth">endMethod</a></a>. 
+<P>
+Sintaxis:
+<P>
+<CODE>
+<a href="#jof">jumpOnFalseTo</a> &lt;nombre_etiqueta&gt;
+</CODE>
+<P>
+Ejemplo:
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x =<a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponValorX(a)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iof">isInstanceOf</a> Float, a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jof">jumpOnFalseTo</a> excepcion
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jmp">jumpTo</a> fin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:excepcion</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#trw">throw</a> ETypeMismatch
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:fin</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write(<a href="#lit">"Error de
+asignación"</a>)
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+</UL>
+
+
+<P>
+<h2>Otros conceptos</h2>
+<P>
+Los siguientes conceptos son empleados en la programación con este macroensamblador Zero:
+<P>
+
+
+
+
+<a name="expr">
+<h3>Expresiones</h3>
+<P>
+Existen dos tipos de expresiones: las que asignan la referencia
+devuelta por un mensaje a un método a una referencia local declarada previamente
+(o a un
+atributo del objeto), y las que no realizan ésto último, siendo,
+símplemente, mensajes a objetos.
+<br>Nótese que el tipo de expresiones que pueden pasarse como parámetro a un
+método son del segundo tipo.
+<br>Nótese que las referencias son siempre, el nombre del objeto, seguido de un
+número variable de nombres de atributos. Todos ellos están separados por puntos.
+<br>Por último, las asignaciones de los atributos no son expresiones, sino que son o bien
+literales o bien referencias.
+<P>
+<P>
+<CODE>
+[&lt;nombre_referencia_local&gt;|&lt;nombre_atributo&gt; = ]
+<br>&nbsp;&nbsp;&lt;referencia&gt;.&lt;método&gt;(&lt;literal1&gt;|&lt;expresión1&gt; [, &lt;literal2&gt;|&lt;expresión2&gt; [, ...] ])
+</CODE>
+<P>
+Un ejemplo de expresiones:
+<P>
+<CODE>
+! Éste objeto representa a una persona
+<br><a href="#obj">object</a> Persona
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + nombre = <a href="#lit">"Juan nadie"</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + edad = <a href="#lit">40</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + putNombre(nom)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;nombre = nom
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+
+<a name="lit">
+<h3>Literales</h3>
+<P>
+Los literales se indican, bien con un número con la notación habitual,
+bien como una cadena encerrada entre comillas dobles (").
+Un literal sólo puede ocupar una línea, si bien ésta es ilimitada.
+<br>Sólo hay tres "tipos" de literales, los números reales, que son objetos
+derivados de Float, los números enteros, objetos derivados de Int, y las
+cadenas, que derivan de String. En estos prototipos se definen todas las operaciones que pueden
+realizarse sobre estos dos tipos de items de información
+<P>
+NOTA: Una secuencia de caracteres entre comillas será tomada como de tipo
+cadena. Un número que contenga parte decimal será identificado como flotante,
+meintras un número sin parte decimal será tomado como entero.
+<P>
+Un ejemplo de literales:
+<P>
+<CODE>
+! Éste objeto representa a una persona
+<br><a href="#obj">object</a> Persona
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + nombre = <a href="#lit">"Juan nadie"</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + edad = <a href="#lit">40</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + sueldo = <a
+href="#lit">1300.5</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+<a name="coment">
+<h3>Comentarios</h3>
+<P>
+Los comentarios se indican con una admiración '!',
+y sólo pueden ser puestos al comienzo de una línea.
+En ningún caso podrán afectar sólo a una parte de una línea.
+Es decir, "<CODE>object Punto ! Punto es un objeto</CODE>" no será aceptado.
+<P>
+<P>
+<CODE>
+! Éste objeto representa a un punto
+<br><a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+<a name="etq">
+<h3>Etiquetas</h3>
+<P>
+Las etiquetas se representan anteponiendo el símbolo ':'. Sirven
+para saltar a ellas (cambiando el flujo de ejecución) mediante
+<a href="#jmp">jumpTo</a>, <a href="#jot">jumpOnTrueTo</a> y
+<a href="#jof">jumpOnFalseTo</a>.
+<P>
+<CODE>
+<a href="#obj">object</a> Punto
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + x = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#atr">attribute</a> + y = <a href="#lit">0</a>
+<br>&nbsp;&nbsp;<a href="#mth">method</a> + ponValorX(a)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iof">isInstanceOf</a> Float, a
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jot">jumpOnTrueTo</a> fin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#trw">throw</a> ETypeMismatch
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#etq">:fin</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;x = a
+<br>&nbsp;&nbsp;<a href="#ret">return</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write(<a href="#lit">"Error de
+asignación"</a>)
+<br>&nbsp;&nbsp;<a href="#mth">endMethod</a>
+<br><a href="#obj">endObject</a>
+</CODE>
+<P>
+
+
+
+
+
+
+
+
+
+
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+
+
+<hr>
+<i>
+<TABLE WIDTH=100%>
+<TR>
+<TD>
+<a href="http://www.ei.uvigo.es/~jgarcia/">J. Baltasar García
+Perez-Schofield</a>&nbsp;
+<a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;
+<a href="http://www.lsi.uvigo.es">Departamento de Informática</a>&nbsp;
+<a href="http://www.uvigo.es">Universidad de Vigo</a>
+</TD>
+<TD>
+<IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
+</TD>
+</TR>
+</TABLE>
+</i>
+<hr>
+</body>
+</html>

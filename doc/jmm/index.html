@@ -1,0 +1,3087 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.2  (Linux)">
+	<META NAME="AUTHOR" CONTENT="Pablo">
+	<META NAME="CREATED" CONTENT="20050823;18090000">
+	<META NAME="CHANGEDBY" CONTENT="Baltasar Perez-Schofield">
+	<META NAME="CHANGED" CONTENT="20070511;10364900">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 21.01cm 29.69cm; margin-left: 2cm; margin-right: 3cm; margin-top: 1.25cm; margin-bottom: 1.25cm }
+		TD P { margin-bottom: 0.2cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		TD P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: es-ES }
+		TD P.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+		TD P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+		P { margin-bottom: 0.2cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: es-ES }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+		H2 { margin-bottom: 0.1cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		H2.western { font-family: "Arial", sans-serif; font-size: 14pt; so-language: es-ES; font-style: italic }
+		H2.cjk { font-family: "Times New Roman", serif; font-size: 14pt; font-style: italic }
+		H2.ctl { font-family: "Arial", sans-serif; font-size: 14pt; so-language: ar-SA; font-style: italic }
+		H3 { margin-bottom: 0.1cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		H3.western { font-family: "Arial", sans-serif; font-size: 13pt; so-language: es-ES }
+		H3.cjk { font-family: "Times New Roman", serif; font-size: 13pt }
+		H3.ctl { font-family: "Arial", sans-serif; font-size: 13pt; so-language: ar-SA }
+		H4 { margin-bottom: 0.1cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		H4.western { font-family: "Times New Roman", serif; font-size: 14pt; so-language: es-ES }
+		H4.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		H4.ctl { font-family: "Times New Roman", serif; font-size: 14pt; so-language: ar-SA }
+		H5 { margin-bottom: 0.1cm; direction: ltr; color: #000000; widows: 2; orphans: 2; page-break-before: auto; page-break-after: auto }
+		H5.western { font-family: "Times New Roman", serif; font-size: 13pt; so-language: es-ES; font-style: italic }
+		H5.cjk { font-family: "Times New Roman", serif; font-size: 13pt; font-style: italic }
+		H5.ctl { font-family: "Times New Roman", serif; font-size: 13pt; so-language: ar-SA; font-style: italic }
+		A:link { color: #0000ff }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" TEXT="#000000" LINK="#0000ff" DIR="LTR">
+<DIV ID="Marco1" DIR="LTR" STYLE="position: absolute; top: 0.43cm; left: 16.97cm; width: 0.89cm; height: 0.38cm; border: none; padding: 0cm; background: #ffffff">
+	<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=5>MANUAL del LENGUAJE J--</FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=5>para Zero</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<p>
+<p align=right><i>J-- y su documentaci&oacute;n fueron desarrollados por Pablo L&oacute;pez Mart&iacute;nez</p>
+<hr>
+<p>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+J-- es un lenguaje de programaci&oacute;n basado fuertemente en Java,
+y, por tanto, basado en clases pero generando c&oacute;digo para una
+m&aacute;quina virtual basada en prototipos.</P>
+<p>
+<H3 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1.10pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<FONT SIZE=4>CREAR UN ARCHIVO J--</FONT></H3>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Lo primero antes de empezar a programar es crear el archivo donde
+vamos a escribir el c&oacute;digo fuente. Este archivo debe ser un
+fichero de texto y por convenio su extensi&oacute;n debe ser <B>.jmm.</B></P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Aunque el compilador <B>j-- </B>acepta cualquier tipo de extensi&oacute;n,
+es importante utilizar la extensi&oacute;n <B>.jmm</B> para
+identificar de manera m&aacute;s r&aacute;pida que ese archivo
+contiene c&oacute;digo j--.</P>
+<H3 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1.10pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<FONT SIZE=4>ELEMENTOS DEL LENGUAJE J--</FONT></H3>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En este apartado veremos los elementos que aporta <B>j-- </B>para
+escribir un programa. Este apartado es el soporte para el resto de
+los apartados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+CARACTERES DEL LENGUAJE J&mdash;</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Los caracteres <B>j-- </B>pueden agruparse en letras, d&iacute;gitos,
+espacios en blanco, caracteres especiales, signos de puntuaci&oacute;n
+y secuencias de escape.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Letras, d&iacute;gitos y car&aacute;cter de subrayado</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Estos caracteres son utilizados para formar los n&uacute;meros, los
+identificadores y las palabras claves de <B>j--. </B>Son los
+siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Letras
+	may&uacute;sculas del alfabeto ingl&eacute;s:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<B>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Letras
+	min&uacute;sculas del alfabeto ingl&eacute;s:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<B>a b c d e f g h i j k l m n o p q r s t u v w x y z</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">D&iacute;gitos
+	decimales:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<B>0 1 2 3 4 5 6 7 8 9</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Car&aacute;cter
+	de subrayado &ldquo;<B>_</B>&rdquo;</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El compilador <B>j-- </B>trata las letras may&uacute;sculas y
+min&uacute;sculas como caracteres diferentes. Por ejemplo los
+identificadores <I>Pi</I> y <I>PI</I> son diferentes. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Espacios en blanco</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los caracteres espacio en blanco, tabulador horizontal, tabulador
+vertical, avance de p&aacute;gina y nueva l&iacute;nea, son
+caracteres denominados <I>espacios en blanco, </I>porque la labor que
+desempe&ntilde;an es la misma que la del espacio en blanco: actuar
+como separadores entre los elementos de un programa, lo cual permite
+escribir programas m&aacute;s legibles. Por ejemplo, el siguiente
+c&oacute;digo:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">class persona {public void doIt ()
+{System.console.write (&ldquo;hola&rdquo;) ;}}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">puede
+escribirse de una forma m&aacute;s legible as&iacute;:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">class persona {</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 4cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">public void doIt ()</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 4cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">{</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 6cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">System.console.write (&ldquo;Hola&rdquo;);
+</FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 4cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los espacios en blanco en exceso son ignorados por el compilador.
+Seg&uacute;n esto, el c&oacute;digo siguiente se comporta exactamente
+igual que el anterior:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">class persona {</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">void doIt ( ){</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">System.console.write ( &ldquo;Hola&rdquo;
+);</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Caracteres especiales y signos de puntuaci&oacute;n</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.27cm; margin-bottom: 0cm">Este
+grupo de caracteres se utiliza de diferentes formas; por ejemplo,
+para especificar una determinada operaci&oacute;n aritm&eacute;tica,
+l&oacute;gica o de relaci&oacute;n. Son los siguientes:</P>
+<P CLASS="western" STYLE="text-indent: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>, . ; : &ldquo; ( ) { } &lt; ! | / + # % &amp; * - = &gt; </B>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Secuencias de escape</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Cualquier car&aacute;cter de los anteriores puede tambi&eacute;n ser
+representado por una <I>sentencia de escape</I>. Una secuencia de
+escape est&aacute; formada por el car&aacute;cter \ seguido de una
+letra o de una combinaci&oacute;n de d&iacute;gitos. Son utilizadas
+para acciones como nueva l&iacute;nea y tabulador.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El lenguaje j-- tiene predefinidas las siguientes secuencias de
+escape:</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=576 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS BGCOLOR="#ffffcc">
+	<COL WIDTH=114>
+	<COL WIDTH=434>
+	<TR VALIGN=TOP>
+		<TD WIDTH=114 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=CENTER><FONT COLOR="#ffffff"><FONT SIZE=2><B>Secuencia</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=434 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=CENTER><FONT COLOR="#ffffff"><FONT SIZE=2><B>Nombre</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=114 HEIGHT=23>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=2>\n</FONT></P>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=2>\t</FONT></P>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=CENTER><BR>
+			</P>
+		</TD>
+		<TD WIDTH=434 BGCOLOR="#ffffcc">
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=2>Ir
+			al principio de la siguiente l&iacute;nea.</FONT></P>
+			<P CLASS="western" ALIGN=CENTER><FONT SIZE=2>Tabulador horizontal.</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+TIPOS DE DATOS</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Veamos la siguiente operaci&oacute;n aritm&eacute;tica:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">dato1 = 20;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">dato2 = 10;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">resultado = dato1 + dato2;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Para que el compilador <B>j-- </B>reconozca esta operaci&oacute;n es
+necesario especificar previamente el tipo de cada uno de los
+operandos que intervienen en la misma, as&iacute; como el tipo del
+resultado. Para ello, escribiremos una l&iacute;nea como la
+siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int dato1, dato2, resultado;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">dato1 = 20;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">dato2 = 10;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">resultado = dato1 + dato2;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La declaraci&oacute;n anterior le indica al compilador <B>j-- </B>que
+<I>dato1, dato2 </I>y <I>resultado</I> son de tipo entero (int).
+Observe que se puede declarar m&aacute;s de una variable del mismo
+tipo utilizando una lista separada por comas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Tipos primitivos</FONT></H5>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Se les llama primitivos porque est&aacute;n definidos por el
+compilador. Hay tres tipos primitivos de datos:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+Tipo entero: <B>int</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+Tipo real: <B>float</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+Tipo booleano: <B>boolean</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>int</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El tipo <B>int</B> se utiliza para declarar datos enteros. El
+siguiente ejemplo declara e inicia dos variables de tipo <B>int:</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int a = 2999;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int b = -439;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>float</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El tipo <B>float </B>se utiliza para declarar datos de tipo real. El
+siguiente ejemplo declara e inicia dos variables <B>float:</B></P>
+<P CLASS="western" STYLE="text-indent: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">float a = 3.1516;</FONT></P>
+<P CLASS="western" STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">float b = -0.317;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>boolean</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El tipo
+<B>boolean</B> se utiliza para declarar datos que indican si algo es
+verdadero o falso. El siguiente ejemplo declara e inicia dos
+variables <B>boolean:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">boolean a = true;</FONT></P>
+<P CLASS="western" STYLE="margin-left: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">boolean b = false;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+LITERALES</H4>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Un literal es la expresi&oacute;n de un valor de un tipo primitivo, o
+bien de una cadena de caracteres (conjunto de caracteres entre
+comillas dobles). Por ejemplo, son literales: 5, 3.14, true y &ldquo;hola&rdquo;.
+En realidad son valores constantes.</P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Seg&uacute;n lo expuesto, un literal en <B>j-- </B>puede ser: un
+entero, un real, un booleano y una cadena de caracteres.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Literales enteros</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+En el lenguaje <B>j-- </B>un literal entero puede llevar signo, en
+general, el signo + es opcional si el valor es positivo y el signo &ndash;
+estar&aacute; presente siempre que el valor sea negativo. La sintaxis
+para especificar un literal entero es:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>{[+] | [-]} literal_entero</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Literales reales</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Un literal real est&aacute; formado por una parte entera, seguido por
+un punto decimal, y una parte fraccionaria. El lenguaje <B>j-- </B>no
+permite utilizar la notaci&oacute;n cient&iacute;fica.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>{[+] | [-]} parte_entera.parte_fraccionaria</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Literales de cadenas de caracteres</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Un literal de cadena de caracteres es una secuencia de caracteres
+encerrados entre <I>comillas dobles.</I> Por ejemplo:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+&ldquo;<SPAN LANG="es-ES"><B>Esto es una cadena de caracteres.&rdquo;</B></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+&ldquo;<SPAN LANG="es-ES"><B>3.1415926&rdquo;</B></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+&ldquo;&rdquo; <SPAN LANG="es-ES"><B>/*Cadena vac&iacute;a*/</B></SPAN></P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Literales booleanos</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+Existen dos literales booleanos:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+<B>true: </B>indica que algo es verdadero.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; margin-bottom: 0cm">
+<B>false: </B>indica que algo es falso.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+IDENTIFICADORES</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Los identificadores son nombres dados a clases, atributos, m&eacute;todos
+y variables de un programa. La sintaxis para formar un identificador
+es la siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>{letra} [{letra|digito|_}]&hellip;</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+lo cual indica que un identificador consta de uno o m&aacute;s
+caracteres y que el primer car&aacute;cter debe ser un letra. No
+puede comenzar por un d&iacute;gito ni por un car&aacute;cter de
+subrayado ni puede contener caracteres especiales.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Las letras pueden ser may&uacute;sculas o min&uacute;sculas. Para <B>j--
+</B>una letra may&uacute;scula es un car&aacute;cter diferente a esa
+misma letra min&uacute;scula. Por ejemplo, los identificadores <I>Suma</I>,
+<I>suma</I> y <I>SUMA</I> son diferentes.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Los identificadores pueden tener cualquier n&uacute;mero de
+caracteres pero solamente los 99 caracteres primeros son
+significativos. Esto quiere decir que un identificador es distinto de
+otro cuando difieren al menos en uno de los 99 primeros caracteres
+significativos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Ejemplos de identificadores:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>Suma</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>Calculo_Numeros_Primos</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>ordenar</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>VisualizarDatos</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+PALABRAS CLAVE</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Las palabras claves son identificadores predefinidos que tienen
+significado especial para el compilador j--. Por lo tanto, un
+identificador definido por el usuario, no puede tener el mismo nombre
+que una palabra clave. El lenguaje <B>j-- </B>tiene las siguientes
+palabras clave:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>boolean false public</B></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>break float return</B></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>catch for throw</B></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>class if true</B></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>continue import try</B></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>do int void</B></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>else new while</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>extends private</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Las palabras clave deben escribirse siempre en min&uacute;sculas,
+como est&aacute;n.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+COMENTARIOS</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Un comentario es un mensaje a cualquiera que lea el c&oacute;digo
+fuente. A&ntilde;adiendo comentarios se hace m&aacute;s f&aacute;cil
+la compresi&oacute;n de un programa. La finalidad de los comentarios
+es explicar el c&oacute;digo fuente. J-- soporta dos tipos de
+comentarios:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Comentario
+	tradicional: </B>Un comentario tradicional empieza con los
+	caracteres <B>/*</B> y finaliza con los caracteres <B>*/</B>. Estos
+	comentarios pueden ocupar m&aacute;s de una l&iacute;nea, pero no
+	pueden anidarse, y pueden aparecer en cualquier lugar donde se
+	permita aparecer un espacio en blanco. Por ejemplo:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<B>/*</B></P>
+<P CLASS="western" STYLE="margin-left: 1.91cm; margin-bottom: 0cm">La
+ejecuci&oacute;n de un programa j-- empieza en el m&eacute;todo doIt</P>
+<P CLASS="western" STYLE="margin-left: 2.49cm; margin-bottom: 0cm">definido
+dentro de la clase principal. Para indicar que una clase es principal
+esta debe tener el mismo nombre que el fichero de</P>
+<P CLASS="western" STYLE="margin-left: 1.91cm; margin-bottom: 0cm">c&oacute;digo
+fuente y derivar de la clase ConsoleApplication.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<B>*/</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Comentario
+	de una sola l&iacute;nea: </B>Este tipo de comentario comienza con
+	una doble barra (<B>//</B>) y se extiende hasta el final de la
+	l&iacute;nea. La siguiente l&iacute;nea muestra un ejemplo:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<B>// Aqu&iacute; empieza un programa</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+DECLARACI&Oacute;N DE UNA VARIABLE</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una variable representa un espacio de memoria para almacenar un valor
+de un determinado tipo. El valor de una variable puede cambiar
+durante la ejecuci&oacute;n de un programa. Para utilizar una
+variable dentro de un m&eacute;todo de un programa, primero hay que
+declararla dentro del mismo. <B>Una variable solo se puede declarar
+al principio de un m&eacute;todo y nunca dentro de un bloque</B>. La
+declaraci&oacute;n de un variable consiste en enunciar el nombre de
+la misma y asociarle un tipo:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>tipo identificador[, identificador]&hellip;</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En el ejemplo siguiente se declaran e inician tres variables: una de
+tipo <B>int, </B>otra <B>float</B> y otra <B>boolean</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int i = 0;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">float f = 3.56;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">boolean d = false;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una variable puede ser inicializada mediante un literal o mediante
+una expresi&oacute;n.</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+EXPRESIONES N&Uacute;MERICAS</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una expresi&oacute;n num&eacute;rica es un conjunto de operandos
+unidos mediante operadores para especificar una operaci&oacute;n
+determinada. Ejemplo:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">a + 1</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">suma + c</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">cantidad * precio</FONT></P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+OPERADORES</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Los operadores son s&iacute;mbolos que indican c&oacute;mo son
+manipulados los datos. Se pueden clasificar en los siguientes grupos:
+aritm&eacute;ticos, relacionales, l&oacute;gicos, unitarios, de
+asignaci&oacute;n.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Operadores aritm&eacute;ticos</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los operadores aritm&eacute;ticos los utilizamos para realizar
+operaciones matem&aacute;ticas y son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=576 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS BGCOLOR="#ffffcc">
+	<COL WIDTH=89>
+	<COL WIDTH=459>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operador</B></FONT></P>
+		</TD>
+		<TD WIDTH=459 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operaci&oacute;n</B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89 HEIGHT=124>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">+</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">-</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">*</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">/</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY>%</P>
+		</TD>
+		<TD WIDTH=459>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Suma</B>.
+			Los operandos pueden ser enteros o reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Resta</B>.
+			Los operandos pueden ser enteros o reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Multiplicaci&oacute;n</B>.
+			Los operandos pueden ser enteros o reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Divisi&oacute;n</B>.
+			Los operandos pueden ser enteros o reales. Si ambos operandos son
+			enteros el resultado es entero sino el resultado es real.</P>
+			<P CLASS="western" ALIGN=JUSTIFY><B>M&oacute;dulo o resto</B>. Los
+			operandos deben ser enteros.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El siguiente ejemplo muestra c&oacute;mo utilizar estos operadores.
+Como se ve en le ejemplo primero debemos declarar las variables y
+despu&eacute;s se realizan las operaciones deseadas con ellas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int a = 10, b = 3, c;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">float x = 2.0, y;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">y = x + a; //El resultado es 12.0 de
+tipo float.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">c = a / b; //El resultado es 3 de tipo
+int.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">c = a % b; //El resultado es 1 de tipo
+int.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">y = a / b; //El resultado es 3 de tipo
+int. Se convierte a float </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2cm; text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">//para asignarlo a y.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Cuando en una operaci&oacute;n aritm&eacute;tica los operandos son
+diferentes uno de tipo <B>int</B> y otro de tipo <B>float</B>, el de
+tipo <B>int</B> es convertido a tipo <B>float</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+En una asignaci&oacute;n si el resultado obtenido es <B>float</B> y
+la variable a la que se le asigna es <B>int</B> se produce un error,
+solicitando que se realice la conversi&oacute;n adecuada por p&eacute;rdida
+de precisi&oacute;n.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Operadores de relaci&oacute;n</FONT></H5>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los operadores de relaci&oacute;n o de comparaci&oacute;n permiten
+evaluar la igualdad y la magnitud. El resultado de una operaci&oacute;n
+de relaci&oacute;n es un valor booleano verdadero o falso (true o
+false). Los operadores de relaci&oacute;n son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=576 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS BGCOLOR="#ffffcc">
+	<COL WIDTH=89>
+	<COL WIDTH=459>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operador</B></FONT></P>
+		</TD>
+		<TD WIDTH=459 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operaci&oacute;n</B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&lt;</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&gt;</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&lt;=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&gt;=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">!=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY>==</P>
+		</TD>
+		<TD WIDTH=459>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&iquest;Primer
+			operando menor que el segundo? Solo tipos de datos enteros y
+			reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&iquest;Primer
+			operando mayor que el segundo? Solo tipos de datos enteros y
+			reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&iquest;Primer
+			operando menor o igual que el segundo? Solo tipos de datos enteros
+			y reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&iquest;Primer
+			operando mayor o igual que el segundo? Solo tipos de datos enteros
+			y reales.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&iquest;Primer
+			operando distinto que el segundo? Cualquier tipo de datos.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY>&iquest;Primer operando igual que
+			el segundo? Cualquier tipo de datos.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los operadores <B>&lt;, &gt;, &lt;=, &gt;= </B>s&oacute;lo se pueden
+utilizar con tipos de datos enteros y reales.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los operadores <B>==, !=</B> se pueden utilizar con cualquier tipo de
+datos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+A continuaci&oacute;n se muestra un ejemplo del uso de los operadores
+relacionales:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">boolean r;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int x = 10, y=0;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">r = x == y; //r = false; porque x no es
+igual a y.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">r = x &gt; y; //r = true; porque x es
+mayor que y.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">r = x != y; //r= true; porque x es
+distinto de y.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Operadores l&oacute;gicos</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El resultado de una operaci&oacute;n l&oacute;gica es un valor
+booleano verdadero o falso (true o false). Las expresiones que dan
+como resultado valores booleanos pueden combinarse para formar
+expresiones booleanas utilizando los operadores l&oacute;gicos
+indicados a continuaci&oacute;n. Los operandos deben ser expresiones
+que den un resultado verdadero o falso.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los operadores l&oacute;gicos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=581 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS BGCOLOR="#ffffcc">
+	<COL WIDTH=89>
+	<COL WIDTH=464>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operador
+			</B></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=464 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operaci&oacute;n</B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&amp;&amp;</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">| |</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY>!</P>
+		</TD>
+		<TD WIDTH=464>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>AND</B>.
+			Da como resultado verdadero si al evaluar cada uno de los
+			operandos el resultado es verdadero. Si uno de ellos es falso, el
+			resultado es falso. 
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>OR</B>.
+			El resultado es falso si al evaluar cada uno de los operandos el
+			resultado es falso. Si uno de ellos es verdadero, el resultado es
+			verdadero.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+			</P>
+			<P CLASS="western" ALIGN=JUSTIFY><B>NOT</B>. El resultado de
+			aplicar este operador es falso si al evaluar su operando el
+			resultado es verdadero, y verdadero en caso contrario.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El resultado de una operaci&oacute;n l&oacute;gica es de tipo
+<B>boolean.</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+A continuaci&oacute;n se muestra un ejemplo del uso de los operadores
+l&oacute;gicos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int p = 10, q = 0;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">boolean r;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">r = (p != 0) &amp;&amp; (q != 0); //r =
+false;</FONT></P>
+<P CLASS="western" STYLE="text-indent: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Los
+operandos del operador &amp;&amp; son: <I>p!=0 </I>y <I>q!=0</I>. El
+resultado de la expresi&oacute;n <I>p!=0</I> es verdadero porque p
+vale 10 y el <I>q!=0</I> es falso porque q es 0. Por lo tanto, el
+resultado de <B>verdadero &amp;&amp; falso</B> es <B>falso</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Operadores unitarios</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los operadores unitarios se aplican a un solo operando y son los
+siguientes: !, -, ++, --. El operador ! ya lo hemos visto y los
+operadores ++ y -- los veremos con los operadores de asignaci&oacute;n.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=576 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS>
+	<COL WIDTH=89>
+	<COL WIDTH=459>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operador</B></FONT></P>
+		</TD>
+		<TD WIDTH=459 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operaci&oacute;n</B></FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#ffffcc" VALIGN=TOP>
+		<TD WIDTH=89>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">-</P>
+			<P CLASS="western" ALIGN=JUSTIFY><BR>
+			</P>
+		</TD>
+		<TD WIDTH=459>
+			<P CLASS="western" ALIGN=JUSTIFY>Cambia de signo al operando. El
+			operando debe ser entero o real.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El siguiente ejemplo muestra c&oacute;mo utilizar el operador
+anterior:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int a = 2, b = 0;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">b = -a; //resultado b = -2;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Operadores de asignaci&oacute;n</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El resultado de una operaci&oacute;n de asignaci&oacute;n es el valor
+almacenado en el operando izquierdo, l&oacute;gicamente despu&eacute;s
+de que la asignaci&oacute;n se ha realizado. Incluimos aqu&iacute;
+los operadores de incremento y decremento porque impl&iacute;citamente
+estos operadores realizan una asignaci&oacute;n sobre su operando.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=576 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS>
+	<COL WIDTH=89>
+	<COL WIDTH=459>
+	<TR VALIGN=TOP>
+		<TD WIDTH=89 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operador</B></FONT></P>
+		</TD>
+		<TD WIDTH=459 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operaci&oacute;n</B></FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#ffffcc" VALIGN=TOP>
+		<TD WIDTH=89>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">++</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">--</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">*=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">/=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">%=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">+=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">-=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&amp;=</P>
+			<P CLASS="western" ALIGN=JUSTIFY>|=</P>
+		</TD>
+		<TD WIDTH=459>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Incremento.
+			Solo se pueden usar como sufijo de una variable.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Decremento.
+			Solo se puede usar como sufijo de una variable.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Asignaci&oacute;n
+			simple.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Multiplicaci&oacute;n
+			m&aacute;s asignaci&oacute;n.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Divisi&oacute;n
+			m&aacute;s asignaci&oacute;n.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">M&oacute;dulo
+			m&aacute;s asignaci&oacute;n.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Suma
+			m&aacute;s asignaci&oacute;n.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Resta
+			m&aacute;s asignaci&oacute;n.</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Operaci&oacute;n
+			AND m&aacute;s asignaci&oacute;n.</P>
+			<P CLASS="western" ALIGN=JUSTIFY>Operaci&oacute;n OR m&aacute;s
+			asignaci&oacute;n.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+A continuaci&oacute;n se muestran algunos ejemplos con estos
+operadores:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int x = 0, n = 10, i = 1;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">n++;         // Incrementa el valor de
+n en 1.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">n--;         // Decrementa el valor de
+n en 1.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">x = n++;     // Asigna n a x y
+incrementa n en 1.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">x = n--;     // Asigna n a x y
+decrementa n en 1.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">i += 2;      // Realiza la operaci&oacute;n
+i = i + 2;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">x *= n &ndash; 3;  // Realiza la
+operaci&oacute;n x = x * (n - 3).</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El operador de incremento incrementa su operando siempre en una
+unidad y solamente se puede usar como sufijo. &Iacute;dem para el
+operador de decremento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Operadores de cadenas</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El
+operador <B>+</B> tambi&eacute;n se puede usar si los operandos son
+cadenas de caracteres y lo que hace es concatenarlas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Otros operadores</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>Operador Coma</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La coma
+se utiliza para encadenar varias operaciones, las cuales se
+ejecutar&aacute;n de izquierda a derecha. Su uso m&aacute;s com&uacute;n
+es en la sentencia for que veremos m&aacute;s adelante. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+Ejemplos:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">for (a = 256, b = 1;b &lt; 512; a/=2,
+b*=2) {</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+   <FONT FACE="Courier 10 Pitch">// m&aacute;s cosas ...</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<B>Operador new</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+El operador <B>new</B> sirve para crear una copia de un objeto ya
+existente en el programa o en una librer&iacute;a. En Java no se
+crean copias sino que se crea una instancia de una clase, en <B>j--
+</B>cuando creamos una clase estamos creando un objeto listo para
+usarse y si necesitamos otro simplemente tenemos que utilizar el
+operador <B>new</B> para crear una copia.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+Ejemplo:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">Vector x;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">x = new Vector ( );</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+Con esta sentencia creamos una copia del objeto Vector que se
+encuentra en la librer&iacute;a est&aacute;ndar de j--.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+PRIORIDAD Y ORDEN DE EVALUACI&Oacute;N</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Cuando escribimos una expresi&oacute;n como la siguiente, f = a + b *
+c / d, es porque conocemos perfectamente el orden en el que se
+ejecutan las operaciones. Si este orden no fuera el que esperamos,
+tendr&iacute;amos que utilizar par&eacute;ntesis para modificarlo, ya
+que una expresi&oacute;n entre par&eacute;ntesis, siempre se eval&uacute;a
+primero.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Esto quiere decir que el compilador <B>j&mdash;</B>atribuye a cada
+operador un nivel de prioridad; de esta forma puede resolver qu&eacute;
+operaci&oacute;n se ejecuta antes que otra en una expresi&oacute;n.
+Esta prioridad puede ser modificada utilizando par&eacute;ntesis. Los
+par&eacute;ntesis tienen mayor prioridad y son evaluados de m&aacute;s
+internos a m&aacute;s externos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La tabla que se presenta a continuaci&oacute;n, resume las reglas de
+prioridad y asociatividad de todos los operadores. Las l&iacute;nea
+se han colocado de mayor a menor prioridad. Los operadores escritos
+sobre una misma l&iacute;nea tienen la misma prioridad.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<TABLE WIDTH=576 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0 FRAME=HSIDES RULES=ROWS>
+	<COL WIDTH=377>
+	<COL WIDTH=171>
+	<TR VALIGN=TOP>
+		<TD WIDTH=377 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Operador</B></FONT></P>
+		</TD>
+		<TD WIDTH=171 BGCOLOR="#000080">
+			<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#ffffff"><B>Asociatividad</B></FONT></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#ffffcc" VALIGN=TOP>
+		<TD WIDTH=377>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">( )</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">- ! ++
+			--</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">* / %</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">+ -</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">== !=</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&amp;&amp;</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">||</P>
+			<P CLASS="western" ALIGN=JUSTIFY>= *= /= %= += -= &amp;= |=</P>
+		</TD>
+		<TD WIDTH=171>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">izquierda
+			a derecha</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">derecha
+			a izquierda</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">izquierda
+			a derecha</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">izquierda
+			a derecha</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">izquierda
+			a derecha</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">izquierda
+			a derecha</P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">izquierda
+			a derecha</P>
+			<P CLASS="western" ALIGN=JUSTIFY>derecha a izquierda</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+CONVERSI&Oacute;N ENTRE TIPOS DE DATOS</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La &uacute;nica conversi&oacute;n que hace impl&iacute;citamente el
+compilador <B>j-- </B>es de <B>int</B> a <B>float</B>. Cuando en una
+expresi&oacute;n existen operandos de tipo <B>float</B> e <B>int </B>el
+compilador convierte directamente los operandos de tipo <B>int</B> a
+tipo <B>float</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En una asignaci&oacute;n, si la variable a la que se asigna es de
+tipo <B>float</B> y el valor asignado es de tipo <B>int</B>, el valor
+asignado es convertido autom&aacute;ticamente a <B>float</B>.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1.10pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<FONT SIZE=4>SENTENCIAS DE CONTROL</FONT></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Las sentencias de control nos sirven para crear repeticiones y
+decisiones. Los tipos de sentencias de control son:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+SENTENCIA IF</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una sentencia <B>if</B> permite tomar decisiones para ejecutar una
+acci&oacute;n u otra, bas&aacute;ndose en el resultado verdadero o
+falso de un expresi&oacute;n. Una sentencia <B>if</B> puede ir
+acompa&ntilde;ado de la sentencia <B>else</B> o solo. La sentencia
+<B>else</B> significa que si no se cumple la condici&oacute;n de la
+sentencia <B>if</B> se ejecuta la sentencia <B>else</B>. La sentencia
+<B>if </B>se puede anidar.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+A continuaci&oacute;n se muestran ejemplos de sentencias <B>if</B>:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;<SPAN STYLE="font-weight: medium"><FONT FACE="Courier 10 Pitch">if
+(condicion1) {</FONT></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">if
+(condicion2)</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">sentencia1;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch"><FONT FACE="Courier 10 Pitch"><SPAN STYLE="font-weight: medium">sentencia2;</SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">else { </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">if
+(condicion3) {</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">sentencia2.2;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">sentencia2.3;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">else
+expresion1;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<SPAN STYLE="text-decoration: none">&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En el ejemplo anterior <I><B>condici&oacute;n</B></I> es una
+expresi&oacute;n booleana, <I><B>sentencia1</B></I> es una sentencia
+simple y <I><B>sentencia2.2</B></I>, <I><B>sentencia2.3</B></I>
+representan una sentencia compuesta que debe ir entre { }.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+SENTENCIA WHILE</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Ejecuta una sentencia, simple o compuesta, cero o m&aacute;s veces,
+dependiendo del valor de una expresi&oacute;n booleana. Su sintaxis
+es la siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>while (condici&oacute;n)</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+&nbsp;&nbsp;&nbsp;&nbsp;<B>sentencia;</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En la sentencia anterior <I><B>condici&oacute;n</B></I> es cualquier
+expresi&oacute;n booleana y <I><B>sentencia</B></I> es una sentencia
+simple o compuesta.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Se permite el anidamiento de bucles while, for o do unos dentro de
+otros.</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+SENTENCIA DO&hellip;WHILE</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Un bucle <B>do&hellip;while</B> ejecuta una sentencia simple o
+compuesta, una o m&aacute;s veces dependiendo del valor de una
+expresi&oacute;n. Su sintaxis es la siguiente: 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>do</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+&nbsp;&nbsp;&nbsp;&nbsp;<B>sentencia;</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>while (condici&oacute;n);</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En la sentencia anterior <I><B>condici&oacute;n</B></I> es cualquier
+expresi&oacute;n booleana y <I><B>sentencia</B></I> es una sentencia
+simple o compuesta. La estructura <B>do&hellip;while</B> finaliza con
+un punto y coma.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Cuando se utiliza una estructura <B>do&hellip;while</B> el bloque de
+sentencias se ejecuta al menos una vez, porque la condici&oacute;n se
+eval&uacute;a al final, por lo que se suele utilizar para procesar la
+selecci&oacute;n de men&uacute;s.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+SENTENCIA FOR</H4>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La sentencia <B>for</B> permite ejecutar una sentencia simple o
+compuesta, repetidamente un n&uacute;mero de veces conocido. Su
+sintaxis es la siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>for ([v1 = e1 [, v2 = e2]&hellip;]; [condici&oacute;n];
+[iteraci&oacute;n])</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En la sentencia anterior:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>v1,
+	v2,&hellip;,</B></I> representan variables de control que ser&aacute;n
+	inicializadas con los valores de las expresiones <B>e1, e2,&hellip;,;
+	</B>La parte de inicializaci&oacute;n solo se ejecutar&aacute; al
+	comienzo del bucle. En esta parte no se puede declarar una variable
+	nueva.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>condici&oacute;n</B></I>
+	es una expresi&oacute;n booleana que si se omite se supone verdadera
+	(bucle infinito).</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>iteraci&oacute;n</B></I>
+	es una o m&aacute;s expresiones separadas por comas, cuyos valores
+	evolucionan en el sentido de que se cumpla la condici&oacute;n para
+	finalizar la ejecuci&oacute;n de la sentencia for. Se puede hacer
+	referencia a cualquier variable, aunque no forme parte de la
+	condici&oacute;n del bucle for.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>sentencia</B></I>
+	es una sentencia simple o compuesta.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+SENTENCIAS BREAK Y CONTINUE</H4>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm">La
+sentencia break se utiliza para finalizar la ejecuci&oacute;n de un
+bucle <B>while</B>, <B>do</B> o <B>for. </B>Cuando los bucles est&aacute;n
+anidados, la sentencia break solamente finaliza la ejecuci&oacute;n
+del bucle donde est&eacute; incluida.</P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">int x, i;</FONT></P>
+<P LANG="en-GB" CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">for (i = 0; i &lt; 10; i++) {</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">int x = 0;</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">while (x &lt;
+5) {</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-weight: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">System.console.write
+( &ldquo;El valor de x es &rdquo;+ x.toString() );</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-weight: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">if
+(i == 3)</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-weight: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">break;</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-weight: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">x++;</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+&nbsp;<SPAN STYLE="text-decoration: none">&nbsp;&nbsp;&nbsp;</SPAN><FONT FACE="Courier 10 Pitch"><SPAN STYLE="text-decoration: none">}
+</SPAN></FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La sentencia <B>continue </B>obliga a ejecutar la siguiente iteraci&oacute;n
+del bucle <B>while</B>, <B>do</B> o <B>for</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">int i;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch"><FONT FACE="Courier 10 Pitch"><SPAN LANG="en-GB"><SPAN STYLE="font-weight: medium">for
+(i = 0; i &lt; 10; i++</SPAN></SPAN></FONT><FONT FACE="Courier 10 Pitch"><SPAN LANG="en-GB"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">)
+</SPAN></SPAN></SPAN></FONT><SPAN STYLE="text-decoration: none">{</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">if
+(i == 3)</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">continue;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">System.console.write(&ldquo;El
+valor de i es: &ldquo;+ i.toString());</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+SENTENCIAS TRY&hellip;CATCH</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Si durante la ejecuci&oacute;n de un programa ocurre un error que
+impide su continuaci&oacute;n (divisi&oacute;n por cero,&hellip;), la
+m&aacute;quina virtual ZERO lanza una excepci&oacute;n que hace que
+se visualice un mensaje acerca de lo ocurrido y se detenga la
+ejecuci&oacute;n del programa.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Si no deseamos que esto ocurra, el programa debe capturar la
+excepci&oacute;n y tratarla &eacute;l mismo. Para ello se encierra el
+bloque de sentencias que pueden lanzar la excepci&oacute;n en un
+bloque <B>try, </B>y se proporciona un bloque <B>catch </B>que se
+encarga de gestionarla.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La sintaxis de este tipo de sentencias es la siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>try{</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+&nbsp;&nbsp;&nbsp;&nbsp;<B>//bloque de c&oacute;digo</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>}</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>catch (TipoExcepcion ex){</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+&nbsp;&nbsp;&nbsp;&nbsp;<B>//gestor de excepciones para
+TipoExcepcion.</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>}</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Sentencia Throw</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Utilizando la sentencia <B>throw </B>es posible hacer que un programa
+lance una excepci&oacute;n de manera expl&iacute;cita. El flujo de la
+ejecuci&oacute;n se detiene inmediatamente despu&eacute;s de la
+sentencia <B>throw</B> y cualquier sentencia posterior no se ejecuta.
+La forma general de esta sentencia es la siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch"><B>throw</B></FONT><FONT FACE="Courier 10 Pitch">
+TipoExcepcion;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1.10pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<FONT SIZE=4>ESTRUCTURA DE UN PROGRAMA</FONT></H3>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Toda aplicaci&oacute;n escrita en <B>j-- </B>contiene al menos una
+clase y esta clase debe contener al menos un m&eacute;todo llamado
+<B>doIt.</B> Si lo que vamos a construir es una librer&iacute;a no es
+necesario que exista el m&eacute;todo <B>doIt</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Al principio del archivo en c&oacute;digo <B>j-- </B>podemos hacer
+uso de librer&iacute;as de c&oacute;digo <B>j-- </B>utilizando la
+sentencia import.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+LA SENTENCIA IMPORT</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">La
+sentencia <B>import </B>se utiliza al principio de un fichero en
+c&oacute;digo <B>j-- </B>y sirve para que un programa pueda hacer uso
+de una librer&iacute;a externa de objetos <B>j--</B>. Por defecto
+siempre se importa la librer&iacute;a est&aacute;ndar <B>IntStdLib.def</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+La sintaxis de la sentencia <B>import</B> es:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<B>#import &lt;nombre_libreria.def&gt;</B></P>
+<H4 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+CLASES</H4>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una clase es un tipo definido por el usuario que describe los
+atributos y m&eacute;todos que contendr&aacute; el objeto.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una clase es principal, cuando su nombre coincide con el nombre del
+archivo de c&oacute;digo <B>j--</B>. Si el archivo es una aplicaci&oacute;n
+est&aacute; clase deber&aacute; derivar obligatoriamente de
+<B>ConsoleApplication</B> y contener un m&eacute;todo <B>doIt</B> que
+iniciar&aacute; la ejecuci&oacute;n de la aplicaci&oacute;n.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Herencia</FONT></H5>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Una clase por defecto hereda siempre de <B>Object,</B> si adem&aacute;s
+queremos que herede de otra debemos utilizar <B>extends. </B>Como
+vimos anteriormente la clase principal de la aplicaci&oacute;n debe
+heredar siempre de <B>ConsoleApplication.</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Ejemplo: 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">class vehiculo{</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">int
+numeroRuedas;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">String
+tipoCombustible;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">class coche
+extends vehiculo{</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">String
+color;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">class camion
+extends vehiculo{</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">int
+cargaMaxima;</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Como se observa en el anterior ejemplo la clase m&aacute;s arriba en
+la herencia siempre debe ser la primera en escribirse.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Atributos</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los atributos definen el estado de un determinado objeto. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Un atributo puede ser inicializado si es del tipo <B>int</B>, <B>float</B>
+o <B>String,</B> en caso de no inicializarse los atributos con tipos
+anteriores, el compilador inicializa autom&aacute;ticamente los
+atributos de tipo <B>int</B> a <B>0,</B> los de tipo <B>float</B> a
+<B>0.0 </B>y los de tipo <B>String</B> a &ldquo;&rdquo;(cadena
+vac&iacute;a).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Al resto de los atributos se les asigna un enlace al objeto de su
+tipo, esto se hace porque siempre existe un objeto de cada tipo y no
+es necesario crear el objeto antes de usarse.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Ejemplo: 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch"><SPAN STYLE="font-weight: medium">class
+prueba{</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">Vector
+x;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">void
+doIt(){</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">int
+num=3;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">x.add(num);</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 2.49cm; text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Como se muestra en el ejemplo anterior el atributo de tipo <B>Vector
+x </B>no seria necesario inicializarlo porque ya contiene una
+referencia al objeto <B>Vector </B>y por lo tanto ya se podr&iacute;a
+enviar mensajes sin problema.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>M&eacute;todos</FONT></H5>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los m&eacute;todos son las operaciones que definen el comportamiento
+de un objeto.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+La sintaxis de declaraci&oacute;n de un m&eacute;todo es la
+siguiente:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.22cm; text-indent: 1.27cm; margin-bottom: 0cm">
+<B>Tipo_Retorno nombre_Metodo ( Parametros){</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.22cm; text-indent: 1.27cm; margin-bottom: 0cm">
+&nbsp;&nbsp;&nbsp;&nbsp;<B>Sentencias;</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.22cm; text-indent: 1.27cm; margin-bottom: 0cm">
+<B>}</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+El <B>tipo retorno</B> se refiere al tipo de dato que devolver&aacute;
+el m&eacute;todo, este tipo puede ser cualquiera de los existentes y
+en caso de que no devuelva nada el tipo ser&aacute; <B>void</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>Parametros </B>indica los argumentos que se pasaran al m&eacute;todo
+cuando se haga una llamada. Un parametro debe tener la siguiente
+forma:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>Tipo_Parametro nombreParametro,&hellip;</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Un m&eacute;todo puede contener 0 o m&aacute;s parametros, si
+contiene m&aacute;s de un parametro estos se separan por coma.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+La clase principal contiene siempre el m&eacute;todo principal <B>doIt</B>,
+este m&eacute;todo debe tener su tipo retorno siempre especificado a
+<B>void</B> y no recibir parametros.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Un m&eacute;todo contiene sentencias, existen dos tipos de
+sentencias:</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Sentencia
+	simple:</B> es la unidad ejecutable m&aacute;s peque&ntilde;a de un
+	programa <B>j--. </B>Una sentencia <B>j--</B> puede formarse a
+	partir de: una palabra clave, expresiones, declaraciones o llamadas
+	a m&eacute;todos. Cuando se escribe una sentencia hay que tener en
+	cuenta las siguientes consideraciones:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<UL>
+		<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Toda
+		sentencia simple termina con un punto y coma (;).</P>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; text-indent: 0.66cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<UL>
+		<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Dos
+		o m&aacute;s sentencias simples pueden aparecer sobre una misma
+		l&iacute;nea separadas por un punto y coma (;).</P>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Una
+		sentencia nula consta simplemente de un punto y coma (;).</P>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Sentencia
+	compuesta</B> o <B>bloque</B>: es una colecci&oacute;n de sentencias
+	simples incluidas entre llaves { }. Un bloque puede contener otro
+	bloque.</P>
+</UL>
+<H5 CLASS="western" STYLE="margin-left: 1.27cm; text-indent: -0.02cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=4>Control de acceso a los miembros de una clase</FONT></H5>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Para controlar el acceso a los miembros de una clase, <B>j--
+</B>proporciona las palabras clave <B>private</B> y <B>public</B>,
+denominados modificadores de acceso, aunque tambi&eacute;n se pueden
+omitir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Los modificadores de acceso se utilizan para indicar el tipo de
+acceso permitido a cada miembro (atributo o m&eacute;todo) de una
+clase.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>Acceso p&uacute;blico</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Cuando se <B>omite</B> o se usa la palabra clave <B>public</B>,
+indica que ese miembro es accesible para cualquier otra clase.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<B>Acceso privado</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+Cuando se utiliza la palabra clave private, indica que ese miembro
+s&oacute;lo es accesible por su misma clase.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+En java tambi&eacute;n se acepta <B>protected</B> pero en el lenguaje
+<B>j-- protected</B> no es aceptado. El lenguaje j-- solo acepta
+<B>public</B> y <B>private</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1.10pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm">
+<FONT SIZE=4>LIBRER&Iacute;A EST&Aacute;NDAR</FONT></H3>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+A continuaci&oacute;n vamos a mostrar algunos objetos y sus miembros
+contenidos en la librer&iacute;a est&aacute;ndar y que son
+interesantes para la creaci&oacute;n de un programa en <B>j--.</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>DefaultConsole:
+	</B>Proporciona la funcionalidad que tiene que ver con la consola
+	est&aacute;ndar. Debe emplearse a trav&eacute;s del atributo <B>console
+	</B>en <B>System</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>open()</B>:
+	Prepara la consola para ser utilizada. No devuelve nada.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>write():
+	</B>Visualiza un objeto por consola. Si el objeto no es una cadena,
+	llama a su m&eacute;todo <B>toString(). </B>No devuelve nada.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>read():
+	</B>Lee una cadena de la consola, la cual devuelve.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>close():
+	</B>Cierra la consola. No devuelve nada.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>System:</B>
+	Proporciona la funcionalidad que tiene que ver con la comunicaci&oacute;n
+	con la plataforma subyacente.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus atributos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>console:
+	</B>Apunta al objeto DefaultConsole.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getHiVersionNumber():
+	</B>Devuelve el n&uacute;mero principal de la versi&oacute;n del
+	bytecode empleado.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getLoVersionNumber():
+	</B>Devuelve la subversi&oacute;n del bytecode empleado.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getLoPlatformCode():
+	</B>Puede devolver, como m&iacute;nimo, cuatro valores:</P>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>0.
+			Intel</B></P>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>1.
+			Sparc</B></P>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>98.
+			No especificado</B></P>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>99.
+			Otro</B></P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getHiPlatformCode():
+	</B>Puede devolver, como m&iacute;nimo, cuatro valores:</P>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>0.
+			Linux / Unix</B></P>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>1.
+			Windows</B></P>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>98.
+			No especificado</B></P>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>99.
+			Otro</B></P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getPlatformName():</B>
+	Devuelve una cadena compuesta del nombre del procesador, una barra
+	inclinada hacia la derecha, y el nombre del sistema operativo.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getCurrentTime():
+	</B>Devuelve la fecha y la hora del sistema en un objeto <B>Time</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Time:
+	</B>Proporciona la posibilidad de manejar fecha y hora, en un solo
+	objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+Sus atributos son:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>instantInDay</B>:
+	Guarda la hora, en segundos, del instante almacenado.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>year</B>:
+	Guarda el a&ntilde;o de la fecha del instante almacenado.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>month</B>:
+	Guarda el mes de la fecha del instante almacenado.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>day</B>:
+	Guarda el d&iacute;a de la fecha del instante almacenado.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString()</B>:
+	Devuelve el instante almacenado como una cadena de texto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getInstantInDay():
+	</B>Devuelve la hora del instante almacenado, en segundos desde las
+	doce de la madrugada.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>putInstantInDay(int
+	s, int m, int h):</B> Devuelve el tiempo, en segundos, al convertir
+	los tres par&aacute;metros, h(hora), m(minutos), y s(segundos), en
+	segundos desde las doce de la madrugada, 0:00 a.m. Adem&aacute;s,
+	almacena ese valor en el atributo <B>instantInDay</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>putDate(int
+	y, int m, int d)</B>: Acepta la fecha, almacenado los tres
+	par&aacute;metros en sus respectivos atributos: y(a&ntilde;o),
+	m(mes), y d(d&iacute;a del mes).</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isValidDate()</B>:
+	Devuelve <B>true</B> or <B>false</B> seg&uacute;n si la fecha
+	almacenada es v&aacute;lida.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isValidInstant()</B>:
+	Devuelve <B>true</B> or <B>false</B> seg&uacute;n si la hora
+	almacenada es v&aacute;lida.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isValid()</B>:
+	Devuelve <B>true</B> si ambas llamadas a <B>isValidInstant()</B> e
+	<B>isValidDate()</B> devuelven <B>true</B>. <B>false</B> en
+	cualquier otro caso.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isLeapYear()</B>:
+	Devuelve <B>true</B> o <B>false</B> seg&uacute;n si el a&ntilde;o
+	almacenado en esta fecha es bisiesto o no.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getDaysOfMonth()</B>:
+	Devuelve el n&uacute;mero de d&iacute;as en el mes de la fecha
+	almacenada.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getHour()</B>:
+	Devuelve la hora almacenada en <B>instantInDay</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getMinute</B>():
+	Devuelve el minuto de la hora almacenada en <B>instantInDay</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getSecond():
+	</B>Devuelve los segundos de la hora almacenada en <B>instantInDay</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Float:</B>
+	Es un objeto que siempre est&aacute; presente, y que proporciona la
+	funcionalidad de los n&uacute;meros flotantes en Zero. Se trata de
+	una interfaz que define las operaciones m&iacute;nimas.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>zero():
+	</B>Devuelve un nuevo objeto con el valor en punto flotante del
+	cero.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>multiplyBy(float
+	x):</B> Devuelve un nuevo objeto con el valor de multiplicar el
+	valor del objeto al que se le manda el mensaje, por el valor del
+	objeto pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>divideBy(float
+	x): </B>Devuelve un nuevo objeto con el valor de dividir el valor
+	del objeto al que se le manda el mensaje, por el valor del objeto
+	pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>sum(float
+	x): </B>Devuelve un nuevo objeto con el valor de sumar el valor del
+	objeto al que se le manda el mensaje, con el valor del objeto pasado
+	como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>substract(float
+	x): </B>Devuelve un nuevo objeto con el valor de restar del valor
+	del objeto al que se le manda el mensaje, con el valor del objeto
+	pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>abs():
+	</B>Devuelve un nuevo objeto con el valor absoluto del valor
+	contenido en el objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>parseString(String
+	x): </B>Devuelve un objeto conteniendo un n&uacute;mero flotante que
+	es interpretado del String pasado como argumento.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString():
+	</B>Convierte el n&uacute;mero a una cadena, devolviendo &eacute;sta
+	como un nuevo objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toInt():
+	</B>Convierte el n&uacute;mero flotante a un n&uacute;mero entero,
+	devolviendo &eacute;sta como un nuevo objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isEqualTo(float
+	x): </B>Devuelve <B>true</B> o <B>false </B>dependiendo de si el
+	valor del objeto al que se le manda el mensaje es igual o no al
+	valor del objeto pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isLessThan(float
+	x): </B>Devuelve <B>true</B> o <B>false </B>dependiendo de si el
+	valor del objeto al que se le manda el mensaje es menor o no al
+	valor del objeto pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Int:
+	</B>Es un objeto que siempre est&aacute; presente, y que proporciona
+	al funcionalidad de los n&uacute;meros enteros.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>zero():
+	</B>Devuelve un nuevo objeto con el valor entero del cero.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>multiplyBy(int
+	x): </B>Devuelve un nuevo objeto con el valor de multiplicar el
+	valor del objeto al que se le manda el mensaje, por el valor del
+	objeto pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>divideBy(int
+	x): </B>Devuelve un nuevo objeto con el valor de dividir el valor
+	del objeto al que se le manda el mensaje, por el valor del objeto
+	pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>sum(int
+	x): </B>Devuelve un nuevo objeto con el valor de sumar el valor del
+	objeto al que se le manda el mensaje, con el valor del objeto pasado
+	como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>substract(int
+	x): </B>Devuelve un nuevo objeto con el valor de restar del valor
+	del objeto al que se le manda el mensaje, el valor del objeto pasado
+	como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>abs():
+	</B>Devuelve un nuevo objeto con el valor absoluto del valor
+	contenido en el objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>parseString(String
+	x): </B>Devuelve un objeto conteniendo un n&uacute;mero entero que
+	es interpretado de la cadena pasada como argumento.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString():
+	</B>Convierte el n&uacute;mero a una cadena, devolviendo &eacute;sta
+	como un nuevo objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toFloat():
+	</B>Convierte el n&uacute;mero entero a un n&uacute;mero flotante,
+	devolviendo &eacute;ste como un nuevo objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isEqualTo(int
+	x): </B>Devuelve <B>true</B> o <B>false </B>dependiendo de si el
+	valor del objeto al que se le manda el mensaje es igual o no al
+	valor del objeto pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isLessThan(int
+	x): </B>Devuelve <B>true</B> o <B>false </B>dependiendo de si el
+	valor del objeto al que se le manda el mensaje es menor o no al
+	valor del objeto pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>String:
+	</B>Permite manejar cadenas de texto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>left(int
+	x): </B>Devuelve un nuevo objeto <B>String</B>, con los caracteres
+	desde la posici&oacute;n <B>cero</B>, hasta la posici&oacute;n
+	indicada por el argumento, tomados desde la izquierda.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>right(int
+	x): </B>Devuelve un nuevo objeto <B>String,</B> con los caracteres
+	desde la posici&oacute;n <B>cero</B> hasta la indicada por el
+	argumento, tomados desde la derecha.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>sub(int
+	begin, int end): </B>Devuelve un nuevo objeto <B>String</B> con una
+	subcadena formada por los caracteres desde la posici&oacute;n <B>begin</B>
+	hasta la posici&oacute;n <B>end</B>, pasados como argumentos como
+	<B>int</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>empty():
+	</B>Devuelve <B>true</B> si la cadena es vac&iacute;a, no contiene
+	caracteres. <B>false</B> en otro caso.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>length():
+	</B>Devuelve un n&uacute;mero entero como objeto <B>int, </B>reflejando
+	el n&uacute;mero de caracteres en la cadena.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString():
+	</B>Se devuelve a s&iacute; mismo, no como un nuevo objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Map:
+	</B>Es un objeto que siempre est&aacute; presente, y que proporciona
+	la funcionalidad de los vectores asociativos. El &iacute;ndice de
+	estos vectores asociativos siempre es una cadena.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>add(String
+	x, Object o):</B> A&ntilde;ade un nuevo elemento al vector
+	asociativo. La cadena consiste en el &iacute;ndice, mientras que el
+	objeto pasado es el elemento en si.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>size():
+	</B>Devuelve el n&uacute;mero de elementos en el objeto <B>Map</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>modify(String
+	x, Object o): </B>Modifica un elemento introducido previamente. En
+	realidad, consiste en dos llamadas consecutivas, una a <B>delete(),</B>
+	y otra a <B>add().</B></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>lookUp(String
+	x): </B>Devuelve el objeto guardado previamente, buscando por su
+	&iacute;ndice.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>delete(String
+	x): </B>Elimina un elemento introducido previamente, buscando por su
+	&iacute;ndice.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString():</B>
+	Devuelve una cadena compuesta de todas las subcadenas obtenidas
+	invocando el m&eacute;todo <B>toString()</B> de cada uno de los
+	elementos del objeto <B>Map</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Vector:
+	</B>Es un objeto que siempre est&aacute; presente, y que proporciona
+	la funcionalidad de los vectores.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son los siguientes:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>add(Object
+	o): </B>A&ntilde;ade un objeto al final del <B>Vector</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>size():
+	</B>Devuelve el n&uacute;mero de elementos en el objeto <B>Vector</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>get(int
+	x): </B>Devuelve el objeto en la posici&oacute;n contenido en el
+	objeto <B>int</B> pasado como parametro.</P>
+	<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"></P>
+</UL>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>put(int
+	x, Object o):</B> Modifica el objeto en la posici&oacute;n contenido
+	en el objeto <B>int</B> pasado como par&aacute;metro, con el nuevo
+	objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 3.76cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN LANG="en-GB"><B>Modify(int
+	x, Object o): </B></SPAN><SPAN LANG="en-GB">Igual que </SPAN><SPAN LANG="en-GB"><B>put</B></SPAN><SPAN LANG="en-GB">.</SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>delete(int
+	x): </B>Elimina la posici&oacute;n contenida en el objeto <B>int</B>
+	pasado como par&aacute;metro.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>insert(int
+	x, Object o): </B>Inserta un Nuevo objeto en la posici&oacute;n
+	contenida en el objeto <B>int</B> pasado por par&aacute;metro. Esto
+	supone desplazar todos los elementos a la derecha del nuevo elemento
+	una posici&oacute;n.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>erase(int
+	x): </B>Elimina la posici&oacute;n contenida en el objeto <B>int</B>
+	pasado por par&aacute;metro. Esto supone desplazar todos los
+	elementos a la derecha del elemento una posici&oacute;n a la
+	izquierda.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>clear():
+	</B>Elimina todas las posiciones del <B>Vector</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>seqFind(Object
+	o): </B>Realiza una b&uacute;squeda secuencial por el <B>Vector,
+	</B>empezando desde la posici&oacute;n 0 y hasta la &uacute;ltima, o
+	hasta que el objeto es encontrado. Esto se hace ejecutando el m&eacute;todo
+	<B>isEqualTo()</B> para cada elemento, pas&aacute;ndole el objeto a
+	buscar como par&aacute;metro. Devuelve el n&uacute;mero de posici&oacute;n
+	si encuentra el objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>seqFindLast(Object
+	o): </B>Realiza una b&uacute;squeda secuencial por el <B>Vector,
+	</B>empezando desde la &uacute;ltima posici&oacute;n hasta la
+	primera, o hasta que el objeto es encontrado. Esto se hace
+	ejecutando el m&eacute;todo <B>isEqualTo()</B> para cada elemento,
+	pas&aacute;ndole le objeto a buscar como par&aacute;metro. Devuelve
+	el n&uacute;mero de posici&oacute;n si encuentra el objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString():</B>Devuelve
+	una cadena compuesta de todas las subcadenas obtenidas invocando el
+	m&eacute;todo <B>toString()</B> de cada uno de los elementos del
+	objeto <B>Vector</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>isEqualTo(Vector
+	v): </B>Devuelve true si los vectores tienen la misma longitud, y si
+	la invocaci&oacute;n del m&eacute;todo <B>isEqualTo()</B> para todos
+	y cada un de los elementos de un Vector, pasando como par&aacute;metro
+	al elemento en la misma posici&oacute;n que en el otro, devuelve
+	<B>true</B>. En caso contrario devuelve <B>false</B>.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Exception:
+	</B>Cuando se lanza una excepci&oacute;n, el objeto enviado es una
+	copia de uno de los objetos que derivan de &eacute;ste.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+Sus m&eacute;todos son:</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>toString():
+	</B>Llama al m&eacute;todo <B>getErrorMessage() </B>y devuelve un
+	String.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>getErrorMessage():
+	</B>Compone un mensaje de error con toda la informaci&oacute;n en el
+	objeto.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+De <B>exception</B> heredan las siguientes excepciones:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.27cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ESemantic:
+	</B>Cuando se lanza una excepci&oacute;n que tiene que ver con
+	errores sem&aacute;nticos en la ejecuci&oacute;n de un m&eacute;todo.
+	De esta a su vez heredan:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EVisibility:
+			</B>Cuando se lanza una excepci&oacute;n que tiene que ver con los
+			tipos de acceso de los m&eacute;todos y atributos. De esta a su
+			vez hereda:</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 5.66cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<UL>
+				<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EPrivate:</B>
+				Cuando se lanza una excepci&oacute;n producida por un atributo
+				privado.</P>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ETypeMismatch:</B>
+			Este objeto es enviado cuando ocurre alg&uacute;n problema
+			relacionado con que un objeto no deriva del objeto que se
+			esperaba.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EObjectNotFound:</B>
+			Este objeto es enviado cuando ocurre alg&uacute;n problema
+			relacionado con encontrar un objeto.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EMethodNotFound:</B>
+			Este objeto es enviado cuando ocurre alg&uacute;n problema
+			relacionado con encontrar un m&eacute;todo en un objeto.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EConditional:</B>
+			Este objeto es enviado cuando ocurre alg&uacute;n problema con una
+			estructura de toma de decisiones.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EInternalError:</B>
+			Este objeto se genera cuando ocurre alg&uacute;n error que no se
+			encuadra en ninguna categor&iacute;a.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EMath:</B>
+			Este objeto se genera cuando ocurre alg&uacute;n error relacionado
+			con el c&aacute;lculo.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EMemory:</B>
+	Cuando se lanza una excepci&oacute;n, y &eacute;sta tiene que ver
+	con la gesti&oacute;n de memoria. De esta a su vez heredan:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ENotEnoughMemory:</B>
+			Este objeto se genera cuando ocurre alg&uacute;n error relacionado
+			con la memoria. Por ejemplo, podr&iacute;a ocurrir cuando se
+			ejecuta el operador <B>new</B> y no hay suficiente memoria para
+			crear la copia del objeto especificado.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 5.66cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EAccessViolation:
+			</B>Este objeto se genera cuando se intenta acceder a alguna parte
+			de la memoria con privilegios inadecuados.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EUser:</B>
+	Cuando se lanza una excepci&oacute;n, y &eacute;sta tiene que ver
+	con errores definidos por el usuario. De esta a su vez hereda:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<UL>
+		<UL>
+			<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>EInputOutput:
+			</B>Este objeto se genera cuando se produce alg&uacute;n problema
+			de entrada/salida.</P>
+		</UL>
+	</UL>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 6.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H2 CLASS="western" STYLE="margin-left: 0.64cm; border-top: none; border-bottom: 1.10pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0cm; padding-right: 0cm; font-style: normal">
+<FONT SIZE=5>&iquest;C&Oacute;MO COMPILAR Y EJECUTAR UN PROGRAMA?</FONT></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una vez visto como debemos crear un programa, el siguiente paso es
+ver como podemos compilarlo y ejecutarlo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Vamos a tomar como ejemplo e siguiente programa que pide el nombre
+por pantalla y saluda.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+El c&oacute;digo estar&aacute; guardado en un fichero con nombre
+<B>saludo.jmm.</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">class saludo extends
+ConsoleApplication{</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">void doIt(){ </FONT>
+</P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">String
+x;</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">System.console.write(&ldquo;Introduce
+tu nombre:&rdquo;);</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">x
+= System.console.read();</FONT></P>
+<P LANG="en-GB" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">System.console.write(&ldquo;Hola
+&ldquo;+ x);</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">System.console.lf();</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT FACE="Courier 10 Pitch">}</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una vez creado el archivo de c&oacute;digo fuente procedemos a
+compilarlo:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<IMG SRC="Memoria_html_m2f89613c.png" NAME="gr&aacute;ficos26" ALIGN=BOTTOM WIDTH=566 HEIGHT=122 BORDER=0></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Como
+vemos en la imagen anterior el comando para compilar el programa es
+<B>j-- saludo.jmm</B> y comprobamos que no se produzca ning&uacute;n
+error.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+En la siguiente imagen mostramos lo que suceder&iacute;a si no
+definimos la variable <B>String x</B>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<IMG SRC="Memoria_html_4ebc1707.png" NAME="gr&aacute;ficos27" ALIGN=BOTTOM WIDTH=566 HEIGHT=153 BORDER=0></P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Como vemos en la imagen al no declarar la variable <B>String x</B> se
+producen dos errores de <B>identificador no encontrado</B>, y tambi&eacute;n
+se muestra la l&iacute;nea en la que se produce.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+Una vez compilado el programa sin errores vamos a ejecutarlo, el
+primer paso que debemos dar es:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ejecutar
+	el comando <B>za </B>sobre el archivo de c&oacute;digo ensamblador
+	que gener&oacute; el compilador <B>j--</B>. Este archivo tiene el
+	mismo nombre que el archivo de c&oacute;digo fuente pero sin la
+	extensi&oacute;n. En la siguiente imagen se muestra la ejecuci&oacute;n
+	del comando <B>za.</B></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="Memoria_html_b52ce6f.png" NAME="gr&aacute;ficos28" ALIGN=BOTTOM WIDTH=566 HEIGHT=175 BORDER=0></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+Vemos que el comando <B>za</B> genera un archivo con el nombre
+<B>saludo.zbj. </B>Este archivo contiene los objetos necesarios para
+ejecutar la aplicaci&oacute;n sobre la m&aacute;quina virtual ZERO. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">El
+	siguiente y &uacute;ltimo paso es ejecutar la aplicaci&oacute;n
+	sobre la m&aacute;quina virtual ZERO. Para ejecutar la aplicaci&oacute;n
+	se usa el comando <B>zvm </B>m&aacute;s el nombre del archivo
+	generado anteriormente pero sin la extensi&oacute;n, en nuestro caso
+	el comando es <B>zvm saludo. </B>La siguiente imagen muestra su
+	ejecuci&oacute;n:</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="Memoria_html_77f0774.png" NAME="gr&aacute;ficos29" ALIGN=BOTTOM WIDTH=566 HEIGHT=203 BORDER=0></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.91cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" CLASS="western" STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.96cm; margin-bottom: 0cm">
+Estos tres pasos pueden reducirse a tan solo dos, si se utiliza el
+lanzador <I>jmc</I>. Este programa llama al compilador de j-- y
+despu&eacute;s ensambla el resultado con za.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.96cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.96cm; margin-bottom: 0cm">
+Al empezar la ejecuci&oacute;n del programa, lo primero que nos pide
+es que introduzcamos el nombre. Por lo que introducimos el nombre y
+pulsamos INTRO.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.54cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="Memoria_html_m34207062.png" NAME="gr&aacute;ficos30" ALIGN=BOTTOM WIDTH=567 HEIGHT=203 BORDER=0></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.54cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,3806 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  
+  <meta name="Author" content="Baltasar Garc&iacute;a Perez-Schofield (jbgarcia)">
+
+  
+  <meta name="KeyWords" content="Zero, programaci&oacute;n, programming, persistence,
+persistencia, persistent, OOP, POO, prototypes, prototipos, objetos, objects,
+librer&iacute;a, est&aacute;ndar, standard, library">
+
+  <title>Librer&iacute;a est&aacute;ndar interna de Zero</title>
+</head>
+
+<body>
+
+<hr>
+<table width="100%">
+
+  <tbody>
+    <tr>
+
+      <td>
+            
+      <h1>Librer&iacute;a Est&aacute;ndar Interna de Zero</h1>
+
+      </td>
+
+      <td>
+            <img src="tiraZero.jpg" alt="Zero (el avi&oacute;n)" align="right">
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<hr>
+<h2>Introducci&oacute;n</h2>
+
+<hr>
+<p>
+Este manual documenta los objetos de la librer&iacute;a est&aacute;ndar de la m&aacute;quina virtual
+Zero. Para cada objeto, se explica brevemente su funci&oacute;n, su &aacute;rbol de herencia,
+sus atributos y sus m&eacute;todos.
+<br>
+ La notaci&oacute;n empleada para los m&eacute;todos se basa vagamente en la del lenguaje
+de programaci&oacute;n C est&aacute;ndar:
+</p>
+<p><code>&lt;objeto_base_retorno&gt;
+&lt;nombre_m&eacute;todo&gt;([&lt;objeto_base_argumento1&gt;
+[&lt;nombre_argumento2&gt;] [,&lt;objeto_base_argumento2&gt;
+[&lt;nombre_argumento2&gt;]] ...]])
+</code>
+</p>
+<p>Ejemplo:
+<code>
+</code></p>
+<p>String toString()		; M&eacute;todo que convierte la info de un objeto en texto
+
+</p>
+<p>Sin embargo, en Zero no existe comprobaci&oacute;n est&aacute;tica de tipos como tal.
+S&iacute;mplemente, la sintaxis empleada es una forma de sugerir los objetos que un
+m&eacute;todo espera, y los objetos que un m&eacute;todo devuelve.
+</p>
+<p>En realidad, todos los m&eacute;todos devuelven una referencia a un objeto, pero
+aquellos que no precisan devolver ning&uacute;n dato de valor, s&iacute;mplemente devuelven
+una referencia a <code>Nothing</code>, de una manera similar a c&oacute;mo en C
+est&aacute;ndar se indica con "void" la falta de retorno de valores de una funci&oacute;n.
+
+
+</p>
+<hr>
+<a name="anchorDIAGRAMA_OBJ">
+</a>
+<p></p>
+<h2><a name="anchorDIAGRAMA_OBJ">Diagrama de objetos de la librer&iacute;a est&aacute;ndar interna</a></h2>
+
+<hr>
+<p>
+<a name="anchorDIAGRAMA_OBJ">A continuaci&oacute;n se ofrece un diagrama orientativo. No todos los objetos de la
+librer&iacute;a aparece reflejados en este diagrama (como </a><a href="#Map">Map</a>), que
+sin embargo es bastante autoexplicativo a c&oacute;mo est&aacute; organizada la librer&iacute;a.
+</p>
+<p>
+<img src="zstdlib.jpg" alt="Librer&iacute;a Est&aacute;ndar de Objetos en Zero" align="middle" height="300" width="700">
+
+<a name="anchorLISTA_OBJ">
+</a></p>
+<hr>
+<h2><a name="anchorLISTA_OBJ">Lista de objetos de la librer&iacute;a est&aacute;ndar interna:</a></h2>
+
+<hr>
+<p>
+<a name="anchorLISTA_OBJ">A continuaci&oacute;n, se muestran una serie de objetos que existen en la librer&iacute;a
+est&aacute;ndar. Previamente, todos ellos aparecen indexados en una lista m&aacute;s
+manejable.
+</a></p>
+<p>
+
+
+</p>
+<p></p>
+<li><a href="#LISTA_OBJ">Lista de objetos en la librer&iacute;a est&aacute;ndar interna</a>
+    
+  <ul>
+
+          <li><a href="#anchorObject">Object</a>,
+          </li>
+    <li><a href="#anchorNothing">Nothing</a>,
+          </li>
+    <li><a href="#anchorConsole">DefaultConsole</a>,
+          </li>
+    <li><a href="#anchorSystem">System</a>,
+          </li>
+    <li><a href="#anchorInfo">Info</a>,	  
+	  </li>
+    <li><a href="#anchorAttributeInfo">AttributeInfo</a>	  
+	  </li>
+    <li><a href="#anchorMethodInfo">MethodInfo</a>
+	  </li>
+    <li><a href="#anchorProcessor">Processor</a>
+	  </li>
+    <li><a href="#anchorOutputProcessor">OutputProcessor</a>
+	  </li>
+    <li><a href="#anchorDisplayByConsoleProcessor">DisplayByConsoleProcessor</a>
+          </li>
+    <li><a href="#anchorDataType">DataType</a>,	  
+	  
+      <ul>
+
+          	<li><a href="#anchorInt">Int</a>,	 
+	  	</li>
+        <li><a href="#anchorTime">Time</a>,
+          	</li>
+        <li><a href="#anchorFloat">Float</a>,
+          	</li>
+        <li><a href="#anchorString">String</a>,
+          	</li>
+        <li><a href="#anchorLiteralFloat">LiteralFloat</a>,
+          	</li>
+        <li><a href="#anchorLiteralString">LiteralString</a>,
+	  	</li>
+        <li><a href="#anchorLiteralTime">LiteralTime</a>,
+          	</li>
+        <li><a href="#anchorLiteralInt">LiteralInt</a>,
+	  </li>
+      </ul>
+
+	  </li>
+    <li><a href="#anchorDataStructure">DataStructure</a>,
+	  
+      <ul>
+
+	  	<li><a href="#anchorMap">Map</a>
+          	</li>
+        <li><a href="#anchorVector">Vector</a>	  
+          	</li>
+        <li><a href="#anchorMapInstance">MapInstance</a>	 
+          	</li>
+        <li><a href="#anchorVectorInstance">VectorInstance</a>	   
+	  </li>
+      </ul>
+
+           	</li>
+    <li><a href="#anchorConditional">Conditional</a>,
+	  
+      <ul>
+
+          	<li><a href="#anchorTrue">True</a>,
+          	</li>
+        <li><a href="#anchorFalse">False</a>,
+	  </li>
+      </ul>
+
+          </li>
+    <li><a href="#anchorException">Exception</a>,	  
+	  
+      <ul>
+	  
+          	<li><a href="#anchorESemantic">ESemantic</a>,
+	        </li>
+        <li><a href="#anchorEMemory">EMemory</a>,
+          	</li>
+        <li><a href="#anchorEUser">EUser</a>,
+          	</li>
+        <li><a href="#anchorEConditional">EConditional</a>,
+          	</li>
+        <li><a href="#anchorETypeMismatch">ETypeMismatch</a>,
+          	</li>
+        <li><a href="#anchorEObjectNotFound">EObjectNotFound</a>,
+          	</li>
+        <li><a href="#anchorEMethodNotFound">EMethodNotFound</a>,
+          	</li>
+        <li><a href="#anchorEInternalError">EInternalError</a>,
+          	</li>
+        <li><a href="#anchorEMath">EMath</a>,
+          	</li>
+        <li><a href="#anchorENotEnoughMemory">ENotEnoughMemory</a>,
+          	</li>
+        <li><a href="#anchorEAccessViolation">EAccessViolation</a>.
+	  </li>
+      </ul>
+
+     </li>
+  </ul>
+
+
+
+
+
+
+  <ul>
+
+
+    <a name="anchorObject">
+    <li><b></b></li>
+    </a><b><a href="#anchorObject">Object</a></b>
+    <p>
+    <b><a href="#anchorObject">Object</a></b> es equivalente a <b><a href="#anchorObject">Object</a></b> en Java.
+Concretamente, se trata de un objeto que siempre est&aacute; presente, y que es
+la raiz de la jerarqu&iacute;a de objetos en Zero.
+    <br>
+    <i>
+It is the root of the inheritance hierarchy in Zero, being always available.
+    </i>
+
+    </p>
+    <p>Herencia:
+    </p>
+    <p>
+    <code>
+No hereda de ning&uacute;n otro objeto.
+    </code>
+    </p>
+    <p>Sus m&eacute;todos son los siguientes:
+    </p>
+    <p>
+    </p>
+    <ul>
+
+      <li>Creaci&oacute;n de objetos:
+        <ul>
+
+          <li><code><a href="#anchorObject">Object</a> createChild(<a href="#anchorString">String</a> nombreNuevoObjeto)</code>
+            <ul>
+
+              <li>Crea un nuevo objeto, hijo del objeto al que se le manda este mensaje,
+devolviendo una referencia al primero. Es posible indicar el nombre del nuevo
+objeto. En caso de ser la cadena vac&iacute;a, el nombre es asignado autom&aacute;ticamente
+por el sistema.
+                <br>
+                <i>
+Creates a new object, children of the object which receives this message,
+returning a reference to the former. It is possible to pass as an argument the
+name of the object. If this name is an empty <a href="#anchorString">String</a>,
+then the system will
+provide one automatically.
+                </i>
+              </li>
+            </ul>
+
+          </li>
+          <li><code><a href="#anchorObject">Object</a> copy(<a href="#anchorString">String</a> nombreNuevoObj)</code>
+            <ul>
+
+              <li>Crea un nuevo objeto, copia exacta del objeto al que se le manda este
+mensaje,
+devolviendo una referencia al primero. Se debe indicar el nombre del nuevo
+objeto. En caso de ser la cadena vac&iacute;a, el nombre es asignado autom&aacute;ticamente
+por el sistema.
+                <br>
+                <i>
+Creates a new object, an exact copy of the object which receives this message,
+returning a reference to the former. It is needed to pass the
+name of the object as an argument to.
+If this name is an empty <a href="#anchorString">String</a>, then the system
+will
+provide one automatically.
+                </i>
+              </li>
+            </ul>
+
+          </li>
+        </ul>
+
+      </li>
+      <li>Comparaci&oacute;n:
+        <ul>
+
+          <li><code><a href="#anchorConditional">Conditional</a> isTheSameAs(<a href="#anchorObject">Object</a>)</code>
+            <ul>
+
+              <li>Este m&eacute;todo devuelve <a href="#anchorTrue">True</a> si el objeto pasado como
+argumento es el mismo
+que ejecuta el m&eacute;todo. <a href="#anchorFalse">False</a> en otro caso. <b>No
+comprueba que sean iguales, sino que sean
+exactamente el mismo objeto</b>.
+                <br>
+                <i>This method returns <a href="#anchorTrue">True</a> if the object passed
+as argument is the same one which
+is executing the method. <a href="#anchorFalse">False</a> otherwise. <b>It
+doesn't check for equality, but for being
+the same object</b>.
+                </i>
+              </li>
+            </ul>
+
+          </li>
+          <li><code><a href="#anchorConditional">Conditional</a> isEqualTo(<a href="#anchorObject">Object</a>)</code>
+            <ul>
+
+              <li>Comprueba si este objeto y el pasado como argumento son iguales, en cuanto
+a contenido. Este m&eacute;todo ser&aacute; sobreescrito por el usuario para sus objetos, y de
+hecho
+ya est&aacute; sobreescrito espec&iacute;ficamente para los objetos que derivan de <a href="#anchorDataType">DataType</a>.
+Devuelve <a href="#anchorTrue">True</a> cuando son iguales, y <a href="#anchorFalse">False</a> cuando no lo son.
+                <br>
+                <i>Checks for equality (different objects with the same contents)
+of this object to another object, 
+passed as argument. This method is expected
+to be overriden by the user for his objects, and it is already overriden for
+objects
+derived from <a href="#anchorDataType">DataType</a>. It returns <a href="#anchorTrue">True</a> when equal, and <a href="#anchorFalse">False</a>
+when not equal.
+                </i>
+              </li>
+            </ul>
+
+          </li>
+          <li><code><a href="#anchorConditional">Conditional</a> isLessThan(<a href="#anchorObject">Object</a>)</code>
+            <ul>
+
+              <li>Comprueba si este objeto es menor que el pasado como argumento (en cuyo caso
+devuelve <a href="#anchorTrue">True</a>),
+ en cuanto a contenido.
+Este m&eacute;todo ser&aacute; sobreescrito por el usuario para sus objetos, y de hecho
+ya est&aacute; sobreescrito espec&iacute;ficamente para los objetos que derivan de <a href="#anchorDataType">DataType</a>.
+                <br>
+                <i>
+Checks whether this object is less than the object passed as argument, returning
+                <a href="#anchorTrue">True</a> or <a href="#anchorFalse">False</a>. 
+This method is expected
+to be overriden by the user for his objects, and it is already overriden for
+objects
+derived from <a href="#anchorDataType">DataType</a>.
+                </i>
+              </li>
+            </ul>
+
+          </li>
+        </ul>
+
+      </li>
+      <li>Informaci&oacute;n (reflexi&oacute;n estructural):
+        <ul>
+
+          <li><code><a href="#anchorString">String</a> getName()</code>
+            <ul>
+
+              <li>Devuelve una cadena con el nombre del objeto.
+                <br>
+              </li>
+              <li>
+Returns a <a href="#anchorString">String</a> with the name of the object.
+              </li>
+
+            </ul>
+
+          </li>
+          <li>Para m&eacute;todos:
+            <ul>
+
+              <li><code><a href="#anchorInt">Int</a> getNumberOfMethods()</code>
+                <ul>
+
+                  <li>Devuelve el n&uacute;mero de m&eacute;todos de este objeto.
+                    <br>
+                    <i>
+Returns the number of methods of this object.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> callMethodNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Invoca, sin argumentos, un m&eacute;todo seg&uacute;n su n&uacute;mero.
+                    <br>
+                    <i>
+Invokes method number x of this object. It doesn't use arguments.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> deleteMethodNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Borra el m&eacute;todo n&uacute;mero x.
+                    <br>
+                    <i>Deletes method number x.</i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorMethodInfo">MethodInfo</a> getInfoOnMethodNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Devuelve informaci&oacute;n sobre el m&eacute;todo n&uacute;mero x, usando un objeto <a href="#anchorMethodInfo">MethodInfo</a> para ello.
+                    <br>
+                    <i>Returns a <a href="#anchorMethodInfo">MethodInfo</a> object in order to
+give information about method number x.</i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorInt">Int</a> getMethodNumberByName(<a href="#anchorString">String</a> name)</code>
+                <ul>
+
+                  <li>Dado el nombre de un m&eacute;todo, pasado por par&aacute;metro, devuelve su n&uacute;mero en el
+objeto.
+                    <br>
+                    <i>Returns the number of the method, given its name as argument.</i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorString">String</a> getNameOfMethodNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Devuelve una cadena con el nombre del m&eacute;todo n&uacute;mero x de este objeto.
+                    <br>
+                    <i>Returns a <a href="#anchorString">String</a> with the name of method
+number x in this object.</i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorVector">Vector</a> getListOfMethods()</code>
+                <ul>
+
+                  <li>Devuelve un <a href="#anchorVector">Vector</a> con objetos <a href="#anchorMethodInfo">MethodInfo</a>, uno por cada m&eacute;todo en el objeto.
+                    <br>
+                    <i>Returns a <a href="#anchorVector">Vector</a> with <a href="#anchorMethodInfo">MethodInfo</a> objects, one per Method in this
+object.</i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> callByName(<a href="#anchorString">String</a> mthName)</code>
+                <ul>
+
+                  <li>Invoca un m&eacute;todo de este objeto, dado su nombre.
+                    <br>
+                    <i>Invokes a method of this object, given its name as argument.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorNothing">Nothing</a> addMethod(<a href="#anchorString">String</a> mthName, <a href="#anchorVector">Vector</a> vFormalArgs)</code>
+                <ul>
+
+                  <li>Crea un nuevo m&eacute;todo en un objeto, sin opcodes.
+                    <br>
+                    <i>Creates a new method in object, without opcodes.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> compileToMethod(<a href="#anchorInt">Int</a> mthNumber, <a href="#anchorString">String</a> listOfOpcodes)</code>
+                <ul>
+
+                  <li>Crea un nuevo m&eacute;todo en un objeto, sin opcodes.
+                    <br>
+                    <i>Creates a new method in object, without opcodes.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorString">String</a> getOpcodesOfMethodNumber(<a href="#anchorInt">Int</a> mthNumber)</code>
+                <ul>
+
+                  <li>Devuelve una cadena (<a href="#anchorString">String</a>) con los opcodes del m&eacute;todo separados por retornos de carro.
+                    <br>
+                    <i>Returns a <a href="#anchorString">String</a> with the opcodes of the method separated by carriage returns.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+            </ul>
+
+          </li>
+          <li>Para atributos:
+            <ul>
+
+              <li><code><a href="#anchorInt">Int</a> getNumberOfAttributes()</code>
+                <ul>
+
+                  <li>Devuelve el n&uacute;mero de atributos de este objeto.
+                    <br>
+                    <i>
+Returns the number of attributes of this object.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorInt">Int</a> getNumberOfParentAttribute()</code>
+                <ul>
+
+                  <li>Devuelve el n&uacute;mero correspondiente al atributo que guarda el padre,
+en la jerarqu&iacute;a de herencia, de este objeto.
+                    <br>
+                    <i>Returns the number corresponding the attribute which holds the parent
+object
+in the inheritance hierarchy.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> getAttributeNumber(<a href="#anchorString">String</a> x)</code>
+                <ul>
+
+                  <li>Devuelve el objeto apuntado por el atributo n&uacute;mero x.
+                    <br>
+                    <i>
+Returns the object pointed by attribute number x.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> addAttribute(<a href="#anchorString">String</a> name, <a href="#anchorObject">Object</a>
+obj)</code>
+                <ul>
+
+                  <li>A&ntilde;ade un nuevo atributo al objeto, dando su nombre y el objeto al que debe
+apuntar.
+                    <br>
+                    <i>
+                    </i>Appends a new attribute to the object, giving its name and the object
+which must be pointed by, as arguments.
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> deleteAttributeNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Elimina un atributo del objeto, dando su n&uacute;mero como argumento.
+                    <br>
+                    <i>
+                    </i>Deletes an attribute from the object, giving its number as argument.
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorAttributeInfo">AttributeInfo</a>
+getInfoOnAttributeNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Devuelve un objeto <a href="#anchorAttributeInfo">AttributeInfo</a>
+conteniendo la informaci&oacute;n relativa al atributo n&uacute;mero x.
+                    <br>
+                    <i>
+Returns an <a href="#anchorAttributeInfo">AttributeInfo</a> object, containing
+information relative to attribute number x.
+                    </i>
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorInt">Int</a> getAttributeNumberByName(<a href="#anchorString">String</a> name)</code>
+                <ul>
+
+                  <li>Devuelve el n&uacute;mero de un atributo, dado su nombre.
+                    <br>
+                    <i>Returns the number of an attribute, given its name</i>.
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorString">String</a> getNameOfAttributeNumber(<a href="#anchorInt">Int</a> x)</code>
+                <ul>
+
+                  <li>Devuelve el nombre de un atributo, dado su n&uacute;mero.
+                    <br>
+                    <i>Returns the name of an attribute, given its number</i>.
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorVector">Vector</a> getListOfAttributes()</code>
+                <ul>
+
+                  <li>Devuelve un <a href="#anchorVector">Vector</a> de objetos <a href="#anchorAttributeInfo">AttributeInfo</a>, uno por cada atributo en el
+objeto.
+                    <br>
+                    <i>Returns a <a href="#anchorVector">Vector</a> of <a href="#anchorAttributeInfo">AttributeInfo</a> objects, one per each attribute in
+the object</i>.
+                  </li>
+                </ul>
+
+              </li>
+              <li><code><a href="#anchorObject">Object</a> getAttributeByName(<a href="#anchorString">String</a> atrName)</code>
+                <ul>
+
+                  <li>Devuelve el objeto apuntado por un atributo, dado su nombre.
+                    <br>
+                    <i>Returns the object pointed by an attribute, given its name</i>.
+                  </li>
+                </ul>
+
+              </li>
+            </ul>
+
+          </li>
+        </ul>
+
+      </li>
+      <li><code><a href="#anchorNothing">Nothing</a> finalize()</code>
+        <ul>
+
+          <li>Este m&eacute;todo es ejecutado cuando el objeto es eliminado de la memoria.
+            <br>
+            <i>
+This method is executed when the object is removed from memory.
+            </i>
+          </li>
+        </ul>
+
+      </li>
+      <li><code><a href="#anchorString">String</a> toString()</code>
+        <ul>
+
+          <li>Devuelve una versi&oacute;n textual de la informaci&oacute;n almacenada en el objeto.
+Debe ser sobreescrito por el usuario para sus objetos. Por defecto, llama al
+m&eacute;todo getName().
+            <br>
+            <i>Returns a textual version of the information stored in the object. It
+must be overriden
+by the user for his own objects. By default, it just calls getName().
+            </i>
+          </li>
+        </ul>
+
+      </li>
+    </ul>
+
+
+    <p>
+
+
+    <a name="anchorNothing">
+    <li><b></b></li>
+    </a><b><a href="#anchorNothing">Nothing</a></b>
+    </p>
+    <p>
+    <b><a href="#anchorNothing">Nothing</a></b> es equivalente a <b>NULL</b> en C y
+C++.
+Concretamente, se trata de un objeto que siempre est&aacute; presente, y que tan solo
+sirve para indicar que no se se&ntilde;ala a ning&uacute;n otro objeto.
+    <br>
+    <i>
+It is the object meaning that something is empty, or void. It just only means
+that no other
+object is being pointed.
+It is the same as NULL
+in C and C++.
+    </i>
+    </p>
+    <p>Hereda de:
+    </p>
+    <p>
+    <code>
+    <a href="#anchorObject">Object</a>
+    </code>
+    </p>
+    <p>
+    <br>
+M&eacute;todos:
+    </p>
+    <p>
+    <code>
+No existen m&eacute;todos propios de este objeto.
+    </code>
+    </p>
+    <p>
+
+    <a name="anchorConsole">
+    <li><b></b></li>
+    </a><b><a href="#anchorConsole">DefaultConsole</a></b>
+    </p>
+    <p>
+    <b><a href="#anchorConsole">DefaultConsole</a></b>
+Proporciona la funcionalidad que tiene que ver con la consola est&aacute;ndar.
+Debe emplearse a trav&eacute;s del atributo <code>console</code> en
+    <code><a href="#anchorSystem">System</a></code>.
+    <br>
+    <i>Provides the funcionality which has to do with the standard console.
+It must be used by the attribute <code>console</code> in the <code><a href="#anchorSystem">System</a></code> object.
+    </i>
+    </p>
+    <p>Hereda de:
+    </p>
+    <p>
+    <code>
+    <a href="#anchorObject">Object</a>
+    </code>
+    </p>
+    <p>
+
+    <br>
+Sus m&eacute;todos son los siguientes:
+    </p>
+    <p>
+    </p>
+    <ul>
+
+      <li><code><a href="#anchorNothing">Nothing</a> open()</code>
+        <ul>
+
+          <li>Prepara la consola para ser utilizada. Lanza EInputOutput si la consola no
+existe.
+            <br>
+            <i>
+Puts the console in a ready-to-use state. EInputOutput is thrown if the console
+does not
+exist.
+            </i>
+          </li>
+        </ul>
+
+      </li>
+      <li><code><a href="#anchorNothing">Nothing</a> write(<a href="#anchorObject">Object</a> obj)</code>
+        <ul>
+
+          <li>Visualiza un objeto por consola. Si el objeto no es una cadena, llama a su
+m&eacute;todo toString().
+Lanza EInputOutput si se produce alg&uacute;n error.
+            <br>
+            <i>
+Displays an object by the console. If the object is not a <a href="#anchorString">String</a>, it invokes its toString() method.
+EInputOutput is thrown in case of an error.
+            </i>
+          </li>
+        </ul>
+
+      </li>
+      <li><code><a href="#anchorString">String</a> read()</code>
+        <ul>
+
+          <li>Lee una cadena de la consola, la cual devuelve. Lanza EInputOutput si se
+produce alg&uacute;n error
+            <br>
+
+            <i>Returns a <a href="#anchorString">String</a> read from the console.
+EInputOutput is thrown in case of any error.
+            </i>
+          </li>
+        </ul>
+
+      </li>
+      <li><code><a href="#anchorNothing">Nothing</a> close()</code>
+        <ul>
+
+          <li>Cierra la consola. Lanza EInputOutput si se produce alg&uacute;n error
+            <br>
+            <i>
+Closes the console. Throws EInputOutput in case of any error.
+            </i>
+          </li>
+        </ul>
+
+      </li>
+    </ul>
+
+
+
+    <p>
+
+
+    <a name="anchorSystem">
+    <li><b></b></li>
+    </a><b><a href="#anchorSystem">System</a></b>
+    </p>
+    <p>
+    <b><a href="#anchorSystem">System</a></b>
+    <br>
+
+Proporciona la funcionalidad que tiene que ver con la comunicaci&oacute;n con
+la plataforma subyacente.
+    <br>
+    <i>
+Provides the functionality which has to do with communication with the
+underlying platform.
+    </i>
+    </p>
+    <p>Hereda de:
+    </p>
+    <p>
+    <code>
+    <a href="#anchorObject">Object</a>
+    </code>
+    </p>
+    <p>
+
+    </p>
+    <p>
+Sus atributos son los siguientes:
+    </p>
+    <ul>
+
+      <li><code>console</code>
+        <ul>
+
+          <li>apunta al objeto <a href="#anchorConsole">DefaultConsole</a>.
+            <br>
+            <i>Points to the <a href="#anchorConsole">DefaultConsole</a> object.
+            </i></li>
+        </ul>
+
+      </li>
+      <li><code><i>stack</i></code>
+        <ul>
+
+          <li>
+            <i>Apunta a la pila de llamadas del sistema.
+            <br>
+            <i>Points to the system call stack</i>
+            </i></li>
+        </ul>
+
+      </li>
+      <li><code><i>internalException</i></code>
+        <ul>
+
+          <li><i>Apunta al objeto que ser&aacute; lanzado como excepci&oacute;n en m&eacute;todos internos.
+            <br>
+            <i>Points to the object to be thrown by the VM on exceptions in internal
+methods.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalTrue</i></i></code>
+        <ul>
+
+          <li><i><i>El objeto a devolver por los m&eacute;todos internos de la m&aacute;quina virtual cuando
+algo es verdadero o correcto.
+            <br>
+            <i>The object to be returned by VM's methods when something is true or
+correct.
+            </i>
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalFalse</i></i></code>
+        <ul>
+
+          <li><i><i>El objeto a devolver por los m&eacute;todos internos de la m&aacute;quina virtual cuando
+algo es falso o incorrecto.
+            <br>
+            <i>The object to be returned by VM's methods when something is false or
+wrong.
+            </i>
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalFloat</i></i></code>
+        <ul>
+
+          <li><i><i>The object which is going to be associated with VM's float numbers.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalInt</i></i></code>
+        <ul>
+
+          <li><i><i>The object to be associated with VM's integer numbers.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalTime</i></i></code>
+        <ul>
+
+          <li><i><i>The object to be associated with VM's <a href="#anchorTime">time/date</a>.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalString</i></i></code>
+        <ul>
+
+          <li><i><i>The object to be associated with VM's character strings.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalVector</i></i></code>
+        <ul>
+
+          <li><i><i>The object to be associated with VM's vectors.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalEObjNotFound</i></i></code>
+        <ul>
+
+          <li><i><i>Points to the object to be thrown when an exception happens because of an
+unexisting object
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalEMthNotFound</i></i></code>
+        <ul>
+
+          <li><i><i>Points to the object to be thrown when an exception happens because of an
+unexisting method
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalInfoAtr</i></i></code>
+        <ul>
+
+          <li>
+            <i><i>Points to the object meant to hold attribute information.
+            </i></i></li>
+        </ul>
+
+      </li>
+      <li><code><i><i>internalInfoMth</i></i></code>
+        <i><i>Points to the object meant to hold attribute information.
+        </i></i></li>
+    </ul>
+
+  </ul>
+
+  <i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><a href="#anchorString">String</a> getHiVersionNumber()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve el n&uacute;mero principal de la versi&oacute;n del <i>bytecode</i> empleado.
+          <br>
+Returns the high number for version of the bytecode used.
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorString">String</a> getLoVersionNumber()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve la subversi&oacute;n del <i>bytecode</i> empleado.
+          <br>
+Returns the low number number for version of the bytecode used.
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getLoPlatformCode()</i></i></code>
+      <ul>
+
+        <li><i><i>Puede devolver, como m&iacute;nimo, cuatro valores:
+          <br>
+          <i>It can return, at least, four values:</i>
+          </i></i></li>
+        <li><i><i>Valores/<i>values</i>:</i></i>
+          <ul>
+
+            <li><i><i>0. Intel
+              </i></i></li>
+            <li><i><i>1. Sparc
+              </i></i></li>
+            <li><i><i>98. No especificado (<i>Unspecified</i>).
+              </i></i></li>
+            <li><i><i>99. Otro (<i>Other</i>).
+              </i></i></li>
+          </ul>
+
+        </li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getHiPlatformCode()</i></i></code>
+      <ul>
+
+        <li><i><i>Puede devolver, como m&iacute;nimo, cuatro valores:
+          <br>
+          <i>It can return, at least, four values:</i>
+          </i></i></li>
+        <li><i><i>Valores/<i>values</i>:</i></i>
+          <ul>
+
+            <li><i><i>0. Linux / Unix
+              </i></i></li>
+            <li><i><i>1. Windows
+              </i></i></li>
+            <li><i><i>98. No especificado (<i>Unspecified</i>).
+              </i></i></li>
+            <li><i><i>99. Otro (<i>Other</i>).
+              </i></i></li>
+          </ul>
+
+        </li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorString">String</a> getPlatformName()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve una cadena compuesta del nombre del
+procesador, una barra inclinada hacia la derecha, y el nombre del
+sistema operativo.
+<br>
+          <i>It returns a String containing the processor's identifier, a slash, and the operating system's identifier:</i>
+          </i></i></li>
+        <li><code><i><i>&lt;hardware_id&gt; / &lt;os_id&gt;</i></i></code>
+        </li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#Time">Time</a> getCurrentTime()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve la fecha y la hora del sistema en el objeto apropiado.
+          <br>
+          <i>Returns system's date and time in appropriate object.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+
+  <p>
+
+
+
+
+
+
+
+
+
+
+  <i><i><a name="anchorTime">
+  </a></i></i></p>
+</li>
+<li><i><i><a name="anchorTime"><b></b></a><b><a href="#anchorTime">Time</a></b>
+  </i></i>
+  <p>
+  <i><i><b><a href="#anchorSystem">Time</a></b>
+  <br>
+
+Proporciona la posibilidad de manejar fecha y hora, en un solo objeto.
+  <br>
+  <i>
+Provides the possibility of managing time and date values, in a sole object.
+  </i>
+  </i></i></p>
+  <p><i><i>Hereda de:
+  </i></i></p>
+  <p>
+  <code>
+  <i><i><a href="#anchorDataType">DataType</a>
+  </i></i></code>
+  </p>
+  <p>
+
+  </p>
+  <p>
+  <i><i>Sus atributos son los siguientes:
+  </i></i></p>
+  <ul>
+
+    <li><code><i><i>instantInDay</i></i></code>
+      <ul>
+        <li>
+          <i><i>Guarda la hora, en segundos, del instante almacenado.
+          <br>
+          <i>Stores the time, in seconds, of the Time stored.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>year</i></i></code>
+      <ul>
+
+        <li>
+          <i><i>Guarda el a&ntilde;o de la fecha del instante almacenado.
+          <br>
+          <i>Stores the year of the date of the Time stored.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>month</i></i></code>
+      <ul>
+
+        <li><i><i>Guarda el mes de la fecha del instante almacenado.
+          <br>
+          <i>Stores the month of the date of the Time stored.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>day</i></i></code>
+      <ul>
+
+        <li><i><i>Guarda el d&iacute;a de la fecha del instante almacenado.
+          <br>
+          <i>Stores the day of the date of the Time stored.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+
+  <i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><a href="#anchorNothing">Nothing</a> assign(<a href="#anchorInt">Int</a>)</i></i></code>
+      <ul>
+
+        <li><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+          </i></i></li>
+        <li><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorConditional">Conditional</a> isEqualTo(<a href="#anchorFloat">Float</a>)</i></i></code>
+      <ul>
+
+        <li><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+          </i></i></li>
+        <li><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorConditional">Conditional</a> isLessThan(<a href="#anchorFloat">Float</a>)</i></i></code>
+      <ul>
+
+        <li><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+          </i></i></li>
+        <li><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorString">String</a> toString()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve el instante almacenado como una cadena de texto.
+          <br>
+Returns the Time stored as a <a href="anchorString">String</a>.
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getInstantInDay()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve la hora del instante almacenado, en segundos desde las doce de la madrugada.
+          <br>
+          <i>Returns the Time, in seconds from 0:00am of the Time stored</i>.
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> putInstantInDay(<a href="#anchorInt">Int</a> s, <a href="#anchorInt">Int</a> m, <a href="#anchorInt">Int</a> h)</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve el tiempo, en segundos, al convertir los
+tres par&aacute;metros, h (hora), m (minutos), y s (segundos), en
+segundos desde las doce de la madrugada, 0:00am.
+Adem&aacute;s, almacena ese valor en el atributo instantInDay. Es
+posible saber si la hora guardada es v&aacute;lida llamando a <code>isValidTime()</code>.
+          <br>
+          <i>It returns an Int corresponding to the time passed as
+three arguments: h (hour), m(minute), and s (seconds), in seconds from
+0:00am. Stores this value
+in the instantInDay attribute. Time can be checked as correct by
+calling <code>isValidInstant()</code>.
+          </i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorNothing">Nothing</a> putDate(<a href="#anchorInt">Int</a> y, <a href="#anchorInt">Int</a> m, <a href="#anchorInt">Int</a> d)</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve <a href="anchorNothing">Nothing</a> en
+cualquier caso. Acepta la fecha, almacenando los tres par&aacute;metros
+en sus respectivos atributos: y (a&ntilde;o), m (mes), y d (d&iacute;a
+del mes). Es posible saber si la fecha guardada es v&aacute;lida
+llamando a <code>isValidDate()</code>.
+          <br>
+          <i>It returns <a href="anchorNothing">Nothing</a> in any case. Accepts three arguments: y (year), m(month), and d (day of the month) storing these values in the
+appropriate attributes. Date can be checked as correct by calling <code>isValidDate()</code>.
+          </i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorConditional">Conditional</a> isValidDate()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve <a href="#anchorTrue">True</a> o <a href="#anchorFalse">False</a> seg&uacute;n si la fecha almacenada es v&aacute;lida.
+          <br>
+          <i>Returns <a href="#anchorTrue">True</a> o <a href="#anchorFalse">False</a> depending on whether the date stored is correct or not.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorConditional">Conditional</a> isValidInstant()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve <a href="#anchorTrue">True</a> o <a href="#anchorFalse">False</a> seg&uacute;n si la hora almacenada es v&aacute;lida.
+          <br>
+          <i>Returns <a href="#anchorTrue">True</a> o <a href="#anchorFalse">False</a> depending on whether the time stored is correct or not.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorConditional">Conditional</a> isValid()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve <a href="#anchorTrue">True</a> si ambas llamadas a <code>isValidTime()</code> e <code>isValidDate()</code> devuelven <a href="#anchorTrue">True</a>. <a href="#anchorFalse">False</a> en cualquier otro caso.
+          <br>
+          <i>Returns <a href="anchorTrue">True</a> if both calls to <code>isValidTime()</code> and <code>isValidDate()</code> return <a href="#anchorTrue">True</a>. <a href="#anchorFalse">False</a> in any other case.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorConditional">Conditional</a> isLeapYear()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve <a href="#anchorTrue">True</a> o <a href="#anchorFalse">False</a> seg&uacute;n si el a&ntilde;o almacenado en esta fecha es bisiesto o no.
+          <br>
+          <i>Returns <a href="#anchorTrue">True</a> o <a href="#anchorFalse">False</a> depending on whether the year stored is a leap year or not.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getDaysOfMonth()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve el n&uacute;mero de d&iacute;as en el mes de la fecha almacenada.
+          <br>
+          <i>Returns the number of days in the month of the stored date.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getHour()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve la hora almacenada en <code>instantInDay</code>.
+          <br>
+          <i>Returns the stored hour in <code>instantInDay</code>.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getMinute()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve el minuto de la hora almacenada en <code>instantInDay</code>..
+          <br>
+          <i>Returns the minute of time stored in <code>instantInDay</code>.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><a href="#anchorInt">Int</a> getSecond()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve los segundos de la hora almacenada en <code>instantInDay</code>..
+          <br>
+          <i>Returns the seconds of time stored in <code>instantInDay</code>.</i>
+          </i></i></li>
+      </ul>
+
+
+    </li>
+  </ul>
+
+
+  <p>
+
+
+
+
+
+
+  <i><i><a name="anchorLiteralTime">
+  </a></i></i></p>
+</li>
+<li><i><i><a name="anchorLiteralTime"><b></b></a><b><a href="#anchorLiteralTime">LiteralTime</a></b>
+  </i></i>
+  <p>
+  <i><i><b><a href="#anchorInfo">LiteralTime</a></b> es un objeto que siempre est&aacute; presente, y
+que proporciona una
+base com&uacute;n para los objetos que proporcionan infomaci&oacute;n.
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></p>
+  <p>
+  <code>
+  <i><i><a href="#anchorTime">Time</a>
+  </i></i></code>
+  </p>
+  <p>
+
+  <i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></p>
+  <p>
+  <code>
+  <i><i>No existen m&eacute;todos propios en este objeto
+  </i></i></code>
+  </p>
+  <p>
+
+
+
+  <i><i><a name="anchorInfo">
+  </a></i></i></p>
+</li>
+<li><i><i><a name="anchorInfo"><b></b></a><b><a href="#anchorInfo">Info</a></b>
+  </i></i>
+  <p>
+  <i><i><b><a href="#anchorInfo">Info</a></b> es un objeto que siempre est&aacute; presente, y
+que proporciona una
+base com&uacute;n para los objetos que proporcionan infomaci&oacute;n.
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></p>
+  <p>
+  <code>
+  <i><i><a href="#anchorObject">Object</a>
+  </i></i></code>
+  </p>
+  <p>
+
+  <i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></p>
+  <p>
+  <code>
+  <i><i>No existen m&eacute;todos propios en este objeto
+  </i></i></code>
+  </p>
+  <p>
+
+
+
+
+  <i><i><a name="anchorAttributeInfo">
+  </a></i></i></p>
+</li>
+<li><i><i><a name="anchorAttributeInfo"><b></b></a><b><a href="#anchorAttributeInfo">AttributeInfo</a></b>
+  </i></i>
+  <p>
+  <i><i><b><a href="#anchorAttributeInfo">AttributeInfo</a></b> es un objeto que siempre
+est&aacute; presente, y que es empleado
+para reflejar informaci&oacute;n sobre un atributo de un objeto. As&iacute;, cuando el m&eacute;todo
+  <code>getInfoOnAttributeNumber()</code> es invocado para un objeto, se crea un
+objeto <a href="#anchorAttributeInfo">AttributeInfo</a> que refleja toda la
+informaci&oacute;n relativa a &eacute;l.
+  <br>
+  <i>This object is always available, and it is used in order to reflect
+all known information about an attribute. This way, when the method
+  <code>getInfoO nAttributeNumber()</code> is invoked, a copy of <a href="#anchorAttributeInfo">AttributeInfo</a> is created with the appropriate
+information, as shown below.</i>
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></p>
+  <p>
+  <code>
+  <i><i><a href="#anchorObject">Object</a>
+  <br>
+  <a href="#anchorInfo">Info</a>
+  </i></i></code>
+  </p>
+  <p><i><i>Sus atributos son los siguientes:
+  </i></i></p>
+  <ul>
+
+    <li><code><i><i>owner</i></i></code>
+      <ul>
+
+        <li><i><i>Apunta al objeto que contiene al atributo.
+          <br>
+          <i>Points to the object containing the attribute.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>access</i></i></code>
+      <ul>
+
+        <li><i><i>Apunta a <a href="#anchorTrue">True</a> si es acceso p&uacute;blico y a <a href="#anchorFalse">False</a> si el acceso es privado.
+          <br>
+          <i>Points to <a href="#anchorTrue">True</a> or <a href="#anchorFalse">False</a>, depending on whether the access is public or
+private, respectively.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>name</i></i></code>
+      <ul>
+
+        <li><i><i>Apunta a una cadena conteniendo el nombre del atributo.
+          <br>
+          <i>Points to a <a href="#anchorString">String</a> containing the name of the
+attribute.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>references</i></i></code>
+      <ul>
+
+        <li><i><i>Apunta al mismo objeto apuntado por el atributo.
+          <br>
+          <i>Points to the object pointed by the attribute.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i>ordinal</i></i></code>
+      <ul>
+
+        <li><i><i>Apunta a un <a href="#anchorInt">Int</a> que contiene el n&uacute;mero de orden del
+atributo en el objeto.
+          <br>
+          <i>Points to an <a href="#anchorInt">Int</a> containing the ordinal number
+of the attribute in the object.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p></p>
+  <p>
+  <i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><a href="#anchorString">String</a> toString()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve una cadena con toda la informaci&oacute;n de los atributos de este objeto.
+          <br>
+          <i>Returns a <a href="#anchorString">String</a> containing all the above
+information.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p>
+
+
+
+  <i><i><a name="anchorMethodInfo">
+  </a></i></i></p>
+</li>
+<li><i><i><a name="anchorMethodInfo"><b></b></a><b><a href="#anchorMethodInfo">MethodInfo</a></b>
+  </i></i>
+  <p>
+  <i><i><b><a href="#anchorMethodInfo">MethodInfo</a></b> es un objeto que siempre est&aacute;
+presente, y que es empleado
+para reflejar informaci&oacute;n sobre un m&eacute;todo de un objeto. As&iacute;,
+cuando el m&eacute;todo
+  <code>getInfoOnMethodNumber()</code> es invocado para un objeto, se crea un
+objeto <a href="#anchorMethodInfo">MethodInfo</a> que refleja toda la
+informaci&oacute;n relativa a &eacute;l.
+  <br>
+  <i>This object is always available, and it is used in order to reflect
+all known information about a method. This way, when the method
+  <code>getInfoOnMethodNumber()</code> is invoked, a copy of <a href="#anchorMethodInfo">MethodInfo</a>
+is created with the appropriate information, as shown below.</i>
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></p>
+  <p>
+  <code>
+  <i><i><a href="#anchorObject">Object</a>
+  <br>
+  <a href="#anchorInfo">Info</a>
+  </i></i></code>
+  </p>
+  <p><i><i>Sus atributos son los siguientes:
+  <br>
+  <code>owner</code>
+  </i></i></p>
+  <ul>
+
+    <li><i><i>Apunta al objeto que contiene el m&eacute;todo.
+      <br>
+      <i>Points to the object containing the method.</i>
+      </i></i></li>
+  </ul>
+
+  <i><i><br>
+  <code>access</code>
+  </i></i>
+  <ul>
+
+    <li><i><i>Apunta a <a href="#anchorTrue">True</a> si es acceso p&uacute;blico y a <a href="#anchorFalse">False</a> si el acceso es privado.
+      <br>
+      <i>Points to <a href="#anchorTrue">True</a> or <a href="#anchorFalse">False</a>, depending on whether the access is public or
+private, respectively.</i>
+      </i></i></li>
+  </ul>
+
+  <i><i><br>
+  <code>name</code>
+  </i></i>
+  <ul>
+
+    <li><i><i>Apunta a una <a href="#anchorString">String</a> conteniendo el nombre del
+m&eacute;todo.
+      <br>
+      <i>Points to a <a href="#anchorString">String</a> containing the name of the
+nethod.</i>
+      </i></i></li>
+  </ul>
+
+  <i><i><br>
+  <code>parameters</code>
+  </i></i>
+  <ul>
+
+    <li><i><i>Apunta a un <a href="#anchorVector">Vector</a> con el nombre de los
+par&aacute;metros formales del m&eacute;todo.
+      <br>
+      <i>Points to a <a href="#anchorVector">Vector</a> with the name of the
+formal parameters of the method</i>.
+      </i></i></li>
+  </ul>
+
+  <i><i><br>
+  <code>ordinal</code>
+  </i></i>
+  <ul>
+
+    <li><i><i>Apunta a un <a href="#anchorInt">Int</a> que contiene el n&uacute;mero de orden del
+m&eacute;todo en su objeto.
+      <br>
+      <i>Points to an <a href="#anchorInt">Int</a> which contains the ordinal
+number of the method in its object.</i>.
+      </i></i></li>
+  </ul>
+
+  <i><i><br>
+  <code>opcodeList</code>
+  </i></i>
+  <ul>
+
+    <li><i><i>Apunta a una cadena con la lista de opcodes del m&eacute;todo separados por retornos de carro.
+      <br>
+      <i>Points to a String with the list of opcodes separated by carriage returns.</i>
+      </i></i></li>
+  </ul>
+
+
+  <p><i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><a href="#anchorObject">Object</a> doIt()
+      </i></i></code>
+      <ul>
+
+        <li><i><i>Lanza el m&eacute;todo descrito en este objeto.
+          <br>
+          <i>Invokes the method described in this object.</i>
+          </i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><a href="#anchorString">String</a> toString()</i></i></code>
+      <ul>
+
+        <li><i><i>Devuelve la informaci&oacute;n contenida en el objeto en forma de cadena.
+          <br>
+          <i>Retunrs all the above information as a <a href="#anchorString">String</a></i>.
+          </i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p>
+
+
+
+
+
+
+
+  <i><i><a name="anchorProcessor">
+  </a></i></i></p>
+</li>
+<li><i><i><a name="anchorProcessor"><b></b></a><b><a href="#anchorProcessor">Processor</a></b>
+  </i></i>
+  <p>
+  <i><i><b><a href="#anchorProcessor">Processor</a></b> es un objeto que siempre est&aacute;
+presente, y que proporciona una
+base com&uacute;n para todos los objetos que se emplear&aacute;n para procesar los elementos
+de una estructura de datos (objeto descendiente de <a href="#anchorDataStructure">DataStructure</a>).
+  <br>
+  <i>It is always available, and gives a common base for all objects which
+will be employed in order to process the elements a data structure (any object
+derived from <a href="#anchorDataStructure">DataStructure</a>).
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></i></p>
+  <p>
+  <code>
+  <i><i><i><a href="#anchorObject">Object</a>
+  </i></i></i></code>
+  </p>
+  <p>
+
+  <i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><i><a href="#anchorConditional">Conditional</a> doIt(Objeto)</i></i></i></code>
+      <ul>
+
+        <li><i><i><i>Este objeto no sirve de nada por s&iacute; solo. Su uso es para ser pasado como
+par&aacute;metro a un m&eacute;todo <code>process()</code> de un objeto descendiente de
+          <code><a href="#anchorDataStructure">DataStructure</a></code>. As&iacute;, se le
+pasar&aacute;n a este objeto, uno a uno, todos
+los elementos de la estructura de datos. Si el m&eacute;todo <code>doIt()</code>
+devuelve <code><a href="#anchorFalse">False</a></code>, el procesamiento se
+detiene. En otro caso, s&oacute;lo se
+detiene si se alcanza el &uacute;ltimo elemento de la estructura de datos.
+          <br>
+          <i>This object is not useful by itself. It is meant to be used as a
+parameter for a <code>process()</code> method of an object deriving from
+          <code><a href="#anchorDataStructure">DataStructure</a></code>. This way, all the
+elements of the data structure will be passed to this object, one by one. If the
+method <code>doIt()</code> returns <code><a href="#anchorFalse">False</a></code>, then the process is stopped. In other
+case, it is only stopped when the last element is reached.</i>.
+          </i></i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p>
+
+
+
+
+
+
+
+  <i><i><i><a name="anchorOutputProcessor">
+  </a></i></i></i></p>
+</li>
+<li><i><i><i><a name="anchorOutputProcessor"><b></b></a><b><a href="#anchorOutputProcessor">OutputProcessor</a></b>
+  </i></i></i>
+  <p>
+  <i><i><i><b><a href="#anchorOutputProcessor">OutputProcessor</a></b> es un objeto que siempre est&aacute;
+presente, y que proporciona una
+base com&uacute;n para todos los objetos que se emplear&aacute;n para procesar los elementos
+de una estructura de datos (objeto descendiente de <a href="#anchorDataStructure">DataStructure</a>) hacia una salida.
+  <br>
+  <i>It is always available, and gives a common base for all objects which
+will be employed in order to process the elements a data structure (any object
+derived from <a href="#anchorDataStructure">DataStructure</a>) for output.
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></i></i></p>
+  <p>
+  <code>
+  <i><i><i><i><a href="#anchorObject">Object</a>
+  <br>
+  <a href="#anchorProcessor">Processor</a>
+  </i></i></i></i></code>
+  </p>
+  <p>
+
+  <i><i><i><i><br>
+Sus atributos son los siguientes:
+  </i></i></i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <p></p>
+    <li><code><i><i><i><i>out</i></i></i></i></code>
+      <ul>
+        <li><i><i><i><i>Este atributo apunta al objeto que se va a utilizar como salida. Por defecto, este objeto es la consola.
+          <br>
+          <i></i>This attribute points to the object which is going to be used for output. It is the console by default.
+          </i></i></i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+
+  <i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></i></i>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><i><i><a href="#anchorConditional">Conditional</a> doIt(Objeto)</i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i>Este objeto no sirve de nada por s&iacute; solo. Su uso es para ser pasado como
+par&aacute;metro a un m&eacute;todo <code>process()</code> de un objeto descendiente de
+          <code><a href="#anchorDataStructure">DataStructure</a></code>. As&iacute;, se le
+pasar&aacute;n a este objeto, uno a uno, todos
+los elementos de la estructura de datos. Si el m&eacute;todo <code>doIt()</code>
+devuelve <code><a href="#anchorFalse">False</a></code>, el procesamiento se
+detiene. En otro caso, s&oacute;lo se
+detiene si se alcanza el &uacute;ltimo elemento de la estructura de datos.
+          <br>
+          <i>This object is not useful by itself. It is meant to be used as a
+parameter for a <code>process()</code> method of an object deriving from
+          <code><a href="#anchorDataStructure">DataStructure</a></code>. This way, all the
+elements of the data structure will be passed to this object, one by one. If the
+method <code>doIt()</code> returns <code><a href="#anchorFalse">False</a></code>, then the process is stopped. In other
+case, it is only stopped when the last element is reached.</i>.
+          </i></i></i></i></li>
+      </ul>
+
+
+    </li>
+    <li><code><i><i><i><i><a href="#anchorNothing">Nothing</a> setOutput(<a href="#anchorOutput">Output</a> obj)</i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i>Este m&eacute;todo sirve para cambiar el
+atributo out, de manera que la salida pueda redirigirse hacia otro
+objeto. Esto s&oacute;lo tiene sentido si el objeto al que se quiere
+redirigir la salida deriva de <a href="#anchorOutput">Output</a>.
+          <br>
+          <i>It makes possible to change the object which is going to
+receive the output of processing, This only makes sense when the new
+object derives from <a href="#anchorOutput">Output</a>.
+          </i></i></i></i></i></li>
+      </ul>
+
+
+    </li>
+  </ul>
+
+  <p>
+
+
+
+
+
+
+
+
+
+
+
+  <i><i><i><i><i><a name="anchorDisplayByConsoleProcessor">
+  </a></i></i></i></i></i></p>
+</li>
+<li><i><i><i><i><i><a name="anchorDisplayByConsoleProcessor"><b></b></a><b><a href="#anchorDisplayByConsoleProcessor">DisplayByConsoleProcessor</a></b>
+  </i></i></i></i></i>
+  <p>
+  <i><i><i><i><i><b><a href="#anchorDisplayByConsoleProcessor">DisplayByConsoleProcessor</a></b>
+es un objeto que siempre est&aacute; presente, y que
+proporciona un ejemplo de uso de los procesadores de estructuras de datos.
+La funcionalidad que ofrece es bastante b&aacute;sica: permite que, mediante el uso
+del m&eacute;todo <code>process()</code>, todos los elementos de un objeto derivado de
+  <code><a href="#anchorDataStructure">DataStructure</a></code> sean mostrados por
+pantalla, cada uno separado por
+una l&iacute;nea en blanco, mediante la llamada a sus m&eacute;todos <code>toString()</code>.
+  <br>
+  <i>This object is always available. It is a widely-used example of a
+  <code><a href="#anchorProcessor">Processor</a></code>: this <code><a href="#anchorProcessor">Processor</a></code> displays by the console all objects
+inside a <code><a href="#anchorDataStructure">DataStructure</a></code> (by
+invoking their <code>toString()</code> methods). Each one of them is followed by
+a line feed.</i>.
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></i></i></i></p>
+  <p>
+  <code>
+  <i><i><i><i><i><a href="#anchorObject">Object</a>
+  <br>
+  <a href="#anchorProcessor">Processor</a>
+  <br>
+  <a href="#anchorOutputProcessor">OutputProcessor</a>
+  </i></i></i></i></i></code>
+  </p>
+  <p>
+
+  <i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></i></i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><i><i><i><a href="#anchorConditional">Conditional</a> doIt(Objeto)</i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i>Este objeto no sirve de nada por s&iacute; solo. Su uso es para ser pasado como
+par&aacute;metro a un m&eacute;todo <code>process()</code> de un objeto descendiente de
+          <code><a href="#anchorDataStructure">DataStructure</a></code>. As&iacute;, se le
+pasar&aacute;n a este objeto, uno a uno, todos
+los elementos de la estructura de datos. El m&eacute;todo <code>doIt()</code> nunca
+devuelve <code><a href="#anchorFalse">False</a></code>, por lo que se procesan
+todos los elementos de la
+estructura de datos. El efecto es que la representaci&oacute;n textual de los objetos
+guardados en la estructura de datos es mostrada por pantalla.
+          <br>
+          <i>This object is not useful by itself. It is meant to be used as a
+parameter for a <code>process()</code> method of an object deriving from
+          <code><a href="#anchorDataStructure">DataStructure</a></code>. This way, all the
+elements of the data
+structure will displayed on the console, one by one. The method
+          <code>doIt()</code> will never return <code><a href="#anchorFalse">False</a></code>, so it is only stopped when the last
+element is
+reached.</i>.
+          </i></i></i></i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p>
+
+
+
+
+
+
+
+
+
+
+  <i><i><i><i><i><a name="anchorDataType">
+  </a></i></i></i></i></i></p>
+</li>
+<li><i><i><i><i><i><a name="anchorDataType"><b></b></a><b><a href="#anchorDataType">DataType</a></b>
+  </i></i></i></i></i>
+  <p>
+  <i><i><i><i><i><b><a href="#anchorDataType">DataType</a></b> es un objeto que siempre est&aacute;
+presente, y que proporciona una
+base com&uacute;n para todos los "tipos" de datos. Todos sus m&eacute;todos provocan una
+excepci&oacute;n si se invocan.
+  <br>
+  <i>It is always present. It presents a common base for all data "types"
+All its methods throw an exception if invoked.</i>
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></i></i></i></p>
+  <p>
+  <code>
+  <i><i><i><i><i><a href="#anchorObject">Object</a>
+  </i></i></i></i></i></code>
+  </p>
+  <p>
+
+  <i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></i></i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><i><i><i><a href="#anchorNothing">Nothing</a> assign(<a href="#anchorObject">Object</a>)</i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i>Asigna el valor de un objeto a otro objeto. Los objetos en s&iacute; no cambian.
+          <br>
+          <i>Assigns the value of an object to another object. Objects are not
+affected.</i>
+          </i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isEqualTo(<a href="#anchorDataType">DataType</a>)</i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i>Devuelve verdadero, <a href="#anchorTrue">True</a>, si dos objetos contienen
+los mismos valores.
+          <br>
+          <i>Returns <a href="#anchorTrue">True</a> if two objects contain the same
+values.
+          </i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isGreaterThan(<a href="#anchorDataType">DataType</a>)</i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i>Definido como no igual y no menor
+          <br>
+          <i>Defined as not equal and not less than.</i>
+          </i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isLessThan(<a href="#anchorDataType">DataType</a>)</i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i>Devuelve verdadero, <a href="#anchorTrue">True</a>, si el objeto al que se
+le manda el mensaje es menor que el objeto pasado como argumento.
+          <br>
+          <i>Returns <a href="#anchorTrue">True</a> if the object to which the
+argument is thrown contains a value less than the object passed as argument.
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorString">String</a> toString()</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve el valor contenido por el objeto como una <a href="#anchorString">String</a>.
+          <br>
+          <i>Returns the value contained by hte object as a <a href="#anchorString">String</a>.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+  </ul>
+
+  <p>
+
+
+
+
+
+
+
+
+  <i><i><i><i><i><i><i><a name="anchorFloat">
+  </a></i></i></i></i></i></i></i></p>
+</li>
+<li><i><i><i><i><i><i><i><a name="anchorFloat"><b></b></a><b><a href="#anchorFloat">Float</a></b>
+  </i></i></i></i></i></i></i>
+  <p>
+  <i><i><i><i><i><i><i><b><a href="#anchorFloat">Float</a></b> es un objeto que siempre est&aacute; presente,
+y que proporciona la
+funcionalidad
+de los n&uacute;meros flotantes en Zero.
+Se trata de una interfaz que define las operaciones m&iacute;nimas.
+  <br>
+  <i>It is always available. It provides with the funcionality for
+floating point numbers.</i>
+  <br>
+Hereda de:<br>
+  <i>Inherits from:</i>
+  </i></i></i></i></i></i></i></p>
+  <p>
+  <code>
+  <i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+  <br>
+  <a href="#anchorDataType">DataType</a>
+  </i></i></i></i></i></i></i></code>
+  </p>
+  <p>
+
+  <i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+  </i></i></i></i></i></i></i></p>
+  <p>
+  </p>
+  <ul>
+
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> zero()</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor en punto flotante del cero.
+          <br>
+          <i>Returns a new object with the value of the floating point number
+zero.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> multiplyBy(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de multiplicar el valor del objeto al
+que se le manda el mensaje, por el valor del objeto pasado como par&aacute;metro.
+          <br>
+          <i>Returns a new object with the value of multiplying the value of the
+object to which the message is sent by the value of the object passed as
+argument.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> divideBy(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de dividir el valor del objeto al
+que se le manda el mensaje, por el valor del objeto pasado como par&aacute;metro.
+          <br>
+          <i>Returns a new object with the value of dividing the value of the
+object to which the message is sent by the value of the object passed as
+argument.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> sum(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de sumar el valor del objeto al
+que se le manda el mensaje, con el valor del objeto pasado como par&aacute;metro.
+          <br>
+          <i>Returns a new object with the value of adding the value of the
+object to which the message is sent to the value of the object passed as
+argument.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> substract(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de restar del valor del objeto al
+que se le manda el mensaje, el valor del objeto pasado como par&aacute;metro.
+          <br>
+          <i>Returns a new object with the value of substracting from the value of the
+object to which the message is sent, the value of the object passed as
+argument.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> abs()</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor absoluto del valor contenido en el
+objeto.
+          <br>
+          <i>Returns a new object with the absolute value of the number contained in
+the object.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> parseString(<a href="#anchorString">String</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Devuelve un objeto conteniendo un n&uacute;mero flotante que es interpretado de la
+          <a href="#anchorString">String</a> pasada como argumento. En caso de no existir
+un n&uacute;mero en la cadena, se lanza una excepci&oacute;n <a href="#anchorETypeMismatch">ETypeMismatch</a>.
+          <br>
+          <i>Returns an object containing the value parsed from the <a href="#anchorString">String</a> passed as argument, If the <a href="#anchorString">String</a> does not contain a <a href="#anchorFloat">Float</a>, then an <a href="#anchorException">Exception</a>
+ETypeMisMatch is thrown.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorString">String</a> toString()</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Convierte el n&uacute;mero a una cadena, devolviendo &eacute;sta como un nuevo objeto.
+          <br>
+          <i>Returns a new <a href="#anchorString">String</a> object containing the
+floating point number in text format.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> toInt()</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>Convierte el n&uacute;mero flotante a un n&uacute;mero, devolviendo &eacute;sta como un nuevo
+objeto.
+          <br>
+          <i>Returns a new <a href="#anchorInt">Int</a> object containing the floating
+point number converted
+to an integer number.</i>
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorNothing">Nothing</a> assign(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+          </i></i></i></i></i></i></i></li>
+        <li><i><i><i><i><i><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isEqualTo(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+          </i></i></i></i></i></i></i></li>
+        <li><i><i><i><i><i><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+    </li>
+    <li><code><i><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isLessThan(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+      <ul>
+
+        <li><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+          </i></i></i></i></i></i></i></li>
+        <li><i><i><i><i><i><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+          </i></i></i></i></i></i></i></li>
+      </ul>
+
+      <p>
+
+      <i><i><i><i><i><i><i><a name="anchorLiteralFloat">
+      </a></i></i></i></i></i></i></i></p>
+    </li>
+    <li><i><i><i><i><i><i><i><a name="anchorLiteralFloat"><b></b></a><b><a href="#anchorLiteralFloat">LiteralFloat</a></b>
+      </i></i></i></i></i></i></i>
+      <p>
+      <i><i><i><i><i><i><i><b><a href="#anchorLiteralFloat">LiteralFloat</a></b> es un objeto que siempre
+est&aacute; presente, y que proporciona la
+funcionalidad
+de los n&uacute;meros flotantes en Zero.
+Se trata ya de un objeto que puede almacenar valores.
+      <br>
+Hereda de:<br>
+      <i>Inherits from:</i>
+      </i></i></i></i></i></i></i></p>
+      <p>
+      <code>
+      <i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+      <br>
+      <a href="#anchorDataType">DataType</a>
+      <br>
+      <a href="#anchorFloat">Float</a>
+      </i></i></i></i></i></i></i></code>
+      </p>
+      <p>
+
+      <i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+      </i></i></i></i></i></i></i></p>
+      <p>
+      <code>
+      <i><i><i><i><i><i><i>No existen m&eacute;todos propios de este objeto
+      </i></i></i></i></i></i></i></code>
+      </p>
+      <p>
+
+
+
+      <i><i><i><i><i><i><i><a name="anchorInt">
+      </a></i></i></i></i></i></i></i></p>
+    </li>
+    <li><i><i><i><i><i><i><i><a name="anchorInt"><b></b></a><b><a href="#anchorInt">Int</a></b>
+      </i></i></i></i></i></i></i>
+      <p>
+      <i><i><i><i><i><i><i><b><a href="#anchorInt">Int</a></b> es un objeto que siempre est&aacute; presente, y
+que proporciona la
+funcionalidad
+de los n&uacute;meros enteros en Zero.
+      <br>
+Hereda de:<br>
+      <i>Inherits from:</i>
+      </i></i></i></i></i></i></i></p>
+      <p>
+      <code>
+      <i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+      <br>
+      <a href="#anchorDataType">DataType</a>
+      </i></i></i></i></i></i></i></code>
+      </p>
+      <p>
+
+      <i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+      </i></i></i></i></i></i></i></p>
+      <p>
+      </p>
+      <ul>
+
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> zero()</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor entero del cero.
+              <br>
+              <i>Returns a new object with the value of the integer number zero.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> multiplyBy(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de multiplicar el valor del objeto al
+que se le manda el mensaje, por el valor del objeto pasado como par&aacute;metro.
+              <br>
+              <i>Returns a new object with the value of multiplying the value of the
+object to which the message is sent by the value of the object passed as
+argument.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> divideBy(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de dividir el valor del objeto al
+que se le manda el mensaje, por el valor del objeto pasado como par&aacute;metro.
+              <br>
+              <i>Returns a new object with the value of dividing the value of the
+object to which the message is sent by the value of the object passed as
+argument.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> sum(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de sumar el valor del objeto al
+que se le manda el mensaje, con el valor del objeto pasado como par&aacute;metro.
+              <br>
+              <i>Returns a new object with the value of adding the value of the
+object to which the message is sent to the value of the object passed as
+argument.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> substract(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor de restar del valor del objeto al
+que se le manda el mensaje, el valor del objeto pasado como par&aacute;metro.
+              <br>
+              <i>Returns a new object with the value of substracting from the value of the
+object to which the message is sent, the value of the object passed as
+argument.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> abs()</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto con el valor absoluto del valor contenido en el
+objeto.
+              <br>
+              <i>Returns a new object with the absolute value of the number contained in
+the object.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> parseString(<a href="#anchorString">String</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Devuelve un objeto conteniendo un n&uacute;mero entero que es interpretado de la
+cadena, <a href="#anchorString">String</a>, pasada como argumento. En caso de no
+existir un n&uacute;mero en la cadena, se
+lanza una excepci&oacute;n <a href="#anchorETypeMismatch">ETypeMismatch</a>.
+              <br>
+              <i>Returns an object containing the value parsed from the <a href="#anchorString">String</a> passed
+as argument, If the <a href="#anchorString">String</a> does not contain an <a href="#anchorInt">Int</a>, then an <a href="#anchorException">Exception</a>
+ETypeMisMatch is thrown.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> toString()</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Convierte el n&uacute;mero a una cadena, devolviendo &eacute;sta como un nuevo objeto.
+              <br>
+              <i>Returns a new <a href="#anchorString">String</a> object containing the
+floating point number in
+text format.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorFloat">Float</a> toFloat()</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>Convierte el n&uacute;mero entero a un n&uacute;mero flotante, <a href="#anchorFloat">Float</a>, devolviendo &eacute;ste como un nuevo objeto.
+              <br>
+              <i>Returns a new <a href="#anchorFloat">Float</a> object containing the
+integer number converted
+to a floating point number.</i>
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorNothing">Nothing</a> assign(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+              </i></i></i></i></i></i></i></li>
+            <li><i><i><i><i><i><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isEqualTo(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+              </i></i></i></i></i></i></i></li>
+            <li><i><i><i><i><i><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isLessThan(<a href="#anchorFloat">Float</a>)</i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataType">DataType</a>.
+              </i></i></i></i></i></i></i></li>
+            <li><i><i><i><i><i><i><i><i>Please refer to <a href="#anchorDataType">DataType</a></i>.
+              </i></i></i></i></i></i></i></li>
+          </ul>
+
+          <p>
+
+
+
+          <i><i><i><i><i><i><i><a name="anchorLiteralInt">
+          </a></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><a name="anchorLiteralInt"><b></b></a><b><a href="#anchorLiteralInt">LiteralInt</a></b>
+          </i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><b><a href="#anchorLiteralInt">LiteralInt</a></b> es un objeto que siempre est&aacute;
+presente, y que proporciona la
+funcionalidad
+de los n&uacute;meros enteros en Zero.
+Se trata ya de un objeto que puede almacenar valores.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          <br>
+          <a href="#anchorInt">Int</a>
+          </i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+          </i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i>No existen m&eacute;todos propios de este objeto
+          </i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+
+
+          <i><i><i><i><i><i><i><a name="anchorString">
+          </a></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><a name="anchorString"><b></b></a><b><a href="#anchorString">String</a></b>
+          </i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><b><a href="#anchorString">String</a></b> permite manejar cadenas de texto en
+Zero.
+Se trata de una interfaz que define las tareas m&iacute;nimas.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          </i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></p>
+          <p>
+          </p>
+          <ul>
+
+            <li><code><i><i><i><i><i><i><i><a href="#anchorString">String</a> left(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto <a href="#anchorString">String</a>, con los
+caracteres desde la posici&oacute;n cero, hasta la posici&oacute;n indicada por el argumento,
+tomados desde la izquierda. 
+                  <br>
+                  <i>Returns a new <a href="#anchorString">String</a> object, with the
+characters from the beginning to the position passed as argument as an <a href="#anchorInt">Int</a>, i.e., taken from the left</i>.
+                  </i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><a href="#anchorString">String</a> getPosition(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto <a href="#anchorString">String</a>, con el car&aacute;cter de esa posici&oacute;n dada. 
+                  <br>
+                  <i>Returns a new <a href="#anchorString">String</a> object, with the character in the position passed as argument</i>.</i></i></i></i></i></i></i></li>
+              </ul>
+            </li>
+            <li><code><i><i><i><i><i><i><i><a href="intstdlib.html#anchorString">String</a> right(<a href="intstdlib.html#anchorInt">Int</a>)</i></i></i></i></i></i></i></code>
+              <ul>
+                <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto <a href="intstdlib.html#anchorString">String</a>, con los
+caracteres desde la posici&oacute;n cero hasta la indicada por el argumento, tomados
+desde la derecha. 
+                  <br>
+                  <i>Returns a new <a href="intstdlib.html#anchorString">String</a> object, with the number
+of characters from the ending to the position passed as argument as an <a href="intstdlib.html#anchorInt">Int</a>, i.e., taken from the right</i>.
+                  </i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><a href="#anchorString">String</a> sub(<a href="#anchorInt">Int</a>
+begin, <a href="#anchorInt">Int</a> numberOfCharacters)</i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i>Devuelve un nuevo objeto <a href="#anchorString">String</a>
+con una
+subcadena formada por los caracteres indicados por numberOfCharacters,
+desde la posici&oacute;n begin, pasados como argumentos como <a href="#anchorInt">Int</a>.
+                  <br>
+                  <i>Returns a new object with the substring built with the characteres
+taken from the 'begin' argument to the 'end' argument, both passed as <a href="#anchorInt">Int</a>.</i>
+                  </i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> empty()</i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i>Devuelve <a href="#anchorTrue">True</a> si la cadena es vacia, no contiene
+caracteres. <a href="#anchorFalse">False</a> en otro caso.
+                  <br>
+                  <i>Returns <a href="#anchorTrue">True</a> if the <a href="#anchorString">String</a> is empty, i.e., it does not contain any
+character. <a href="#anchorFalse">False</a> otherwise.
+                  </i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> length()</i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i>Devuelve un n&uacute;mero entero como objeto <a href="#anchorInt">Int</a>,
+reflejando el n&uacute;mero de caracteres en la cadena.
+                  <br>
+                  <i>Returns a new <a href="#anchorInt">Int</a> object, containing the number
+of characters in the <a href="#anchorString">String</a>.</i>
+                  </i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><a href="#anchorString">String</a> toString()</i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i>Se devuelve a s&iacute; mismo, no como un nuevo objeto. Consulte
+                  <code>copy()</code> para crear una copia de la cadena.
+                  <br>
+It returns itself, specifically not as a new object. Try <code>copy()</code>
+if you would prefer a copy of the <a href="#anchorString">String</a>.
+                  </i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+          </ul>
+
+          <p>
+
+          <i><i><i><i><i><i><i><i><a name="anchorLiteralString">
+          </a></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><a name="anchorLiteralString"><b></b></a><b><a href="#anchorLiteralString">LiteralString</a></b>
+          </i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><b><a href="#anchorLiteralString">LiteralString</a></b> permite manejar cadenas
+de texto en Zero.
+Un <a href="#anchorLiteralString">LiteralString</a> es ya una cadena real.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          <br>
+          <a href="#anchorString">String</a>
+          </i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i>No existen m&eacute;todos propios en este objeto.
+          </i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+
+          <i><i><i><i><i><i><i><i><a name="anchorDataStructure">
+          </a></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><a name="anchorDataStructure"><b></b></a><b><a href="#anchorDataStructure">DataStructure</a></b>
+          </i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><b><a href="#anchorDataStructure">DataStructure</a></b> es un objeto que siempre
+est&aacute; presente, y que proporciona
+la
+funcionalidad b&aacute;sica para cualquier estructura de datos en Zero.
+          <br>
+It is always present, providing the basic funcionaliy for any data
+structure in Zero,
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          </i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+          </i></i></i></i></i></i></i></i></p>
+          <p>
+          </p>
+          <ul>
+
+            <li><code><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> size()</i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i>Devuelve el n&uacute;mero de elementos en la estructura de datos.
+                  <br>
+                  <i>Returns the number of elements in the data structure.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> process(<a href="#anchorProcessor">Processor</a>)
+              </i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>Aplica el objeto pasado como argumento, concretamente, ejecutando se
+u m&eacute;todo <code>doIt()</code> a todos los elementos de la estructura. Devuelve el
+n&uacute;mero de elementos procesados. V&eacute;ase <code>Process</code> para m&aacute;s detalles.
+                  <br>
+                  <i>Applies the object passes as argument to all elements in the data
+structure, specifically executing its <code>doIt()</code> method. Returns
+the number of elementos processed</i>. Please refer to <code>Process</code> for
+details.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+              <i><i><i><i><i><i><i><i><i><br>
+              <a href="#anchorString">String</a> toString()
+              </i></i></i></i></i></i></i></i></i>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>Devuelve una cadena compuesta de todas las subcadenas obtenidas invocando
+el m&eacute;todo <code>toString()</code> de cada uno de los elementos de la estructura
+de datos.
+                  <br>
+                  <i>Returns a <a href="#anchorString">String</a> composed by the substrings
+returned by the invokation of method <code>toString()</code> to each elements in
+the data structure</i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+          </ul>
+
+          <p>
+
+
+
+
+
+          <i><i><i><i><i><i><i><i><i><a name="anchorMap">
+          </a></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><a name="anchorMap"><b></b></a><b><a href="#anchorMap">Map</a></b>
+          </i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><b><a href="#anchorMap">Map</a></b> es un objeto que siempre est&aacute; presente, y
+que proporciona la
+funcionalidad
+de los vectores asociativos en Zero.
+El &iacute;ndice de estos vectores asociativos <u>siempre</u> es una cadena.
+          <br>
+          <i>It is always present. It provides the funcionality of associative
+vectors</i>.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataStructure">DataStructure</a>
+          </i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+          </i></i></i></i></i></i></i></i></i></p>
+          <p>
+          </p>
+          <ul>
+
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorMap">Map</a> add(<a href="#anchorString">String</a>,
+              <a href="#anchorObject">Object</a>)</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>A&ntilde;ade un nuevo elemento al vector asociativo. La cadena, <a href="#anchorString">String</a>, consiste en el &iacute;ndice, mientras que el objeto
+pasado es el elemento en s&iacute;.
+                  <br>
+                  <i>Adds a new element to the <a href="#anchorMap">Map</a>. The <a href="#anchorString">String</a> passed as argument is the index, while the <a href="#anchorObject">Object</a> is the actual information to store</i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> size()</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataStructure">DataStructure</a>.
+                  <br>
+                  <i>Please refer to <a href="#anchorDataStructure">DataStructure</a></i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> process(<a href="#anchorProcessor">Processor</a>)</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataStructure">DataStructure</a>.
+                  <br>
+                  <i>Please refer to <a href="#anchorDataStructure">DataStructure</a></i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorMap">Map</a> modify(<a href="#anchorString">String</a>, <a href="#anchorObject">Object</a>)</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>Modifica un elemento introducido previamente. En realidad, consiste en dos
+llamadas consecutivas, una a <code>delete()</code>, y otra a <code>add()</code>.
+                  <br>
+                  <i>Modifies a previously introduced element. Actually, it firstly calls
+                  <code>delete()</code>,and then <code>add()</code></i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a> lookUp(<a href="#anchorString">String</a>)</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>Devuelve el objeto guardado previamente, buscando por su &iacute;ndice. En
+caso de no existir, lanza la excepci&oacute;n <a href="#anchorEObjectNotFound">EObjectNotFound</a>.
+                  <br>
+                  <i>Returns the object previously stored, looking it up by its index. If
+not found throws the <a href="#anchorException">Exception</a>
+                  <a href="#anchorEObjectNotFound">EObjectNotFound</a></i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorMap">Map</a> delete(<a href="#anchorString">String</a>)</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>Elimina un elemento introducido previamente, buscando por su &iacute;ndice. En
+caso de no existir, lanza la excepci&oacute;n <a href="#anchorEObjectNotFound">EObjectNotFound</a>.
+                  <br>
+                  <i>Deletes an element previously introduced in the <a href="#anchorMap">Map</a>. If not found throws the <a href="#anchorException">Exception</a> <a href="#anchorEObjectNotFound">EObjectNotFound</a></i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorString">String</a> toString()</i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataStructure">DataStructure</a>.
+                  <br>
+                  <i>Please refer to <a href="#anchorDataStructure">DataStructure</a></i>.
+                  </i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+          </ul>
+
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><a name="anchorMapInstance">
+          </a></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><a name="anchorMapInstance"><b></b></a><b><a href="#anchorMapInstance">MapInstance</a></b>
+          </i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><b><a href="#anchorMapInstance">MapInstance</a></b> permite manejar vectores
+asociativos en Zero.
+Un <a href="#anchorMapInstance">MapInstance</a> es ya un vector asociativo real.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          <br>
+          <a href="#anchorMap">Map</a>
+          </i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+          <i><i><i><i><i><i><i><i><i>M&eacute;todos:
+          </i></i></i></i></i></i></i></i></i></p>
+          <p><code>
+          <i><i><i><i><i><i><i><i><i>Este m&eacute;todo no contiene m&eacute;todos propios.
+          </i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+
+
+          <i><i><i><i><i><i><i><i><i><a name="anchorVector">
+          </a></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><a name="anchorVector"><b></b></a><b><a href="#anchorVector">Vector</a></b>
+          </i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><b><a href="#anchorVector">Vector</a></b> es un objeto que siempre est&aacute;
+presente, y que proporciona la
+funcionalidad
+de los vectores en Zero.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataStructure">DataStructure</a>
+          </i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><br>
+Sus m&eacute;todos son los siguientes:
+          </i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i>No existen m&eacute;todos propios de este objeto
+          </i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+          <i><i><i><i><i><i><i><i><i><br>
+Los m&eacute;todos redefinidos son los siguientes:
+          </i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          </code></p>
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> add(<a href="#anchorObject">Object</a>)</i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i>A&ntilde;ade un objeto al final del <a href="#anchorVector">Vector</a>.
+              <br>
+              <i>Adds an object to the end of the <a href="#anchorVector">Vector</a>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> size()</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataStructure">DataStructure</a>.
+              <br>
+              <i>Please refer to <a href="#anchorDataStructure">DataStructure</a></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> process(<a href="#anchorProcessor">Processor</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataStructure">DataStructure</a>.
+              <br>
+              <i>Please refer to <a href="#anchorDataStructure">DataStructure</a></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> get(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Devuelve el objeto en la posici&oacute;n contenido en el objeto <a href="#anchorInt">Int</a> pasado por par&aacute;metro.
+              <br>
+              <i>Returns the object in the position contained in the <a href="#anchorInt">Int</a> object passed as argument</i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> put(<a href="#anchorInt">Int</a>,
+          <a href="#anchorObject">Object</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Modifica el objeto en la posici&oacute;n contenido en el objeto <a href="#anchorInt">Int</a> pasado por
+par&aacute;metro, con el nuevo objeto.
+              <br>
+              <i>Modifies the object in the position contained in the <a href="#anchorInt">Int</a> object passed
+as argument, with the new <a href="#anchorObject">Object</a></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> modify(<a href="#anchorInt">Int</a>, <a href="#anchorObject">Object</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Igual que <code>put()</code>.
+              <br>
+              <i>Same functionality as <code>put()</code></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> delete(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Elimina la posici&oacute;n contenida en el objeto <a href="#anchorInt">Int</a>
+pasado por
+par&aacute;metro.
+              <br>
+              <i>Deletes the position contained in the <a href="#anchorInt">Int</a> object
+passed
+as argument</i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> insert(<a href="#anchorInt">Int</a>, <a href="#anchorObject">Object</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Inserta un nuevo objeto en la posici&oacute;n contenida en el objeto <a href="#anchorInt">Int</a> pasado por par&aacute;metro. &Eacute;sto supone desplazar todos los
+elementos a la derecha del nuevo elemento una posici&oacute;n.
+              <br>
+              <i>Inserts a new <a href="#anchorObject">Object</a> in the position
+contained in the <a href="#anchorInt">Int</a> object passed
+as argument. In order to perform this operation, all elements at the right
+of this element must be shifted to the right one position</i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> erase(<a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Elimina la posici&oacute;n contenida en el objeto <a href="#anchorInt">Int</a>
+pasado
+por par&aacute;metro. &Eacute;sto supone desplazar todos los elementos a la derecha del
+elemento una posici&oacute;n a la izquierda.
+              <br>
+              <i>Inserts a new <a href="#anchorObject">Object</a> in the position
+contained in the <a href="#anchorInt">Int</a> object passed
+as argument. In order to perform this operation, all elements at the right
+of this element must be shifted to the left one position</i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorVector">Vector</a> clear()</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Elimina todas las posiciones del <a href="#anchorVector">Vector</a>.
+              <br>
+              <i>Deletes all positions in this <a href="#anchorVector">Vector</a></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> seqFind(<a href="#anchorObject">Object</a>, <a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Realiza una b&uacute;squeda secuencial por el <a href="#anchorVector">Vector</a>,
+empezando desde la posici&oacute;n dada hasta la &uacute;ltima, o hasta que el objeto es
+encontrado. &Eacute;sto se hace ejecutando el m&eacute;todo <code>isEqualTo()</code> para cada
+elemento, pas&aacute;ndole el objeto a buscar como par&aacute;metro. Devuelve el n&uacute;mero de
+posici&oacute;n si encuentra el objeto, o Nothing, si no lo encuentra.
+              <br>
+              <i>Performs a sequential search through the <a href="#anchorVector">Vector</a>, beginning at the given position, until the last one is
+reached, or the element is found. This is done by executing the
+              <code>isEqualTo()</code> for each element, passing the object to be found as
+argument. Returns an object containing the <a href="#anchorInt">Int</a> number
+wit the position or Nothing if not found</i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorInt">Int</a> seqFindLast(<a href="#anchorObject">Object</a>, <a href="#anchorInt">Int</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Realiza una b&uacute;squeda secuencial por el <a href="#anchorVector">Vector</a>,
+empezando desde la posici&oacute;n dada hasta la primera, o hasta que el objeto es
+encontrado. &Eacute;sto se hace ejecutando
+el m&eacute;todo <code>isEqualTo()</code> para cada elemento, pas&aacute;ndole el objeto a
+buscar como par&aacute;metro. Devuelve el n&uacute;mero de posici&oacute;n si encuentra el objeto, o
+Nothing, si no lo encuentra.
+              <br>
+              <i>Performs a sequential search through the <a href="#anchorVector">Vector</a>, beginning at
+the given position, until the first one is reached, or the element is
+found. This is done by executing the <code>isEqualTo()</code> for each element,
+passing the object to be found as argument. Returns an object containing the <a href="#anchorInt">Int</a>
+number wit the position or Nothing if not found</i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorString">String</a> toString()</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>V&eacute;ase <a href="#anchorDataStructure">DataStructure</a>.
+              <br>
+              <i>Please refer to <a href="#anchorDataStructure">DataStructure</a></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+        </li>
+        <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorConditional">Conditional</a> isEqualTo(<a href="#anchorVector">Vector</a>)</i></i></i></i></i></i></i></i></i></i></code>
+          <ul>
+
+            <li><i><i><i><i><i><i><i><i><i><i>Devuelve <a href="#anchorTrue">True</a> si los vectores tienen la misma
+longitud, y si la invocaci&oacute;n del m&eacute;todo <code>isEqualTo()</code> para todos y
+cada uno de los elementos de un vector, pasando como par&aacute;metro al elemento en la
+misma posici&oacute;n en el otro, devuelve <a href="#anchorTrue">True</a>. En otro
+caso, devuelve <a href="#anchorFalse">False</a>.
+              <br>
+              <i>Returns <a href="#anchorTrue">True</a> if the vectors have the same size,
+and invoking the <code>isEqualTo()</code> for each element in one <a href="#anchorVector">Vector</a>, passing the element in the same position in the
+other <a href="#anchorVector">Vector</a>, results in all of them returning <a href="#anchorTrue">True</a>. Otherwise, returns <a href="#anchorFalse">False</a></i>.
+              </i></i></i></i></i></i></i></i></i></i></li>
+          </ul>
+
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorVectorInstance">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorVectorInstance"><b></b></a><b><a href="#anchorVectorInstance">VectorInstance</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorVectorInstance">VectorInstance</a></b> permite manejar
+vectores en Zero.
+Un <a href="#anchorVectorInstance">VectorInstance</a> es ya un vector real.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          <br>
+          <a href="#anchorVector">Vector</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos propios en este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorConditional">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorConditional"><b></b></a><b><a href="#anchorConditional">Conditional</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorConditional">Conditional</a></b> permite manejar condiciones
+en Zero, sobre todo debido a
+sus objetos derivados, <a href="#anchorTrue">True</a> y <a href="#anchorFalse">False</a>.
+          <br>
+          <i>Allows managing conditions in Zero, due to its derived objects, <a href="#anchorTrue">True</a> and <a href="#anchorFalse">False</a></i>.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>Este objeto no contiene m&eacute;todos propios.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorTrue">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorTrue"><b></b></a><b><a href="#anchorTrue">True</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorTrue">True</a></b> permite manejar condiciones en Zero, en
+concreto aquellas
+que son verdaderas.
+          <br>
+          <i>Allows to manage conditions, specifically those being true</i>.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          <br>
+          <a href="#anchorConditional">Conditional</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos propios de este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorFalse">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorFalse"><b></b></a><b><a href="#anchorFalse">False</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorFalse">False</a></b> permite manejar condiciones en Zero,
+concretamente
+en relaci&oacute;n con aquellas que son falsas.
+          <br>
+          <i>Allows to manage conditions, specifically those being false</i>.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorDataType">DataType</a>
+          <br>
+          <a href="#anchorConditional">Conditional</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos propios de este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorException">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorException"><b></b></a><b><a href="#anchorException">Exception</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorException">Exception</a></b>: cuando se lanza una excepci&oacute;n,
+el objeto enviado es una copia
+de uno
+de los objetos que derivan de &eacute;ste.
+          <br>
+          <i>When an exception is thrown, the object sent is a copy of one the
+objects derived from this one. Actually, any object can be sent as an
+          <a href="#anchorException">Exception</a>, but the use of these ones is
+encouraged</i>.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i>Sus atributos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <ul>
+
+            <li><code><i><i><i><i><i><i><i><i><i><i>exceptionType</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <i><i><i><i><i><i><i><i><i><i>	<li>Apunta al objeto derivado de <code><a href="#anchorException">Exception</a></code> correspondiente
+	a la excepci&oacute;n que se ha producido.
+	<br>
+                  <i>Points to the object derived from <code><a href="#anchorException">Exception</a></code> corresponding the happend
+exception</i>.
+                </li>
+                </i></i></i></i></i></i></i></i></i></i>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><i>thrower</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i><i>Apunta al objeto que lanz&oacute; la excepci&oacute;n
+                  <br>
+                  <i>Points to the object which threw the <a href="#anchorException">Exception</a></i>.
+                  </i></i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><i>object</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i><i>Objeto propietario del m&eacute;todo que lanz&oacute; la excepci&oacute;n
+                  <br>
+                  <i><a href="#anchorObject">Object</a> which is the owner of the method in
+which the exception was thrown</i>.
+                  </i></i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><i>methodNumber</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i><i>N&uacute;mero de m&eacute;todo que lanz&oacute; la excepci&oacute;n.
+                  <br>
+                  <i>Number which identifies the method in which the <a href="#anchorException">Exception</a> was thrown</i>.
+                  </i></i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><i>details</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i><i>Apunta a un <a href="#anchorString">String</a> que contiene los detalles de
+la excepci&oacute;n. Si la cadena
+no existe, entonces apunta a <code><a href="#anchorNothing">Nothing</a></code>.
+                  <br>
+                  <i>Points to a <a href="#anchorString">String</a> <a href="#anchorObject">Object</a> containing the details of the <a href="#anchorException">Exception</a>. I the <a href="#anchorString">String</a>
+does not exist, it points to <code><a href="#anchorNothing">Nothing</a></code></i>.
+                  </i></i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+          </ul>
+
+
+          <i><i><i><i><i><i><i><i><i><i>    
+Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          </p>
+          <ul>
+
+            <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorString">String</a> toString()</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i><i>Llama a <code>getErrorMessage()</code>.
+                  <br>
+                  <i>Llama a <code>getErrorMessage()</code></i>.
+                  </i></i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+            <li><code><i><i><i><i><i><i><i><i><i><i><a href="#anchorString">String</a> getErrorMessage()</i></i></i></i></i></i></i></i></i></i></code>
+              <ul>
+
+                <li><i><i><i><i><i><i><i><i><i><i>Compone un mensaje de error con toda la informaci&oacute;n en el objeto.
+                  <br>
+                  <i>Composes an error message with all the above information</i>.
+                  </i></i></i></i></i></i></i></i></i></i></li>
+              </ul>
+
+            </li>
+          </ul>
+
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorESemantic">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorESemantic"><b></b></a><b><a href="#anchorESemantic">ESemantic</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorESemantic">ESemantic</a></b>: Cuando se lanza una excepci&oacute;n
+que tiene que ver con errores
+sem&aacute;nticos en la ejecuci&oacute;n de un m&eacute;todo, el objeto enviado es una copia de uno
+de los objetos
+que derivan de &eacute;ste.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEMemory">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEMemory"><b></b></a><b><a href="#anchorEMemory">EMemory</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEMemory">EMemory</a></b>: cuando se lanza una excepci&oacute;n, y
+&eacute;sta tiene que ver con la
+gesti&oacute;n de memoria,
+el objeto enviado es una copia de uno
+de los objetos que derivan de &eacute;ste.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEUser">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEUser"><b></b></a><b><a href="#anchorEUser">EUser</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEUser">EUser</a></b>: cuando se lanza una excepci&oacute;n, y &eacute;sta
+tiene que ver con
+errores definidos por el usuario,
+el objeto enviado es una copia de uno
+de los objetos que derivan de &eacute;ste.
+As&iacute;, el usuario puede definir sus propios errores, simplemente
+derivando de este objeto.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEConditional">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEConditional"><b></b></a><b><a href="#anchorEConditional">EConditional</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEConditional">EConditional</a></b>: Este objeto es enviado
+cuando ocurre alg&uacute;n problema con una
+estructura de toma de decisiones. Por ejemplo, cuando <a href="#CND">CND</a> se
+ejecuta,
+si &eacute;sta no encuentra <a href="#%3Ca%20href=" #anchortrue="">True</a>"&gt;<a href="#anchorTrue">True</a> o <a href="#%3Ca%20href=" #anchorfalse="">False</a>"&gt;<a href="#anchorFalse">False</a> en el
+acumulador,
+entonces, se genera una excepci&oacute;n de este tipo.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEConditional">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEConditional"><b></b></a><b><a href="#anchorEConditional">EConditional</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEConditional">EConditional</a></b>: Este objeto es enviado
+cuando ocurre alg&uacute;n problema con una
+estructura de toma de decisiones. Por ejemplo, cuando <a href="#CND">CND</a> se
+ejecuta,
+si &eacute;sta no encuentra <a href="#True">True</a> o <a href="#anchorFalse">False</a> en el
+acumulador,
+entonces, se genera una excepci&oacute;n de este tipo.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorETypeMismatch">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorETypeMismatch"><b></b></a><b><a href="#anchorETypeMismatch">ETypeMismatch</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorETypeMismatch">ETypeMismatch</a></b>: Este objeto es enviado
+cuando ocurre alg&uacute;n problema
+relacionado
+con que un no deriva del objeto que se esperaba. Por ejemplo, 
+cuando MSG se ejecuta, si se le pasa un objeto que deriva de <a href="%3Ca%0D%0Ahref=" #anchorfloat="">Float</a>, y requer&iacute;a un objeto que deriva de <a href="#%3Ca%0D%0Ahref=" #anchorstring="">String</a>, entonces, se genera una excepci&oacute;n de este tipo.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+
+
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEObjectNotFound">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEObjectNotFound"><b></b></a><b><a href="#anchorEObjectNotFound">EObjectNotFound</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEObjectNotFound">EObjectNotFound</a></b>: Este objeto es
+enviado cuando ocurre alg&uacute;n problema
+relacionado
+con encontrar un objeto. Por ejemplo, cuando MSG se ejecuta,
+si &eacute;sta no encuentra el objeto se&ntilde;alado,
+entonces, se genera una excepci&oacute;n de este tipo.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEMethodNotFound">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEMethodNotFound"><b></b></a><b><a href="#anchorEMethodNotFound">EMethodNotFound</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEMethodNotFound">EMethodNotFound</a></b>: Este objeto es
+enviado cuando ocurre alg&uacute;n problema
+relacionado
+con encontrar un m&eacute;todo en un objeto. Por ejemplo, cuando MSG
+se ejecuta,
+si &eacute;sta no encuentra el m&eacute;todo se&ntilde;alado en el objeto,
+entonces, se genera una excepci&oacute;n de este tipo.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEInternalError">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEInternalError"><b></b></a><b><a href="#anchorEInternalError">EInternalError</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEInternalError">EInternalError</a></b>: Este objeto se genera
+cuando
+ocurre alg&uacute;n error que no se encuandra en ninguna categor&iacute;a.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEMath">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEMath"><b></b></a><b><a href="#anchorEMath">EMath</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b>Emath</b>: Este objeto se genera cuando
+ocurre alg&uacute;n error relaciondo con el c&aacute;lculo. Por ejemplo,
+podr&iacute;a ocurrir cuando a un objeto <a href="#anchorFloat"></a><a href="#anchorFloat">Float</a>
+se le manda el mensaje "divideBy", con argumento 0.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorESemantic">ESemantic</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorENotEnoughMemory">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorENotEnoughMemory"><b></b></a><b><a href="#anchorENotEnoughMemory">ENotEnoughMemory</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorENotEnoughMemory">ENotEnoughMemory</a></b>: Este objeto se
+genera cuando
+ocurre alg&uacute;n error relaciondo con la memoria. Por ejemplo,
+podr&iacute;a ocurrir cuando se ejecuta el m&eacute;todo new de alg&uacute;n objeto
+y no hay memoria suficiente para crear la ocpia del objeto especificado.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+EMEmory
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEAccessViolation">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEAccessViolation"><b></b></a><b><a href="#anchorEAccessViolation">EAccessViolation</a></b>
+          </i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><b><a href="#anchorEAccessViolation">EAccessViolation</a></b>: Este objeto se
+genera cuando
+se intenta acceder a alguna parte de la memoria con privilegios
+inadecuados.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorEMemory">EMemory</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEInputOutput">
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+        </li>
+        <li><i><i><i><i><i><i><i><i><i><i><a name="anchorEInputOutput"><b>EInputOutput</b>
+          </a></i></i></i></i></i></i></i></i></i></i>
+          <p>
+          <i><i><i><i><i><i><i><i><i><i><a name="anchorEInputOutput"><b>EInputOutput</b>: Este objeto se genera cuando
+se produce alg&uacute;n problema de entrada/salida. Un ejemplo es
+que el usuario cierre la entrada pulsando Ctrl+C.
+          <br>
+Hereda de:<br>
+          <i>Inherits from:</i>
+          </a></i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i><a href="#anchorObject">Object</a>
+          <br>
+          <a href="#anchorException">Exception</a>
+          <br>
+          <a href="#anchorEUser">EUser</a>
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+          <i><i><i><i><i><i><i><i><i><i>Sus m&eacute;todos son:
+          </i></i></i></i></i></i></i></i></i></i></p>
+          <p>
+          <code>
+          <i><i><i><i><i><i><i><i><i><i>No existen m&eacute;todos para este objeto.
+          </i></i></i></i></i></i></i></i></i></i></code>
+          </p>
+          <p>
+
+
+          </p>
+        </li>
+      </ul>
+
+
+
+      <hr>
+      <i><i><i><i><i><i><i><i><i><i><i>
+      <table width="100%">
+
+        <tbody>
+          <tr>
+
+            <td>
+            <a href="http://www.ei.uvigo.es/%7Ejgarcia/">J. Baltasar Garc&iacute;a Perez-Schofield</a>&nbsp;
+            <a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;
+            <a href="http://www.lsi.uvigo.es">Departamento de Inform&aacute;tica</a>&nbsp;
+            <a href="http://www.uvigo.es">Universidad de Vigo</a>
+            </td>
+
+            <td>
+            <img src="tiraZero.jpg" alt="Zero (el avi&oacute;n)" align="right">
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+      </i>
+      </i></i></i></i></i></i></i></i></i></i>
+      <hr>
+    </li>
+  </ul>
+</li>
+</body>
+</html>

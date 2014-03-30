@@ -1,0 +1,714 @@
+<html>
+<head>
+  <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <META name="Author" content="Baltasar García Perez-Schofield (jbgarcia)">
+  <META name="KeyWords" content="Zero, programación, programming, persistence,
+persistencia, persistent, OOP, POO, prototypes, prototipos, objetos, objects,
+ensamblador, assembler">
+<title>Ensamblador Zero</title>
+</head>
+<body>
+<hr>
+<TABLE WIDTH=100%>
+<TR>
+      <TD>
+            <h1>Ensamblador Zero</h1>
+      </TD>
+      <TD>
+            <IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
+      </TD>
+</TR>
+</TABLE>
+<hr>
+
+
+<P>
+<h2>Resumen</h2>
+<hr>
+<P>
+Este archivo es la especificación del código ensamblador para Zero. Una guía del
+contenido puede encontrarse a continuación.
+<P>
+<ul>
+
+<ul>
+<P><li><a href="#LISTA_ATR">Lista de miembros por defecto en cualquier objeto</a>
+    <ul>
+          <li><a href="#parent">parent</a>,
+          <li><a href="#finalize">finalize</a>,
+          <li><a href="#copy">copy</a>.
+    </ul>
+<P><li><a href="#LISTA_ATR">Variables locales dentro de un método:</a>
+    <ul>
+          <li><a href="#RR">Registro de retorno</a>,
+          <li><a href="#__this">Registro this</a>,
+          <li><a href="#EXC">Registro de excepciones</a>,
+          <li><a href="#AC">Registro acumulador</a>,
+	  <li><a href="#GP">Registros de propósito general</a>.
+    </ul>
+
+<P><li><a href="#LISTA_MN">Lista completa de mnemotécnicos</a>
+<ul>
+<li>Clasificación de mnemotécnicos:
+<ol>
+    <li>Creación de objetos: <a href="#OBJ">OBJ</a>, <a href="#ENO">ENO</a>.
+    <li>Creación de métodos: <a href="#MTH">MTH</a>, <a href="#RET">RET</a>, <a href="#ENM">ENM</a>.
+    <li>Creación de atributos: <a href="#ATR">ATR</a>
+    <li>Creación de variables locales: <a href="#DEF">DEF</a>, <a href="#FLT">FLT</a>, <a href="#STR">STR</a>.
+    <li>Operación con referencias: <a href="#ASG">ASG</a>, <a href="#SET">SET</a>.
+    <li>Salto: <a href="#JMP">JMP</a>, <a href="#JOT">JOT</a>, <a href="#JOF">JOF</a>.
+    <li>Operación con objetos: <a href="#MSG">MSG</a>, <a href="#IOF">IOF</a>, <a href="#TRW">TRW</a>.
+</ol>
+<li>Mnemotécnicos en orden alfabético:
+<ol>
+    <li><a href="#ASG">ASG</a>,
+    <li><a href="#ATR">ATR</a>,
+    <li><a href="#DEF">DEF</a>,
+    <li><a href="#ENM">ENM</a>,
+    <li><a href="#ENO">ENO</a>,
+    <li><a href="#FLT">FLT</a>,
+    <li><a href="#IOF">IOF</a>,
+    <li><a href="#JMP">JMP</a>,
+    <li><a href="#JOT">JOT</a>,
+    <li><a href="#JOF">JOF</a>,
+    <li><a href="#MTH">MTH</a>,
+    <li><a href="#MSG">MSG</a>,
+    <li><a href="#OBJ">OBJ</a>,
+    <li><a href="#RET">RET</a>,
+    <li><a href="#SET">SET</a>,
+    <li><a href="#STR">STR</a>,
+    <li><a href="#TRW">TRW</a>.
+</ol>
+</ul>
+</UL>
+</UL>
+
+
+
+<hr>
+<i>
+<a href="http://www.ei.uvigo.es/~jgarcia/">J. Baltasar García Perez-Schofield</a>&nbsp;&nbsp;&nbsp;
+<a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;&nbsp;&nbsp;
+<a href="http://www.lsi.uvigo.es">Departamento de Informática</a>&nbsp;&nbsp;&nbsp;
+<a href="http://www.uvigo.es">Universidad de Vigo</a>
+</i>
+<hr>
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+
+
+<P>
+<a name="LISTA_MN">
+<hr>
+<h2>Lista de mnemotécnicos:</h2>
+<hr>
+<ul>
+<a name="OBJ">
+<P><li><b>OBJ</b>: Inicia la definición de un objeto. Debe ir acompañado del nombre
+del objeto, y del nombre del padre del objeto.
+El efecto es crear el objeto vacío, a excepción de <a href="#parent"><b>parent</b></a>,
+un atributo que se crea automáticamente con el objeto y que permite que el mecanismo de delegación
+opere.
+<br>El segundo atributo pasado se le asigna al atributo parent, ya comentado. En
+caso de no existir este parámetro, o en caso de ser incorrecto, se asignará a
+<a href="#Object">Object</a>.
+<br>Su utilidad por sí misma es escasa, debe emplease con <a href="#ATR">ATR</a> y <a href="#MTH">MTH</a>.
+
+      <P><CODE>
+            OBJ &lt;nombre_obj&gt; &lt;nombre_obj_existente&gt;
+            <P>
+            OBJ foo
+            <br>ENO
+      </CODE>
+
+<a name="ENO">
+<P><li><b>ENO</b>: Termina la definición de un objeto. El efecto es que el objeto pasa a
+      poder ser empleado, y el ensamblador permite la creación de un nuevo objeto.
+      <P><CODE>
+            ENO
+            <P>
+            OBJ foo
+            <br>ENO
+      </CODE>
+
+<a name="ATR">
+<P><li><b>ATR</b>: Define un atributo para un objeto. Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+      Debe ir acompañado de un nombre, que será el nombre del atributo. No es posible
+      definir más de un atributo con el mismo nombre.
+      A continuación debe ir acompañado de una referencia a un objeto. En caso de no
+      querer darle ningún valor, debe indicarse <a href="#Nothing">Nothing</a>. También es posible darle un valor literal numérico o
+de cadena directamente.
+      Además, su nombre no puede ser <a href="#parent"><b>parent</b></a>.
+      <br>Entre el nombre del mnemotécnico y el nombre del método se coloca un
+      símbolo '+' o un '-', que se corresponden con atributo público o privado.
+
+
+      <P><CODE>
+            ATR <+|-> &lt;nombre&gt; [&lt;nombre_objeto_existente&gt | &lt;literal_numérico&gt; | &lt;literal_cadena&gt;]
+            <P>
+            OBJ foo
+            <br>&nbsp;ATR + x 5
+            <br>ENO
+      </CODE>
+
+<a name="MTH">
+<P><li><b>MTH</b>: Define un método para un objeto.
+      Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+      Debe ir acompañado de un nombre, que será el nombre del método.
+      Además, el número
+      de argumentos, y a continuación, sus nombres, si existen.
+      El efecto de los argumentos es, en la práctica, ser unas variables locales
+      más, que se inicializan con la órden <a href="#MSG">MSG</a>.
+      Existen, siempre, dos variables locales extra, el <a href="#AC">acumulador</a>,
+      y <b><a href="#__this">__this</a></b>, que es una referencia local que apunta al
+      objeto que ejecuta el método
+      (este objeto puede no ser el que define el método, debido a la delegación).
+      <br>Entre el nombre del mnemotécnico y el nombre del método se coloca un
+      símbolo '+' o un '-', que se corresponden con método público o privado.
+      <br>No es posible
+      definir más de un método o atributo con el mismo nombre.
+      El final del método lo marca <a href="#RET">RET</a>.
+
+      <P><CODE>
+            MTH <+|-> &lt;nombre_método&gt; [&lt;parametro_formal1&gt;, [&lt;parametro_formal2&gt;, ...]]
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + x
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="RET">
+<P><li><b>RET</b>: Termina el cuerpo de un método de un objeto. Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>. El comienzo de un método lo marca <a href="#MTH">MTH</a>, y su final
+      <a href="#ENM">ENM</a>. Puede ir acompañado de una referencia local o
+de un registro. Si no aparece, entonces se asume que se devuelve el contenido
+de <a href="#RR">__rr</a>.
+
+      <P><CODE>
+            RET [&lt;referencia&gt;]
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + self
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="JMP">
+<P><li><b>JMP</b>: Realiza un salto incondicional de un número de opcodes dado
+por el argumento.
+      <br>Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>. El comienzo de un método lo marca <a href="#MTH">MTH</a>, y su final
+      <a href="#ENM">ENM</a>.
+<BR>Esta instrucción no modifica el acumulador.      
+
+      <P><CODE>
+            JMP &lt;número_de_opcodes&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + self
+            <br>&nbsp;JMP 3
+            <br>&nbsp;STR "Este mensaje nunca sale por pantalla."
+            <br>&nbsp;MSG System.console write __acc
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="JOT">
+<P><li><b>JOT</b>: Realiza un salto condicional (si hay un True en el acumulador)
+de un número de opcodes dado por el argumento.
+      <br>Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>. El comienzo de un método lo marca <a href="#MTH">MTH</a>, y su final
+      <a href="#ENM">ENM</a>.
+<BR>Esta instrucción no modifica el acumulador.      
+
+      <P><CODE>
+            JOT &lt;número_de_opcodes&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + foe
+            <br>&nbsp;&nbsp;DEF cadTodoVaBien
+            <br>&nbsp;&nbsp;STR "Si puede leer esto, es que todo va bien"
+            <br>&nbsp;&nbsp;ASG cadTodoVaBien
+            <br>&nbsp;&nbsp;IOF Float
+            <br>&nbsp;&nbsp;JOT 2
+            <br>&nbsp;&nbsp;MSG System.console write cadTodoVaBien
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="JOF">
+<P><li><b>JOF</b>: Realiza un salto condicional (si hay un False en el acumulador)
+de un número de opcodes dado por el argumento.
+      <br>Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>. El comienzo de un método lo marca <a href="#MTH">MTH</a>, y su final
+      <a href="#ENM">ENM</a>.
+<BR>Esta instrucción no modifica el acumulador.      
+
+      <P><CODE>
+            JOF &lt;número_de_opcodes&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + foe
+            <br>&nbsp;&nbsp;DEF cadTodoVaBien
+            <br>&nbsp;&nbsp;STR "Si puede leer esto, es que todo va bien"
+            <br>&nbsp;&nbsp;ASG cadTodoVaBien
+            <br>&nbsp;&nbsp;IOF String
+            <br>&nbsp;&nbsp;JOF 2
+            <br>&nbsp;&nbsp;MSG System.console write cadTodoVaBien
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+
+
+
+<a name="ENM">
+<P><li><b>ENM</b>: Termina un método para un objeto. Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>. El comienzo de un método lo marca <a href="#MTH">MTH</a>,
+      y el final del cuerpo principal <a href="#RET">RET</a>.
+      El propósito de existir esta división es poder atender las excepciones que se produzcan.
+      En caso de haber código entre un <a href="#RET">RET</a> y un <a href="#ENM">ENM</a>, éste sólo
+      se ejecuta en caso de que se produzca una excepción.
+
+      <P><CODE>
+            RET &lt;referencia&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + self
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+
+
+<a name="FLT">
+<P><li><b>FLT</b>: Crea un objeto
+      de la librería estándar que contendrá el valor literal especificado.
+      Ése objeto será apuntado por el acumulador.
+      En caso de no haber memoria suficiente, el <a href="#AC">acumulador</a> contendrá una referencia
+      a <a href="Nothing">Nothing</a>, y se lanzará la excepción <a href="#ENotEnoughMemory">ENotEnoughMemory</a>.
+      En concreto, FLT trata con números en punto flotante.
+      Dado que Zero es un lenguaje orientado a objetos puro, ésta es la única forma de
+      incluir valores que no son objetos en un programa.
+      En caso de no existir memoria suficiente para el nuevo objeto, se provoca la excep
+      Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#MTH">RET</a>.
+      No es posible definir una referencia local con el nombre <b><a href="#__this">__this</a></b>,
+      ni con el nombre del <b><a href="#acumulador">acumulador</a></b>.
+
+      <P><CODE>
+            FLT &lt;literal_flotante&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + foe
+            <br>&nbsp;&nbsp; DEF PI
+            <br>&nbsp;&nbsp; FLT 3.1415927
+            <br>&nbsp;&nbsp; ASG PI
+            <br>&nbsp;&nbsp; MSG System.console write PI
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="STR">
+<P><li><b>STR</b>: Crea un objeto
+      de la librería estándar que contendrá el valor literal especificado.
+      Ése objeto será apuntado por el acumulador.
+      En caso de no haber memoria suficiente, el <a href="#AC">acumulador</a> contendrá una referencia
+      a <a href="Nothing">Nothing</a>, y se lanzará la excepción <a href="#ENotEnoughMemory">ENotEnoughMemory</a>.
+      Dado que Zero es un lenguaje orientado a objetos puro, ésta es la única forma de
+      incluir valores que no son objetos en un programa.
+      En concreto, STR trata con cadenas de caracteres.
+      La cadena puede ocupar varias líneas, si bien debe estar encerrada entre comillas dobles.
+      Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#MTH">RET</a>.
+      No es posible definir una referencia local con el nombre <b><a href="#__this">__this</a></b>,
+      ni con el nombre del <b><a href="#acumulador">acumulador</a></b>.
+
+      <P><CODE>
+            STR &lt;nombre_variable&gt; "&lt;literal&gt;"
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + foe
+            <br>&nbsp;&nbsp;DEF cadHolaMundo
+            <br>&nbsp;&nbsp;STR "¡Hola, Mundo!"
+            <br>&nbsp;&nbsp;ASG cadHolaMundo
+            <br>&nbsp;&nbsp;MSG System.console write cadHolaMundo
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="TRW">
+<P><li><b>TRW</b>:
+      El propósito de esta instrucción es provocar una excepción. Se trata de
+      crear una copia de un objeto especificado, colocar
+      una referencia al mismo en el <a href="#AC">acumulador</a> y en el registro de <a href="#EXC">excepciones</a>, y hacer un salto a la ejecución más allá
+      de la instrucción <a href="#RET">RET</a>. El conjunto de instrucciones especificado
+      para el trato de excepciones estará entre ésta instrucción y la <a href="#ENM">ENM</a>.
+      Acepta un único argumento, que es una referencia al objeto excepción a generar.
+      <br>Si esta instrucción se encuentra en una zona de gestión de excepciones, (entre
+      <a href="#RET">RET</a> y <a href="#ENM">ENM</a>, como ya se ha dicho), entonces la
+      excepción pasa al control de excepciones del método que hubiera sido llamado. En caso
+      de no existir tal método, el trabajo se encarga a la máquina virtual.
+      <br>Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#ENM">ENM</a>.
+
+      <P><CODE>
+            TRW &lt;referencia&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + foe
+            <br>&nbsp;&nbsp;STR "Introduzca un número: "
+            <br>&nbsp;&nbsp;MSG System.console read
+            <br>&nbsp;&nbsp;MSG __acc toFloat
+            <br>&nbsp;&nbsp;MSG System.console write __acc
+            <br>&nbsp;RET
+            <br>&nbsp;&nbsp;STR "Era necesario introducir un número."
+            <br>&nbsp;&nbsp;MSG System.console write __acc
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+
+<a name="IOF">
+<P><li><b>IOF</b>: Esta instrucción coloca <a href="#True">True</a> en el acumulador si la
+      referencia en el <a href="#AC">acumulador</a> señala a un objeto que es hijo en la cadena de
+      herencia (mediante <a href="#parent">parent</a>), del objeto que es pasado como parámetro.
+      En caso contrario, coloca <a href="#False">False</a> en el acumulador.
+      <br>Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+<br>
+      Si va acompañada, además, de un registro, entonces la referencia a
+comrpobar no se toma del <a href="#AC">acumulador</a>, sino de ese registro.
+<br>	
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#MTH">RET</a>.
+
+      <P><CODE>
+            IOF &lt;referencia&gt; [&lt;nombre_registro&gt;]
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + foe
+            <br>&nbsp;&nbsp;DEF cadTodoVaBien
+            <br>&nbsp;&nbsp;STR "Si puede leer esto, es que todo va bien"
+            <br>&nbsp;&nbsp;ASG cadTodoVaBien
+            <br>&nbsp;&nbsp;IOF String
+            <br>&nbsp;&nbsp;JOF 2
+            <br>&nbsp;&nbsp;MSG System.console write cadTodoVaBien
+            <br>&nbsp;RET __this
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="DEF">
+<P><li><b>DEF</b>: Define una referencia local dentro de un método para un objeto.
+      Debe acompañarse con un nombre. La referencia local puede contener una referencia
+      a un objeto.
+      Se garantiza la inicialización a <b><a href="#Nothing">Nothing</a></b>.
+      Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un
+      <a href="#ENO">ENO</a>.
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#MTH">RET</a>.
+      No es posible definir una referencia local con el nombre <b><a href="#__this">__this</a></b>,
+      ni con el nombre del <b><a href="#acumulador">acumulador</a></b>.
+      <br>Esta instrucción NO modifica el acumulador.
+            
+      <P><CODE>
+            DEF &lt;nombre_variable_local&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + self
+            <br>&nbsp;&nbsp;DEF aux
+            <br>&nbsp;&nbsp;SET __this&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; AC  = __this
+            <br>&nbsp;&nbsp;ASG aux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; aux = AC
+            <br>&nbsp;RET aux
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>   
+
+
+<a name="ASG">
+
+<P><li><b>ASG</b>: Permite asignar el contenido del <a href="#AC">acumulador</a> (una referencia a un objeto)
+      a una referencia local, u otro <a href="#GP">registro</a>. 
+      Debe acompañarse con un nombre, el de la referencia local. 
+      Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un 
+      <a href="#ENO">ENO</a>. 
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#MTH">RET</a>.
+      <br>Esta instrucción NO modifica <b>necesariamente</b> el <a href="#AC">acumulador</a> (es decir, a no ser que el destino sea el propio acumulador, éste no es modificado).      
+            
+      <P><CODE>
+            ASG [&lt;nombre_registro&gt;] &lt;nombre_variable_local&gt; | &lt;nombre_atributo&gt; | &lt;nombre_registro&gt; 
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + self
+            <br>&nbsp;&nbsp;DEF aux
+            <br>&nbsp;&nbsp;SET __this&nbsp;&nbsp;&nbsp;&nbsp; ; AC  = __this
+            <br>&nbsp;&nbsp;ASG aux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; aux = AC
+            <br>&nbsp;RET aux
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+      
+<a name="SET">
+<P><li><b>SET</b>: Permite asignar una referencia al <a href="#AC">acumulador</a> u otro <a href="#GP">registro</a>. 
+      Debe acompañarse con un nombre de una referencia local, y, opcionalmente, un nombre de registro. De no incluirse éste último, se asume
+el uso del <a href="#AC">acumulador</a>.
+      Debe estar dentro de la definición
+      de un objeto, es decir, entre un <a href="#OBJ">OBJ</a> y un 
+      <a href="#ENO">ENO</a>. 
+      Debe estar además entre un <a href="#MTH">MTH</a> y un <a href="#MTH">RET</a>.
+            
+      <P><CODE>
+            SET [&lt;nombre_registro&gt;] &lt;referencia&gt;
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + self
+            <br>&nbsp;&nbsp;DEF aux
+            <br>&nbsp;&nbsp;SET __this&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; AC  = __this
+            <br>&nbsp;&nbsp;ASG aux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; aux = AC
+            <br>&nbsp;RET aux
+            <br>&nbsp;ENM
+            <br>ENO
+      </CODE>
+
+<a name="MSG">
+<P><li><b>MSG</b>: Permite ejecutar un método (mandar un mensaje) de un objeto.
+      Debe acompañarse con un nombre de un objeto y el nombre
+      del método a ejecutar.
+      <br>En caso de no encontrar el objeto, se lanza la excepción
+      <a href="#EObjectNotFound">EObjectNotFound</a>, y en
+      caso de no encontrar el método, <a href="#EMethodNotFound">EMethodNotFound</a>
+      <br>A continuación se especifica el número de argumentos, y de ser
+      este número mayor que cero, los argumentos uno por uno. Si está dentro de un
+      objeto, el resultado del método queda guardado en el <a href="#AC">acumulador</a>.
+
+      <P><CODE>
+            MSG &lt;referencia&gt; &lt;desplazamiento&gt; &lt;nombre_método&gt; [&lt;referencia1&gt; [&lt;referencia2&gt;...]]
+            <P>
+            OBJ foo
+            <br>&nbsp;MTH + createChar
+            <br>&nbsp;&nbsp;DEF litA
+            <br>&nbsp;&nbsp;STR "A"
+            <br>&nbsp;&nbsp;ASG litA
+            <br>&nbsp;&nbsp;DEF aux
+            <br>&nbsp;&nbsp;MSG String new ; __acc = new String
+            <br>&nbsp;&nbsp;ASG aux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; aux = AC
+            <br>&nbsp;&nbsp;MSG aux assign litA
+            <br>&nbsp;&nbsp;MSG System.console write aux
+            <br>&nbsp;RET aux
+            <br>&nbsp;&nbsp;STR "No hay suficiente memoria para crear objetos."
+            <br>&nbsp;&nbsp;MSG System.console write __acc
+            <br>&nbsp;ENM
+            <br>ENO
+            <br>MSG foo createChar
+      </CODE>
+</ul>
+<P>
+
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+
+<hr>
+<a name="LISTA_ATR">
+<h2>Lista de atributos y variables locales por defecto:</h2>
+<hr>
+<P>
+A continuación, se muestran una serie de atributos que se crean por defecto dentro
+de cada objeto, y variables locales que
+se crean dentro de cada método.
+<P>
+<ul>
+<a name="AC">
+<LI><b>El registro acumulador</b>
+<P>
+El <a href="#AC">acumulador</a> es una referencia local más, que existe en todos y cada uno de los
+métodos de un objeto. Su nombre es el siguiente:
+<P>
+<CODE>
+__acc
+</CODE>
+<P>
+Es empleado por la mayoría de las instrucciones ensamblador de Zero. Puede
+ser accedido normalmente, pero lo más probable es que emplear esta variable local
+directamente no sirva de mucho.
+
+<P>
+
+
+<a name="GP">
+<LI><b>Registros de propósito general</b>
+<P>
+Además del acumulador, exsiten otros registros, que están disponibles en todos y cada uno de los métodos de un objeto cualquiera. Sus nombres son los siguientes:
+<P>
+<CODE>
+__gp1
+<br>__gp2
+<br>__gp3
+<br>__gp4
+</CODE>
+<P>
+
+
+
+
+<a name="RR">
+<li><b>__rr</b>
+<P>
+<b>__rr</b> es una referencia local más, que existe en todos y cada uno de los
+métodos de un objeto. Su nombre es el siguiente:
+<P>
+<CODE>
+__rr
+</CODE>
+<P>
+Guarda la referencia que será devuelta al final del método, con RET.
+<P>
+
+
+
+
+
+<a name="__this">
+<li><b>__this</b>
+<P>
+<b>__this</b> es una referencia local más, que existe en todos y cada uno de los
+métodos de un objeto. Su nombre es el siguiente:
+<P>
+<CODE>
+__this
+</CODE>
+<P>
+Simboliza el objeto que está ejecutando el método.
+
+<P>
+
+
+<a name="EXC">
+<li><b>__exc</b>
+<P>
+<b>__exc</b> es una referencia local más, que existe en todos y cada uno de los
+métodos de un objeto. Su nombre es el siguiente:
+<P>
+<CODE>
+__exc
+</CODE>
+<P>
+Simboliza el objeto que se lanzará como excepción.
+
+<P>
+
+
+
+<a name="parent">
+<LI><b>parent</b>
+<P>
+<b>parent</b> es un atributo más dentro de un objeto, que existe en todos y cada uno de los
+objetos en Zero. Se inicializa por defecto a <a href="#Object">Object</a>.
+<br>Su nombre es el siguiente:
+<P>
+<CODE>
+parent
+</CODE>
+<P>
+Apunta al siguiente objeto al que el sistema debe ir cuando se está intentando localizar un
+método (al estarse ejecutando una llamada <a href="#MSG">MSG</a>).
+Ésta búsqueda de objeto en objeto se conoce como <b>delegación</b>.
+
+<P>
+
+<a name="copy">
+<LI><b>Object copy(String nombre)</b>
+<P>
+<b>copy</b> es un método más dentro de un objeto, que existe en todos y cada uno de los
+objetos en Zero, ya que lo heredan de <a href="#Object">Object</a>. Su nombre es el siguiente:
+<P>
+<CODE>
+copy()
+</CODE>
+<P>
+Acepta un argumento que es el nombre del objeto.
+<P>
+
+<P>
+
+<a name="finalize">
+<LI><b>Nothing finalize()</b>
+<P>
+<b>finalize</b> es un método más dentro de un objeto, que existe en todos y cada uno de los
+objetos en Zero, ya que lo heredan de <a href="#Object">Object</a>. Su nombre es el siguiente:
+<P>
+<CODE>
+finalize
+</CODE>
+<P>
+Se ejecuta cuando un objeto es eliminado.
+<P>
+
+</ul>
+
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+<P>&nbsp;
+
+
+<hr>
+<i>
+<TABLE WIDTH=100%>
+<TR>
+<TD>
+<a href="http://www.ei.uvigo.es/~jgarcia/">J. Baltasar García Perez-Schofield</a>&nbsp;
+<a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;
+<a href="http://www.lsi.uvigo.es">Departamento de Informática</a>&nbsp;
+<a href="http://www.uvigo.es">Universidad de Vigo</a>
+</TD>
+<TD>
+<IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
+</TD>
+</TR>
+</TABLE>
+</i>
+<hr>
+</body>
+</html>
