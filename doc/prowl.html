@@ -1,4871 +1,1869 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head>
-
-
-
-  
-  
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-
-
-  
-  
-  <title>Prowl</title></head>
-
-<body>
-
-
-
-<h1>Programación mediante Prowl</h1>
-
-
-
-<div style="text-align: right; margin-left: 80px;"><i>(Prowl
-y su documentación fueron desarrollados por
-Sara
-Rodríguez Dorrego)</i><br>
-
-
-
-</div>
-
-
-
-<big><span style="font-weight: bold;">Índice</span></big>
-<ul>
-
-
-
-  <li><a href="#intro">Introducción</a></li>
-
-
-
-  
-  
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <title>Prowl</title>
+  </head>
+  <body>
+    <h1>Programaci&#243;n mediante Prowl</h1>
+    <div style="text-align: right; margin-left: 80px;"><i>(Prowl
+        y su documentaci&#243;n fueron desarrollados por
+        Sara
+        Rodr&#237;guez Dorrego)</i>
+  </div>
+  <big><span style="font-weight: bold;">&#205;ndice</span></big>
   <ul>
-
-
-
-    <li><a href="#org">Organización de un
-objeto</a></li>
-
-
-
-    <li><a href="#comocompilar">Cómo compilar</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  <li><a href="#comentarios">Comentarios</a></li>
-
-
-
-  <li><a href="#idents">Identificadores</a></li>
-
-
-
-  <li><a href="#operadores">Operadores</a></li>
-
-
-
-  <li><a href="#objetos">Objetos</a></li>
-
-
-
-  <li><a href="#atributos">Atributos</a></li>
-
-
-
-  <li><a href="#metodos">Métodos</a></li>
-
-
-
-  <li><a href="#declmetodos">Declaración de métodos</a></li>
-
-
-
-  <li><a href="#cuerpometodos">Cuerpo de los métodos</a></li>
-
-
-
-  <li><a href="#preconpostcon">Precondiciones y postcondiciones</a></li>
-
-
-
-  
-  
-  <ul>
-
-
-
-    <li><a href="#introcontrato">Introducción a la programación por
-contrato</a></li>
-
-
-
-    <li><a href="#utilizarprogcontrato">Utilizando la programación por contrato en
-Prowl</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  <li><a href="#cuerpometodo">Cuerpo del método</a></li>
-
-
-
-  
-  
-  <ul>
-
-
-
-    <li><a href="#refs">Referencias</a></li>
-
-
-
-    <li><a href="#goto">Sentencia GOTO</a></li>
-
-
-
-    <li><a href="#etqs">Etiquetas</a></li>
-
-
-
-    <li><a href="#throw">Sentencia THROW</a></li>
-
-
-
-    <li><a href="#mensajes">Mensajes</a></li>
-
-
-
-    <li><a href="#opsincdec">Operadores de incremento y decremento</a></li>
-
-
-
-    <li><a href="#asignaciones">Asignaciones</a></li>
-
-
-
-    <li><a href="#props">Propiedades</a></li>
-
-
-
-    <li><a href="#opsmatematicas">Operaciones matemáticas</a></li>
-
-
-
-    <li><a href="#if">Estructuras de decisión: IF</a></li>
-
-
-
-    <li><a href="#repe">Estructuras de repetición</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  
-  
-  <ul>
-
-
-
-    
-    
+    <li><a href="#intro">Introducci&#243;n</a></li>
     <ul>
-
-
-
-      <li><a href="#dowhile">do...while</a></li>
-
-
-
-      <li><a href="#while">while</a></li>
-
-
-
-      <li><a href="#for">for</a></li>
-
-
-
-    
-    
+      <li><a href="#org">Organizaci&#243;n de un
+          objeto</a></li>
+      <li><a href="#comocompilar">C&#243;mo compilar</a></li>
     </ul>
-
-
-
-  
-  
+    <li><a href="#comentarios">Comentarios</a></li>
+    <li><a href="#idents">Identificadores</a></li>
+    <li><a href="#operadores">Operadores</a></li>
+    <li><a href="#objetos">Objetos</a></li>
+    <li><a href="#atributos">Atributos</a></li>
+    <li><a href="#metodos">M&#233;todos</a></li>
+    <li><a href="#declmetodos">Declaraci&#243;n de m&#233;todos</a></li>
+    <li><a href="#cuerpometodos">Cuerpo de los m&#233;todos</a></li>
+    <li><a href="#preconpostcon">Precondiciones y postcondiciones</a></li>
+    <ul>
+      <li><a href="#introcontrato">Introducci&#243;n a la programaci&#243;n por
+          contrato</a></li>
+      <li><a href="#utilizarprogcontrato">Utilizando la programaci&#243;n por
+          contrato en
+          Prowl</a></li>
+    </ul>
+    <li><a href="#cuerpometodo">Cuerpo del m&#233;todo</a></li>
+    <ul>
+      <li><a href="#refs">Referencias</a></li>
+      <li><a href="#goto">Sentencia GOTO</a></li>
+      <li><a href="#etqs">Etiquetas</a></li>
+      <li><a href="#throw">Sentencia THROW</a></li>
+      <li><a href="#mensajes">Mensajes</a></li>
+      <li><a href="#opsincdec">Operadores de incremento y decremento</a></li>
+      <li><a href="#asignaciones">Asignaciones</a></li>
+      <li><a href="#props">Propiedades</a></li>
+      <li><a href="#opsmatematicas">Operaciones matem&#225;ticas</a></li>
+      <li><a href="#if">Estructuras de decisi&#243;n: IF</a></li>
+      <li><a href="#repe">Estructuras de repetici&#243;n</a></li>
+    </ul>
+    <ul>
+      <ul>
+        <li><a href="#dowhile">do...while</a></li>
+        <li><a href="#while">while</a></li>
+        <li><a href="#for">for</a></li>
+      </ul>
+    </ul>
+    <ul>
+      <li><a href="#opslogicos">Operadores l&#243;gicos y condicionales</a></li>
+    </ul>
+    <li><a href="#excepciones">Gestor de Excepciones</a></li>
+    <ul>
+      <li><a href="#return">Sentencia Return</a></li>
+    </ul>
+    <li><a href="#datosbasicos">Tipos de datos b&#225;sicos</a></li>
+    <ul>
+      <li><a href="#stdlib">La librer&#237;a est&#225;ndar</a></li>
+    </ul>
+    <ul>
+      <li><a href="#creandobjs">C&#243;mo crear objetos</a></li>
+      <li><a href="#numvals">Manejo de valores num&#233;ricos</a></li>
+      <li><a href="#cadenas">Manejo de cadenas</a></li>
+    </ul>
+    <li><a href="#colecciones">Colecciones de objetos</a></li>
+    <li><a href="#exceps">Manejo de excepciones</a></li>
   </ul>
-
-
-
-  
-  
-  <ul>
-
-
-
-    <li><a href="#opslogicos">Operadores lógicos y condicionales</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  <li><a href="#excepciones">Gestor de Excepciones</a></li>
-
-
-
-  
-  
-  <ul>
-
-
-
-    <li><a href="#return">Sentencia Return</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  <li><a href="#datosbasicos">Tipos de datos básicos</a></li>
-
-
-
-  
-  
-  <ul>
-
-
-
-    <li><a href="#stdlib">La librería estándar</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  
-  
-  <ul>
-
-
-
-    <li><a href="#creandobjs">Cómo crear objetos</a></li>
-
-
-
-    <li><a href="#numvals">Manejo de valores numéricos</a></li>
-
-
-
-    <li><a href="#cadenas">Manejo de cadenas</a></li>
-
-
-
-  
-  
-  </ul>
-
-
-
-  <li><a href="#colecciones">Colecciones de objetos</a></li>
-
-
-
-  <li><a href="#exceps">Manejo de excepciones</a></li>
-
-
-
-</ul>
-
-
-
-<h2><a name="intro">Introducción</a></h2>
-
-
-
-<h2><a name="org"></a>Organización de un objeto</h2>
-
-
-
-<p>
-La organización de un programa en Prowl se reduce a objetos:
-cualquier elemento debe estar dentro de uno.
-Los objetos están conpuestos única y
-exclusivamente de métodos y atributos.<br>
-
-
-
-Se propone un ejemplo simple a continuación.
-</p>
-
-
-
-<p><code>object Punto
-<br>
-
-
-
-&nbsp;&nbsp;attribute - x = 0
-<br>
-
-
-
-&nbsp;&nbsp;attribute - y = 0
-<br>
-
-
-
-</code><code>&nbsp;&nbsp;method + mueve(a, b)
-<br>
-
-
-
-&nbsp;&nbsp;{
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;x = a
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;y = b
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;return;
-<br>
-
-
-
-&nbsp;&nbsp;}&nbsp;</code></p>
-
-
-
-<p><code>&nbsp;&nbsp;method + toString()<br>
-
-
-
-&nbsp;&nbsp;{
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp; refrence toret = "";</code></p>
-
-
-
-<p><code>&nbsp; &nbsp; toret = toret.concat(
-x.toString() );<br>
-
-
-
-&nbsp; &nbsp; toret = toret.concat( ", " );<br>
-
-
-
-&nbsp; &nbsp; toret = toret.concat( y.toString() );</code></p>
-
-
-
-<p><code>&nbsp;&nbsp;&nbsp;&nbsp;return
-toret;
-<br>
-
-
-
-&nbsp;&nbsp;}&nbsp;</code></p>
-
-
-
-<p><code>&nbsp; method + doIt()<br>
-
-
-
-&nbsp; {<br>
-
-
-
-&nbsp; &nbsp; this.mueve( 100, 100 );<br>
-
-
-
-&nbsp; &nbsp; System.console.write( this );<br>
-
-
-
-&nbsp; }<br>
-
-
-
-</code><code>endObject
-</code></p>
-
-
-
-<h2><a name="comocompilar"></a>Cómo compilar un objeto Prowl</h2>
-
-
-
-Los objetos deberían ser guardados en archivos de texto con
-extensión .pwl. Una vez guardados, deben ser compilados con
-Prowl, generando un archivo ensamblador. Este archivo ensamblador debe
-ser compilado con za. Véase un ejemplo con el objeto
-anterior.<br>
-
-
-
-<br>
-
-
-
-<code>
-$ ./prowl Punto.pwl Punto<br>
-
-
-
-$ ./za Punto<br>
-
-
-
-$&nbsp;./zvm Punto <br>
-
-
-
-100, 100
-</code>
-<h2><a name="comentarios"></a>Comentarios</h2>
-
-
-
-En Prowl los comentarios empiezan por los caracteres /* y
-terminan con
-los caracteres */. Pueden comprender varias líneas y estar
-distribuidos de cualquier forma. Todo lo que esté entre /*
-(inicio del comentario) y */ (fin del comentario) es ignorado por el
-compilador.<br>
-
-
-
-<p><code>/*&nbsp; Esto es un comentario */<br>
-
-
-
-<br>
-
-
-
-/*&nbsp; Esto es un comentario<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp; que ocupa dos
-líneas */<br>
-
-
-
+  <h2><a name="intro">Introducci&#243;n</a></h2>
+  <h2><a name="org"></a>Organizaci&#243;n de un objeto</h2>
+  <p>
+    La organizaci&#243;n de un programa en Prowl se reduce a objetos:
+    cualquier elemento debe estar dentro de uno.
+    Los objetos est&#225;n conpuestos &#250;nica y
+    exclusivamente de m&#233;todos y atributos.<br>
+    Se propone un ejemplo simple a continuaci&#243;n.
+  </p>
+  <p><code>object Punto
+      <br>
+      &#160;&#160;attribute - x = 0
+      <br>
+      &#160;&#160;attribute - y = 0
+      <br>
+    </code><code>&#160;&#160;method + mueve(a, b)
+      <br>
+      &#160;&#160;{
+      <br>
+      &#160;&#160;&#160;&#160;x = a
+      <br>
+      &#160;&#160;&#160;&#160;y = b
+      <br>
+      &#160;&#160;&#160;&#160;return;
+      <br>
+      &#160;&#160;}&#160;</code></p>
+  <p><code>&#160;&#160;method + toString()<br>
+      &#160;&#160;{
+      <br>
+      &#160;&#160;&#160; refrence toret = "";</code></p>
+  <p><code>&#160; &#160; toret = toret.concat(
+      x.toString() );<br>
+      &#160; &#160; toret = toret.concat( ", " );<br>
+      &#160; &#160; toret = toret.concat( y.toString() );</code></p>
+  <p><code>&#160;&#160;&#160;&#160;return
+      toret;
+      <br>
+      &#160;&#160;}&#160;</code></p>
+  <p><code>&#160; method + doIt()<br>
+      &#160; {<br>
+      &#160; &#160; this.mueve( 100, 100 );<br>
+      &#160; &#160; System.console.write( this );<br>
+      &#160; }<br>
+    </code><code>endObject
+    </code></p>
+  <h2><a name="comocompilar"></a>C&#243;mo compilar un objeto Prowl</h2>
+  Los objetos deber&#237;an ser guardados en archivos de texto con
+  extensi&#243;n .pwl. Una vez guardados, deben ser compilados con
+  Prowl, generando un archivo ensamblador. Este archivo ensamblador debe
+  ser compilado con za. V&#233;ase un ejemplo con el objeto
+  anterior.<br>
+  <br>
+  <code>
+    $ ./prowl Punto.pwl Punto<br>
+    $ ./za Punto<br>
+    $&#160;./zvm Punto <br>
+    100, 100
+  </code>
+  <h2><a name="comentarios"></a>Comentarios</h2>
+  En Prowl los comentarios empiezan por los caracteres /* y
+  terminan con
+  los caracteres */. Pueden comprender varias l&#237;neas y estar
+  distribuidos de cualquier forma. Todo lo que est&#233; entre /*
+  (inicio del comentario) y */ (fin del comentario) es ignorado por el
+  compilador.
+<p><code>/*&#160; Esto es un comentario */<br>
+    <br>
+    /*&#160; Esto es un comentario<br>
+    &#160;&#160;&#160;&#160; que ocupa dos
+    l&#237;neas */
 </code>
 </p>
-
-
-
 <p>/************************<br>
-
-
-
-*&nbsp; Esto es un comentario un *<br>
-
-
-
-*&nbsp; poco
-adornado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-*<br>
-
-
-
-*************************/<br>
-
-
-
-<br>
-
-
-
-<br>
-
-
-
-También hay otro tipo de comentario que sólo
-abarca una línea. Se ponen los caracteres // que marcan el
-comienzo del comentario y el fin de la línea, el final del
-comentario. Si se desea poner comentarios de varias líneas,
-hay que colocar la doble barra al comienzo de cada línea.
-Los ejemplos anteriores los podríamos escribir de la
-siguiente manera:<br>
-
-
-
+  *&#160; Esto es un comentario un *<br>
+  *&#160; poco
+adornado&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+  *<br>
+  *************************/<br>
+  <br>
+  <br>
+  Tambi&#233;n hay otro tipo de comentario que s&#243;lo
+  abarca una l&#237;nea. Se ponen los caracteres // que marcan el
+  comienzo del comentario y el fin de la l&#237;nea, el final del
+  comentario. Si se desea poner comentarios de varias l&#237;neas,
+  hay que colocar la doble barra al comienzo de cada l&#237;nea.
+  Los ejemplos anteriores los podr&#237;amos escribir de la
+  siguiente manera:
 </p>
-
-
-
 <p><code>
-//&nbsp; Esto es un comentario <br>
-
-
-
-<br>
-
-
-
-//&nbsp; Esto es un comentario<br>
-
-
-
-//&nbsp;&nbsp; que ocupa dos líneas <br>
-
-
-
-<br>
-
-
-
-//************************<br>
-
-
-
-//&nbsp; Esto es un comentario un *<br>
-
-
-
-//&nbsp; poco
-adornado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>
-
-
-
-//************************<br>
-
-
-
+    //&#160; Esto es un comentario <br>
+    <br>
+    //&#160; Esto es un comentario<br>
+    //&#160;&#160; que ocupa dos l&#237;neas <br>
+    <br>
+    //************************<br>
+    //&#160; Esto es un comentario un *<br>
+    //&#160; poco
+adornado&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*<br>
+    //************************
 </code>
 </p>
-
-
-
 <h2><a name="idents"></a>Identificadores y palabras reservadas</h2>
-
-
-
 <p>
-Un identificador es un conjunto de caracteres que sirve para
-nombrar un
-método, una referencia, un atributo,&#8230; &nbsp;<br>
-
-
-
-<br>
-
-
-
-Identificadores válidos en Prowl son aquellos cuyo primer
-carácter es una letra o un subrayado y los siguientes pueden
-ser letras, subrayados o números. <br>
-
-
-
-</p>
-
-
-
+  Un identificador es un conjunto de caracteres que sirve para
+  nombrar un
+  m&#233;todo, una referencia, un atributo,&#8230; &#160;<br>
+  <br>
+  Identificadores v&#225;lidos en Prowl son aquellos cuyo primer
+  car&#225;cter es una letra o un subrayado y los siguientes pueden
+  ser letras, subrayados o n&#250;meros. </p>
 <p><code>
-Identificadores inválidos: 8objeto, miObj$
-&nbsp;<br>
-
-
-
-Identificadores válidos: _objeto, miObj8 &nbsp;<br>
-
-
-
+    Identificadores inv&#225;lidos: 8objeto, miObj$
+    &#160;<br>
+    Identificadores v&#225;lidos: _objeto, miObj8 &#160;
 </code>
 </p>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;Algo muy importante a
-recalcar es
-que en Prowl, se distinguen las mayúsculas de las
-minúsculas. De esta manera podemos conseguir un mayor
-número de identificadores, pero a partir de esto pueden
-surgir errores de atributos o métodos no encontrados. <br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;Las palabras reservadas son unos cuantos
-identificadores que el lenguaje ya tiene asignados para cometidos
-especiales y por tanto, no pueden ser utilizados.<br>
-
-
-
-<br>
-
-
-
+<p>&#160;&#160; &#160;Algo muy importante a
+  recalcar es
+  que en Prowl, se distinguen las may&#250;sculas de las
+  min&#250;sculas. De esta manera podemos conseguir un mayor
+  n&#250;mero de identificadores, pero a partir de esto pueden
+  surgir errores de atributos o m&#233;todos no encontrados. <br>
+  <br>
+  &#160;&#160; &#160;Las palabras reservadas son unos cuantos
+  identificadores que el lenguaje ya tiene asignados para cometidos
+  especiales y por tanto, no pueden ser utilizados.<br>
 </p>
-
-
-
 <ul>
-
-
-
-  <li>AND<br>
-
-
-
-  </li>
-
-
-
-  <li>assert<br>
-
-
-
-  </li>
-
-
-
-  <li>attribute<br>
-
-
-
-  </li>
-
-
-
-  <li>do<br>
-
-
-
-  </li>
-
-
-
-  <li>else<br>
-
-
-
-  </li>
-
-
-
-  <li>endObject<br>
-
-
-
-  </li>
-
-
-
-  <li>enforce<br>
-
-
-
-  </li>
-
-
-
-  <li>for<br>
-
-
-
-  </li>
-
-
-
-  <li>goto<br>
-
-
-
-  </li>
-
-
-
-  <li>if<br>
-
-
-
-  </li>
-
-
-
-  <li>isInstanceOf<br>
-
-
-
-  </li>
-
-
-
-  <li>method<br>
-
-
-
-  </li>
-
-
-
-  <li>NOT<br>
-
-
-
-  </li>
-
-
-
-  <li>object<br>
-
-
-
-  </li>
-
-
-
-  <li>onException<br>
-
-
-
-  </li>
-
-
-
-  <li>OR<br>
-
-
-
-  </li>
-
-
-
-  <li>reference<br>
-
-
-
-  </li>
-
-
-
-  <li>requires<br>
-
-
-
-  </li>
-
-
-
-  <li>return<br>
-
-
-
-  </li>
-
-
-
-  <li>super<br>
-
-
-
-  </li>
-
-
-
-  <li>this<br>
-
-
-
-  </li>
-
-
-
-  <li>throw<br>
-
-
-
-  </li>
-
-
-
-  <li>while<br>
-
-
-
-  </li>
-
-
-
+  <li>AND </li>
+<li>assert </li>
+<li>attribute </li>
+<li>do </li>
+<li>else </li>
+<li>endObject </li>
+<li>enforce </li>
+<li>for </li>
+<li>goto </li>
+<li>if </li>
+<li>isInstanceOf </li>
+<li>method </li>
+<li>NOT </li>
+<li>object </li>
+<li>onException </li>
+<li>OR </li>
+<li>reference </li>
+<li>requires </li>
+<li>return </li>
+<li>super </li>
+<li>this </li>
+<li>throw </li>
+<li>while </li>
 </ul>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;A parte de las
-palabras
-reservadas del
-lenguaje Prowl, hay otros identificadores perfectamente
-válidos para este lenguaje que no se pueden utilizar.
-Éstos identificadores son los correspondientes a los
-registros que maneja la máquina virtual zero: __acc, __exc,
-__rr, __gp1, __gp2, __gp3, __gp4.&nbsp; Para poder acceder al
-objeto que está ejecutando el método que
-está activo, tenemos que acceder mediante this, no mediante
-__this.<br>
-
-
-
+<p>&#160;&#160; &#160;A parte de las
+  palabras
+  reservadas del
+  lenguaje Prowl, hay otros identificadores perfectamente
+  v&#225;lidos para este lenguaje que no se pueden utilizar.
+  &#201;stos identificadores son los correspondientes a los
+  registros que maneja la m&#225;quina virtual zero: __acc, __exc,
+  __rr, __gp1, __gp2, __gp3, __gp4.&#160; Para poder acceder al
+  objeto que est&#225; ejecutando el m&#233;todo que
+  est&#225; activo, tenemos que acceder mediante this, no mediante
+  __this.
 </p>
-
-
-
 <h2><a name="operadores"></a>Operadores reservados</h2>
-
-
-
 <br>
-
-
-
-&nbsp;&nbsp; &nbsp;Hay muchos signos que forman operadores,
+&#160;&#160; &#160;Hay muchos signos que forman operadores,
 pero otras combinaciones no forman ni operadores ni identificadores. En
-Prowl, se usan los siguientes caracteres y&nbsp;combinaciones de
+Prowl, se usan los siguientes caracteres y&#160;combinaciones de
 caracteres como operadores o para
-puntuación:<br>
-
-
-
+puntuaci&#243;n:<br>
 <br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-
-
-
+&#160;&#160;&#160;&#160;&#160;&#160;
 <p align="center">
-<table style="background-color: rgb(255, 255, 204); width: 253px; height: 220px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td>{</td>
-
-
-
-      <td>+= </td>
-
-
-
-      <td>-= </td>
-
-
-
-      <td>*=</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>}</td>
-
-
-
-      <td>/= </td>
-
-
-
-      <td>!= </td>
-
-
-
-      <td>%=</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>(</td>
-
-
-
-      <td>&lt;= </td>
-
-
-
-      <td>&gt;= </td>
-
-
-
-      <td>--</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>)</td>
-
-
-
-      <td>++ </td>
-
-
-
-      <td>== </td>
-
-
-
-      <td>&amp;&amp;</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>[</td>
-
-
-
-      <td>|| </td>
-
-
-
-      <td>&lt; </td>
-
-
-
-      <td>&gt;</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>]</td>
-
-
-
-      <td>= </td>
-
-
-
-      <td>- </td>
-
-
-
-      <td>+</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>.</td>
-
-
-
-      <td>* </td>
-
-
-
-      <td>/ </td>
-
-
-
-      <td>%</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>: , ;</td>
-
-
-
-      <td>! </td>
-
-
-
-      <td>^</td>
-
-
-
-      <td>/* */ //</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
-</table>
-
-
-
+  <table style="background-color: rgb(255, 255, 204); width: 253px; height: 220px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td>{</td>
+        <td>+= </td>
+        <td>-= </td>
+        <td>*=</td>
+      </tr>
+      <tr>
+        <td>}</td>
+        <td>/= </td>
+        <td>!= </td>
+        <td>%=</td>
+      </tr>
+      <tr>
+        <td>(</td>
+        <td>&lt;= </td>
+        <td>&gt;= </td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>)</td>
+        <td>++ </td>
+        <td>== </td>
+        <td>&amp;&amp;</td>
+      </tr>
+      <tr>
+        <td>[</td>
+        <td>|| </td>
+        <td>&lt; </td>
+        <td>&gt;</td>
+      </tr>
+      <tr>
+        <td>]</td>
+        <td>= </td>
+        <td>- </td>
+        <td>+</td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>* </td>
+        <td>/ </td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <td>: , ;</td>
+        <td>! </td>
+        <td>^</td>
+        <td>/* */ //</td>
+      </tr>
+    </tbody>
+  </table>
 </p>
-
-
-
 <h2><a name="objetos"></a>Objetos</h2>
-
-
-
 <p>
-Los objetos de un programa en Prowl, se crean con las palabras
-reservadas object y endObject. Estas palabras indican el inicio y el
-fin de un objeto respectivamente. La palabra reservada object
-deberá ir acompañada al menos de un identificador
-que será el nombre del objeto:<br>
-
-
-
-<br>
-
-
-
-<code>
-object &lt;nombre_objeto&gt;
-</code></p>
-
-
-
+  Los objetos de un programa en Prowl, se crean con las palabras
+  reservadas object y endObject. Estas palabras indican el inicio y el
+  fin de un objeto respectivamente. La palabra reservada object
+  deber&#225; ir acompa&#241;ada al menos de un identificador
+  que ser&#225; el nombre del objeto:<br>
+  <br>
+  <code>
+    object &lt;nombre_objeto&gt;
+  </code></p>
 <p>Debido que Prowl soporta la herencia, es posible que deseemos
-indicar
-que un objeto hereda de otro ya existente. La manera de indicarlo es
-colocar dos puntos (&#8216;:&#8217;) después del
-nombre del objeto que se está definiendo y, a
-continuación el nombre del objeto del que se hereda.<br>
-
-
-
+  indicar
+  que un objeto hereda de otro ya existente. La manera de indicarlo es
+  colocar dos puntos (&#8216;:&#8217;) despu&#233;s del
+  nombre del objeto que se est&#225; definiendo y, a
+  continuaci&#243;n el nombre del objeto del que se hereda.
 </p>
-
-
-
 <p><code>
-object &lt;nombre_objeto&gt; :
-&lt;nombre_objeto_padre&gt;
-</code></p>
-
-
-
-<p>Otra propiedad de Prowl es la herencia dinámica
-(posibilidad
-de cambiar al &#8216;padre&#8217; de un objeto en tiempo de
-ejecución). La manera de poder indicar que un objeto soporta
-la herencia dinámica es:<br>
-
-
-
+    object &lt;nombre_objeto&gt; :
+    &lt;nombre_objeto_padre&gt;
+  </code></p>
+<p>Otra propiedad de Prowl es la herencia din&#225;mica
+  (posibilidad
+  de cambiar al &#8216;padre&#8217; de un objeto en tiempo de
+  ejecuci&#243;n). La manera de poder indicar que un objeto soporta
+  la herencia din&#225;mica es:
 </p>
-
-
-
 <p><code>
-object &lt;nombre_objeto&gt;:
-&lt;nombre_objeto_padre1&gt;&nbsp; (condición) ,
-&lt;nombre_objeto_padre2&gt;&nbsp; (condición) ,
-&#8230; , &lt;nombre_objeto_padreN&gt;
-(condición)
-</code></p>
-
-
-
+    object &lt;nombre_objeto&gt;:
+    &lt;nombre_objeto_padre1&gt;&#160; (condici&#243;n) ,
+    &lt;nombre_objeto_padre2&gt;&#160; (condici&#243;n) ,
+    &#8230; , &lt;nombre_objeto_padreN&gt;
+    (condici&#243;n)
+  </code></p>
 <p>Primero se pone la palabra reservada object seguida del nombre
-del
-objeto y de los dos puntos, que indican que el objeto hereda de otro. A
-continuación se pone el nombre del objeto del que va a
-heredar seguido de la condición. Cuando esta
-condición se cumple, el objeto que se está
-definiendo cambia su atributo parent y apunta al objeto padre al que se
-refiere la condición. Como mínimo se tienen que
-poner dos objetos, ya que sino, no tendría ningún
-sentido. Se pueden indicar tantos objetos como se quieran, pero eso
-sí, todos estos objetos tienen que estar separados por
-comas. <br>
-
-
-
-<br>
-
-
-
-Por defecto el padre de un objeto inicialmente, es el situado
-más a la izquierda, es decir, el que colocamos primero en la
-lista de los posibles padres que puede tener ese objeto.<br>
-
-
-
+  del
+  objeto y de los dos puntos, que indican que el objeto hereda de otro. A
+  continuaci&#243;n se pone el nombre del objeto del que va a
+  heredar seguido de la condici&#243;n. Cuando esta
+  condici&#243;n se cumple, el objeto que se est&#225;
+  definiendo cambia su atributo parent y apunta al objeto padre al que se
+  refiere la condici&#243;n. Como m&#237;nimo se tienen que
+  poner dos objetos, ya que sino, no tendr&#237;a ning&#250;n
+  sentido. Se pueden indicar tantos objetos como se quieran, pero eso
+  s&#237;, todos estos objetos tienen que estar separados por
+  comas. <br>
+  <br>
+  Por defecto el padre de un objeto inicialmente, es el situado
+  m&#225;s a la izquierda, es decir, el que colocamos primero en la
+  lista de los posibles padres que puede tener ese objeto.
 </p>
-
-
-
 <p>Ejemplos de declaraciones de objetos:
 </p>
-
-
-
 <p><code>
-object Persona<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-attribute + nombre = "juan";<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-attribute + salario = 18000;<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + toString()<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return nombre.concat( "\n" );<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + ponSalario(s)<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-salario = s;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-endObject
-</code></p>
-
-
-
+    object Persona<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    attribute + nombre = "juan";<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    attribute + salario = 18000;<br>
+    <br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + toString()<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+return
+    nombre.concat( "\n" );<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    <br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + ponSalario(s)<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+salario
+    = s;<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    return;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    endObject
+  </code></p>
 <p><code>
-object Empleado : Persona<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + toString()<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return nombre.concat( " (empleado)\n" );<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-endObject
-</code></p>
-
-
-
+    object Empleado : Persona<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + toString()<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+return
+    nombre.concat( " (empleado)\n" );<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    endObject
+  </code></p>
 <p><code>
-object EmpleadoEmpresa : Empleado( salario &lt; 20000 ), <br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; Directivo( salario
-&gt;=
-20000)<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + toString()<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return super();<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-endObject
-</code></p>
-
-
-
+    object EmpleadoEmpresa : Empleado( salario &lt; 20000 ), <br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160; &#160; &#160;
+    &#160; &#160; &#160; &#160; Directivo( salario
+    &gt;=
+    20000)<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + toString()<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+return
+    super();<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    endObject
+  </code></p>
 <p>En el interior de un objeto podemos declarar atributos
-(attribute) y
-métodos (method).&nbsp; Además de la
-declaración de métodos y atributos, podemos
-insertar algunas propiedades acerca del objeto que estamos creando.<br>
-
-
-
+  (attribute) y
+  m&#233;todos (method).&#160; Adem&#225;s de la
+  declaraci&#243;n de m&#233;todos y atributos, podemos
+  insertar algunas propiedades acerca del objeto que estamos creando.
 </p>
-
-
-
-<h2><a name="atributos"></a>Declaración de atributos</h2>
-
-
-
+<h2><a name="atributos"></a>Declaraci&#243;n de atributos</h2>
 <p>
-Para definir los atributos de un método se utiliza la
-palabra reservada attribute. La declaración de un atributo
-siempre tiene que estar dentro de un objeto, es decir, siempre tiene
-que estar dentro del par object/endObject. La sintaxis adecuada de la
-declaración de un atributo es la siguiente:<br>
-
-
-
+  Para definir los atributos de un m&#233;todo se utiliza la
+  palabra reservada attribute. La declaraci&#243;n de un atributo
+  siempre tiene que estar dentro de un objeto, es decir, siempre tiene
+  que estar dentro del par object/endObject. La sintaxis adecuada de la
+  declaraci&#243;n de un atributo es la siguiente:
 </p>
-
-
-
 <p><code>
-attribute &lt;+/-&gt; &lt;nombre_atributo&gt; ;
-</code></p>
-
-
-
+    attribute &lt;+/-&gt; &lt;nombre_atributo&gt; ;
+  </code></p>
 <p>Para definir un atributo, se pone la palabra reservada
-attribute
-seguido del símbolo &#8216;+&#8217;, si el atributo
-que estamos declarando es un atributo público o del
-símbolo &#8216;-&#8217; si es privado. Por
-último, ponemos el nombre del atributo que estamos
-declarando seguido de un punto y coma
-(&#8216;;&#8217;)&nbsp; que indica el fin de una
-instrucción.<br>
-
-
-
-<br>
-
-
-
-Es
-posible
-declarar e inicializar sólo un atributo a la vez:<br>
-
-
-
+  attribute
+  seguido del s&#237;mbolo &#8216;+&#8217;, si el atributo
+  que estamos declarando es un atributo p&#250;blico o del
+  s&#237;mbolo &#8216;-&#8217; si es privado. Por
+  &#250;ltimo, ponemos el nombre del atributo que estamos
+  declarando seguido de un punto y coma
+  (&#8216;;&#8217;)&#160; que indica el fin de una
+  instrucci&#243;n.<br>
+  <br>
+  Es
+  posible
+  declarar e inicializar s&#243;lo un atributo a la vez:
 </p>
-
-
-
 <p><code>
-attribute &lt;+/-&gt; &lt;nombre_atributo&gt; =
-&lt;expresión&gt;;<br>
-
-
-
+    attribute &lt;+/-&gt; &lt;nombre_atributo&gt; =
+    &lt;expresi&#243;n&gt;;
 </code>
 </p>
-
-
-
 <p>La sintaxis es exactamente igual que la anterior,
-sólo que
-esta vez se debe poner un símbolo igual
-(&#8216;=&#8217;) seguido de la expresión con la que
-se quiere inicializar el atributo.<br>
-
-
-
+  s&#243;lo que
+  esta vez se debe poner un s&#237;mbolo igual
+  (&#8216;=&#8217;) seguido de la expresi&#243;n con la que
+  se quiere inicializar el atributo.
 </p>
-
-
-
 <p align="center">
-<table style="text-align: left; background-color: rgb(255, 255, 204); width: 351px; height: 112px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Ejemplos
-de declaraciones de atributos</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td><code>attribute + nombre = "juan";</code></td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td><code>attribute + salario = 18000;</code></td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td><code>attribute + v;</code></td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
-</table>
-
-
-
+  <table style="text-align: left; background-color: rgb(255, 255, 204); width: 351px; height: 112px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="background-color: rgb(204, 204, 255);">Ejemplos
+          de declaraciones de atributos</td>
+      </tr>
+      <tr>
+        <td><code>attribute + nombre = "juan";</code></td>
+      </tr>
+      <tr>
+        <td><code>attribute + salario = 18000;</code></td>
+      </tr>
+      <tr>
+        <td><code>attribute + v;</code></td>
+      </tr>
+    </tbody>
+  </table>
 </p>
-
-
-
-<h2><a name="metodos"></a>Métodos<br>
-
-
-
+<h2><a name="metodos"></a>M&#233;todos
 </h2>
-
-
-
-<h3><a name="declmetodos"></a>Declaración de métodos</h3>
-
-
-
+<h3><a name="declmetodos"></a>Declaraci&#243;n de m&#233;todos</h3>
 <p>
-Para definir métodos se usa la palabra reservada method. La
-declaración de un método siempre tiene que estar
-dentro de un objeto, es decir, siempre tiene que estar dentro del par
-object/endObject. La sintaxis adecuada de la declaración de
-un método es la siguiente:<br>
-
-
-
+  Para definir m&#233;todos se usa la palabra reservada method. La
+  declaraci&#243;n de un m&#233;todo siempre tiene que estar
+  dentro de un objeto, es decir, siempre tiene que estar dentro del par
+  object/endObject. La sintaxis adecuada de la declaraci&#243;n de
+  un m&#233;todo es la siguiente:
 </p>
-
-
-
 <p><code>
-method &lt;+/-&gt; &lt;nombre_método&gt; (
-[&lt;parámetro1&gt;, [&lt;
-parámetro2&gt;, &#8230; ,
-&lt;parámetroN&gt;]] ) {
-&lt;cuerpo_método&gt; }
-</code></p>
-
-
-
-<p>Para definir un método, se pone la palabra
-reservada method
-seguido del símbolo &#8216;+&#8217; o del
-símbolo &#8216;-&#8217; (que indican que el
-método es público o privado respectivamente) y
-del nombre del método que se está declarando. <br>
-
-
-
-<br>
-
-
-
-Al del nombre del método le siguen todos los
-parámetros formales de dicho método entre
-paréntesis en el caso de que el método que
-estamos declarando los tuviese. Si no tuviese ningún
-parámetro formal, se ponen los paréntesis
-vacíos. El cuerpo del método se encierra entre
-llaves las cuales indican inicio y fin del cuerpo del
-método. <br>
-
-
-
-</p>
-
-
-
-<h3><a name="cuerpometodos"></a>El cuerpo de los métodos</h3>
-
-
-
+    method &lt;+/-&gt; &lt;nombre_m&#233;todo&gt; (
+    [&lt;par&#225;metro1&gt;, [&lt;
+    par&#225;metro2&gt;, &#8230; ,
+    &lt;par&#225;metroN&gt;]] ) {
+    &lt;cuerpo_m&#233;todo&gt; }
+  </code></p>
+<p>Para definir un m&#233;todo, se pone la palabra
+  reservada method
+  seguido del s&#237;mbolo &#8216;+&#8217; o del
+  s&#237;mbolo &#8216;-&#8217; (que indican que el
+  m&#233;todo es p&#250;blico o privado respectivamente) y
+  del nombre del m&#233;todo que se est&#225; declarando. <br>
+  <br>
+  Al del nombre del m&#233;todo le siguen todos los
+  par&#225;metros formales de dicho m&#233;todo entre
+  par&#233;ntesis en el caso de que el m&#233;todo que
+  estamos declarando los tuviese. Si no tuviese ning&#250;n
+  par&#225;metro formal, se ponen los par&#233;ntesis
+  vac&#237;os. El cuerpo del m&#233;todo se encierra entre
+  llaves las cuales indican inicio y fin del cuerpo del
+  m&#233;todo. </p>
+<h3><a name="cuerpometodos"></a>El cuerpo de los m&#233;todos</h3>
 <p>
-En un programa implementado en Prowl, debe haber uno método
-principal, desde el cual se comenzará la
-ejecución del programa. Este método es el llamado
-doIt(). Prowl si no encuentra este método en el fichero que
-se le pasa por parámetro muestra el siguiente mensaje de
-error.<br>
-
-
-
-<br>
-
-
-
-El cuerpo de un método siempre debe tener al final al menos
-un return. Es decir un ejemplo del método más
-simple que habría en Prowl sería el siguiente:<br>
-
-
-
+  En un programa implementado en Prowl, debe haber uno m&#233;todo
+  principal, desde el cual se comenzar&#225; la
+  ejecuci&#243;n del programa. Este m&#233;todo es el llamado
+  doIt(). Prowl si no encuentra este m&#233;todo en el fichero que
+  se le pasa por par&#225;metro muestra el siguiente mensaje de
+  error.<br>
+  <br>
+  El cuerpo de un m&#233;todo siempre debe tener al final al menos
+  un return. Es decir un ejemplo del m&#233;todo m&#225;s
+  simple que habr&#237;a en Prowl ser&#237;a el siguiente:
 </p>
-
-
-
 <p><code>
-object&nbsp; objetoSimple<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method +
-doIt()
-<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp;{<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-endObject<br>
-
-
-
+    object&#160; objetoSimple<br>
+    &#160;&#160;&#160;&#160;&#160;&#160; method +
+    doIt()
+    <br>
+    &#160; &#160; &#160; &#160;{<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    return;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    endObject
 </code>
 </p>
-
-
-
-El cuerpo de un método en Prowl se
-podría dividir
+El cuerpo de un m&#233;todo en Prowl se
+podr&#237;a dividir
 en distintas &#8220;secciones&#8221; colocadas en un orden
-determinado dentro del método, como podemos observar a
-continuación:<br>
-
-
-
-<br>
-
-
-
+determinado dentro del m&#233;todo, como podemos observar a
+continuaci&#243;n:<br>
 <p align="center">
-<table style="background-color: rgb(255, 255, 204); width: 303px; height: 139px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(153, 153, 255);">Secciones
-de un método</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>precondiciones y postcondiciones</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>cuerpo del método</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>gestor de excepciones</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
-</table>
-
-
-
+  <table style="background-color: rgb(255, 255, 204); width: 303px; height: 139px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="background-color: rgb(153, 153, 255);">Secciones
+          de un m&#233;todo</td>
+      </tr>
+      <tr>
+        <td>precondiciones y postcondiciones</td>
+      </tr>
+      <tr>
+        <td>cuerpo del m&#233;todo</td>
+      </tr>
+      <tr>
+        <td>gestor de excepciones</td>
+      </tr>
+    </tbody>
+  </table>
 </p>
-
-
-
 <br>
-
-
-
-Lo primero que se debe indicar en el cuerpo de un método son
+Lo primero que se debe indicar en el cuerpo de un m&#233;todo son
 las precondiciones y poscondiciones que debe cumplir un
-método en el caso de éstas existan.
-Después de las precondiciones y poscondiciones se
-pondrían las instrucciones. <br>
-
-
-
+m&#233;todo en el caso de &#233;stas existan.
+Despu&#233;s de las precondiciones y poscondiciones se
+pondr&#237;an las instrucciones. <br>
 <br>
-
-
-
-En el caso de que el método que estemos implementando pueda
-lanzar alguna excepción, estas se pondrían a
-continuación de todas las instrucciones. Por
-último, al final de un método siempre debe
+En el caso de que el m&#233;todo que estemos implementando pueda
+lanzar alguna excepci&#243;n, estas se pondr&#237;an a
+continuaci&#243;n de todas las instrucciones. Por
+&#250;ltimo, al final de un m&#233;todo siempre debe
 aparecer un return. Es obligatorio, sino se pone un return al final de
-todos los métodos en Prowl, se producirá un error
-en tiempo de compilación.<br>
-
-
-
+todos los m&#233;todos en Prowl, se producir&#225; un error
+en tiempo de compilaci&#243;n.<br>
 <br>
-
-
-
-En Prowl como máximo, en el cuerpo de un método
-sólo puede haber dos return. En el caso de que haya
-más de dos instrucciones return, Prowl mostrará
+En Prowl como m&#225;ximo, en el cuerpo de un m&#233;todo
+s&#243;lo puede haber dos return. En el caso de que haya
+m&#225;s de dos instrucciones return, Prowl mostrar&#225;
 un
 mensaje de error.
 <h3><a name="preconpostcon"></a>Precondiciones y postcondiciones</h3>
-
-
-
-<h4><a name="introcontrato"></a>Introducción a la programación por
-contrato</h4>
-
-
-
+<h4><a name="introcontrato"></a>Introducci&#243;n a la programaci&#243;n por
+  contrato</h4>
 <p>
-Cuando hablamos de programación por contrato estamos
-hablando de corrección del software. Por
-corrección entendemos, la capacidad del software para
-realizar con exactitud su tarea tal como definen sus especificaciones. <br>
-
-
-
-La corrección es la propiedad fundamental del software. Si
-nuestro software no cumple las especificaciones, poco importa su
-usabilidad, seguridad, etc&#8230; La robustez, capacidad de un
-sistema para reaccionar adecuadamente ante situaciones excepcionales,
-es un complemento a la corrección. Ante una entrada
-errónea, será más robusto el programa
-que emita un mensaje de error y termine limpiamente que otro que cause
-eventos catastróficos.<br>
-
-
-
-Si introducimos los conceptos de precondición y
-poscondición:<br>
-
-
-
-Precondiciones: Condiciones que definen el estado antes de la
-ejecución de un programa.<br>
-
-
-
-Postcondiciones: Condiciones que definen el estado después
-de la ejecución de un programa.<br>
-
-
-
-Podemos dar otra definición al término de
-corrección, podemos decir que un programa es correcto si al
-ejecutarse satisfaciendo sus precondiciones también
-satisface sus postcondiciones.<br>
-
-
-
-Si tenemos un algoritmo A, con la precondición P y la
-postcondición Q:<br>
-
-
-
+  Cuando hablamos de programaci&#243;n por contrato estamos
+  hablando de correcci&#243;n del software. Por
+  correcci&#243;n entendemos, la capacidad del software para
+  realizar con exactitud su tarea tal como definen sus especificaciones. <br>
+  La correcci&#243;n es la propiedad fundamental del software. Si
+  nuestro software no cumple las especificaciones, poco importa su
+  usabilidad, seguridad, etc&#8230; La robustez, capacidad de un
+  sistema para reaccionar adecuadamente ante situaciones excepcionales,
+  es un complemento a la correcci&#243;n. Ante una entrada
+  err&#243;nea, ser&#225; m&#225;s robusto el programa
+  que emita un mensaje de error y termine limpiamente que otro que cause
+  eventos catastr&#243;ficos.<br>
+  Si introducimos los conceptos de precondici&#243;n y
+  poscondici&#243;n:<br>
+  Precondiciones: Condiciones que definen el estado antes de la
+  ejecuci&#243;n de un programa.<br>
+  Postcondiciones: Condiciones que definen el estado despu&#233;s
+  de la ejecuci&#243;n de un programa.<br>
+  Podemos dar otra definici&#243;n al t&#233;rmino de
+  correcci&#243;n, podemos decir que un programa es correcto si al
+  ejecutarse satisfaciendo sus precondiciones tambi&#233;n
+  satisface sus postcondiciones.<br>
+  Si tenemos un algoritmo A, con la precondici&#243;n P y la
+  postcondici&#243;n Q:
 </p>
-
-
-
 <p><code>
-{P}A{Q}</code></p>
-
-
-
-<p>Según este esquema, para que nuestro programa sea
-correcto A
-tiene que satisfacer Q a la entrada de P.<br>
-
-
-
+    {P}A{Q}</code></p>
+<p>Seg&#250;n este esquema, para que nuestro programa sea
+  correcto A
+  tiene que satisfacer Q a la entrada de P.
 </p>
-
-
-
-<h4><a name="utilizarprogcontrato"></a>Cómo utilizar programación por contrato
-en Prowl</h4>
-
-
-
+<h4><a name="utilizarprogcontrato"></a>C&#243;mo utilizar programaci&#243;n por
+  contrato
+  en Prowl</h4>
 <p>
-En Prowl, podemos especificar las
-precondiciones y postcondiciones que un método debe cumplir
-para su correcta ejecución. Un método puede tener
-precondiciones, postcondiciones o ninguna de las dos.<br>
-
-
-
-<br>
-
-
-
-Las precondiciones y postcondiciones
-deben situarse al principio del método que se quiere
-implementar. <br>
-
-
-
-<br>
-
-
-
-La sintaxis de las precondiciones es la
-siguiente:<br>
-
-
-
+  En Prowl, podemos especificar las
+  precondiciones y postcondiciones que un m&#233;todo debe cumplir
+  para su correcta ejecuci&#243;n. Un m&#233;todo puede tener
+  precondiciones, postcondiciones o ninguna de las dos.<br>
+  <br>
+  Las precondiciones y postcondiciones
+  deben situarse al principio del m&#233;todo que se quiere
+  implementar. <br>
+  <br>
+  La sintaxis de las precondiciones es la
+  siguiente:
 </p>
-
-
-
 <p><code>
-requires{ &lt;instrucción_assert1&gt;
-[&lt;instrucción_assert2&gt;;&#8230;;
-&lt;instrucción_assert3&gt;] }</code><br>
-
-
-
-<br>
-
-
-
-Se escribe la palabra reservada requires
-seguida de como mínimo una instrucción assert
-encerrada entre llaves, independientemente si sólo hay una
-instrucción assert o si hay varias.<br>
-
-
-
-<br>
-
-
-
-La sintaxis de las postcondiciones es la
-siguiente:<br>
-
-
-
+    requires{ &lt;instrucci&#243;n_assert1&gt;
+    [&lt;instrucci&#243;n_assert2&gt;;&#8230;;
+    &lt;instrucci&#243;n_assert3&gt;] }</code><br>
+  <br>
+  Se escribe la palabra reservada requires
+  seguida de como m&#237;nimo una instrucci&#243;n assert
+  encerrada entre llaves, independientemente si s&#243;lo hay una
+  instrucci&#243;n assert o si hay varias.<br>
+  <br>
+  La sintaxis de las postcondiciones es la
+  siguiente:
 </p>
-
-
-
 <p><code>
-enforce{ &lt;instrucción_assert1&gt;
-[&lt;instrucción_assert2&gt;; &#8230;
-;&lt;instrucción_assert3&gt;] }</code>
+    enforce{ &lt;instrucci&#243;n_assert1&gt;
+    [&lt;instrucci&#243;n_assert2&gt;; &#8230;
+    ;&lt;instrucci&#243;n_assert3&gt;] }</code>
 </p>
-
-
-
 <p>Se escribe la palabra reservada enforce seguida de como
-mínimo una instrucción assert encerrada entre
-llaves, independientemente si sólo hay una
-instrucción assert o si hay varias.<br>
-
-
-
-<br>
-
-
-
-La instrucción assert sólo interrumpe la
-ejecución si no se cumple una condición
-especificada. Si la condición se cumple no hace nada.<br>
-
-
-
-<br>
-
-
-
-La sintaxis de la instrucción assert es la siguiente:<br>
-
-
-
+  m&#237;nimo una instrucci&#243;n assert encerrada entre
+  llaves, independientemente si s&#243;lo hay una
+  instrucci&#243;n assert o si hay varias.<br>
+  <br>
+  La instrucci&#243;n assert s&#243;lo interrumpe la
+  ejecuci&#243;n si no se cumple una condici&#243;n
+  especificada. Si la condici&#243;n se cumple no hace nada.<br>
+  <br>
+  La sintaxis de la instrucci&#243;n assert es la siguiente:
 </p>
-
-
-
 <p><code>
-assert ( &lt;condicion&gt; [, &lt;cadena&gt; ])
-</code></p>
-
-
-
+    assert ( &lt;condicion&gt; [, &lt;cadena&gt; ])
+  </code></p>
 <p>Se escribe la palabra reservada assert y
-entre paréntesis la condición que se debe cumplir
-para ejecutar el método. Si además de la
-condición tiene un segundo parámetro, una cadena
-de texto, si la condición no se cumple, se genera una
-excepción EAssert con dicho texto.<br>
-
-
-
-<br>
-
-
-
-Un ejemplo de la utilización
-de la programación por contrato en Prowl, es el siguiente:<br>
-
-
-
+  entre par&#233;ntesis la condici&#243;n que se debe cumplir
+  para ejecutar el m&#233;todo. Si adem&#225;s de la
+  condici&#243;n tiene un segundo par&#225;metro, una cadena
+  de texto, si la condici&#243;n no se cumple, se genera una
+  excepci&#243;n EAssert con dicho texto.<br>
+  <br>
+  Un ejemplo de la utilizaci&#243;n
+  de la programaci&#243;n por contrato en Prowl, es el siguiente:
 </p>
-
-
-
 <p><code>
-&nbsp;&nbsp; &nbsp;method + dividir(a, b)<br>
-
-
-
-&nbsp;&nbsp; &nbsp;{<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;requires {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; assert(
-a isInstanceOf Int, "Dividendo no numérico." );<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; assert(
-b isInstanceOf Int, "Divisor no numérico."
-);&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; assert(
-b != 0, "Divisor no puede ser 0" );<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;enforce {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; assert( toret isInstanceOf Int, "Resultado no
-numérico (?)"&nbsp;&nbsp; &nbsp;);<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;reference
-toret;<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;toret = a
-/ b;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return
-toret;<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;onException( e ) {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;if ( e isInstanceOf EAssert ) {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;System.console.write( e.getErrorMessage() );<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;}<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;else System.console.write(
-"FATAL: Error interno" );<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
-
-
-
-&nbsp;&nbsp; &nbsp;}<br>
-
-
-
+    &#160;&#160; &#160;method + dividir(a, b)<br>
+    &#160;&#160; &#160;{<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;requires {<br>
+    &#160;&#160; &#160;&#160;&#160; &#160; assert(
+    a isInstanceOf Int, "Dividendo no num&#233;rico." );<br>
+    &#160;&#160; &#160;&#160;&#160; &#160; assert(
+    b isInstanceOf Int, "Divisor no num&#233;rico."
+    );&#160;&#160; &#160;<br>
+    &#160;&#160; &#160;&#160;&#160; &#160; assert(
+    b != 0, "Divisor no puede ser 0" );<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;}<br>
+    <br>
+    &#160;&#160; &#160;&#160;&#160; &#160;enforce {<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160; assert( toret isInstanceOf Int, "Resultado no
+    num&#233;rico (?)"&#160;&#160; &#160;);<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;}<br>
+    <br>
+    &#160;&#160; &#160;&#160;&#160; &#160;reference
+    toret;<br>
+    <br>
+    &#160;&#160; &#160;&#160;&#160; &#160;toret = a
+    / b;<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;return
+    toret;<br>
+    <br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;onException( e ) {<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;if ( e isInstanceOf EAssert ) {<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;&#160;&#160;
+    &#160;System.console.write( e.getErrorMessage() );<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;}<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;else System.console.write(
+    "FATAL: Error interno" );<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;}<br>
+    &#160;&#160; &#160;}
 </code>
 </p>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;Si los parámetros
-del
-método dividir, no son enteros o si es el cero, se genera
-una excepción con el texto correspondiente y se para la
-ejecución del método. En caso contrario, se
-ejecuta el cuerpo del método y si el resultado no es un
-entero se lanza una excepción con el texto correspondiente a
-dicha excepción y se para la ejecución del
-método.<br>
-
-
-
+<p>&#160;&#160; &#160;Si los par&#225;metros
+  del
+  m&#233;todo dividir, no son enteros o si es el cero, se genera
+  una excepci&#243;n con el texto correspondiente y se para la
+  ejecuci&#243;n del m&#233;todo. En caso contrario, se
+  ejecuta el cuerpo del m&#233;todo y si el resultado no es un
+  entero se lanza una excepci&#243;n con el texto correspondiente a
+  dicha excepci&#243;n y se para la ejecuci&#243;n del
+  m&#233;todo.
 </p>
-
-
-
-<h3><a name="cuerpometodo"></a>Cuerpo del método</h3>
-
-
-
-<p>El cuerpo del método está formado por
-instrucciones, así como el cuerpo del bloque de excepciones,
-por lo que lo comentado aquí también es
-válido para él.</p>
-
-
-
-<p>Una instrucción la podríamos definir
-como un
-comando básico de programación, aceptable tanto
-por un lenguaje como por la computadora misma. En Prowl, toda
-instrucción debe acabar en un punto y coma. Las
-instrucciones válidas en Prowl son las que se comentan en
-los siguientes apartados.<br>
-
-
-
+<h3><a name="cuerpometodo"></a>Cuerpo del m&#233;todo</h3>
+<p>El cuerpo del m&#233;todo est&#225; formado por
+  instrucciones, as&#237; como el cuerpo del bloque de excepciones,
+  por lo que lo comentado aqu&#237; tambi&#233;n es
+  v&#225;lido para &#233;l.</p>
+<p>Una instrucci&#243;n la podr&#237;amos definir
+  como un
+  comando b&#225;sico de programaci&#243;n, aceptable tanto
+  por un lenguaje como por la computadora misma. En Prowl, toda
+  instrucci&#243;n debe acabar en un punto y coma. Las
+  instrucciones v&#225;lidas en Prowl son las que se comentan en
+  los siguientes apartados.
 </p>
-
-
-
 <h4><a name="refs"></a>Referencias</h4>
-
-
-
 <p>
-Las referencias locales, se declaran de la siguiente manera:<br>
-
-
-
+  Las referencias locales, se declaran de la siguiente manera:
 </p>
-
-
-
 <p><code>
-reference &lt;nombre_referencia&gt;;
-</code></p>
-
-
-
+    reference &lt;nombre_referencia&gt;;
+  </code></p>
 <p>Se pone la palabra reservada reference seguida del nombre que
-le
-queramos dar a la referencia y del punto y coma que indica el fin de la
-instrucción. <br>
-
-
-
-&nbsp;&nbsp; &nbsp;<br>
-
-
-
-Si queremos inicializar la referencia al mismo tiempo que la
-declaramos, tendremos que poner después del nombre de la
-referencia, el símbolo igual seguido de la
-expresión con la que deseemos inicializar la referencia. <br>
-
-
-
-&nbsp;&nbsp; &nbsp;
+  le
+  queramos dar a la referencia y del punto y coma que indica el fin de la
+  instrucci&#243;n. <br>
+  &#160;&#160; &#160;<br>
+  Si queremos inicializar la referencia al mismo tiempo que la
+  declaramos, tendremos que poner despu&#233;s del nombre de la
+  referencia, el s&#237;mbolo igual seguido de la
+  expresi&#243;n con la que deseemos inicializar la referencia. <br>
+  &#160;&#160; &#160;
 </p>
-
-
-
 <p><code>
-reference &lt;nombre_referencia&gt; =
-&lt;expresión&gt;;
-</code></p>
-
-
-
-<p>Ejemplos de declaraciones de atributos:<br>
-
-
-
+    reference &lt;nombre_referencia&gt; =
+    &lt;expresi&#243;n&gt;;
+  </code></p>
+<p>Ejemplos de declaraciones de atributos:
 </p>
-
-
-
 <p><code>
-reference x = ( System.getCurrentTime().instantInDay ) % 100;<br>
-
-
-
-reference y;
-</code></p>
-
-
-
+    reference x = ( System.getCurrentTime().instantInDay ) % 100;<br>
+    reference y;
+  </code></p>
 <h4><a name="goto"></a>Sentencia GOTO</h4>
-
-
-
 <p>
-La instrucción goto en Prowl tiene la misma
-función que la sentencia de salto no condicional goto de C,
-C++.&nbsp; Goto realiza un salto dentro de un bloque de
-código. En el caso de C, C++ realiza un salto dentro de una
-función y en Prowl, realiza un salto dentro de un
-método. La sentencia goto funciona con etiquetas. <br>
-
-
-
-</p>
-
-
-
+  La instrucci&#243;n goto en Prowl tiene la misma
+  funci&#243;n que la sentencia de salto no condicional goto de C,
+  C++.&#160; Goto realiza un salto dentro de un bloque de
+  c&#243;digo. En el caso de C, C++ realiza un salto dentro de una
+  funci&#243;n y en Prowl, realiza un salto dentro de un
+  m&#233;todo. La sentencia goto funciona con etiquetas. </p>
 <p><code>
-goto &lt;nombre_etiqueta&gt;;
-</code></p>
-
-
-
+    goto &lt;nombre_etiqueta&gt;;
+  </code></p>
 <p>La sentencia goto sustituye a las
-sentencias break y continue ya que estas sentencias no las soporta
-Prowl. Con goto podemos hacer lo mismo que utilizando (si Prowl las
-soportase) las sentencias break y continue, es decir,
-básicamente romper la ejecución de bucles y otras
-tareas menores
+  sentencias break y continue ya que estas sentencias no las soporta
+  Prowl. Con goto podemos hacer lo mismo que utilizando (si Prowl las
+  soportase) las sentencias break y continue, es decir,
+  b&#225;sicamente romper la ejecuci&#243;n de bucles y otras
+  tareas menores
 </p>
-
-
-
 <h4><a name="etqs"></a>Etiquetas</h4>
-
-
-
 <p>
-Las etiquetas señalan un grupo de sentencias y consisten en
-dos puntos seguidos de un nombre de identificador
-válido (finalizando con punto y coma). <br>
-
-
-
-<br>
-
-
-
-En un lenguaje de alto nivel, como Prowl, se mantiene este tipo de
-instrucción debido a que existe la sentencia de salto no
-condicional goto, pero no break y continue (explicado en el apartado anterior). <br>
-
-
-
-</p>
-
-
-
+  Las etiquetas se&#241;alan un grupo de sentencias y consisten en
+  dos puntos seguidos de un nombre de identificador
+  v&#225;lido (finalizando con punto y coma). <br>
+  <br>
+  En un lenguaje de alto nivel, como Prowl, se mantiene este tipo de
+  instrucci&#243;n debido a que existe la sentencia de salto no
+  condicional goto, pero no break y continue (explicado en el apartado
+  anterior). </p>
 <p><code>
-: &lt;nombre_etiqueta&gt;;
-</code></p>
-
-
-
+    : &lt;nombre_etiqueta&gt;;
+  </code></p>
 <h4><a name="throw"></a>Sentencia throw</h4>
-
-
-
 <p>
-La sentencia throw lanza una excepción. Su sintaxis es muy
-sencilla, basta sólo con poner la palabra reservada throw
-seguida del nombre del objeto que se quiere
-lanzar.&nbsp;&nbsp;&nbsp; &nbsp;<br>
-
-
-
+  La sentencia throw lanza una excepci&#243;n. Su sintaxis es muy
+  sencilla, basta s&#243;lo con poner la palabra reservada throw
+  seguida del nombre del objeto que se quiere
+  lanzar.&#160;&#160;&#160; &#160;
 </p>
-
-
-
 <p><code>
-throw &lt;nombre_objeto&gt;
-</code></p>
-
-
-
-<p>Además del nombre del objeto
-también se puede poner una cadena de caracteres que describa
-la excepción. La sintaxis sería la siguiente:<br>
-
-
-
+    throw &lt;nombre_objeto&gt;
+  </code></p>
+<p>Adem&#225;s del nombre del objeto
+  tambi&#233;n se puede poner una cadena de caracteres que describa
+  la excepci&#243;n. La sintaxis ser&#237;a la siguiente:
 </p>
-
-
-
 <p><code>
-throw
-&lt;nombre_objeto&gt;&#8217;,&#8217;&lt;cadena&gt;</code>
+    throw
+    &lt;nombre_objeto&gt;&#8217;,&#8217;&lt;cadena&gt;</code>
 </p>
-
-
-
 <h4><a name="mensajes"></a>Mensajes
 </h4>
-
-
-
 <p>
-Un mensaje es la ejecución de un método de un
-objeto. Los mensajes a métodos se realizan
-básicamente de la misma forma que en el lenguaje Java:<br>
-
-
-
+  Un mensaje es la ejecuci&#243;n de un m&#233;todo de un
+  objeto. Los mensajes a m&#233;todos se realizan
+  b&#225;sicamente de la misma forma que en el lenguaje Java:
 </p>
-
-
-
 <p><code>
-&lt;nombre_objeto&gt;.&lt;nombre_método&gt;
-</code></p>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;Es muy habitual que entre el
-nombre del
-objeto y el método se sitúen varios nombres de
-atributos o de métodos que devuelven una referencia a un
-objeto.
+    &lt;nombre_objeto&gt;.&lt;nombre_m&#233;todo&gt;
+  </code></p>
+<p>&#160;&#160; &#160;Es muy habitual que entre el
+  nombre del
+  objeto y el m&#233;todo se sit&#250;en varios nombres de
+  atributos o de m&#233;todos que devuelven una referencia a un
+  objeto.
 </p>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;Para mandar un mensaje a un
-método del padre de un objeto, se realiza de la siguiente
-manera:
+<p>&#160;&#160; &#160;Para mandar un mensaje a un
+  m&#233;todo del padre de un objeto, se realiza de la siguiente
+  manera:
 </p>
-
-
-
 <p><code>
-super ( [&lt;parámetro1&gt;, [&lt;
-parámetro2&gt;, &#8230; ,
-&lt;parámetroN&gt;]] )
-</code></p>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;Se escribe la palabra reservada
-super
-seguida de los parámetros necesarios entre
-paréntesis. </p>
-
-
-
-<p>&nbsp;&nbsp; &nbsp;Con la palabra reservada this,
-mandamos
-un mensaje al objeto que está ejecutando dicho
-método.
+    super ( [&lt;par&#225;metro1&gt;, [&lt;
+    par&#225;metro2&gt;, &#8230; ,
+    &lt;par&#225;metroN&gt;]] )
+  </code></p>
+<p>&#160;&#160; &#160;Se escribe la palabra reservada
+  super
+  seguida de los par&#225;metros necesarios entre
+  par&#233;ntesis. </p>
+<p>&#160;&#160; &#160;Con la palabra reservada this,
+  mandamos
+  un mensaje al objeto que est&#225; ejecutando dicho
+  m&#233;todo.
 </p>
-
-
-
 <h4><a name="opsincdec"></a>Operadores de incremento y decremento</h4>
-
-
-
 <p>
-Estos operadores funcionan de manera similar, a los operadores de
-decremento e incremente de C.
+  Estos operadores funcionan de manera similar, a los operadores de
+  decremento e incremente de C.
 </p>
-
-
-
 <ul>
-
-
-
   <li>El operador de incremento &#8216;++&#8217;, suma
-uno
-al
-atributo o referencia sobre la que es aplicada.
-  </li>
-
-
-
+    uno
+    al
+    atributo o referencia sobre la que es aplicada. </li>
   <li>El operador de
-decremento &#8216;--&#8217;, resta uno. Este operador, es
-aplicable tan sólo a aquellos atributos y referencias que
-son enteros o reales.
-  </li>
-
-
-
+    decremento &#8216;--&#8217;, resta uno. Este operador, es
+    aplicable tan s&#243;lo a aquellos atributos y referencias que
+    son enteros o reales. </li>
 </ul>
-
-
-
-<p>En Prowl&nbsp; no importa dónde ponemos el
-operador, es
-decir, si lo ponemos delante o detrás de la referencia o
-atributo al cual lo queremos sumar o restar uno (o lo que es lo mismo,
-si es un operador prefijo o postfijo). Prowl,
-independientemente de la colocación de estos operadores
-siempre va a llevar a cabo las siguientes acciones:<br>
-
-
-
+<p>En Prowl&#160; no importa d&#243;nde ponemos el
+  operador, es
+  decir, si lo ponemos delante o detr&#225;s de la referencia o
+  atributo al cual lo queremos sumar o restar uno (o lo que es lo mismo,
+  si es un operador prefijo o postfijo). Prowl,
+  independientemente de la colocaci&#243;n de estos operadores
+  siempre va a llevar a cabo las siguientes acciones:
 </p>
-
-
-
 <ol>
-
-
-
-  <li>Suma o resta una unidad a la referencia o atributo.
-  </li>
-
-
-
-  <li>Utiliza la referencia o atributo.
-  </li>
-
-
-
+  <li>Suma o resta una unidad a la referencia o atributo. </li>
+  <li>Utiliza la referencia o atributo. </li>
 </ol>
-
-
-
 <p>
-El resultado, por tanto, de poner x++ y ++x es exactamente el mismo.
+  El resultado, por tanto, de poner x++ y ++x es exactamente el mismo.
 </p>
-
-
-
 <h4><a name="asignaciones"></a>Asignaciones</h4>
-
-
-
-&lt;identificador&gt;=&lt;expresión&gt; [=
-&lt;expresión2&gt; =
-[&lt;expresión3&gt;=&#8230;=&lt;expresiónN&gt;]]<br>
-
-
-
+&lt;identificador&gt;=&lt;expresi&#243;n&gt; [=
+&lt;expresi&#243;n2&gt; =
+[&lt;expresi&#243;n3&gt;=&#8230;=&lt;expresi&#243;nN&gt;]]<br>
 <br>
-
-
-
-El operando de la izquierda del símbolo
+El operando de la izquierda del s&#237;mbolo
 &#8216;=&#8217; toma el valor del operando de la derecha.<br>
-
-
-
 <br>
-
-
-
-Prowl admite tanto la asignación simple como la
-asignación múltiple. Es decir, en Prowl se puede
+Prowl admite tanto la asignaci&#243;n simple como la
+asignaci&#243;n m&#250;ltiple. Es decir, en Prowl se puede
 asignar un valor tanto, a una referencia como a un atributo, como
 asignar un mismo valor a varias referencias o atributos en la misma
-instrucción.
-<p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-a = 10;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-area = calculaArea(radio);<br>
-
-
-
+instrucci&#243;n.
+<p><code>&#160;&#160;&#160;&#160;&#160;
+    a = 10;<br>
+    &#160;&#160;&#160;&#160;&#160;
+    area = calculaArea(radio);
 </code>
 </p>
-
-
-
-<p>Lo que no tendría sentido poner, serían
-expresiones como las siguientes:
+<p>Lo que no tendr&#237;a sentido poner, ser&#237;an
+  expresiones como las siguientes:
 </p>
-
-
-
 <p><code>
-&nbsp; &nbsp; &nbsp; 10 = a;<br>
-
-
-
-&nbsp; &nbsp; &nbsp; calculaArea(radio) = area;<br>
-
-
-
+    &#160; &#160; &#160; 10 = a;<br>
+    &#160; &#160; &#160; calculaArea(radio) = area;
 </code>
 </p>
-
-
-
-<p>Dado que el receptor de una asignación siempre debe
-ser una
-referencia local, o un atributo perteneciente al objeto donde reside el
-método (o derivado).<br>
-
-
-
-<br>
-
-
-
-Aunque el operador más importante y más
-frecuentemente usado es el operador asignación =, existen
-otros operadores que realizan una asignación sobre su
-operando. Estos operadores son los siguientes:<br>
-
-
-
-<br>
-
-
-
+<p>Dado que el receptor de una asignaci&#243;n siempre debe
+  ser una
+  referencia local, o un atributo perteneciente al objeto donde reside el
+  m&#233;todo (o derivado).<br>
+  <br>
+  Aunque el operador m&#225;s importante y m&#225;s
+  frecuentemente usado es el operador asignaci&#243;n =, existen
+  otros operadores que realizan una asignaci&#243;n sobre su
+  operando. Estos operadores son los siguientes:<br>
 </p>
-
-
-
 <p align="center">
-<table style="background-color: rgb(255, 255, 204); width: 622px; height: 224px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Operador</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Ejemplo</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Significado</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>+=</td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">a+=b</td>
-
-
-
-      <td>Suma a e b y le asigna el resultado a x</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>-=</td>
-
-
-
-      <td>a-=b</td>
-
-
-
-      <td>A a le resta b y le asigna el resultado a x</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>*=</td>
-
-
-
-      <td>a*=b</td>
-
-
-
-      <td>Multiplica a por b y se lo asigna a x</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>/=</td>
-
-
-
-      <td>a/=b</td>
-
-
-
-      <td>Divide a entre b y se lo asigna a x</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>%=</td>
-
-
-
-      <td>a%=b</td>
-
-
-
-      <td>Haya el módulo de a y b y se lo asigna a x</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
-</table>
-
-
-
+  <table style="background-color: rgb(255, 255, 204); width: 622px; height: 224px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="background-color: rgb(204, 204, 255);">Operador</td>
+        <td style="background-color: rgb(204, 204, 255);">Ejemplo</td>
+        <td style="background-color: rgb(204, 204, 255);">Significado</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">+=</td>
+        <td style="background-color: #ffffcc; text-align: center;">a+=b</td>
+        <td>Suma a e b y le asigna el resultado a x</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">-=</td>
+        <td style="text-align: center;">a-=b</td>
+        <td>A a le resta b y le asigna el resultado a x</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">*=</td>
+        <td style="text-align: center;">a*=b</td>
+        <td>Multiplica a por b y se lo asigna a x</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">/=</td>
+        <td style="text-align: center;">a/=b</td>
+        <td>Divide a entre b y se lo asigna a x</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">%=</td>
+        <td style="text-align: center;">a%=b</td>
+        <td>Haya el m&#243;dulo de a y b y se lo asigna a x</td>
+      </tr>
+    </tbody>
+  </table>
 </p>
-
-
-
 <p>
-En los operadores de asignación, también
-incluimos los operadores de decremento (&#8216;--&#8217;) e
-incremento (&#8216;++&#8217;), ya que éstos realizan
-implícitamente una asignación sobre su operando
-aunque no siguen la sintaxis típica de una
-asignación.
+  En los operadores de asignaci&#243;n, tambi&#233;n
+  incluimos los operadores de decremento (&#8216;--&#8217;) e
+  incremento (&#8216;++&#8217;), ya que &#233;stos realizan
+  impl&#237;citamente una asignaci&#243;n sobre su operando
+  aunque no siguen la sintaxis t&#237;pica de una
+  asignaci&#243;n.
 </p>
-
-
-
 <h4><a name="props"></a>Propiedades</h4>
-
-
-
 <p>
-Dentro de un programa escrito en Prowl, cabe la posibilidad de indicar
-las propiedades relativas a los objetos y métodos
-existentes. La manera de indicarlo en Prowl es mediante las propiedades
-cuya sintaxis es la siguiente:<br>
-
-
-
+  Dentro de un programa escrito en Prowl, cabe la posibilidad de indicar
+  las propiedades relativas a los objetos y m&#233;todos
+  existentes. La manera de indicarlo en Prowl es mediante las propiedades
+  cuya sintaxis es la siguiente:
 </p>
-
-
-
 <p><code>
-[ DOC | DEBUG | &lt;obj&gt;&nbsp; [ =
-&lt;cadena_con_las_propiedades_obj_met&gt;] ]
-</code></p>
-
-
-
+    [ DOC | DEBUG | &lt;obj&gt;&#160; [ =
+    &lt;cadena_con_las_propiedades_obj_met&gt;] ]
+  </code></p>
 <p>Las propiedades, como se puede observar, van encerradas entre
-corchetes
-en cuyo interior debe ir DOC o DEBUG, o cualquier otro objeto que
-derive de Property. Éste último está
-definido en la librería estándar interna, y los
-dos únicos objetos derivados en esta librería son
-Doc y Debug. Usar las propiedades sin ninguna
-cadena que indique la propiedad o propiedades de ese método
-u objeto, no tiene mucho sentido. Por eso, aún
-así de manera opcional, es posible
-poner una cadena que exprese las propiedades de dicho objeto o
-método anteponiéndole el símbolo
-igual.
+  corchetes
+  en cuyo interior debe ir DOC o DEBUG, o cualquier otro objeto que
+  derive de Property. &#201;ste &#250;ltimo est&#225;
+  definido en la librer&#237;a est&#225;ndar interna, y los
+  dos &#250;nicos objetos derivados en esta librer&#237;a son
+  Doc y Debug. Usar las propiedades sin ninguna
+  cadena que indique la propiedad o propiedades de ese m&#233;todo
+  u objeto, no tiene mucho sentido. Por eso, a&#250;n
+  as&#237; de manera opcional, es posible
+  poner una cadena que exprese las propiedades de dicho objeto o
+  m&#233;todo anteponi&#233;ndole el s&#237;mbolo
+  igual.
 </p>
-
-
-
 <p><code>
-object op : ConsoleApplication<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;[DOC=
-"Objeto que realiza sumas y restas"]<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + sumar(a, b)
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-&nbsp; &nbsp;[DOC=
-"Método que suma dos números"]
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; &nbsp; return
-a + b;<br>
-
-
-
-&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;method + restar(a,
-b)
-<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-&nbsp; &nbsp;[DOC=
-"Método que resta dos números"]
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; &nbsp; return
-a - b;<br>
-
-
-
-&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + doIt()
-<br>
-
-
-
-&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;{<br>
-
-
-
-&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp;[DOC="Punto de entrada. Pide dos números
-interactivamente y los muestra"]
-<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-reference x;<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-reference y;<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write ( "Numero: " ) ;<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-x = Int.parseString ( System.console.read() );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.lf();<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write ( "Numero: " ) ;<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-y = Int.parseString ( System.console.read() );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.lf();<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write( "\nEl resultado de la suma es " );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write( Op_mat.sumar( x, y ) );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.lf();<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write( "\nEl resultado de la resta es " );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write( Op_mat.restar( x, y ) );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.lf();<br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-endObject</code>
+    object op : ConsoleApplication<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    &#160;[DOC=
+    "Objeto que realiza sumas y restas"]<br>
+    <br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + sumar(a, b)
+    <br>
+    &#160;&#160;&#160;&#160;&#160;&#160; &#160;{<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;
+    &#160; &#160;[DOC=
+    "M&#233;todo que suma dos n&#250;meros"]
+    <br>
+    &#160;&#160; &#160;&#160;&#160;&#160;
+    &#160; &#160; return
+    a + b;<br>
+    &#160;&#160; &#160; &#160; &#160;}<br>
+    <br>
+    &#160;&#160; &#160; &#160; &#160;method + restar(a,
+    b)
+    <br>
+    &#160; &#160; &#160; &#160; {<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;
+    &#160; &#160;[DOC=
+    "M&#233;todo que resta dos n&#250;meros"]
+    <br>
+    &#160;&#160; &#160;&#160;&#160;&#160;
+    &#160; &#160; return
+    a - b;<br>
+    &#160;&#160; &#160; &#160; &#160;}<br>
+    <br>
+    &#160;&#160; &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + doIt()
+    <br>
+    &#160; &#160; &#160;&#160; &#160;{<br>
+    &#160;&#160; &#160; &#160; &#160; &#160;
+    &#160;[DOC="Punto de entrada. Pide dos n&#250;meros
+    interactivamente y los muestra"]
+    <br>
+    <br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    reference x;<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    reference y;<br>
+    <br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write ( "Numero: " ) ;<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    x = Int.parseString ( System.console.read() );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.lf();<br>
+    <br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write ( "Numero: " ) ;<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    y = Int.parseString ( System.console.read() );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.lf();<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write( "\nEl resultado de la suma es " );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write( Op_mat.sumar( x, y ) );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.lf();<br>
+    <br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write( "\nEl resultado de la resta es " );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write( Op_mat.restar( x, y ) );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.lf();<br>
+    <br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    return;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    endObject</code>
 </p>
-
-
-
-<h4><a name="opsmatematicas"></a>Operaciones matemáticas</h4>
-
-
-
+<h4><a name="opsmatematicas"></a>Operaciones matem&#225;ticas</h4>
 <p>
-Las
-expresiones matemáticas son expresiones del tipo:
+  Las
+  expresiones matem&#225;ticas son expresiones del tipo:
 </p>
-
-
-
 <p><code>
-&lt;id ó
-numero&gt;&lt;op_aritmético&gt;&lt;expresión&gt;
-[&lt;op_aritmético&gt;
-&lt;expresión2&gt;
-&lt;op_aritmético&gt;
-[&lt;expresión3&gt;&lt;op_aritmético&gt;
-&#8230; &lt;op_aritmético&gt;
-&lt;expresiónN&gt;]]
-</code></p>
-
-
-
-<p>Prowl soporta cinco operadores aritméticos cuyo
-significado se
-muestra en la siguiente tabla:<br>
-
-
-
+    &lt;id &#243;
+    numero&gt;&lt;op_aritm&#233;tico&gt;&lt;expresi&#243;n&gt;
+    [&lt;op_aritm&#233;tico&gt;
+    &lt;expresi&#243;n2&gt;
+    &lt;op_aritm&#233;tico&gt;
+    [&lt;expresi&#243;n3&gt;&lt;op_aritm&#233;tico&gt;
+    &#8230; &lt;op_aritm&#233;tico&gt;
+    &lt;expresi&#243;nN&gt;]]
+  </code></p>
+<p>Prowl soporta cinco operadores aritm&#233;ticos cuyo
+  significado se
+  muestra en la siguiente tabla:
 </p>
-
-
-
 <p align="center">
-<table style="background-color: rgb(255, 255, 204); width: 283px; height: 166px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Símbolo</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Operador</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Ejemplo</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>+</td>
-
-
-
-      <td>Suma</td>
-
-
-
-      <td>3 + 5</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>-<br>
-
-
-
-      </td>
-
-
-
+  <table style="background-color: rgb(255, 255, 204); width: 283px; height: 166px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="background-color: rgb(204, 204, 255);">S&#237;mbolo</td>
+        <td style="background-color: rgb(204, 204, 255);">Operador</td>
+        <td style="background-color: rgb(204, 204, 255);">Ejemplo</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">+</td>
+        <td>Suma</td>
+        <td>3 + 5</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">- </td>
       <td>Diferencia</td>
-
-
-
       <td>3 - 5</td>
-
-
-
     </tr>
-
-
-
     <tr>
-
-
-
-      <td>*</td>
-
-
-
+      <td style="text-align: center;">*</td>
       <td>Producto</td>
-
-
-
       <td>3 * 5</td>
-
-
-
     </tr>
-
-
-
     <tr>
-
-
-
-      <td>/<br>
-
-
-
-      </td>
-
-
-
-      <td>Cociente</td>
-
-
-
-      <td>10 / 5</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>%</td>
-
-
-
-      <td>Módulo</td>
-
-
-
-      <td>5 % 3</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
+      <td style="text-align: center;">/ </td>
+    <td>Cociente</td>
+    <td>10 / 5</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">%</td>
+    <td>M&#243;dulo</td>
+    <td>5 % 3</td>
+  </tr>
+</tbody>
 </table>
-
-
-
 </p>
-
-
-
-<p>El operador módulo da como resultado el resto de la
-división entera. Por ejemplo, el resultado de&nbsp; 20%7
-es 6 que es el resto de la división entre 20 y 7.<br>
-
-
-
-La prioridad de evaluación de los operadores
-aritméticos&nbsp;es la que se muestra en la siguiente
-tabla, la
-cual está ordenada de mayor a menor prioridad:<br>
-
-
-
+<p>El operador m&#243;dulo da como resultado el resto de la
+  divisi&#243;n entera. Por ejemplo, el resultado de&#160; 20%7
+  es 6 que es el resto de la divisi&#243;n entre 20 y 7.<br>
+  La prioridad de evaluaci&#243;n de los operadores
+  aritm&#233;ticos&#160;es la que se muestra en la siguiente
+  tabla, la
+  cual est&#225; ordenada de mayor a menor prioridad:
 </p>
-
-
-
 <p align="center">
-<table style="background-color: rgb(255, 255, 204); width: 126px; height: 85px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Operadores</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>+ -</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>* / %</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
-</table>
-
-
-
+  <table style="background-color: rgb(255, 255, 204); width: 126px; height: 85px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="background-color: rgb(204, 204, 255);">Operadores</td>
+      </tr>
+      <tr align="center">
+        <td>+ -</td>
+      </tr>
+      <tr align="center">
+        <td>* / %</td>
+      </tr>
+    </tbody>
+  </table>
 </p>
-
-
-
-<h4><a name="if"></a>Estructuras de decisión: sentencia IF</h4>
-
-
-
+<h4><a name="if"></a>Estructuras de decisi&#243;n: sentencia IF</h4>
 <p>
-La sentencia condicional IF, se usa para
-tomar decisiones. La sintaxis de la sentencia IF es la siguiente:<br>
-
-
-
+  La sentencia condicional IF, se usa para
+  tomar decisiones. La sintaxis de la sentencia IF es la siguiente:
 </p>
-
-
-
 <p><code>
-if( &lt;condición&gt; )<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia1&gt;;<br>
-
-
-
-else<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia2&gt;;
-</code></p>
-
-
-
-<p>Los paréntesis de la
-condición son obligatorios y else sentencia2 se puede
-omitir. Si se cumple la condición se ejecutará la
-sentencia1, sino se ejecutará la sentencia2. <br>
-
-
-
-&nbsp;&nbsp; &nbsp;Una sentencia puede ser simple o
-compuesta, en el caso que sea compuesta se deben poner entre llaves. Si
-la sentencia es simple pueden omitirse las llaves o no.
+    if( &lt;condici&#243;n&gt; )<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia1&gt;;<br>
+    else<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia2&gt;;
+  </code></p>
+<p>Los par&#233;ntesis de la
+  condici&#243;n son obligatorios y else sentencia2 se puede
+  omitir. Si se cumple la condici&#243;n se ejecutar&#225; la
+  sentencia1, sino se ejecutar&#225; la sentencia2. <br>
+  &#160;&#160; &#160;Una sentencia puede ser simple o
+  compuesta, en el caso que sea compuesta se deben poner entre llaves. Si
+  la sentencia es simple pueden omitirse las llaves o no.
 </p>
-
-
-
 <p><code>
-if( &lt;condición&gt; ) {<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia1&gt;;<br>
-
-
-
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencian&gt;;<br>
-
-
-
-}<br>
-
-
-
-else {<br>
-
-
-
-</code><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia1&gt;;<br>
-
-
-
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ...<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencian&gt;;<br>
-
-
-
-</code><code>}</code>
+    if( &lt;condici&#243;n&gt; ) {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia1&gt;;<br>
+    &#160;&#160;&#160; &#160;&#160;&#160; ...<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencian&gt;;<br>
+    }<br>
+    else {<br>
+  </code><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia1&gt;;<br>
+    &#160;&#160;&#160; &#160;&#160;&#160; ...<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencian&gt;;<br>
+  </code><code>}</code>
 </p>
-
-
-
-<h4><a name="repe"></a>Estructuras de repetición</h4>
-
-
-
+<h4><a name="repe"></a>Estructuras de repetici&#243;n</h4>
 <h5><a name="dowhile"></a>do ... while</h5>
-
-
-
 <p>
-Si traducimos do-while al castellano
-significa «hacer [algo] mientras [se
-cumpla una condición]. El bucle do-while se ejecuta como
-mínimo una vez, ya que la condición se testea al
-final.<br>
-
-
-
-<br>
-
-
-
-La sintaxis del bucle do-while es la siguiente:<br>
-
-
-
+  Si traducimos do-while al castellano
+  significa &#171;hacer [algo] mientras [se
+  cumpla una condici&#243;n]. El bucle do-while se ejecuta como
+  m&#237;nimo una vez, ya que la condici&#243;n se testea al
+  final.<br>
+  <br>
+  La sintaxis del bucle do-while es la siguiente:
 </p>
-
-
-
 <p><code>
-do<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia&gt;;<br>
-
-
-
-while( &lt;condicion&gt; );<br>
-
-
-
+    do<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia&gt;;<br>
+    while( &lt;condicion&gt; );
 </code>
 </p>
-
-
-
 <p>La sentencia se ejecuta, luego se
-evalúa la condición. Si es cierta, se vuelve a
-ejecutar y así hasta que la expresión sea falsa.</p>
-
-
-
+  eval&#250;a la condici&#243;n. Si es cierta, se vuelve a
+  ejecutar y as&#237; hasta que la expresi&#243;n sea falsa.</p>
 <p>Como en los caso de la sentencia
-condicional IF, si dentro del cuerpo del bucle do-while queremos
-ejecutar varias sentencias, éstas deben ponerse entre
-llaves:
+  condicional IF, si dentro del cuerpo del bucle do-while queremos
+  ejecutar varias sentencias, &#233;stas deben ponerse entre
+  llaves:
 </p>
-
-
-
 <p><code>
-do {<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia1&gt;;<br>
-
-
-
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ...<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencian&gt;;<br>
-
-
-
-} while( &lt;condicion&gt; );<br>
-
-
-
+    do {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia1&gt;;<br>
+    &#160;&#160;&#160; &#160;&#160; ...<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencian&gt;;<br>
+    } while( &lt;condicion&gt; );
 </code>
 </p>
-
-
-
 <h5><a name="while"></a>Bucle while</h5>
-
-
-
 El bucle while tiene un comportamiento
-inverso al&nbsp;del do-while. La sintaxis del bucle while es la
+inverso al&#160;del do-while. La sintaxis del bucle while es la
 siguiente:
 <p><code>while( &lt;condicion&gt; )<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia&gt;;
-</code></p>
-
-
-
-<p>En este caso, se evalúa
-primero la condición y luego se ejecuta la sentencia si la
-condición es cierta. Por lo tanto, si la
-condición es falsa la primera vez, no se ejecuta nunca la
-sentencia. El bucle se ejecuta siempre hasta que la
-condición sea falsa.<br>
-
-
-
-<br>
-
-
-
-Como en los casos anteriores, si dentro del cuerpo del bucle while
-queremos ejecutar varias sentencias, éstas deben ponerse
-entre llaves:<br>
-
-
-
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia&gt;;
+  </code></p>
+<p>En este caso, se eval&#250;a
+  primero la condici&#243;n y luego se ejecuta la sentencia si la
+  condici&#243;n es cierta. Por lo tanto, si la
+  condici&#243;n es falsa la primera vez, no se ejecuta nunca la
+  sentencia. El bucle se ejecuta siempre hasta que la
+  condici&#243;n sea falsa.<br>
+  <br>
+  Como en los casos anteriores, si dentro del cuerpo del bucle while
+  queremos ejecutar varias sentencias, &#233;stas deben ponerse
+  entre llaves:
 </p>
-
-
-
 <p><code>
-while( &lt;condicion&gt; )<br>
-
-
-
-{<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia1&gt;<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp;...<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp;&lt;sentencian&gt;<br>
-
-
-
-}</code>
+    while( &lt;condicion&gt; )<br>
+    {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia1&gt;<br>
+    &#160; &#160; &#160; &#160;...<br>
+    &#160; &#160; &#160; &#160;&lt;sentencian&gt;<br>
+    }</code>
 </p>
-
-
-
 <h5><a name="for"></a>Bucle for</h5>
-
-
-
 <p>
-El bucle For es muy similar al bucle While. De hecho:
+  El bucle For es muy similar al bucle While. De hecho:
 </p>
-
-
-
 <p><code>
-for( &lt;expr1&gt;; &lt;expr2&gt;;
-&lt;expr3&gt;)<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia&gt;</code>
+    for( &lt;expr1&gt;; &lt;expr2&gt;;
+    &lt;expr3&gt;)<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia&gt;</code>
 </p>
-
-
-
 <p>es equivalente a:
 </p>
-
-
-
 <p><code>&lt;expr1&gt;;<br>
-
-
-
-while( &lt;expr2&gt; )<br>
-
-
-
-{<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp; &lt;sentencia1&gt;<br>
-
-
-
-&nbsp;&nbsp;&nbsp; &nbsp;...<br>
-
-
-
-&nbsp; &nbsp; &nbsp;&lt;sentencian&gt;<br>
-
-
-
-&nbsp;&nbsp; &nbsp; &lt;expr3&gt;;<br>
-
-
-
-}</code>
+    while( &lt;expr2&gt; )<br>
+    {<br>
+    &#160;&#160;&#160;&#160; &lt;sentencia1&gt;<br>
+    &#160;&#160;&#160; &#160;...<br>
+    &#160; &#160; &#160;&lt;sentencian&gt;<br>
+    &#160;&#160; &#160; &lt;expr3&gt;;<br>
+    }</code>
 </p>
-
-
-
 <p>El bucle For permite ejecutar una o varias sentencias un
-número repetido de veces. Su sintaxis es la siguiente:
+  n&#250;mero repetido de veces. Su sintaxis es la siguiente:
 </p>
-
-
-
 <p><code>
-for([inicialización];[condición];[iteración])<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-sentencia;</code>
+    for([inicializaci&#243;n];[condici&#243;n];[iteraci&#243;n])<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    sentencia;</code>
 </p>
-
-
-
-<p>El primer término
-inicialización, se usa para inicializar una variable
-índice, que controla el número de veces que se
-ejecutará el bucle. La condición representa la
-condición que ha de ser satisfecha para que el bucle
-continúe su ejecución. El incremento representa
-la cantidad que se incrementa la variable índice en cada
-repetición. <br>
-
-
-
-<br>
-
-
-
-&nbsp;&nbsp; &nbsp;Como podemos observar, todos los
-términos son optativos, se pueden poner o no. De esta
-manera, en Prowl podemos tener bucles for como los siguientes:<br>
-
-
-
+<p>El primer t&#233;rmino
+  inicializaci&#243;n, se usa para inicializar una variable
+  &#237;ndice, que controla el n&#250;mero de veces que se
+  ejecutar&#225; el bucle. La condici&#243;n representa la
+  condici&#243;n que ha de ser satisfecha para que el bucle
+  contin&#250;e su ejecuci&#243;n. El incremento representa
+  la cantidad que se incrementa la variable &#237;ndice en cada
+  repetici&#243;n. <br>
+  <br>
+  &#160;&#160; &#160;Como podemos observar, todos los
+  t&#233;rminos son optativos, se pueden poner o no. De esta
+  manera, en Prowl podemos tener bucles for como los siguientes:
 </p>
-
-
-
 <p><code>
-for(;&lt;expr2&gt;;) ;<br>
-
-
-
-<br>
-
-
-
-for(;&lt;expr2&gt;;x++);<br>
-
-
-
+    for(;&lt;expr2&gt;;) ;<br>
+    <br>
+    for(;&lt;expr2&gt;;x++);
 </code>
 </p>
-
-
-
 En Prowl podemos construir bucles for
-que no tengan condición de salida. Cada vez que Prowl se
-encuentra un bucle de este tipo (sin condición), muestra por
+que no tengan condici&#243;n de salida. Cada vez que Prowl se
+encuentra un bucle de este tipo (sin condici&#243;n), muestra por
 pantalla un aviso, dando a entender su peligrosidad.
 <p>Prowl muestra un aviso en vez de un
-error, ya que aunque el bucle for no tenga condición de
-salida, éste puede ser que no sea infinito. Un ejemplo
-sería el siguiente bucle for:</p>
-
-
-
+  error, ya que aunque el bucle for no tenga condici&#243;n de
+  salida, &#233;ste puede ser que no sea infinito. Un ejemplo
+  ser&#237;a el siguiente bucle for:</p>
 <p><code>
-object ej_for2 : ConsoleApplication<br>
-
-
-
-&nbsp;
-method + doIt() {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp; reference x = 0;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-for(;;x += 2) {<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( x ==
-8)
-{<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; goto salir;<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</code></p>
-
-
-
-<p><code>&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.write( x );<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-System.console.lf();<br>
-
-
-
-&nbsp;&nbsp;&nbsp; &nbsp; }</code></p>
-
-
-
-<p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-:salir;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-return;&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp; }<br>
-
-
-
-endObject</code>
+    object ej_for2 : ConsoleApplication<br>
+    &#160;
+    method + doIt() {<br>
+    &#160;&#160; &#160;&#160; reference x = 0;<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;
+    for(;;x += 2) {<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160; if( x ==
+    8)
+    {<br>
+    &#160; &#160; &#160; &#160; &#160; &#160;
+    &#160; goto salir;<br>
+    &#160; &#160; &#160; &#160; &#160; }</code></p>
+<p><code>&#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.write( x );<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;
+    System.console.lf();<br>
+    &#160;&#160;&#160; &#160; }</code></p>
+<p><code>&#160;&#160;&#160;&#160;&#160;
+    :salir;&#160; &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;
+    return;&#160;&#160; &#160;<br>
+    &#160; }<br>
+    endObject</code>
 </p>
-
-
-
 <p>Prowl muestra un aviso por
-pantalla, pero sin embargo el bucle for no es infinito, debido a que en
-el cuerpo del bucle se utiliza la sentencia goto para salir del bucle.
-La ejecución del ejemplo sería la siguiente:</p>
-
-
-
+  pantalla, pero sin embargo el bucle for no es infinito, debido a que en
+  el cuerpo del bucle se utiliza la sentencia goto para salir del bucle.
+  La ejecuci&#243;n del ejemplo ser&#237;a la siguiente:</p>
 <p><code>0<br>
-
-
-
-2<br>
-
-
-
-4<br>
-
-
-
-6</code>
+    2<br>
+    4<br>
+    6</code>
 </p>
-
-
-
 <p>En el caso de que el bucle construido
-sea el siguiente,</p>
-
-
-
+  sea el siguiente,</p>
 <p><code>for(;;);</code></p>
-
-
-
-<p>Prowl muestra también
-un aviso diciendo claramente que el bucle definido es
-infinito.
+<p>Prowl muestra tambi&#233;n
+  un aviso diciendo claramente que el bucle definido es
+  infinito.
 </p>
-
-
-
 <p>En el bucle for es posible utilizar el operador coma. Es
-decir, podemos
-tener varias sentencias en la inicialización,
-condición e iteración. El operador coma garantiza
-que el operando de su izquierda se ejecutará antes que el
-operando de su derecha. Si tenemos&nbsp; varias sentencias en la
-condición, se tienen que cumplir ambas para no salir del
-bucle. Un ejemplo del operador coma es el siguiente:<br>
-
-
-
+  decir, podemos
+  tener varias sentencias en la inicializaci&#243;n,
+  condici&#243;n e iteraci&#243;n. El operador coma garantiza
+  que el operando de su izquierda se ejecutar&#225; antes que el
+  operando de su derecha. Si tenemos&#160; varias sentencias en la
+  condici&#243;n, se tienen que cumplir ambas para no salir del
+  bucle. Un ejemplo del operador coma es el siguiente:
 </p>
-
-
-
 <p><code>
-object ej_for3 : ConsoleApplication&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-method + doIt(){<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-reference x;<br>
-
-
-
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-reference y;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(
-x=0,y=0; x &lt; 7; x++,y+=2 ){<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
-&nbsp;System.console.write(x);<br>
-
-
-
-&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp; System.console.write("\n");<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-&nbsp; &nbsp;}<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-
-
-
-endObject</code>
+    object ej_for3 : ConsoleApplication&#160; &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    method + doIt(){<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    reference x;<br>
+    &#160;&#160;
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    reference y;<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for(
+    x=0,y=0; x &lt; 7; x++,y+=2 ){<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160; &#160;
+    &#160;System.console.write(x);<br>
+    &#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;&#160;&#160;
+    &#160; System.console.write("\n");<br>
+    &#160;&#160; &#160;&#160;&#160; &#160;
+    &#160; &#160;}<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return;&#160;&#160;
+&#160;&#160;&#160;
+    &#160;<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br>
+    endObject</code>
 </p>
-
-
-
 <p>Como en los casos anteriores, si dentro del cuerpo del bucle
-for
-queremos ejecutar varias sentencias, éstas deben ponerse
-entre llaves:
+  for
+  queremos ejecutar varias sentencias, &#233;stas deben ponerse
+  entre llaves:
 </p>
-
-
-
 <p><code>
-for(&lt;expr_inicialización&gt;;&lt;condición&gt;;&lt;expr_iteración&gt;)<br>
-
-
-
-{<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia1&gt;;<br>
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;sentencia3&gt;;<br>
-
-
-
-}</code>
+for(&lt;expr_inicializaci&#243;n&gt;;&lt;condici&#243;n&gt;;&lt;expr_iteraci&#243;n&gt;)<br>
+    {<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia1&gt;;<br>
+    &#160; &#160; &#160; &#160; &#160;...<br>
+    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &lt;sentencia3&gt;;<br>
+    }</code>
 </p>
-
-
-
-<h4><a name="opslogicos"></a>Operadores lógicos y de relación
-condicional</h4>
-
-
-
+<h4><a name="opslogicos"></a>Operadores l&#243;gicos y de relaci&#243;n
+  condicional</h4>
 <p>
-En los apartados anteriores, donde se explicaban los bucles y la
-sentencia condicional IF, hemos hablado de condiciones, pero no se ha
-explicado cómo se tienen que construir esas condiciones en
-Prowl.<br>
-
-
-
-<br>
-
-
-
-Una condición es una expresión condicional cuya
-sintaxis es la siguiente:
+  En los apartados anteriores, donde se explicaban los bucles y la
+  sentencia condicional IF, hemos hablado de condiciones, pero no se ha
+  explicado c&#243;mo se tienen que construir esas condiciones en
+  Prowl.<br>
+  <br>
+  Una condici&#243;n es una expresi&#243;n condicional cuya
+  sintaxis es la siguiente:
 </p>
-
-
-
 <p><code>
-&lt;expresión&gt;
-&lt;operador_relacional&gt;
-&lt;expresión&gt;
-</code></p>
-
-
-
-Los operadores relacionales son símbolos que se usan para
-comparar dos valores. Si el resultado de la comparación es
-correcto la expresión considerada es verdadera, en caso
+    &lt;expresi&#243;n&gt;
+    &lt;operador_relacional&gt;
+    &lt;expresi&#243;n&gt;
+  </code></p>
+Los operadores relacionales son s&#237;mbolos que se usan para
+comparar dos valores. Si el resultado de la comparaci&#243;n es
+correcto la expresi&#243;n considerada es verdadera, en caso
 contrario es falsa. Por ejemplo, 8&gt;4 (ocho mayor que cuatro) es
 verdadera, se representa por el objeto True, en cambio, 8&lt;4
 (ocho
 menor que cuatro) es falsa, False.<br>
-
-
-
 <br>
-
-
-
 Los operadores relacionales en Prowl son
-los siguientes:<br>
-
-
-
+los siguientes:
 <p align="center">
-<table style="background-color: rgb(255, 255, 204); width: 546px; height: 250px;" border="0" cellpadding="2" cellspacing="2">
-
-
-
-  <tbody>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Símbolo</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Operador</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Ejemplo</td>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Significado</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>==</td>
-
-
-
-      <td>Igualdad</td>
-
-
-
-      <td>a == b</td>
-
-
-
-      <td>¿a es igual a b?</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>!=<br>
-
-
-
-      </td>
-
-
-
+  <table style="background-color: rgb(255, 255, 204); width: 546px; height: 250px;"
+    border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="background-color: rgb(204, 204, 255);">S&#237;mbolo</td>
+        <td style="background-color: rgb(204, 204, 255);">Operador</td>
+        <td style="background-color: rgb(204, 204, 255);">Ejemplo</td>
+        <td style="background-color: rgb(204, 204, 255);">Significado</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">==</td>
+        <td>Igualdad</td>
+        <td style="text-align: center;">a == b</td>
+        <td>&#191;a es igual a b?</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">!= </td>
       <td>Desigualdad</td>
-
-
-
-      <td>a&nbsp;!= b</td>
-
-
-
-      <td>¿a es diferente de b?</td>
-
-
-
+      <td style="text-align: center;">a&#160;!= b</td>
+      <td>&#191;a es diferente de b?</td>
     </tr>
-
-
-
     <tr>
-
-
-
-      <td>&lt;=</td>
-
-
-
+      <td style="text-align: center;">&lt;=</td>
       <td>Menor o igual que</td>
-
-
-
-      <td>a &lt;= b</td>
-
-
-
-      <td>¿a es menor o igual a b?</td>
-
-
-
+      <td style="text-align: center;">a &lt;= b</td>
+      <td>&#191;a es menor o igual a b?</td>
     </tr>
-
-
-
     <tr>
-
-
-
-      <td>&gt;=<br>
-
-
-
-      </td>
-
-
-
-      <td>Mayor o igual que</td>
-
-
-
-      <td>a &gt;= b</td>
-
-
-
-      <td>¿a es mayor o igual a b?</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>&gt;<br>
-
-
-
-      </td>
-
-
-
-      <td>Mayor que</td>
-
-
-
-      <td>a &gt; b</td>
-
-
-
-      <td>¿a es mayor que b?</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td>&lt;<br>
-
-
-
-      </td>
-
-
-
-      <td>Menor que</td>
-
-
-
-      <td>a &lt; b</td>
-
-
-
-      <td>¿a es menor que b?</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
+      <td style="text-align: center;">&gt;= </td>
+    <td>Mayor o igual que</td>
+    <td style="text-align: center;">a &gt;= b</td>
+    <td>&#191;a es mayor o igual a b?</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">&gt; </td>
+  <td>Mayor que</td>
+  <td style="text-align: center;">a &gt; b</td>
+  <td>&#191;a es mayor que b?</td>
+</tr>
+<tr>
+  <td style="text-align: center;">&lt; </td>
+<td>Menor que</td>
+<td style="text-align: center;">a &lt; b</td>
+<td>&#191;a es menor que b?</td>
+</tr>
+</tbody>
 </table>
-
-
-
 </p>
-
-
-
 Se debe tener especial cuidado en no confundir el operador
-asignación con el operador relacional igual a. Las
-asignaciones se realizan con el símbolo =, las comparaciones
+asignaci&#243;n con el operador relacional igual a. Las
+asignaciones se realizan con el s&#237;mbolo =, las comparaciones
 con ==.
-<p>Además de estos operadores,
-existen otros, llamados operadores lógicos o a veces
-juntores, que lo que hacen
-es unir dos condiciones. Estos operadores lógicos son:<br>
-
-
-
+<p>Adem&#225;s de estos operadores,
+  existen otros, llamados operadores l&#243;gicos o a veces
+  juntores, que lo que hacen
+  es unir dos condiciones. Estos operadores l&#243;gicos son:
 </p>
-
-
-
 <table style="width: 100%;" border="0" cellpadding="2" cellspacing="2">
-
-
-
   <tbody>
-
-
-
     <tr>
-
-
-
-      <td style="background-color: rgb(204, 204, 255);">Símbolo</td>
-
-
-
+      <td style="background-color: rgb(204, 204, 255);">S&#237;mbolo</td>
       <td style="background-color: rgb(204, 204, 255);">Operador</td>
-
-
-
       <td style="background-color: rgb(204, 204, 255);">Sintaxis</td>
-
-
-
       <td style="background-color: rgb(204, 204, 255);">Resultado</td>
-
-
-
     </tr>
-
-
-
     <tr>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">&amp;&amp;</td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">AND</td>
-
-
-
+      <td style="background-color: #ffffcc; text-align: center;">&amp;&amp;</td>
+      <td style="background-color: #ffffcc; text-align: center;">AND</td>
       <td style="background-color: rgb(255, 255, 204);">&lt;expr1&gt;
-&amp;&amp; &lt;expr2&gt;</td>
-
-
-
+        &amp;&amp; &lt;expr2&gt;</td>
       <td style="background-color: rgb(255, 255, 204);">El
-resultado es verdadero si ambas expresiones son verdaderas</td>
-
-
-
+        resultado es verdadero si ambas expresiones son verdaderas</td>
     </tr>
-
-
-
     <tr>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">||<br>
-
-
-
-      </td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">OR</td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">&lt;expr1&gt;
-|| &lt;expr2&gt;</td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">El
-resultado es verdadero si alguna expresión es verdadera</td>
-
-
-
-    </tr>
-
-
-
-    <tr>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">!<br>
-
-
-
-      </td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">NOT</td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">!&lt;expr1&gt;</td>
-
-
-
-      <td style="background-color: rgb(255, 255, 204);">El
-resultado invierteel resultado lógico de la
-expresión</td>
-
-
-
-    </tr>
-
-
-
-  
-  
-  </tbody>
+      <td style="background-color: #ffffcc; text-align: center;">|| </td>
+    <td style="background-color: #ffffcc; text-align: center;">OR</td>
+    <td style="background-color: rgb(255, 255, 204);">&lt;expr1&gt;
+      || &lt;expr2&gt;</td>
+    <td style="background-color: rgb(255, 255, 204);">El
+      resultado es verdadero si alguna expresi&#243;n es verdadera</td>
+  </tr>
+  <tr>
+    <td style="background-color: #ffffcc; text-align: center;">! </td>
+  <td style="background-color: #ffffcc; text-align: center;">NOT</td>
+  <td style="background-color: rgb(255, 255, 204);">!&lt;expr1&gt;</td>
+  <td style="background-color: rgb(255, 255, 204);">El
+    resultado invierteel resultado l&#243;gico de la
+    expresi&#243;n</td>
+</tr>
+</tbody>
 </table>
-
-
-
 <p>AND y OR trabajan con dos operandos (son binarios) y
-retornan un valor lógico basadas en las denominadas tablas
-de verdad. El operador NOT actúa sobre un operando (es
-unario).<br>
-
-
-
-<br>
-
-
-
-El operador lógico AND, utiliza la técnica
-denominada de cortocircuito. Se van
-analizando todas las condiciones de izquierda a derecha y si se
-encuentra alguna que sea falsa, salta fuera del bucle o salta al else
-(si lo hubiese).<br>
-
-
-
-<br>
-
-
-
-El operador lógico OR,
-funciona de manera similar. Se van analizando todas las
-condiciones de izquierda a derecha y si se encuentra alguna que sea
-verdadera, entra dentro del bucle o dentro del cuerpo correspondiente a
-la sentencia IF, sin seguir evaluando el resto de subcondiciones.</p>
-
-
-
-<p>La consecuencia&nbsp;
-de utilizar la técnica de cortocircuito es que pueden
-existir expresiones condicionales que no se utilicen jamás.
-Debe ponerse especial cuidado en no incluir, por tanto, ninguna
-operación necesaria incluidas dentro de estas expresiones.</p>
-
-
-
+  retornan un valor l&#243;gico basadas en las denominadas tablas
+  de verdad. El operador NOT act&#250;a sobre un operando (es
+  unario).<br>
+  <br>
+  El operador l&#243;gico AND, utiliza la t&#233;cnica
+  denominada de cortocircuito. Se van
+  analizando todas las condiciones de izquierda a derecha y si se
+  encuentra alguna que sea falsa, salta fuera del bucle o salta al else
+  (si lo hubiese).<br>
+  <br>
+  El operador l&#243;gico OR,
+  funciona de manera similar. Se van analizando todas las
+  condiciones de izquierda a derecha y si se encuentra alguna que sea
+  verdadera, entra dentro del bucle o dentro del cuerpo correspondiente a
+  la sentencia IF, sin seguir evaluando el resto de subcondiciones.</p>
+<p>La consecuencia&#160;
+  de utilizar la t&#233;cnica de cortocircuito es que pueden
+  existir expresiones condicionales que no se utilicen jam&#225;s.
+  Debe ponerse especial cuidado en no incluir, por tanto, ninguna
+  operaci&#243;n necesaria incluidas dentro de estas expresiones.</p>
 <p>A parte de los operadores relacionales y
-lógicos explicados anteriormente, en Prowl existe otro
-operador. Este operador es el llamado isInstanceOf. IsInstanceOf
-trabaja con dos operandos. El primer operando debe ser una
-expresión, referencia o atributo y el segundo operando debe
-ser un tipo de dato. IsInstanceOf devuelve true o false dependiendo si
-el primer parámetro hereda o no del segundo
-parámetro.<br>
-
-
-
+  l&#243;gicos explicados anteriormente, en Prowl existe otro
+  operador. Este operador es el llamado isInstanceOf. IsInstanceOf
+  trabaja con dos operandos. El primer operando debe ser una
+  expresi&#243;n, referencia o atributo y el segundo operando debe
+  ser un tipo de dato. IsInstanceOf devuelve true o false dependiendo si
+  el primer par&#225;metro hereda o no del segundo
+  par&#225;metro.
 </p>
-
-
-
 <p>Ejemplos de condiciones correctas en
-Prowl:<br>
-
-
-
+  Prowl:
 </p>
-
-
-
 <p><code>
-&nbsp;&nbsp; &nbsp;if ( e isInstanceOf ETypeMismatch ) ;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;if ( x&lt;12 ) ;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;if (((x&lt;1)||(x==0)) AND z!=0) ;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;if(! z&lt;4);</code>
+    &#160;&#160; &#160;if ( e isInstanceOf ETypeMismatch ) ;<br>
+    &#160;&#160; &#160;if ( x&lt;12 ) ;<br>
+    &#160;&#160; &#160;if (((x&lt;1)||(x==0)) AND z!=0) ;<br>
+    &#160;&#160; &#160;if(! z&lt;4);</code>
 </p>
-
-
-
 <h3><a name="excepciones"></a>Gestor de excepciones</h3>
-
-
-
 <p>
-Si se produce alguna excepción a lo largo de la
-ejecución de un programa en Prowl, el control del programa
-se dirige al cuerpo de las excepciones, si es que existe, donde
-allí serán tratadas. La sintaxis es la siguiente:</p>
-
-
-
+  Si se produce alguna excepci&#243;n a lo largo de la
+  ejecuci&#243;n de un programa en Prowl, el control del programa
+  se dirige al cuerpo de las excepciones, si es que existe, donde
+  all&#237; ser&#225;n tratadas. La sintaxis es la siguiente:</p>
 <p><code>
-onException ( &lt;nombre_identificador&gt;) {
-&lt;instrucciones&gt; }<br>
-
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;<br>
-
-
-
-&nbsp;&nbsp; &nbsp;Se pone la palabra reservada onException
-seguida de un identificador entre paréntesis, que es el
-nombre del objeto que va a contener la excepción, y por
-último, entre llaves, se ponen todas las instrucciones
-necesarias para controlar la excepción.</code>
+    onException ( &lt;nombre_identificador&gt;) {
+    &lt;instrucciones&gt; }<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+    &#160;<br>
+    &#160;&#160; &#160;Se pone la palabra reservada onException
+    seguida de un identificador entre par&#233;ntesis, que es el
+    nombre del objeto que va a contener la excepci&#243;n, y por
+    &#250;ltimo, entre llaves, se ponen todas las instrucciones
+    necesarias para controlar la excepci&#243;n.</code>
 </p>
-
-
-
 Ejemplo:
-<p><code>&nbsp;&nbsp; &nbsp;onException( e ) {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;if ( e isInstanceOf EAssert ) {<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;System.console.write( e.toString() );<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;}<br>
-
-
-
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;else System.console.write(
-"FATAL: Error interno" );<br>
-
-
-
-&nbsp;&nbsp; &nbsp;}<br>
-
-
-
+<p><code>&#160;&#160; &#160;onException( e ) {<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;if ( e isInstanceOf EAssert ) {<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;&#160;&#160;
+    &#160;System.console.write( e.toString() );<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;}<br>
+    &#160;&#160; &#160;&#160;&#160;
+    &#160;&#160;&#160; &#160;else System.console.write(
+    "FATAL: Error interno" );<br>
+    &#160;&#160; &#160;}
 </code>
 </p>
-
-
-
 <h4><a name="return"></a>Sentencia RETURN</h4>
-
-
-
 <p>
-Return devuelve una referencia como retorno de un método.
-Debe estar dentro de un método, el cual debe terminar en al
-menos un return, y como máximo sólo puede tener
-dos.<br>
-
-
-
-<br>
-
-
-
-Esta sentencia puede ir sola o acompañada. Si el return va
-sólo, éste devuelve nothing. Por otro lado el
-return puede ir acompañado de alguna expresión,
-lo cual devolvería el valor de dicha expresión.<br>
-
-
-
-<br>
-
-
-
-La sintaxis de la instrucción return es la siguiente:</p>
-
-
-
+  Return devuelve una referencia como retorno de un m&#233;todo.
+  Debe estar dentro de un m&#233;todo, el cual debe terminar en al
+  menos un return, y como m&#225;ximo s&#243;lo puede tener
+  dos.<br>
+  <br>
+  Esta sentencia puede ir sola o acompa&#241;ada. Si el return va
+  s&#243;lo, &#233;ste devuelve nothing. Por otro lado el
+  return puede ir acompa&#241;ado de alguna expresi&#243;n,
+  lo cual devolver&#237;a el valor de dicha expresi&#243;n.<br>
+  <br>
+  La sintaxis de la instrucci&#243;n return es la siguiente:</p>
 <p><code>
-return [&lt;expresión&gt;];</code>
+    return [&lt;expresi&#243;n&gt;];</code>
 </p>
-
-
-
 Ejemplo:
 <p><code>return;<br>
-
-
-
-return a + b;<br>
-
-
-
-return a;<br>
-
-
-
-return nombre.concat( " (directivo)\n" );</code>
+    return a + b;<br>
+    return a;<br>
+    return nombre.concat( " (directivo)\n" );</code>
 </p>
-
-
-
-<h2><a name="datosbasicos"></a>Tipos de datos básicos</h2>
-
-
-
+<h2><a name="datosbasicos"></a>Tipos de datos b&#225;sicos</h2>
 <p>
-Prowl soporta los siguientes tipos
-numéricos:<br>
-
-
-
-Enteros: Se representan como los tipos de datos int de C.<br>
-
-
-
-Números flotantes: Se
-representan como los tipos de datos double de C. <br>
-
-
-
-En Prowl, no se indica si
-algún atributo o referencia es de tipo numérico.
-El tipo de los atributos o referencias se infiere del tipo de dato que
-le asignemos.<br>
-
-
-
-Además de los tipos de datos
-numéricos mencionados anteriormente, Prowl
-también soporta las cadenas de caracteres.<br>
-
-
-
-Las cadenas de caracteres en Prowl, son
-una secuencia de caracteres encerrados entre comillas dobles. </p>
-
-
-
-<h3><a name="stdlib"></a>La librería estándar</h3>
-
-
-
+  Prowl soporta los siguientes tipos
+  num&#233;ricos:<br>
+  Enteros: Se representan como los tipos de datos int de C.<br>
+  N&#250;meros flotantes: Se
+  representan como los tipos de datos double de C. <br>
+  En Prowl, no se indica si
+  alg&#250;n atributo o referencia es de tipo num&#233;rico.
+  El tipo de los atributos o referencias se infiere del tipo de dato que
+  le asignemos.<br>
+  Adem&#225;s de los tipos de datos
+  num&#233;ricos mencionados anteriormente, Prowl
+  tambi&#233;n soporta las cadenas de caracteres.<br>
+  Las cadenas de caracteres en Prowl, son
+  una secuencia de caracteres encerrados entre comillas dobles. </p>
+<h3><a name="stdlib"></a>La librer&#237;a est&#225;ndar</h3>
 <p>
-Vamos a introducir de manera breve la
-librería estándar de la máquina
-virtual Zero. Nos vamos a centrar, en la creación de
-objetos, el manejo de enteros, flotantes, cadenas y vectores
-así como también nombraremos algunas de las
-excepciones más comunes, de manera que nos puedan ser
-útiles a la hora de programar en Prowl. <br>
-
-
-
-&nbsp;&nbsp; &nbsp;<br>
-
-
-
-Para obtener más
-información acerca de la librería
-estándar de Zero, visite la web
-<a href="http://trevinca.ei.uvigo.es/%7Ejgarcia/TO/zero/%20">http://trevinca.ei.uvigo.es/~jgarcia/TO/zero/</a><br>
-
-
-
+  Vamos a introducir de manera breve la
+  librer&#237;a est&#225;ndar de la m&#225;quina
+  virtual Zero. Nos vamos a centrar, en la creaci&#243;n de
+  objetos, el manejo de enteros, flotantes, cadenas y vectores
+  as&#237; como tambi&#233;n nombraremos algunas de las
+  excepciones m&#225;s comunes, de manera que nos puedan ser
+  &#250;tiles a la hora de programar en Prowl. <br>
 </p>
-
-
-
-<h3><a name="creandobjs"></a>Cómo crear objetos</h3>
-
-
-
+<h3><a name="creandobjs"></a>C&#243;mo crear objetos</h3>
 Object es equivalente a Object en Java.
-Concretamente, se trata de un objeto que siempre está
-presente, y que es la raíz de la jerarquía de
-objetos en Zero. Como es la raíz, lógicamente no
-hereda de ningún otro objeto.
-<p>Métodos para la creación de objetos:</p>
-
-
-
+Concretamente, se trata de un objeto que siempre est&#225;
+presente, y que es la ra&#237;z de la jerarqu&#237;a de
+objetos en Zero. Como es la ra&#237;z, l&#243;gicamente no
+hereda de ning&#250;n otro objeto.
+<p>M&#233;todos para la creaci&#243;n de objetos:</p>
 <ul>
-
-
-
   <li><code>Object createChild(String nombreNuevoObjeto)</code>:
-Crea un nuevo
-objeto,
-hijo del objeto al que se le manda este mensaje, devolviendo una
-referencia al primero. Es posible indicar el nombre del nuevo objeto.
-En caso de ser la cadena vacía, el nombre es asignado
-automáticamente por el sistema.
-  </li>
-
-
-
+    Crea un nuevo
+    objeto,
+    hijo del objeto al que se le manda este mensaje, devolviendo una
+    referencia al primero. Es posible indicar el nombre del nuevo objeto.
+    En caso de ser la cadena vac&#237;a, el nombre es asignado
+    autom&#225;ticamente por el sistema. </li>
   <li><code>Object copy(String nombreNuevoObj)</code>:
-Crea un nuevo objeto,
-copia exacta
-del objeto al que se le manda este mensaje, devolviendo una referencia
-al primero. Se debe indicar el nombre del nuevo objeto. En caso de ser
-la cadena vacía, el nombre es asignado
-automáticamente por el sistema.
-  </li>
-
-
-
+    Crea un nuevo objeto,
+    copia exacta
+    del objeto al que se le manda este mensaje, devolviendo una referencia
+    al primero. Se debe indicar el nombre del nuevo objeto. En caso de ser
+    la cadena vac&#237;a, el nombre es asignado
+    autom&#225;ticamente por el sistema. </li>
 </ul>
-
-
-
-<h3><a name="numvals"></a>Manejo de valores numéricos</h3>
-
-
-
-<p>Los valores numéricos son
-representados por los objetos Int y Float. El primero representa a los
-números enteros y el segundo a los números
-flotantes. Todos los números son en realidad objetos,
-incluyendo los literales. Las operaciones más habituales
-(son métodos en ambos objetos) son las siguientes.
-Recuérdese que siempre se devuelve un nuevo objeto con el
-nuevo valor, en lugar de modificar al objeto que ejecuta el
-método. <br>
-
-
-
-Un resumen de las operaciones matemáticas es el siguiente:<br>
-
-
-
+<h3><a name="numvals"></a>Manejo de valores num&#233;ricos</h3>
+<p>Los valores num&#233;ricos son
+  representados por los objetos Int y Float. El primero representa a los
+  n&#250;meros enteros y el segundo a los n&#250;meros
+  flotantes. Todos los n&#250;meros son en realidad objetos,
+  incluyendo los literales. Las operaciones m&#225;s habituales
+  (son m&#233;todos en ambos objetos) son las siguientes.
+  Recu&#233;rdese que siempre se devuelve un nuevo objeto con el
+  nuevo valor, en lugar de modificar al objeto que ejecuta el
+  m&#233;todo. <br>
+  Un resumen de las operaciones matem&#225;ticas es el siguiente:
 </p>
-
-
-
 <ol>
-
-
-
   <li>sum( x ): Suma el valor de x al valor del objeto y retorna
-un nuevo
-objeto con el resultado. </li>
-
-
-
+    un nuevo
+    objeto con el resultado. </li>
   <li>substract( x ): Resta el valor de x al valor del objeto y
-retorna un
-nuevo objeto con el resultado.</li>
-
-
-
+    retorna un
+    nuevo objeto con el resultado.</li>
   <li>multiplyBy( x ): Multiplica el valor del objeto por el del
-argumento y retorna un nuevo objeto con el resultado.</li>
-
-
-
+    argumento y retorna un nuevo objeto con el resultado.</li>
   <li>divideBy( x ): Divide el valor del objeto por el del
-argumento y retorna un nuevo objeto con el resultado.<br>
-
-
-
-  </li>
-
-
-
+    argumento y retorna un nuevo objeto con el resultado. </li>
 </ol>
-
-
-
-<p>Las operaciones lógicas son las siguientes:<br>
-
-
-
+<p>Las operaciones l&#243;gicas son las siguientes:
 </p>
-
-
-
 <ol>
-
-
-
   <li>isLessThan( x ): Devuelve True si x es mayor que el objeto.
-Devuelve
-False en otro caso.</li>
-
-
-
+    Devuelve
+    False en otro caso.</li>
   <li>isEqualTo( x ): Devuelve True si x es igual que el objeto.
-Devuelve
-False en otro caso. </li>
-
-
-
+    Devuelve
+    False en otro caso. </li>
   <li>isLessThan( x ): Devuelve True si x es mayor que el objeto.
-Devuelve
-False en otro caso. </li>
-
-
-
+    Devuelve
+    False en otro caso. </li>
   <li>isGreaterThan( x ): Devuelve True si x es menor que el
-objeto. Devuelve
-False en otro caso.<br>
-
-
-
-  </li>
-
-
-
+    objeto. Devuelve
+    False en otro caso. </li>
 </ol>
-
-
-
-<p>Todos los métodos anteriores
-se pueden utilizar mediante operadores matemáticos y
-lógicos en Prowl.<br>
-
-
-
+<p>Todos los m&#233;todos anteriores
+  se pueden utilizar mediante operadores matem&#225;ticos y
+  l&#243;gicos en Prowl.
 </p>
-
-
-
 <h3><a name="cadenas"></a>Manejo de cadenas</h3>
-
-
-
 <p>
-Las cadenas son representadas por el objeto
-String. Sobre una cadena pueden realizarse las operaciones habituales
-(que siempre devuelven un nuevo objeto cadena), de
-concatenación, por medio de concat( x ), de
-obtención de los x caracteres a la izquierda, con left( x )
-... etc. Todos los objetos heredan el método toString(), que
-convierte la información contenida en el objeto a cadena. Si
-no se redefine este objeto, entonces se hereda el de Object, que tan
-sólo devuelve el nombre del objeto. <br>
-
-
-
-<br>
-
-
-
-Métodos para el manejo de cadenas:<br>
-
-
-
+  Las cadenas son representadas por el objeto
+  String. Sobre una cadena pueden realizarse las operaciones habituales
+  (que siempre devuelven un nuevo objeto cadena), de
+  concatenaci&#243;n, por medio de concat( x ), de
+  obtenci&#243;n de los x caracteres a la izquierda, con left( x )
+  ... etc. Todos los objetos heredan el m&#233;todo toString(), que
+  convierte la informaci&#243;n contenida en el objeto a cadena. Si
+  no se redefine este objeto, entonces se hereda el de Object, que tan
+  s&#243;lo devuelve el nombre del objeto. <br>
+  <br>
+  M&#233;todos para el manejo de cadenas:
 </p>
-
-
-
 <ol>
-
-
-
   <li>String left (Int): Devuelve un nuevo objeto String, con los
-caracteres
-desde la posición cero, hasta la posición
-indicada por el argumento, tomados desde la izquierda.</li>
-
-
-
+    caracteres
+    desde la posici&#243;n cero, hasta la posici&#243;n
+    indicada por el argumento, tomados desde la izquierda.</li>
   <li>String right (Int): Devuelve un nuevo objeto String, con
-los caracteres
-desde la posición cero hasta la indicada por el argumento,
-tomados desde la derecha.</li>
-  <li>String getPosition (Int): Devuelve un nuevo objeto String, con el carácter indicado por el argumento.</li>
-
-
-
+    los caracteres
+    desde la posici&#243;n cero hasta la indicada por el argumento,
+    tomados desde la derecha.</li>
+  <li>String getPosition (Int): Devuelve un nuevo objeto String, con el
+    car&#225;cter indicado por el argumento.</li>
   <li>String sub(Int begin, Int numberOfCharacters) : Devuelve un
-nuevo
-objeto String con una subcadena formada por los caracteres indicados
-por numberOfCharacters, desde la posición begin, pasados
-como argumentos como Int.</li>
-
-
-
+    nuevo
+    objeto String con una subcadena formada por los caracteres indicados
+    por numberOfCharacters, desde la posici&#243;n begin, pasados
+    como argumentos como Int.</li>
   <li>Conditional empty() : Devuelve True si la cadena es
-vacía,
-no contiene caracteres. False en otro caso. </li>
-
-
-
-  <li>Int length() : Devuelve un número entero como
-objeto Int,
-reflejando el número de caracteres en la cadena. </li>
-
-
-
-  <li>String toString(): Se devuelve a sí mismo, no
-como un nuevo
-objeto.<br>
-
-
-
-  </li>
-
-
-
+    vac&#237;a,
+    no contiene caracteres. False en otro caso. </li>
+  <li>Int length() : Devuelve un n&#250;mero entero como
+    objeto Int,
+    reflejando el n&#250;mero de caracteres en la cadena. </li>
+  <li>String toString(): Se devuelve a s&#237; mismo, no
+    como un nuevo
+    objeto. </li>
 </ol>
-
-
-
 <h2><a name="colecciones"></a>Colecciones de objetos</h2>
-
-
-
-Las colecciones de objetos como vectores son básicas en
+Las colecciones de objetos como vectores son b&#225;sicas en
 cualquier programa. Permiten reunir objetos en torno a una
-única estructura de datos para un acceso más
-sencillo. Un ejemplo podría ser una lista de nombres, o una
-agenda de contactos. Existen dos tipos de colecciones: <span style="font-weight: bold;">Vector</span> y <span style="font-weight: bold;">Map</span>. El
+&#250;nica estructura de datos para un acceso m&#225;s
+sencillo. Un ejemplo podr&#237;a ser una lista de nombres, o una
+agenda de contactos. Existen dos tipos de colecciones: <span style="font-weight: bold;">Vector</span>
+y <span style="font-weight: bold;">Map</span>. El
 primero permite el acceso directo a una lista de objetos enumerada por
-un índice, mientras que el segundo asocia una cadena
+un &#237;ndice, mientras que el segundo asocia una cadena
 (<span style="font-weight: bold;">String</span>) con cualquier objeto. <br>
-
-
-
-Todas las colecciones de objetos derivan del objeto <span style="font-weight: bold;">DataStructure</span>, que
-incorpora los métodos que suponen el contrato
-mínimo para cualquiera de ellas. Además,
-está la posibilidad de utilizar un procesador, es decir un
+Todas las colecciones de objetos derivan del objeto <span style="font-weight: bold;">DataStructure</span>,
+que
+incorpora los m&#233;todos que suponen el contrato
+m&#237;nimo para cualquiera de ellas. Adem&#225;s,
+est&#225; la posibilidad de utilizar un procesador, es decir un
 objeto que derive del objeto Processor. Todos los objetos <span style="font-weight: bold;">DataStructure</span>
-incorporan un método process() que acepta como
-parámetro un objeto de los anteriores. Cuando es llamado,
-este método aplica el método doIt() a cada uno de
+incorporan un m&#233;todo process() que acepta como
+par&#225;metro un objeto de los anteriores. Cuando es llamado,
+este m&#233;todo aplica el m&#233;todo doIt() a cada uno de
 los elementos de la estructura. <br>
-
-
-
 <br>
-
-
-
-<span style="font-weight: bold;">Map</span>: Es un objeto que siempre está presente, y que
+<span style="font-weight: bold;">Map</span>: Es un objeto que siempre est&#225;
+presente, y que
 proporciona la funcionalidad de los vectores asociativos en Zero. El
-índice de estos vectores asociativos siempre es una cadena. <br>
-
-
-
-Métodos :<br>
-
-
-
+&#237;ndice de estos vectores asociativos siempre es una cadena. <br>
+M&#233;todos :
 <ol>
-
-
-
-  <li>Map add(String, Object) : Añade un nuevo
-elemento al vector
-asociativo. La cadena, String, consiste en el índice,
-mientras que el objeto pasado es el elemento en sí. </li>
-
-
-
+  <li>Map add(String, Object) : A&#241;ade un nuevo
+    elemento al vector
+    asociativo. La cadena, String, consiste en el &#237;ndice,
+    mientras que el objeto pasado es el elemento en s&#237;. </li>
   <li>Map modify(String, Object) : Modifica un elemento
-introducido
-previamente. En realidad, consiste en dos llamadas consecutivas, una a
-delete(), y otra a add(). </li>
-
-
-
+    introducido
+    previamente. En realidad, consiste en dos llamadas consecutivas, una a
+    delete(), y otra a add(). </li>
   <li>Object lookUp(String) : Devuelve el objeto guardado
-previamente,
-buscando por su índice. En caso de no existir, lanza la
-excepción EObjectNotFound. </li>
-
-
-
+    previamente,
+    buscando por su &#237;ndice. En caso de no existir, lanza la
+    excepci&#243;n EObjectNotFound. </li>
   <li>Map delete (String) : Elimina un elemento introducido
-previamente,
-buscando por su índice. En caso de no existir, lanza la
-excepción EObjectNotFound. </li>
-
-
-
+    previamente,
+    buscando por su &#237;ndice. En caso de no existir, lanza la
+    excepci&#243;n EObjectNotFound. </li>
 </ol>
-
-
-
-<span style="font-weight: bold;">Vector</span>: Es un objeto que siempre está presente, y que
+<span style="font-weight: bold;">Vector</span>: Es un objeto que siempre
+est&#225; presente, y que
 proporciona la funcionalidad de los vectores en Zero. El objeto Vector
-no tiene métodos propios, algunos de los
-métodos que redefine son los siguientes:<br>
-
-
-
+no tiene m&#233;todos propios, algunos de los
+m&#233;todos que redefine son los siguientes:
 <ol>
-
-
-
-  <li>Vector add( Object): Añade un objeto al final
-del Vector</li>
-
-
-
+  <li>Vector add( Object): A&#241;ade un objeto al final
+    del Vector</li>
   <li>Vector get(Int): Devuelve el objeto en la
-posición contenido
-en el objeto Int pasado por parámetro. </li>
-
-
-
+    posici&#243;n contenido
+    en el objeto Int pasado por par&#225;metro. </li>
   <li>Vector put(Int, Object): Modifica el objeto en la
-posición
-contenido en el objeto Int pasado por parámetro, con el
-nuevo objeto. El método modify es equivalente al
-método
-put.</li>
-
-
-
-  <li>Vector delete (Int): Elimina la posición
-contenida en el
-objeto Int pasado por parámetro. </li>
-
-
-
+    posici&#243;n
+    contenido en el objeto Int pasado por par&#225;metro, con el
+    nuevo objeto. El m&#233;todo modify es equivalente al
+    m&#233;todo
+    put.</li>
+  <li>Vector delete (Int): Elimina la posici&#243;n
+    contenida en el
+    objeto Int pasado por par&#225;metro. </li>
   <li>Vector insert (Int, Object): Inserta un nuevo objeto en la
-posición contenida en el objeto Int pasado por
-parámetro. Esto supone desplazar todos los elementos a la
-derecha del nuevo elemento una posición. </li>
-
-
-
-  <li>Vector erase (Int): Elimina la posición
-contenida en el
-objeto Int pasado por parámetro. Esto supone desplazar todos
-los elementos a la derecha del elemento una posición a la
-izquierda. </li>
-
-
-
+    posici&#243;n contenida en el objeto Int pasado por
+    par&#225;metro. Esto supone desplazar todos los elementos a la
+    derecha del nuevo elemento una posici&#243;n. </li>
+  <li>Vector erase (Int): Elimina la posici&#243;n
+    contenida en el
+    objeto Int pasado por par&#225;metro. Esto supone desplazar todos
+    los elementos a la derecha del elemento una posici&#243;n a la
+    izquierda. </li>
   <li>Vector clear(): Elimina todas las posiciones del Vector.</li>
-
-
-
-  <li>Int seqFind(Object):Realiza una búsqueda
-secuencial por el
-Vector, empezando desde la posición 0 hasta la
-última, o hasta que el objeto es encontrado. Esto se hace
-ejecutando el método isEqualTo() para cada elemento,
-pasándole el objeto a buscar como parámetro.
-Devuelve el número de posición si encuentra el
-objeto, o Nothing, si no lo encuentra. </li>
-
-
-
-  <li>Int seqFindLast(Object): Realiza una búsqueda
-secuencial por
-el Vector, empezando desde la última posición
-hasta la primera, o hasta que el objeto es encontrado. Esto se hace
-ejecutando el método isEqualTo() para cada elemento,
-pasándole el objeto a buscar como parámetro.
-Devuelve el número de posición si encuentra el
-objeto, o Nothing, si no lo encuentra. </li>
-
-
-
+  <li>Int seqFind(Object):Realiza una b&#250;squeda
+    secuencial por el
+    Vector, empezando desde la posici&#243;n 0 hasta la
+    &#250;ltima, o hasta que el objeto es encontrado. Esto se hace
+    ejecutando el m&#233;todo isEqualTo() para cada elemento,
+    pas&#225;ndole el objeto a buscar como par&#225;metro.
+    Devuelve el n&#250;mero de posici&#243;n si encuentra el
+    objeto, o Nothing, si no lo encuentra. </li>
+  <li>Int seqFindLast(Object): Realiza una b&#250;squeda
+    secuencial por
+    el Vector, empezando desde la &#250;ltima posici&#243;n
+    hasta la primera, o hasta que el objeto es encontrado. Esto se hace
+    ejecutando el m&#233;todo isEqualTo() para cada elemento,
+    pas&#225;ndole el objeto a buscar como par&#225;metro.
+    Devuelve el n&#250;mero de posici&#243;n si encuentra el
+    objeto, o Nothing, si no lo encuentra. </li>
 </ol>
-
-
-
 <h2><a name="exceps"></a>Manejo de excepciones</h2>
-
-
-
 <p>
-Cuando se lanza una excepción, el objeto enviado es una
-copia de uno de los objetos que derivan de éste.<br>
-
-
-
+  Cuando se lanza una excepci&#243;n, el objeto enviado es una
+  copia de uno de los objetos que derivan de &#233;ste.
 </p>
-
-
-
 <ol>
-
-
-
   <li><span style="font-weight: bold;">EObjectNotFound</span>:
-Este objeto es enviado cuando ocurre algún
-problema relacionado con encontrar un objeto. Por ejemplo, cuando MSG
-se ejecuta, si ésta no encuentra el objeto
-señalado, entonces, se genera una excepción de
-este tipo.</li>
-
-
-
+    Este objeto es enviado cuando ocurre alg&#250;n
+    problema relacionado con encontrar un objeto. Por ejemplo, cuando MSG
+    se ejecuta, si &#233;sta no encuentra el objeto
+    se&#241;alado, entonces, se genera una excepci&#243;n de
+    este tipo.</li>
   <li><span style="font-weight: bold;">EMethodNotFound</span>:
-Este objeto es enviado cuando ocurre algún
-problema relacionado con encontrar un método en un objeto.
-Por ejemplo, cuando MSG se ejecuta, si ésta no encuentra el
-método señalado en el objeto, entonces, se genera
-una excepción de este tipo.
-  </li>
-
-
-
+    Este objeto es enviado cuando ocurre alg&#250;n
+    problema relacionado con encontrar un m&#233;todo en un objeto.
+    Por ejemplo, cuando MSG se ejecuta, si &#233;sta no encuentra el
+    m&#233;todo se&#241;alado en el objeto, entonces, se genera
+    una excepci&#243;n de este tipo. </li>
 </ol>
-
-
-
 <p></p>
-
-
-
 <p></p>
-
-
-
-</body></html>
+</body>
+</html>

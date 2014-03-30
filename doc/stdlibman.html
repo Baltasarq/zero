@@ -1,344 +1,458 @@
 <html>
-<head>
-<title>Posibilidades de la librería estándar</title>
-</head>
-
-<hr>
-<TABLE WIDTH=100%>
-<TR>
-      <TD>
-		<h1>Posibilidades de la librería estándar</h1>
-		<br><i>(Possibilities offered by the standard library)</i>
-      </TD>
-      <TD>
-            <IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
-      </TD>
-</TR>
-</TABLE>
-<hr>
-
-<P>
-Las siguientes características están recogidas de la librería estándar. Los ejemplos se muestran en macroensamblador puesto que no depende de ningun lenguaje en particular.
-Para compilar un ejemplo, guárdese como un fichero de extensión "zm", y compílese con zm.
-<br><i>
-The following characteristics have been collected from the standard library. The examples are shown in macroassembler as it doesn't depend on any language in particular.
-In order to compile an example, please store it as a file with "zm" extension and compile it with the zm program.
-</i>
-<P>
-<b>Indice</b><br>(<i>Index</i>)
-<ol>
-	<li><a href="#anchorTimeManage">Manejo de fecha y hora</a> (<a href="#anchorTimeManage"><i>Date/time management</i></a>)
-	<li><a href="#anchorStringManage">Manejo de cadenas de caracteres</a> (<a href="#anchorStringManage"><i>String management</i></a>)
-	<li><a href="#anchorNumManage">Manejo de valores numéricos</a> (<a href="#anchorNumManage"><i>numeric values management</i></a>)
-	<li><a href="#anchorContManage">Manejo de colecciones de objetos</a>
-		<ol>
-			<li><a href="#anchorContManage">Vector</a>
-			<li><a href="#anchorContManage">Map</a>
-		</ol>
-	<li><a href="#anchorReflectionManage">Manejo de referencia estructural</a> (<a href="#anchorReflectionManage">structural reflection management</a>)
-</ol>
-<P>
-
-<a name="anchorTimeManage">
-<h2>Manejo de fecha y hora</h2>
-<br>(<i>Time/date management</i>)
-
-<P>
-
-La fecha y la hora son manejados conjuntamente por el objeto <a href="intstdlib.html#anchorTime">Time</a>. La hora del sistema (y la fecha), por ejemplo, puede ser obtenida mediante el simple mensaje "<code>System.getCurrentTime()</code>". El objeto Time también contiene métodos para saber si la fecha contenida es válida, si el aÃ±o de la misma es bisiesto ... etc.
-<br><i>System's time and date are managed by the same object, <a href="intstdlib.html#anchorTime">Time</a>. System's time (and date), for example, can be retrieved by the use of the simple message "<code>System.getCurrentTime()</code>". This object also contains methods meant to know whether the stored date is valid, or if it is a leap year ... etc.
-</i>
-
-<P>
-Un programa simple que usa la fecha y la hora puede ser el siguiente:
-<br><i>A simple program which uses date and time can be the following one:
-</i>
-<P>
-Este programa visualiza la fecha almacenada en la máquina.
-<br><i>This programs shows the date and time stored in the computer.
-</i>
-<P>
-<code>
-object FechaDelDia : ConsoleApplication
-<br>&nbsp;&nbsp;&nbsp;&nbsp;method + doIt()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__this.prepare()
-<br>		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "Fecha del día: " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( System.getCurrentTime() )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;return
-<br>&nbsp;&nbsp;&nbsp;&nbsp;endMethod
-<br>endObject
-</code>
-<P>
-
-<a name="anchorNumManage">
-<h2>Manejo de valores numéricos</h2>
-<br>(<i>Numeric values management</i>)
-
-<P>
-Los valores numéricos son representados por los objetos <a href="intstdlib.html#anchorInt">Int</a> y <a href="intstdlib.html#anchorFloat">Float</a>. El primero representa a los números enteros y el segundo a los números flotantes. Todos los números son en realidad objetos, incluyendo los literales. Las operaciones más habituales (son métodos en ambos objetos) son las siguientes. Recuérdese que siempre se devuelve un nuevo objeto con el nuevo valor, en lugar de modificar al objeto que ejecuta el método.
-<br><i>
-Numeric values are represented by <a href="intstdlib.html#anchorInt">Int</a> and <a href="intstdlib.html#anchorFloat">Float</a> objects. The first one represents integer values, while the second one represents floating pointer numbers. All numbers are actually objects, including literal ones. More common operations (i.e. methods in both objects) are as follows. Remember that they always return a new object, instead of affecting the object executing the method.
-</i>
-<P>
-<ul>
-    <P><li>Mathematic operations:
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>Posibilidades de la librer&#237;a est&#225;ndar</title>
+  </head>
+  <body>
+    <hr>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td>
+            <h1>Posibilidades de la librer&#237;a est&#225;ndar</h1>
+            <br>
+            <i>(Possibilities offered by the standard library)</i> </td>
+          <td> <img title="Zero" src="../images/tiraZero.jpg" alt="Zero (el avi&#243;n)"
+              align="RIGHT"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p> Las siguientes caracter&#237;sticas est&#225;n recogidas de la
+      librer&#237;a est&#225;ndar. Los ejemplos se muestran en macroensamblador
+      puesto que no depende de ningun lenguaje en particular. Para compilar un
+      ejemplo, gu&#225;rdese como un fichero de extensi&#243;n "zm", y
+      comp&#237;lese con zm. <br>
+      <i> The following characteristics have been collected from the standard
+        library. The examples are shown in macroassembler as it doesn't depend
+        on any language in particular. In order to compile an example, please
+        store it as a file with "zm" extension and compile it with the zm
+        program. </i> </p>
+    <p> <b>Indice</b><br>
+      (<i>Index</i>) </p>
+    <ol>
+      <li><a href="#anchorTimeManage">Manejo de fecha y hora</a> (<a href="#anchorTimeManage"><i>Date/time
+            management</i></a>) </li>
+      <li><a href="#anchorStringManage">Manejo de cadenas de caracteres</a> (<a
+          href="#anchorStringManage"><i>String management</i></a>) </li>
+      <li><a href="#anchorNumManage">Manejo de valores num&#233;ricos</a> (<a href="#anchorNumManage"><i>numeric
+            values management</i></a>) </li>
+      <li><a href="#anchorContManage">Manejo de colecciones de objetos</a>
+        <ol>
+          <li><a href="#anchorContManage">Vector</a> </li>
+          <li><a href="#anchorContManage">Map</a> </li>
+        </ol>
+      </li>
+      <li><a href="#anchorReflectionManage">Manejo de referencia estructural</a>
+        (<a href="#anchorReflectionManage">structural reflection management</a>)
+      </li>
+    </ol>
+    <p> <a name="anchorTimeManage"> </a></p>
+    <h2><a name="anchorTimeManage">Manejo de fecha y hora</a></h2>
+    <a name="anchorTimeManage"> <br>
+      (<i>Time/date management</i>) </a>
+    <p><a name="anchorTimeManage"> La fecha y la hora son manejados
+        conjuntamente por el objeto </a><a href="intstdlib.html#anchorTime">Time</a>.
+      La hora del sistema (y la fecha), por ejemplo, puede ser obtenida mediante
+      el simple mensaje "<code>System.getCurrentTime()</code>". El objeto Time
+      tambi&#233;n contiene m&#233;todos para saber si la fecha contenida es
+      v&#225;lida, si el a&#195;&#177;o de la misma es bisiesto ... etc. <br>
+      <i>System's time and date are managed by the same object, <a href="intstdlib.html#anchorTime">Time</a>.
+        System's time (and date), for example, can be retrieved by the use of
+        the simple message "<code>System.getCurrentTime()</code>". This object
+        also contains methods meant to know whether the stored date is valid, or
+        if it is a leap year ... etc. </i> </p>
+    <p> Un programa simple que usa la fecha y la hora puede ser el siguiente: <br>
+      <i>A simple program which uses date and time can be the following one: </i>
+    </p>
+    <p> Este programa visualiza la fecha almacenada en la m&#225;quina. <br>
+      <i>This programs shows the date and time stored in the computer. </i> </p>
+    <p> <code> object FechaDelDia : ConsoleApplication <br>
+        &#160;&#160;&#160;&#160;method + doIt() <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;__this.prepare() <br>
+        <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.write( "Fecha del
+        d&#237;a: " ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.write(
+        System.getCurrentTime() ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;&#160;&#160;return <br>
+        &#160;&#160;&#160;&#160;endMethod <br>
+        endObject </code> </p>
+    <p> <a name="anchorNumManage"> </a></p>
+    <h2><a name="anchorNumManage">Manejo de valores num&#233;ricos</a></h2>
+    <a name="anchorNumManage"> <br>
+      (<i>Numeric values management</i>) </a>
+    <p><a name="anchorNumManage"> Los valores num&#233;ricos son representados
+        por los objetos </a><a href="intstdlib.html#anchorInt">Int</a> y <a href="intstdlib.html#anchorFloat">Float</a>.
+      El primero representa a los n&#250;meros enteros y el segundo a los
+      n&#250;meros flotantes. Todos los n&#250;meros son en realidad objetos,
+      incluyendo los literales. Las operaciones m&#225;s habituales (son
+      m&#233;todos en ambos objetos) son las siguientes. Recu&#233;rdese que
+      siempre se devuelve un nuevo objeto con el nuevo valor, en lugar de
+      modificar al objeto que ejecuta el m&#233;todo. <br>
+      <i> Numeric values are represented by <a href="intstdlib.html#anchorInt">Int</a>
+        and <a href="intstdlib.html#anchorFloat">Float</a> objects. The first
+        one represents integer values, while the second one represents floating
+        pointer numbers. All numbers are actually objects, including literal
+        ones. More common operations (i.e. methods in both objects) are as
+        follows. Remember that they always return a new object, instead of
+        affecting the object executing the method. </i> </p>
+    <p> </p>
     <ul>
-	<P><LI><code>sum( x )</code>: suma el valor de x al valor del objeto y retorna un nuevo objeto con el resultado.
-	<br><i>adds the value of x to the value of the object and returns another object with the result.</i>
-	<P><li><code>substract( x )</code>: resta el valor de x al valor del objeto y retorna un nuevo objeto con el resultado.
-	<br><i>substracts the value of x to the value of the object and returns another object with the result.</i>
-	<P><li>...
+      <li>Mathematic operations:
+        <ul>
+          <li><code>sum( x )</code>: suma el valor de x al valor del objeto y
+            retorna un nuevo objeto con el resultado. <br>
+            <i>adds the value of x to the value of the object and returns
+              another object with the result.</i> </li>
+          <li><code>substract( x )</code>: resta el valor de x al valor del
+            objeto y retorna un nuevo objeto con el resultado. <br>
+            <i>substracts the value of x to the value of the object and returns
+              another object with the result.</i> </li>
+          <li>... </li>
+        </ul>
+      </li>
+      <li>Logical operations:
+        <ul>
+          <li><code>isLessThan( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a>
+            si x es mayor que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a>
+            en otro caso. <br>
+            <i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if
+            number x is bigger than the object. It returns <a href="intstdlib.html#anchorFalse">False</a>
+            in any other case. </li>
+          <li><code>isEqualTo( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a>
+            si x es igual que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a>
+            en otro caso. <br>
+            <i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if
+            number x is equal to the object. It returns <a href="intstdlib.html#anchorFalse">False</a>
+            in any other case. </li>
+          <li><code>isLessThan( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a>
+            si x es mayor que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a>
+            en otro caso. <br>
+            <i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if
+            number x is bigger than the object. It returns <a href="intstdlib.html#anchorFalse">False</a>
+            in any other case. </li>
+          <li><code>isGreaterThan( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a>
+            si x es menor que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a>
+            en otro caso. <br>
+            <i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if
+            number x is less than the object. It returns <a href="intstdlib.html#anchorFalse">False</a>
+            in any other case. </li>
+        </ul>
+      </li>
     </ul>
-    <P><li>Logical operations:
+    <p> Un programa simple que usa valores num&#233;ricos puede ser el
+      siguiente: <br>
+      <i>A simple program which uses numeric values can be the following one: </i>
+    </p>
+    <p> Este programa pide un n&#250;mero inicial (op1) y comienza a pedir
+      n&#250;meros (op2) que va sumando al primero. Se muestra la suma
+      acumulada. Para salir, basta introducir un cero. <br>
+      <i>This program asks for an initial number (op1) and then asks for various
+        other numbers (op2) which are added to the first one and then to the
+        accumulated sum. Just type 0 in in order to finish. </i> </p>
+    <p> <code> object SumadorSimple <br>
+        &#160;&#160;&#160;&#160;method + doIt() <br>
+        <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;reference op1 <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;reference op2 <br>
+        &#160;&#160;&#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.write( "Un sumador
+        simple\n" ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.write( "Op1: " ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;op1 = Int.parseString(
+        System.console.read() ) <br>
+        <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;:Loop <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;System.console.write(
+        "Op2 (0 para terminar): " ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;op2 = Int.parseString(
+        System.console.read() ) <br>
+        <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;op1 = op1.sum( op2 ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;System.console.write(
+        op1 ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;op2.isEqualTo( 0 ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;jumpOnFalseTo Loop <br>
+        <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.lf() <br>
+        <br>
+        &#160;&#160;&#160;&#160;return <br>
+        &#160;&#160;&#160;&#160;endMethod <br>
+        endObject </code> </p>
+    <p> <a name="anchorStringManage"> </a></p>
+    <h2><a name="anchorStringManage">Manejo de cadenas</a></h2>
+    <a name="anchorStringManage"> <br>
+      (<i>String management</i>) <ode> Las cadenas son manejadas por el objeto
+      </ode></a><a href="intstdlib.html#anchorString">String</a>. Sobre una
+    cadena pueden realizarse las operaciones habituales (que siempre devuelven
+    un nuevo objeto cadena), de concatenaci&#243;n, por medio de <code>concat(
+      x )</code>, de obtenci&#243;n de los x caracteres a la izquierda, con <code>left(
+      x )</code> ... etc. Todos los objetos heredan el m&#233;todo <code>toString()</code>,
+    que convierte la informaci&#243;n contenida en el objeto a cadena. Si no se
+    redefine este objeto, entonces se hereda el de <a href="intstdlib.html#anchorObject">Object</a>,
+    que tan s&#243;lo devuelve el nombre del objeto.
+    <p><i>Strings are managed through the <a href="intstdlib.html#anchorString">String</a>
+        object. The typical operations can be performed over a string (remember
+        that all methods return a new string object), such as concatenation, by
+        means of <code>concat( x )</code>, obtaining x number of characters by
+        the left, with <code>left( x )</code> ... etc. All objects inherit the
+        <code>toString()</code> method from <a href="intstdlib.html#anchorObject">Object</a>,
+        meant to return the information contained inside the object in textual
+        form. If this method is not redefined inside a new object, then the one
+        present in <a href="intstdlib.html#anchorObject">Object</a> is
+        executed, which only returns its name. </i> </p>
+    <p> Un programa simple que usa cadenas puede ser el siguiente: <br>
+      <i>A simple program which uses strings can be the following one: </i> </p>
+    <p> Este programa pide una cadena y la muestra a la inversa. <br>
+      <i>This programs asks for a string and then shows it up reversed.</i> </p>
+    <p> <code> <strong>object </strong>Reverser <br>
+        &#160;&#160;&#160;&#160;<strong>method </strong>+ doIt( str ) <br>
+        &#160;&#160;&#160;&#160;&#160;<strong>reference </strong>toret = "" <br>
+        &#160;&#160;&#160;&#160;&#160;<strong>reference </strong>i =
+        str.length() <br>
+        &#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;&#160;:Loop <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;i = i.substract( 1 ) <br>
+        &#160;&#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;toret = toret.concat( str.sub(
+        i, 1 ) ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;i.isEqualTo( 0 ) <br>
+        &#160;&#160;&#160;&#160;&#160;<strong>jumpOnFalseTo </strong>Loop <br>
+        <br>
+        &#160;&#160;&#160;&#160;&#160;<strong>return </strong>toret <br>
+        &#160;&#160;&#160;&#160;<strong>endMethod </strong><br>
+        <strong>endObject </strong><br>
+        <br>
+        <strong>object </strong>Reverse <br>
+        &#160;&#160;&#160;&#160;<strong>method </strong>+ doIt() <br>
+        &#160;&#160;&#160;&#160;&#160;System.console.write( "Reverse\nIntroduzca
+        una cadena: " ) <br>
+        &#160;&#160;&#160;&#160;&#160;<strong>reference </strong>str =
+        System.console.read() <br>
+        &#160;&#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;&#160;&#160;&#160;System.console.write( Reverser.doIt( str )
+        ) <br>
+        &#160;&#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;&#160;&#160;&#160;<strong>return </strong><br>
+        &#160;&#160;&#160;&#160;<strong>endMethod </strong><br>
+        <strong>endObject</strong> </code> </p>
+    <p> <a name="anchorReflectionManage"> </a></p>
+    <h2><a name="anchorReflectionManage">Manejo de las posibilidades de
+        reflexi&#243;n estructural</a></h2>
+    <a name="anchorReflectionManage"> <br>
+      (<i>Management of the structural reflection capabilities</i>)
+      <p> La reflexi&#243;n estructural es la capacidad de un objeto de
+        inspeccionar sus miembros (m&#233;todos y atributos, esta parte se
+        denomina introspecci&#243;n e incluso est&#225; presente en lenguajes
+        como Java), m&#225;s la capacidad de incluso cambiarlos, en tiempo de
+        ejecuci&#243;n. </p>
+      <p><i> Structural reflection is the capability of an object for examining
+          its members (attributes and methods, this part is also called
+          'introspection', even present in languages such as Java) and even
+          change them, in execution time. </i> </p>
+    </a>
+    <p><a name="anchorReflectionManage"> En Zero, esto se permite mediante los
+        m&#233;todos heredados desde </a><a href="intstdlib.html#anchorObject">Object</a>,
+      que son los del tipo <code>getAttributeNumberByName(),
+        getMethodNumberByName()</code> ... que convierten un nombre de
+      m&#233;todo o atributo en un identificador num&#233;rico que puede ser
+      empleado para manejarlos. Por ejemplo, <code>getAttributeNumber( i )</code>
+      devuelve el objeto al que apunta el atributo i-&#233;simo. El n&#250;mero
+      de m&#233;todos y atributos viene dado por <code>getNumberOfAttributes()</code>
+      y <code>getNumberOfMethods()</code>. As&#237;, los m&#233;todos y
+      atributos pueden ser eliminados, (p. ej. <code>deleteAttributeNumber( i )</code>
+      ), y obtener su nombre a partir del identificador num&#233;rico, (p. ej. <code>getMethodNumberByName(
+        nombre )</code> ), as&#237; como a&#241;adirlos de la misma forma. En el
+      caso particular de los m&#233;todos, es posible obtener los opcodes de un
+      m&#233;todo <code>getListOfOpcodesOfMethod( i )</code>, a&#241;adir
+      m&#233;todos (sin cuerpo), <code>addMethod( nombre )</code>, e incluso
+      compilar opcodes a un m&#233;todo ya existente: <code>compileToMethod(
+        num, opcodes )</code>. </p>
+    <p><i> In Zero, this can be achieved by using the methods inherited in each
+        object from <a href="intstdlib.html#anchorObject">Object</a>, such as <code>getAttributeNumberByName(),
+          getMethodNumberByName()</code> ..., which convert the name of a method
+        or attribute into a numeric identifier which can be more easily managed.
+        For example, <code>getAttributeNumber( i )</code> return the object
+        pointed by the attribute number 'i'. The number of attributes and
+        methods is given by <code>getNumberOfAttributes()</code> y <code>getNumberOfMethods()</code>.
+        Also, methods and attributes can be erased (for instance <code>deleteAttributeNumber(
+          i )</code> ), and its name can be taken by means of the numeric
+        identifier (for instance <code>getMethodNumberByName( name )</code> ),
+        and finally it is also possible to add new ones. In the particular case
+        of methods, it is possible to obtain the list of opcodes in a method by
+        calling <code>getListOfOpcodesOfMethod( i )</code>, add new methods
+        with <code>addMethod( name )</code>, and even compile opcodes to an
+        existing method: <code>compileToMethod( num, opcodes )</code>. </i> </p>
+    <p> Existe otra familia de m&#233;todos de m&#225;s alto nivel que permiten:
+      <br>
+      <i>There exists another family of upper level of abstraction, allowing:</i>
+    </p>
     <ul>
-    	<P><LI><code>isLessThan( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a> si x es mayor que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a> en otro caso.
-	<br><i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if number x is bigger than the object. It returns <a href="intstdlib.html#anchorFalse">False</a> in any other case.
-
-	<P><LI><code>isEqualTo( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a> si x es igual que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a> en otro caso.
-	<br><i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if number x is equal to the object. It returns <a href="intstdlib.html#anchorFalse">False</a> in any other case.
-	
-    	<P><LI><code>isLessThan( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a> si x es mayor que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a> en otro caso.
-	<br><i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if number x is bigger than the object. It returns <a href="intstdlib.html#anchorFalse">False</a> in any other case.
-	
-    	<P><LI><code>isGreaterThan( x )</code>: devuelve <a href="intstdlib.html#anchorTrue">True</a> si x es menor que el objeto. Devuelve <a href="intstdlib.html#anchorFalse">False</a> en otro caso.
-	<br><i>returns </i><a href="intstdlib.html#anchorTrue">True</a> if number x is less than the object. It returns <a href="intstdlib.html#anchorFalse">False</a> in any other case.	
+      <li>Llamar a un m&#233;todo u obtener la referencia de un atributo por su
+        nombre: <br>
+        <i>Calling a method or obtaining a reference of an attribute by means of
+          its name</i>
+        <ul>
+          <li><code>callByName( n, vectorOfArguments )</code> </li>
+          <li><code>getAttributeByName( n )</code> </li>
+        </ul>
+      </li>
+      <li>Obtener informaci&#243;n de un m&#233;todo o atributo: <br>
+        <i>Obtaining information about a method or attribute</i>
+        <ul>
+          <li><code>getInfoOnMethodNumber( i )</code>. Devuelve un objeto copia
+            de <a href="intstdlib.html#anchorMethodInfo">MethodInfo</a>. </li>
+          <li><code>getInfoOnAttributeNumber( i )</code>. Devuelve un objeto
+            copia de <a href="intstdlib.html#anchorAttributeInfo">AttributeInfo</a>.
+          </li>
+        </ul>
+      </li>
     </ul>
-</ul>
-
-<P>
-Un programa simple que usa valores numéricos puede ser el siguiente:
-<br><i>A simple program which uses numeric values can be the following one:
-</i>
-<P>
-Este programa pide un número inicial (op1) y comienza a pedir números (op2) que va sumando al primero. Se muestra la suma acumulada. Para salir, basta introducir un cero.
-<br><i>This program asks for an initial number (op1) and then asks for various other numbers (op2) which are added to the first one and then to the accumulated sum. Just type 0 in in order to finish.
-</i>
-<P>
-<code>
-object SumadorSimple
-<br>&nbsp;&nbsp;&nbsp;&nbsp;method + doIt()
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference op1
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference op2
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "Un sumador simple\n" )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "Op1: " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op1 = Int.parseString( System.console.read() )
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Loop
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "Op2 (0 para terminar): " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op2 = Int.parseString( System.console.read() )
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op1 = op1.sum( op2 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( op1 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op2.isEqualTo( 0 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpOnFalseTo Loop
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;return
-<br>&nbsp;&nbsp;&nbsp;&nbsp;endMethod
-<br>endObject
-</code>
-<P>
-
-<a name="anchorStringManage">
-<h2>Manejo de cadenas</h2>
-<br>(<i>String management</i>)
-
-<ode>
-Las cadenas son manejadas por el objeto <a href="intstdlib.html#anchorString">String</a>. Sobre una cadena pueden realizarse las operaciones habituales (que siempre devuelven un nuevo objeto cadena), de concatenación, por medio de <code>concat( x )</code>, de obtención de los x caracteres a la izquierda, con <code>left( x )</code> ... etc. Todos los objetos heredan el método <code>toString()</code>, que convierte la información contenida en el objeto a cadena. Si no se redefine este objeto, entonces se hereda el de <a href="intstdlib.html#anchorObject">Object</a>, que tan sólo devuelve el nombre del objeto.
-<P><i>Strings are managed through the <a href="intstdlib.html#anchorString">String</a> object. The typical operations can be performed over a string (remember that all methods return a new string object), such as concatenation, by means of <code>concat( x )</code>, obtaining x number of characters by the left, with <code>left( x )</code> ... etc. All objects inherit the <code>toString()</code> method from <a href="intstdlib.html#anchorObject">Object</a>, meant to return the information contained inside the object in textual form. If this method is not redefined inside a new object, then the one present in <a href="intstdlib.html#anchorObject">Object</a> is executed, which only returns its name.
-</i>
-<P>
-Un programa simple que usa cadenas puede ser el siguiente:
-<br><i>A simple program which uses strings can be the following one:
-</i>
-<P>
-Este programa pide una cadena y la muestra a la inversa.
-<br><i>This programs asks for a string and then shows it up reversed.</i>
-<P>
-<code>
-object Reverser
-<br>&nbsp;&nbsp;&nbsp;&nbsp;method + doIt( str )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference toret = ""
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference i = str.length()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Loop
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = i.substract( 1 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat( str.sub( i, 1 ) )
-			
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.isEqualTo( 0 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpOnFalseTo Loop
-<br>		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return toret
-<br>&nbsp;&nbsp;&nbsp;&nbsp;endMethod
-<br>endObject
-<br>
-<br>object Reverse
-<br>&nbsp;&nbsp;&nbsp;&nbsp;method + doIt()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "Reverse\nIntroduzca una cadena: " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference str = System.console.read()
-		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( Reverser.doIt( str ) )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
-<br>&nbsp;&nbsp;&nbsp;&nbsp;endMethod
-<br>endObject
-</code>
-<P>
-
-<a name="anchorReflectionManage">
-<h2>Manejo de las posibilidades de reflexión estructural</h2>
-<br>(<i>Management of the structural reflection capabilities</i>)
-<P>
-La reflexión estructural es la capacidad de un objeto de inspeccionar sus miembros (métodos y atributos, esta parte se denomina introspección e incluso está presente en lenguajes como Java), más la capacidad de incluso cambiarlos, en tiempo de ejecución.
-<P><i>
-Structural reflection is the capability of an object for examining its members (attributes and methods, this part is also called 'introspection', even present in languages such as Java) and even change them, in execution time.
-</i>
-<P>
-En Zero, esto se permite mediante los métodos heredados desde <a href="intstdlib.html#anchorObject">Object</a>, que son los del tipo <code>getAttributeNumberByName(), getMethodNumberByName()</code> ... que convierten un nombre de método o atributo en un identificador numérico que puede ser empleado para manejarlos. Por ejemplo, <code>getAttributeNumber( i )</code> devuelve el objeto al que apunta el atributo i-ésimo. El número de métodos y atributos viene dado por <code>getNumberOfAttributes()</code> y <code>getNumberOfMethods()</code>. Así, los métodos y atributos pueden ser eliminados, (p. ej. <code>deleteAttributeNumber( i )</code> ), y obtener su nombre a partir del identificador numérico, (p. ej. <code>getMethodNumberByName( nombre )</code> ), así como añadirlos de la misma forma. En el caso particular de los métodos, es posible obtener los opcodes de un método <code>getListOfOpcodesOfMethod( i )</code>, añadir métodos (sin cuerpo), <code>addMethod( nombre )</code>, e incluso compilar opcodes a un método ya existente: <code>compileToMethod( num, opcodes )</code>.
-<P><i>
-In Zero, this can be achieved by using the methods inherited in each object from <a href="intstdlib.html#anchorObject">Object</a>, such as <code>getAttributeNumberByName(), getMethodNumberByName()</code> ..., which convert the name of a method or attribute into a numeric identifier which can be more easily managed. For example, <code>getAttributeNumber( i )</code> return the object pointed by the attribute number 'i'. The number of attributes and methods is given by <code>getNumberOfAttributes()</code> y <code>getNumberOfMethods()</code>. Also, methods and attributes can be erased (for instance <code>deleteAttributeNumber( i )</code> ), and its name can be taken by means of the numeric identifier (for instance <code>getMethodNumberByName( name )</code> ), and finally it is also possible to add new ones. In the particular case of methods, it is possible to obtain the list of opcodes in a method by calling <code>getListOfOpcodesOfMethod( i )</code>, add new methods with <code>addMethod( name )</code>, and even compile opcodes to an existing method: <code>compileToMethod( num, opcodes )</code>.
-</i>
-<P>
-Existe otra familia de métodos de más alto nivel que permiten:
-<br><i>There exists another family of upper level of abstraction, allowing:</i>
-<ul>
-<li>Llamar a un método u obtener la referencia de un atributo por su nombre:
-<br><i>Calling a method or obtaining a reference of an attribute by means of its name</i>
-   <ul>
-	<LI><code>callByName( n, vectorOfArguments )</code>
-	<li><code>getAttributeByName( n )</code>
-   </ul>
-<li>Obtener información de un método o atributo:
-<br><i>Obtaining information about a method or attribute</i>
-   <ul>
-	<LI><code>getInfoOnMethodNumber( i )</code>. Devuelve un objeto copia de <a href="intstdlib.html#anchorMethodInfo">MethodInfo</a>.
-	<li><code>getInfoOnAttributeNumber( i )</code>. Devuelve un objeto copia de <a href="intstdlib.html#anchorAttributeInfo">AttributeInfo</a>.
-   </ul>
-</ul>
-<P>
-Un programa simple que usa estas capacidades puede ser el siguiente:
-<br><i>A simple program which uses these capabilities can be the following one:
-</i>
-<P>
-Este programa crea dos métodos para el objeto PruebaCompilador, uno que símplemente imprime "¡Hola, Mundo!" y otro que calcula el doble de otro número. Ambos son llamados.
-<br><i>This program creates a couple of methods for the PruebaCompilador object, one of them just prints "¡Hola, mundo!" ["Hello, World !"] on the console and the another one multiplies a number by two. Both of them are called.</i>
-<P>
-<code>
-object PruebaCompilador
-<br>&nbsp;&nbsp;method + doIt()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference instr1 = "STR \"¡Hola, Mundo!\"\nMSG System.console write __acc\nRET"
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference instr2 = "INT 2\nMSG x multiplyBy __acc\nRET __acc"
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference args1  = VectorInstance.copy( "" )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference args2  = VectorInstance.copy( "" )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference x = 4
-<br>&nbsp;&nbsp;&nbsp;&nbsp;		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;! Crear un nuevo método llamado f, en este mismo objeto
-<br>&nbsp;&nbsp;&nbsp;&nbsp;__this.addMethod( "f", args1 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;! Crear un nuevo método llamado "doble" en este mismo objeto
-<br>&nbsp;&nbsp;&nbsp;&nbsp;args2.add( "x" );
-<br>&nbsp;&nbsp;&nbsp;&nbsp;__this.addMethod( "doble", args2 );
-		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;! Compilarle los opcodes
-<br>&nbsp;&nbsp;&nbsp;&nbsp;__this.compileToMethod( __this.getMethodNumberByName( "doble" ), instr2 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;__this.compileToMethod( __this.getMethodNumberByName( "f" ), instr1 )
-		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;! Llamar a los métodos (inexistentes al compilar esto)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;__this.f()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "El doble de " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( x )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( " es " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;x = __this.doble( x )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( x )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "." )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>&nbsp;&nbsp;return
-<br>&nbsp;&nbsp;endMethod
-<br>endObject
-<code>
-<P>
-
-<a name="anchorContManage">
-<h2>Manejo de colecciones de objetos</h2>
-<br>(<i>Management of collections of objects</i>)
-<P>
-Las colecciones de objetos como vectores son básicas en cualquier programa. Permiten reunir objetos en torno a una única estructura de datos para un acceso más sencillo. Un ejemplo podría ser una lista de nombres, o una agenda de contactos. Existen dos tipos de colecciones: <a href="intstdlib.html#anchorVector">Vector</a> y <a href="intstdlib.html#anchorMap">Map</a>. El primero permite el acceso directo a una lista de objetos enumerada por un índice, mientras que el segundo asocia una cadena (<a href="intstdlib.html#anchorString">String</a>) con cualquier objeto.
-
-<P><i>Collections of objects such as vectors are basic in any program. They allow to put various objects together in a single data structure for a simpler access. An example could be a list of names, or a contact list. There are two kind of collections, <a href="intstdlib.html#anchorVector">Vector</a> and <a href="intstdlib.html#anchorMap">Map</a>. The first one allows direct access to a list of objects indexed by a number, while the second one associates a <a href="intstdlib.html#anchorString">String</a> with any object.</i>
-
-<P>Todas las colecciones de objetos derivan del objeto <a href="intstdlib.html#anchorDataStructure">DataStructure</a>, que incorpora los métodos que suponen el contrato mínimo para cualquiera de ellas. Además, está la posibilidad de utilizar un procesador, es decir un objeto que derive del objeto <a href="intstdlib.html#anchorProcessor">Processor</a>. Todos los objetos <a href="intstdlib.html#anchorDataStructure">DataStructure</a> incorporan un método <code>process()</code> que acepta como parámetro un objeto de los anteriores. Cuando es llamado, este método aplica el método <code>doIt()</code> a cada uno de los elementos de la estructura.
-
-<P><i>
-All object collections derive from the object <a href="intstdlib.html#anchorDataStructure">DataStructure</a>, which incorpores all methods that involve the minimum contract for all of them. Also, there is the possibility of employing a <a href="intstdlib.html#anchorProcessor">Processor</a>. All <a href="intstdlib.html#anchorDataStructure">DataStructure</a> objects have a method called <code>process()</code>, which is called with a <a href="intstdlib.html#anchorProcessor">Processor</a> object passed as parameter. When it is called, this method applies the <code>doIt()</code> method of the <a href="intstdlib.html#anchorProcessor">Processor</a> object to each element in the structure.
-</i>
-
-<P>
-Un programa simple que usa estas capacidades puede ser el siguiente:
-<br><i>A simple program which uses these capabilities can be the following one:
-</i>
-<P>Este programa pide una serie de cadenas por teclado, y las introduce un vector. Cuando se pulsa enter sin introducir ningún valor, devuelve los elementos introducidos en orden inverso.
-<br><i>This program asks for a number of strings, inserting them in a vector. When a string is introduced without any value (i.e. "enter" is pressed), it displays the elements introduced in inverse order.</i>
-<P>
-<code>
-object Stack : ConsoleApplication
-<br>&nbsp;&nbsp;method + doIt()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference v = VectorInstance.copy( "" )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference elem;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;reference size;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "Pila\n" )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;:Loop
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( "\nIntroduzca un elemento (\"\" para salir): " )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elem = System.console.read()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.add( elem )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size = elem.length()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size.isEqualTo( 0 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;jumpOnFalseTo Loop
-		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;size = v.size()
-		
-<br>&nbsp;&nbsp;&nbsp;&nbsp;:Loop2
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size = size.substract( 1 )	
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write( v.get( size ) )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf()
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size.isEqualTo( 0 )
-<br>&nbsp;&nbsp;&nbsp;&nbsp;jumpOnFalseTo Loop2
-			
-<br>&nbsp;&nbsp;return
-<br>&nbsp;&nbsp;endMethod
-<br>endObject
-</code>
-
-<hr>
-<i>
-<TABLE WIDTH=100%>
-<TR>
-<TD>
-<a href="http://www.ei.uvigo.es/~jgarcia/">J. Baltasar García Perez-Schofield</a>&nbsp;
-<a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&nbsp;
-<a href="http://www.lsi.uvigo.es">Departamento de Informática</a>&nbsp;
-<a href="http://www.uvigo.es">Universidad de Vigo</a>
-</TD>
-<TD>
-<IMG ALIGN=RIGHT SRC="tiraZero.jpg" ALT="Zero (el avión)">
-</TD>
-</TR>
-</TABLE>
-</i>
-<hr>
-</body>
+    <p> Un programa simple que usa estas capacidades puede ser el siguiente: <br>
+      <i>A simple program which uses these capabilities can be the following
+        one: </i> </p>
+    <p> Este programa crea dos m&#233;todos para el objeto PruebaCompilador, uno
+      que s&#237;mplemente imprime "&#161;Hola, Mundo!" y otro que calcula el
+      doble de otro n&#250;mero. Ambos son llamados. <br>
+      <i>This program creates a couple of methods for the PruebaCompilador
+        object, one of them just prints "&#161;Hola, mundo!" ["Hello, World !"]
+        on the console and the another one multiplies a number by two. Both of
+        them are called.</i> </p>
+    <p> <code> <strong>object </strong>PruebaCompilador <br>
+        &#160;&#160;<strong>method </strong>+ doIt() <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>instr1 = "STR
+        \"&#161;Hola, Mundo!\"\nMSG System.console write __acc\nRET" <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>instr2 = "INT 2\nMSG
+        x multiplyBy __acc\nRET __acc" <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>args1 =
+        VectorInstance.copy( "" ) <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>args2 =
+        VectorInstance.copy( "" ) <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>x = 4 <br>
+        &#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;! Crear un nuevo m&#233;todo llamado f, en este
+        mismo objeto <br>
+        &#160;&#160;&#160;&#160;__this.addMethod( "f", args1 ) <br>
+        &#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;! Crear un nuevo m&#233;todo llamado "doble" en
+        este mismo objeto <br>
+        &#160;&#160;&#160;&#160;args2.add( "x" ); <br>
+        &#160;&#160;&#160;&#160;__this.addMethod( "doble", args2 ); <br>
+        &#160;&#160;&#160;&#160;! Compilarle los opcodes <br>
+        &#160;&#160;&#160;&#160;__this.compileToMethod(
+        __this.getMethodNumberByName( "doble" ), instr2 ) <br>
+        &#160;&#160;&#160;&#160;__this.compileToMethod(
+        __this.getMethodNumberByName( "f" ), instr1 ) <br>
+        &#160;&#160;&#160;&#160;! Llamar a los m&#233;todos (inexistentes al
+        compilar esto) <br>
+        &#160;&#160;&#160;&#160;__this.f() <br>
+        &#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;System.console.write( "El doble de " ) <br>
+        &#160;&#160;&#160;&#160;System.console.write( x ) <br>
+        &#160;&#160;&#160;&#160;System.console.write( " es " ) <br>
+        &#160;&#160;&#160;&#160;x = __this.doble( x ) <br>
+        &#160;&#160;&#160;&#160;System.console.write( x ) <br>
+        &#160;&#160;&#160;&#160;System.console.write( "." ) <br>
+        &#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;<strong>return </strong><br>
+        &#160;&#160;<strong>endMethod </strong><br>
+        <strong>endObject </strong><code> </code></code></p>
+    <p><a name="anchorContManage"></a></p>
+    <h2><a name="anchorContManage">Manejo de colecciones de objetos</a></h2>
+    <a name="anchorContManage"> <br>
+      (<i>Management of collections of objects</i>) </a>
+    <p><a name="anchorContManage"> Las colecciones de objetos como vectores son
+        b&#225;sicas en cualquier programa. Permiten reunir objetos en torno a
+        una &#250;nica estructura de datos para un acceso m&#225;s sencillo. Un
+        ejemplo podr&#237;a ser una lista de nombres, o una agenda de contactos.
+        Existen dos tipos de colecciones: </a><a href="intstdlib.html#anchorVector">Vector</a>
+      y <a href="intstdlib.html#anchorMap">Map</a>. El primero permite el
+      acceso directo a una lista de objetos enumerada por un &#237;ndice,
+      mientras que el segundo asocia una cadena (<a href="intstdlib.html#anchorString">String</a>)
+      con cualquier objeto. </p>
+    <p><i>Collections of objects such as vectors are basic in any program. They
+        allow to put various objects together in a single data structure for a
+        simpler access. An example could be a list of names, or a contact list.
+        There are two kind of collections, <a href="intstdlib.html#anchorVector">Vector</a>
+        and <a href="intstdlib.html#anchorMap">Map</a>. The first one allows
+        direct access to a list of objects indexed by a number, while the second
+        one associates a <a href="intstdlib.html#anchorString">String</a> with
+        any object.</i> </p>
+    <p>Todas las colecciones de objetos derivan del objeto <a href="intstdlib.html#anchorDataStructure">DataStructure</a>,
+      que incorpora los m&#233;todos que suponen el contrato m&#237;nimo para
+      cualquiera de ellas. Adem&#225;s, est&#225; la posibilidad de utilizar un
+      procesador, es decir un objeto que derive del objeto <a href="intstdlib.html#anchorProcessor">Processor</a>.
+      Todos los objetos <a href="intstdlib.html#anchorDataStructure">DataStructure</a>
+      incorporan un m&#233;todo <code>process()</code> que acepta como
+      par&#225;metro un objeto de los anteriores. Cuando es llamado, este
+      m&#233;todo aplica el m&#233;todo <code>doIt()</code> a cada uno de los
+      elementos de la estructura. </p>
+    <p><i> All object collections derive from the object <a href="intstdlib.html#anchorDataStructure">DataStructure</a>,
+        which incorpores all methods that involve the minimum contract for all
+        of them. Also, there is the possibility of employing a <a href="intstdlib.html#anchorProcessor">Processor</a>.
+        All <a href="intstdlib.html#anchorDataStructure">DataStructure</a>
+        objects have a method called <code>process()</code>, which is called
+        with a <a href="intstdlib.html#anchorProcessor">Processor</a> object
+        passed as parameter. When it is called, this method applies the <code>doIt()</code>
+        method of the <a href="intstdlib.html#anchorProcessor">Processor</a>
+        object to each element in the structure. </i> </p>
+    <p> Un programa simple que usa estas capacidades puede ser el siguiente: <br>
+      <i>A simple program which uses these capabilities can be the following
+        one: </i> </p>
+    <p>Este programa pide una serie de cadenas por teclado, y las introduce un
+      vector. Cuando se pulsa enter sin introducir ning&#250;n valor, devuelve
+      los elementos introducidos en orden inverso. <br>
+      <i>This program asks for a number of strings, inserting them in a vector.
+        When a string is introduced without any value (i.e. "enter" is pressed),
+        it displays the elements introduced in inverse order.</i> </p>
+    <p> <code> <strong>object </strong>Stack : ConsoleApplication <br>
+        &#160;&#160;<strong>method </strong>+ doIt() <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>v =
+        VectorInstance.copy( "" ) <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>elem; <br>
+        &#160;&#160;&#160;&#160;<strong>reference </strong>size; <br>
+        &#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;System.console.write( "Pila\n" ) <br>
+        &#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;:Loop <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.write( "\nIntroduzca
+        un elemento (\"\" para salir): " ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;elem = System.console.read() <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;v.add( elem ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;size = elem.length() <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;size.isEqualTo( 0 ) <br>
+        &#160;&#160;&#160;&#160;<strong>jumpOnFalseTo </strong>Loop <br>
+        &#160;&#160;&#160;&#160;size = v.size() <br>
+        &#160;&#160;&#160;&#160;:Loop2 <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;size = size.substract( 1 ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.write( v.get( size )
+        ) <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;System.console.lf() <br>
+        &#160;&#160;&#160;&#160;&#160;&#160; <br>
+        &#160;&#160;&#160;&#160;&#160;&#160;size.isEqualTo( 0 ) <br>
+        &#160;&#160;&#160;&#160;<strong>jumpOnFalseTo </strong>Loop2 <br>
+        &#160;&#160;<strong>return </strong><br>
+        &#160;&#160;<strong>endMethod </strong><br>
+        <strong>endObject</strong> </code> </p>
+    <hr> <i>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <td> <a href="http://www.ei.uvigo.es/%7Ejgarcia/">J. Baltasar
+                Garc&#237;a Perez-Schofield</a>&#160; <a href="mailto:jbgarcia@uvigo.es">jbgarcia@uvigo.es</a>&#160;
+              <a href="http://www.lsi.uvigo.es">Departamento de Inform&#225;tica</a>&#160;
+              <a href="http://www.uvigo.es">Universidad de Vigo</a> </td>
+            <td> <img src="tiraZero.jpg" alt="Zero (el avi&#243;n)" align="RIGHT">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </i>
+    <hr>
+  </body>
 </html>
