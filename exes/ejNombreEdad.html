@@ -1,0 +1,75 @@
+<html><head><Title>zm source</Title>
+</head>
+<body>
+<code>
+
+
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! NombreEdad</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!      Lenguaje Zero, programa típico de comienzo.</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!      Pide al usuario su nombre y su edad, y la visualiza</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!      Si la edad es mayor que 130, o menor que cero, le llama mentiroso. :-)</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!      jbgarcia@uvigo.es</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! ----------------------------------------------------------- NombreEdad</i></font>
+<br>
+<br>&nbsp;&nbsp;<b>object</b> NombreEdad : ConsoleApplication 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>doIt ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> nombre 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> edad 
+<br>
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! prepara la consola</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__this.prepare ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Preparar el retorno</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__rr = <b>True</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Pedir el nombre</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Dame tu nombre: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre = System.console.read ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Pedir la edad</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Dame tu edad: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad = Int.parseString ( System.console.read ( ) ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Comparar con 0</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad.isLessThan ( <font color="#828200">0 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> comp130 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"¡Eso es imposible!" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__rr = <b>False</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Bienvenida 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:comp130	! Comparar con 130</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad.isLessThan ( <font color="#828200">130 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> visualizarNombreEdad 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Mentirooooso." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__rr = <b>False</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Bienvenida 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:visualizarNombreEdad</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Tu nombre es: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( nombre ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Tu edad es: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( edad ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:Bienvenida</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"¡Bienvenido a Zero, " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( nombre ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"!" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Era necesario introducir un número." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>&nbsp;&nbsp;<b>endObject</b> 
+<br>
+<br>
+
+</code>
+</body>
+</html>

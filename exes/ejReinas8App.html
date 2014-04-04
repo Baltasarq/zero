@@ -1,0 +1,159 @@
+<html><head><Title>zm source</Title>
+</head>
+<body>
+<code>
+
+
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! 8 - Reinas</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! Resuelve el problema de colocar 8 reinas en un</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! tablero de ajedrez sin que ninguna de ellas esté</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! en jaque.</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! jbgarcia@uvigo.es</i></font>
+<br>
+<br>&nbsp;&nbsp;<b>object</b> Resolutor8Reinas 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">- </font>vReinas = <b>Nothing</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>setTablero ( v ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vReinas = v 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>abs ( x ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.isLessThan ( <font color="#828200">0 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> fin 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = x.multiplyBy ( <font color="#828200">-1 </font>) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> x 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>estaBienPuesta ( reina ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> i = <font color="#828200">0 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> aux = <font color="#828200">0 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> aux2 = <font color="#828200">0 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = <b>False</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reina.isEqualTo ( <font color="#828200">0 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> Loop 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = <b>True</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:Loop</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Primera comparación v[i] == v[j]</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux = vReinas.get ( i ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux2 = vReinas.get ( reina ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux.isEqualTo ( aux2 ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Primer lado de la comparación i-j</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux = reina.substract ( i ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux = __this.abs ( aux ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Segundo lado de la comparación v[i]-v[j]</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux2 = vReinas.get ( reina ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux2 = aux2.substract ( vReinas.get ( i ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux2 = __this.abs ( aux2 ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Segunda comparación |i-j| == |v[i]-v[j]|</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux2.isEqualTo ( aux ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Incrementar</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = i.sum ( <font color="#828200">1 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.isLessThan ( reina ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = <b>True</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>resuelve ( lin ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> col = <font color="#828200">0 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> max = vReinas.size ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = <b>False</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = max.substract ( <font color="#828200">1 </font>) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:Loop</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Poner la reina en esta columna</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vReinas.put ( lin col ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__this.estaBienPuesta ( lin ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> endif 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lin.isEqualTo ( max ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> else 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = <b>True</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:else</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = __this.resuelve ( lin.sum ( <font color="#828200">1 </font>) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:endif</u></font>
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;col = col.sum ( <font color="#828200">1 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;col.isGreaterThan ( max ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> i = <font color="#828200">0 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = <font color="#828200">"" </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> elem 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Resolver el juego</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__this.resuelve ( <font color="#828200">0 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! No hay solución</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = <font color="#828200">"No hay solución" </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vReinas = <b>Nothing</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:Loop</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Mostrar la solución</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = i.sum ( <font color="#828200">1 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">"Reina en fila " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( i.toString ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">" colocada en columna " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elem = vReinas.get ( i.substract ( <font color="#828200">1 </font>) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( elem.toString ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">"\n" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.isEqualTo ( vReinas.size ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>&nbsp;&nbsp;<b>endObject</b> 
+<br>
+<br>&nbsp;&nbsp;<b>object</b> Reinas8App 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>doIt ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> i = <font color="#828200">0 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> reinas = VectorInstance.copy ( <font color="#828200">"" </font>) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:Loop</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reinas.add ( <font color="#828200">0 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = i.sum ( <font color="#828200">1 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.isLessThan ( <font color="#828200">8 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resolutor8Reinas.setTablero ( reinas ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"8 Reinas\n" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( Resolutor8Reinas.toString ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>&nbsp;&nbsp;<b>endObject</b> 
+
+</code>
+</body>
+</html>

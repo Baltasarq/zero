@@ -1,0 +1,49 @@
+<html><head><Title>zm source</Title>
+</head>
+<body>
+<code>
+
+
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! Cálculo del factorial recursivo</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! Calcula el factorial de un número</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! jbgarcia@uvigo.es</i></font>
+<br>
+<br>
+<br>&nbsp;&nbsp;<b>object</b> CalculaFactorial : ConsoleApplication 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>calculaFactorial ( n ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = n 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Caso base</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n.isEqualTo ( <font color="#828200">1 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Caso regular</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.multiplyBy ( __this.calculaFactorial ( n.substract ( <font color="#828200">1 </font>) ) ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>doIt ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> x 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Cálculo del factorial recursivo" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Número: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = Int.parseString ( System.console.read ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"El factorial es: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( __this.calculaFactorial ( x ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;<b>endObject</b> 
+
+</code>
+</body>
+</html>

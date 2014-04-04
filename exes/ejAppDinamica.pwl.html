@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Herencia din&aacute;mica en Prowl</title>
+</head>
+<body>
+
+<code>
+
+
+<br>
+&nbsp;&nbsp;<font color="#0000ff"><i>/*</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>	Ejemplo de utilizaci&oacute;n de herencia din&aacute;mica</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i></i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>	jbgarcia@uvigo.es</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>*/</i></font><br>
+
+<br>
+
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> Empleado 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">+ </font>nombre = <font color="#828200">"Juan nadie" </font>; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">+ </font>salario = <font color="#828200">18000 </font>; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString ( ) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> nombre ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>ponSalario ( s ) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;salario = s ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> Directivo : Empleado 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString ( ) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = super ( ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret.concat ( <font color="#828200">" (directivo)" </font>) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> EmpleadoAuxiliar : Empleado 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString ( ) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = super ( ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret.concat ( <font color="#828200">" (empleado)" </font>) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> EmpleadoEmpresa : EmpleadoAuxiliar ( salario &lt; <font color="#828200">20000 </font>),<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Directivo
+( salario &gt;= <font color="#828200">20000 </font>) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString ( ) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> super ( ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> AppDinamica : ConsoleApplication 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>doIt ( ) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> empl = EmpleadoEmpresa.copy ( <font color="#828200">"" </font>) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( empl ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empl.ponSalario ( <font color="#828200">40000 </font>) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( empl ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+
+</code>
+</body>
+</html>

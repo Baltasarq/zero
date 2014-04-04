@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>TablaMultiplicarApp.pwl (Prowl)</title>
+</head>
+<body>
+
+<code>
+
+
+<br>
+&nbsp;&nbsp;<font color="#0000ff"><i>/**</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>	TablaMultiplicar
+</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>	Pide un n&uacute;mero y encuentra su tabla de multiplicar</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i></i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>	jbgarcia@uvigo.es</i></font><br>
+&nbsp;&nbsp;<font color="#0000ff"><i>*/
+</i></font><br>
+
+<br>
+
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> TablaMultiplicar 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">+ </font>num = <font color="#828200">0 </font>; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>setNum(x) 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = x ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString() 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> i = <font color="#828200">0 </font>; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret = <font color="#828200">"" </font>; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> aux = <font color="#828200">0 </font>; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>do</b> { 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<font color="#828200">+</font><font color="#828200">+ </font>; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( num.toString() ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">" x " </font>) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( i.toString() ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">" = " </font>) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aux = i.multiplyBy ( num ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( aux.toString() ) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">"\n" </font>) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font> <span style="font-weight: bold;">while</span>( i &lt; 10 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+<br>
+&nbsp;&nbsp;<b>object</b> TablaMultiplicarApp : ConsoleApplication 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>doIt() 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>{</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff"><i>// Pedir el n&uacute;mero</i></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Tabla de multiplicar\nIntroduzca un n&uacute;mero: " </font>) ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> num = Int.parseString ( System.console.read() ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff"><i>// Configurar el objeto</i></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TablaMultiplicar.setNum ( num ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff"><i>// Mostrar la tabla</i></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( TablaMultiplicar.toString() ) ; 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> ; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c000c0"><b>}</b></font>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;<b>endObject</b> 
+<br>
+
+
+</code>
+</body>
+</html>

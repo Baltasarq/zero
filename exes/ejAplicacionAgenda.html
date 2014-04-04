@@ -1,0 +1,202 @@
+<html><head><Title>zm source</Title>
+</head>
+<body>
+<code>
+
+
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! ===============================================</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! Programa de ejemplo en Zero</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>!         Pequeña aplicación de agenda</i></font>
+<br>&nbsp;&nbsp;<font color="#0000FF"><i>! ===============================================</i></font>
+<br>
+<br>&nbsp;&nbsp;<b>object</b> Persona 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">+ </font>nombre = <font color="#828200">"Pepito perez" </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">+ </font>edad = <font color="#828200">50 </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;attribute <font color="#828200">+ </font>telefono = <font color="#828200">"988310000" </font>
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>putNombre ( n ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre = n 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>putEdad ( ed ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isInstanceOf Int ed 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> else 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad = ed 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>: else</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw ETypeMismatch 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>: fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>putTelefono ( tlf ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;telefono = tlf 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>toString ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = nombre 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">": edad " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( edad.toString ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( <font color="#828200">", tlf: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = toret.concat ( telefono ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>&nbsp;&nbsp;<b>endObject</b> 
+<br>
+<br>&nbsp;&nbsp;<b>object</b> Agenda : Map 
+<br>&nbsp;&nbsp;<b>endObject</b> 
+<br>
+<br>&nbsp;&nbsp;<b>object</b> AplicacionAgenda : ConsoleApplication 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>masPersonas ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> nombre 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> edad 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> telefono 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> toret 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Introduzca el nombre: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre = System.console.read ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Introduzca su edad: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad = Int.parseString ( System.console.read ( ) ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Introduzca su teléfono: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;telefono = System.console.read ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret = Persona.copy ( <font color="#828200">"" </font>) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret.putNombre ( nombre ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret.putEdad ( edad ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toret.putTelefono ( telefono ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agenda.add ( nombre toret ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( nombre.concat ( <font color="#828200">" fue añadido a la agenda ... " </font>) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> toret 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"La edad requiere un número." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> <b>Nothing</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>buscarPersona ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> nombrePersona 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> persona 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Introduzca un nombre: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombrePersona = System.console.read ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;persona = Agenda.lookUp ( nombrePersona ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( persona ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> <b>Nothing</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"No se encontró a esa persona." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>method</b> <font color="#828200">+ </font>doIt ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> op 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> peticion 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> vectorOpciones = VectorInstance.copy ( <font color="#828200">"" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> opcionNoValida 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>reference</b> numElementos 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Inicialización</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vectorOpciones.add ( <font color="#828200">"1. Añadir persona a la agenda" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vectorOpciones.add ( <font color="#828200">"2. Buscar persona en la agenda" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vectorOpciones.add ( <font color="#828200">"3. Mostrar personas en la agenda" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vectorOpciones.add ( <font color="#828200">"4. Salir" </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opcionNoValida = <font color="#828200">"Opción no válida." </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;peticion = <font color="#828200">"Introduzca opción: " </font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent.prepare ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>: Loop</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Mostrar menú</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numElementos = Agenda.size ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vectorOpciones.process ( DisplayByConsoleProcessor ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Número de personas en la agenda: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( numElementos ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( peticion ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Pedir opción</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op = Int.parseString ( System.console.read ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! ¿Es la op final?</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op.isEqualTo ( vectorOpciones.size ( ) ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> fin 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! ¿Es la op1?</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op.isEqualTo ( <font color="#828200">1 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> opcion1 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! ¿Es la op2?</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op.isEqualTo ( <font color="#828200">2 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> opcion2 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! ¿Es la op3?</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;op.isEqualTo ( <font color="#828200">3 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> opcion3 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:opcionInvalida</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( opcionNoValida ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"><i>! Ejecutar cada opcion</i></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:opcion1</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__this.masPersonas ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:opcion2</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__this.buscarPersona ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:opcion3</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Personas en la agenda: " </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numElementos.isEqualTo ( <font color="#828200">0 </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> vacio 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agenda.process ( DisplayByConsoleProcessor ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:vacio</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"No hay personas en la agenda." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> Loop 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:fin</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Fin." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> <b>Nothing</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isInstanceOf ETypeMismatch 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnFalseTo</b> errorIndefinido 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Es necesario introducir un número." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>jumpOnTrueTo</b> finExcep 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:errorIndefinido</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.write ( <font color="#828200">"Ocurrió un error no esperado." </font>) 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.console.lf ( ) 
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#C000C0"><u>:finExcep</u></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> <b>Nothing</b> 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>endMethod</b> 
+<br>&nbsp;&nbsp;<b>endObject</b> 
+<br>
+<br>
+
+</code>
+</body>
+</html>
