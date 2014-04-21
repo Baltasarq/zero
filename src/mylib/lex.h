@@ -43,21 +43,21 @@ public:
     virtual char getCurrentChar()               = 0;
     virtual void skipDelim()                    = 0;
     virtual std::string &getLiteral(const std::string &) = 0;
-    virtual unsigned int getCurrentPos()        = 0;
-    virtual void reset(unsigned int i = 0)      = 0;
+    virtual size_t getCurrentPos()        = 0;
+    virtual void reset(size_t i = 0)      = 0;
     virtual void advance(int = 1)               = 0;
     virtual bool isEnd()                        = 0;
 
     virtual ~Lexer() {}
 
     // Analyzing tools
-	static std::string &getNumber(const std::string &lin, unsigned int &pos, std::string &num, const std::string &);
-	static std::string &getToken(const std::string &lin, unsigned int &pos, std::string &token, const std::string &delims);
-	static void skipDelim(const std::string &lin, unsigned int &pos, const std::string &delims, int avance = 1);
-	static void skipSpaces(const std::string &lin, unsigned int &pos, int avance = 1);
+	static std::string &getNumber(const std::string &lin, size_t &pos, std::string &num, const std::string &);
+	static std::string &getToken(const std::string &lin, size_t &pos, std::string &token, const std::string &delims);
+	static void skipDelim(const std::string &lin, size_t &pos, const std::string &delims, int avance = 1);
+	static void skipSpaces(const std::string &lin, size_t &pos, int avance = 1);
     static TokenType getTokenType(int ch, const std::string &delims);
     static std::string &getLiteral(const std::string &lin,
-				    unsigned int &pos,
+				    size_t &pos,
 				    const std::string &delim,
 				    std::string &lit);
 };
@@ -120,11 +120,11 @@ public:
 	void advance(int = 1);
 
 	/// Return current position
-	unsigned int getCurrentPos()
+	size_t getCurrentPos()
         { return pos; }
 
 	/// Resets current position value
-	void reset(unsigned int i = 0)
+	void reset(size_t i = 0)
         { pos = i; }
 
 	/// Returns the next char to be considered
@@ -139,7 +139,7 @@ public:
 
 private:
     std::string delimiters;
-	unsigned int pos;
+	size_t pos;
 	std::string * txt;
 	std::string token;
 };
@@ -164,7 +164,7 @@ public:
         { return getLine(); };
 
     /// Current line number
-    unsigned int getLineNumber() const
+    size_t getLineNumber() const
         { return num; }
 
     /// file name
@@ -201,7 +201,7 @@ public:
         { getNextLineFromFile(); return ( f.isEof() && lex->isEol() ); }
 
     /// Reset to a given position (in current line)
-    void reset(unsigned int i = 0)
+    void reset(size_t i = 0)
         { lex->reset( i ); getNextLineFromFile(); }
 
 	/// Advance in text
@@ -209,7 +209,7 @@ public:
         { getNextLineFromFile(); lex->advance( i ); }
 
 	/// Return current position (in current line)
-	unsigned int getCurrentPos()
+	size_t getCurrentPos()
         { getNextLineFromFile(); return lex->getCurrentPos(); }
 
 	/// Returns the next char to be considered
@@ -229,7 +229,7 @@ public:
     /// @return An integer with the last blank lines skipped. This value does not
     /// change until next EOL
     /// @see wasEol
-    unsigned int getNumBlankLinesSkipped() const
+    size_t getNumBlankLinesSkipped() const
         { return numLinesSkipped; }
 
     /// @brief Was an EOL find before reading the last char ?
@@ -248,8 +248,8 @@ private:
 	std::auto_ptr<StringLexer> lex;
 	std::string delimiters;
 	InputFile f;
-	unsigned int num;
-	unsigned int numLinesSkipped;
+	size_t num;
+	size_t numLinesSkipped;
 
     /// Loads the next line from file if needed
 	void getNextLineFromFile();

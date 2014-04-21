@@ -140,7 +140,7 @@ class NombreIdentificador : public Nombre {
 private:
         std::string nombre;
 public:
-        static const unsigned int MaxTamIdentificadores = 64;
+        static const size_t MaxTamIdentificadores = 64;
 
         NombreIdentificador(const std::string &n);
 

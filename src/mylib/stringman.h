@@ -68,7 +68,7 @@ public:
             { return s; }
 
         // Modificaciones
-        static unsigned int split(const std::string &txt, std::vector<std::string> &strs, char ch);
+        static size_t split(const std::string &txt, std::vector<std::string> &strs, char ch);
         static std::string &cambiarCaracteresCnvt(std::string &x, char busc, char reem);
         static std::string cambiarCaracteres(const std::string &x, char busc, char reem);
 		static std::string &cambiarCadenasCnvt(std::string &x, char c, const std::string &txt);

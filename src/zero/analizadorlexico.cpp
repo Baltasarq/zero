@@ -1,6 +1,6 @@
 // analizadorlexico.cpp
 /*
-	Implementación del analizador léxico.
+	Fuentes del analizador lex.
 
 	jbgarcia@uvigo.es
 */
@@ -14,7 +14,7 @@ namespace Zero {
 
 // --------------------------------------------------------- AnalizadorLexico()
 
-const unsigned int MaxBuffer = 128;
+const size_t MaxBuffer = 128;
 char AnalizadorLexico::buffer[MaxBuffer];
 
 AnalizadorLexico::AnalizadorLexico(std::string *x) : pos(0), txt(x)
@@ -108,7 +108,7 @@ std::string &AnalizadorLexico::getLiteral(char limitador)
 // ---------------------------------------------------------------- rTrimCnvt()
 std::string &AnalizadorLexico::rTrimCnvt(std::string &x)
 {
-        unsigned int i      = x.length() - 1;
+        size_t i      = x.length() - 1;
 
 	pasaEsp( x, i , -1 );
 
@@ -118,7 +118,7 @@ std::string &AnalizadorLexico::rTrimCnvt(std::string &x)
 // ---------------------------------------------------------------- lTrimCnvt()
 std::string &AnalizadorLexico::lTrimCnvt(std::string &x)
 {
-        unsigned int i      = 0;
+        size_t i      = 0;
 
 	pasaEsp( x, i );
 
@@ -161,7 +161,7 @@ std::string AnalizadorLexico::trim(const std::string &x)
 
 // ----------------------------------------------------------------- getToken()
 std::string &AnalizadorLexico::getToken(const std::string &lin,
-                                   unsigned int &pos,
+                                   size_t &pos,
 				   std::string &token)
 /**
 	Obtener el siguiente token, versión estática
@@ -190,7 +190,7 @@ std::string &AnalizadorLexico::getToken(const std::string &lin,
 
 // --------------------------------------------------------------- getLiteral()
 std::string &AnalizadorLexico::getLiteral(const std::string &lin,
-				    unsigned int &pos,
+				    size_t &pos,
 				    char delim,
 				    std::string &lit)
 {
@@ -213,7 +213,7 @@ std::string &AnalizadorLexico::getLiteral(const std::string &lin,
 
 // ---------------------------------------------------------------- getNumero()
 std::string &AnalizadorLexico::getNumero(const std::string &lin,
-				    unsigned int &pos,
+				    size_t &pos,
 				    std::string &num)
 {
 	pasaEsp( lin, pos );
@@ -243,7 +243,7 @@ std::string &AnalizadorLexico::getNumero(const std::string &lin,
 }
 
 // ------------------------------------------------------------------- pasaEsp()
-void AnalizadorLexico::pasaEsp(const std::string &lin, unsigned int &pos, int avance)
+void AnalizadorLexico::pasaEsp(const std::string &lin, size_t &pos, int avance)
 /// Pasar los espacios (y más, no determinante), versión estática
 {
 	char * index = const_cast<char *>( lin.c_str() ) + pos;
@@ -265,7 +265,7 @@ void AnalizadorLexico::pasaEsp(const std::string &lin, unsigned int &pos, int av
 
 // ------------------------------------------------------------------ pasaEsp()
 void AnalizadorLexico::pasaSoloEsp(const std::string &lin,
-                                   unsigned int &pos,
+                                   size_t &pos,
 				   int avance)
 /**
 	Pasar los espacios (sólo espacios), versión estática
@@ -295,7 +295,7 @@ bool AnalizadorLexico::compruebaFlotante(const std::string &s)
         || ( std::isdigit( s[0] ) )
         || ( s[0] == '+' ) )
       {
-        for(register unsigned int n = 1;n < s.length();++n)
+        for(register size_t n = 1;n < s.length();++n)
         {
             if (  !std::isdigit( s[n] )
              && ( s[n]!='.' ) )
@@ -324,7 +324,7 @@ bool AnalizadorLexico::compruebaFlotante(const std::string &s)
 // ------------------------------------------------------------------ maysCnvt()
 std::string &AnalizadorLexico::maysCnvt(std::string &x)
 {
-       for(register unsigned int i = 0; i < x.length(); ++i)
+       for(register size_t i = 0; i < x.length(); ++i)
        {
                 x[i] = std::toupper( x[i] );
        }

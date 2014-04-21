@@ -61,7 +61,7 @@ void GeneralLexer::pasarComentarioUnaLinea()
 
 void GeneralLexer::pasarComentario()
 {
-    unsigned int pos;
+    size_t pos;
 
     if ( chkSig( *flex, getAbrirComentario() ) ) {
         pos = flex->getCurrentLine().rfind( getCerrarComentario() );
@@ -110,7 +110,7 @@ std::auto_ptr<ElementoLexico> GeneralLexer::getSigElemento()
 
     // Ya se ha encontrado algo
     if ( tipoToken == Lexer::Number ) {
-        unsigned int pos = flex->getCurrentPos();
+        size_t pos = flex->getCurrentPos();
         Lexer::getNumber( flex->getCurrentLine(), pos, token, Lexer::StandardDelimiters );
 
         if ( token.find( '.' ) != std::string::npos )

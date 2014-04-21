@@ -85,7 +85,7 @@ void ChkMsgArgs::doIt(const ElementoAst * elem, const ElementoAst * env) throw( 
         const Msg * msg = dynamic_cast<const Msg *>( instr );
 
         if ( msg != NULL ) {
-            for(unsigned int i = 0; i < msg->parametros.size(); ++i) {
+            for(size_t i = 0; i < msg->parametros.size(); ++i) {
                 const std::string &id = ( (Id * ) msg->parametros[ i ] )->getId();
 
                 if ( dynamic_cast<const Id *>( msg->parametros[ i ] ) != NULL
@@ -119,7 +119,7 @@ void ChkDefs::doIt(const ElementoAst * elem, const ElementoAst * env) throw( Zer
     const Mth * mth = dynamic_cast<const Mth *>( elem );
 
     if ( mth != NULL ) {
-        for(unsigned int i = 0; i < mth->instrucciones.size(); ++i) {
+        for(size_t i = 0; i < mth->instrucciones.size(); ++i) {
             const Def * def = dynamic_cast<const Def *>( mth->instrucciones[ i ] );
 
             if ( def != NULL ) {
@@ -145,7 +145,7 @@ void ChkJmps::doIt(const ElementoAst * elem, const ElementoAst * env) throw( Zer
 
     if ( mth != NULL ) {
         // Chk no hay etqs repetidas. Recolectar Jmps
-        for(unsigned int i = 0; i < mth->instrucciones.size(); ++i) {
+        for(size_t i = 0; i < mth->instrucciones.size(); ++i) {
             const Etq * etq = dynamic_cast<const Etq *>( mth->instrucciones[ i ] );
             const Jmp * jmp = dynamic_cast<const Jmp *>( mth->instrucciones[ i ] );
 
@@ -221,7 +221,7 @@ void GestorChk::doIt() throw ( Zero::Excepcion )
     }
 
     // Chk objetos
-    for(unsigned int i = 0; i < objetos.size(); ++i) {
+    for(size_t i = 0; i < objetos.size(); ++i) {
         const Obj * obj = objetos[ i ];
 
         chk( obj, NULL, chksObj );
@@ -229,19 +229,19 @@ void GestorChk::doIt() throw ( Zero::Excepcion )
         // Chk attrs
         const ListaAst<Atr> &atrs = obj->atributos;
 
-        for(unsigned int j = 0; j < atrs.size(); ++j) {
+        for(size_t j = 0; j < atrs.size(); ++j) {
             chk( atrs[ j ], obj, chksAtr );
         }
 
         // Chk mths
         const ListaAst<Mth> &mths = obj->metodos;
-        for(unsigned int j = 0; j < mths.size(); ++j) {
+        for(size_t j = 0; j < mths.size(); ++j) {
             const Mth * mth = mths[ j ];
 
             chk( mth, obj, chksMth );
 
             // Chk instrucciones
-            for(unsigned int k = 0; k < mth->instrucciones.size(); ++k) {
+            for(size_t k = 0; k < mth->instrucciones.size(); ++k) {
                 chk( mth->instrucciones[ k ], mth, chksInstr );
             }
         }

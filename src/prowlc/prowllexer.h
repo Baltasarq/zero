@@ -54,21 +54,21 @@ public:
 // -------------------------------------------------------------------- Bloques
 class Control : public ElementoLexico {
 public:
-    Control(const std::string &ctrl, unsigned int l, unsigned int c)
+    Control(const std::string &ctrl, size_t l, size_t c)
         : ElementoLexico( ctrl, l, c )
         {}
 };
 
 class AperturaDeBloque : public Control {
 public:
-    AperturaDeBloque(unsigned int l, unsigned int c)
+    AperturaDeBloque(size_t l, size_t c)
         : Control( ProwlLexer::Begin, l, c )
         {}
 };
 
 class CierreDeBloque : public Control {
 public:
-    CierreDeBloque(unsigned int l, unsigned int c)
+    CierreDeBloque(size_t l, size_t c)
         : Control( ProwlLexer::Begin, l, c )
         {}
 };
@@ -76,7 +76,7 @@ public:
 // ----------------------------------------------------------------- Operadores
 class Operador : public ElementoLexico {
 public:
-    Operador(const std::string &ctrl, unsigned int l, unsigned int c)
+    Operador(const std::string &ctrl, size_t l, size_t c)
         : ElementoLexico( ctrl, l, c )
         {}
 };

@@ -61,7 +61,7 @@ void MixinConArgumentos::copiarArgumentos(Argumentos &dest, const Argumentos &or
 	a otro, presumiblemente de un mnemotécnico a otro.
 */
 {
-        for(register unsigned int i = 0; i < orig.size(); ++i) {
+        for(register size_t i = 0; i < orig.size(); ++i) {
             dest.push_back( orig[i]->copia() );
         }
 }
@@ -72,7 +72,7 @@ void MixinConArgumentos::eliminaArgumentos()
 	Borra todos los argumentos
 */
 {
-        for(register unsigned int i = 0; i < args.size(); ++i) {
+        for(register size_t i = 0; i < args.size(); ++i) {
                 delete args[i];
         }
 
@@ -668,7 +668,7 @@ bool NombreIdentificador::compruebaId(const std::string &s)
         && ( isalpha( s[0] )
           || s[0] == '_' ) )
       {
-            for(register unsigned int n = 1; n < s.length(); ++n)
+            for(register size_t n = 1; n < s.length(); ++n)
             {
                   if ( !isdigit( s[n] )
                     && !isalpha( s[n] )
@@ -1238,7 +1238,7 @@ void NMMth::verifica() throw (ECompilacion)
 	}
 
 	// Comprobar los argumentos
-	for(register unsigned int i = 0; i < getArgs()->size(); ++i) {
+	for(register size_t i = 0; i < getArgs()->size(); ++i) {
 		if ( dynamic_cast<NombreReferencia *>( (*getArgs())[i] ) != NULL )
 		{
 			throw ESintxIdNoValido( std::string( "NMMth: param. formal: "
@@ -1301,7 +1301,7 @@ void NMMth::lee(MedioSoporte *m, bool leeMnemo)
 std::string NMMth::listar(bool bello)
 /// Devuelve una descripción de este mnemo en formato ensamblador
 {
-      register unsigned int n;
+      register size_t n;
       std::string toret;
 
       if (!bello) {
@@ -1355,7 +1355,7 @@ std::string NMMth::getFormatoXML()
       toret += nombre;
       toret += "\" arguments=\"";
 
-      for(register unsigned int n = 0 ; n < getArgs()->size() ; ++n)
+      for(register size_t n = 0 ; n < getArgs()->size() ; ++n)
       {
             toret += (*getArgs())[n]->getNombre();
 
@@ -1956,7 +1956,7 @@ std::string & NMStr::convertirStrASeqEscape(std::string & lit)
 	códigos de escape, a una cadena que los tiene.
 */
 {
-	unsigned int pos = 0;
+	size_t pos = 0;
 
 	while ( pos < lit.length() )
 	{
@@ -2165,7 +2165,7 @@ void NMMsg::verifica() throw (ECompilacion)
 	}
 
 	// Comprobar los identificadores
-	for(register unsigned int i = 0; i < getArgs()->size(); ++i) {
+	for(register size_t i = 0; i < getArgs()->size(); ++i) {
 		if ( dynamic_cast<NombreReferencia *>( (*getArgs())[i] ) != NULL )
 		{
 			throw ESintxIdNoValido( std::string( "argumento Msg: '"
@@ -2232,7 +2232,7 @@ std::string NMMsg::listar(bool bello)
         toret += ' ';
         toret += met;
 
-        for (unsigned int i = 0;i < getArgs()->size(); ++i)
+        for (size_t i = 0;i < getArgs()->size(); ++i)
         {
               toret += ' ';
               toret += (*getArgs())[i]->getNombre();
@@ -2244,7 +2244,7 @@ std::string NMMsg::listar(bool bello)
         toret += met;
         toret += '(';
 
-        for(register unsigned int i = 0;i < getArgs()->size(); ++i)
+        for(register size_t i = 0;i < getArgs()->size(); ++i)
         {
               toret += (*getArgs())[i]->getNombre();
               if (i < ( getArgs()->size() - 1) )
@@ -2280,7 +2280,7 @@ std::string NMMsg::getFormatoXML()
 
       // Argumentos
       toret += "\" args=\"";
-      for(register unsigned int n = 0; n < getArgs()->size(); ++n)
+      for(register size_t n = 0; n < getArgs()->size(); ++n)
       {
             toret += (*getArgs())[n]->getNombre();
 

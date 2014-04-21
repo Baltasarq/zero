@@ -15,9 +15,9 @@ const std::string Author     = "jbgarcia@uvigo.es";
 
 const std::string CmdVersion = "version";
 
-void procesarParams(unsigned int argc, char * argv[], std::string &nombreArchivo)
+void procesarParams(size_t argc, char * argv[], std::string &nombreArchivo)
 {
-    for(unsigned int i = 0; i < argc; ++i) {
+    for(size_t i = 0; i < argc; ++i) {
         std::string opt = argv[ i ];
 
         // Es opt
@@ -51,7 +51,7 @@ std::string crearNombreArchivoSalida(const std::string &nombreArchivo)
     std::string toret = nombreArchivo;
 
     // quitar ext
-    unsigned int pos = toret.rfind( '.' );
+    size_t pos = toret.rfind( '.' );
 
     if ( pos != std::string::npos ) {
         toret.erase( pos );
@@ -97,7 +97,7 @@ int main(int argc, char * argv[])
             if ( parser.get() != NULL ) {
                       std::printf( "Ln %d: %s\n\t%s\n", parser->getNumeroLinea(), e.toString().c_str(), parser->getLineaActual().c_str() );
                       std::printf( "\t" );
-                      for(unsigned int i = 0; i < parser->getPosLinea(); ++i) {
+                      for(size_t i = 0; i < parser->getPosLinea(); ++i) {
                           std::printf( "%c", ' ' );
                       }
                       std::printf( "%c\n", '^' );

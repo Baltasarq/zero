@@ -39,7 +39,7 @@ void ParserProwl::localizarObjPpal()
     Obj * obj;
     objPpal = NULL;
 
-    for(unsigned int i = 0; i < getAST()->objetos.size(); ++i) {
+    for(size_t i = 0; i < getAST()->objetos.size(); ++i) {
         obj = getAST()->objetos[ i ];
 
         if ( obj->getNombre() == getAST()->getNombre() ) {
@@ -79,7 +79,7 @@ void ParserProwl::crearAstMth() throw(Zero::Excepcion)
     objetoActual->metodos.insertar( metodoActual );
 
     // Leer las instrucciones mientras falte el cierre de mth }
-    unsigned int oldPos = flex->getPosicion();
+    size_t oldPos = flex->getPosicion();
 //printf( "crearAstMth:\n");
 //informe( flex );
     while ( !flex->chkSig( ProwlLexer::End ) ) {
@@ -100,10 +100,10 @@ void ParserProwl::crearAstMth() throw(Zero::Excepcion)
             Bloque bloque;
 
             // Encontrar el bloque exterior sin cerrar, no el final
-            while( !bloqueActual.empty() ) {
+            do {
                 bloque = bloqueActual.top();
                 bloqueActual.pop();
-            }
+            } while( !bloqueActual.empty() );
 
             msg = Bloque::EtqTipoBloque[ bloque.tipoBloque ] + " anterior sin cerrar";
             throw Zero::ESintxAnidamiento( msg.c_str() );
@@ -120,7 +120,7 @@ void ParserProwl::crearAstMth() throw(Zero::Excepcion)
 
 void ParserProwl::crearAstInstr() throw(Zero::ESintaxis)
 {
-    unsigned int oldPos = flex->getPosicion();
+    size_t oldPos = flex->getPosicion();
     std::auto_ptr<ElementoLexico> elemento = flex->getSigElemento();
     Instr * instr = NULL;
 
@@ -210,7 +210,7 @@ Def * ParserProwl::crearAstRef() throw(Zero::ESintaxis)
 
 If * ParserProwl::crearAstIf() throw(Zero::ESintaxis)
 {
-    unsigned int pos = flex->getPosicion();
+    size_t pos = flex->getPosicion();
     If * toret = new If( flex->getNumLinea(), flex->getPosicion() );
     Bloque bloque;
 
@@ -254,7 +254,7 @@ If * ParserProwl::crearAstIf() throw(Zero::ESintaxis)
 Ret * ParserProwl::crearAstRet() throw(Zero::ESintaxis)
 {
     Ret * toret = new Ret( flex->getNumLinea(), flex->getPosicion() );
-    unsigned int pos = flex->getPosicion();
+    size_t pos = flex->getPosicion();
 
 //std::printf( "crearAstRet(begin):\n");
 //informe( flex );
@@ -336,7 +336,7 @@ Expr * ParserProwl::crearAstExpr() throw(Zero::ESintaxis)
     Expr * toret = crearAstLit();
 
     if ( toret == NULL ) {
-        unsigned int oldPos = flex->getPosicion();
+        size_t oldPos = flex->getPosicion();
         id = flex->getIdentificador( ProwlLexer::NotRequired );
 
         if ( flex->getCaracterActual() == ProwlLexer::OperadorAcceso[ 0 ] )
@@ -354,7 +354,7 @@ Expr * ParserProwl::crearAstExprCond() throw(Zero::ESintaxis)
 {
     Expr * toret = NULL;
     std::string id;
-    unsigned int oldPos = flex->getPosicion();
+    size_t oldPos = flex->getPosicion();
     id = flex->getIdentificador( ProwlLexer::NotRequired );
 
     if ( flex->getCaracterActual() == ProwlLexer::OperadorAcceso[ 0 ] )
@@ -476,8 +476,8 @@ Mth * ParserProwl::leerDeclMetodo()
     std::vector<std::string> parametros;
     std::string nombreMetodo;
     std::string parametro;
-    unsigned int numLinea = 0;
-    unsigned int pos = 0;
+    size_t numLinea = 0;
+    size_t pos = 0;
 
 //std::printf( "leerDeclMth( comienzo ):\n" );
 //informe( flex );

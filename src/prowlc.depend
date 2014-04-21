@@ -1,0 +1,190 @@
+# depslib dependency file v1.0
+1398094332 source:c:\users\baltasarq\dropbox\prys\zero\src\mylib\lex.cpp
+	<cctype>
+	<cstdlib>
+	<string>
+	"lex.h"
+
+1398094374 c:\users\baltasarq\dropbox\prys\zero\src\mylib\lex.h
+	"stringman.h"
+	"fileio.h"
+	<string>
+	<stdexcept>
+	<memory>
+
+1398094488 c:\users\baltasarq\dropbox\prys\zero\src\mylib\stringman.h
+	<vector>
+	<string>
+	<ctime>
+
+1398093376 c:\users\baltasarq\dropbox\prys\zero\src\mylib\fileio.h
+	"osman.h"
+	<cstdio>
+	<string>
+	<ctime>
+	<windows.h>
+	<sys/stat.h>
+
+1396609549 c:\users\baltasarq\dropbox\prys\zero\src\mylib\osman.h
+
+1398094453 source:c:\users\baltasarq\dropbox\prys\zero\src\mylib\stringman.cpp
+	"stringman.h"
+	<cctype>
+	<iomanip>
+	<sstream>
+	<cstdlib>
+	<algorithm>
+
+1398094564 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\ast.cpp
+	"ast.h"
+	"prowllexer.h"
+	<string>
+
+1398094650 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\ast.h
+	<string>
+	<vector>
+	<memory>
+	"mnemos.h"
+
+1398104481 c:\users\baltasarq\dropbox\prys\zero\src\zero\mnemos.h
+	<cstdlib>
+	<string>
+	<vector>
+	"excep.h"
+	"reservadas.h"
+	"mediosoporte.h"
+
+1398104182 c:\users\baltasarq\dropbox\prys\zero\src\zero\excep.h
+	<string>
+	<cstring>
+	<exception>
+	<stdexcept>
+
+1396609549 c:\users\baltasarq\dropbox\prys\zero\src\zero\reservadas.h
+	<string>
+
+1398104788 c:\users\baltasarq\dropbox\prys\zero\src\zero\mediosoporte.h
+	<cstdio>
+	<string>
+
+1398094867 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\prowllexer.h
+	"elemento.h"
+	"lexer.h"
+	"excep.h"
+
+1398094705 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\elemento.h
+	<string>
+	<vector>
+	"excep.h"
+
+1398094772 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\lexer.h
+	<string>
+	<stdexcept>
+	"elemento.h"
+	"lex.h"
+	"excep.h"
+
+1398094680 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\chk.cpp
+	"chk.h"
+	"ast.h"
+	"parser.h"
+	"parserprowl.h"
+	<set>
+
+1396609549 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\chk.h
+	<vector>
+	"excep.h"
+
+1398094825 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\parser.h
+	<string>
+	<cstdio>
+	<memory>
+	"fileio.h"
+	"lex.h"
+	"excep.h"
+	"ast.h"
+	"lexer.h"
+
+1396609549 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\parserprowl.h
+	"ast.h"
+	"parser.h"
+	"prowllexer.h"
+	<stack>
+
+1396609549 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\elemento.cpp
+	"elemento.h"
+
+1396609549 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\generadorcodigo.cpp
+	"generadorcodigo.h"
+	"ast.h"
+	"fileio.h"
+	"excep.h"
+
+1396609549 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\generadorcodigo.h
+	<string>
+	<memory>
+
+1398094737 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\generadorcodigozero.cpp
+	"generadorcodigozero.h"
+	"ast.h"
+	"fileio.h"
+	"mnemos.h"
+
+1396609549 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\generadorcodigozero.h
+	"generadorcodigo.h"
+	<string>
+
+1398094753 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\lexer.cpp
+	<iterator>
+	"lexer.h"
+
+1398094794 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\main.cpp
+	<cstdio>
+	<cstdlib>
+	<string>
+	<memory>
+	"parserprowl.h"
+	"excep.h"
+	"generadorcodigozero.h"
+
+1398094809 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\parser.cpp
+	"fileio.h"
+	"parser.h"
+
+1398094847 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\parserprowl.cpp
+	"parserprowl.h"
+	"prowllexer.h"
+	"reservadas.h"
+	"chk.h"
+	"transform.h"
+
+1398094918 c:\users\baltasarq\dropbox\prys\zero\src\prowlc\transform.h
+	<vector>
+	<string>
+	"ast.h"
+
+1396609549 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\prowllexer.cpp
+	"prowllexer.h"
+	"reservadas.h"
+
+1398094895 source:c:\users\baltasarq\dropbox\prys\zero\src\prowlc\transform.cpp
+	"transform.h"
+	"stringman.h"
+
+1398094970 source:c:\users\baltasarq\dropbox\prys\zero\src\zero\analizadorlexico.cpp
+	<cstdio>
+	<cctype>
+	"analizadorlexico.h"
+	"reservadas.h"
+
+1398095004 c:\users\baltasarq\dropbox\prys\zero\src\zero\analizadorlexico.h
+	<string>
+
+1398104481 source:c:\users\baltasarq\dropbox\prys\zero\src\zero\mnemos.cpp
+	<cctype>
+	"mnemos.h"
+	"analizadorlexico.h"
+
+1396609549 source:c:\users\baltasarq\dropbox\prys\zero\src\zero\reservadas.cpp
+	"reservadas.h"
+

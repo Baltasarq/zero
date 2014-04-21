@@ -72,13 +72,13 @@ public:
 
     void reset()
         { fseek( f, 0, SEEK_SET ); }
-    unsigned long int getPos() const
+    size_t getPos() const
         { return ftell( f ); }
-    unsigned long int getSize()
+    size_t getSize()
         {
-          unsigned long int pos = getPos();
+          size_t pos = getPos();
           fseek( f, 0, SEEK_END );
-          unsigned long int size = getPos();
+          size_t size = getPos();
           fseek( f, pos, SEEK_SET );
 
           return size;

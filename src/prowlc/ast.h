@@ -14,7 +14,7 @@
 
 class ElementoAst {
 public:
-    ElementoAst(const std::string &n, unsigned int l, unsigned int c)
+    ElementoAst(const std::string &n, size_t l, size_t c)
         : marca( MarcaVivo ), numLinea( l ), numCol( c )
         { nombre.reset( new Zero::NombreIdentificador( n ) ); }
 
@@ -24,22 +24,22 @@ public:
     const std::string &getNombre() const
         { return nombre->getNombre(); }
 
-    unsigned int getNumLinea() const
+    size_t getNumLinea() const
         { return numLinea; }
 
-    unsigned int getNumColumna() const
+    size_t getNumColumna() const
         { return numCol; }
 
     virtual std::string generarCodigo() const = 0;
 
 protected:
-    static const unsigned int MarcaVivo = 0xF00DBEEF;
-    static const unsigned int MarcaMuerto = 0xDEADBEEF;
+    static const size_t MarcaVivo = 0xF00DBEEF;
+    static const size_t MarcaMuerto = 0xDEADBEEF;
 private:
-    unsigned int marca;
+    size_t marca;
     std::auto_ptr<Zero::NombreIdentificador> nombre;
-    unsigned int numLinea;
-    unsigned int numCol;
+    size_t numLinea;
+    size_t numCol;
 };
 
 template<typename T>
@@ -52,35 +52,35 @@ public:
 
     virtual ~ListaAst()
     {
-        for(unsigned int i = 0; i < size(); ++i) {
+        for(size_t i = 0; i < size(); ++i) {
             delete (*this)[ i ];
         }
 
         elementos.clear();
     }
 
-    unsigned int size() const
+    size_t size() const
         { return elementos.size(); }
 
-    T * operator[](unsigned int i)
+    T * operator[](size_t i)
         { return elementos[ i ]; }
 
-    const T * operator[](unsigned int i) const
+    const T * operator[](size_t i) const
         { return elementos[ i ]; }
 
     void insertar(T *e)
         { elementos.push_back( e ); }
 
-    void insertar(unsigned int i, T *e)
+    void insertar(size_t i, T *e)
         { elementos.insert( elementos.begin() + i, e ); }
 
-    void modificar(unsigned int i, T *e)
+    void modificar(size_t i, T *e)
         { delete elementos[ i ]; elementos[ i ] = e; }
 
-    T * extraer(unsigned int i)
+    T * extraer(size_t i)
         { T * toret = elementos[ i ]; elementos[ i ] = NULL; return toret; }
 
-    void mover(unsigned int org, unsigned int dest)
+    void mover(size_t org, size_t dest)
         {
             if ( org != dest ) {
                 T * aux = elementos[ org ];
@@ -114,7 +114,7 @@ class Atr;
 
 class Obj : public ElementoAst {
 public:
-    Obj(const std::string &no, const std::string &nop, unsigned int l, unsigned int c, bool k)
+    Obj(const std::string &no, const std::string &nop, size_t l, size_t c, bool k)
         : ElementoAst( no, l, c ), llave( k )
         { nombreObjetoPadre.reset( new Zero::NombreIdentificador( nop ) ); }
 
@@ -138,7 +138,7 @@ class Instr;
 
 class Mth : public ElementoAst {
 public:
-    Mth(const std::string &n, bool v, unsigned int l, unsigned int c)
+    Mth(const std::string &n, bool v, size_t l, size_t c)
         : ElementoAst( n, l, c ), visibility( v )
         {}
 
@@ -166,10 +166,10 @@ class Instr : public ElementoAst {
 public:
     static const std::string NombreInstr;
 
-    Instr(unsigned int l, unsigned int c) : ElementoAst( NombreInstr, l, c )
+    Instr(size_t l, size_t c) : ElementoAst( NombreInstr, l, c )
         {}
 protected:
-    Instr(const std::string &n, unsigned int l, unsigned int c)
+    Instr(const std::string &n, size_t l, size_t c)
         : ElementoAst( n, l, c )
         {}
 };
@@ -178,7 +178,7 @@ class Jmp : public Instr {
 public:
     static const std::string NombreJmp;
 
-    Jmp(const std::string &id, unsigned int l, unsigned int c) : Instr( NombreJmp, l, c )
+    Jmp(const std::string &id, size_t l, size_t c) : Instr( NombreJmp, l, c )
         { this->id.reset( new Zero::NombreIdentificador( id ) ); }
 
     const std::string &getId() const
@@ -194,7 +194,7 @@ class Etq : public Instr {
 public:
     static const std::string NombreEtq;
 
-    Etq(const std::string &id, unsigned int l, unsigned int c) : Instr( NombreEtq, l, c )
+    Etq(const std::string &id, size_t l, size_t c) : Instr( NombreEtq, l, c )
         { this->id.reset( new Zero::NombreIdentificador( id ) ); }
 
     const std::string &getId() const
@@ -275,16 +275,16 @@ class Expr : public Instr {
 public:
     static const std::string NombreExpr;
 
-    Expr(unsigned int l, unsigned int c) : Instr( NombreExpr, l, c )
+    Expr(size_t l, size_t c) : Instr( NombreExpr, l, c )
         { numExpr = ++NumExpresiones; }
 protected:
-    Expr(const std::string &n, unsigned int l, unsigned int c)
+    Expr(const std::string &n, size_t l, size_t c)
         : Instr( n, l, c )
         {}
 
 private:
-    unsigned int numExpr;
-    static unsigned int NumExpresiones;
+    size_t numExpr;
+    static size_t NumExpresiones;
 };
 
 class MixinRef {
@@ -308,7 +308,7 @@ class Msg : public Expr, public MixinRef {
 public:
     static const std::string NombreMsg;
 
-    Msg(unsigned int l, unsigned int c) : Expr( NombreMsg, l, c )
+    Msg(size_t l, size_t c) : Expr( NombreMsg, l, c )
         {}
 
     void setMsgInfo(const std::vector<std::string> &vIds);
@@ -335,8 +335,8 @@ class Ref : public Expr {
 public:
     static const std::string NombreRef;
 
-    Ref(const std::string &l, unsigned int nl, unsigned int p);
-    Ref(const std::vector<std::string> &l, unsigned int nl, unsigned int p);
+    Ref(const std::string &l, size_t nl, size_t p);
+    Ref(const std::vector<std::string> &l, size_t nl, size_t p);
 
     const std::string &getRef() const
         { return ref->getNombre(); }
@@ -351,7 +351,7 @@ protected:
 
 class Id : public Ref {
 public:
-    Id(const std::string &l, unsigned int nl = 0, unsigned int p = 0);
+    Id(const std::string &l, size_t nl = 0, size_t p = 0);
 
     const std::string &getId() const
         { return getRef(); }
@@ -365,7 +365,7 @@ public:
 class Reg : public Id {
 public:
     enum GpReg { Gp1, Gp2, Gp3, Gp4 };
-    static const unsigned int NumGpRegs;
+    static const size_t NumGpRegs;
     static const std::string * NombreGpReg[];
     static const std::string This;
 
@@ -385,7 +385,7 @@ public:
 
 class Ret : public Instr, public MixinRef {
 public:
-    Ret(unsigned int l, unsigned int p);
+    Ret(size_t l, size_t p);
 
     std::string generarCodigo() const;
 };
@@ -394,21 +394,21 @@ class If : public Instr, public MixinRef {
 public:
     static const std::string NombreIf;
 
-    If(unsigned int l, unsigned int p);
+    If(size_t l, size_t p);
 
     std::string generarCodigo() const;
 private:
-    unsigned int numIf;
+    size_t numIf;
     std::string etqBase;
 
-    static unsigned int NumIfs;
+    static size_t NumIfs;
 };
 
 class Asg : public Instr, public MixinRef {
 public:
     static const std::string NombreAsg;
 
-    Asg(const std::string &n, unsigned int l, unsigned int c) : Instr( NombreAsg, l, c )
+    Asg(const std::string &n, size_t l, size_t c) : Instr( NombreAsg, l, c )
         { id.reset( new Zero::NombreIdentificador( n ) );
           setExpr( new Reg( Reg::getAcc() ) );
         }
@@ -464,7 +464,7 @@ class Lit : public Expr {
 public:
     static const std::string NombreLit;
 
-    Lit(const std::string &l, unsigned int nl, unsigned int p) : Expr( NombreLit, nl, p ), literal( l )
+    Lit(const std::string &l, size_t nl, size_t p) : Expr( NombreLit, nl, p ), literal( l )
         {}
     const std::string &getLiteral() const
         { return literal; }
@@ -479,7 +479,7 @@ private:
 
 class LitNumero : public Lit {
 public:
-    LitNumero(const std::string &n, unsigned int nl, unsigned int p) : Lit( n, nl, p )
+    LitNumero(const std::string &n, size_t nl, size_t p) : Lit( n, nl, p )
         {}
 
     CreacionLit * crearLiteral() const;
@@ -487,7 +487,7 @@ public:
 
 class LitTexto : public Lit {
 public:
-    LitTexto(const std::string &t, unsigned int nl, unsigned int p) : Lit( t, nl, p )
+    LitTexto(const std::string &t, size_t nl, size_t p) : Lit( t, nl, p )
         {}
     std::string generarCodigo() const
         { return ( std::string( "\"" ) + getLiteral() + "\"" ); }
@@ -499,7 +499,7 @@ class Def : public Instr, public MixinRef {
 public:
     static const std::string NombreDef;
 
-    Def(const std::string &id, unsigned int nl, unsigned int nc);
+    Def(const std::string &id, size_t nl, size_t nc);
 
     const std::string &getId() const
         { return id; }
@@ -518,7 +518,7 @@ public:
 
 class DefUsr : public Def {
 public:
-    DefUsr(const std::string &id, unsigned int nl, unsigned nc) : Def( id, nl, nc )
+    DefUsr(const std::string &id, size_t nl, unsigned nc) : Def( id, nl, nc )
         { Id::chkUsrId( id ); }
 };
 
@@ -527,7 +527,7 @@ public:
     const static bool Public = true;
     const static bool Private = false;
 
-    Atr(const std::string &n, bool v, unsigned int l, unsigned int c)
+    Atr(const std::string &n, bool v, size_t l, size_t c)
         : ElementoAst( n, l, c ), visibility( v )
         {}
 

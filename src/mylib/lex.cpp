@@ -16,7 +16,7 @@ const std::string Lexer::StandardDelimiters = " \t\n\r";
 
 // ----------------------------------------------------------------- getToken()
 std::string &Lexer::getToken(const std::string &lin,
-                            unsigned int &pos,
+                            size_t &pos,
                             std::string &token,
                             const std::string &delims)
 /**
@@ -46,7 +46,7 @@ std::string &Lexer::getToken(const std::string &lin,
 
 // --------------------------------------------------------------- getLiteral()
 std::string &Lexer::getLiteral(const std::string &lin,
-				    unsigned int &pos,
+				    size_t &pos,
 				    const std::string &delim,
 				    std::string &lit)
 /**
@@ -57,7 +57,7 @@ std::string &Lexer::getLiteral(const std::string &lin,
 	lit.erase();
 
     // Read everything until reaching quotes (or whatever)
-    unsigned int posEnd = lin.find( delim, pos );
+    size_t posEnd = lin.find( delim, pos );
 
     if ( posEnd != std::string::npos )
     {
@@ -76,7 +76,7 @@ std::string &Lexer::getLiteral(const std::string &lin,
 
 // ---------------------------------------------------------------- getNumber()
 std::string &Lexer::getNumber(const std::string &lin,
-				    unsigned int &pos,
+				    size_t &pos,
 				    std::string &num,
 				    const std::string &delims)
 /**
@@ -111,7 +111,7 @@ std::string &Lexer::getNumber(const std::string &lin,
 }
 
 // ------------------------------------------------------------------- skipDelim()
-void Lexer::skipDelim(const std::string &lin, unsigned int &pos,
+void Lexer::skipDelim(const std::string &lin, size_t &pos,
                       const std::string &delims, int avance)
 /// Skip spaces and other delimiters.
 {
@@ -129,7 +129,7 @@ void Lexer::skipDelim(const std::string &lin, unsigned int &pos,
 
 // --------------------------------------------------------------- skipSpaces()
 void Lexer::skipSpaces(const std::string &lin,
-                        unsigned int &pos,
+                        size_t &pos,
                         int avance)
 /**
 	Skip only spaces and tabs
@@ -229,7 +229,7 @@ std::string &StringLexer::getLiteral(const std::string &delim)
 void StringLexer::advance(int avance)
 {
     if ( avance < 0
-      && ( (unsigned int) std::abs( avance ) ) > pos )
+      && ( (size_t) std::abs( avance ) ) > pos )
     {
         pos = 0;
     }
@@ -295,7 +295,7 @@ void FileLexer::getNextLineFromFile()
 
 bool FileLexer::delimiterFound(StringLexer &l, const std::string &delim)
 {
-    unsigned int pos = l.getCurrentPos();
+    size_t pos = l.getCurrentPos();
     std::string linPos = l.getLine().substr( pos - delim.length(), delim.length() );
 
     return ( linPos == delim );

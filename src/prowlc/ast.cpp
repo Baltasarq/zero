@@ -54,9 +54,9 @@ bool Mth::esLocal(const std::string &id) const
 
 bool Mth::esParametro(const std::string &id) const
 {
-    unsigned int i = 0;
+    size_t i = 0;
     const std::vector<std::string> &parametros = getParams();
-    const unsigned int NumParametros = parametros.size();
+    const size_t NumParametros = parametros.size();
 
     for(; i < NumParametros; ++i) {
         if ( parametros[ i ] == id ) {
@@ -69,8 +69,8 @@ bool Mth::esParametro(const std::string &id) const
 
 bool Mth::esDefLocal(const std::string &id) const
 {
-    unsigned int i = 0;
-    const unsigned int NumInstrucciones = instrucciones.size();
+    size_t i = 0;
+    const size_t NumInstrucciones = instrucciones.size();
 
     for(; i < NumInstrucciones; ++i) {
         if ( dynamic_cast<const Def *>( instrucciones[ i ] ) != NULL ) {
@@ -101,7 +101,7 @@ std::string Mth::generarCodigo() const
     if ( getParams().size() > 0 ) {
         toret.push_back( ' ' );
 
-        for(unsigned int i = 0; i < getParams().size(); ++i) {
+        for(size_t i = 0; i < getParams().size(); ++i) {
             toret.append( getParams()[ i ] );
             toret.push_back( ' ' );
         }
@@ -145,13 +145,13 @@ CreacionLit * LitTexto::crearLiteral() const
 // ------------------------------------------------------------------------ Ref
 const std::string Ref::NombreRef = "ref";
 
-Ref::Ref(const std::string &l, unsigned int nl, unsigned int p)
+Ref::Ref(const std::string &l, size_t nl, size_t p)
     : Expr( NombreRef, nl, p )
 {
     ref.reset( new Zero::NombreReferencia( l ) );
 }
 
-Ref::Ref(const std::vector<std::string> &refs, unsigned int nl, unsigned int p)
+Ref::Ref(const std::vector<std::string> &refs, size_t nl, size_t p)
     : Expr( NombreRef, nl, p )
 {
     ref.reset( new Zero::NombreReferencia( Ref::toString( refs ) ) );
@@ -160,13 +160,13 @@ Ref::Ref(const std::vector<std::string> &refs, unsigned int nl, unsigned int p)
 std::string Ref::toString(const std::vector<std::string> &vIds)
 {
     std::string ref;
-    const unsigned int numIds = vIds.size();
+    const size_t numIds = vIds.size();
 
     if ( numIds > 0 ) {
         ref.reserve( numIds * 10 );
 
         // Recuperar la referencia
-        for(unsigned int i = 0; i < numIds; ++i) {
+        for(size_t i = 0; i < numIds; ++i) {
             ref.append( vIds[ i ] );
 
             if ( i < ( numIds -1 ) ) {
@@ -211,14 +211,14 @@ std::string Etq::generarCodigo() const
 
 // ----------------------------------------------------------------------- Expr
 const std::string Expr::NombreExpr = "expr";
-unsigned int Expr::NumExpresiones = 0;
+size_t Expr::NumExpresiones = 0;
 
 // ------------------------------------------------------------------------ Msg
 const std::string Msg::NombreMsg = "msg";
 
 void Msg::setMsgInfo(const std::vector<std::string> &vIds)
 {
-    unsigned int numIds = vIds.size() -1;
+    size_t numIds = vIds.size() -1;
 
     if ( numIds > 0 ) {
         // Tomar la referencia (menos id final nombre mth)
@@ -242,7 +242,7 @@ std::string Msg::generarCodigo() const
     toret.push_back( ' ' );
 
     // Volcar los params
-    for(unsigned int i = 0; i < parametros.size(); ++i) {
+    for(size_t i = 0; i < parametros.size(); ++i) {
         toret.append( parametros[ i ]->generarCodigo() );
         toret.push_back( ' ' );
     }
@@ -252,7 +252,7 @@ std::string Msg::generarCodigo() const
 
 
 // ------------------------------------------------------------------------ Ret
-Ret::Ret(unsigned int l, unsigned int p)
+Ret::Ret(size_t l, size_t p)
     : Instr( ProwlLexer::ReservadaRet, l, p )
 {
 }
@@ -333,7 +333,7 @@ void Set::setReg(const std::string &id)
 }
 
 // ------------------------------------------------------------------------- Id
-Id::Id(const std::string &l, unsigned int nl, unsigned int p) : Ref( l, nl, p )
+Id::Id(const std::string &l, size_t nl, size_t p) : Ref( l, nl, p )
 {
     ref.reset( new Zero::NombreIdentificador( l ) );
 }
@@ -351,7 +351,7 @@ void Id::chkUsrId(const std::string &id) throw(Zero::ESintaxis)
 
 
 // ------------------------------------------------------------------------ Reg
-const unsigned int Reg::NumGpRegs = 4;
+const size_t Reg::NumGpRegs = 4;
 
 /// This tal cual aparecera en el fuente
 const std::string Reg::This = "this";
@@ -401,7 +401,7 @@ const std::string &Reg::getGp(Reg::GpReg reg)
 
 bool Reg::esReg(const std::string &id)
 {
-    unsigned int i = 0;
+    size_t i = 0;
 
     for(; i < NumGpRegs; ++i) {
         if ( *NombreGpReg[ i ] == id ) {
@@ -469,7 +469,7 @@ std::string CreacionLitTexto::generarCodigo() const
 // ------------------------------------------------------------------------ Def
 const std::string Def::NombreDef = "def";
 
-Def::Def(const std::string &id, unsigned int l, unsigned int c) : Instr( NombreDef, l, c )
+Def::Def(const std::string &id, size_t l, size_t c) : Instr( NombreDef, l, c )
 {
     setId( id );
 }
@@ -500,10 +500,10 @@ std::string Def::generarCodigo() const
 }
 
 // ------------------------------------------------------------------------- If
-unsigned int If::NumIfs = 0;
+size_t If::NumIfs = 0;
 const std::string NombreIf = "if";
 
-If::If(unsigned int l, unsigned int p) : Instr( l, p )
+If::If(size_t l, size_t p) : Instr( l, p )
 {
     numIf = ++NumIfs;
     etqBase = "__prowlc_if_" + StringMan::toString( numIf );

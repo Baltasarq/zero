@@ -8,28 +8,28 @@
 
 class ElementoLexico {
 public:
-    ElementoLexico(const std::string &e, unsigned int l, unsigned int c)
+    ElementoLexico(const std::string &e, size_t l, size_t c)
         : elemento( e ), linea( l ), columna( c )
         {}
     virtual ~ElementoLexico()
         {}
 
-    unsigned int getLinea() const
+    size_t getLinea() const
         { return linea; }
-    unsigned int getColumna() const
+    size_t getColumna() const
         { return columna; }
     const std::string &getElemento() const
         { return elemento; }
 
 private:
     std::string elemento;
-    unsigned int linea;
-    unsigned int columna;
+    size_t linea;
+    size_t columna;
 };
 
 class NoIdentificado : public ElementoLexico {
 public:
-    NoIdentificado(unsigned int l, unsigned int c)
+    NoIdentificado(size_t l, size_t c)
         : ElementoLexico( "", l, c )
         {}
 };
@@ -37,14 +37,14 @@ public:
 // ------------------------------------------------------------ Identificadores
 class Identificador : public ElementoLexico {
 public:
-    Identificador(const std::string &id, unsigned int l, unsigned int c)
+    Identificador(const std::string &id, size_t l, size_t c)
         : ElementoLexico( id, l, c )
         {}
 };
 
 class PalabraReservada : public ElementoLexico {
 public:
-    PalabraReservada(const std::string &k, unsigned int l, unsigned int c)
+    PalabraReservada(const std::string &k, size_t l, size_t c)
         : ElementoLexico( k, l, c )
         {}
 };
@@ -53,14 +53,14 @@ public:
 // ---------------------------------------------------------- Valores literales
 class Literal : public ElementoLexico {
 public:
-    Literal(const std::string &n, unsigned int l, unsigned int c)
+    Literal(const std::string &n, size_t l, size_t c)
         : ElementoLexico( n, l, c )
         {}
 };
 
 class Cadena : public Literal {
 public:
-    Cadena(const std::string &cadena, unsigned int l, unsigned int c)
+    Cadena(const std::string &cadena, size_t l, size_t c)
         : Literal( cadena, l, c )
         {}
 
@@ -68,21 +68,21 @@ public:
 
 class Numero : public Literal {
 public:
-    Numero(const std::string &n, unsigned int l, unsigned int c)
+    Numero(const std::string &n, size_t l, size_t c)
         : Literal( n, l, c )
         {}
 };
 
 class NumeroEntero : public Numero {
 public:
-    NumeroEntero(const std::string &n, unsigned int l, unsigned int c)
+    NumeroEntero(const std::string &n, size_t l, size_t c)
         : Numero( n, l, c )
         {}
 };
 
 class NumeroReal : public Numero {
 public:
-    NumeroReal(const std::string &n, unsigned int l, unsigned int c)
+    NumeroReal(const std::string &n, size_t l, size_t c)
         : Numero( n, l, c )
         {}
 };

@@ -9,7 +9,7 @@ PilaLoc::PilaLoc(Mth * m) : mth( m ), numLoc( 0 ), numLocReg( 1 )
     reiniciar();
 }
 
-const std::string PilaLoc::getSigLoc(unsigned int & i)
+const std::string PilaLoc::getSigLoc(size_t & i)
 {
     std::string toret;
 
@@ -36,7 +36,7 @@ void PilaLoc::setMetodo(Mth *mth)
 }
 
 // ------------------------------------------------------------------ Transform
-std::string Transform::simplificaRef(unsigned int &i, const Ref * ref, Mth * mth, PilaLoc * pila)
+std::string Transform::simplificaRef(size_t &i, const Ref * ref, Mth * mth, PilaLoc * pila)
 {
     std::string loc = pila->getSigLoc( i );
     Set * set = NULL;
@@ -58,7 +58,7 @@ std::string Transform::simplificaRef(unsigned int &i, const Ref * ref, Mth * mth
 }
 
 // -------------------------------------------------------------- TransformLits
-bool TransformLits::doIt(unsigned int &i, ElementoAst * elem, ElementoAst *env)
+bool TransformLits::doIt(size_t &i, ElementoAst * elem, ElementoAst *env)
 {
     Def * def = dynamic_cast<Def *>( elem );
     Msg * msg = dynamic_cast<Msg *>( elem );
@@ -69,7 +69,7 @@ bool TransformLits::doIt(unsigned int &i, ElementoAst * elem, ElementoAst *env)
     }
 
     if ( msg != NULL ) {
-        for(unsigned int j = 0; j < msg->parametros.size(); ++j) {
+        for(size_t j = 0; j < msg->parametros.size(); ++j) {
             Lit * lit = dynamic_cast<Lit *>( msg->parametros[ j ] );
 
             if ( lit != NULL ) {
@@ -102,7 +102,7 @@ bool TransformLits::doIt(unsigned int &i, ElementoAst * elem, ElementoAst *env)
 }
 
 // -------------------------------------------------- TransformSimplificaParams
-bool TransformSimplificaParams::doIt(unsigned int &i, ElementoAst * elem, ElementoAst *env)
+bool TransformSimplificaParams::doIt(size_t &i, ElementoAst * elem, ElementoAst *env)
 {
     bool toret = false;
     Msg * msg = dynamic_cast<Msg *>( elem );
@@ -114,7 +114,7 @@ bool TransformSimplificaParams::doIt(unsigned int &i, ElementoAst * elem, Elemen
 
     if ( msg != NULL ) {
 
-        for(unsigned int j = 0; j < msg->parametros.size(); ++j) {
+        for(size_t j = 0; j < msg->parametros.size(); ++j) {
             Ref * ref = dynamic_cast<Ref *>( msg->parametros[ j ] );
             Msg * subMsg = dynamic_cast<Msg *>( msg->parametros[ j ] );
 
@@ -152,13 +152,13 @@ bool TransformSimplificaParams::doIt(unsigned int &i, ElementoAst * elem, Elemen
 }
 
 // ------------------------------------------------------ TransformDefsComienzo
-bool TransformDefsComienzo::doIt(unsigned int &ord, ElementoAst * elem, ElementoAst *env)
+bool TransformDefsComienzo::doIt(size_t &ord, ElementoAst * elem, ElementoAst *env)
 {
     Mth * mth = dynamic_cast<Mth *>( elem );
 
     if ( mth != NULL ) {
 
-        for(unsigned int i = 0; i < mth->instrucciones.size(); ++i) {
+        for(size_t i = 0; i < mth->instrucciones.size(); ++i) {
             Def * def = dynamic_cast<Def *>( mth->instrucciones[ i ] );
 
             if ( def != NULL ) {
@@ -173,7 +173,7 @@ bool TransformDefsComienzo::doIt(unsigned int &ord, ElementoAst * elem, Elemento
 }
 
 // -------------------------------------------------------------- TransformThis
-bool TransformThis::doIt(unsigned int &ord, ElementoAst * elem, ElementoAst *env)
+bool TransformThis::doIt(size_t &ord, ElementoAst * elem, ElementoAst *env)
 {
    Instr * instr = dynamic_cast<Instr *>( elem );
    Mth * mth = dynamic_cast<Mth *>( env );
@@ -192,7 +192,7 @@ bool TransformThis::doIt(unsigned int &ord, ElementoAst * elem, ElementoAst *env
             }
 
             // Params ?
-            for(unsigned int i = 0; i < msg->parametros.size(); ++i) {
+            for(size_t i = 0; i < msg->parametros.size(); ++i) {
                 Expr * param = msg->parametros[ i ];
 
                 if ( dynamic_cast<Id *>( param ) != NULL ) {
@@ -222,7 +222,7 @@ bool TransformThis::doIt(unsigned int &ord, ElementoAst * elem, ElementoAst *env
 }
 
 // --------------------------------------------------------------- TransformAsg
-bool TransformConRef::doIt(unsigned int &ord, ElementoAst * elem, ElementoAst *env)
+bool TransformConRef::doIt(size_t &ord, ElementoAst * elem, ElementoAst *env)
 {
     Instr * instr = dynamic_cast<Instr *>( elem );
     Mth * mth = dynamic_cast<Mth *>( env );
@@ -324,7 +324,7 @@ GestorTransformaciones::~GestorTransformaciones()
     liberar( transfsObj );
 }
 
-bool GestorTransformaciones::aplicaTransformaciones(unsigned int &ord, ElementoAst * elem, ElementoAst *env, const std::vector<Transform *> &listaTrans)
+bool GestorTransformaciones::aplicaTransformaciones(size_t &ord, ElementoAst * elem, ElementoAst *env, const std::vector<Transform *> &listaTrans)
 {
     std::vector<Transform *>::const_iterator it = listaTrans.begin();
     bool toret = false;
@@ -342,23 +342,23 @@ void GestorTransformaciones::doIt()
 {
     bool reaplicarInstrs;
 
-    for(unsigned int i = 0; i < getAST()->objetos.size(); ++i) {
+    for(size_t i = 0; i < getAST()->objetos.size(); ++i) {
         objetoActual = ast->objetos[ i ];
         ListaAst<Mth> &metodos = ast->objetos[ i ]->metodos;
 
-        for(unsigned int j = 0; j < metodos.size(); ++j) {
+        for(size_t j = 0; j < metodos.size(); ++j) {
             metodoActual = metodos[ j ];
             pila->setMetodo( metodoActual );
 
             do {
                 reaplicarInstrs = false;
 std::printf( "Vuelta: instrs en %s(): %d instrs.\n", metodoActual->getNombre().c_str(), metodoActual->instrucciones.size() );
-for(unsigned int k = 0; k < metodoActual->instrucciones.size(); ++k) {
+for(size_t k = 0; k < metodoActual->instrucciones.size(); ++k) {
     std::printf( "#%d: %s\n", k, metodoActual->instrucciones[ k ]->generarCodigo().c_str() );
 }
 std::printf( "Empieza\n" );
 
-                for(unsigned int k = 0; k < metodoActual->instrucciones.size(); ++k) {
+                for(size_t k = 0; k < metodoActual->instrucciones.size(); ++k) {
                     Instr * instr = metodoActual->instrucciones[ k ];
                     pila->reiniciar();
 

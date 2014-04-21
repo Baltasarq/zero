@@ -13,7 +13,7 @@ void GeneradorCodigoZero::generarCodigo()
     OutputFile & out = getFichero();
     const ListaAst<Obj> &objetos = getRaiz()->objetos;
 
-    for(unsigned int i = 0; i < objetos.size(); ++i) {
+    for(size_t i = 0; i < objetos.size(); ++i) {
         out.writeLn( objetos[ i ]->generarCodigo() );
         out.writeLn( "" );
         out.writeLn( generarCodigoMiembros( objetos[ i ] ) );
@@ -31,12 +31,12 @@ std::string GeneradorCodigoZero::generarCodigoMiembros(const Obj *obj)
     const ListaAst<Atr> &atributos = obj->atributos;
 
     // Generar atrs.
-    for(unsigned int i = 0; i < atributos.size(); ++i) {
+    for(size_t i = 0; i < atributos.size(); ++i) {
         toret.append( atributos[ i ]->generarCodigo() );
     }
 
     // Generar mths.
-    for(unsigned int i = 0; i < metodos.size(); ++i) {
+    for(size_t i = 0; i < metodos.size(); ++i) {
         toret.append( generarCodigoMetodo( metodos[ i ] ) );
     }
 
@@ -48,7 +48,7 @@ std::string GeneradorCodigoZero::generarCodigoMetodo(const Mth *mth)
     std::string toret = mth->generarCodigo();
 
     // Recorrer todas las instrucciones
-    for(unsigned int i = 0; i < mth->instrucciones.size(); ++i) {
+    for(size_t i = 0; i < mth->instrucciones.size(); ++i) {
         toret.append( mth->instrucciones[ i ]->generarCodigo() );
         toret.append( "\n" );
     }

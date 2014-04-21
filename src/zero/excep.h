@@ -20,7 +20,7 @@ namespace Zero {
 
 class Excepcion : public std::runtime_error {
 public:
-        static const unsigned int MaxTamDetalles = 1024;
+        static const size_t MaxTamDetalles = 1024;
 
         Excepcion() : std::runtime_error( "ERROR interno" )
             { *detalles = 0; }
@@ -128,15 +128,15 @@ public:
 
 class ECompilacion : public Excepcion {
 private:
-	int lin;
+	size_t lin;
 public:
     ECompilacion(const char * x): Excepcion( "ERROR Compilando", x ), lin(-1)
               {}
     ECompilacion(const char * x, const char * y): Excepcion( x, y ), lin(-1)
               {}
-	unsigned int getLinMetodo()
+	size_t getLinMetodo()
 		{ return lin; }
-	void putLinMetodo(unsigned int x)
+	void putLinMetodo(size_t x)
 		{ lin = ( ( lin < 0 ) ? x : lin ); }
 };
 

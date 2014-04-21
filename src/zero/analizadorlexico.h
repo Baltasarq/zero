@@ -1,6 +1,6 @@
 // analizadorlexico.h
 /*
-	Cabecera del analizador léxico.
+	Cabecera del analizador lex.
 
 	jbgarcia@uvigo.es
 */
@@ -22,7 +22,7 @@ namespace Zero {
 class AnalizadorLexico {
 private:
     static char buffer[];
-	unsigned int pos;
+	size_t pos;
 	std::string *txt;
 	std::string token;
 
@@ -71,7 +71,7 @@ public:
 	void avanza(int avance = 1);
 
 	/// Devuelve la pos actual dentro del texto
-	unsigned int getPosActual() const { return pos; }
+	size_t getPosActual() const { return pos; }
 
 	/// Coloca el indicador de posición a cero
 	void reset() { pos = 0; }
@@ -94,11 +94,11 @@ public:
 	static std::string trim(const std::string &x);
 
 	// Útiles para analizar
-	static std::string &getNumero(const std::string &lin, unsigned int &pos, std::string &num);
-	static std::string &getToken(const std::string &lin, unsigned int &pos, std::string &token);
-	static void pasaEsp(const std::string &lin, unsigned int &pos, int avance = 1);
-	static void pasaSoloEsp(const std::string &lin, unsigned int &pos, int avance = 1);
-	static std::string &getLiteral(const std::string &lin, unsigned int &pos,
+	static std::string &getNumero(const std::string &lin, size_t &pos, std::string &num);
+	static std::string &getToken(const std::string &lin, size_t &pos, std::string &token);
+	static void pasaEsp(const std::string &lin, size_t &pos, int avance = 1);
+	static void pasaSoloEsp(const std::string &lin, size_t &pos, int avance = 1);
+	static std::string &getLiteral(const std::string &lin, size_t &pos,
 	                          char delim, std::string &lit);
 	static bool compruebaFlotante(const std::string &s);
 	static std::string toString(void *);

@@ -25,10 +25,10 @@ public:
     const std::string &getNombreArchivoEntrada() const
         { return flex->getNombreArchivo(); }
 
-    unsigned int getNumeroLinea() const
+    size_t getNumeroLinea() const
         { return flex->getNumLinea(); }
 
-    unsigned int getPosLinea() const
+    size_t getPosLinea() const
         { return flex->getPosicion(); }
 
     std::string getLineaActual() const
@@ -43,7 +43,7 @@ public:
     void ponCompilacionCorrecta(bool correcta = true)
         { success = correcta; }
 
-    unsigned int getNumeroDeObjetos() const
+    size_t getNumeroDeObjetos() const
         { return ast->objetos.size(); }
 
     const AST * getAST() const

@@ -228,7 +228,7 @@ std::string &StringMan::normCnvt(std::string &x)
 // --------------------------------------------- StringMan::cambiarFmtImprCnvt()
 std::string &StringMan::cambiarFmtImprCnvt(std::string &x)
 {
-        unsigned int pos;
+        size_t pos;
 
         // Quitar espacios
         trimCnvt( x );
@@ -297,7 +297,7 @@ std::string StringMan::cambiarCaracteres(const std::string &x, char busc, char r
 bool StringMan::esNumeroDecimal(const std::string &strNum)
 {
 		std::string::const_iterator pos = strNum.begin();
-		unsigned int numPuntos = 0;
+		size_t numPuntos = 0;
 		bool toret = false;
 
 		// Revisión sintáctica
@@ -371,7 +371,7 @@ std::string StringMan::toString(const int &x)
 }
 
 // ------------------------------------------------------- StringMan::toString()
-std::string StringMan::toString(const unsigned int &x)
+std::string StringMan::toString(const size_t &x)
 {
         std::ostringstream cnvt;
 
@@ -578,7 +578,7 @@ std::string &StringMan::ponerExtensionAdecuadaNombreArchivo(
 // --------------------------------------- StringMan::extraerExtensionArchivo()
 std::string StringMan::extraerExtensionArchivo(const std::string &nombreArchivo)
 {
-    unsigned int pos;
+    size_t pos;
     std::string toret;
 
     toret = extraerNombreArchivoSinPath( nombreArchivo );
@@ -594,7 +594,7 @@ std::string StringMan::extraerExtensionArchivo(const std::string &nombreArchivo)
 // ------------------------------ StringMan::extraerNombreArchivoSinPathNiExt()
 std::string StringMan::extraerNombreArchivoSinPathNiExt(const std::string &nombreArchivo)
 {
-    unsigned int pos;
+    size_t pos;
     std::string toret;
 
     toret = extraerNombreArchivoSinPath( nombreArchivo );
@@ -610,7 +610,7 @@ std::string StringMan::extraerNombreArchivoSinPathNiExt(const std::string &nombr
 // ----------------------------------- StringMan::extraerNombreArchivoSinPath()
 std::string StringMan::extraerNombreArchivoSinPath(const std::string &nombreArchivo)
 {
-    unsigned int pos;
+    size_t pos;
     std::string toret = nombreArchivo;
 
     pos = toret.rfind( '\\' );
@@ -630,7 +630,7 @@ std::string StringMan::extraerNombreArchivoSinPath(const std::string &nombreArch
 // ------------------------------------ StringMan::extraerPathDeNombreArchivo()
 std::string StringMan::extraerPathDeNombreArchivo(const std::string &nombreArchivo)
 {
-    unsigned int pos;
+    size_t pos;
     std::string toret = nombreArchivo;
 
     pos = toret.rfind( '\\' );
@@ -654,8 +654,8 @@ std::string StringMan::extraerPathDeNombreArchivo(const std::string &nombreArchi
 std::string StringMan::extraerArchivoSinExtDeNombreArchivo(const std::string &nombreArchivo)
 {
     std::string toret = nombreArchivo;
-    unsigned int posBarra = toret.rfind( '\\' );
-    unsigned int posPunto = toret.rfind( '.' );
+    size_t posBarra = toret.rfind( '\\' );
+    size_t posPunto = toret.rfind( '.' );
 
     if ( posBarra == std::string::npos ) {
         posBarra = toret.rfind( '/' );
@@ -674,10 +674,10 @@ std::string StringMan::extraerArchivoSinExtDeNombreArchivo(const std::string &no
     return toret;
 }
 
-unsigned int StringMan::split(const std::string &txt, std::vector<std::string> &strs, char ch)
+size_t StringMan::split(const std::string &txt, std::vector<std::string> &strs, char ch)
 {
-    unsigned int pos = txt.find( ch );
-    unsigned int initialPos = 0;
+    size_t pos = txt.find( ch );
+    size_t initialPos = 0;
     strs.clear();
 
     // Decompose statement
@@ -689,7 +689,7 @@ unsigned int StringMan::split(const std::string &txt, std::vector<std::string> &
     }
 
     // Add the last one
-    strs.push_back( txt.substr( initialPos, std::min( pos, (unsigned int) txt.size() ) - initialPos + 1 ) );
+    strs.push_back( txt.substr( initialPos, std::min( pos, txt.size() ) - initialPos + 1 ) );
 
     return strs.size();
 }

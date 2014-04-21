@@ -52,7 +52,7 @@ public:
     void pasarDelimitadores()
         { flex->skipDelim(); }
 
-    void avanzar(unsigned int num = 1)
+    void avanzar(size_t num = 1)
         { flex->advance( num ); }
 
     char getCaracterActual() const
@@ -61,13 +61,13 @@ public:
     std::string getLineaActual() const
         { return flex->getCurrentLine(); }
 
-    unsigned int getPosicion() const
+    size_t getPosicion() const
         { return flex->getCurrentPos(); }
 
-    void setPosicion(unsigned int pos)
+    void setPosicion(size_t pos)
         { return flex->reset( pos ); }
 
-    unsigned int getNumLinea() const
+    size_t getNumLinea() const
         { return flex->getLineNumber(); }
 
     bool chkSig(const std::string &ctrl)

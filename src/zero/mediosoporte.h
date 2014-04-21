@@ -12,16 +12,16 @@
 namespace Zero {
 
 // Tipos  ---------------------------------------------------------------------
-typedef unsigned char      UINT8;
-typedef __uint16_t         UINT16;
-typedef __int16_t          INT16;
-typedef __int32_t          INT32;
-typedef __uint32_t         UINT32;
-typedef double             REAL;
+typedef unsigned char   UINT8;
+typedef uint16_t        UINT16;
+typedef int16_t         INT16;
+typedef int32_t         INT32;
+typedef uint32_t        UINT32;
+typedef double          REAL;
 
 /**
-	La clase MedioSoporte representa el soporte de los mnemotécnicos. Un
-	soporte típico es el archivo, pero derivando de esta clase pueden
+	La clase MedioSoporte representa el soporte de los mnemos. Un
+	soporte popular es el archivo, pero derivando de esta clase pueden
 	aparecer otros soportes, como por ejemplo, la red.
 */
 class MedioSoporte {

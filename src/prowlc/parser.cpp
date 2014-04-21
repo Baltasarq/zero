@@ -15,7 +15,7 @@ Parser::Parser(const std::string &nombreArchivo) throw( Zero::EInputOutput )
 
     // Crear nombre modl. (sin ext ni path)
     // quitar ext
-    unsigned int pos = nombreModulo.rfind( '.' );
+    size_t pos = nombreModulo.rfind( '.' );
 
     if ( pos != std::string::npos ) {
         nombreModulo.erase( pos );

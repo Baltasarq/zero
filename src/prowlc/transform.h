@@ -16,7 +16,7 @@ public:
 
     PilaLoc(Mth * = NULL);
 
-    const std::string getSigLoc(unsigned int &);
+    const std::string getSigLoc(size_t &);
 
     void reiniciar()
         { numLocReg = 0; }
@@ -25,8 +25,8 @@ public:
 
 private:
     Mth * mth;
-    unsigned int numLoc;
-    unsigned int numLocReg;
+    size_t numLoc;
+    size_t numLocReg;
 };
 
 /**
@@ -51,9 +51,9 @@ public:
         @param env El elemento en el que se encuentra incluido elem
         @return true si es necesario recomenzar la transf. debido a cambios, false en otro caso
     */
-    virtual bool doIt(unsigned int &ord, ElementoAst * elem, ElementoAst * env) = 0;
+    virtual bool doIt(size_t &ord, ElementoAst * elem, ElementoAst * env) = 0;
 
-    static std::string simplificaRef(unsigned int &ord, const Ref * ref, Mth * mth, PilaLoc *);
+    static std::string simplificaRef(size_t &ord, const Ref * ref, Mth * mth, PilaLoc *);
 protected:
     AST * ast;
     PilaLoc * pila;
@@ -69,7 +69,7 @@ public:
     TransformLits(AST * ast, PilaLoc * pl) : Transform( ast, pl )
         {}
 
-    bool doIt(unsigned int &ord, ElementoAst * elem, ElementoAst * env);
+    bool doIt(size_t &ord, ElementoAst * elem, ElementoAst * env);
 };
 
 /**
@@ -82,7 +82,7 @@ public:
     TransformSimplificaParams(AST * ast, PilaLoc * pl) : Transform( ast, pl )
         {}
 
-    bool doIt(unsigned int &ord, ElementoAst * elem, ElementoAst * env);
+    bool doIt(size_t &ord, ElementoAst * elem, ElementoAst * env);
 };
 
 /**
@@ -94,7 +94,7 @@ public:
     TransformConRef(AST * ast, PilaLoc * pl) : Transform( ast, pl )
         {}
 
-    bool doIt(unsigned int &ord, ElementoAst * elem, ElementoAst * env);
+    bool doIt(size_t &ord, ElementoAst * elem, ElementoAst * env);
 };
 
 /**
@@ -106,7 +106,7 @@ public:
     TransformDefsComienzo(AST * ast, PilaLoc * pl) : Transform( ast, pl )
         {}
 
-    bool doIt(unsigned int &ord, ElementoAst * elem, ElementoAst * env);
+    bool doIt(size_t &ord, ElementoAst * elem, ElementoAst * env);
 };
 
 /**
@@ -118,7 +118,7 @@ public:
     TransformThis(AST * ast, PilaLoc * pl) : Transform( ast, pl )
         {}
 
-    bool doIt(unsigned int &ord, ElementoAst * elem, ElementoAst * env);
+    bool doIt(size_t &ord, ElementoAst * elem, ElementoAst * env);
 };
 
 /**
@@ -146,7 +146,7 @@ protected:
         @param lst La lista de transf. a aplicar
         @return true si es necesario recomenzar por cambios, false en otro caso.
     */
-    bool aplicaTransformaciones(unsigned int &ord, ElementoAst *elem, ElementoAst *env, const std::vector<Transform *> &lst);
+    bool aplicaTransformaciones(size_t &ord, ElementoAst *elem, ElementoAst *env, const std::vector<Transform *> &lst);
 
     Obj * objetoActual;
     Mth * metodoActual;
